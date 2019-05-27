@@ -1,0 +1,45 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 496px;
+  height: 351px;
+  border-radius: 10px;
+  border: solid 1px #fafafa;
+  background-color: #ffffff;
+  padding: 38px 56px 20px 24px;
+  border: 1px solid red;
+}
+
+.stars {
+  height: 18px;
+}
+
+.title {
+  margin-top: 8px;
+  width: 290px;
+  line-height: 1.23;
+  font-size: 26px;
+  font-weight: bold;
+  text-align: left;
+  color: #202020;
+}
+
+.readMore {
+  font-size: 16px;
+  color: #959595;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.sign {
+  font-size: 16px;
+  color: #959595;
+}
+
+.body {
+  margin-top: 25px;
+  font-size: 16px;
+  text-align: left;
+  color: #959595;
+}
