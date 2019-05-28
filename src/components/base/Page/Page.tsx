@@ -6,11 +6,9 @@ export interface IProps {
   readonly children?: React.ReactNode
 }
 
-export const Page: React.FC<IProps> = ({
-  children
-}) => (
+export const Page: React.FC<IProps> = ({ children }) => (
   <div>
-    { children }
+    {children}
     <Footer />
   </div>
 )

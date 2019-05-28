@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-import styles from './instagramCard.scss'
+import styles from './instagramCard.module.scss'
 
 export interface IProps {
   img: string

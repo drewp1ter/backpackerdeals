@@ -2,7 +2,7 @@ import * as React from 'react'
 
 import { OrangeButton } from 'components/base'
 
-import './FooterInput.scss'
+import styles from './FooterInput.module.scss'
 
 export interface IProps {
   readonly handleChange?: () => void
@@ -10,14 +10,10 @@ export interface IProps {
   readonly email?: string
 }
 
-export const FooterInput: React.FC<IProps> = ({
-  handleChange,
-  handleSubmit,
-  email
-}) => (
-  <div className="footer-input">
-    <input type="email" placeholder="Your e-mail address" value={ email } onChange={ handleChange } />
-    <OrangeButton onClick={ handleSubmit } className="rounded">
+export const FooterInput: React.FC<IProps> = ({ handleChange, handleSubmit, email }) => (
+  <div className={styles.footerInput}>
+    <input type="email" placeholder="Your e-mail address" value={email} onChange={handleChange} />
+    <OrangeButton onClick={handleSubmit} className="rounded">
       SUBMIT
     </OrangeButton>
   </div>

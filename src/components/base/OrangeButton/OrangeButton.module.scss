@@ -1,4 +1,4 @@
-.orange-button {
+.orangeButton {
   background-color: #ff5a39;
   border: none;
   cursor: pointer;
@@ -8,6 +8,11 @@
   font-style: normal;
   font-stretch: normal;
   letter-spacing: normal;
+  transition: .2s ease background-color;
+
+  &:hover {
+    background-color: rgba(#ff5a39, 0.5);
+  }
 
   &.rounded {
     border-radius: 60px;

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64.031" height="64.031" viewBox="0 0 64.031 64.031">
+  <g id="_6" data-name="6" transform="translate(11 10)">
+    <rect id="rect4049" width="43" height="43" fill="none"/>
+    <path id="path4308" d="M27,11.359A3.359,3.359,0,1,0,30.359,8,3.359,3.359,0,0,0,27,11.359Z" transform="translate(-8.859 -2.625)" fill="none" stroke="#ff5a39" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+    <path id="path4310" d="M23,23.381C23.134,20.693,25.9,19,29.047,19s5.906,1.686,6.047,4.381" transform="translate(-7.547 -6.234)" fill="none" stroke="#ff5a39" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+    <path id="path4312" d="M27.734,3A8.734,8.734,0,0,0,19,11.788V30.547c0,4.7,3.279,11.422,8.063,11.422h1.344c4.784,0,8.063-6.719,8.063-11.422V11.788A8.734,8.734,0,0,0,27.734,3Z" transform="translate(-6.234 -0.984)" fill="none" stroke="#666" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+    <path id="path4314" d="M32,28V42.781" transform="translate(-10.5 -9.188)" fill="none" stroke="#666" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+    <path id="rect4317" d="M30.344,50h1.344a1.344,1.344,0,0,1,1.344,1.344h0a1.344,1.344,0,0,1-1.344,1.344H30.344A1.344,1.344,0,0,1,29,51.344h0A1.344,1.344,0,0,1,30.344,50Z" transform="translate(-9.516 -16.406)" fill="none" stroke="#666" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+    <path id="path4319" d="M36.469,20c0,2.923-3.9,5.375-8.734,5.375S19,22.923,19,20" transform="translate(-6.234 -6.563)" fill="none" stroke="#666" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+    <g id="Ellipse_2" data-name="Ellipse 2" transform="translate(-11.001 -10)" fill="none" stroke="#f96547" stroke-width="1">
+      <circle cx="32.016" cy="32.016" r="32.016" stroke="none"/>
+      <circle cx="32.016" cy="32.016" r="31.516" fill="none"/>
+    </g>
+  </g>
+</svg>

@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-import styles from './activityCard.scss'
+import styles from './activityCard.module.scss'
 
 export interface IProps {
   title: string

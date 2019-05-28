@@ -10,27 +10,17 @@ export interface IProps {
   readonly email?: string
 }
 
-export const Footer: React.FC<IProps> = ({
-  handleChange,
-  handleSubmit,
-  email
-}) => (
+export const Footer: React.FC<IProps> = ({ handleChange, handleSubmit, email }) => (
   <footer>
-
     <h2>Travel discounts up to 40% off</h2>
 
     <h3>Sent straight to your inbox</h3>
 
-    <FooterInput 
-      email={ email } 
-      handleChange={ handleChange } 
-      handleSubmit={ handleSubmit } 
-    />
+    <FooterInput email={email} handleChange={handleChange} handleSubmit={handleSubmit} />
 
     <p>By clicking Subscribe, you have agreed to our Terms & Conditions and Privacy Policy</p>
 
     <div className="contact-info">
-
       <div className="social-block">
         <h4>Company</h4>
         <ul>
@@ -56,7 +46,6 @@ export const Footer: React.FC<IProps> = ({
       </div>
 
       <div>
-
         <div className="social-block">
           <h4>Business</h4>
           <ul>
@@ -71,7 +60,6 @@ export const Footer: React.FC<IProps> = ({
             <li>Students Discounts</li>
           </ul>
         </div>
-
       </div>
 
       <div className="social-block">
@@ -84,7 +72,6 @@ export const Footer: React.FC<IProps> = ({
       </div>
 
       <div>
-
         <div className="social-block">
           <h4>Contact us</h4>
           <ul>
@@ -103,16 +90,11 @@ export const Footer: React.FC<IProps> = ({
           <h5>Skype:</h5>
           <p>backpackerdeals</p>
         </div>
-
       </div>
-
     </div>
 
-
     <div className="app-info">
-      
       <div className="media-and-payment">
-
         <div className="social-media">
           <h4>Social media</h4>
         </div>
@@ -120,42 +102,36 @@ export const Footer: React.FC<IProps> = ({
         <div className="payment">
           <h4>Payment we receive</h4>
         </div>
-
       </div>
 
       <button className="download-app-button">Download Mobile App</button>
-    
     </div>
 
-    <hr/>
+    <hr />
 
     <div className="copyright-and-partners">
-
-      <img className="logo" src="" alt=""/>
+      <img className="logo" src="" alt="" />
 
       <p>
         Backpackerdeals.com is owned and operated by
-        <br/>
+        <br />
         Backpacker Deals Pty Ltd. ABN 81 600 829 838
-        <br/>
+        <br />
         Level 1, 20 Queen Street, Melbourne 3000, Australia
-        <br/>
-        © 2014-2018 Backpacker Deals All rights reserved.
+        <br />© 2014-2018 Backpacker Deals All rights reserved.
       </p>
 
       <div>
-        <img src="" alt=""/>
-        <img src="" alt=""/>
-        <img src="" alt=""/>
-        <img src="" alt=""/>
+        <img src="" alt="" />
+        <img src="" alt="" />
+        <img src="" alt="" />
+        <img src="" alt="" />
       </div>
 
       <div>
-        <img src="" alt=""/>
-        <img src="" alt=""/>
+        <img src="" alt="" />
+        <img src="" alt="" />
       </div>
-
     </div>
-
   </footer>
 )

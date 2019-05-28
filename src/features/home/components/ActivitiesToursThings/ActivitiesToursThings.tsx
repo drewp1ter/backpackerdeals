@@ -1,7 +1,7 @@
 import * as React from 'react'
 
 import { ActivityCard } from '..'
-import styles from './activitiesToursThings.scss'
+import styles from './activitiesToursThings.module.scss'
 
 const ActivitiesToursThings: React.FC = () => {
   return (

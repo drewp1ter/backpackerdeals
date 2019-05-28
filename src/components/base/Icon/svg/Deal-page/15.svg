@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64.031" height="64.031" viewBox="0 0 64.031 64.031">
+  <g id="_15" data-name="15" transform="translate(13.031 12.426)">
+    <rect id="rect4053" width="39.574" height="39.574" fill="none"/>
+    <path id="path4135" d="M33,44.6,38.565,31,44.13,44.6" transform="translate(-12.595 -11.831)" fill="none" stroke="#ff5a39" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+    <path id="path4156" d="M35.5,47h8.039" transform="translate(-13.549 -17.938)" fill="none" stroke="#ff5a39" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+    <path id="path4158" d="M24.6,14H11" transform="translate(-4.198 -5.343)" fill="none" stroke="#ff5a39" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+    <path id="path4160" d="M12,25.13c6.183-1.855,9.894-6.183,10.512-11.13" transform="translate(-4.58 -5.343)" fill="none" stroke="#ff5a39" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+    <path id="path4162" d="M22,12.45V9.94" transform="translate(-8.396 -3.794)" fill="none" stroke="#ff5a39" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+    <path id="path4165" d="M26.26,16.367V6.473A2.473,2.473,0,0,0,23.787,4H6.473A2.473,2.473,0,0,0,4,6.473V23.787A2.473,2.473,0,0,0,6.473,26.26h9.894" transform="translate(-1.527 -1.527)" fill="none" stroke="#666" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+    <path id="path4167" d="M21.018,24.715A13.134,13.134,0,0,1,16.38,19.15" transform="translate(-6.251 -7.309)" fill="none" stroke="#ff5a39" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+    <rect id="rect4169" width="22.26" height="22.26" rx="4" stroke-width="1" transform="translate(14.84 14.84)" stroke="#666" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <g id="Ellipse_2" data-name="Ellipse 2" transform="translate(-13.031 -12.426)" fill="none" stroke="#f96547" stroke-width="1">
+      <circle cx="32.016" cy="32.016" r="32.016" stroke="none"/>
+      <circle cx="32.016" cy="32.016" r="31.516" fill="none"/>
+    </g>
+  </g>
+</svg>
