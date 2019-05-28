@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64.031" height="64.031" viewBox="0 0 64.031 64.031">
+  <g id="_3" data-name="3" transform="translate(12 12)">
+    <rect id="rect4063" width="40" height="40" fill="none"/>
+    <path id="path4065" d="M7,32,25.75,2" transform="translate(-2.625 -0.75)" fill="none" stroke="#666" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+    <path id="path4067" d="M18.469,47.75H6.25A1.25,1.25,0,0,1,5,46.5V44" transform="translate(-1.875 -16.5)" fill="none" stroke="#666" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+    <path id="path4069" d="M45.75,32,27,2" transform="translate(-10.125 -0.75)" fill="none" stroke="#666" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+    <path id="path4071" d="M37.5,38.375C29.494,34.7,23.75,24.8,23.75,19c0,5.8-5.744,15.7-13.75,19.375" transform="translate(-3.75 -7.125)" fill="none" stroke="#666" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+    <path id="path4073" d="M37.39,47.75H49.646A1.25,1.25,0,0,0,50.9,46.5V44" transform="translate(-14.021 -16.5)" fill="none" stroke="#666" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+    <path id="path4075" d="M34.588,51l-7.463,2.056,5,1.388,3.125-.875ZM22.125,54.444,19,55.306l.662,2.569,7.463-2.062Z" transform="translate(-7.125 -19.125)" fill="none" stroke="#ff5a39" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+    <path id="path4077" d="M35.25,55.3,19.669,51,19,53.575l15.581,4.3Z" transform="translate(-7.125 -19.125)" fill="none" stroke="#ff5a39" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+    <path id="path4079" d="M30.375,35c0,2.081,0,2.781-1.25,3.75a3,3,0,0,0-2.181-1.875C27.25,40,26,40.331,26,42.5a3.75,3.75,0,0,0,3.55,3.75A3.611,3.611,0,0,0,33.5,42.5a4.794,4.794,0,0,0-.625-2.5l-2.144,1.563C32.15,39.219,33.112,37.031,30.375,35Z" transform="translate(-9.75 -13.125)" fill="none" stroke="#ff5a39" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+    <g id="Ellipse_2" data-name="Ellipse 2" transform="translate(-11.999 -12)" fill="none" stroke="#f96547" stroke-width="1">
+      <circle cx="32.016" cy="32.016" r="32.016" stroke="none"/>
+      <circle cx="32.016" cy="32.016" r="31.516" fill="none"/>
+    </g>
+  </g>
+</svg>

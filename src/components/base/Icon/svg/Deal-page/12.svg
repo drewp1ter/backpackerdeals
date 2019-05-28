@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64.031" height="64.031" viewBox="0 0 64.031 64.031">
+  <g id="_12" data-name="12" transform="translate(12 10)">
+    <rect id="rect4055" width="42" height="42" fill="none"/>
+    <rect id="rect4105" width="26.25" height="28.258" rx="3" stroke-width="1" transform="translate(1.969 4.594)" stroke="#666" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <path id="path4107" d="M55,36.5V49.8" transform="translate(-18.906 -12.547)" fill="none" stroke="#ff5a39" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+    <path id="path4109" d="M51,57h5.25" transform="translate(-17.531 -19.594)" fill="none" stroke="#ff5a39" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+    <path id="path4111" d="M24.25,11H19" transform="translate(-6.531 -3.781)" fill="none" stroke="#666" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+    <path id="path4113" d="M29.367,15H3.34" transform="translate(-1.148 -5.156)" fill="none" stroke="#666" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+    <path id="path4115" d="M23,15V26.813" transform="translate(-7.906 -5.156)" fill="none" stroke="#666" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+    <path id="path4117" d="M12.25,50.39v4.338H7V50.39" transform="translate(-2.406 -17.322)" fill="none" stroke="#666" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+    <path id="path4119" d="M29.25,33H3" transform="translate(-1.031 -11.344)" fill="none" stroke="#666" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+    <rect id="rect4121" width="3.938" height="3.938" stroke-width="1" transform="translate(1.969 25.594)" stroke="#666" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <rect id="rect4123" width="3.938" height="3.938" stroke-width="1" transform="translate(24.281 25.594)" stroke="#666" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <path id="path4125" d="M14,39h4.594m0,3.938H14" transform="translate(-4.813 -13.406)" fill="none" stroke="#666" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+    <path id="path4127" d="M29.594,39H25m0,3.938h4.594" transform="translate(-8.594 -13.406)" fill="none" stroke="#666" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+    <path id="path4129" d="M49,27.938A3.938,3.938,0,1,0,52.938,24,3.937,3.937,0,0,0,49,27.938Z" transform="translate(-16.844 -8.25)" fill="none" stroke="#ff5a39" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+    <path id="path4131" d="M31,50.39v4.338h5.25V50.39" transform="translate(-10.656 -17.322)" fill="none" stroke="#666" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+    <g id="Ellipse_2" data-name="Ellipse 2" transform="translate(-12 -10)" fill="none" stroke="#f96547" stroke-width="1">
+      <circle cx="32.016" cy="32.016" r="32.016" stroke="none"/>
+      <circle cx="32.016" cy="32.016" r="31.516" fill="none"/>
+    </g>
+  </g>
+</svg>
