@@ -1,0 +1,27 @@
+button {
+  background-color: #ff5a39;
+  border: none;
+  cursor: pointer;
+  height: 56px;
+  color: #ffffff;
+  font-family: Montserrat;
+  font-style: normal;
+  font-stretch: normal;
+  letter-spacing: normal;
+
+  &.rounded {
+    border-radius: 60px;
+    width: 208px;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 1.33;
+  }
+
+  &.rectangled {
+    width: 168px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1.71;
+  }
+}

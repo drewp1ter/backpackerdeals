@@ -1,0 +1,45 @@
+.footer-input {
+  position: relative;
+  width: 592px;
+  height: 56px;
+  opacity: 0.26;
+  border-radius: 60px;
+  -webkit-backdrop-filter: blur(50px);
+  backdrop-filter: blur(50px);
+  border: solid 1px #ffffff;
+
+  input {
+    font-size: 14px;
+    line-height: 1.71;
+    text-align: left;
+    color: #ffffff;
+
+    &::-webkit-input-placeholder { 
+      font-size: 14px;
+      line-height: 1.71;
+      text-align: left;
+      color: #ffffff; 
+    }
+
+    &:-ms-input-placeholder { 
+      font-size: 14px;
+      line-height: 1.71;
+      text-align: left;
+      color: #ffffff; 
+    }
+
+    &::-ms-input-placeholder { 
+      font-size: 14px;
+      line-height: 1.71;
+      text-align: left;
+      color: #ffffff; 
+    }
+
+    &::placeholder { 
+      font-size: 14px;
+      line-height: 1.71;
+      text-align: left;
+      color: #ffffff; 
+    } 
+  }
+}
