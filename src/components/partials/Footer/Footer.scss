@@ -1,0 +1,140 @@
+footer {
+  background-color: rgba(#000000, .3);
+  padding: 0 150px;
+
+  h2 {
+    font-size: 38px;
+    font-weight: bold;
+    line-height: 0.84;
+    text-align: center;
+    color: #ffffff;
+  }
+
+  h3 {
+    margin-top: 10px;
+    margin-bottom: 45px;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 1.2;
+    text-align: center;
+    color: #ffffff;
+  }
+
+  p {
+    margin: 12px 0 50px 0;
+    font-size: 12px;
+    font-weight: normal;
+    line-height: 2;
+    letter-spacing: normal;
+    text-align: center;
+    color: #959595;
+  }
+
+  h4 {
+    margin-bottom: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 2.29;
+    text-align: left;
+    color: #ffffff;
+  }
+
+  .contact-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    .social-block {
+      &.mt {
+        margin-top: 30px;
+      }
+
+      ul {
+        li {
+          font-size: 12px;
+          font-weight: normal;
+          line-height: 2;
+          letter-spacing: normal;
+          text-align: left;
+          color: #959595;
+        }
+      }
+    }
+
+    .contacts {
+      margin-top: 20px;
+      &:first-of-type {
+        margin-top: 20px;
+      }
+
+      &:last-of-type {
+        margin-top: 20px;
+      }
+
+      h5 {
+        margin-bottom: 5px;
+        font-size: 12px;
+        font-weight: 600;
+        line-height: 2.29;
+        text-align: left;
+        color: #ffffff;
+      }
+
+      p {
+        margin: 0;
+        font-size: 12px;
+        font-weight: normal;
+        line-height: 2;
+        letter-spacing: normal;
+        text-align: left;
+        color: #959595;
+      }
+    }
+  }
+
+  .app-info {
+    margin: 25px 0 40px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .media-and-payment {
+      display: flex;
+
+      .social-media {
+        margin-right: 125px;
+      }
+    }
+
+    .download-app-button {
+      cursor: pointer;
+      width: 168px;
+      height: 48px;
+      background: transparent;
+      border-radius: 60px;
+      border: solid 1px #ffffff;
+      font-size: 12px;
+      font-weight: normal;
+      line-height: 2;
+      letter-spacing: normal;
+      color: #ffffff;
+    }
+  }
+
+  hr {
+    margin: 0;
+  }
+
+  .copyright-and-partners {
+    display: flex;
+    margin-top: 40px;
+
+    p {
+      font-size: 10px;
+      font-weight: normal;
+      line-height: 1.3;
+      text-align: left;
+      color: #707070;
+    }
+  }
+}

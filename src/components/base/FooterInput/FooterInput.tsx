@@ -2,7 +2,7 @@ import * as React from 'react'
 
 import { OrangeButton } from 'components/base'
 
-import styles from './FooterInput.scss'
+import './FooterInput.scss'
 
 export interface IProps {
   readonly handleChange?: () => void
@@ -15,7 +15,7 @@ export const FooterInput: React.FC<IProps> = ({
   handleSubmit,
   email
 }) => (
-  <div className={styles.FooterInput}>
+  <div className="footer-input">
     <input type="email" placeholder="Your e-mail address" value={ email } onChange={ handleChange } />
     <OrangeButton onClick={ handleSubmit } className="rounded">
       SUBMIT

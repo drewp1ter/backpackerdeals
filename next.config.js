@@ -10,11 +10,11 @@ dotenvLoad();
 module.exports = withPlugins([
 
   [sass, {
-    cssModules: true,
-    cssLoaderOptions: {
-      importLoaders: 1,
-      localIdentName: "[local]___[hash:base64:5]",
-    }
+    // cssModules: true,
+    // cssLoaderOptions: {
+      // importLoaders: 1,
+      // localIdentName: "[local]___[hash:base64:5]",
+    // }
   }],
   [typescript],
   [images],

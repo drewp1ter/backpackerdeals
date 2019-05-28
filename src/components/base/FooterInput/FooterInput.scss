@@ -1,14 +1,20 @@
 .footer-input {
+  margin: auto;
   position: relative;
-  width: 592px;
-  height: 56px;
   opacity: 0.26;
+  width: 592px;
   border-radius: 60px;
   -webkit-backdrop-filter: blur(50px);
   backdrop-filter: blur(50px);
   border: solid 1px #ffffff;
 
   input {
+    padding: 5px 5px 5px 20px;
+    outline: none;
+    background: transparent;
+    border: none;
+    width: 350px;
+    height: 56px;
     font-size: 14px;
     line-height: 1.71;
     text-align: left;
@@ -41,5 +47,11 @@
       text-align: left;
       color: #ffffff; 
     } 
+  }
+
+  button {
+    position: absolute;
+    right: 5px;
+    top: 5px;
   }
 }

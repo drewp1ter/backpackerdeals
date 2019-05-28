@@ -1,13 +1,15 @@
 import * as React from 'react'
 
-import { ActivitiesToursThings, AuthenticReviews, InsprationInstagram } from '..'
+import { Page } from 'components/base'
+
+// import { ActivitiesToursThings, AuthenticReviews, InsprationInstagram } from '..'
 
 const HomeLayout: React.FC = () => (
-  <>
-    <InsprationInstagram />
-    <AuthenticReviews />
-    <ActivitiesToursThings />
-  </>
+  <Page>
+    {/* <InsprationInstagram /> */}
+    {/* <AuthenticReviews /> */}
+    {/* <ActivitiesToursThings /> */}
+  </Page>
 )
 
 export default HomeLayout
