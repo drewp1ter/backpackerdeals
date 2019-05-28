@@ -27,6 +27,8 @@ app
   .then(() => {
     server = express()
 
+    server.use(express.static('static'));
+
     // Set up the proxy.
     if (dev && devProxy) {
       const proxyMiddleware = require('http-proxy-middleware')
