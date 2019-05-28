@@ -1,7 +1,7 @@
 import * as React from 'react'
 
 import { AuthenticCard } from '..'
-import styles from './authenticReviews.scss'
+import styles from './authenticReviews.module.scss'
 
 const AuthenticReviews: React.FC = () => {
   return (

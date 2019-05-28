@@ -8,8 +8,8 @@ export interface IProps {
   className?: string
 }
 
-const Icon: React.FC<IProps> = ({ name, className }) {
-  const
+const Icon: React.FC<IProps> = ({ name, className }) => {
+  return {}
 }
 
 export default Icon

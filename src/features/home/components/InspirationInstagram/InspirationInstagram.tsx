@@ -2,7 +2,7 @@ import * as React from 'react'
 import classnames from 'classnames'
 
 import { InstagramCard } from '..'
-import styles from './inspirationInstagram.scss'
+import styles from './inspirationInstagram.module.scss'
 
 export interface IProps {
   className?: string

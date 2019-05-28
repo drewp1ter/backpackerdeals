@@ -1,7 +1,7 @@
 import * as React from 'react'
 import classNames from 'classnames'
 
-import styles from './authenticCard.scss'
+import styles from './authenticCard.module.scss'
 
 export interface IProps {
   title: string
