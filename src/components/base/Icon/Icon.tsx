@@ -1,15 +1,17 @@
 import * as React from 'react'
-import classnames from 'classnames'
 
-import styles from './icon.scs'
+import svg from './svg'
+
+const sizes = {
+  md: 64
+}
 
 export interface IProps {
-  name: string
-  className?: string
+  readonly name: keyof typeof svg
+  readonly size?: keyof typeof sizes
+  readonly className?: string
 }
 
-const Icon: React.FC<IProps> = ({ name, className }) => {
-  return {}
+export const Icon: React.FC<IProps> = ({ name, className, size = 'md' }) => {
+  return <img className={className} width={sizes[size]} height={sizes[size]} src={svg[name]} />
 }
-
-export default Icon
