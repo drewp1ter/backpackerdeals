@@ -2,15 +2,12 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  >h1 {
-    margin: 0;
+  h1 {
     font-size: 56px;
     font-weight: bold;
-    letter-spacing: normal;
-    text-align: left;
     color: #ff5a39;
   }
-  >a {
+  a {
     font-size: 16px;
     color: #959595;
     margin-top: 16px;
@@ -25,8 +22,5 @@
     &:last-child {
       margin-right: 0;
     }
-  }
-  &:last-child {
-    margin-top: 16px;
   }
 }

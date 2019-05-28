@@ -1,9 +1,11 @@
 import * as React from 'react'
 
-import { ActivitiesToursThings } from '..'
+import { ActivitiesToursThings, AuthenticReviews, InsprationInstagram } from '..'
 
 const HomeLayout: React.FC = () => (
   <>
+    <InsprationInstagram />
+    <AuthenticReviews />
     <ActivitiesToursThings />
   </>
 )
