@@ -2,7 +2,7 @@ import * as React from 'react'
 
 import classNames from 'classnames'
 
-import styles from './OrangeButton.module.scss'
+import './OrangeButton.scss'
 
 export interface IProps {
   readonly children?: React.ReactNode
@@ -12,7 +12,7 @@ export interface IProps {
 }
 
 export const OrangeButton: React.FC<IProps> = ({ className = '', children, onClick, disabled = false }) => (
-  <button className={classNames(styles.orangeButton, className)} disabled={disabled} onClick={onClick}>
+  <button className={classNames("orange-button", className)} disabled={disabled} onClick={onClick}>
     {children}
   </button>
 )
