@@ -97,10 +97,50 @@ export const Footer: React.FC<IProps> = ({ handleChange, handleSubmit, email }) 
       <div className="media-and-payment">
         <div className="social-media">
           <h4>Social media</h4>
+          <ul>
+            <li>
+              <i className="fab fa-facebook-square" />
+            </li>
+            <li>
+              <i className="fab fa-twitter" />
+            </li>
+            <li>
+              <i className="fab fa-instagram" />
+            </li>
+            <li>
+              <i className="fab fa-instagram" />
+            </li>
+          </ul>
         </div>
 
         <div className="payment">
           <h4>Payment we receive</h4>
+          <ul>
+            <li>
+              <i className="fab fa-cc-visa" />
+            </li>
+            <li>
+              <i className="fab fa-cc-mastercard" />
+            </li>
+            <li>
+              <i className="fab fa-cc-amex" />
+            </li>
+            <li>
+              <i className="fab fa-cc-paypal" />
+            </li>
+            <li>
+              <i className="fab fa-cc-apple-pay" />
+            </li>
+            <li>
+              <i className="fab fa-cc-apple-pay" />
+            </li>
+            <li>
+              <i className="fab fa-cc-apple-pay" />
+            </li>
+            <li>
+              <i className="fab fa-cc-apple-pay" />
+            </li>
+          </ul>
         </div>
       </div>
 

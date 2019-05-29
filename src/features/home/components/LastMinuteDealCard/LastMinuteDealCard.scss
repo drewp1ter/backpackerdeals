@@ -1,0 +1,153 @@
+.last-minute-deal-card {
+  margin-right: 15px;
+
+  &:last-of-type {
+    margin-right: 0;
+  }
+
+  .img {
+    width: 368px;
+    height: 352px;
+    background-color: #333;
+    border-radius: 10px 10px 0 0;
+  }
+
+  .image-block {
+    position: relative;
+
+    .sale {
+      border-radius: 0 10px 0 10px;
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 104px;
+      height: 40px;
+      background-color: #ff5a39;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      
+      p {
+        margin: 0;
+        font-size: 13px;
+        font-weight: 600;
+        line-height: 1.23;
+        color: #ffffff;
+      }
+    }
+  }
+
+  .card-description {
+    
+    .rating-and-location {
+      margin-bottom: 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .stars {
+        span {
+          margin-left: 10px;
+          font-size: 13px;
+          line-height: 1.85;
+          text-align: left;
+          color: #959595;
+        }
+
+        i {
+          font-size: 14px;
+          
+          &.filled {
+            color: #ffcb00;  
+          }
+
+          &.unfilled {
+            color: #dadada;
+          }
+        }
+      }
+      .country {
+        i {
+          margin-right: 5px;
+          font-size: 16px;
+          line-height: 1.5;
+          text-align: left;
+          color: #959595;
+        }
+        
+        span {
+          font-size: 13px;
+          line-height: 1.85;
+          text-align: left;
+          color: #959595;
+        }
+      }
+    }
+  }
+
+  .tour {
+    width: 186px;
+    margin: 0;
+    font-size: 26px;
+    font-weight: bold;
+    line-height: 1.23;
+    text-align: left;
+    color: #202020;
+  }
+
+  .duration {
+    margin: 0;
+    font-size: 13px;
+    line-height: 1.85;
+    text-align: left;
+    color: #959595;
+    margin-bottom: 20px;
+  }
+
+  .value-and-link {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .total-price {
+      .from {
+        font-size: 12px;
+        line-height: 2;
+        text-align: left;
+        color: #dadada;
+      }
+
+      .price {
+        font-size: 18px;
+        font-weight: bold;
+        line-height: 1.33;
+        text-align: left;
+        color: #202020;
+        margin: 0;
+      }
+
+      .value {
+        font-size: 12px;
+        line-height: 1.25;
+        text-align: left;
+        color: #dadada;
+      }
+    }
+
+    button {
+      cursor: pointer;
+      border: none;
+      width: 96px;
+      height: 52px;
+      border-radius: 30px;
+      background-color: #fafafa;
+  
+      i {
+        font-size: 17px;
+        line-height: 1.41;
+        color: #ff5a39;
+      }
+    }
+  }
+
+}

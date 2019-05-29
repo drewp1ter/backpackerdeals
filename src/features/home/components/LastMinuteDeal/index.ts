@@ -1,0 +1,1 @@
+export { LastMinuteDeal } from './LastMinuteDeal'
