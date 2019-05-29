@@ -1,7 +1,7 @@
 import * as React from 'react'
 import classNames from 'classnames'
 
-import styles from './cardsWrapper.module.scss'
+import styles from './CardsWrapper.module.scss'
 
 export interface IProps {
   readonly title: string
@@ -10,7 +10,7 @@ export interface IProps {
   readonly className?: string
 }
 
-const CardsWrapper: React.FC<IProps> = ({ title, linkTitle, children, className }) => {
+export const CardsWrapper: React.FC<IProps> = ({ title, linkTitle, children, className }) => {
   const mainClass = classNames(styles.main, className)
   return (
     <div className={mainClass}>
@@ -20,5 +20,3 @@ const CardsWrapper: React.FC<IProps> = ({ title, linkTitle, children, className 
     </div>
   )
 }
-
-export default CardsWrapper

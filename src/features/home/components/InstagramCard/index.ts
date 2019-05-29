@@ -1,3 +1,1 @@
-import InstagrammCard from './InstagrammCard'
-
-export default InstagrammCard
+export { InstagramCard } from './InstagrammCard'

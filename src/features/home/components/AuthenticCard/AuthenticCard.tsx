@@ -1,17 +1,17 @@
 import * as React from 'react'
 import classNames from 'classnames'
 
-import styles from './authenticCard.module.scss'
+import styles from './AuthenticCard.module.scss'
 
 export interface IProps {
-  title: string
-  body: string
-  sign: string
-  date: string
-  className?: string
+  readonly title: string
+  readonly body: string
+  readonly sign: string
+  readonly date: string
+  readonly className?: string
 }
 
-const AuthenticCard: React.FC<IProps> = ({ title, body, className, sign, date }) => {
+export const AuthenticCard: React.FC<IProps> = ({ title, body, className, sign, date }) => {
   const mainClass = classNames(styles.main, className)
 
   return (
@@ -30,5 +30,3 @@ const AuthenticCard: React.FC<IProps> = ({ title, body, className, sign, date })
     </div>
   )
 }
-
-export default AuthenticCard

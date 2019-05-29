@@ -1,17 +1,15 @@
 import * as React from 'react'
 
-import styles from './instagramCard.module.scss'
+import styles from './InstagramCard.module.scss'
 
 export interface IProps {
-  img: string
+  readonly img: string
 }
 
-const InstagramCard: React.FC<IProps> = ({ img }) => {
+export const InstagramCard: React.FC<IProps> = ({ img }) => {
   return (
     <div className={styles.main}>
       <img src={img} />
     </div>
   )
 }
-
-export default InstagramCard

@@ -1,20 +1,21 @@
 import * as React from 'react'
 
-import styles from './activityCard.module.scss'
+import styles from './ActivityCard.module.scss'
+import images from './assets'
 
 export interface IProps {
-  title: string
-  img: string
+  readonly title: string
+  readonly variant: keyof typeof images
+  readonly gradDeg?: number
 }
 
-const ActivityCard: React.FC<IProps> = ({title, img}) => {
+export const ActivityCard: React.FC<IProps> = ({title, variant, gradDeg = 330}) => {
   return(
     <div className={styles.main}>
-      <h1 className={styles.title}>{title}</h1>
-      <span className={styles.activitiesCount}>24 Activities</span>
-      <img className={styles.img} src={img} />
+      <h3>{title}</h3>
+      <span>24 Activities</span>
+      <div style={{ backgroundImage: `linear-gradient(${gradDeg}deg, rgba(232, 232, 232, 0), rgba(0, 0, 0, 0.91))` }} />
+      <img alt="" src={images[variant]} />
     </div>
   )
 }
-
-export default ActivityCard
