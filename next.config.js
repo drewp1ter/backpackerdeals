@@ -30,7 +30,7 @@ const nextConfig = {
       ]
     }
 
-    const loaderConfigWitchModules = Object.assign({}, loaderConfig, { cssModules: true })
+    const loaderConfigWithModules = Object.assign({}, loaderConfig, { cssModules: true })
 
     config.module.rules.push(
       {
@@ -40,7 +40,7 @@ const nextConfig = {
       },
       {
         test: sassModuleRegex,
-        use: cssLoaderConfig(config, loaderConfigWitchModules)
+        use: cssLoaderConfig(config, loaderConfigWithModules)
       }
     )
     return config
