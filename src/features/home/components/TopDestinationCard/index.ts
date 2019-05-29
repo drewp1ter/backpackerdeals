@@ -1,0 +1,1 @@
+export { TopDestinationCard } from './TopDestinationCard'
