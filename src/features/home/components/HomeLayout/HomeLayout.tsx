@@ -1,14 +1,15 @@
 import * as React from 'react'
 
 import { Page, Icon } from 'components/base'
-import { ActivityCard, CardsWrapper, AuthenticCard, InstagramCard, TravelStoryCard, TopDestinationCard } from '..'
+
+import { ActivityCard, CardsWrapper, AuthenticCard, InstagramCard, TravelStoryCard, TopDestinationCard, LastMinuteDeal } from '..'
 
 import styles from './HomeLayout.module.scss'
 import images from './assets'
 
 export const HomeLayout: React.FC = () => (
   <Page>
-    <CardsWrapper title="Why book with us?" linkTitle="Learn more >>">
+    <CardsWrapper title="Why book with us?" linkTitle="Learn more">
       <div className={styles.whyBook}>
         <div>
           <Icon name="liveAvailablityInstantConfirmations" />
@@ -54,7 +55,7 @@ export const HomeLayout: React.FC = () => (
       </div>
     </CardsWrapper>
 
-    <CardsWrapper title="Activities, Tours & Things To D" linkTitle="Show more >>">
+    <CardsWrapper title="Activities, Tours & Things To D" linkTitle="Show more">
       <div key="1" className={styles.activitiesTourThingsCardsRow}>
         <ActivityCard title="Dive & Snorkelling" variant="diveSnorkelling" />
         <ActivityCard title="Multi-days Tours" variant="multidaysTours" />
@@ -68,6 +69,10 @@ export const HomeLayout: React.FC = () => (
         <ActivityCard title="Bungee Jumping" variant="bungeeJumping" />
         <ActivityCard title="Attractions" variant="attractions" />
       </div>
+    </CardsWrapper>
+
+    <CardsWrapper title="Last Minute Deals" linkTitle="View all minute deals">
+      <LastMinuteDeal />
     </CardsWrapper>
 
     <CardsWrapper title="Travel stories" linkTitle="Read more">
@@ -97,7 +102,7 @@ export const HomeLayout: React.FC = () => (
       </div>
     </CardsWrapper>
 
-    <CardsWrapper title="Authentic reviews from our travellers" linkTitle="Read all reviews >>">
+    <CardsWrapper title="Authentic reviews from our travellers" linkTitle="Read all reviews">
       <div className={styles.cardsRow}>
         <AuthenticCard
           title="Easy and convenient booking"

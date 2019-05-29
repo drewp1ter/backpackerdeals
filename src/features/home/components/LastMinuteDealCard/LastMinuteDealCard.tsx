@@ -2,6 +2,15 @@ import * as React from 'react'
 
 import './LastMinuteDealCard.scss'
 
+import TopDeal from './assets/Badge.svg'
+import MostPopular from './assets/Most popular.svg'
+
+interface IExposeTime {
+  days: string
+  hours: string
+  minutes: string
+}
+
 interface IProps {
   readonly img: string
   readonly tourName: string
@@ -12,10 +21,21 @@ interface IProps {
   readonly value: number
   readonly duration: string
   readonly rating: number
-  // readonly exposeTime: object
+  readonly exposeTime: IExposeTime
 }
 
-export const LastMinuteDealCard: React.FC<IProps> = ({ img, tourName, rating, price, country, sale, duration, value, saleType, exposeTime }) => {
+export const LastMinuteDealCard: React.FC<IProps> = ({
+  img,
+  tourName,
+  rating,
+  price,
+  country,
+  sale,
+  duration,
+  value,
+  saleType,
+  exposeTime,
+}) => {
   const renderStars = () => {
     let starsArray: React.ReactNode[] = []
 
@@ -33,14 +53,28 @@ export const LastMinuteDealCard: React.FC<IProps> = ({ img, tourName, rating, pr
   return (
     <div className="last-minute-deal-card">
       <div className="image-block">
-        {saleType === 'topDeal' && <div />}
-        {saleType === 'mostPopular' && <div />}
+        {saleType === 'topDeal' && <img className="badge" src={TopDeal} alt="Top Deal" />}
+        {saleType === 'mostPopular' && <img className="badge" src={MostPopular} alt="Most Popular" />}
         <div className="sale">
           <p>{sale}</p>
         </div>
-        <div className="expo">{exposeTime}</div>
-        {/* <img src={img} alt="Last Minute Deal Tour" /> */}
-        <div className="img" />
+        <div className="expose-time">
+          <div className="days-block">
+            <p>{exposeTime.hours}</p>
+            <p className="time-name">Days</p>
+          </div>
+          <p className="colon">:</p>
+          <div className="hours-block">
+            <p>{exposeTime.hours}</p>
+            <p className="time-name">Hours</p>
+          </div>
+          <p className="colon">:</p>
+          <div className="minutes-block">
+            <p>{exposeTime.minutes}</p>
+            <p className="time-name">Minutes</p>
+          </div>
+        </div>
+        <img src={img} alt="Last Minute Deal Tour" />
       </div>
 
       <div className="card-description">

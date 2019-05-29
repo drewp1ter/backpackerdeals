@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="132" height="156" viewBox="0 0 132 156">
+    <defs>
+        <style>
+            .cls-1{fill:#ffcb00}.cls-2,.cls-3{fill:#fff}.cls-3{font-size:9px;font-family:Montserrat-Regular,Montserrat}.cls-4{filter:url(#BG)}
+        </style>
+        <filter id="BG" width="132" height="156" x="0" y="0" filterUnits="userSpaceOnUse">
+            <feOffset dy="16"/>
+            <feGaussianBlur result="blur" stdDeviation="10"/>
+            <feFlood flood-color="#ffcb00" flood-opacity=".302"/>
+            <feComposite in2="blur" operator="in"/>
+            <feComposite in="SourceGraphic"/>
+        </filter>
+    </defs>
+    <g id="Most_popular" data-name="Most popular" transform="translate(-146 -1306)">
+        <g class="cls-4" transform="translate(146 1306)">
+            <path id="BG-2" d="M0 0h88a8 8 0 0 1 8 8v56a8 8 0 0 1-8 8H0V0z" class="cls-1" data-name="BG" transform="rotate(90 44 58)"/>
+        </g>
+        <g id="Ribbon" transform="translate(173.329 1326)">
+            <path id="Path_476" d="M42.02 17.487A11.916 11.916 0 1 0 53.9 29.4a11.911 11.911 0 0 0-11.88-11.913zm0 22.632A10.716 10.716 0 1 1 52.7 29.4a10.709 10.709 0 0 1-10.68 10.718z" class="cls-2" data-name="Path 476" transform="translate(-2.988 -2.998)"/>
+            <path id="Path_477" d="M55.394 26.4a16.362 16.362 0 1 0-26.153 13.147l-6.319 13.829a.6.6 0 0 0 .747.815l5.888-2.09 3.08 5.589a.6.6 0 0 0 .526.311h.024a.6.6 0 0 0 .523-.352l5.249-11.614 5.48 11.623a.6.6 0 0 0 .525.344h.018a.6.6 0 0 0 .527-.313l3.044-5.589 5.922 2.09a.6.6 0 0 0 .744-.817l-6.388-13.832A16.417 16.417 0 0 0 55.394 26.4zm-25.15 13.839a16.273 16.273 0 0 0 3.611 1.732l-4.447 8.909-4.808 1.705zm2.865 15.821l-2.6-4.71 4.509-9.032a16.286 16.286 0 0 0 4.009.5h.063zm11.91.015L39.65 44.686a.564.564 0 0 0-.051-.069l.842-1.863a16.232 16.232 0 0 0 2.609-.437l4.545 9.037zm8.515-3.489L48.7 50.879l-4.481-8.911a16.277 16.277 0 0 0 3.612-1.735zm-14.5-10.968A15.214 15.214 0 1 1 54.193 26.4a15.205 15.205 0 0 1-15.161 15.218z" class="cls-2" data-name="Path 477"/>
+            <path id="Path_478" d="M52.531 29.843a.6.6 0 0 0-.415-.394l-4.3-1.151-2.416-3.731a.623.623 0 0 0-1.007 0L41.968 28.3l-4.3 1.151a.6.6 0 0 0-.311.957l2.8 3.457-.231 4.435a.6.6 0 0 0 .814.592l4.153-1.592 4.153 1.6a.6.6 0 0 0 .814-.592l-.233-4.442 2.8-3.457a.6.6 0 0 0 .104-.566zm-3.982 3.444a.6.6 0 0 0-.133.409l.2 3.749-3.5-1.346a.6.6 0 0 0-.43 0l-3.5 1.346.2-3.749a.6.6 0 0 0-.133-.409l-2.363-2.918 3.61-.969a.6.6 0 0 0 .348-.253L44.893 26l2.045 3.149a.6.6 0 0 0 .348.253l3.626.971z" class="cls-2" data-name="Path 478" transform="translate(-5.822 -5.728)"/>
+        </g>
+        <text id="Most_Popular-2" class="cls-3" data-name="Most Popular" transform="translate(212 1408)">
+            <tspan x="-30.069" y="0">Most Popular</tspan>
+        </text>
+    </g>
+</svg>

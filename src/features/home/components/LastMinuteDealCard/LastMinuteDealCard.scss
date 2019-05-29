@@ -5,18 +5,62 @@
     margin-right: 0;
   }
 
-  .img {
-    width: 368px;
-    height: 352px;
-    background-color: #333;
-    border-radius: 10px 10px 0 0;
-  }
-
   .image-block {
     position: relative;
 
+    .badge {
+      position: absolute;
+      top: -14px;
+      left: 15px;
+    }
+
+    .expose-time {
+      display: flex;
+      position: absolute;
+      justify-content: center;
+      bottom: 10px;
+      left: 0px;
+      right: 0px;
+
+      .time-name {
+        font-size: 13px;
+        line-height: 1.85;
+        color: #fafafa;
+      }
+
+      p {
+        margin: 0;
+        font-size: 48px;
+        font-weight: bold;
+        line-height: 0.67;
+        color: #fafafa;
+
+        &.colon {
+          margin: 0 15px;
+        }
+      }
+
+      .days-block {
+        p {
+          text-align: left;
+        }
+      }
+
+      .hours-block {
+        p {
+          text-align: center;
+        }
+      }
+
+      .minutes-block {
+        p {
+          text-align: right;
+        }
+      }
+    }
+
     .sale {
-      border-radius: 0 10px 0 10px;
+      border-radius: 0 6px 0 10px;
       position: absolute;
       right: 0;
       top: 0;
