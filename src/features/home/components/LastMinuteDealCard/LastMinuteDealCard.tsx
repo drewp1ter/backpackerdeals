@@ -2,6 +2,12 @@ import * as React from 'react'
 
 import './LastMinuteDealCard.scss'
 
+interface IExposeTime {
+  days: string
+  hours: string
+  minutes: string
+}
+
 interface IProps {
   readonly img: string
   readonly tourName: string
@@ -12,7 +18,7 @@ interface IProps {
   readonly value: number
   readonly duration: string
   readonly rating: number
-  // readonly exposeTime: object
+  readonly exposeTime: IExposeTime
 }
 
 export const LastMinuteDealCard: React.FC<IProps> = ({ img, tourName, rating, price, country, sale, duration, value, saleType, exposeTime }) => {

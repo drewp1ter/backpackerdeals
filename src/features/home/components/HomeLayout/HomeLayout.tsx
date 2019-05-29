@@ -1,18 +1,8 @@
 import * as React from 'react'
 
 import { Page, Icon } from 'components/base'
-import { ActivityCard, CardsWrapper, AuthenticCard, InstagramCard } from '..'
+import { ActivityCard, CardsWrapper, AuthenticCard, InstagramCard, LastMinuteDeal } from '..'
 
-<<<<<<< HEAD
-import { ActivitiesToursThings, AuthenticReviews, InsprationInstagram, LastMinuteDeal } from '..'
-
-const HomeLayout: React.FC = () => (
-  <Page>
-    <InsprationInstagram />
-    <AuthenticReviews />
-    <ActivitiesToursThings />
-    <LastMinuteDeal />
-=======
 import styles from './homeLayout.module.scss'
 
 const HomeLayout: React.FC = () => (
@@ -77,7 +67,10 @@ const HomeLayout: React.FC = () => (
         <InstagramCard img="none" />
       </div>
     </CardsWrapper>
->>>>>>> 8bb8108dcb0ed5a434dad38c1717556946b06c86
+
+    <CardsWrapper title="Last Minute Deals" linkTitle="View all minute deals">
+      <LastMinuteDeal />
+    </CardsWrapper>
   </Page>
 )
 
