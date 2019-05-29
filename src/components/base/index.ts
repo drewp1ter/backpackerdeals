@@ -1,4 +1,5 @@
 export { FooterInput } from './FooterInput'
+export { HeaderInput } from './HeaderInput'
 export { OrangeButton } from './OrangeButton'
 export { Page } from './Page'
 export { Icon } from './Icon'

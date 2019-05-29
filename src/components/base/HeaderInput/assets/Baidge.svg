@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="32" viewBox="0 0 320 32">
+    <defs>
+        <style>
+            .cls-1{fill:#ff5a39;fill-rule:evenodd}
+        </style>
+    </defs>
+    <path id="Baidge" d="M232 280h320l-17.04 23.062C531.236 308.1 524.538 312 519.829 312h-255.8c-4.709 0-11.39-3.9-15.092-8.938z" class="cls-1" transform="translate(-232 -280)"/>
+</svg>

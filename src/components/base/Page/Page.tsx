@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-import { Footer } from 'components/partials'
+import { Footer, Header } from 'components/partials'
 
 export interface IProps {
   readonly children?: React.ReactNode
@@ -8,6 +8,7 @@ export interface IProps {
 
 export const Page: React.FC<IProps> = ({ children }) => (
   <div>
+    <Header />
     {children}
     <Footer />
   </div>
