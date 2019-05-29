@@ -7,7 +7,7 @@ import styles from './homeLayout.module.scss'
 
 const HomeLayout: React.FC = () => (
   <Page>
-    <CardsWrapper title="Why book with us?" linkTitle="Learn more >>">
+    <CardsWrapper title="Why book with us?" linkTitle="Learn more">
       <div className={styles.whyBook}>
         <Icon name="liveAvailablityInstantConfirmations" />
         <Icon name="bestSelections" />
@@ -18,7 +18,7 @@ const HomeLayout: React.FC = () => (
       </div>
     </CardsWrapper>
 
-    <CardsWrapper title="Activities, Tours & Things To D" linkTitle="Show more >>">
+    <CardsWrapper title="Activities, Tours & Things To D" linkTitle="Show more">
       <div key="1" className={styles.activitiesTourThingsCardsRow}>
         <ActivityCard title="Dive & Snorkelling" img="lol" />
         <ActivityCard title="Multi-days Tours" img="lol" />
@@ -34,7 +34,7 @@ const HomeLayout: React.FC = () => (
       </div>
     </CardsWrapper>
 
-    <CardsWrapper title="Authentic reviews from our travellers" linkTitle="Read all reviews >>">
+    <CardsWrapper title="Authentic reviews from our travellers" linkTitle="Read all reviews">
       <div className={styles.cardsRow}>
         <AuthenticCard
           title="Easy and convenient booking"
@@ -57,7 +57,7 @@ const HomeLayout: React.FC = () => (
       </div>
     </CardsWrapper>
 
-    <CardsWrapper title="Inspiration from our instagram" linkTitle="Follow us >>">
+    <CardsWrapper title="Inspiration from our instagram" linkTitle="Follow us">
       <div className={styles.cardsRow}>
         <InstagramCard img="none" />
         <InstagramCard img="none" />
