@@ -15,7 +15,10 @@ const CardsWrapper: React.FC<IProps> = ({ title, linkTitle, children, className 
   return (
     <div className={mainClass}>
       <h2>{title}</h2>
-      <a>{linkTitle}</a>
+      <a>
+        {linkTitle}
+        <i className="fas fa-angle-double-right"></i>
+      </a>
       {children}
     </div>
   )
