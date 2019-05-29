@@ -1,14 +1,8 @@
-import HomeLayout from './HomeLayout'
-import ActivityCard from './ActivityCard'
-import AuthenticCard from './AuthenticCard'
-import InstagramCard from './InstagramCard'
+export { HomeLayout } from './HomeLayout'
+export { ActivityCard } from './ActivityCard'
+export { AuthenticCard } from './AuthenticCard'
+export { InstagramCard } from './InstagramCard'
 export { LastMinuteDeal } from './LastMinuteDeal'
-import CardsWrapper from './CardsWrapper'
-
-export {
-  HomeLayout,
-  ActivityCard,
-  AuthenticCard,
-  InstagramCard,
-  CardsWrapper,
-}
+export { CardsWrapper } from './CardsWrapper'
+export { TravelStoryCard } from './TravelStoryCard'
+export { TopDestinationCard } from './TopDestinationCard'
