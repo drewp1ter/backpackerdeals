@@ -141,12 +141,12 @@ export const HomeLayout: React.FC = () => (
 
     <CardsWrapper title="Inspiration from our instagram" linkTitle="Follow us">
       <div className={styles.cardsRow}>
-        <InstagramCard img="none" />
-        <InstagramCard img="none" />
-        <InstagramCard img="none" />
-        <InstagramCard img="none" />
-        <InstagramCard img="none" />
-        <InstagramCard img="none" />
+        <InstagramCard variant="v1" />
+        <InstagramCard variant="v2" />
+        <InstagramCard variant="v3" />
+        <InstagramCard variant="v4" />
+        <InstagramCard variant="v5" />
+        <InstagramCard variant="v6" />
       </div>
     </CardsWrapper>
   </Page>
