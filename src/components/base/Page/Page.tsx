@@ -19,7 +19,10 @@ export class Page extends React.Component<IProps, IState> {
 
   public handleChangeLanguage = (language: string) => this.setState({ language: language })
 
-  public handleChangeCurrency = (currency: string) => this.setState({ currency: currency })
+  public handleChangeCurrency = (event: React.MouseEvent<HTMLElement>) => {
+    const currency = event.currentTarget.dataset.currency || ''
+    this.setState({ currency })
+  }
 
   render() {
     const { children } = this.props

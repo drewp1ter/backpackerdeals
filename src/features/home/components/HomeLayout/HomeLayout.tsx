@@ -2,38 +2,37 @@ import * as React from 'react'
 
 import { Page, Icon } from 'components/base'
 
-import { ActivityCard, CardsWrapper, AuthenticCard, InstagramCard, TravelStoryCard, TopDestinationCard, LastMinuteDeal, Search } from '..'
+import { ActivityCard, CardsWrapper, AuthenticCard, InstagramCard, TravelStoryCard, TopDestinationCard, LastMinuteDeal } from '..'
 
 import styles from './HomeLayout.module.scss'
 import images from './assets'
 
 export const HomeLayout: React.FC = () => (
   <Page>
-    <Search />
     <CardsWrapper title="Why book with us?" linkTitle="Learn more">
       <div className={styles.whyBook}>
         <div>
-          <Icon name="liveAvailablityInstantConfirmations" />
+          <Icon name="liveAvailablityInstantConfirmations" size="md" />
           <span>Live Availablity</span>
         </div>
         <div>
-          <Icon name="bestSelections" />
+          <Icon name="bestSelections" size="md" />
           <span>Best Selections</span>
         </div>
         <div>
-          <Icon name="securePayment" />
+          <Icon name="securePayment" size="md" />
           <span>100% Safe Payments</span>
         </div>
         <div>
-          <Icon name="guarantee" />
+          <Icon name="guarantee" size="md" />
           <span>100% Guarantee</span>
         </div>
         <div>
-          <Icon name="liveChatExpertAgentAssistance" />
+          <Icon name="liveChatExpertAgentAssistance" size="md" />
           <span>Live Chat</span>
         </div>
         <div>
-          <Icon name="verifiedTourOperators" />
+          <Icon name="verifiedTourOperators" size="md" />
           <span>Verified Tour Operators</span>
         </div>
       </div>

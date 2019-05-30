@@ -31,10 +31,12 @@ import deal16 from './deal/deal16'
 
 import badge2 from './deal/badge2'
 import badge3 from './deal/badge3'
+import group3 from './group3.svg'
 
 export default {
   guarantee,
   message,
+  group3,
   bestSelections,
   awardWinningTravelAgency,
   liveAvailablityInstantConfirmations,

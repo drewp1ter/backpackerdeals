@@ -1,17 +1,16 @@
 import * as React from 'react'
 
-import { OrangeButton } from 'components/base'
+import { OrangeButton, Input, Icon } from 'components/base'
 
 import SearchIcon from './assets/Group 3.svg'
 
-import './HeaderInput.scss'
+import styles from './HeaderInput.module.scss'
 
-interface IProps {}
-
-export const HeaderInput: React.FC<IProps> = () => (
-  <div className="header-input">
-    <input placeholder="Search for a destination, activity or tour" type="text" name="" id="" />
-    <OrangeButton className="rounded">SEARCH</OrangeButton>
-    <img src={SearchIcon} alt="Advanced search" />
+export const HeaderInput: React.FC = () => (
+  <div className={styles.headerInput}>
+    <Input className={styles.input} placeholder="Search for a destination, activity or tour" theme="search" size="md">
+      <OrangeButton className="rounded">SEARCH</OrangeButton>
+    </Input>
+    <Icon name="group3" alt="Advanced search" />
   </div>
 )

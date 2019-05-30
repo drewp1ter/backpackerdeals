@@ -20,10 +20,17 @@ interface IProps {
   readonly currentLanguage: string
   readonly currentCurrency: string
   readonly handleChangeLanguage: (language: string) => void
-  readonly handleChangeCurrency: (currency: string) => void
+  readonly handleChangeCurrency: (event: React.MouseEvent<HTMLElement>) => void
 }
 
-const languages = {
+interface IIcons {
+  [key: string]: {
+    icon: string
+    name: string
+  }
+}
+
+const languages: IIcons = {
   english: { icon: English, name: 'English' },
   spanish: { icon: Spanish, name: 'Spanish' },
   german: { icon: German, name: 'German' },
@@ -33,7 +40,7 @@ const languages = {
   portuguese: { icon: Portuguese, name: 'Portuguese' },
 }
 
-const currencies = {
+const currencies: IIcons = {
   aud: { name: 'AUD', icon: '$' },
   thb: { name: 'THB', icon: 'B' },
   eur: { name: 'EUR', icon: '€' },
@@ -57,6 +64,7 @@ export const Header: React.FC<IProps> = ({ currentLanguage, currentCurrency, han
       {currencies[currentCurrency].icon} {currencies[currentCurrency].name}
     </span>
   )
+
   return (
     <header>
       <div className="tools">
@@ -76,13 +84,14 @@ export const Header: React.FC<IProps> = ({ currentLanguage, currentCurrency, han
           </a>
           <HeaderSelectMenu opener={currencyOpener} title="Select currency">
             <div className="currencies">
-              {Object.values(currencies).map((currency, index) => (
+              {Object.entries(currencies).map((currency, index) => (
                 <p
-                  onClick={() => handleChangeCurrency(Object.keys(currencies)[index])}
-                  className={classNames('currency', Object.keys(currencies)[index] === currentCurrency && 'active')}
-                  key={`${currency}-${index}`}
+                  onClick={handleChangeCurrency}
+                  className={classNames('currency', currency[0] === currentCurrency && 'active')}
+                  key={`${currency[0]}-${index}`}
+                  data-currency={currency[0]}
                 >
-                  {currency.name} {currency.icon}
+                  {currency[1].name} {currency[1].icon}
                 </p>
               ))}
             </div>
