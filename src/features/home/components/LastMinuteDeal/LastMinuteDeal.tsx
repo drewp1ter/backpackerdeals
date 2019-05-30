@@ -9,8 +9,6 @@ import Picture2 from './assets/2.jpg'
 import Picture3 from './assets/3.jpg'
 import Picture4 from './assets/4.jpg'
 
-interface IProps {}
-
 const data = [
   {
     img: Picture1,
@@ -78,7 +76,7 @@ const data = [
   },
 ]
 
-export const LastMinuteDeal: React.FC<IProps> = () => (
+export const LastMinuteDeal: React.FC = () => (
   <div className="last-minute-deal">
     {data.map((card, index) => (
       <LastMinuteDealCard {...card} key={`${index}-card`} />

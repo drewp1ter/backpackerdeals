@@ -19,6 +19,8 @@ export class HeaderSelectMenu extends React.Component<IProps, IState> {
     isOpen: false,
   }
 
+  private ref = React.createRef<HTMLDivElement>()
+
   componentDidMount() {
     window.addEventListener('click', this.handleClickOutside)
   }
@@ -27,13 +29,11 @@ export class HeaderSelectMenu extends React.Component<IProps, IState> {
     window.removeEventListener('click', this.handleClickOutside)
   }
 
-  public handleClickOutside = (event: React.MouseEvent<EventTarget>) => {
-    if (this.state.isOpen && this.ref.current && !this.ref.current.contains(event.target)) {
+  public handleClickOutside = (event: MouseEvent) => {
+    if (this.state.isOpen && this.ref.current && !this.ref.current.contains(event.target as Node)) {
       this.setState({ isOpen: false })
     }
   }
-
-  private ref = React.createRef<HTMLDivElement>()
 
   public handleOpen = () => this.setState({ isOpen: !this.state.isOpen })
 

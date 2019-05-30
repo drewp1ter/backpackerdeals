@@ -2,8 +2,6 @@ import * as React from 'react'
 
 import { OrangeButton, Input, Icon } from 'components/base'
 
-import SearchIcon from './assets/Group 3.svg'
-
 import styles from './HeaderInput.module.scss'
 
 export const HeaderInput: React.FC = () => (
