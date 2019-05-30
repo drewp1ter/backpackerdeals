@@ -1,0 +1,68 @@
+header {
+  background-image: url('./assets/background.jpg'), url('./assets/Wave.svg');
+  background-position: center, bottom;
+  background-repeat: no-repeat, no-repeat;
+  background-attachment: scroll, scroll;
+  padding: 25px 30px 250px 30px;
+
+  .tools {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .logo-and-search {
+      display: flex;
+    }
+
+    .tours {
+      display: flex;
+
+      a {
+        text-decoration: none;
+        margin-right: 15px;
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 1.33;
+        text-align: left;
+        color: #ffffff;
+      }
+    }
+
+    .currency-and-language {
+      display: flex;
+
+      a {
+        text-decoration: none;
+        margin-right: 30px;
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 1.33;
+        text-align: left;
+        color: #ffffff;
+
+        i {
+          margin-right: 10px;
+          transform: rotate(90deg);
+        }
+      }
+    }
+  }
+
+  h1 {
+    margin: 120px 0 10px 0;
+    font-size: 72px;
+    font-weight: bold;
+    line-height: 1.69;
+    text-align: center;
+    color: #ffffff;
+  }
+
+  h2 {
+    margin-bottom: 35px;
+    font-size: 32px;
+    font-weight: bold;
+    line-height: 0.62;
+    text-align: center;
+    color: #ffffff;
+  }
+}
