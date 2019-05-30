@@ -2,13 +2,14 @@ import * as React from 'react'
 
 import { Page, Icon } from 'components/base'
 
-import { ActivityCard, CardsWrapper, AuthenticCard, InstagramCard, TravelStoryCard, TopDestinationCard, LastMinuteDeal } from '..'
+import { ActivityCard, CardsWrapper, AuthenticCard, InstagramCard, TravelStoryCard, TopDestinationCard, LastMinuteDeal, Search } from '..'
 
 import styles from './HomeLayout.module.scss'
 import images from './assets'
 
 export const HomeLayout: React.FC = () => (
   <Page>
+    <Search />
     <CardsWrapper title="Why book with us?" linkTitle="Learn more">
       <div className={styles.whyBook}>
         <div>
@@ -109,18 +110,21 @@ export const HomeLayout: React.FC = () => (
           body="We had a great time on this tour. You do three zip lines which each have terrific views, the first over a winery and the second tw…"
           sign="Megan S."
           date="24.05.2012"
+          rating={3}
         />
         <AuthenticCard
           title="Easy and convenient booking"
           body="We had a great time on this tour. You do three zip lines which each have terrific views, the first over a winery and the second tw…"
           sign="Megan S."
           date="24.05.2012"
+          rating={3}
         />
         <AuthenticCard
           title="Easy and convenient booking"
           body="We had a great time on this tour. You do three zip lines which each have terrific views, the first over a winery and the second tw…"
           sign="Megan S."
           date="24.05.2012"
+          rating={2}
         />
       </div>
     </CardsWrapper>

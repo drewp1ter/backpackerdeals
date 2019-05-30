@@ -1,4 +1,4 @@
-.main {
+.root {
   position: relative;
   border-radius: 8px;
   div {
@@ -28,7 +28,7 @@
   }
 }
 
-.main[data-variant="lg"] {
+.root[data-variant="lg"] {
   width: 1512px;
   height: 478px;
   img {
@@ -37,7 +37,7 @@
   }
 }
 
-.main[data-variant="md"] {
+.root[data-variant="md"] {
   width: 1008px;
   height: 352px;
   img {
@@ -46,7 +46,7 @@
   }
 }
 
-.main[data-variant="sm"] {
+.root[data-variant="sm"] {
   width: 496px;
   height: 352px;
   img {

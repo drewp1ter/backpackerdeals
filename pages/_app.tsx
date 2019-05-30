@@ -4,6 +4,9 @@ import App, { Container } from 'next/app'
 import withRedux from 'next-redux-wrapper'
 import makeStore from 'store'
 
+import 'root.css'
+import 'normalize.css'
+
 class MyApp extends App<ProviderProps> {
   render() {
     const { Component, pageProps, store } = this.props
