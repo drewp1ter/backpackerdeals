@@ -1,11 +1,14 @@
 .activitiesTourThingsCardsRow {
   display: flex;
+
   div {
     margin-right: 16px;
+
     &:last-child {
       margin-right: 0;
     }
   }
+
   &:last-child {
     margin-top: 16px;
   }
@@ -13,8 +16,10 @@
 
 .cardsRow {
   display: flex;
+
   div {
     margin-right: 16px;
+
     &:last-child {
       margin-right: 0;
     }
@@ -23,6 +28,7 @@
 
 .whyBook {
   display: flex;
+
   img {
     margin-right: 192px;
     &:last-child {
