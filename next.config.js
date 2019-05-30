@@ -4,6 +4,7 @@ const images = require('next-images');
 const withPlugins = require('next-compose-plugins');
 const nextEnv = require('next-env');
 const dotenvLoad = require('dotenv-load');
+const withCSS = require('@zeit/next-css')
 
 dotenvLoad();
 
@@ -11,9 +12,10 @@ const nextConfig = {
   webpack(config, options) {
     const { dev, isServer } = options
     const sassRegex = /\.(scss|sass)$/;
+    const cssRegex = /\.css$/;
     const sassModuleRegex = /\.module\.(scss|sass)$/;
 
-    const loaderConfig = {
+    const scssLoaderConfig = {
       extensions: ['scss', 'sass'],
       cssModules: false,
       cssLoaderOptions: {
@@ -30,17 +32,30 @@ const nextConfig = {
       ]
     }
 
-    const loaderConfigWithModules = Object.assign({}, loaderConfig, { cssModules: true })
+    const loaderConfig = {
+      extensions: ['css'],
+      dev,
+      isServer,
+      cssLoaderOptions: {
+        importLoaders: 1,
+      },
+    }
+
+    const scssLoaderConfigWithModules = Object.assign({}, scssLoaderConfig, { cssModules: true })
 
     config.module.rules.push(
       {
         test: sassRegex,
         exclude: sassModuleRegex,
-        use: cssLoaderConfig(config, loaderConfig)
+        use: cssLoaderConfig(config, scssLoaderConfig)
       },
       {
         test: sassModuleRegex,
-        use: cssLoaderConfig(config, loaderConfigWithModules)
+        use: cssLoaderConfig(config, scssLoaderConfigWithModules)
+      },
+      {
+        test: cssRegex,
+        use: cssLoaderConfig(config, loaderConfig)
       }
     )
     return config
