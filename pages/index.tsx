@@ -2,6 +2,9 @@ import * as React from 'react'
 
 import { HomeLayout } from 'features/home/components'
 
+//import 'root.css'
+//import 'normalize.css'
+
 class Index extends React.Component {
   render = () => <HomeLayout />
 }

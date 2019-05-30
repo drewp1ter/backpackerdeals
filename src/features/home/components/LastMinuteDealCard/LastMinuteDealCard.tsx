@@ -37,6 +37,7 @@ export const LastMinuteDealCard: React.FC<IProps> = ({
   exposeTime,
 }) => {
   const renderStars = () => {
+    // tslint:disable-next-line:prefer-const
     let starsArray: React.ReactNode[] = []
 
     for (let i: number = 1; i <= 5; i++) {

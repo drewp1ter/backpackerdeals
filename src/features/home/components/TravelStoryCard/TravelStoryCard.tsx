@@ -11,7 +11,7 @@ export interface IProps {
 
 export const TravelStoryCard: React.FC<IProps> = ({ title, description, img, variant, gradDeg = 0 }) => {
   return (
-    <div className={styles.main} data-variant={variant}>
+    <div className={styles.root} data-variant={variant}>
       <div>
         <h3>{title}</h3>
         <span>{description}</span>

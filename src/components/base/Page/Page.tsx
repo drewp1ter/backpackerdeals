@@ -7,7 +7,7 @@ export interface IProps {
 }
 
 export const Page: React.FC<IProps> = ({ children }) => (
-  <div>
+  <div style={{background: 'url(\'/static/Promo-pic.jpg\'' }}>
     {children}
     <Footer />
   </div>

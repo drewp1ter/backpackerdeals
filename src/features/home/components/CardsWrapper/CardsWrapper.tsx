@@ -11,13 +11,13 @@ export interface IProps {
 }
 
 export const CardsWrapper: React.FC<IProps> = ({ title, linkTitle, children, className }) => {
-  const mainClass = classNames(styles.main, className)
+  const mainClass = classNames(styles.root, className)
   return (
     <div className={mainClass}>
       <h2>{title}</h2>
       <a>
         {linkTitle}
-        <i className="fas fa-angle-double-right"></i>
+        <i className="fas fa-angle-double-right" />
       </a>
       {children}
     </div>

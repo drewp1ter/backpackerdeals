@@ -1,4 +1,4 @@
-.main {
+.root {
   position: relative;
   border-radius: 8px;
   div {
@@ -28,35 +28,35 @@
   }
 }
 
-.main[data-width="sm"] {
+.root[data-width="sm"] {
   width: 240px;
   img {
     max-width: 240px;
   }
 }
 
-.main[data-width="md"] {
+.root[data-width="md"] {
   width: 496px;
   img {
     max-width: 496px;
   }
 }
 
-.main[data-height="sm"] {
+.root[data-height="sm"] {
   height: 224px;
   img {
     max-height: 224px;
   }
 }
 
-.main[data-height="md"] {
+.root[data-height="md"] {
   height: 352px;
   img {
     max-height: 352px;
   }
 }
 
-.main[data-height="lg"] {
+.root[data-height="lg"] {
   height: 592px;
   img {
     max-height: 592px;

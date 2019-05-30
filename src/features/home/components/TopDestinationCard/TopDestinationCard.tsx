@@ -13,7 +13,7 @@ export interface IProps {
 
 export const TopDestinationCard: React.FC<IProps> = ({ title, country, img, width, height, gradDeg = 0 }) => {
   return (
-    <div className={styles.main} data-width={width} data-height={height}>
+    <div className={styles.root} data-width={width} data-height={height}>
       <div>
         <span>{country}</span>
         <h3>{title}</h3>

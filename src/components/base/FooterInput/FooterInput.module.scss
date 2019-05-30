@@ -19,33 +19,33 @@
     text-align: left;
     color: #ffffff;
 
-    &::-webkit-input-placeholder { 
+    &::-webkit-input-placeholder {
       font-size: 14px;
       line-height: 1.71;
       text-align: left;
-      color: #ffffff; 
+      color: #ffffff;
     }
 
-    &:-ms-input-placeholder { 
+    &:-ms-input-placeholder {
       font-size: 14px;
       line-height: 1.71;
       text-align: left;
-      color: #ffffff; 
+      color: #ffffff;
     }
 
-    &::-ms-input-placeholder { 
+    &::-ms-input-placeholder {
       font-size: 14px;
       line-height: 1.71;
       text-align: left;
-      color: #ffffff; 
+      color: #ffffff;
     }
 
-    &::placeholder { 
+    &::placeholder {
       font-size: 14px;
       line-height: 1.71;
       text-align: left;
-      color: #ffffff; 
-    } 
+      color: #ffffff;
+    }
   }
 
   button {

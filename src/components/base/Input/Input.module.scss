@@ -1,0 +1,51 @@
+.root {
+  position: relative;
+
+  &[data-theme="search"] {
+    background: rgba(255, 255, 255, .26);
+    border-radius: 60px;
+  }
+
+  input[data-theme="search"] {
+    border: none;
+    outline: none;
+    background: transparent;
+    color: #fff;
+
+    &::placeholder {
+      color: #fff;
+    }
+  }
+
+  &[data-theme="email"] {
+    border: solid 1px #fff;
+    border-radius: 60px;
+  }
+
+  input[data-theme="email"] {
+    border: none;
+    outline: none;
+    background: transparent;
+    color: #fff;
+
+    &::placeholder {
+      color: #fff;
+    }
+  }
+
+  input[data-size="md"] {
+    height: 56px;
+    padding: 8px 30px;
+    font-size: 16px;
+
+    &::placeholder {
+      font-size: 16px;
+    }
+  }
+
+  &[data-size="md"] button {
+    position: absolute;
+    right: 8px;
+    top: 8px;
+  }
+}
