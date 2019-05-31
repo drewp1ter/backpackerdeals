@@ -17,7 +17,10 @@ export class Page extends React.Component<IProps, IState> {
     currency: 'aud',
   }
 
-  public handleChangeLanguage = (language: string) => this.setState({ language: language })
+  public handleChangeLanguage = (event: React.MouseEvent<HTMLElement>) => {
+    const language = event.currentTarget.dataset.language || ''
+    this.setState({ language })
+  } 
 
   public handleChangeCurrency = (event: React.MouseEvent<HTMLElement>) => {
     const currency = event.currentTarget.dataset.currency || ''

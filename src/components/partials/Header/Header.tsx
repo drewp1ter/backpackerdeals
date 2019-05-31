@@ -19,7 +19,7 @@ import './Header.scss'
 interface IProps {
   readonly currentLanguage: string
   readonly currentCurrency: string
-  readonly handleChangeLanguage: (language: string) => void
+  readonly handleChangeLanguage: (event: React.MouseEvent<HTMLElement>) => void
   readonly handleChangeCurrency: (event: React.MouseEvent<HTMLElement>) => void
 }
 
@@ -103,14 +103,15 @@ export const Header: React.FC<IProps> = ({ currentLanguage, currentCurrency, han
           </HeaderSelectMenu>
           <HeaderSelectMenu opener={languageOpener} title="Select your language">
             <div className="languages">
-              {Object.values(languages).map((language, index) => (
+              {Object.entries(languages).map((language, index) => (
                 <div
-                  onClick={() => handleChangeLanguage(Object.keys(languages)[index])}
+                  onClick={handleChangeLanguage}
                   key={`language-${index}`}
-                  className={classNames('language', Object.keys(languages)[index] === currentLanguage && 'active')}
+                  className={classNames('language', language[0] === currentLanguage && 'active')}
+                  data-language={language[0]}
                 >
-                  <img src={language.icon} alt={language.name} />
-                  <span>{language.name}</span>
+                  <img src={language[1].icon} alt={language[1].name} />
+                  <span>{language[1].name}</span>
                 </div>
               ))}
             </div>
