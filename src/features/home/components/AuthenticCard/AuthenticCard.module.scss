@@ -23,28 +23,28 @@
     cursor: pointer;
     text-decoration: underline;
   }
-}
 
-.stars {
-  i {
-    font-size: 14px;
-    &[data-filled="true"] {
-      color: #ffcb00;
-    }
-    &[data-filled="false"] {
-      color: #dadada;
+  .stars {
+    i {
+      font-size: 14px;
+      &[data-filled="true"] {
+        color: #ffcb00;
+      }
+      &[data-filled="false"] {
+        color: #dadada;
+      }
     }
   }
-}
 
-.sign {
-  font-size: 16px;
-  color: #959595;
-}
+  .sign {
+    font-size: 16px;
+    color: #959595;
+  }
 
-.body {
-  margin-top: 25px;
-  font-size: 16px;
-  text-align: left;
-  color: #959595;
+  .body {
+    margin-top: 25px;
+    font-size: 16px;
+    text-align: left;
+    color: #959595;
+  }
 }
