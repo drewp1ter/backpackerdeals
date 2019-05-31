@@ -1,6 +1,6 @@
 .headerSelectMenu {
   position: relative;
-  margin-right: 40px;
+  margin-right: 25px;
   z-index: 15;
 
 
@@ -8,11 +8,12 @@
     cursor: pointer;
     display: flex;
     align-items: center;
+    width: 100px;
 
     span {
       margin: 0;
       font-size: 18px;
-      font-weight: 500;
+      font-weight: 600;
       line-height: 1.33;
       color: #fafafa;
       transition: .2s ease color;

@@ -96,8 +96,8 @@ export const Header: React.FC<IProps> = ({ currentLanguage, currentCurrency, han
               ))}
             </div>
 
-            <h6 className="second-title">Please note</h6>
-            <p className="note">
+            <h6>Please note</h6>
+            <p className={styles.note}>
               Currency Conversions are approximate guide only. All transactions are processed in their respective currency
             </p>
           </HeaderSelectMenu>

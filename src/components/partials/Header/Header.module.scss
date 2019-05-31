@@ -79,17 +79,22 @@ header {
   }
 
   .currencies {
+    .note {
+      color: #959595;
+      font-size: 14px;
+    }
+    
     .currency {
       cursor: pointer;
       display: inline-block;
       margin: 0 0 20px 0;
       width: 170px;
       font-size: 14px;
-      color: #e8e8e8;
+      color: #959595;
       transition: .2s ease color;
 
       &:hover:not(.active) {
-        color: darken(#e8e8e8, 40);
+        color: darken(#959595, 40);
       }
 
       &.active {
@@ -116,13 +121,13 @@ header {
       }
 
       span {
-        color: #e8e8e8;
+        color: #959595;
         transition: .2s ease color;
       }
 
       &:hover:not(.active) {
         span {
-          color: darken(#e8e8e8, 40);
+          color: darken(#959595, 40);
         }
       }
 
