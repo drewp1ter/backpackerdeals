@@ -39,6 +39,14 @@ footer {
     color: #ffffff;
   }
 
+  .email-input {
+    margin: auto;
+    width: 592px;
+    input {
+      width: 350px;
+    }
+  }
+
   .contact-info {
     display: flex;
     justify-content: space-between;

@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-import { FooterInput } from 'components/base'
+import { Input, OrangeButton } from 'components/base'
 
 import './Footer.scss'
 
@@ -16,7 +16,11 @@ export const Footer: React.FC<IProps> = ({ handleChange, handleSubmit, email }) 
 
     <h3>Sent straight to your inbox</h3>
 
-    <FooterInput email={email} handleChange={handleChange} handleSubmit={handleSubmit} />
+    <Input className="email-input" value={email} onChange={handleChange} placeholder="Your e-mail address" theme="email" size="md">
+      <OrangeButton onClick={handleSubmit} className="rounded">
+        SEARCH
+      </OrangeButton>
+    </Input>
 
     <p>By clicking Subscribe, you have agreed to our Terms & Conditions and Privacy Policy</p>
 

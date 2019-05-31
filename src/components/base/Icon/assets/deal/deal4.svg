@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64.031" height="64.031" viewBox="0 0 64.031 64.031">
+  <g id="_4" data-name="4" transform="translate(13.088 11.734)">
+    <rect id="rect4040" width="39.266" height="39.266" fill="none"/>
+    <path id="path4043" d="M61,15V40.768" transform="translate(-23.575 -5.797)" fill="none" stroke="#666" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+    <path id="path4294" d="M3,7V37.676" transform="translate(-1.159 -2.705)" fill="none" stroke="#666" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+    <path id="path4296" d="M38.584,50H3" transform="translate(-1.159 -19.324)" fill="none" stroke="#666" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+    <path id="path4298" d="M12.908,38.454A2.454,2.454,0,1,1,10.454,36,2.454,2.454,0,0,1,12.908,38.454Z" transform="translate(-3.092 -13.913)" fill="none" stroke="#ff5a39" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+    <path id="path4300" d="M21,35v6.135H42.473V39.381A4.567,4.567,0,0,0,37.694,35Z" transform="translate(-8.116 -13.527)" fill="none" stroke="#ff5a39" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+    <path id="path4302" d="M38.584,30H3" transform="translate(-1.159 -11.594)" fill="none" stroke="#666" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+    <path id="path4304" d="M12.908,18.454A2.454,2.454,0,1,1,10.454,16,2.454,2.454,0,0,1,12.908,18.454Z" transform="translate(-3.092 -6.184)" fill="none" stroke="#ff5a39" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+    <path id="path4306" d="M21,15v6.135H42.473V19.381A4.587,4.587,0,0,0,37.694,15Z" transform="translate(-8.116 -5.797)" fill="none" stroke="#ff5a39" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+    <g id="Ellipse_2" data-name="Ellipse 2" transform="translate(-13.087 -11.734)" fill="none" stroke="#f96547" stroke-width="1">
+      <circle cx="32.016" cy="32.016" r="32.016" stroke="none"/>
+      <circle cx="32.016" cy="32.016" r="31.516" fill="none"/>
+    </g>
+  </g>
+</svg>

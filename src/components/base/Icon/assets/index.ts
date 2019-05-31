@@ -1,40 +1,38 @@
-import guarantee from './book/guarantee'
-import bestSelections from './book/bestSelections'
-import awardWinningTravelAgency from './book/awardWinningTravelAgency'
-import liveAvailablityInstantConfirmations from './book/liveAvailablityInstantConfirmations'
-import liveChatExpertAgentAssistance from './book/liveChatExpertAgentAssistance'
-import securePayment from './book/securePayment'
-import verifiedTourOperators from './book/verifiedTourOperators'
-import message from './book/message'
+import guarantee from './book/guarantee.svg'
+import bestSelections from './book/bestSelections.svg'
+import awardWinningTravelAgency from './book/awardWinningTravelAgency.svg'
+import liveAvailablityInstantConfirmations from './book/liveAvailablityInstantConfirmations.svg'
+import liveChatExpertAgentAssistance from './book/liveChatExpertAgentAssistance.svg'
+import securePayment from './book/securePayment.svg'
+import verifiedTourOperators from './book/verifiedTourOperators.svg'
 
-import cart1 from './cart/cart1'
-import cart2 from './cart/cart2'
-import cart3 from './cart/cart3'
-import cart4 from './cart/cart4'
+import cart1 from './cart/cart1.svg'
+import cart2 from './cart/cart2.svg'
+import cart3 from './cart/cart3.svg'
+import cart4 from './cart/cart4.svg'
 
-import deal1 from './deal/deal1'
-import deal2 from './deal/deal2'
-import deal3 from './deal/deal3'
-import deal4 from './deal/deal4'
-import deal5 from './deal/deal5'
-import deal6 from './deal/deal6'
-import deal7 from './deal/deal7'
-import deal8 from './deal/deal8'
-import deal9 from './deal/deal9'
-import deal10 from './deal/deal10'
-import deal11 from './deal/deal11'
-import deal12 from './deal/deal12'
-import deal13 from './deal/deal13'
-import deal14 from './deal/deal14'
-import deal15 from './deal/deal15'
-import deal16 from './deal/deal16'
+import deal1 from './deal/deal1.svg'
+import deal2 from './deal/deal2.svg'
+import deal3 from './deal/deal3.svg'
+import deal4 from './deal/deal4.svg'
+import deal5 from './deal/deal5.svg'
+import deal6 from './deal/deal6.svg'
+import deal7 from './deal/deal7.svg'
+import deal8 from './deal/deal8.svg'
+import deal9 from './deal/deal9.svg'
+import deal10 from './deal/deal10.svg'
+import deal11 from './deal/deal11.svg'
+import deal12 from './deal/deal12.svg'
+import deal13 from './deal/deal13.svg'
+import deal14 from './deal/deal14.svg'
+import deal15 from './deal/deal15.svg'
+import deal16 from './deal/deal16.svg'
 
-import badge2 from './deal/badge2'
-import badge3 from './deal/badge3'
+import group3 from './group3.svg'
 
 export default {
   guarantee,
-  message,
+  group3,
   bestSelections,
   awardWinningTravelAgency,
   liveAvailablityInstantConfirmations,
@@ -61,6 +59,4 @@ export default {
   deal14,
   deal15,
   deal16,
-  badge2,
-  badge3,
 }

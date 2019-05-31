@@ -12,27 +12,27 @@ export const HomeLayout: React.FC = () => (
     <CardsWrapper title="Why book with us?" linkTitle="Learn more">
       <div className={styles.whyBook}>
         <div>
-          <Icon name="liveAvailablityInstantConfirmations" />
+          <Icon name="liveAvailablityInstantConfirmations" size="md" />
           <span>Live Availablity</span>
         </div>
         <div>
-          <Icon name="bestSelections" />
+          <Icon name="bestSelections" size="md" />
           <span>Best Selections</span>
         </div>
         <div>
-          <Icon name="securePayment" />
+          <Icon name="securePayment" size="md" />
           <span>100% Safe Payments</span>
         </div>
         <div>
-          <Icon name="guarantee" />
+          <Icon name="guarantee" size="md" />
           <span>100% Guarantee</span>
         </div>
         <div>
-          <Icon name="liveChatExpertAgentAssistance" />
+          <Icon name="liveChatExpertAgentAssistance" size="md" />
           <span>Live Chat</span>
         </div>
         <div>
-          <Icon name="verifiedTourOperators" />
+          <Icon name="verifiedTourOperators" size="md" />
           <span>Verified Tour Operators</span>
         </div>
       </div>
@@ -141,12 +141,12 @@ export const HomeLayout: React.FC = () => (
 
     <CardsWrapper title="Inspiration from our instagram" linkTitle="Follow us">
       <div className={styles.cardsRow}>
-        <InstagramCard img="none" />
-        <InstagramCard img="none" />
-        <InstagramCard img="none" />
-        <InstagramCard img="none" />
-        <InstagramCard img="none" />
-        <InstagramCard img="none" />
+        <InstagramCard variant="v1" />
+        <InstagramCard variant="v2" />
+        <InstagramCard variant="v3" />
+        <InstagramCard variant="v4" />
+        <InstagramCard variant="v5" />
+        <InstagramCard variant="v6" />
       </div>
     </CardsWrapper>
   </Page>
