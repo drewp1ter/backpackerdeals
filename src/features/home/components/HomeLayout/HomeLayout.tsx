@@ -2,13 +2,24 @@ import * as React from 'react'
 
 import { Page } from 'components/base'
 
-import { ActivityCard, CardsWrapper, AuthenticCard, InstagramCard, TravelStoryCard, TopDestinationCard, LastMinuteDeal, BookWithUsSection } from '..'
+import {
+  ActivityCard,
+  CardsWrapper,
+  AuthenticCard,
+  InstagramCard,
+  TravelStoryCard,
+  TopDestinationCard,
+  LastMinuteDeal,
+  BookWithUsSection,
+  SearchTravelSection,
+} from '..'
 
 import styles from './HomeLayout.module.scss'
 import images from './assets'
 
 export const HomeLayout: React.FC = () => (
   <Page>
+    <SearchTravelSection />
 
     <BookWithUsSection />
 

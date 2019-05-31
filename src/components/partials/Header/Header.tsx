@@ -118,9 +118,6 @@ export const Header: React.FC<IProps> = ({ currentLanguage, currentCurrency, han
           </HeaderSelectMenu>
         </div>
       </div>
-      <h1>Search Less, Travel More</h1>
-      <h2>Great experience at backpacker prices</h2>
-      <HeaderInput />
     </header>
   )
 }

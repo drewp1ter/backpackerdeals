@@ -1,9 +1,10 @@
 header {
-  background-image: url('./assets/background.jpg');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: scroll;
-  padding: 25px 30px 250px 30px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 15;
+  padding: 25px 30px;
 
   .tools {
     display: flex;
@@ -83,7 +84,7 @@ header {
       color: #959595;
       font-size: 14px;
     }
-    
+
     .currency {
       cursor: pointer;
       display: inline-block;
