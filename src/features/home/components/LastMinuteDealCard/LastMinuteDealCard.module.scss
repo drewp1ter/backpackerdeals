@@ -1,11 +1,11 @@
-.last-minute-deal-card {
+.lastMinuteDealCard {
   margin-right: 15px;
 
-  &:last-of-type {
+  &:lastOfType {
     margin-right: 0;
   }
 
-  .image-block {
+  .imageBlock {
     position: relative;
 
     .badge {
@@ -14,7 +14,7 @@
       left: 15px;
     }
 
-    .expose-time {
+    .exposeTime {
       display: flex;
       position: absolute;
       justify-content: center;
@@ -22,7 +22,7 @@
       left: 0px;
       right: 0px;
 
-      .time-name {
+      .timeName {
         font-size: 13px;
         line-height: 1.85;
         color: #fafafa;
@@ -40,19 +40,19 @@
         }
       }
 
-      .days-block {
+      .daysBlock {
         p {
           text-align: left;
         }
       }
 
-      .hours-block {
+      .hoursBlock {
         p {
           text-align: center;
         }
       }
 
-      .minutes-block {
+      .minutesBlock {
         p {
           text-align: right;
         }
@@ -70,7 +70,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      
+
       p {
         margin: 0;
         font-size: 13px;
@@ -81,9 +81,9 @@
     }
   }
 
-  .card-description {
-    
-    .rating-and-location {
+  .cardDescription {
+
+    .ratingAndLocation {
       margin-bottom: 30px;
       display: flex;
       justify-content: space-between;
@@ -100,9 +100,9 @@
 
         i {
           font-size: 14px;
-          
+
           &.filled {
-            color: #ffcb00;  
+            color: #ffcb00;
           }
 
           &.unfilled {
@@ -118,7 +118,7 @@
           text-align: left;
           color: #959595;
         }
-        
+
         span {
           font-size: 13px;
           line-height: 1.85;
@@ -148,12 +148,12 @@
     margin-bottom: 20px;
   }
 
-  .value-and-link {
+  .valueAndLink {
     display: flex;
     justify-content: space-between;
     align-items: center;
 
-    .total-price {
+    .totalPrice {
       .from {
         font-size: 12px;
         line-height: 2;
@@ -185,7 +185,7 @@
       height: 52px;
       border-radius: 30px;
       background-color: #fafafa;
-  
+
       i {
         font-size: 17px;
         line-height: 1.41;

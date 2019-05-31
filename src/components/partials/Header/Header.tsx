@@ -14,7 +14,7 @@ import Russian from './assets/russian.png'
 import Spanish from './assets/spain.png'
 import Portuguese from './assets/portuguese.png'
 
-import './Header.scss'
+import styles from './Header.module.scss'
 
 interface IProps {
   readonly currentLanguage: string
@@ -54,7 +54,7 @@ const currencies: IIcons = {
 
 export const Header: React.FC<IProps> = ({ currentLanguage, currentCurrency, handleChangeLanguage, handleChangeCurrency }) => {
   const languageOpener: React.ReactNode = (
-    <div className="language-opener">
+    <div className={styles.languageOpener}>
       <img src={languages[currentLanguage].icon} alt={languages[currentLanguage].name} />
       <span> {languages[currentLanguage].name.slice(0, 3)}</span>
     </div>
@@ -67,27 +67,27 @@ export const Header: React.FC<IProps> = ({ currentLanguage, currentCurrency, han
 
   return (
     <header>
-      <div className="tools">
-        <div className="logo-and-search">
+      <div className={styles.tools}>
+        <div className={styles.logoAndSearch}>
           <img src={Logo} alt="Logo" className="logo" />
           <div className="advanced-search" />
         </div>
-        <div className="tours">
-          <div className="explore" />
+        <div className={styles.tours}>
+          <div className={styles.explore} />
           <a href="">Top Deals</a>
           <a href="">Last Minute Deals</a>
         </div>
-        <div className="currency-and-language">
+        <div className={styles.currencyAndLanguage}>
           <a href="">
             <i className="fas fa-phone" />
             <span>+ 61 3 90163720</span>
           </a>
           <HeaderSelectMenu opener={currencyOpener} title="Select currency">
-            <div className="currencies">
+            <div className={styles.currencies}>
               {Object.entries(currencies).map((currency, index) => (
                 <p
                   onClick={handleChangeCurrency}
-                  className={classNames('currency', currency[0] === currentCurrency && 'active')}
+                  className={classNames(styles.currency, currency[0] === currentCurrency && styles.active)}
                   key={`${currency[0]}-${index}`}
                   data-currency={currency[0]}
                 >
@@ -102,12 +102,12 @@ export const Header: React.FC<IProps> = ({ currentLanguage, currentCurrency, han
             </p>
           </HeaderSelectMenu>
           <HeaderSelectMenu opener={languageOpener} title="Select your language">
-            <div className="languages">
+            <div className={styles.languages}>
               {Object.entries(languages).map((language, index) => (
                 <div
                   onClick={handleChangeLanguage}
                   key={`language-${index}`}
-                  className={classNames('language', language[0] === currentLanguage && 'active')}
+                  className={classNames(styles.language, language[0] === currentLanguage && 'active')}
                   data-language={language[0]}
                 >
                   <img src={language[1].icon} alt={language[1].name} />

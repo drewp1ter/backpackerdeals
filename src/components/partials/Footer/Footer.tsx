@@ -2,7 +2,7 @@ import * as React from 'react'
 
 import { Input, OrangeButton } from 'components/base'
 
-import './Footer.scss'
+import styles from './Footer.module.scss'
 
 export interface IProps {
   readonly handleChange?: () => void
@@ -16,16 +16,16 @@ export const Footer: React.FC<IProps> = ({ handleChange, handleSubmit, email }) 
 
     <h3>Sent straight to your inbox</h3>
 
-    <Input className="email-input" value={email} onChange={handleChange} placeholder="Your e-mail address" theme="email" size="md">
-      <OrangeButton onClick={handleSubmit} className="rounded">
+    <Input className={styles.emailInput} value={email} onChange={handleChange} placeholder="Your e-mail address" theme="email" size="md">
+      <OrangeButton onClick={handleSubmit} theme="rounded">
         SEARCH
       </OrangeButton>
     </Input>
 
     <p>By clicking Subscribe, you have agreed to our Terms & Conditions and Privacy Policy</p>
 
-    <div className="contact-info">
-      <div className="social-block">
+    <div className={styles.contactInfo}>
+      <div className={styles.socialBlock}>
         <h4>Company</h4>
         <ul>
           <li>About Us</li>
@@ -37,7 +37,7 @@ export const Footer: React.FC<IProps> = ({ handleChange, handleSubmit, email }) 
         </ul>
       </div>
 
-      <div className="social-block">
+      <div className={styles.socialBlock}>
         <h4>Support</h4>
         <ul>
           <li>Why book with us?</li>
@@ -50,7 +50,7 @@ export const Footer: React.FC<IProps> = ({ handleChange, handleSubmit, email }) 
       </div>
 
       <div>
-        <div className="social-block">
+        <div className={styles.socialBlock}>
           <h4>Business</h4>
           <ul>
             <li>Suggest a business</li>
@@ -58,7 +58,7 @@ export const Footer: React.FC<IProps> = ({ handleChange, handleSubmit, email }) 
           </ul>
         </div>
 
-        <div className="social-block mt">
+        <div className={`${styles.socialBlock} ${styles.mt}`}>
           <h4>Students</h4>
           <ul>
             <li>Students Discounts</li>
@@ -66,7 +66,7 @@ export const Footer: React.FC<IProps> = ({ handleChange, handleSubmit, email }) 
         </div>
       </div>
 
-      <div className="social-block">
+      <div className={styles.socialBlock}>
         <h4>Work with us</h4>
         <ul>
           <li>Affiliate programs</li>
@@ -76,7 +76,7 @@ export const Footer: React.FC<IProps> = ({ handleChange, handleSubmit, email }) 
       </div>
 
       <div>
-        <div className="social-block">
+        <div className={styles.socialBlock}>
           <h4>Contact us</h4>
           <ul>
             <li>+61 3 90163720 (AU)</li>
@@ -85,21 +85,21 @@ export const Footer: React.FC<IProps> = ({ handleChange, handleSubmit, email }) 
           </ul>
         </div>
 
-        <div className="contacts">
+        <div className={styles.contacts}>
           <h5>E-mail:</h5>
           <p>support@backpackerdeals.co</p>
         </div>
 
-        <div className="contacts">
+        <div className={styles.contacts}>
           <h5>Skype:</h5>
           <p>backpackerdeals</p>
         </div>
       </div>
     </div>
 
-    <div className="app-info">
-      <div className="media-and-payment">
-        <div className="social-media">
+    <div className={styles.appInfo}>
+      <div className={styles.mediaAndPayment}>
+        <div className={styles.socialMedia}>
           <h4>Social media</h4>
           <ul>
             <li>
@@ -117,7 +117,7 @@ export const Footer: React.FC<IProps> = ({ handleChange, handleSubmit, email }) 
           </ul>
         </div>
 
-        <div className="payment">
+        <div className={styles.payment}>
           <h4>Payment we receive</h4>
           <ul>
             <li>
@@ -148,12 +148,12 @@ export const Footer: React.FC<IProps> = ({ handleChange, handleSubmit, email }) 
         </div>
       </div>
 
-      <button className="download-app-button">Download Mobile App</button>
+      <button className={styles.downloadAppButton}>Download Mobile App</button>
     </div>
 
     <hr />
 
-    <div className="copyright-and-partners">
+    <div className={styles.copyrightAndPartners}>
       <img className="logo" src="" alt="" />
 
       <p>

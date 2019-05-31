@@ -29,10 +29,14 @@ import deal15 from './deal/deal15.svg'
 import deal16 from './deal/deal16.svg'
 
 import group3 from './group3.svg'
+import topDeal from './topDeal.svg'
+import mostPopular from './mostPopular.svg'
 
 export default {
   guarantee,
   group3,
+  topDeal,
+  mostPopular,
   bestSelections,
   awardWinningTravelAgency,
   liveAvailablityInstantConfirmations,
