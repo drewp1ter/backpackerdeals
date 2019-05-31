@@ -2,14 +2,13 @@ import * as React from 'react'
 
 import { Page, Icon } from 'components/base'
 
-import { ActivityCard, CardsWrapper, AuthenticCard, InstagramCard, TravelStoryCard, TopDestinationCard, LastMinuteDeal, Search } from '..'
+import { ActivityCard, CardsWrapper, AuthenticCard, InstagramCard, TravelStoryCard, TopDestinationCard, LastMinuteDeal } from '..'
 
 import styles from './HomeLayout.module.scss'
 import images from './assets'
 
 export const HomeLayout: React.FC = () => (
   <Page>
-    <Search />
     <CardsWrapper title="Why book with us?" linkTitle="Learn more">
       <div className={styles.whyBook}>
         <div>
