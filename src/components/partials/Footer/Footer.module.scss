@@ -39,7 +39,7 @@ footer {
     color: #ffffff;
   }
 
-  .email-input {
+  .emailInput {
     margin: auto;
     width: 592px;
     input {
@@ -47,12 +47,12 @@ footer {
     }
   }
 
-  .contact-info {
+  .contactInfo {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
 
-    .social-block {
+    .socialBlock {
       &.mt {
         margin-top: 30px;
       }
@@ -103,13 +103,13 @@ footer {
     }
   }
 
-  .app-info {
+  .appInfo {
     margin: 25px 0 40px 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
 
-    .media-and-payment {
+    .mediaAndPayment {
       display: flex;
 
       ul {
@@ -130,12 +130,12 @@ footer {
         }
       }
 
-      .social-media {
+      .socialMedia {
         margin-right: 125px;
       }
     }
 
-    .download-app-button {
+    .downloadAppButton {
       cursor: pointer;
       width: 168px;
       height: 48px;
@@ -154,7 +154,7 @@ footer {
     margin: 0;
   }
 
-  .copyright-and-partners {
+  .copyrightAndPartners {
     display: flex;
     margin-top: 40px;
 

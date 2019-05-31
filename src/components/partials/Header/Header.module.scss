@@ -10,7 +10,7 @@ header {
     justify-content: space-between;
     align-items: center;
 
-    .logo-and-search {
+    .logoAndSearch {
       display: flex;
     }
 
@@ -28,7 +28,7 @@ header {
       }
     }
 
-    .currency-and-language {
+    .currencyAndLanguage {
       display: flex;
 
       a {
@@ -64,5 +64,73 @@ header {
     line-height: 0.62;
     text-align: center;
     color: #ffffff;
+  }
+
+  .languageOpener {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    img {
+      width: 24px;
+      height: 24px;
+      margin-right: 10px;
+    }
+  }
+
+  .currencies {
+    .currency {
+      cursor: pointer;
+      display: inline-block;
+      margin: 0 0 20px 0;
+      width: 170px;
+      font-size: 14px;
+      color: #e8e8e8;
+      transition: .2s ease color;
+
+      &:hover:not(.active) {
+        color: darken(#e8e8e8, 40);
+      }
+
+      &.active {
+        color: #ff5a39;
+      }
+    }
+  }
+
+  .languages {
+    display: flex;
+    flex-wrap: wrap;
+
+    .language {
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+      width: 50%;
+
+      img {
+        width: 24px;
+        height: 24px;
+        margin-right: 15px;
+      }
+
+      span {
+        color: #e8e8e8;
+        transition: .2s ease color;
+      }
+
+      &:hover:not(.active) {
+        span {
+          color: darken(#e8e8e8, 40);
+        }
+      }
+
+      &.active {
+        span {
+          color: #ff5a39;
+        }
+      }
+    }
   }
 }

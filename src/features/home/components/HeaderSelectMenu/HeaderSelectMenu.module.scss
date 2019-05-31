@@ -1,0 +1,69 @@
+.headerSelectMenu {
+  position: relative;
+  margin-right: 40px;
+  z-index: 15;
+
+
+  .opener {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+
+    span {
+      margin: 0;
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 1.33;
+      color: #fafafa;
+      transition: .2s ease color;
+    }
+
+    i {
+      margin-left: 10px;
+      color: #fafafa;
+      font-size: 12px;
+      transition: .2s ease transform, .2s ease color;
+    }
+
+    &.opened {
+      span {
+        color: #ff5a39;
+      }
+
+      i {
+        color: #ff5a39;
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  .menu {
+    position: absolute;
+    top: 35px;
+    right: 0px;
+    background: #fff;
+    padding: 25px 30px;
+    width: 345px;
+    border-radius: 7px;
+
+    h6 {
+      margin: 0;
+      color: #000000;
+      font-size: 16px;
+    }
+
+    .title {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+
+      i {
+        cursor: pointer;
+        color: #000000;
+        font-size: 16px;
+      }
+    }
+
+  }
+}

@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-import './LastMinuteDeal.scss'
+import styles from './LastMinuteDeal.module.scss'
 
 import { LastMinuteDealCard } from '../LastMinuteDealCard'
 
@@ -77,7 +77,7 @@ const data = [
 ]
 
 export const LastMinuteDeal: React.FC = () => (
-  <div className="last-minute-deal">
+  <div className={styles.lastMinuteDeal}>
     {data.map((card, index) => (
       <LastMinuteDealCard {...card} key={`${index}-card`} />
     ))}

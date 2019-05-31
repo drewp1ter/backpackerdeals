@@ -2,7 +2,7 @@ import * as React from 'react'
 
 import classNames from 'classnames'
 
-import './HeaderSelectMenu.scss'
+import styles from './HeaderSelectMenu.module.scss'
 
 interface IProps {
   readonly children: React.ReactNode
@@ -41,15 +41,15 @@ export class HeaderSelectMenu extends React.Component<IProps, IState> {
     const { title, opener, children } = this.props
     const { isOpen } = this.state
     return (
-      <div ref={this.ref} className="header-select-menu">
-        <div className={classNames('opener', isOpen && 'opened')} onClick={this.handleOpen}>
+      <div ref={this.ref} className={styles.headerSelectMenu}>
+        <div className={classNames(styles.opener, isOpen && styles.opened)} onClick={this.handleOpen}>
           <span>{opener}</span>
           <i className="fas fa-chevron-down" />
         </div>
 
         {isOpen && (
-          <div className="menu">
-            <div className="title">
+          <div className={styles.menu}>
+            <div className={styles.title}>
               <h6>{title}</h6>
               <i className="fas fa-times" onClick={this.handleOpen} />
             </div>

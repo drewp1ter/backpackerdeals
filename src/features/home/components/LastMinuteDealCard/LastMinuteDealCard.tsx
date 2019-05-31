@@ -1,9 +1,8 @@
 import * as React from 'react'
+import classNames from 'classnames'
 
-import './LastMinuteDealCard.scss'
-
-import TopDeal from './assets/Badge.svg'
-import MostPopular from './assets/Most popular.svg'
+import { Icon } from 'components/base'
+import styles from './LastMinuteDealCard.module.scss'
 
 interface IExposeTime {
   days: string
@@ -42,9 +41,9 @@ export const LastMinuteDealCard: React.FC<IProps> = ({
 
     for (let i: number = 1; i <= 5; i++) {
       if (i <= Math.floor(rating)) {
-        starsArray.push(<i key={i} className="fas fa-star filled" />)
+        starsArray.push(<i key={i} className={classNames('fas fa-star', styles.filled)} />)
       } else {
-        starsArray.push(<i key={i} className="far fa-star unfilled" />)
+        starsArray.push(<i key={i} className={classNames('far fa-star', styles.unfilled)} />)
       }
     }
 
@@ -52,52 +51,52 @@ export const LastMinuteDealCard: React.FC<IProps> = ({
   }
 
   return (
-    <div className="last-minute-deal-card">
-      <div className="image-block">
-        {saleType === 'topDeal' && <img className="badge" src={TopDeal} alt="Top Deal" />}
-        {saleType === 'mostPopular' && <img className="badge" src={MostPopular} alt="Most Popular" />}
-        <div className="sale">
+    <div className={styles.lastMinuteDealCard}>
+      <div className={styles.imageBlock}>
+        {saleType === 'topDeal' && <Icon className={styles.badge} name="topDeal" alt="Top Deal" />}
+        {saleType === 'mostPopular' && <Icon className={styles.badge} name="mostPopular" alt="Most Popular" />}
+        <div className={styles.sale}>
           <p>{sale}</p>
         </div>
-        <div className="expose-time">
-          <div className="days-block">
+        <div className={styles.exposeTime}>
+          <div className={styles.daysBlock}>
             <p>{exposeTime.hours}</p>
-            <p className="time-name">Days</p>
+            <p className={styles.timeName}>Days</p>
           </div>
-          <p className="colon">:</p>
-          <div className="hours-block">
+          <p className={styles.colon}>:</p>
+          <div className={styles.hoursBlock}>
             <p>{exposeTime.hours}</p>
-            <p className="time-name">Hours</p>
+            <p className={styles.timeName}>Hours</p>
           </div>
-          <p className="colon">:</p>
-          <div className="minutes-block">
+          <p className={styles.colon}>:</p>
+          <div className={styles.minutesBlock}>
             <p>{exposeTime.minutes}</p>
-            <p className="time-name">Minutes</p>
+            <p className={styles.timeName}>Minutes</p>
           </div>
         </div>
         <img src={img} alt="Last Minute Deal Tour" />
       </div>
 
-      <div className="card-description">
-        <div className="rating-and-location">
-          <div className="stars">
+      <div className={styles.cardDescription}>
+        <div className={styles.ratingAndLocation}>
+          <div className={styles.stars}>
             {renderStars()}
             <span>{rating} from 5</span>
           </div>
-          <div className="country">
+          <div className={styles.country}>
             <i className="fas fa-map-marker-alt" />
             <span>{country}</span>
           </div>
         </div>
 
-        <p className="tour">{tourName}</p>
-        <p className="duration">{duration}</p>
+        <p className={styles.tour}>{tourName}</p>
+        <p className={styles.duration}>{duration}</p>
 
-        <div className="value-and-link">
-          <div className="total-price">
-            <span className="from">From</span>
-            <p className="price">${price} AUD</p>
-            <span className="value">Value AUD{value}</span>
+        <div className={styles.valueAndLink}>
+          <div className={styles.totalPrice}>
+            <span className={styles.from}>From</span>
+            <p className={styles.price}>${price} AUD</p>
+            <span className={styles.value}>Value AUD{value}</span>
           </div>
 
           <button>
