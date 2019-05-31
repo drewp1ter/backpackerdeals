@@ -2,7 +2,6 @@ import * as React from 'react'
 
 import classNames from 'classnames'
 
-import { HeaderInput } from 'components/base'
 import { HeaderSelectMenu } from 'features/home/components'
 
 import Logo from './assets/logo_Header.svg'
