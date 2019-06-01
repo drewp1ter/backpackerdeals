@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { SelectMenu, Tabs, Tab } from '..'
+import { SelectMenu, Tab, Tabs } from '..'
 import styles from './SelectContinent.module.scss'
 
 export const SelectContinent: React.FC = () => {

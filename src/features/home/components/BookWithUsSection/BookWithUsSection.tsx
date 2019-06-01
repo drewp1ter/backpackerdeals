@@ -1,7 +1,7 @@
 import * as React from 'react'
 
-import { CardsWrapper } from '..'
 import { Icon } from 'components'
+import { CardsWrapper } from '..'
 
 import styles from './BookWithUsSection.module.scss'
 

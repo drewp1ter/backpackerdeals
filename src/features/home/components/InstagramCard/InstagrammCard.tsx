@@ -1,7 +1,7 @@
 import * as React from 'react'
 
-import styles from './InstagramCard.module.scss'
 import images from './assets'
+import styles from './InstagramCard.module.scss'
 
 export interface IProps {
   readonly variant: keyof typeof images

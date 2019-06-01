@@ -4,7 +4,7 @@
     "dev": "node server.js",
     "build": "next build",
     "start": "next start",
-    "tslint": "node_modules/.bin/tslint -p tsconfig.json",
+    "tslint": "node_modules/.bin/tslint -p tsconfig.json --fix",
     "typecheck": "tsc -p tsconfig.json"
   },
   "dependencies": {

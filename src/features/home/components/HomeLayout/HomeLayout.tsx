@@ -2,18 +2,18 @@ import * as React from 'react'
 
 import {
   ActivityCard,
-  CardsWrapper,
   AuthenticCard,
-  InstagramCard,
-  TravelStoryCard,
-  TopDestinationCard,
-  LastMinuteDeal,
   BookWithUsSection,
+  CardsWrapper,
+  InstagramCard,
+  LastMinuteDeal,
   SearchTravelSection,
+  TopDestinationCard,
+  TravelStoryCard,
 } from '..'
 
-import styles from './HomeLayout.module.scss'
 import images from './assets'
+import styles from './HomeLayout.module.scss'
 
 export const HomeLayout: React.FC = () => (
   <>

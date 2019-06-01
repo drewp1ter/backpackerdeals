@@ -2,9 +2,9 @@ import Chinese from './assets/chineese.png'
 import English from './assets/english.png'
 import French from './assets/french.png'
 import German from './assets/german.png'
+import Portuguese from './assets/portuguese.png'
 import Russian from './assets/russian.png'
 import Spanish from './assets/spain.png'
-import Portuguese from './assets/portuguese.png'
 
 interface IIcons {
   [key: string]: {

@@ -5,7 +5,6 @@ interface IProps {
 }
 
 export const AdvancedSearch: React.FC<IProps> = () => (
-  <div className="advanced-search">
-
-  </div>
+  
+  <div className="advanced-search"/>
 )

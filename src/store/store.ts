@@ -1,10 +1,10 @@
-import { createStore, applyMiddleware } from 'redux'
+import { applyMiddleware, createStore } from 'redux'
 import { createEpicMiddleware } from 'redux-observable'
 
 import Types from 'Types'
-import rootReducer from './root-reducer'
 // import rootEpic from './root-epic'
 import services from '../services'
+import rootReducer from './root-reducer'
 
 export default function initStore(initState?: object) {
   const epicMiddleware = createEpicMiddleware<Types.RootAction, Types.RootAction, Types.RootState>({

@@ -1,10 +1,10 @@
-import React, { useState } from 'react'
 import classNames from 'classnames'
+import React, { useState } from 'react'
 
-import { SelectMenu, SelectContinent } from '..'
+import { SelectContinent, SelectMenu } from '..'
 
-import { languages, currencies } from './constants'
 import Logo from './assets/logo_Header.svg'
+import { currencies, languages } from './constants'
 import styles from './Header.module.scss'
 
 export const Header: React.FC = () => {
