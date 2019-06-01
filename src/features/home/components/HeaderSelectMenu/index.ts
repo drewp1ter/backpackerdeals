@@ -1,1 +1,0 @@
-export { HeaderSelectMenu } from './HeaderSelectMenu'

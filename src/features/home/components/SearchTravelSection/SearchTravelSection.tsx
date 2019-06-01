@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-import { HeaderInput } from 'components/base'
+import { HeaderInput } from '..'
 
 import styles from './SearchTravelSection.module.scss'
 
