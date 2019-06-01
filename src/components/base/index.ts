@@ -1,6 +1,6 @@
 export { AdvancedSearch } from './AdvancedSearch'
-export { HeaderInput } from './HeaderInput'
 export { OrangeButton } from './OrangeButton'
 export { Page } from './Page'
 export { Icon } from './Icon'
 export { Input } from './Input'
+export { SearchSelect } from './SearchSelect'

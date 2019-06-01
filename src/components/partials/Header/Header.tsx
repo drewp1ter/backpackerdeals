@@ -2,7 +2,7 @@ import * as React from 'react'
 
 import classNames from 'classnames'
 
-import { HeaderInput } from 'components/base'
+import { AdvancedSearch } from 'components/base'
 import { HeaderSelectMenu } from 'features/home/components'
 
 import Logo from './assets/logo_Header.svg'
@@ -70,7 +70,7 @@ export const Header: React.FC<IProps> = ({ currentLanguage, currentCurrency, han
       <div className={styles.tools}>
         <div className={styles.logoAndSearch}>
           <img src={Logo} alt="Logo" className="logo" />
-          <div className="advanced-search" />
+          <AdvancedSearch />
         </div>
         <div className={styles.tours}>
           <div className={styles.explore} />
