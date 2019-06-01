@@ -5,9 +5,9 @@ import { SelectMenu, SelectContinent } from '..'
 
 import { languages, currencies } from './constants'
 import Logo from './assets/logo_Header.svg'
-import styles from './HeaderLayout.module.scss'
+import styles from './Header.module.scss'
 
-export const HeaderLayout: React.FC = () => {
+export const Header: React.FC = () => {
   const [currentLanguage, setLanguage] = useState<string>('english')
   const [currentCurrency, setCurrency] = useState<string>('aud')
 

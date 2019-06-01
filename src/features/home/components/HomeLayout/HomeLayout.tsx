@@ -1,7 +1,5 @@
 import * as React from 'react'
 
-import { Page } from 'components/base'
-
 import {
   ActivityCard,
   CardsWrapper,
@@ -18,7 +16,7 @@ import styles from './HomeLayout.module.scss'
 import images from './assets'
 
 export const HomeLayout: React.FC = () => (
-  <Page>
+  <>
     <SearchTravelSection />
 
     <BookWithUsSection />
@@ -136,5 +134,5 @@ export const HomeLayout: React.FC = () => (
         <InstagramCard variant="v6" />
       </div>
     </CardsWrapper>
-  </Page>
+  </>
 )

@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-import { OrangeButton, Input, Icon } from 'components/base'
+import { OrangeButton, Input, Icon } from 'components'
 
 import styles from './HeaderInput.module.scss'
 

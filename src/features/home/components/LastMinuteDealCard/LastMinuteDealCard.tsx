@@ -1,7 +1,7 @@
 import * as React from 'react'
 import classNames from 'classnames'
 
-import { Icon } from 'components/base'
+import { Icon } from 'components'
 import styles from './LastMinuteDealCard.module.scss'
 
 interface IExposeTime {

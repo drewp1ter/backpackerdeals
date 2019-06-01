@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-import { Input, OrangeButton } from 'components/base'
+import { Input, OrangeButton } from 'components'
 
 import styles from './Footer.module.scss'
 
