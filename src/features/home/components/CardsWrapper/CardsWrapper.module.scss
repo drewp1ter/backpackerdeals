@@ -11,19 +11,23 @@
 
   p {
     text-align: center;
-    
+
     a {
       font-size: 16px;
       color: #959595;
       margin-top: 16px;
       margin-bottom: 35px;
       cursor: pointer;
-  
+
       i {
         margin-left: 5px;
         font-size: 16px;
         color: #959595;
       }
     }
+  }
+
+  .wrapper {
+    margin: auto;
   }
 }

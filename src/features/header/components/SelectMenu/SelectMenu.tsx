@@ -10,17 +10,18 @@ interface IProps {
   readonly opener: React.ReactNode
   readonly size?: 'md' | 'lg'
   readonly pos?: 'right' | 'left'
+  readonly openerClass?: string
   open?: boolean
 }
 
-export const SelectMenu: React.FC<IProps> = ({ open = false, title, opener, children, size = 'md', pos = 'right' }) => {
+export const SelectMenu: React.FC<IProps> = ({ open = false, title, opener, children, size = 'md', pos = 'right', openerClass }) => {
   const [isOpen, setIsOpen] = useState<boolean>(open)
   const toggle = () => setIsOpen(!isOpen)
   const collapse = () => setIsOpen(false)
 
   return (
     <div className={styles.headerSelectMenu} tabIndex={0} onBlur={collapse}>
-      <div className={classNames(styles.opener, isOpen && styles.opened)} onClick={toggle}>
+      <div className={classNames(styles.opener, openerClass, isOpen && styles.opened)} onClick={toggle}>
         <span>{opener}</span>
         <i className="fas fa-chevron-down" />
       </div>

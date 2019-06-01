@@ -11,27 +11,27 @@ export const BookWithUsSection: React.FC = () => (
       <div className={styles.whyBook}>
         <div>
           <Icon name="liveAvailablityInstantConfirmations" size="md" />
-          <span>Live Availablity</span>
+          <p>Live Availablity</p>
         </div>
         <div>
           <Icon name="bestSelections" size="md" />
-          <span>Best Selections</span>
+          <p>Best Selections</p>
         </div>
         <div>
           <Icon name="securePayment" size="md" />
-          <span>100% Safe Payments</span>
+          <p>100% Safe Payments</p>
         </div>
         <div>
           <Icon name="guarantee" size="md" />
-          <span>100% Guarantee</span>
+          <p>100% Guarantee</p>
         </div>
         <div>
           <Icon name="liveChatExpertAgentAssistance" size="md" />
-          <span>Live Chat</span>
+          <p>Live Chat</p>
         </div>
         <div>
           <Icon name="verifiedTourOperators" size="md" />
-          <span>Verified Tour Operators</span>
+          <p>Verified Tour Operators</p>
         </div>
       </div>
     </CardsWrapper>

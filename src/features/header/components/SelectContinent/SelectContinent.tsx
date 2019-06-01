@@ -6,7 +6,7 @@ import styles from './SelectContinent.module.scss'
 export const SelectContinent: React.FC = () => {
   const continentOpener: React.ReactNode = <span className={styles.continentOpener}>Explore by country</span>
   return (
-    <SelectMenu open={true} opener={continentOpener} title="Select continent" size="lg" pos="left">
+    <SelectMenu openerClass={styles.opener} open={true} opener={continentOpener} title="Select continent" size="lg" pos="left">
       <Tabs>
         <Tab label="Australia & NZ">
           <Tabs theme="leftmenu">
@@ -22,7 +22,7 @@ export const SelectContinent: React.FC = () => {
           After &apos;while, <em>Crocodile</em>!
         </Tab>
         <Tab label="Asia">
-        Nothing to see here, this tab is <em>extinct</em>!
+          Nothing to see here, this tab is <em>extinct</em>!
         </Tab>
       </Tabs>
     </SelectMenu>

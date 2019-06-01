@@ -61,14 +61,16 @@ export const HomeLayout: React.FC = () => (
     </CardsWrapper>
 
     <CardsWrapper title="Travel stories" linkTitle="Read more">
-      <TravelStoryCard
-        key="1"
-        img={images.featuredArticle}
-        title="HOW TO TRAVEL BY RV ON A BACKPACKER BUDGET"
-        description="America, Backpacking Tips, Budget tips, Road Trip, RV"
-        variant="lg"
-        gradDeg={252}
-      />
+      <div className={styles.cardsRow}>
+        <TravelStoryCard
+          key="1"
+          img={images.featuredArticle}
+          title="HOW TO TRAVEL BY RV ON A BACKPACKER BUDGET"
+          description="America, Backpacking Tips, Budget tips, Road Trip, RV"
+          variant="lg"
+          gradDeg={252}
+        />
+      </div>
       <div key="2" className={styles.travelStoriesCardsRow}>
         <TravelStoryCard
           img={images.article}

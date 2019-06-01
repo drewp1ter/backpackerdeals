@@ -1,6 +1,6 @@
 .activitiesTourThingsCardsRow, .travelStoriesCardsRow, .topDestinationsCardsRow {
   display: flex;
-  
+  justify-content: center;
   >div {
     margin-right: 16px;
 
@@ -16,7 +16,7 @@
 
 .cardsRow {
   display: flex;
-
+  justify-content: center;
   >div, >img {
     margin-right: 16px;
 
