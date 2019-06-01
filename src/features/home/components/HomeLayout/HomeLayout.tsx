@@ -22,7 +22,7 @@ export const HomeLayout: React.FC = () => (
           </div>
           <div className={styles.cardsRow}>
             <TopDestinationCard title="Queenstown" country="New Zealand" width="md" height="sm" img={images.maskGroup19} gradDeg={245} />
-            <TopDestinationCard title="Waitomo" country="New Zealand" width="sm" height="sm" img="54" gradDeg={226} />
+            <TopDestinationCard title="Waitomo" country="New Zealand" width="sm" height="sm" img="" gradDeg={226} />
           </div>
         </div>
         <TopDestinationCard title="Uluru" country="Australia" width="sm" height="lg" img={images.maskGroup17} gradDeg={201} />
