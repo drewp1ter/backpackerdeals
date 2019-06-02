@@ -1,0 +1,66 @@
+.root {
+  padding: 42px 0 0 80px;
+
+  h5 {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 600;
+    color: #202020;
+  }
+
+  .places {
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 32px;
+
+    h6.withoutImg {
+      padding-left: 8px;
+      font-size: 14px;
+      color:#959595;
+      margin-top: 18px;
+
+      &:first-child {
+        margin-bottom: 50px;
+        width: 300px;
+      }
+    }
+
+    .withImg {
+      position: relative;
+      border-radius: 4px;
+      max-height: 72px;
+      margin-bottom: 8px;
+
+      div {
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        border-radius: 4px;
+        opacity: .6;
+        background-image: linear-gradient(298deg, rgba(0, 0, 0, 0), #000000);
+      }
+
+      h6 {
+        position: absolute;
+        top: 10px;
+        left: 8px;
+        font-size: 14px;
+        color: #fff;
+        z-index: 1;
+      }
+
+      img {
+        max-width: 200px;
+        max-height: 72px;
+      }
+    }
+  }
+
+  .withImg, .withoutImg {
+    width: 200px;
+    margin-right: 8px;
+  }
+
+}

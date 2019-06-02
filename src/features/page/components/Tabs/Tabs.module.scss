@@ -16,10 +16,11 @@
     li {
       padding: 22px 0;
       display: inline-block;
-      margin-right: 62px;
+      margin-right: 54px;
       font-size: 14px;
       color: #959595;
       margin-bottom: -2px;
+      transition: .2s ease color, .2s ease border-bottom;
 
       &[data-active="true"] {
         color: #202020;
@@ -33,12 +34,14 @@
   }
 
   > ol[data-theme="leftmenu"] {
+    margin-top: 32px;
 
     li {
       font-size: 14px;
+      width: 168px;
       color: #202020;
       padding: 10px 26px;
-      // margin-left: -26px;
+      margin-left: -26px;
       margin-bottom: 8px;
 
       p {

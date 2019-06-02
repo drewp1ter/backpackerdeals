@@ -11,11 +11,10 @@ interface IProps {
   readonly size?: 'md' | 'lg'
   readonly pos?: 'right' | 'left'
   readonly openerClass?: string
-  open?: boolean
 }
 
-export const SelectMenu: React.FC<IProps> = ({ open = false, title, opener, children, size = 'md', pos = 'right', openerClass }) => {
-  const [isOpen, setIsOpen] = useState<boolean>(open)
+export const SelectMenu: React.FC<IProps> = ({ title, opener, children, size = 'md', pos = 'right', openerClass }) => {
+  const [isOpen, setIsOpen] = useState<boolean>(false)
   const toggle = () => setIsOpen(!isOpen)
   const collapse = () => setIsOpen(false)
 
