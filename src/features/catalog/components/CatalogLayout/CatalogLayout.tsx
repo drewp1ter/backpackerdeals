@@ -1,11 +1,11 @@
 import React from 'react'
 
-import { HeaderCard } from '..'
+import { HeaderCard, MoreActivities } from '..'
 import styles from './CatalogLayout.module.scss'
 
 export const CatalogLayout: React.FC = () => (
   <>
-    <HeaderCard
+    {/*<HeaderCard
       title="Australia"
       description="Tours, day trips and activities in Australia"
       body="With year round sunshine, incredible beaches and some of the most cosmopolitan cities in the world,
@@ -14,6 +14,7 @@ export const CatalogLayout: React.FC = () => (
       Check out our Australia deals"
       rating={4.5}
       className={styles.card}
-    />
+    />*/}
+    <MoreActivities />
   </>
 )
