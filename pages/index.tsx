@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React from 'react'
 
 import { HomeLayout } from 'features/home/components'
 import { Page } from 'features/page/containers'

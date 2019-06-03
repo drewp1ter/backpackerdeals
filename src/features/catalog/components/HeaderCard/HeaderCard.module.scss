@@ -1,0 +1,32 @@
+.root {
+  width: 498px;
+  padding: 44px 40px 30px;
+  opacity: .9;
+  border-radius: 8px;
+  background-color: #ffffff;
+
+  h1 {
+    margin: 0;
+    font-size: 62px;
+    line-height: 1.29;
+    color: #ff5a39;
+  }
+
+  h2 {
+    margin: 0;
+    font-size: 26px;
+    line-height: 1.23;
+    font-weight: bold;
+    color: #202020;
+  }
+
+  p {
+    font-size: 14px;
+    line-height: 1.71;
+    color: #959595;
+  }
+
+  .rating {
+    margin-top: 58px;
+  }
+}
