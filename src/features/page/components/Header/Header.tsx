@@ -1,6 +1,7 @@
 import classNames from 'classnames'
 import React, { useState } from 'react'
 
+import { AdvancedSearch } from 'components'
 import { SelectContinent, SelectMenu } from '..'
 
 import Logo from './assets/logo_Header.svg'
@@ -38,7 +39,7 @@ export const Header: React.FC = () => {
       <div className={styles.tools}>
         <div className={styles.logoAndSearch}>
           <img src={Logo} alt="Logo" className="logo" />
-          <div className="advanced-search" />
+          <AdvancedSearch />
         </div>
         <div className={styles.tours}>
           <SelectContinent />

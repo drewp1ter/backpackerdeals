@@ -1,0 +1,32 @@
+.searchTravelInput {
+  margin: auto;
+  position: relative;
+  width: 1033px;
+  
+  .imageBlock {
+    position: absolute;
+    bottom: -32.5px;
+    left: 350px;
+    right: 0px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 320px;
+    height: 32px;
+    border-radius: 0 0 50px 50px;
+    color: #fff;
+    font-size: 12px;
+    background-color: #ff5a39;
+    
+    i {
+      margin-right: 5px;
+    }
+  }
+}
+
+.input {
+  input {
+    width: 753px;
+  }
+}

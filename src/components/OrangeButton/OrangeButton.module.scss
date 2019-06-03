@@ -11,7 +11,7 @@
   transition: .2s ease background-color;
 
   &:hover {
-    background-color: rgba(#ff5a39, 0.5);
+    background-color: darken(#ff5a39, 15);
   }
 
   &[data-theme="rounded"] {
@@ -28,5 +28,11 @@
     font-size: 14px;
     font-weight: normal;
     line-height: 1.71;
+  }
+
+  &[data-theme="small"] {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
   }
 }
