@@ -25,7 +25,7 @@ export const Tabs: React.FC<IProps> = ({ children, theme = 'head' }) => {
 
   return (
     <div className={styles.root} data-theme={theme}>
-      <ol data-theme={theme}>{renderTabs()}</ol>
+      <ul data-theme={theme}>{renderTabs()}</ul>
       {children[activeTab]}
     </div>
   )

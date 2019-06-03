@@ -14,8 +14,8 @@ export interface IProps {
 
 export const MostPopular: React.FC<IProps> = ({ places, title }) => {
 
-  const renderPlaces = () => places && places.map(place => place.img ? (
-    <div key={place.title} className={styles.withImg}>
+  const renderPlaces = () => places && places.map((place, idx) => place.img ? (
+    <div key={`${place.title}-${idx}`} className={styles.withImg}>
       <img src={place.img} alt="" />
       <h6>{place.title}</h6>
       <div />
