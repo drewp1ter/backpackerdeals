@@ -14,7 +14,7 @@ export const CardsWrapper: React.FC<IProps> = ({ title, linkTitle, children, cla
   const mainClass = classNames(styles.root, className)
   return (
     <div className={mainClass}>
-      <h2>{title}</h2>
+      <h3>{title}</h3>
       <p>
         <a>
           {linkTitle}

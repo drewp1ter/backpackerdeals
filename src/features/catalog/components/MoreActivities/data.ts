@@ -1,15 +1,9 @@
-import * as React from 'react'
-
-import styles from './LastMinuteDeal.module.scss'
-
-import { LastMinuteDealCard } from 'components'
-
 import Picture1 from './assets/1.jpg'
 import Picture2 from './assets/2.jpg'
 import Picture3 from './assets/3.jpg'
 import Picture4 from './assets/4.jpg'
 
-const data = [
+export default [
   {
     img: Picture1,
     tourName: 'Kakadu 4WD Adventure',
@@ -75,11 +69,3 @@ const data = [
     },
   },
 ]
-
-export const LastMinuteDeal: React.FC = () => (
-  <div className={styles.lastMinuteDeal}>
-    {data.map((card, index) => (
-      <LastMinuteDealCard {...card} key={`${index}-card`} />
-    ))}
-  </div>
-)
