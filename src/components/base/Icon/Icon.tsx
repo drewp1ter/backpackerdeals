@@ -11,11 +11,12 @@ export interface IProps {
   readonly size?: undefined | keyof typeof sizes
   readonly className?: string
   readonly alt?: string
+  readonly onClick?: () => void
 }
 
-export const Icon: React.FC<IProps> = ({ name, className, size, alt }) =>
+export const Icon: React.FC<IProps> = ({ name, className, size, alt, onClick }) =>
   size ? (
-    <img alt={alt} className={className} width={sizes[size]} height={sizes[size]} src={images[name]} />
+    <img alt={alt} onClick={onClick} className={className} width={sizes[size]} height={sizes[size]} src={images[name]} />
   ) : (
-    <img alt={alt} className={className} src={images[name]} />
+    <img alt={alt} onClick={onClick} className={className} src={images[name]} />
   )

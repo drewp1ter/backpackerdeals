@@ -1,9 +1,24 @@
-.searchTravelInput {
-  margin: auto;
+.advancedSearchTravelInput {
   position: relative;
-  width: 1033px;
-  
-  .imageBlock {
+  background: rgba(255, 255, 255, .26);
+  border-radius: 60px;
+  width: 948px;
+  margin: 0 auto;
+  height: 56px;
+  padding: 8px 55px 8px 30px;
+  font-size: 16px;
+
+  .searchBlock {
+    display: inline-flex;
+  }
+
+  >button {
+    position: absolute;
+    right: 8px;
+    top: 8px;
+  }
+
+  .searchImage {
     position: absolute;
     bottom: -32.5px;
     left: 350px;
@@ -22,11 +37,5 @@
     i {
       margin-right: 5px;
     }
-  }
-}
-
-.input {
-  input {
-    width: 753px;
   }
 }

@@ -1,4 +1,5 @@
 export { ActivityCard } from './ActivityCard'
+export { AdvancedSearchTravelInput } from './AdvancedSearchTravelInput'
 export { AuthenticCard } from './AuthenticCard'
 export { BookWithUsSection } from './BookWithUsSection'
 export { CardsWrapper } from './CardsWrapper'

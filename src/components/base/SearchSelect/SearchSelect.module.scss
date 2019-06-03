@@ -90,6 +90,10 @@
 
   &[data-theme="light"] {
     .select {
+      margin-right: 10px;
+      border-radius: 5px;
+      border: solid 1px #fafafa;
+
       i {
         color: #fafafa;
       }

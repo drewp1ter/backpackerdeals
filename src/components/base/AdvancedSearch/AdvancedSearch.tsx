@@ -4,7 +4,7 @@ import { OrangeButton, SearchSelect } from 'components/base'
 
 import styles from './AdvancedSearch.module.scss'
 
-import Logo from 'components/partials/Header/assets/logo_Header.svg'
+import Logo from '../../partials/Header/assets/logo_Header.svg'
 
 const startLocation = [
   'Haven 5:20 AM',
@@ -39,11 +39,24 @@ export const AdvancedSearch: React.FC = () => {
       <div className={styles.searchMenu} data-opened={isOpen && 'opened'}>
         <img src={Logo} alt="Logo" className="logo" />
         <div className={styles.searchField}>
-          <SearchSelect selectedOption="Start Location" options={startLocation} handleSelect={handleSelect} theme="dark" />
+          <SearchSelect
+            className={styles.firstSelect}
+            selectedOption="Start Location"
+            options={startLocation}
+            handleSelect={handleSelect}
+            theme="dark"
+          />
           <SearchSelect selectedOption="Type of tour" options={startLocation} handleSelect={handleSelect} theme="dark" />
           <SearchSelect selectedOption="End Location" disabled={true} options={startLocation} handleSelect={handleSelect} theme="dark" />
           <SearchSelect selectedOption="Select date" options={startLocation} handleSelect={handleSelect} theme="dark" />
-          <SearchSelect selectedOption="Number of days" disabled={true} options={startLocation} handleSelect={handleSelect} theme="dark" />
+          <SearchSelect
+            className={styles.lastSelect}
+            selectedOption="Number of days"
+            disabled={true}
+            options={startLocation}
+            handleSelect={handleSelect}
+            theme="dark"
+          />
           <OrangeButton theme="rectangled">SEARCH</OrangeButton>
         </div>
         <button onClick={() => toggleSearch(false)}>
