@@ -102,7 +102,7 @@ export const LastMinuteDealCard: React.FC<IProps> = ({
           </>
         )}
 
-        {(view === View.reversed || View.horizontal) && (
+        {(view === View.reversed || view === View.horizontal) && (
           <div data-view={view}>
             <div className={styles.aboutPlace}>
               <div className={styles.location}>
