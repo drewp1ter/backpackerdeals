@@ -1,12 +1,14 @@
 export enum ActionType {
   setPage = 'SET_PAGE',
+  nextPage = 'NEXT_PAGE',
+  prevPage = 'PREV_PAGE',
   setView = 'SET_VIEW',
   toggleDec = 'TOGGLE_DEC',
 }
 
 export enum ViewType {
-  tile = 'tile',
-  list = 'list',
+  tile = 'reversed',
+  list = 'horizontal',
 }
 
 export interface IState {
@@ -30,6 +32,10 @@ const reducer: React.Reducer<IState, IAction> = (state, action) => {
   switch (action.type) {
     case ActionType.setPage:
       return { ...state, page: action.payload }
+    case ActionType.nextPage:
+      return { ...state, page: state.page + 1 }
+    case ActionType.prevPage:
+      return { ...state, page: state.page -1 }
     case ActionType.setView:
       return { ...state, view: action.payload }
     case ActionType.toggleDec:

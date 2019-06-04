@@ -8,12 +8,12 @@
   }
 
   .header {
-    margin-top: 45px;
     display: flex;
     justify-content: space-between;
     font-size: 14px;
     line-height: 1.85;
     color: #202020;
+    margin-bottom: 30px;
 
     i {
       margin-left: 8px;
@@ -30,6 +30,8 @@
   }
 
   .pagesControls {
+    margin-top: 40px;
+
     span {
       display: inline-block;
       font-size: 13px;
@@ -45,6 +47,8 @@
 
     button {
       width: 48px;
+      outline: none;
+      cursor: pointer;
       height: 48px;
       border: solid 1px #ff5a39;
       border-radius: 50%;
@@ -56,6 +60,7 @@
 
   .content {
     display: flex;
+    margin-top: 45px;
 
     .filters {
       width: 20%;
@@ -70,9 +75,20 @@
       }
     }
 
-    .cards {
-      display: flex;
-      flex-wrap: wrap;
+    .cardsContainer {
+      width: 80%;
     }
+
+    .cards {
+      &[data-view="reversed"] {
+        display: flex;
+        flex-wrap: wrap;
+      }
+      width: 100%;
+    }
+  }
+
+  .card {
+    margin-bottom: 16px;
   }
 }

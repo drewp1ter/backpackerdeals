@@ -19,6 +19,7 @@ export const cards = [
       hours: '10',
       minutes: '51',
     },
+    description: 'Explore one of the world`s oldest and most spectacular mountain ranges in the heart of Victoria on this full day adventure from Melbourne.'
   },
   {
     img: Picture2,
@@ -35,6 +36,7 @@ export const cards = [
       hours: '10',
       minutes: '51',
     },
+    description: 'Explore one of the world`s oldest and most spectacular mountain ranges in the heart of Victoria on this full day adventure from Melbourne.'
   },
   {
     img: Picture3,
@@ -51,6 +53,7 @@ export const cards = [
       hours: '10',
       minutes: '51',
     },
+    description: 'Explore one of the world`s oldest and most spectacular mountain ranges in the heart of Victoria on this full day adventure from Melbourne.'
   },
   {
     img: Picture4,
@@ -72,7 +75,7 @@ export const cards = [
 
 export const filters = [
   "Adelaide (10)",
-  "Hervey Bay (1)", 
+  "Hervey Bay (1)",
   "Agnes Water (2)",
   "Hobart (22)",
   "Airlie Beach/",
