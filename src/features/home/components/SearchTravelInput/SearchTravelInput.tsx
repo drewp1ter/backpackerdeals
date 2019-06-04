@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-import { OrangeButton, Input } from 'components'
+import { Input, OrangeButton } from 'components'
 
 import styles from './SearchTravelInput.module.scss'
 

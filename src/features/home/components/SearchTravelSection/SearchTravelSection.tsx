@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-import { SearchTravelInput, AdvancedSearchTravelInput } from '..'
+import { AdvancedSearchTravelInput, SearchTravelInput } from '..'
 
 import styles from './SearchTravelSection.module.scss'
 

@@ -1,23 +1,72 @@
-import React, { useState } from 'react'
+import React, { useReducer, useState } from 'react'
 
 import { LastMinuteDealCard, Checkbox } from 'components'
 import styles from './MoreActivities.module.scss'
 import { cards, filters } from './data'
 
+enum ActionType {
+  setPage = 'SET_PAGE',
+  setView = 'SET_VIEW',
+  toggleDec = 'TOGGLE_DEC',
+}
+
+enum ViewType {
+  tile = 'tile',
+  list = 'list',
+}
+
+interface IState {
+  page: number
+  view: ViewType
+  sortDec: boolean
+}
+
+interface IAction {
+  type: ActionType
+  payload?: any
+}
+
+const initialState = {
+  page: 4,
+  view: ViewType.tile,
+  sortDec: true,
+}
+
+const reducer: React.Reducer<IState, IAction> = (state, action) => {
+  switch (action.type) {
+    case ActionType.setPage:
+      return { ...state, page: action.payload }
+    case ActionType.setView:
+      return { ...state, view: action.payload }
+    case ActionType.toggleDec:
+      return { ...state, sortDec: !state.sortDec }
+    default:
+      return state
+  }
+}
+
 export const MoreActivities: React.FC = () => {
-  const [view, setView] = useState<string>('tile')
-  const [sortDec, setSortDec] = useState<boolean>(true)
+  const [{ view, sortDec, page }, dispatch] = useReducer<React.Reducer<IState, IAction>>(reducer, initialState)
 
   const handleChangeView = (e: React.MouseEvent<HTMLElement>) => {
-    const view = e.currentTarget.dataset.view as any
-    setView(view)
+    const view = e.currentTarget.dataset.view as ViewType
+    dispatch({ type: ActionType.setView, payload: view })
   }
 
-  const handleChangeSortOrder = () => setSortDec(!sortDec)
+  const handleChangeSortOrder = () => dispatch({ type: ActionType.toggleDec })
 
   const renderCards = () => cards && cards.map((card, idx) => <LastMinuteDealCard view="reversed" {...card} key={`${idx}-card`} />)
 
   const renderFilters = () => filters && filters.map((filter, index) => <Checkbox key={`${index}-filter`} label={filter} />)
+
+  const pages = 10
+  const renderPageControls = () => {
+    return [...Array(5).keys()].map(idx => {
+      const a = page - 2 < 1 ? idx + 1 : page + 2 > pages ? pages - 4 + idx : page - 2 + idx
+
+      return <i>{a}</i>
+    })
+  }
 
   return (
     <div className={styles.moreActivities}>
@@ -26,8 +75,8 @@ export const MoreActivities: React.FC = () => {
         <span>{cards.length} Activities</span>
         <span className={styles.viewStyle}>
           List view:
-          <i onClick={handleChangeView} className="fas fa-th-large" data-active={view === 'tile'} data-view={'tile'} />
-          <i onClick={handleChangeView} className="fas fa-list" data-active={view === 'list'} data-view="list" />
+          <i onClick={handleChangeView} className="fas fa-th-large" data-active={view === ViewType.tile} data-view={ViewType.tile} />
+          <i onClick={handleChangeView} className="fas fa-list" data-active={view === ViewType.list} data-view={ViewType.list} />
           Sort by:
           <i onClick={handleChangeSortOrder} className={`fas ${sortDec ? 'fa-sort-amount-down' : 'fa-sort-amount-up'}`} />
         </span>
@@ -37,7 +86,10 @@ export const MoreActivities: React.FC = () => {
           <h4>Select city</h4>
           {renderFilters()}
         </div>
-        <div className={styles.cards}>{renderCards()}</div>
+        <div>
+          <div className={styles.cards}>{renderCards()}</div>
+          <div className={styles.pagesControls}>{renderPageControls()}</div>
+        </div>
       </div>
     </div>
   )
