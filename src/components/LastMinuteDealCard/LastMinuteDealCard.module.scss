@@ -1,7 +1,7 @@
 .lastMinuteDealCard {
   margin-right: 15px;
 
-  &:lastOfType {
+  &:last-of-type {
     margin-right: 0;
   }
 
@@ -12,6 +12,39 @@
       position: absolute;
       top: -14px;
       left: 15px;
+    }
+
+    .sellOut {
+      position: absolute;
+      top: 150px;
+      right: -28px;
+      transform: rotate(270deg);
+      width: 96px;
+      height: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 7px 7px 0 0;
+      background-color: #fafafa;
+      font-size: 13px;
+      line-height: 0.92;
+      text-align: center;
+      color: #202020;
+    }
+
+    .like {
+      cursor: pointer;
+      position: absolute;
+      bottom: 30px;
+      right: 25px;
+      font-size: 24px;
+      color: #ffffff;
+      z-index: 1;
+      transition: .2s ease color;
+
+      &:hover {
+        color: darken(#fff, 5);
+      }
     }
 
     .exposeTime {
@@ -80,35 +113,39 @@
   }
 
   .cardDescription {
+    padding: 20px 24px 24px 24px;
+    border: solid 1px #fafafa;
+    border-top: 0px;
 
-    .ratingAndLocation {
+    .stars {
+      span {
+        margin-left: 10px;
+        font-size: 13px;
+        line-height: 1.85;
+        text-align: left;
+        color: #959595;
+      }
+
+      i {
+        font-size: 14px;
+
+        &.filled {
+          color: #ffcb00;
+        }
+
+        &.unfilled {
+          color: #dadada;
+        }
+      }
+    }
+
+    .aboutPlace {
       margin-bottom: 30px;
       display: flex;
       justify-content: space-between;
       align-items: center;
 
-      .stars {
-        span {
-          margin-left: 10px;
-          font-size: 13px;
-          line-height: 1.85;
-          text-align: left;
-          color: #959595;
-        }
-
-        i {
-          font-size: 14px;
-
-          &.filled {
-            color: #ffcb00;
-          }
-
-          &.unfilled {
-            color: #dadada;
-          }
-        }
-      }
-      .country {
+      .location {
         i {
           margin-right: 5px;
           font-size: 16px;
@@ -128,13 +165,16 @@
   }
 
   .tour {
-    width: 186px;
     margin: 0;
     font-size: 26px;
     font-weight: bold;
     line-height: 1.23;
     text-align: left;
     color: #202020;
+
+    &[data-view="vertical"] {
+      width: 186px;
+    }
   }
 
   .duration {
@@ -143,13 +183,20 @@
     line-height: 1.85;
     text-align: left;
     color: #959595;
-    margin-bottom: 20px;
+
+    i {
+      margin-right: 5px;
+      font-size: 12px;
+      line-height: 2;
+      color: #959595;
+    }
   }
 
   .valueAndLink {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-top: 20px;
 
     .totalPrice {
       .from {

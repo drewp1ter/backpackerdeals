@@ -55,7 +55,7 @@ export const MoreActivities: React.FC = () => {
 
   const handleChangeSortOrder = () => dispatch({ type: ActionType.toggleDec })
 
-  const renderCards = () => data && data.map((card, idx) => <LastMinuteDealCard {...card} key={`${idx}-card`} />)
+  const renderCards = () => data && data.map((card, idx) => <LastMinuteDealCard view="reversed" {...card} key={`${idx}-card`} />)
 
   const pages = 10
   const renderPageControls = () => {
