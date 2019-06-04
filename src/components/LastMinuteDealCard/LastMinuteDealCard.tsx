@@ -11,8 +11,14 @@ interface IExposeTime {
   minutes: string
 }
 
+enum View {
+  vertical = 'vertical',
+  reversed = 'reversed',
+  horizontal = 'horizontal',
+}
+
 interface IProps {
-  readonly view: 'vertical' | 'reversed' | 'horizontal'
+  readonly view: keyof typeof View
   readonly img: string
   readonly tourName: string
   readonly price: number
@@ -25,6 +31,8 @@ interface IProps {
   readonly duration: string
   readonly rating: number
   readonly exposeTime?: IExposeTime
+  readonly description?: string
+  readonly className?: string
 }
 
 export const LastMinuteDealCard: React.FC<IProps> = ({
@@ -41,9 +49,11 @@ export const LastMinuteDealCard: React.FC<IProps> = ({
   value,
   saleType,
   exposeTime,
+  description,
+  className
 }) => {
   return (
-    <div className={styles.lastMinuteDealCard}>
+    <div data-view={view} className={classNames(styles.lastMinuteDealCard, className)}>
       <div className={styles.imageBlock}>
         {saleType === 'topDeal' && <Icon className={styles.badge} name="topDeal" alt="Top Deal" />}
         {saleType === 'mostPopular' && <Icon className={styles.badge} name="mostPopular" alt="Most Popular" />}
@@ -73,8 +83,9 @@ export const LastMinuteDealCard: React.FC<IProps> = ({
         <img src={img} alt="Last Minute Deal Tour" />
       </div>
 
-      <div className={styles.cardDescription}>
-        {view === 'vertical' && (
+      <div data-view={view} className={styles.cardDescription}>
+
+        {view === View.vertical && (
           <>
             <div className={styles.aboutPlace}>
               <Rating rating={rating} />
@@ -84,14 +95,15 @@ export const LastMinuteDealCard: React.FC<IProps> = ({
               </div>
             </div>
 
-            <p data-view="vertical" className={styles.tour}>
+            <p data-view={view} className={styles.tour}>
               {tourName}
             </p>
             <p className={styles.duration}>{duration}</p>
           </>
         )}
-        {view === 'reversed' && (
-          <>
+
+        {(view === View.reversed || View.horizontal) && (
+          <div data-view={view}>
             <div className={styles.aboutPlace}>
               <div className={styles.location}>
                 <i className="fas fa-map-marker-alt" />
@@ -105,7 +117,8 @@ export const LastMinuteDealCard: React.FC<IProps> = ({
 
             <p className={styles.tour}>{tourName}</p>
             <Rating rating={rating} />
-          </>
+            {view === View.horizontal && <p className={styles.description}>{description}</p>}
+          </div>
         )}
 
         <div className={styles.valueAndLink}>

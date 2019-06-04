@@ -1,6 +1,10 @@
 .lastMinuteDealCard {
   margin-right: 15px;
 
+  &[data-view="horizontal"] {
+    display: flex;
+  }
+
   &:last-of-type {
     margin-right: 0;
   }
@@ -116,6 +120,24 @@
     padding: 20px 24px 24px 24px;
     border: solid 1px #fafafa;
     border-top: 0px;
+
+    &[data-view="horizontal"] {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      padding: 12px 24px 24px 32px;
+    }
+
+    div[data-view="horizontal"] {
+      flex: 1;
+
+      .description {
+        margin-top: 22px;
+        font-size: 14px;
+        line-height: 1.71;
+        color: #959595;
+      }
+    }
 
     .aboutPlace {
       margin-bottom: 30px;
