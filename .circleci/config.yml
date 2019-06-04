@@ -24,4 +24,4 @@ jobs:
       - deploy:
           name: Push application Docker image
           command: |
-            docker save backpackerdeals | bzip2 | ssh rulevoi@cs.istu.ru "ssh -i ./bpd4.pem ubuntu@bpd4.backpackerdeals.com 'bunzip2 | docker load && ./start.sh'"
+            docker save backpackerdeals | bzip2 | ssh -o "StrictHostKeyChecking no" rulevoi@cs.istu.ru "ssh -i ./bpd4.pem ubuntu@bpd4.backpackerdeals.com 'bunzip2 | docker load && ./start.sh'"
