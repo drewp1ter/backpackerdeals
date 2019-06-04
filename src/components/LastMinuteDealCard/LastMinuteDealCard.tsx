@@ -42,8 +42,6 @@ export const LastMinuteDealCard: React.FC<IProps> = ({
   saleType,
   exposeTime,
 }) => {
-  const renderStars = () => <Rating rating={rating} />
-
   return (
     <div className={styles.lastMinuteDealCard}>
       <div className={styles.imageBlock}>

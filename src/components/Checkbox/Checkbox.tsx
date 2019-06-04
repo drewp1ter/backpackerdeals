@@ -9,7 +9,7 @@ interface IProps {
 export const Checkbox: React.FC<IProps> = ({ label }) => (
   <div className={styles.checkbox}>
     <input type="checkbox" />
-    <span></span>
+    <span/>
     <label>{label}</label>
   </div>
 )

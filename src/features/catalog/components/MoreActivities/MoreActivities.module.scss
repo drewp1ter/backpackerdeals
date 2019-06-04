@@ -31,10 +31,11 @@
 
   .pagesControls {
     span {
+      display: inline-block;
       font-size: 13px;
       line-height: 1.85;
       color: #959595;
-      margin-right: 16px;
+      width: 26px;
       cursor: pointer;
 
       &[data-active="true"] {
@@ -47,6 +48,9 @@
       height: 48px;
       border: solid 1px #ff5a39;
       border-radius: 50%;
+      background-color: transparent;
+      font-size: 17px;
+      color: #ff5a39;
     }
   }
 
@@ -65,8 +69,10 @@
         color: #202020;
       }
     }
+
     .cards {
-      width: 80%;
+      display: flex;
+      flex-wrap: wrap;
     }
   }
 }

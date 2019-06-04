@@ -1,9 +1,9 @@
 import React, { useReducer } from 'react'
 
-import { LastMinuteDealCard, Checkbox } from 'components'
-import styles from './MoreActivities.module.scss'
-import reducer, { IState, IAction, initialState, ActionType, ViewType } from './reducer'
+import { Checkbox, LastMinuteDealCard } from 'components'
 import { cards, filters } from './data'
+import styles from './MoreActivities.module.scss'
+import reducer, { ActionType, IAction, initialState, IState, ViewType } from './reducer'
 
 export const MoreActivities: React.FC = () => {
   const pages = 10
