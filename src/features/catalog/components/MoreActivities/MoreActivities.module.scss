@@ -28,4 +28,25 @@
       }
     }
   }
+
+  .pagesControls {
+    span {
+      font-size: 13px;
+      line-height: 1.85;
+      color: #959595;
+      margin-right: 16px;
+      cursor: pointer;
+
+      &[data-active="true"] {
+        color: #ff5a39;
+      }
+    }
+
+    button {
+      width: 48px;
+      height: 48px;
+      border: solid 1px #ff5a39;
+      border-radius: 50%;
+    }
+  }
 }

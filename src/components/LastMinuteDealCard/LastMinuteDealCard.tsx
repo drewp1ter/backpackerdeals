@@ -2,7 +2,7 @@ import * as React from 'react'
 
 import classNames from 'classnames'
 
-import { Icon } from 'components'
+import { Icon, Rating } from 'components'
 import styles from './LastMinuteDealCard.module.scss'
 
 interface IExposeTime {
@@ -42,20 +42,7 @@ export const LastMinuteDealCard: React.FC<IProps> = ({
   saleType,
   exposeTime,
 }) => {
-  const renderStars = () => {
-    // tslint:disable-next-line:prefer-const
-    let starsArray: React.ReactNode[] = []
-
-    for (let i: number = 1; i <= 5; i++) {
-      if (i <= Math.floor(rating)) {
-        starsArray.push(<i key={i} className={classNames('fas fa-star', styles.filled)} />)
-      } else {
-        starsArray.push(<i key={i} className={classNames('far fa-star', styles.unfilled)} />)
-      }
-    }
-
-    return starsArray
-  }
+  const renderStars = () => <Rating rating={rating} />
 
   return (
     <div className={styles.lastMinuteDealCard}>
@@ -92,10 +79,7 @@ export const LastMinuteDealCard: React.FC<IProps> = ({
         {view === 'vertical' && (
           <>
             <div className={styles.aboutPlace}>
-              <div className={styles.stars}>
-                {renderStars()}
-                <span>{rating} from 5</span>
-              </div>
+              <Rating rating={rating} />
               <div className={styles.location}>
                 <i className="fas fa-map-marker-alt" />
                 <span>{location}</span>
@@ -122,10 +106,7 @@ export const LastMinuteDealCard: React.FC<IProps> = ({
             </div>
 
             <p className={styles.tour}>{tourName}</p>
-            <div className={styles.stars}>
-              {renderStars()}
-              <span>{rating} from 5</span>
-            </div>
+            <Rating rating={rating} />
           </>
         )}
 

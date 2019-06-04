@@ -1,51 +1,12 @@
-import React, { useReducer, useState } from 'react'
+import React, { useReducer } from 'react'
 
 import { LastMinuteDealCard } from 'components'
 import data from './data'
 import styles from './MoreActivities.module.scss'
-
-enum ActionType {
-  setPage = 'SET_PAGE',
-  setView = 'SET_VIEW',
-  toggleDec = 'TOGGLE_DEC',
-}
-
-enum ViewType {
-  tile = 'tile',
-  list = 'list',
-}
-
-interface IState {
-  page: number
-  view: ViewType
-  sortDec: boolean
-}
-
-interface IAction {
-  type: ActionType
-  payload?: any
-}
-
-const initialState = {
-  page: 4,
-  view: ViewType.tile,
-  sortDec: true,
-}
-
-const reducer: React.Reducer<IState, IAction> = (state, action) => {
-  switch (action.type) {
-    case ActionType.setPage:
-      return { ...state, page: action.payload }
-    case ActionType.setView:
-      return { ...state, view: action.payload }
-    case ActionType.toggleDec:
-      return { ...state, sortDec: !state.sortDec }
-    default:
-      return state
-  }
-}
+import reducer, { IState, IAction, initialState, ActionType, ViewType } from './reducer'
 
 export const MoreActivities: React.FC = () => {
+  const pages = 10
   const [{ view, sortDec, page }, dispatch] = useReducer<React.Reducer<IState, IAction>>(reducer, initialState)
 
   const handleChangeView = (e: React.MouseEvent<HTMLElement>) => {
@@ -54,17 +15,19 @@ export const MoreActivities: React.FC = () => {
   }
 
   const handleChangeSortOrder = () => dispatch({ type: ActionType.toggleDec })
-
   const renderCards = () => data && data.map((card, idx) => <LastMinuteDealCard view="reversed" {...card} key={`${idx}-card`} />)
+  const handleClickPageItem = (e: React.MouseEvent<HTMLElement>) =>
+    dispatch({ type: ActionType.setPage, payload: +e.currentTarget.innerHTML })
 
-  const pages = 10
-  const renderPageControls = () => {
-    return [...Array(5).keys()].map(idx => {
-      const a = page - 2 < 1 ? idx + 1 : page + 2 > pages ? pages - 4 + idx : page - 2 + idx
-
-      return <i>{a}</i>
+  const renderPageControls = () =>
+    [...Array(5).keys()].map(idx => {
+      const pageItem = page - 2 < 1 ? idx + 1 : page + 2 > pages ? pages - 4 + idx : page - 2 + idx
+      return (
+        <span key={pageItem} onClick={handleClickPageItem} data-active={page === pageItem}>
+          {pageItem}
+        </span>
+      )
     })
-  }
 
   return (
     <div className={styles.moreActivities}>
@@ -80,7 +43,12 @@ export const MoreActivities: React.FC = () => {
         </span>
       </div>
       <div className={styles.cards}>{renderCards()}</div>
-      <div className={styles.pagesControls}>{renderPageControls()}</div>
+      <div className={styles.pagesControls}>
+      {renderPageControls()}
+      <button>
+        <i className="fas fa-arrow-right" />
+      </button>
+      </div>
     </div>
   )
 }
