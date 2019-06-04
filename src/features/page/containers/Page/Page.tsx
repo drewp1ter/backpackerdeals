@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-import { Footer, Header, Cookies } from '../../components'
+import { Cookies, Footer, Header } from '../../components'
 
 interface IProps {
   readonly children?: React.ReactNode

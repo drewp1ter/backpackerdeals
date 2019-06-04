@@ -9,7 +9,7 @@ interface IState {
 }
 
 interface IProps {
-  readonly options?: Array<string>
+  readonly options?: string[]
   readonly children?: React.ReactNode
   readonly className?: string
   readonly theme: 'dark' | 'light'

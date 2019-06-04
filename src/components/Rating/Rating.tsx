@@ -10,13 +10,10 @@ export interface IProps {
 }
 
 export const Rating: React.FC<IProps> = ({ rating, detail = true, className }) => {
-  const stars = [...Array(5).keys()].map(idx =>
-    idx + 1 <= Math.floor(rating) ? (
-      <i key={idx} className="fas fa-star" data-filled={true} />
-    ) : (
-      <i key={idx} className="far fa-star" data-filled={false} />
-    )
-  )
+  const stars = [...Array(5).keys()].map(idx => {
+    const filled = idx + 1 <= Math.floor(rating)
+    return <i key={idx} className={`fa${filled ? 's' : 'r'} fa-star`} data-filled={filled} />
+  })
 
   return (
     <div className={classNames(styles.root, className)}>
