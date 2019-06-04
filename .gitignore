@@ -13,6 +13,7 @@
 
 # misc
 .DS_Store
+deploy_rsa
 /.vscode
 npm-debug.log*
 yarn-debug.log*
