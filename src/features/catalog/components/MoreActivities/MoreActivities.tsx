@@ -15,7 +15,7 @@ export const MoreActivities: React.FC = () => {
 
   const handleChangeSortOrder = () => setSortDec(!sortDec)
 
-  const renderCards = () => data && data.map((card, idx) => <LastMinuteDealCard {...card} key={`${idx}-card`} />)
+  const renderCards = () => data && data.map((card, idx) => <LastMinuteDealCard view="reversed" {...card} key={`${idx}-card`} />)
 
   return (
     <div className={styles.moreActivities}>

@@ -1,5 +1,6 @@
-import classNames from 'classnames'
 import * as React from 'react'
+
+import classNames from 'classnames'
 
 import { Icon } from 'components'
 import styles from './LastMinuteDealCard.module.scss'
@@ -11,25 +12,31 @@ interface IExposeTime {
 }
 
 interface IProps {
+  readonly view: 'vertical' | 'reversed' | 'horizontal'
   readonly img: string
   readonly tourName: string
   readonly price: number
-  readonly country: string
+  readonly location: string
   readonly sale: string
   readonly saleType: string
+  readonly sellOut?: boolean
+  readonly likeable?: boolean
   readonly value: number
   readonly duration: string
   readonly rating: number
-  readonly exposeTime: IExposeTime
+  readonly exposeTime?: IExposeTime
 }
 
 export const LastMinuteDealCard: React.FC<IProps> = ({
+  view,
   img,
   tourName,
   rating,
   price,
-  country,
+  location,
   sale,
+  sellOut,
+  likeable,
   duration,
   value,
   saleType,
@@ -55,42 +62,72 @@ export const LastMinuteDealCard: React.FC<IProps> = ({
       <div className={styles.imageBlock}>
         {saleType === 'topDeal' && <Icon className={styles.badge} name="topDeal" alt="Top Deal" />}
         {saleType === 'mostPopular' && <Icon className={styles.badge} name="mostPopular" alt="Most Popular" />}
+        {sellOut && <div className={styles.sellOut}>SELL OUT</div>}
+        {likeable && <i className={classNames('fas fa-heart', styles.like)} />}
         <div className={styles.sale}>
           <p>{sale}</p>
         </div>
-        <div className={styles.exposeTime}>
-          <div className={styles.daysBlock}>
-            <p>{exposeTime.hours}</p>
-            <p className={styles.timeName}>Days</p>
+        {exposeTime && (
+          <div className={styles.exposeTime}>
+            <div className={styles.daysBlock}>
+              <p>{exposeTime.hours}</p>
+              <p className={styles.timeName}>Days</p>
+            </div>
+            <p className={styles.colon}>:</p>
+            <div className={styles.hoursBlock}>
+              <p>{exposeTime.hours}</p>
+              <p className={styles.timeName}>Hours</p>
+            </div>
+            <p className={styles.colon}>:</p>
+            <div className={styles.minutesBlock}>
+              <p>{exposeTime.minutes}</p>
+              <p className={styles.timeName}>Minutes</p>
+            </div>
           </div>
-          <p className={styles.colon}>:</p>
-          <div className={styles.hoursBlock}>
-            <p>{exposeTime.hours}</p>
-            <p className={styles.timeName}>Hours</p>
-          </div>
-          <p className={styles.colon}>:</p>
-          <div className={styles.minutesBlock}>
-            <p>{exposeTime.minutes}</p>
-            <p className={styles.timeName}>Minutes</p>
-          </div>
-        </div>
+        )}
         <img src={img} alt="Last Minute Deal Tour" />
       </div>
 
       <div className={styles.cardDescription}>
-        <div className={styles.ratingAndLocation}>
-          <div className={styles.stars}>
-            {renderStars()}
-            <span>{rating} from 5</span>
-          </div>
-          <div className={styles.country}>
-            <i className="fas fa-map-marker-alt" />
-            <span>{country}</span>
-          </div>
-        </div>
+        {view === 'vertical' && (
+          <>
+            <div className={styles.aboutPlace}>
+              <div className={styles.stars}>
+                {renderStars()}
+                <span>{rating} from 5</span>
+              </div>
+              <div className={styles.location}>
+                <i className="fas fa-map-marker-alt" />
+                <span>{location}</span>
+              </div>
+            </div>
 
-        <p className={styles.tour}>{tourName}</p>
-        <p className={styles.duration}>{duration}</p>
+            <p data-view="vertical" className={styles.tour}>
+              {tourName}
+            </p>
+            <p className={styles.duration}>{duration}</p>
+          </>
+        )}
+        {view === 'reversed' && (
+          <>
+            <div className={styles.aboutPlace}>
+              <div className={styles.location}>
+                <i className="fas fa-map-marker-alt" />
+                <span>{location}</span>
+              </div>
+              <div className={styles.duration}>
+                <i className="far fa-clock" />
+                {duration}
+              </div>
+            </div>
+
+            <p className={styles.tour}>{tourName}</p>
+            <div className={styles.stars}>
+              {renderStars()}
+              <span>{rating} from 5</span>
+            </div>
+          </>
+        )}
 
         <div className={styles.valueAndLink}>
           <div className={styles.totalPrice}>

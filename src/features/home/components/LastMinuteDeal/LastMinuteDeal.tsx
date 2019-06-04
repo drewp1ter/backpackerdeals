@@ -14,7 +14,7 @@ const data = [
     img: Picture1,
     tourName: 'Kakadu 4WD Adventure',
     price: 900,
-    country: 'Australia',
+    location: 'Australia',
     sale: '30%',
     saleType: 'topDeal',
     value: 1200,
@@ -30,7 +30,7 @@ const data = [
     img: Picture2,
     tourName: 'Kakadu 4WD Adventure',
     price: 900,
-    country: 'Australia',
+    location: 'Australia',
     sale: 'AUD$300',
     saleType: '',
     value: 1200,
@@ -46,7 +46,7 @@ const data = [
     img: Picture3,
     tourName: 'Kakadu 4WD Adventure',
     price: 900,
-    country: 'Australia',
+    location: 'Australia',
     sale: '30%',
     saleType: 'topDeal',
     value: 1200,
@@ -62,7 +62,7 @@ const data = [
     img: Picture4,
     tourName: 'Kakadu 4WD Adventure',
     price: 900,
-    country: 'Australia',
+    location: 'Australia',
     sale: 'AUD$300',
     saleType: 'mostPopular',
     value: 1200,
@@ -79,7 +79,7 @@ const data = [
 export const LastMinuteDeal: React.FC = () => (
   <div className={styles.lastMinuteDeal}>
     {data.map((card, index) => (
-      <LastMinuteDealCard {...card} key={`${index}-card`} />
+      <LastMinuteDealCard view="vertical" {...card} key={`${index}-card`} />
     ))}
   </div>
 )
