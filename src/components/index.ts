@@ -1,4 +1,5 @@
 export { AdvancedSearch } from './AdvancedSearch'
+export { Checkbox } from './Checkbox'
 export { OrangeButton } from './OrangeButton'
 export { Icon } from './Icon'
 export { Input } from './Input'
