@@ -3,7 +3,7 @@ import Picture2 from './assets/2.jpg'
 import Picture3 from './assets/3.jpg'
 import Picture4 from './assets/4.jpg'
 
-export default [
+export const cards = [
   {
     img: Picture1,
     tourName: 'Kakadu 4WD Adventure',
@@ -68,4 +68,23 @@ export default [
       minutes: '51',
     },
   },
+]
+
+export const filters = [
+  "Adelaide (10)",
+  "Hervey Bay (1)", 
+  "Agnes Water (2)",
+  "Hobart (22)",
+  "Airlie Beach/",
+  "Whitsundays (16)",
+  "Kakadu (13)",
+  "Alice Springs (21)",
+  "Launceston (6)",
+  "Ayers Rock (19)",
+  "Melbourne (39)",
+  "Brisbane (7)",
+  "Noosa (2)",
+  "Broome (1)",
+  "Perth (13)",
+  "Byron Bay (16)"
 ]
