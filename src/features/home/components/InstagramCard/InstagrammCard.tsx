@@ -10,7 +10,7 @@ export interface IProps {
 export const InstagramCard: React.FC<IProps> = ({ variant }) => {
   return (
     <div className={styles.root}>
-      <img src={images[variant]} />
+      <img src={images[variant]} alt="Instagram card" />
     </div>
   )
 }

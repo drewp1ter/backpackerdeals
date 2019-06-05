@@ -13,7 +13,7 @@ export interface IProps {
 }
 
 export const OrangeButton: React.FC<IProps> = ({ className = '', children, onClick, disabled = false, theme = 'rounded' }) => (
-  <button className={classNames(styles.orangeButton, className)} disabled={disabled} onClick={onClick} data-theme={theme}>
+  <button aria-label="button" className={classNames(styles.orangeButton, className)} disabled={disabled} onClick={onClick} data-theme={theme}>
     {children}
   </button>
 )

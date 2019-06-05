@@ -59,7 +59,7 @@ export const AdvancedSearch: React.FC = () => {
           />
           <OrangeButton theme="rectangled">SEARCH</OrangeButton>
         </div>
-        <button onClick={() => toggleSearch(false)}>
+        <button aria-label="search" onClick={() => toggleSearch(false)}>
           <i className="fas fa-times" />
         </button>
       </div>

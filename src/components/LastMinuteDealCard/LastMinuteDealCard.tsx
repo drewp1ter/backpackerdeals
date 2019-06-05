@@ -128,7 +128,7 @@ export const LastMinuteDealCard: React.FC<IProps> = ({
             <span className={styles.value}>Value AUD{value}</span>
           </div>
 
-          <button>
+          <button aria-label="->">
             <i className="fas fa-arrow-right" />
           </button>
         </div>

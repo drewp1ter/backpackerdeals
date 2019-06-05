@@ -61,7 +61,7 @@ export const MoreActivities: React.FC = () => {
           </div>
           <div className={styles.pagesControls}>
             {renderPageControls()}
-            <button onClick={handlePageControls} data-action="next">
+            <button aria-label="next" onClick={handlePageControls} data-action="next">
               <i className="fas fa-arrow-right" />
             </button>
           </div>

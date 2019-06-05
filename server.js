@@ -2,6 +2,7 @@
 const express = require('express')
 const next = require('next')
 const routes = require('./routes')
+const compression = require('compression')
 
 const devProxy = {
   '/api': {
@@ -26,6 +27,8 @@ app
   .prepare()
   .then(() => {
     server = express()
+
+    server.use(compression())
 
     server.use(express.static('static'));
 

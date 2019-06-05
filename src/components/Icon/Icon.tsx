@@ -14,7 +14,7 @@ export interface IProps {
   readonly onClick?: () => void
 }
 
-export const Icon: React.FC<IProps> = ({ name, className, size, alt, onClick }) =>
+export const Icon: React.FC<IProps> = ({ name, className, size, alt = 'icon', onClick }) =>
   size ? (
     <img alt={alt} onClick={onClick} className={className} width={sizes[size]} height={sizes[size]} src={images[name]} />
   ) : (

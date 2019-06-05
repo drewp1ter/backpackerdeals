@@ -148,7 +148,7 @@ export const Footer: React.FC<IProps> = ({ handleChange, handleSubmit, email }) 
         </div>
       </div>
 
-      <button className={styles.downloadAppButton}>Download Mobile App</button>
+      <button aria-label="download app" className={styles.downloadAppButton}>Download Mobile App</button>
     </div>
 
     <hr />
