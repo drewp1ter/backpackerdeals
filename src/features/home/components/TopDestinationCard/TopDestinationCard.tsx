@@ -19,7 +19,7 @@ export const TopDestinationCard: React.FC<IProps> = ({ title, country, img, widt
         <h3>{title}</h3>
       </div>
       <div style={{ backgroundImage: `linear-gradient(${gradDeg}deg, rgba(232, 232, 232, 0), rgba(0, 0, 0, 0.91))` }} />
-      <img alt="" src={img} />
+      <img alt="Top destination card" src={img} />
     </div>
   )
 }

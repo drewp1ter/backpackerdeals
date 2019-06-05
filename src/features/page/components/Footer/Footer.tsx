@@ -154,7 +154,7 @@ export const Footer: React.FC<IProps> = ({ handleChange, handleSubmit, email }) 
     <hr />
 
     <div className={styles.copyrightAndPartners}>
-      <img className="logo" src="" alt="" />
+      <img className="logo" src="" alt="logo" />
 
       <p>
         Backpackerdeals.com is owned and operated by
@@ -166,15 +166,15 @@ export const Footer: React.FC<IProps> = ({ handleChange, handleSubmit, email }) 
       </p>
 
       <div>
-        <img src="" alt="" />
-        <img src="" alt="" />
-        <img src="" alt="" />
-        <img src="" alt="" />
+        <img src="" alt="pic" />
+        <img src="" alt="pic" />
+        <img src="" alt="pic" />
+        <img src="" alt="pic" />
       </div>
 
       <div>
-        <img src="" alt="" />
-        <img src="" alt="" />
+        <img src="" alt="pic" />
+        <img src="" alt="pic" />
       </div>
     </div>
   </footer>

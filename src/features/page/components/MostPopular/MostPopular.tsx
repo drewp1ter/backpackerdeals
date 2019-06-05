@@ -16,7 +16,7 @@ export const MostPopular: React.FC<IProps> = ({ places, title }) => {
 
   const renderPlaces = () => places && places.map((place, idx) => place.img ? (
     <div key={`${place.title}-${idx}`} className={styles.withImg}>
-      <img src={place.img} alt="" />
+      <img src={place.img} alt="place" />
       <h6>{place.title}</h6>
       <div />
     </div>

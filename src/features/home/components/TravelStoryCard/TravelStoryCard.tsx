@@ -18,7 +18,7 @@ export const TravelStoryCard: React.FC<IProps> = ({ title, description, img, var
         <span>{description}</span>
       </div>
       <div style={{ backgroundImage: `linear-gradient(${gradDeg}deg, rgba(232, 232, 232, 0), rgba(0, 0, 0, 0.91))` }} />
-      <img alt="" src={img} />
+      <img alt="Travel story card" src={img} />
     </div>
   )
 }

@@ -115,12 +115,12 @@ export const HomeLayout: React.FC = () => (
 
     <CardsWrapper title="Promoting the best of" linkTitle="Learn more">
       <div className={styles.cardsRow}>
-        <img alt="" src={images.p1} />
-        <img alt="" src={images.p2} />
-        <img alt="" src={images.p3} />
-        <img alt="" src={images.p4} />
-        <img alt="" src={images.p5} />
-        <img alt="" src={images.p6} />
+        <img alt="logo" src={images.p1} />
+        <img alt="logo" src={images.p2} />
+        <img alt="logo" src={images.p3} />
+        <img alt="logo" src={images.p4} />
+        <img alt="logo" src={images.p5} />
+        <img alt="logo" src={images.p6} />
       </div>
     </CardsWrapper>
 
