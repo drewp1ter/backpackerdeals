@@ -8,6 +8,7 @@
     "buildimage": "docker build -t backpackerdeals ."
   },
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.9.0",
     "@types/classnames": "^2.2.7",
     "@types/next": "^8.0.5",
     "@types/next-redux-wrapper": "^2.0.2",
@@ -27,6 +28,7 @@
     "next": "^8.1.0",
     "next-compose-plugins": "^2.2.0",
     "next-env": "^1.1.0",
+    "next-fonts": "^0.17.0",
     "next-images": "^1.1.1",
     "next-redux-wrapper": "^3.0.0-alpha.2",
     "next-routes": "^1.4.2",
