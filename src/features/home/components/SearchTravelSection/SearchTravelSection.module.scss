@@ -4,7 +4,7 @@
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: scroll;
-  padding: 200px 0 250px 0;
+  padding: 200px 0 450px 0;
 
   h1 {
     position: relative;
@@ -26,15 +26,5 @@
     line-height: 0.62;
     text-align: center;
     color: #ffffff;
-  }
-
-  .backgroudGradient {
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    opacity: 0.53;
-    background-image: linear-gradient(to top, rgba(0, 0, 0, 0), #000000);
   }
 }

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2190" height="686" viewBox="0 0 2190 686">
+    <defs>
+        <style>
+            .cls-1{fill:#fff}.cls-2{filter:url(#Wave)}
+        </style>
+        <filter id="Wave" width="2190" height="686" x="0" y="0" filterUnits="userSpaceOnUse">
+            <feOffset dy="-30"/>
+            <feGaussianBlur result="blur" stdDeviation="45"/>
+            <feFlood flood-opacity=".161"/>
+            <feComposite in2="blur" operator="in"/>
+            <feComposite in="SourceGraphic"/>
+        </filter>
+    </defs>
+    <g class="cls-2">
+        <path id="Wave-2" d="M-10716-22208s80.811 119 320 120 368.4-48.51 640-48 474.709 89.807 664.525 88.77S-8796-22136-8796-22136v344h-1920z" class="cls-1" data-name="Wave" transform="translate(10851 22373)"/>
+    </g>
+</svg>
