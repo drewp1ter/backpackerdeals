@@ -8,10 +8,10 @@
   font-style: normal;
   font-stretch: normal;
   letter-spacing: normal;
-  transition: .2s ease background-color;
+  transition: .2s ease box-shadow;
 
   &:hover {
-    background-color: darken(#ff5a39, 15);
+    box-shadow: 0 12px 24px rgba(255, 90, 57, 0.28);
   }
 
   &[data-theme="rounded"] {

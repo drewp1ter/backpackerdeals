@@ -1,6 +1,13 @@
 .root {
   position: relative;
   border-radius: 8px;
+  transition: .2s ease box-shadow;
+
+  &:hover {
+    box-shadow: 0 24px 32px rgba(0, 0, 0, 0.06);
+    transform: scale(1.005, 1.005);
+  }
+
   div {
     &:nth-child(1) {
       position: absolute;
@@ -31,6 +38,7 @@
 
 .root[data-width="sm"] {
   width: 240px;
+
   img {
     max-width: 240px;
   }
@@ -38,6 +46,7 @@
 
 .root[data-width="md"] {
   width: 496px;
+
   img {
     max-width: 496px;
   }
@@ -45,6 +54,7 @@
 
 .root[data-height="sm"] {
   height: 224px;
+
   img {
     max-height: 224px;
   }
@@ -52,6 +62,7 @@
 
 .root[data-height="md"] {
   height: 352px;
+
   img {
     max-height: 352px;
   }

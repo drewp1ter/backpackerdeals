@@ -21,7 +21,7 @@ export const MostPopular: React.FC<IProps> = ({ places, title }) => {
       <div />
     </div>
   ) : (
-    <h6 key={place.title} className={styles.withoutImg}>{place.title}</h6>
+    <h6 key={`${place.title}-${idx}`} className={styles.withoutImg}>{place.title}</h6>
   ))
 
   return (

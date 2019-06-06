@@ -1,11 +1,16 @@
 footer {
+<<<<<<< HEAD
   background: url('./assets/background.jpg?webp') center center no-repeat;
   padding: 0 150px;
+=======
+  background: url('./assets/background.jpg') center center no-repeat;
+  padding: 0 150px 55px 150px;
+>>>>>>> 6d4b9f407fc6c8494854c96d6b20fe77ce2c73bf
 
   h2 {
-    font-size: 38px;
-    font-weight: bold;
-    line-height: 0.84;
+    font-size: 56px;
+    font-weight: 700;
+    line-height: 64px;
     text-align: center;
     color: #ffffff;
   }
@@ -13,9 +18,9 @@ footer {
   h3 {
     margin-top: 10px;
     margin-bottom: 45px;
-    font-size: 20px;
-    font-weight: bold;
-    line-height: 1.2;
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 32px;
     text-align: center;
     color: #ffffff;
   }
@@ -31,18 +36,25 @@ footer {
   }
 
   h4 {
+    cursor: pointer;
     font-size: 14px;
     font-weight: 600;
     line-height: 2.29;
     text-align: left;
     color: #ffffff;
+    transition: .2s ease color;
+
+    &:hover {
+      color: #ff5a39;
+    }
   }
 
   .emailInput {
     margin: auto;
-    width: 592px;
+    width: 880px;
+
     input {
-      width: 350px;
+      width: 600px;
     }
   }
 
@@ -62,12 +74,18 @@ footer {
         margin: 5px 0 0 0;
 
         li {
+          cursor: pointer;
           font-size: 12px;
           font-weight: normal;
           line-height: 2;
           letter-spacing: normal;
           text-align: left;
           color: #959595;
+          transition: .2s ease color;
+
+          &:hover {
+            color: #ff5a39;
+          }
         }
       }
     }
@@ -83,21 +101,33 @@ footer {
       }
 
       h5 {
+        cursor: pointer;
         margin-bottom: 5px;
         font-size: 12px;
         font-weight: 600;
         line-height: 2.29;
         text-align: left;
         color: #ffffff;
+        transition: .2s ease color;
+
+        &:hover {
+          color: #ff5a39;
+        }
       }
 
       p {
+        cursor: pointer;
         font-size: 12px;
         font-weight: normal;
         line-height: 2;
         letter-spacing: normal;
         text-align: left;
         color: #959595;
+        transition: .2s ease color;
+
+        &:hover {
+          color: #ff5a39;
+        }
       }
     }
   }
@@ -124,8 +154,14 @@ footer {
           }
 
           i {
+            cursor: pointer;
             color: #959595;
             font-size: 24px;
+            transition: .2s ease color;
+
+            &:hover {
+              color: #ff5a39;
+            }
           }
         }
       }
@@ -147,23 +183,60 @@ footer {
       line-height: 2;
       letter-spacing: normal;
       color: #ffffff;
+      transition: .2s ease border-color, .2s ease background-color;
+
+      &:hover {
+        background-color: #ff5a39;
+        border-color: #ff5a39;
+      } 
+
     }
   }
 
   hr {
     margin: 0;
+    border: 1px solid #fff;
+    opacity: .05;
   }
 
   .copyrightAndPartners {
     display: flex;
+    align-items: center;
+    justify-content: space-between;
     margin-top: 40px;
 
+    .logo {
+      width: 120px;
+      height: 43px;
+    }
+
     p {
+      margin: 0;
       font-size: 10px;
       font-weight: normal;
       line-height: 1.3;
       text-align: left;
       color: #707070;
+    }
+
+    .firstImagesBlock {
+      img {
+        margin-right: 10px;
+
+        &:last-of-type {
+          margin-right: 0;
+        }
+      }
+    }
+
+    .secondImagesBlock {
+      img {
+        margin-right: 20px;
+
+        &:last-of-type {
+          margin-right: 0;
+        }
+      }
     }
   }
 }
