@@ -1,6 +1,6 @@
 ARG APP_ROOT=/app
 
-FROM mhart/alpine-node
+FROM node:10
 ARG APP_ROOT
 ENV NODE_ENV=production
 WORKDIR ${APP_ROOT}

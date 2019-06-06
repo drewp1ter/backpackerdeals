@@ -124,7 +124,7 @@ export const HomeLayout: React.FC = () => (
       </div>
     </CardsWrapper>
 
-    <CardsWrapper title="Inspiration from our instagram" linkTitle="Follow us">
+    <CardsWrapper className={styles.instagramCards} title="Inspiration from our instagram" linkTitle="Follow us">
       <div className={styles.cardsRow}>
         <InstagramCard variant="v1" />
         <InstagramCard variant="v2" />
