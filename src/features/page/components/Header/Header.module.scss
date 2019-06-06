@@ -6,6 +6,25 @@ header {
   z-index: 10;
   padding: 25px 30px;
 
+  .profileIcon {
+    i {
+      cursor: pointer;
+      border-radius: 50%;
+      padding: 12px 18px;
+      border: 1px solid #ffffff;
+      background-color: transparent;
+      color: #fff;
+      font-size: 14px;
+      line-height: 24px;
+      transition: .2s ease background-color, .2s ease border-color;
+
+      &:hover {
+        background-color: #ff5a39;
+        border-color: #ff5a39;
+      }
+    }
+  }
+
   .tools {
     display: flex;
     justify-content: space-between;
@@ -35,6 +54,7 @@ header {
 
     .currencyAndLanguage {
       display: flex;
+      align-items: center;
 
       a {
         text-decoration: none;
@@ -98,11 +118,11 @@ header {
       color: #959595;
       transition: .2s ease color;
 
-      &:hover:not(.active) {
-        color: darken(#959595, 40);
+      &:hover:not([data-active="true"]) {
+        color: darken(#959595, 40) !important;
       }
 
-      &.active {
+      &[data-active="true"] {
         color: #ff5a39;
       }
     }
@@ -130,16 +150,16 @@ header {
         transition: .2s ease color;
       }
 
-      &:hover:not(.active) {
+      &:hover:not([data-active="true"]) {
         span {
           color: darken(#959595, 40);
         }
       }
 
-      &.active {
+      &[data-active="true"] {
         span {
-          color: #ff5a39;
-        }
+          color: #ff5a39 !important;
+        }        
       }
     }
   }

@@ -2,6 +2,14 @@ import * as React from 'react'
 
 import { Input, OrangeButton } from 'components'
 
+import Logo from './assets/Logo.svg'
+import MemberOf from './assets/memberOf.svg'
+import Byata from './assets/byata.svg'
+import Adventure from './assets/adventure.svg'
+import Norton from './assets/norton.svg'
+import Wave from './assets/wave.svg'
+import Winner from './assets/winner.svg'
+
 import styles from './Footer.module.scss'
 
 export interface IProps {
@@ -154,27 +162,27 @@ export const Footer: React.FC<IProps> = ({ handleChange, handleSubmit, email }) 
     <hr />
 
     <div className={styles.copyrightAndPartners}>
-      <img className="logo" src="" alt="logo" />
+      <img className={styles.logo} src={Logo} alt="logo" />
 
       <p>
-        Backpackerdeals.com is owned and operated by
+        Backpackerdeals.com is owned and operated by Backpacker
         <br />
-        Backpacker Deals Pty Ltd. ABN 81 600 829 838
+        Deals Pty Ltd. ABN 81 600 829 838
         <br />
         Level 1, 20 Queen Street, Melbourne 3000, Australia
         <br />© 2014-2018 Backpacker Deals All rights reserved.
       </p>
 
-      <div>
-        <img src="" alt="pic" />
-        <img src="" alt="pic" />
-        <img src="" alt="pic" />
-        <img src="" alt="pic" />
+      <div className={styles.firstImagesBlock}>
+        <img src={MemberOf} alt="Member of" />
+        <img src={Byata} alt="Byata" />
+        <img src={Adventure} alt="Adventure" />
+        <img src={Wave} alt="Wave" />
       </div>
 
-      <div>
-        <img src="" alt="pic" />
-        <img src="" alt="pic" />
+      <div className={styles.secondImagesBlock}>
+        <img src={Norton} alt="Norton" />
+        <img src={Winner} alt="Winner" />
       </div>
     </div>
   </footer>

@@ -1,4 +1,3 @@
-import classNames from 'classnames'
 import React, { useState } from 'react'
 
 import { AdvancedSearch } from 'components'
@@ -57,8 +56,9 @@ export const Header: React.FC = () => {
               {Object.entries(currencies).map((currency, index) => (
                 <p
                   onClick={handleChangeCurrency}
-                  className={classNames(styles.currency, currency[0] === currentCurrency && styles.active)}
+                  className={styles.currency}
                   key={`${currency[0]}-${index}`}
+                  data-active={currency[0] === currentCurrency}
                   data-currency={currency[0]}
                 >
                   {currency[1].name} {currency[1].icon}
@@ -77,7 +77,8 @@ export const Header: React.FC = () => {
                 <div
                   onClick={handleChangeLanguage}
                   key={`language-${index}`}
-                  className={classNames(styles.language, language[0] === currentLanguage && 'active')}
+                  className={styles.language}
+                  data-active={language[0] === currentLanguage}
                   data-language={language[0]}
                 >
                   <img src={language[1].icon} alt={language[1].name} />
@@ -86,6 +87,9 @@ export const Header: React.FC = () => {
               ))}
             </div>
           </SelectMenu>
+          <div className={styles.profileIcon}>
+            <i className="fas fa-user" />
+          </div>
         </div>
       </div>
     </header>
