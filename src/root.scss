@@ -1,0 +1,20 @@
+/* @import url('../assets/https://fonts.googleapis.com/css?family=Montserrat&display=swap'); */
+
+@font-face {
+  font-family: 'Montserrat';
+  src: local('Montserrat'), local('Montserrat-Regular'), url('../assets/montserrat.woff2') format('woff2'), url('../assets/montserrat.woff') format('woff'), url('../assets/montserrat.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  font-stretch: normal;
+  letter-spacing: normal;
+}
+
+h1, h2, h3, h4, h5, h6, p, ol, ul {
+  margin: 0;
+  padding: 0;
+}

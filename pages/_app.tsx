@@ -4,8 +4,9 @@ import * as React from 'react'
 import { Provider, ProviderProps } from 'react-redux'
 import makeStore from 'store'
 
+import '@fortawesome/fontawesome-free/css/all.css'
 import 'normalize.css'
-import 'root.css'
+import 'root.scss'
 
 class MyApp extends App<ProviderProps> {
   render() {
