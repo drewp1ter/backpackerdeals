@@ -12,6 +12,7 @@ import './p3.jpg'
 import './p4.jpg'
 import './p5.jpg'
 import './p6.jpg'
+import './Waitomo.png'
 
 export default {
   p1: require('./p1.jpg?webp'),
@@ -28,4 +29,5 @@ export default {
   maskGroup18: require('./maskGroup18.jpg?webp'),
   maskGroup19: require('./maskGroup19.jpg?webp'),
   maskGroup20: require('./maskGroup20.jpg?webp'),
+  waitomo: require('./Waitomo.png?webp')
 }

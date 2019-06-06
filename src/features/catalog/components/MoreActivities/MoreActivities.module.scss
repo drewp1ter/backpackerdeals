@@ -12,19 +12,20 @@
     justify-content: space-between;
     font-size: 14px;
     line-height: 1.85;
-    color: #202020;
     margin-bottom: 30px;
 
     i {
-      margin-left: 8px;
       cursor: pointer;
+      margin-left: 8px;
+      color: #ff5a39;
+      transition: .2s ease color;
 
       &:nth-child(2) {
         margin-right: 20px;
       }
 
       &[data-active="false"] {
-        color: #bbb;
+        color: #000;
       }
     }
   }
@@ -39,9 +40,14 @@
       color: #959595;
       width: 26px;
       cursor: pointer;
+      transition: .2s ease color;
 
       &[data-active="true"] {
         color: #ff5a39;
+      }
+
+      &:hover {
+        color: darken(#ff5a39, 20);
       }
     }
 
@@ -52,9 +58,15 @@
       height: 48px;
       border: solid 1px #ff5a39;
       border-radius: 50%;
-      background-color: transparent;
+      background-color: #fff;
       font-size: 17px;
       color: #ff5a39;
+      transition: .2s ease background-color, .2s ease color;
+
+      &:hover {
+        background-color: #ff5a39;
+        color: #fff;
+      }
     }
   }
 
