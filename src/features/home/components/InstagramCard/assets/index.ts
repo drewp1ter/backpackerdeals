@@ -7,9 +7,9 @@ import './v6.jpg'
 
 export default {
   v1: require('./v1.jpg?webp'),
-  v2: require('./v1.jpg?webp'),
-  v3: require('./v1.jpg?webp'),
-  v4: require('./v1.jpg?webp'),
-  v5: require('./v1.jpg?webp'),
-  v6: require('./v1.jpg?webp'),
+  v2: require('./v2.jpg?webp'),
+  v3: require('./v3.jpg?webp'),
+  v4: require('./v4.jpg?webp'),
+  v5: require('./v5.jpg?webp'),
+  v6: require('./v6.jpg?webp'),
 }
