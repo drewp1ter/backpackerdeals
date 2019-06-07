@@ -1,6 +1,5 @@
 const cssLoaderConfig = require('@zeit/next-css/css-loader-config')
 const typescript = require('@zeit/next-typescript')
-// const images = require('next-images')
 const withPlugins = require('next-compose-plugins')
 const nextEnv = require('next-env')
 const dotenvLoad = require('dotenv-load')
@@ -20,8 +19,8 @@ const nextConfig = {
       extensions: ['scss', 'sass'],
       cssModules: false,
       cssLoaderOptions: {
-        importLoaders: 2,
-        localIdentName: '[local]___[hash:base64:5]',
+        importLoaders: 1,
+        localIdentName: '[local]_[hash:base64:5]',
       },
       dev,
       isServer,
