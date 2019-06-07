@@ -21,7 +21,7 @@ export const HomeLayout: React.FC = () => (
 
     <BookWithUsSection />
 
-    <CardsWrapper title="Top Destinations" linkTitle="Expolore more destinations">
+    <CardsWrapper title="Top Destinations" linkTitle="Explore more destinations">
       <div className={styles.cardsRow}>
         <TopDestinationCard title="Great Barrier Reef" country="Australia" width="md" height="lg" img={images.maskGroup16} gradDeg={219} />
         <div className={styles.topDestinationsCardsColumn}>
