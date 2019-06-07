@@ -1,7 +1,7 @@
 {
-  "name": "create-next-example-app",
+  "name": "backpackerdeals",
   "scripts": {
-    "build": "next build && ./rename_assets.py",
+    "build": "next build && ./src/rename_assets.py",
     "start": "node server.js",
     "tslint": "node_modules/.bin/tslint -p tsconfig.json --fix",
     "typecheck": "tsc -p tsconfig.json",
@@ -35,7 +35,6 @@
     "next-compose-plugins": "^2.2.0",
     "next-env": "^1.1.0",
     "next-fonts": "^0.17.0",
-    "next-images": "^1.1.1",
     "next-optimized-images": "^2.5.1",
     "next-redux-wrapper": "^3.0.0-alpha.2",
     "next-routes": "^1.4.2",
