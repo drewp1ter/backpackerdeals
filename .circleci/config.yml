@@ -21,10 +21,15 @@ jobs:
             chmod 600 /tmp/deploy_rsa
             ssh-add /tmp/deploy_rsa
       - run:
-          name: Build application Docker image
+          name: Build Express Docker image
           command: |
-            docker build -t backpackerdeals .
+            docker build -t backpackerdeals_express .
+      - run:
+          name: Build Nginx Docker image
+          command: |
+            docker build -f Dockerfile.nginx -t backpackerdeals_nginx .
       - deploy:
           name: Push application Docker image
           command: |
-            docker save backpackerdeals | bzip2 | ssh -o "StrictHostKeyChecking no" rulevoi@cs.istu.ru "ssh -i ./bpd4.pem ubuntu@bpd4.backpackerdeals.com 'bunzip2 | docker load && ./start.sh'"
+            docker save backpackerdeals_express | bzip2 | ssh -o "StrictHostKeyChecking no" rulevoi@cs.istu.ru "ssh -i ./bpd4.pem ubuntu@bpd4.backpackerdeals.com 'bunzip2 | docker load'"
+            docker save backpackerdeals_nginx | bzip2 | ssh -o "StrictHostKeyChecking no" rulevoi@cs.istu.ru "ssh -i ./bpd4.pem ubuntu@bpd4.backpackerdeals.com 'bunzip2 | docker load && ./start.sh'"

@@ -2,6 +2,7 @@
   position: relative;
   width: 368px;
   height: 576px;
+
   h3 {
     position: absolute;
     left: 24px;
@@ -12,19 +13,22 @@
     color: #fff;
     z-index: 1;
   }
+
   span {
     position: absolute;
     left: 24px;
-    bottom: 28px;
+    bottom: 24px;
     font-size: 16px;
     font-weight: normal;
     color: #fff;
     z-index: 1;
   }
+
   img {
-    max-width: 368px;
-    max-height: 576px;
+    width: 368px;
+    height: 576px;
   }
+
   div {
     position: absolute;
     left: 0;
@@ -33,5 +37,54 @@
     right: 0;
     opacity: .3;
     border-radius: 8px;
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .root {
+    width: 256px;
+    height: 400px;
+    border-radius: 8px;
+
+    h3 {
+      font-size: 26px;
+      font-weight: 700;
+      left: 16px;
+      top: 16px;
+    }
+
+    span {
+      font-size: 14px;
+      left: 16px;
+      bottom: 16px;
+    }
+
+    img {
+      width: 256px;
+      height: 400px;
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .root {
+    width: 232px;
+    height: 360px;
+    border-radius: 8px;
+
+    h3 {
+      left: 14px;
+      top: 14px;
+    }
+
+    span {
+      left: 14px;
+      bottom: 14px;
+    }
+
+    img {
+      width: 232px;
+      height: 360px;
+    }
   }
 }
