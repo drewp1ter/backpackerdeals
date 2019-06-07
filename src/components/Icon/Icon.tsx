@@ -1,5 +1,9 @@
 import * as React from 'react'
 
+import classNames from 'classnames'
+
+import styles from './Icon.module.scss'
+
 import images from './assets'
 
 const sizes = {
@@ -14,9 +18,6 @@ export interface IProps {
   readonly onClick?: () => void
 }
 
-export const Icon: React.FC<IProps> = ({ name, className, size, alt = 'icon', onClick }) =>
-  size ? (
-    <img alt={alt} onClick={onClick} className={className} width={sizes[size]} height={sizes[size]} src={images[name]} />
-  ) : (
-    <img alt={alt} onClick={onClick} className={className} src={images[name]} />
-  )
+export const Icon: React.FC<IProps> = ({ name, className, size, alt = 'icon', onClick }) => (
+  <img alt={alt} onClick={onClick} data-size={size} className={classNames(styles.icon, className)} src={images[name]} />
+)
