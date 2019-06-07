@@ -1907,6 +1907,13 @@ async-sema@2.2.0:
   resolved "https://registry.yarnpkg.com/async-sema/-/async-sema-2.2.0.tgz#b0de2bb11a2560d369aca975d24650cc05304979"
   integrity sha512-bI/JChXscebgVmAwTk+EQF4LIr4Hy6W5+B2AG1I9CmkfABmFEYyRrJGutfc816/Hd6LRzHFxpjGqZ/idwhJpRg==
 
+async-stylesheet-webpack-plugin@^0.4.1:
+  version "0.4.1"
+  resolved "https://registry.yarnpkg.com/async-stylesheet-webpack-plugin/-/async-stylesheet-webpack-plugin-0.4.1.tgz#14ae43331827bfa4fe15cff9a38016adf102efae"
+  integrity sha512-/VQQhN97Q9uYWnEmgjfG56bkJ0P0D7biVUYE0UciTihS2cYiz4rP12GOepFnSowI06kcwF1FWwqE6rPHICiimQ==
+  dependencies:
+    fg-loadcss "2.0.1"
+
 async@^2.1.5:
   version "2.6.2"
   resolved "https://registry.yarnpkg.com/async/-/async-2.6.2.tgz#18330ea7e6e313887f5d2f2a904bac6fe4dd5381"
@@ -3975,6 +3982,11 @@ fd-slicer@~1.1.0:
   integrity sha1-JcfInLH5B3+IkbvmHY85Dq4lbx4=
   dependencies:
     pend "~1.2.0"
+
+fg-loadcss@2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/fg-loadcss/-/fg-loadcss-2.0.1.tgz#71c00e470a57f7739d0736124dfc8791995e8af1"
+  integrity sha512-gFtSJjMMt9it0OhXz4wJQT46/LFUrJ2Db6U/fLtwClBEMEEjmVPSWSYrbGCyFwy47Cd4ULOpR+HSWXVkUKciaQ==
 
 figgy-pudding@^3.5.1:
   version "3.5.1"
