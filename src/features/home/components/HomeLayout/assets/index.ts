@@ -29,5 +29,4 @@ export default {
   maskGroup18: require('./maskGroup18.jpg?webp'),
   maskGroup19: require('./maskGroup19.jpg?webp'),
   maskGroup20: require('./maskGroup20.jpg?webp'),
-  waitomo: require('./Waitomo.png?webp')
 }
