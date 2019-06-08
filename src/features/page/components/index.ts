@@ -1,5 +1,6 @@
 export { Cookies } from './Cookies'
 export { Footer } from './Footer'
+export { FooterLinks } from './FooterLinks'
 export { Header } from './Header'
 export { MostPopular } from './MostPopular'
 export { Tab } from './Tab'

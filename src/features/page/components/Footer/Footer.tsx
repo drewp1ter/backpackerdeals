@@ -1,6 +1,7 @@
 import * as React from 'react'
 
 import { Input, OrangeButton } from 'components'
+import { FooterLinks } from 'features/page/components'
 
 import Logo from './assets/Logo.svg'
 import MemberOf from './assets/memberOf.svg'
@@ -25,17 +26,21 @@ export const Footer: React.FC<IProps> = ({ handleChange, handleSubmit, email }) 
     <h3>Sent straight to your inbox</h3>
 
     <Input className={styles.emailInput} value={email} onChange={handleChange} placeholder="Your e-mail address" theme="email" size="md">
-      <OrangeButton onClick={handleSubmit} theme="rounded">
+      <>
+      <OrangeButton className={styles.textButton} onClick={handleSubmit} theme="rounded">
         SEARCH
       </OrangeButton>
+      <OrangeButton className={styles.iconButton} onClick={handleSubmit} theme="rounded">
+        <i className="fas fa-arrow-right"></i>
+      </OrangeButton>
+      </>
     </Input>
 
     <p>By clicking Subscribe, you have agreed to our Terms & Conditions and Privacy Policy</p>
 
     <div className={styles.contactInfo}>
-      <div className={styles.socialBlock}>
-        <h4>Company</h4>
-        <ul>
+      <FooterLinks title="Company">
+        <ul className={styles.linksList}>
           <li>About Us</li>
           <li>Terms and Conditions</li>
           <li>Privacy Policy</li>
@@ -43,11 +48,10 @@ export const Footer: React.FC<IProps> = ({ handleChange, handleSubmit, email }) 
           <li>Members Terms of Use</li>
           <li>Chat Terms and Conditions</li>
         </ul>
-      </div>
+      </FooterLinks>
 
-      <div className={styles.socialBlock}>
-        <h4>Support</h4>
-        <ul>
+      <FooterLinks title="Support">
+        <ul className={styles.linksList}>
           <li>Why book with us?</li>
           <li>Reviews</li>
           <li>FAQ</li>
@@ -55,53 +59,50 @@ export const Footer: React.FC<IProps> = ({ handleChange, handleSubmit, email }) 
           <li>RSS Feed</li>
           <li>Sitemap</li>
         </ul>
-      </div>
+      </FooterLinks>
+      
 
-      <div>
-        <div className={styles.socialBlock}>
-          <h4>Business</h4>
-          <ul>
+      <div className={`${styles.linksWrapper}`}>
+        <FooterLinks title="Business">
+          <ul className={styles.linksList}>
             <li>Suggest a business</li>
             <li>Merchant Portal</li>
           </ul>
-        </div>
+        </FooterLinks>
 
-        <div className={`${styles.socialBlock} ${styles.mt}`}>
-          <h4>Students</h4>
-          <ul>
+        <FooterLinks className={styles.mt} title="Students">
+          <ul className={styles.linksList}>
             <li>Students Discounts</li>
           </ul>
-        </div>
+        </FooterLinks>
       </div>
 
-      <div className={styles.socialBlock}>
-        <h4>Work with us</h4>
-        <ul>
+      <FooterLinks title="Work with us">
+        <ul className={styles.linksList}>
           <li>Affiliate programs</li>
           <li>Become a Supplier</li>
           <li>Become an influencer</li>
         </ul>
-      </div>
+      </FooterLinks>
 
-      <div>
-        <div className={styles.socialBlock}>
-          <h4>Contact us</h4>
-          <ul>
+      <div className={styles.linksWrapper}>
+        <FooterLinks title="Contact us">
+          <ul className={styles.linksList}>
             <li>+61 3 90163720 (AU)</li>
             <li>+64 9 8892098 (NZ)</li>
             <li>+44 2032901637 (UK)</li>
           </ul>
-        </div>
 
-        <div className={styles.contacts}>
-          <h5>E-mail:</h5>
-          <p>support@backpackerdeals.co</p>
-        </div>
+          <div className={styles.contacts}>
+            <h5>E-mail:</h5>
+            <p>support@backpackerdeals.co</p>
+          </div>
 
-        <div className={styles.contacts}>
-          <h5>Skype:</h5>
-          <p>backpackerdeals</p>
-        </div>
+          <div className={styles.contacts}>
+            <h5>Skype:</h5>
+            <p>backpackerdeals</p>
+          </div>
+        </FooterLinks>
       </div>
     </div>
 

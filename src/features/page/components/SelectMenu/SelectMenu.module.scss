@@ -80,3 +80,45 @@
     }
   }
 }
+
+@media screen and (max-width: 1615px) {
+  .headerSelectMenu {
+    margin-right: 15px;
+  
+    .opener {
+      width: 90px;
+  
+      span {
+        font-size: 16px;
+      }
+  
+      i {
+        margin-left: 10px;
+        font-size: 12px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1420px) {
+  .headerSelectMenu {
+    margin-right: 15px;
+  
+    .opener {
+      width: 80px;
+  
+      span {
+        font-size: 14px;
+      }
+  
+      i {
+        margin-left: 10px;
+        font-size: 12px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1280px) and (min-width: 768px) {
+  
+}

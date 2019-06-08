@@ -27,6 +27,7 @@ export const Header: React.FC = () => {
       <span> {languages[currentLanguage].name.slice(0, 3)}</span>
     </div>
   )
+
   const currencyOpener: React.ReactNode = (
     <span>
       {currencies[currentCurrency].icon} {currencies[currentCurrency].name}
@@ -51,7 +52,7 @@ export const Header: React.FC = () => {
             <i className="fas fa-phone" />
             <span>+ 61 3 90163720</span>
           </a>
-          <SelectMenu opener={currencyOpener} title="Select currency">
+          <SelectMenu openerClass={styles.currencyAndLanguageOpener} opener={currencyOpener} title="Select currency">
             <div className={styles.currencies}>
               {Object.entries(currencies).map((currency, index) => (
                 <p
@@ -71,7 +72,7 @@ export const Header: React.FC = () => {
               Currency Conversions are approximate guide only. All transactions are processed in their respective currency
             </p>
           </SelectMenu>
-          <SelectMenu opener={languageOpener} title="Select your language">
+          <SelectMenu openerClass={styles.currencyAndLanguageOpener} opener={languageOpener} title="Select your language">
             <div className={styles.languages}>
               {Object.entries(languages).map((language, index) => (
                 <div
