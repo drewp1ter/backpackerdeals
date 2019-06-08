@@ -19,8 +19,8 @@ const nextConfig = {
       extensions: ['scss', 'sass'],
       cssModules: false,
       cssLoaderOptions: {
-        importLoaders: 2,
-        localIdentName: '[local]___[hash:base64:5]',
+        importLoaders: 1,
+        localIdentName: '[local]_[hash:base64:5]',
       },
       dev,
       isServer,

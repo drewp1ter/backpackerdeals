@@ -40,3 +40,19 @@
   margin-bottom: -150px !important;
   z-index: 1;
 }
+
+@media screen and (max-width: 1280px) {
+  .activitiesTourThingsCardsRow {
+    >div {
+      margin-right: 8px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+    &:last-child {
+      margin-top: 8px;
+    }
+  }
+}
