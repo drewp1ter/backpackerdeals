@@ -1,7 +1,7 @@
 {
   "name": "backpackerdeals",
   "scripts": {
-    "build": "next build && ./src/rename_assets.py",
+    "build": "next build && ./src/webp_conv.py",
     "start": "node server.js",
     "tslint": "node_modules/.bin/tslint -p tsconfig.json --fix",
     "typecheck": "tsc -p tsconfig.json",
