@@ -23,8 +23,8 @@ jobs:
       - run:
           name: Decrypt Certificates
           command: |
-            openssl aes-256-cbc -d -in ./deploy/ssl/ca_bundled.crt.enc -out ./deploy/ssl/ca_bundled.crt.enc -k $KEY
-            openssl aes-256-cbc -d -in ./deploy/ssl/private.key.enc -out ./deploy/ssl/private.key.enc -k $KEY
+            openssl aes-256-cbc -d -in deploy/ssl/ca_bundled.crt.enc -out deploy/ssl/ca_bundled.crt -k $KEY
+            openssl aes-256-cbc -d -in deploy/ssl/private.key.enc -out deploy/ssl/private.key -k $KEY
       - run:
           name: Build Express Docker image
           command: |
