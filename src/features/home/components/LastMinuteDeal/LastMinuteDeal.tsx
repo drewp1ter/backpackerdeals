@@ -4,14 +4,9 @@ import styles from './LastMinuteDeal.module.scss'
 
 import { LastMinuteDealCard } from 'components'
 
-import './assets/1.jpg'
-import './assets/2.jpg'
-import './assets/3.jpg'
-import './assets/4.jpg'
-
 const data = [
   {
-    img: require('./assets/1.jpg?webp'),
+    img: require('./assets/1.jpg'),
     tourName: 'Kakadu 4WD Adventure',
     price: 900,
     location: 'Australia',
@@ -27,7 +22,7 @@ const data = [
     },
   },
   {
-    img: require('./assets/2.jpg?webp'),
+    img: require('./assets/2.jpg'),
     tourName: 'Kakadu 4WD Adventure',
     price: 900,
     location: 'Australia',
@@ -43,7 +38,7 @@ const data = [
     },
   },
   {
-    img: require('./assets/3.jpg?webp'),
+    img: require('./assets/3.jpg'),
     tourName: 'Kakadu 4WD Adventure',
     price: 900,
     location: 'Australia',
@@ -59,7 +54,7 @@ const data = [
     },
   },
   {
-    img: require('./assets/4.jpg?webp'),
+    img: require('./assets/4.jpg'),
     tourName: 'Kakadu 4WD Adventure',
     price: 900,
     location: 'Australia',

@@ -17,9 +17,13 @@ jobs:
       - run:
           name: Decrypt & add SSH Key
           command: |
-            openssl aes-256-cbc -d -in deploy_rsa.enc -out /tmp/deploy_rsa -k $KEY
+            openssl aes-256-cbc -d -in deploy/deploy_rsa.enc -out /tmp/deploy_rsa -k $KEY
             chmod 600 /tmp/deploy_rsa
             ssh-add /tmp/deploy_rsa
+          name: Decrypt Certificates
+          command: |
+            openssl aes-256-cbc -d -in deploy/ssl/ca_bundled.crt.enc -out deploy/ssl/ca_bundled.crt.enc -k $KEY
+            openssl aes-256-cbc -d -in deploy/ssl/private.key.enc -out deploy/ssl/private.key.enc -k $KEY
       - run:
           name: Build Express Docker image
           command: |
