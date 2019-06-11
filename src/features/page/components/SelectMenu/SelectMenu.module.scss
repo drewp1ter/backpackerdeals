@@ -26,6 +26,12 @@
       transition: .2s ease transform, .2s ease color;
     }
 
+    &:hover {
+      span, i {
+        color: #ff5a39;
+      }
+    }
+
     &.opened {
       span {
         color: #ff5a39;
@@ -97,6 +103,12 @@
         font-size: 12px;
       }
     }
+
+    .menu {
+      &[data-size="lg"] {
+        width: 700px;
+      }
+    }
   }
 }
 
@@ -112,7 +124,7 @@
       }
   
       i {
-        margin-left: 10px;
+        margin-left: 5px;
         font-size: 12px;
       }
     }
@@ -120,5 +132,13 @@
 }
 
 @media screen and (max-width: 1280px) and (min-width: 768px) {
-  
+  .headerSelectMenu {
+    .menu {
+      padding: 20px;
+
+      &[data-pos="left"] {
+        left: -165px;
+      }
+    }
+  }
 }

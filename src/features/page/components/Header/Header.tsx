@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
 
 import { AdvancedSearch } from 'components'
-import { SelectContinent, SelectMenu } from '..'
+import { SelectContinent, SelectMenu, MobileMenu } from '..'
 
 import Logo from './assets/logo_Header.svg'
+import BlackLogo from './assets/blackLogo.svg'
 import { currencies, languages } from './constants'
 import styles from './Header.module.scss'
 
@@ -34,16 +35,20 @@ export const Header: React.FC = () => {
     </span>
   )
 
+  const continentOpener: React.ReactNode = <span className={styles.continentOpener}>Explore by country</span>
+
   return (
     <header>
       <div className={styles.tools}>
         <div className={styles.logoAndSearch}>
-          <img src={Logo} alt="Logo" className="logo" />
+          <img src={Logo} alt="Logo" className={styles.logo} />
+          <img src={BlackLogo} alt="Logo" className={styles.blackLogo} />
           <AdvancedSearch />
         </div>
         <div className={styles.tours}>
-          <SelectContinent />
-          <div className={styles.explore} />
+          <SelectMenu openerClass={styles.selectContinentOpener} opener={continentOpener} title="Select continent" size="lg" pos="left">
+            <SelectContinent />
+          </SelectMenu>
           <a href="">Top Deals</a>
           <a href="">Last Minute Deals</a>
         </div>
@@ -91,6 +96,18 @@ export const Header: React.FC = () => {
           <div className={styles.profileIcon}>
             <i className="fas fa-user" />
           </div>
+        </div>
+        <div className={styles.tabletTools}>
+          <div className={styles.tabletSearch}>
+            <input type="text" placeholder="Search" disabled={true} />
+            <i className="fas fa-search" />
+          </div>
+          <div className={styles.sideMenu}>
+            <i className="fas fa-bars" />
+          </div>
+        </div>
+        <div className={styles.mobileTools}>
+          <MobileMenu />
         </div>
       </div>
     </header>
