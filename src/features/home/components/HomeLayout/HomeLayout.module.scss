@@ -45,6 +45,7 @@
   display: grid;
   margin: 0 auto;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  max-width: 1520px;
 
   .td1 {
     grid-column-start: 1;
@@ -56,11 +57,13 @@
   .td2 {
     grid-column-start: 3;
     grid-column-end: 4;
+    margin-left: 6px;
   }
 
   .td3 {
     grid-column-start: 4;
     grid-column-end: 6;
+    margin-left: 8px;
   }
 
   .td4 {
@@ -68,6 +71,7 @@
     grid-column-end: 7;
     grid-row-start: 1;
     grid-row-end: 3;
+    margin-left: 12px;
   }
 
   .td5 {
@@ -88,7 +92,7 @@
 .travelStories {
   display: grid;
   margin: 0 auto;
-  max-width: 1512px;
+  max-width: 1520px;
   grid-template-columns: 1fr 1fr 1fr;
 
   .item1 {
