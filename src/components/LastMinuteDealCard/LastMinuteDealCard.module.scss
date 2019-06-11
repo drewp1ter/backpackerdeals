@@ -6,6 +6,11 @@
   &:hover {
     box-shadow: 0 24px 32px rgba(0, 0, 0, 0.06);
     transform: scale(1.005, 1.005);
+
+
+    .tour {
+      color: #ff5a39;
+    }
   }
 
   &[data-view="horizontal"] {
@@ -187,6 +192,7 @@
     line-height: 1.23;
     text-align: left;
     color: #202020;
+    transition: .2s ease color;
 
     &[data-view="vertical"] {
       width: 186px;
