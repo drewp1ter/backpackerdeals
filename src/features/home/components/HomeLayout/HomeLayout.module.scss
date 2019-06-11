@@ -41,6 +41,50 @@
   z-index: 1;
 }
 
+.topDestinations {
+  display: grid;
+  margin: 0 auto;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+
+  .td1 {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 3;
+  }
+
+  .td2 {
+    grid-column-start: 3;
+    grid-column-end: 4;
+  }
+
+  .td3 {
+    grid-column-start: 4;
+    grid-column-end: 6;
+  }
+
+  .td4 {
+    grid-column-start: 6;
+    grid-column-end: 7;
+    grid-row-start: 1;
+    grid-row-end: 3;
+  }
+
+  .td5 {
+    grid-column-start: 3;
+    grid-column-end: 5;
+    grid-row-start: 2;
+    grid-row-end: 3;
+  }
+
+  .td6 {
+    grid-column-start: 5;
+    grid-column-end: 6;
+    grid-row-start: 2;
+    grid-row-end: 3;
+  }
+}
+
 .travelStories {
   display: grid;
   margin: 0 auto;

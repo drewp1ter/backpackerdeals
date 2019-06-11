@@ -22,19 +22,53 @@ export const HomeLayout: React.FC = () => (
     <BookWithUsSection />
 
     <CardsWrapper title="Top Destinations" linkTitle="Explore more destinations">
-      <div className={styles.cardsRow}>
-        <TopDestinationCard title="Great Barrier Reef" country="Australia" width="md" height="lg" img={images.maskGroup16} gradDeg={219} />
-        <div className={styles.topDestinationsCardsColumn}>
-          <div className={styles.cardsRow}>
-            <TopDestinationCard title="Rotorua" country="New Zealand" width="sm" height="md" img={images.maskGroup18} gradDeg={213} />
-            <TopDestinationCard title="Bangkok" country="Thailand" width="md" height="md" img={images.maskGroup20} gradDeg={234} />
-          </div>
-          <div className={styles.cardsRow}>
-            <TopDestinationCard title="Queenstown" country="New Zealand" width="md" height="sm" img={images.maskGroup19} gradDeg={245} />
-            <TopDestinationCard title="Waitomo" country="New Zealand" width="sm" height="sm" img="" gradDeg={226} />
-          </div>
-        </div>
-        <TopDestinationCard title="Uluru" country="Australia" width="sm" height="lg" img={images.maskGroup17} gradDeg={201} />
+      <div className={styles.topDestinations}>
+        <TopDestinationCard
+          className={styles.td1}
+          title="Great Barrier Reef"
+          country="Australia"
+          width="md"
+          height="lg"
+          img={images.maskGroup16}
+          gradDeg={219}
+        />
+        <TopDestinationCard
+          className={styles.td2}
+          title="Rotorua"
+          country="New Zealand"
+          width="sm"
+          height="md"
+          img={images.maskGroup18}
+          gradDeg={213}
+        />
+        <TopDestinationCard
+          className={styles.td3}
+          title="Bangkok"
+          country="Thailand"
+          width="md"
+          height="md"
+          img={images.maskGroup20}
+          gradDeg={234}
+        />
+        <TopDestinationCard
+          className={styles.td4}
+          title="Uluru"
+          country="Australia"
+          width="sm"
+          height="lg"
+          img={images.maskGroup17}
+          gradDeg={201}
+        />
+        <TopDestinationCard
+          className={styles.td5}
+          title="Queenstown"
+          country="New Zealand"
+          width="md"
+          height="sm"
+          img={images.maskGroup19}
+          gradDeg={245}
+        />
+        <TopDestinationCard className={styles.td6} title="Waitomo" country="New Zealand" width="sm" height="sm" img="" gradDeg={226} />
       </div>
     </CardsWrapper>
 

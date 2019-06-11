@@ -1,4 +1,5 @@
-import * as React from 'react'
+import classNames from 'classnames'
+import React from 'react'
 
 import styles from './TopDestinationCard.module.scss'
 
@@ -9,11 +10,13 @@ export interface IProps {
   readonly width: 'sm' | 'md'
   readonly height: 'sm' | 'md' | 'lg'
   readonly gradDeg?: number
+  readonly className?: string
 }
 
-export const TopDestinationCard: React.FC<IProps> = ({ title, country, img, width, height, gradDeg = 0 }) => {
+export const TopDestinationCard: React.FC<IProps> = ({ title, country, img, width, height, gradDeg = 0, className }) => {
+  const rootClass = classNames(styles.topDestinationCard, className)
   return (
-    <div className={styles.root} data-width={width} data-height={height}>
+    <div className={rootClass} data-width={width} data-height={height}>
       <div>
         <span>{country}</span>
         <h3>{title}</h3>
