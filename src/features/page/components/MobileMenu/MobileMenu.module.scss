@@ -41,8 +41,9 @@
     position: fixed;
     top: 0;
     bottom: 0;
-    right: -310px;
-    width: 90vw;
+    right: -100%;
+    // width: 285px;
+    width: 89%;
     z-index: 15;
     overflow-y: scroll;
     background-color: #fff;
@@ -50,7 +51,8 @@
     transition: .2s ease transform;
 
     &[data-open="true"] {
-      transform: translateX(calc(90vw));
+      // transform: translateX(-310px);
+      transform: translateX(-103%);
     }
 
     .mobileHeader {
@@ -247,6 +249,8 @@
 
     .radioButtons {
       margin-bottom: 12px;
+      display: flex;
+      flex-wrap: nowrap;
     }
 
     .advancedSearchButtons {
@@ -268,6 +272,36 @@
         line-height: 32px;
         background-color: transparent;
         border: none;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 340px) and (max-width: 360px) {
+  .mobileMenu {
+    .menu, .search {
+      &[data-open="true"] {
+        transform: translateX(-104.4%);
+      }
+    }
+  }  
+}
+
+@media screen and (min-width: 375px) and (max-width: 400px) {
+  .mobileMenu {
+    .menu, .search {
+      &[data-open="true"] {
+        transform: translateX(-104.3%);
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 401px) and (max-width: 414px) {
+  .mobileMenu {
+    .menu, .search {
+      &[data-open="true"] {
+        transform: translateX(-105.1%);
       }
     }
   }
