@@ -39,18 +39,20 @@ export const HomeLayout: React.FC = () => (
     </CardsWrapper>
 
     <CardsWrapper title="Activities, Tours & Things To D" linkTitle="Show more">
-      <div key="1" className={styles.activitiesTourThingsCardsRow}>
-        <ActivityCard title="Dive & Snorkelling" variant="diveSnorkelling" />
-        <ActivityCard title="Multi-days Tours" variant="multidaysTours" />
-        <ActivityCard title="Surfing & SUP" variant="surfingSUP" />
-        <ActivityCard title="Whale & dolphin watching" variant="whaleDolphinWatching" gradDeg={209} />
-      </div>
+      <div className={styles.activitiesContainer}>
+        <div className={styles.activitiesTourThingsCardsRow}>
+          <ActivityCard title="Dive & Snorkelling" variant="diveSnorkelling" />
+          <ActivityCard title="Multi-days Tours" variant="multidaysTours" />
+          <ActivityCard title="Surfing & SUP" variant="surfingSUP" />
+          <ActivityCard title="Whale & dolphin watching" variant="whaleDolphinWatching" gradDeg={209} />
+        </div>
 
-      <div key="2" className={styles.activitiesTourThingsCardsRow}>
-        <ActivityCard title="Classes & Workshops" variant="classesWorkshops" />
-        <ActivityCard title="Skydiving" variant="skydiving" gradDeg={209} />
-        <ActivityCard title="Bungee Jumping" variant="bungeeJumping" />
-        <ActivityCard title="Attractions" variant="attractions" />
+        <div className={styles.activitiesTourThingsCardsRow}>
+          <ActivityCard title="Classes & Workshops" variant="classesWorkshops" />
+          <ActivityCard title="Skydiving" variant="skydiving" gradDeg={209} />
+          <ActivityCard title="Bungee Jumping" variant="bungeeJumping" />
+          <ActivityCard title="Attractions" variant="attractions" />
+        </div>
       </div>
     </CardsWrapper>
 
@@ -59,30 +61,27 @@ export const HomeLayout: React.FC = () => (
     </CardsWrapper>
 
     <CardsWrapper title="Travel stories" linkTitle="Read more">
-      <div className={styles.cardsRow}>
+      <div className={styles.travelStories}>
         <TravelStoryCard
-          key="1"
-          img={images.featuredArticle}
           title="HOW TO TRAVEL BY RV ON A BACKPACKER BUDGET"
           description="America, Backpacking Tips, Budget tips, Road Trip, RV"
-          variant="lg"
+          variant="image63"
           gradDeg={252}
+          className={styles.item1}
         />
-      </div>
-      <div key="2" className={styles.travelStoriesCardsRow}>
         <TravelStoryCard
-          img={images.article}
           title="10 TIPS EVERY BACKPACKER SHOULD KNOW"
           description="America, Backpacking Tips, Budget tips"
-          variant="md"
+          variant="image64"
           gradDeg={250}
+          className={styles.item2}
         />
         <TravelStoryCard
-          img={images.maskGroup15}
           title="WHY I LOVE SOLO TRAVEL (AND WHY YOU WILL TO)"
           description="America, Backpacking Tips, Budget tips"
-          variant="sm"
+          variant="image65"
           gradDeg={234}
+          className={styles.item3}
         />
       </div>
     </CardsWrapper>
