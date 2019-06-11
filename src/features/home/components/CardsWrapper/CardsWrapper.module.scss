@@ -33,7 +33,7 @@
 }
 
 @media screen and (max-width: 1280px) {
-  .root {
+  .cardsWrapper {
     > h3 {
       font-size: 38px;
     }
@@ -51,7 +51,7 @@
 }
 
 @media screen and (max-width: 500px) {
-  .root {
+  .cardsWrapper {
     > h3 {
       font-size: 32px;
     }
@@ -59,7 +59,7 @@
 }
 
 @media screen and (max-width: 350px) {
-  .root {
+  .cardsWrapper {
     padding: 0 5px;
 
     > h3 {

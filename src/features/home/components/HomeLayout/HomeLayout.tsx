@@ -8,8 +8,8 @@ import {
   InstagramCard,
   LastMinuteDeal,
   SearchTravelSection,
-  TopDestinationCard,
-  TravelStoryCard,
+  TopDestinationsSection,
+  TravelStoriesSection,
 } from '..'
 
 import images from './assets'
@@ -18,25 +18,8 @@ import styles from './HomeLayout.module.scss'
 export const HomeLayout: React.FC = () => (
   <>
     <SearchTravelSection />
-
     <BookWithUsSection />
-
-    <CardsWrapper title="Top Destinations" linkTitle="Explore more destinations">
-      <div className={styles.cardsRow}>
-        <TopDestinationCard title="Great Barrier Reef" country="Australia" width="md" height="lg" img={images.maskGroup16} gradDeg={219} />
-        <div className={styles.topDestinationsCardsColumn}>
-          <div className={styles.cardsRow}>
-            <TopDestinationCard title="Rotorua" country="New Zealand" width="sm" height="md" img={images.maskGroup18} gradDeg={213} />
-            <TopDestinationCard title="Bangkok" country="Thailand" width="md" height="md" img={images.maskGroup20} gradDeg={234} />
-          </div>
-          <div className={styles.cardsRow}>
-            <TopDestinationCard title="Queenstown" country="New Zealand" width="md" height="sm" img={images.maskGroup19} gradDeg={245} />
-            <TopDestinationCard title="Waitomo" country="New Zealand" width="sm" height="sm" img="" gradDeg={226} />
-          </div>
-        </div>
-        <TopDestinationCard title="Uluru" country="Australia" width="sm" height="lg" img={images.maskGroup17} gradDeg={201} />
-      </div>
-    </CardsWrapper>
+    <TopDestinationsSection />
 
     <CardsWrapper title="Activities, Tours & Things To D" linkTitle="Show more">
       <div className={styles.activitiesContainer}>
@@ -60,31 +43,7 @@ export const HomeLayout: React.FC = () => (
       <LastMinuteDeal />
     </CardsWrapper>
 
-    <CardsWrapper title="Travel stories" linkTitle="Read more">
-      <div className={styles.travelStories}>
-        <TravelStoryCard
-          title="HOW TO TRAVEL BY RV ON A BACKPACKER BUDGET"
-          description="America, Backpacking Tips, Budget tips, Road Trip, RV"
-          variant="image63"
-          gradDeg={252}
-          className={styles.item1}
-        />
-        <TravelStoryCard
-          title="10 TIPS EVERY BACKPACKER SHOULD KNOW"
-          description="America, Backpacking Tips, Budget tips"
-          variant="image64"
-          gradDeg={250}
-          className={styles.item2}
-        />
-        <TravelStoryCard
-          title="WHY I LOVE SOLO TRAVEL (AND WHY YOU WILL TO)"
-          description="America, Backpacking Tips, Budget tips"
-          variant="image65"
-          gradDeg={234}
-          className={styles.item3}
-        />
-      </div>
-    </CardsWrapper>
+    <TravelStoriesSection />
 
     <CardsWrapper title="Authentic reviews from our travellers" linkTitle="Read all reviews">
       <div className={styles.cardsRow}>

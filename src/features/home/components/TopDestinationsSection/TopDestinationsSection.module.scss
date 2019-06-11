@@ -1,0 +1,143 @@
+.topDestinations {
+  display: grid;
+  margin: 0 auto;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  // grid-template-rows: 352px 240px;
+  max-width: 1520px;
+
+  .td1 {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    margin-right: 10px;
+  }
+
+  .td2 {
+    grid-column-start: 3;
+    grid-column-end: 4;
+    margin: 0 6px;
+  }
+
+  .td3 {
+    grid-column-start: 4;
+    grid-column-end: 6;
+    margin: 0 6px 0 8px;
+  }
+
+  .td4 {
+    grid-column-start: 6;
+    grid-column-end: 7;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    margin-left: 12px;
+  }
+
+  .td5 {
+    grid-column-start: 3;
+    grid-column-end: 5;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    margin-top: 16px;
+    margin-left: 6px;
+  }
+
+  .td6 {
+    grid-column-start: 5;
+    grid-column-end: 6;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    margin: 16px 6px 0 16px;
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .topDestinations {
+    max-width: 1044px;
+
+    .td1 {
+      margin-right: 5px;
+    }
+
+    .td2 {
+      margin: 0 3px;
+    }
+
+    .td3 {
+      margin: 0 3px 0 4px;
+    }
+
+    .td4 {
+      margin-left: 6px;
+    }
+
+    .td5 {
+      margin: 8px 0 0 3px;
+    }
+
+    .td6 {
+      margin: 8px 3px 0 8px;
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .topDestinations {
+    max-width: 952px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .topDestinations {
+    grid-template-columns: 1fr 1fr;
+    max-width: 304px;
+
+    .td1 {
+      grid-column-start: 1;
+      grid-column-end: 3;
+      grid-row-start: 1;
+      grid-row-end: 2;
+      margin: 0;
+    }
+
+    .td2 {
+      grid-row-start: 2;
+      grid-row-end: 3;
+      grid-column-start: 1;
+      grid-column-end: 2;
+      margin: 0;
+    }
+
+    .td3 {
+      grid-row-start: 2;
+      grid-row-end: 3;
+      grid-column-start: 2;
+      grid-column-end: 3;
+      margin: 0;
+    }
+
+    .td4 {
+      grid-column-start: 1;
+      grid-column-end: 3;
+      grid-row-start: 4;
+      grid-row-end: 5;
+      margin: 0;
+    }
+
+    .td5 {
+      grid-column-start: 1;
+      grid-column-end: 2;
+      grid-row-start: 3;
+      grid-row-end: 4;
+      margin: 0;
+    }
+
+    .td6 {
+      grid-column-start: 2;
+      grid-column-end: 3;
+      grid-row-start: 3;
+      grid-row-end: 4;
+      margin: 0;
+    }
+  }
+}

@@ -1,0 +1,58 @@
+.travelStories {
+  display: grid;
+  margin: 0 auto;
+  max-width: 1520px;
+  grid-template-columns: 1fr 1fr 1fr;
+
+  .item1 {
+    grid-column-start: 1;
+    grid-column-end: 4;
+  }
+
+  .item2 {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    margin-top: 8px;
+  }
+
+  .item3 {
+    grid-column-start: 3;
+    grid-column-end: 4;
+    margin: 8px 0 0 8px;
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .travelStories {
+    max-width: 1044px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .travelStories {
+    max-width: 952px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .travelStories {
+    grid-template-columns: 1fr;
+
+    .item1 {
+      grid-column-start: 1;
+      grid-column-end: 2;
+    }
+
+    .item2 {
+      grid-column-start: 1;
+      grid-column-end: 2;
+      margin-top: 8px;
+    }
+
+    .item3 {
+      grid-column-start: 1;
+      grid-column-end: 2;
+      margin: 8px 0 0 0;
+    }
+  }
+}
