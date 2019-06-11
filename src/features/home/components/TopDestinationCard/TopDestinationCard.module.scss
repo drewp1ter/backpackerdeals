@@ -2,6 +2,8 @@
   position: relative;
   border-radius: 8px;
   transition: .2s ease box-shadow;
+  display: flex;
+
 
   img {
     width: 100%;
@@ -13,50 +15,110 @@
     transform: scale(1.005, 1.005);
   }
 
-  div {
-    &:nth-child(1) {
-      position: absolute;
-      left: 24px;
-      bottom: 32px;
-      z-index: 1;
+  .text {
+    position: absolute;
+    left: 24px;
+    bottom: 32px;
+    z-index: 1;
+
+    h3 {
+      font-size: 32px;
+      margin: 5px 0 0 0;
+      color: #fff;
+    }
+
+    span {
+      font-size: 16px;
+        color: #fff;
+    }
+  }
+
+  .gradient {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    border-radius: 8px;
+    opacity: .3;
+  }
+
+  &[data-size="sm"] {
+    max-width: 240px;
+  }
+
+  &[data-size="md"] {
+    max-width: 496px;
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .topDestinationCard {
+
+    .text {
+      left: 16px;
+      bottom: 16px;
+
       h3 {
-        font-size: 32px;
-        margin: 5px 0 0 0;
-        color: #fff;
+        font-size: 26px;
       }
+
       span {
-        font-size: 16px;
+        font-size: 14px;
         color: #fff;
       }
     }
-    &:nth-child(2) {
-      position: absolute;
-      left: 0;
-      top: 0;
-      bottom: 0;
-      right: 0;
-      border-radius: 8px;
-      opacity: .3;
+
+    &[data-size="sm"] {
+      max-width: 168px;
+    }
+
+    &[data-size="md"] {
+      max-width: 345px;
     }
   }
+}
 
-  &[data-width="sm"] {
-    width: 240px;
+@media screen and (max-width: 1024px) {
+  .topDestinationCard {
+    &[data-size="sm"] {
+      max-width: 152px;
+    }
+
+    &[data-size="md"] {
+      max-width: 312px;
+    }
   }
+}
 
-  &[data-width="md"] {
-    width: 496px;
+@media screen and (max-width: 900px) {
+  .topDestinationCard {
+
+    .text {
+      left: 12px;
+      bottom: 12px;
+
+      h3 {
+        font-size: 20px;
+      }
+
+      span {
+        font-size: 12px;
+        color: #fff;
+      }
+    }
   }
+}
 
-  &[data-height="sm"] {
-    height: 224px;
-  }
+@media screen and (max-width: 768px) {
+  .topDestinationCard {
 
-  &[data-height="md"] {
-    height: 352px;
-  }
+    &[data-size="sm"] {
+      max-width: 144px;
+    }
 
-  &[data-height="lg"] {
-    height: 592px;
+    &[data-size="md"] {
+      max-width: 304px;
+    }
   }
 }
