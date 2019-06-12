@@ -39,3 +39,49 @@
     }
   }
 }
+
+@media screen and (max-width: 1615px) {
+  .advancedSearchTravelInput {
+    width: 780px;
+    height: 50px;
+    padding: 6px 55px 8px 30px;
+    font-size: 16px;
+  
+    >button {
+      width: 188px !important;
+      height: 52px !important;
+      top: 6px !important;
+      right: 6px !important;
+      font-size: 16px !important;
+    }
+  
+    .searchImage {
+      left: 300px;
+      bottom: -28px;
+      width: 280px;
+      height: 28px;
+    }
+  }
+}
+
+@media screen and (min-width: 1280px) and (max-width: 1415px) {
+  .advancedSearchTravelInput {
+    width: 611px;
+    height: 40px;
+  
+    >button {
+      width: 168px !important;
+      height: 48px !important;
+      top: 4px !important;
+      right: 4px !important;
+      font-size: 14px !important;
+    }
+  
+    .searchImage {
+      left: 230px;
+      bottom: -24px;
+      width: 240px;
+      height: 24px;
+    }
+  }
+}

@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="462" height="200" viewBox="0 0 462 200">
+  <defs>
+    <mask id="4if0b" width="2" height="2" x="-1" y="-1">
+      <path fill="#fff" d="M71 89h320v70H71z"/>
+      <path d="M71 89s13.467 20.023 53.333 20.188c39.864.173 61.4-8.159 106.667-8.07 45.267.085 79.118 15.11 110.754 14.933C373.39 115.877 391 101.117 391 101.117V159H71z"/>
+    </mask>
+    <filter id="4if0a" width="520" height="300" x="-29" y="-41" filterUnits="userSpaceOnUse">
+      <feOffset dy="-30" in="SourceGraphic" result="FeOffset1063Out"/>
+      <feGaussianBlur in="FeOffset1063Out" result="FeGaussianBlur1064Out" stdDeviation="36 36"/>
+    </filter>
+  </defs>
+  <g>
+    <g>
+      <g filter="url(#4if0a)">
+        <path fill="none" d="M71 89s13.467 20.023 53.333 20.188c39.864.173 61.4-8.159 106.667-8.07 45.267.085 79.118 15.11 110.754 14.933C373.39 115.877 391 101.117 391 101.117V159H71z" mask="url(&quot;#4if0b&quot;)"/>
+        <path fill-opacity=".16" d="M71 89s13.467 20.023 53.333 20.188c39.864.173 61.4-8.159 106.667-8.07 45.267.085 79.118 15.11 110.754 14.933C373.39 115.877 391 101.117 391 101.117V159H71z"/>
+      </g>
+      <path fill="#fff" d="M71 89s13.467 20.023 53.333 20.188c39.864.173 61.4-8.159 106.667-8.07 45.267.085 79.118 15.11 110.754 14.933C373.39 115.877 391 101.117 391 101.117V159H71z"/>
+    </g>
+  </g>
+</svg>

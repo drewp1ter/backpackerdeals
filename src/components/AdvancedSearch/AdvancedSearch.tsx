@@ -4,7 +4,7 @@ import { OrangeButton, SearchSelect } from 'components'
 
 import styles from './AdvancedSearch.module.scss'
 
-import Logo from 'features/page/components/Header/assets/logo_Header.svg'
+import Logo from 'features/page/components/Header/assets/blackLogo.svg'
 
 const startLocation = [
   'Haven 5:20 AM',

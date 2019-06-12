@@ -154,3 +154,67 @@
     }
   }
 }
+
+@media screen and (max-width: 1615px) {
+  .searchSelect {
+    .select {
+      padding: 7px 25px 7px 10px;
+  
+      i {
+        font-size: 12px;
+      }
+  
+      span {
+        font-size: 12px;
+      }
+    }
+  
+    .optionBlock {
+      top: 65px;
+      padding: 20px 0;
+  
+      .option {
+        padding: 10px 0 10px 32px;
+        font-size: 13px;
+      }
+    }
+  
+    &[data-theme="light"] {
+      .select {
+        margin-right: 8px;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1280px) and (max-width: 1415px) {
+  .searchSelect {
+    .select {
+      padding: 3px 15px 3px 5px;
+  
+      i {
+        font-size: 12px;
+      }
+  
+      span {
+        font-size: 12px;
+      }
+    }
+  
+    .optionBlock {
+      top: 65px;
+      padding: 20px 0;
+  
+      .option {
+        padding: 10px 0 10px 32px;
+        font-size: 13px;
+      }
+    }
+  
+    &[data-theme="light"] {
+      .select {
+        margin-right: 8px;
+      }
+    }
+  }
+}
