@@ -7,10 +7,10 @@ import {
   CardsWrapper,
   InstagramSection,
   LastMinuteDeal,
+  PromoutingSection,
   SearchTravelSection,
   TopDestinationsSection,
   TravelStoriesSection,
-  PromoutingSection,
 } from '..'
 
 import styles from './HomeLayout.module.scss'
