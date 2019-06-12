@@ -1,4 +1,4 @@
-.root {
+.authenticCard {
   display: flex;
   flex-direction: column;
   border-radius: 10px;
@@ -7,7 +7,7 @@
 
   h3 {
     margin: 8px 0 0 0;
-    width: 290px;
+    max-width: 290px;
     line-height: 1.23;
     font-size: 26px;
     font-weight: bold;
@@ -33,5 +33,32 @@
     font-size: 16px;
     text-align: left;
     color: #959595;
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .authenticCard {
+    padding: 18px 12px 20px 12px;
+
+    .rating {
+      i {
+        font-size: 10px;
+      }
+    }
+
+    h3 {
+      font-size: 20px;
+      max-width: 220px;
+    }
+
+    .body, .sign, a {
+      font-size: 14px;
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .authenticCard {
+    min-width: 244px;
   }
 }

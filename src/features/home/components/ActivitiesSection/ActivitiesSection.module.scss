@@ -1,0 +1,51 @@
+.activitiesTourThingsCardsRow {
+  display: flex;
+  justify-content: center;
+  >div {
+    margin-right: 16px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &:last-child {
+    margin-top: 16px;
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .activitiesTourThingsCardsRow {
+    >div {
+      margin-right: 8px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+    &:last-child {
+      margin-top: 8px;
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .activitiesContainer {
+    display: flex;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    &::scrollbar {
+      width: 0px;
+      background: transparent;
+    }
+  }
+
+  .activitiesTourThingsCardsRow {
+
+    &:last-child {
+      margin-top: 0;
+      margin-left: 8px;
+    }
+  }
+}

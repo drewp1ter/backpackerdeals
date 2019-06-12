@@ -1,7 +1,8 @@
 .activityCard {
   position: relative;
+  display: flex;
   width: 368px;
-  height: 576px;
+  max-height: 576px;
 
   h3 {
     position: absolute;
@@ -43,7 +44,7 @@
 @media screen and (max-width: 1280px) {
   .activityCard {
     width: 256px;
-    height: 400px;
+    max-height: 400px;
 
     h3 {
       font-size: 26px;
@@ -63,7 +64,7 @@
 @media screen and (max-width: 1024px) {
   .activityCard {
     width: 232px;
-    height: 360px;
+    max-height: 360px;
 
     h3 {
       left: 14px;
@@ -80,7 +81,7 @@
 @media screen and (max-width: 768px) {
   .activityCard {
     width: 174px;
-    height: 270px;
+    max-height: 270px;
 
     h3 {
       left: 12px;
@@ -99,7 +100,7 @@
 @media screen and (max-width: 320px) {
   .activityCard {
     width: 128px;
-    height: 208px;
+    max-height: 208px;
 
     h3 {
       left: 10px;

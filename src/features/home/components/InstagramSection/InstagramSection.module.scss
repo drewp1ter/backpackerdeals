@@ -1,0 +1,30 @@
+.instagramCards {
+  display: flex;
+  justify-content: center;
+  div {
+    margin-right: 16px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .instagramCards {
+    div {
+      margin-right: 8px;
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .instagramCards {
+    overflow-x: scroll;
+    overflow-y: hidden;
+    &::scrollbar {
+      width: 0px;
+      background: transparent;
+    }
+  }
+}
