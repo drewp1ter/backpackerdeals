@@ -1,3 +1,13 @@
+.instagramCard {
+  position: relative;
+  border-radius: 8px;
+  img {
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+  }
+}
+
 .instagramCards {
   display: flex;
   justify-content: center;
@@ -19,6 +29,10 @@
 }
 
 @media screen and (max-width: 767px) {
+  .instagramCard {
+    min-width: 128px;
+  }
+
   .instagramCards {
     overflow-x: scroll;
     overflow-y: hidden;

@@ -1,0 +1,1 @@
+export { PromoutingSection } from './PromoutingSection'
