@@ -87,9 +87,10 @@
   }
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 767px) {
   .topDestinations {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 152px 152px;
+    // grid-template-rows: 264px 196px 196px 264px;
     max-width: 304px;
 
     .td1 {
@@ -97,7 +98,7 @@
       grid-column-end: 3;
       grid-row-start: 1;
       grid-row-end: 2;
-      margin: 0;
+      margin: 0 0 16px 0;
     }
 
     .td2 {
@@ -105,7 +106,7 @@
       grid-row-end: 3;
       grid-column-start: 1;
       grid-column-end: 2;
-      margin: 0;
+      margin: 0 8px 16px 0;
     }
 
     .td3 {
@@ -113,7 +114,7 @@
       grid-row-end: 3;
       grid-column-start: 2;
       grid-column-end: 3;
-      margin: 0;
+      margin: 0 0 16px 8px;
     }
 
     .td4 {
@@ -129,7 +130,7 @@
       grid-column-end: 2;
       grid-row-start: 3;
       grid-row-end: 4;
-      margin: 0;
+      margin: 0 8px 16px 0;
     }
 
     .td6 {
@@ -137,7 +138,7 @@
       grid-column-end: 3;
       grid-row-start: 3;
       grid-row-end: 4;
-      margin: 0;
+      margin: 0 0 16px 8px;
     }
   }
 }

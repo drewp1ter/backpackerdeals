@@ -14,9 +14,10 @@ export const Rating: React.FC<IProps> = ({ rating, detail = true, className }) =
     const filled = idx + 1 <= Math.floor(rating)
     return <i key={idx} className={`fa${filled ? 's' : 'r'} fa-star`} data-filled={filled} />
   })
+  const rootClass = classNames(styles.rating, className)
 
   return (
-    <div className={classNames(styles.root, className)}>
+    <div className={rootClass}>
       {stars}
       {detail && <span>{rating} from 5</span>}
     </div>

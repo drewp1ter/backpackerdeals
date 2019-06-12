@@ -2,10 +2,10 @@ import * as React from 'react'
 
 import {
   ActivitiesSection,
-  AuthenticCard,
+  AuthenticSection,
   BookWithUsSection,
   CardsWrapper,
-  InstagramCard,
+  InstagramSection,
   LastMinuteDeal,
   SearchTravelSection,
   TopDestinationsSection,
@@ -27,32 +27,7 @@ export const HomeLayout: React.FC = () => (
     </CardsWrapper>
 
     <TravelStoriesSection />
-
-    <CardsWrapper title="Authentic reviews from our travellers" linkTitle="Read all reviews">
-      <div className={styles.cardsRow}>
-        <AuthenticCard
-          title="Easy and convenient booking"
-          body="We had a great time on this tour. You do three zip lines which each have terrific views, the first over a winery and the second tw…"
-          sign="Megan S."
-          date="24.05.2012"
-          rating={3}
-        />
-        <AuthenticCard
-          title="Easy and convenient booking"
-          body="We had a great time on this tour. You do three zip lines which each have terrific views, the first over a winery and the second tw…"
-          sign="Megan S."
-          date="24.05.2012"
-          rating={3}
-        />
-        <AuthenticCard
-          title="Easy and convenient booking"
-          body="We had a great time on this tour. You do three zip lines which each have terrific views, the first over a winery and the second tw…"
-          sign="Megan S."
-          date="24.05.2012"
-          rating={2}
-        />
-      </div>
-    </CardsWrapper>
+    <AuthenticSection />
 
     <CardsWrapper title="Promoting the best of" linkTitle="Learn more">
       <div className={styles.cardsRow}>
@@ -65,15 +40,6 @@ export const HomeLayout: React.FC = () => (
       </div>
     </CardsWrapper>
 
-    <CardsWrapper className={styles.instagramCards} title="Inspiration from our instagram" linkTitle="Follow us">
-      <div className={styles.cardsRow}>
-        <InstagramCard variant="v1" />
-        <InstagramCard variant="v2" />
-        <InstagramCard variant="v3" />
-        <InstagramCard variant="v4" />
-        <InstagramCard variant="v5" />
-        <InstagramCard variant="v6" />
-      </div>
-    </CardsWrapper>
+    <InstagramSection className={styles.instagramCards} />
   </>
 )

@@ -14,18 +14,17 @@ export interface IProps {
 }
 
 export const AuthenticCard: React.FC<IProps> = ({ title, body, className, sign, date, rating }) => (
-    <div className={classNames(styles.root, className)}>
-      <div>
-        <Rating rating={rating} detail={false} />
-        <h3>{title}</h3>
-        <div className={styles.body}>{body}</div>
-        <a>Read more</a>
-      </div>
-      <div className={styles.sign}>
-        {sign}
-        <br />
-        {date}
-      </div>
+  <div className={classNames(styles.authenticCard, className)}>
+    <div>
+      <Rating className={styles.rating} rating={rating} detail={false} />
+      <h3>{title}</h3>
+      <p className={styles.body}>{body}</p>
+      <a>Read more</a>
     </div>
-  )
-
+    <div className={styles.sign}>
+      {sign}
+      <br />
+      {date}
+    </div>
+  </div>
+)

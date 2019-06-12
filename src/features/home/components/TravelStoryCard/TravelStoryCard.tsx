@@ -22,7 +22,7 @@ export const TravelStoryCard: React.FC<IProps> = ({ title, description, variant,
   const srcSet = `${images.w1920[variant]} ${widths[variant][0]}w, ${images.w1280[variant]} ${widths[variant][1]}w, ${
     images.w1024[variant]
   } ${widths[variant][2]}w, ${images.w320[variant]} ${widths[variant][3]}w`
-  const sizes = `(max-width: 320px) ${widths[variant][3]}px, (max-width: 1024px) ${widths[variant][2]}px, (max-width: 1280px) ${
+  const sizes = `(max-width: 767px) ${widths[variant][3]}px, (max-width: 1024px) ${widths[variant][2]}px, (max-width: 1280px) ${
     widths[variant][1]
   }px, ${widths[variant][0]}px`
   const gradient = { backgroundImage: `linear-gradient(${gradDeg}deg, rgba(232, 232, 232, 0), rgba(0, 0, 0, 0.91))` }

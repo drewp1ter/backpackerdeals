@@ -1,0 +1,36 @@
+.authenticSection {
+  display: flex;
+  margin: 0 auto;
+  max-width: 1520px;
+
+  >div {
+    margin-right: 16px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .authenticSection {
+    max-width: 1044px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .authenticSection {
+    max-width: 952px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .authenticSection {
+    overflow-x: scroll;
+    overflow-y: hidden;
+    &::scrollbar {
+      width: 0px;
+      background: transparent;
+    }
+  }
+}
