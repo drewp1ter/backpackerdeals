@@ -19,7 +19,7 @@ enum View {
 
 interface IProps {
   readonly view: keyof typeof View
-  readonly img: string
+  readonly img: any
   readonly tourName: string
   readonly price: number
   readonly location: string
@@ -50,7 +50,7 @@ export const LastMinuteDealCard: React.FC<IProps> = ({
   saleType,
   exposeTime,
   description,
-  className
+  className,
 }) => {
   return (
     <div data-view={view} className={classNames(styles.lastMinuteDealCard, className)}>
@@ -80,15 +80,20 @@ export const LastMinuteDealCard: React.FC<IProps> = ({
             </div>
           </div>
         )}
-        <img src={img} alt="Last Minute Deal Tour" />
+        <img
+          className={styles.background}
+          srcSet={img.srcSet}
+          sizes="(max-width: 767px) 272px, (max-width: 1024px) 232px, (max-width: 1280px) 256px, 368px"
+          src={img.src}
+          alt="Last Minute Deal Tour"
+        />
       </div>
 
       <div data-view={view} className={styles.cardDescription}>
-
         {view === View.vertical && (
           <>
             <div className={styles.aboutPlace}>
-              <Rating rating={rating} />
+              <Rating className={styles.rating} rating={rating} />
               <div className={styles.location}>
                 <i className="fas fa-map-marker-alt" />
                 <span>{location}</span>
@@ -116,7 +121,7 @@ export const LastMinuteDealCard: React.FC<IProps> = ({
             </div>
 
             <p className={styles.tour}>{tourName}</p>
-            <Rating rating={rating} />
+            <Rating className={styles.rating} rating={rating} />
             {view === View.horizontal && <p className={styles.description}>{description}</p>}
           </div>
         )}
