@@ -6,7 +6,7 @@ import { LastMinuteDealCard } from 'components'
 
 const data = [
   {
-    img: require('./assets/1.jpg'),
+    img: require('./assets/1.jpg?resize&sizes[]=232&sizes[]=256&sizes[]=368&sizes[]=272'),
     tourName: 'Kakadu 4WD Adventure',
     price: 900,
     location: 'Australia',
@@ -22,7 +22,7 @@ const data = [
     },
   },
   {
-    img: require('./assets/2.jpg'),
+    img: require('./assets/2.jpg?resize&sizes[]=232&sizes[]=256&sizes[]=368&sizes[]=272'),
     tourName: 'Kakadu 4WD Adventure',
     price: 900,
     location: 'Australia',
@@ -38,7 +38,7 @@ const data = [
     },
   },
   {
-    img: require('./assets/3.jpg'),
+    img: require('./assets/3.jpg?resize&sizes[]=232&sizes[]=256&sizes[]=368&sizes[]=272'),
     tourName: 'Kakadu 4WD Adventure',
     price: 900,
     location: 'Australia',
@@ -54,7 +54,7 @@ const data = [
     },
   },
   {
-    img: require('./assets/4.jpg'),
+    img: require('./assets/4.jpg?resize&sizes[]=232&sizes[]=256&sizes[]=368&sizes[]=272'),
     tourName: 'Kakadu 4WD Adventure',
     price: 900,
     location: 'Australia',

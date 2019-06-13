@@ -14,8 +14,8 @@ export interface IProps {
 
 const widths = {
   image63: ['1520', '1048', '952', '304'],
-  image64: ['1008w', '696', '632', '304'],
-  image65: ['496w', '344', '312', '304'],
+  image64: ['1008', '696', '632', '304'],
+  image65: ['496', '344', '312', '304'],
 }
 
 export const TravelStoryCard: React.FC<IProps> = ({ title, description, variant, gradDeg = 0, className }) => {
