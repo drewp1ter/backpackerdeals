@@ -39,6 +39,15 @@
   .headWave {
     .mask {
       mask-image: url('./assets/waveIpad.svg');
+      mask-position: 50% 120%;
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .headWave {
+    .mask {
+      mask-image: url('./assets/waveIpad.svg');
       mask-position: 50% 190%;
     }
   }

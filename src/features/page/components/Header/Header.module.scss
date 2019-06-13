@@ -332,7 +332,23 @@ header {
 
 @media screen and (min-width: 768px) and (max-width: 1280px) {
   header {
+    padding: 20px 15px;
+
     .tools {
+      display: grid;
+      grid-template-columns: 1fr 2fr 1fr;
+      grid-auto-rows: 40px;
+
+      .tours {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .mobileTools {
+        justify-content: flex-end;
+      }
+
       .logoAndSearch {
         img {
           margin-right: 0;
@@ -344,6 +360,20 @@ header {
 
       .mobileTools {
         display: flex;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 810px) {
+  header {
+    .tools {
+      .tours {
+        justify-content: space-between;
+        
+        a {
+          margin-right: 0;
+        }
       }
     }
   }
