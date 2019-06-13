@@ -1,5 +1,4 @@
-.root {
-
+.tabs {
   li {
     cursor: pointer;
     list-style: none;
@@ -25,6 +24,10 @@
     }
   }
 
+  &[data-displaytheme="flex"] {
+    display: flex;
+  }
+  
   &[data-theme="leftmenu"] {
     display: flex;
   }
@@ -54,33 +57,32 @@
 }
 
 @media screen and (max-width: 1280px) and (min-width: 768px) {
-  .root {
+  .tabs {
     > ul[data-theme="leftmenu"] {
       li {
         margin-left: -20px;
-  
       }
     }
   }
 }
 
-@media screen and (min-width: 320px) and (max-width: 767px) {
-  .root {
-    > ul[data-theme="head"] {
-      overflow-x: auto;
-      white-space: nowrap;
-
-      li {
-        margin: 0 20px 0 0;
-        font-size: 12px;
-        padding: 5px 0;
-      }
-    }
-
-    &[data-theme="leftmenu"] {
+@media screen and (min-width: 320px) and (max-width: 1280px) {
+  .tabs {
+    &[data-bodytheme="mobile"] {
       display: block;
-      
-      >ul {
+
+      > ul[data-theme="head"] {
+        overflow-x: auto;
+        white-space: nowrap;
+  
+        li {
+          margin: 0 20px 0 0;
+          font-size: 12px;
+          padding: 5px 0;
+        }
+      }
+
+      >ul[data-theme="leftmenu"] {
         margin-top: 8px;
         overflow-x: auto;
         white-space: nowrap;

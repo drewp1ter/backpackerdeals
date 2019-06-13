@@ -3,12 +3,17 @@ import React from 'react'
 import { MostPopular, Tab, Tabs } from '..'
 import data from './data'
 
-export const SelectContinent: React.FC = () => (
-  <Tabs>
+interface IProps {
+  readonly theme?: 'mobile'
+  readonly displayTheme?: 'flex'
+}
+
+export const SelectContinent: React.FC<IProps> = ({ theme, displayTheme }) => (
+  <Tabs bodyTheme={theme}>
     <Tab label="Australia & NZ">
-      <Tabs theme="leftmenu">
+      <Tabs displayTheme={displayTheme} bodyTheme={theme} theme="leftmenu">
         <Tab label="Australia" description="258 Activities">
-          <MostPopular places={data} title="Most popular cities in Australia" />
+          <MostPopular theme={theme} places={data} title="Most popular cities in Australia" />
         </Tab>
         <Tab label="New Zealand" description="258 Activities">
           adas

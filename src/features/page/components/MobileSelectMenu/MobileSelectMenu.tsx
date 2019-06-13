@@ -12,9 +12,19 @@ interface IProps {
   readonly reversableIcon?: string
   readonly reverseType?: string
   readonly openerClass?: string
+  readonly childrenClassName?: string
 }
 
-export const MobileSelectMenu: React.FC<IProps> = ({ title, leftIcon, rightIcon, reversableIcon, reverseType, children, openerClass }) => {
+export const MobileSelectMenu: React.FC<IProps> = ({
+  title,
+  leftIcon,
+  rightIcon,
+  reversableIcon,
+  reverseType,
+  children,
+  openerClass,
+  childrenClassName,
+}) => {
   const [isOpen, setIsOpen] = useState<boolean>(false)
   const toggle = () => setIsOpen(!isOpen)
 
@@ -22,17 +32,13 @@ export const MobileSelectMenu: React.FC<IProps> = ({ title, leftIcon, rightIcon,
     <div className={styles.mobileSelectMenu}>
       <div className={classNames(styles.opener, openerClass, isOpen && styles.opened)} onClick={toggle}>
         <div>
-          {leftIcon && <i className={leftIcon} data-reversable={reversableIcon === "left"} data-reversetype={reverseType} />}
+          {leftIcon && <i className={leftIcon} data-reversable={reversableIcon === 'left'} data-reversetype={reverseType} />}
           <span>{title}</span>
         </div>
-        {rightIcon && <i className={rightIcon} data-reversable={reversableIcon === "right"} data-reversetype={reverseType} />}
+        {rightIcon && <i className={rightIcon} data-reversable={reversableIcon === 'right'} data-reversetype={reverseType} />}
       </div>
 
-      {isOpen && (
-        <div className={styles.menu}>
-          {children}
-        </div>
-      )}
+      {isOpen && (childrenClassName ? <div className={childrenClassName}>{children}</div> : children)}
     </div>
   )
 }

@@ -10,9 +10,10 @@ export interface IPlace {
 export interface IProps {
   readonly places: IPlace[]
   readonly title: string
+  readonly theme?: 'mobile'
 }
 
-export const MostPopular: React.FC<IProps> = ({ places, title }) => {
+export const MostPopular: React.FC<IProps> = ({ places, title, theme }) => {
 
   const renderPlaces = () => places && places.map((place, idx) => place.img ? (
     <div key={`${place.title}-${idx}`} className={styles.withImg}>
@@ -25,7 +26,7 @@ export const MostPopular: React.FC<IProps> = ({ places, title }) => {
   ))
 
   return (
-    <div className={styles.root}>
+    <div data-theme={theme} className={styles.root}>
       <h5>{title}</h5>
       <div className={styles.places}>
         {renderPlaces()}

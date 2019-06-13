@@ -51,7 +51,7 @@ export const Header: React.FC<IProps> = ({ theme }) => {
         </div>
         <div className={styles.tours}>
           <SelectMenu openerClass={styles.selectContinentOpener} opener={continentOpener} title="Select continent" size="lg" pos="left">
-            <SelectContinent />
+            <SelectContinent displayTheme="flex" />
           </SelectMenu>
           <a href="">Top Deals</a>
           <a href="">Last Minute Deals</a>
@@ -99,15 +99,6 @@ export const Header: React.FC<IProps> = ({ theme }) => {
           </SelectMenu>
           <div className={styles.profileIcon}>
             <i className="fas fa-user" />
-          </div>
-        </div>
-        <div className={styles.tabletTools}>
-          <div className={styles.tabletSearch}>
-            <input type="text" placeholder="Search" disabled={true} />
-            <i className="fas fa-search" />
-          </div>
-          <div className={styles.sideMenu}>
-            <i className="fas fa-bars" />
           </div>
         </div>
         <div className={styles.mobileTools}>

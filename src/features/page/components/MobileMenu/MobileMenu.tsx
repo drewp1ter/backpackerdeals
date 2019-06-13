@@ -20,7 +20,8 @@ export const MobileMenu: React.FC<IProps> = () => {
 
   return (
     <div className={styles.mobileMenu}>
-      <button onClick={() => toggleSearch(true)} className={styles.menuIcon}>
+      <button onClick={() => toggleSearch(true)} className={styles.searchIcon}>
+        <span>Search</span>
         <i className="fas fa-search" />
       </button>
       <button onClick={() => toggleMenu(true)} className={styles.menuIcon}>
@@ -59,7 +60,7 @@ export const MobileMenu: React.FC<IProps> = () => {
             reversableIcon="right"
             reverseType="90"
           >
-              <SelectContinent />
+            <SelectContinent theme="mobile" />
           </MobileSelectMenu>
           <div className={styles.menuItem}>
             <div className={styles.title}>
@@ -80,14 +81,14 @@ export const MobileMenu: React.FC<IProps> = () => {
             </div>
           </div>
           <h5>Settings</h5>
-          <MobileSelectMenu leftIcon="fas fa-chevron-down" reversableIcon="left" title="$ AUD" reverseType="180">
+          <MobileSelectMenu childrenClassName={styles.currencies} leftIcon="fas fa-chevron-down" reversableIcon="left" title="$ AUD" reverseType="180">
             {Object.entries(currencies).map((currency, index) => (
               <p key={`${currency[0]}-${index}`}>
                 {currency[1].name} {currency[1].icon}
               </p>
             ))}
           </MobileSelectMenu>
-          <MobileSelectMenu leftIcon="fas fa-chevron-down" reversableIcon="left" title="English" reverseType="180">
+          <MobileSelectMenu childrenClassName={styles.languages} leftIcon="fas fa-chevron-down" reversableIcon="left" title="English" reverseType="180">
             {Object.entries(languages).map((language, index) => (
               <div className={styles.languages} key={`language-${index}`}>
                 <img src={language[1].icon} alt={language[1].name} />
@@ -143,14 +144,14 @@ export const MobileMenu: React.FC<IProps> = () => {
             </>
           ) : (
             <>
-              <SearchSelect selectedOption="Start Location" options={options} handleSelect={() => {}} theme="dark" />
+              <SearchSelect bodyTheme="mobile" selectedOption="Start Location" options={options} handleSelect={() => {}} theme="dark" />
               <div className={styles.radioButtons}>
                 <SearchRadio placeholder="Day Tour" selected={!multiDayTour} onClick={() => selectTourType(false)} />
                 <SearchRadio placeholder="Multi day Tour" selected={multiDayTour} onClick={() => selectTourType(true)} />
               </div>
-              <SearchSelect selectedOption="End Location" disabled={true} handleSelect={() => {}} theme="dark" />
-              <SearchSelect selectedOption="Select Date" options={options} handleSelect={() => {}} theme="dark" />
-              <SearchSelect selectedOption="Number of days" disabled={true} handleSelect={() => {}} theme="dark" />
+              <SearchSelect bodyTheme="mobile" selectedOption="End Location" disabled={true} handleSelect={() => {}} theme="dark" />
+              <SearchSelect bodyTheme="mobile" selectedOption="Select Date" options={options} handleSelect={() => {}} theme="dark" />
+              <SearchSelect bodyTheme="mobile" selectedOption="Number of days" disabled={true} handleSelect={() => {}} theme="dark" />
               <div className={styles.advancedSearchButtons}>
                 <OrangeButton className={styles.orangeButton} theme="rectangled">
                   SEARCH
