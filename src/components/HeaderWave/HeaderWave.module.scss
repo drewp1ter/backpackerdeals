@@ -57,7 +57,8 @@
   .headWave {
     .mask {
       mask-image: url('./assets/wavePhone.svg');
-      mask-position: 50% 125%;
+      mask-position: center calc(50% + 150px);
+      mask-size: 146vw;
     }
   }
 }
