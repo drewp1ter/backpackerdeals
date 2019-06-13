@@ -10,7 +10,9 @@
 
 .instagramCards {
   display: flex;
-  justify-content: center;
+  margin: 0 auto;
+  max-width: 1520px;
+
   div {
     margin-right: 16px;
 
@@ -22,9 +24,17 @@
 
 @media screen and (max-width: 1280px) {
   .instagramCards {
+    max-width: 1044px;
+
     div {
       margin-right: 8px;
     }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .instagramCards {
+    max-width: 952px;
   }
 }
 

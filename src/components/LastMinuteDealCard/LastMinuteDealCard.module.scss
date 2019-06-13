@@ -7,7 +7,6 @@
     box-shadow: 0 24px 32px rgba(0, 0, 0, 0.06);
     transform: scale(1.005, 1.005);
 
-
     .tour {
       color: #ff5a39;
     }
@@ -23,6 +22,11 @@
 
   .imageBlock {
     position: relative;
+
+    .background {
+      width: 100%;
+      height: 100%;
+    }
 
     .badge {
       position: absolute;
@@ -223,7 +227,6 @@
     .totalPrice {
       .from {
         font-size: 12px;
-        line-height: 2;
         text-align: left;
         color: #dadada;
       }
@@ -231,7 +234,6 @@
       .price {
         font-size: 18px;
         font-weight: bold;
-        line-height: 1.33;
         text-align: left;
         color: #202020;
         margin: 0;
@@ -239,7 +241,6 @@
 
       .value {
         font-size: 12px;
-        line-height: 1.25;
         text-align: left;
         color: #dadada;
       }
@@ -253,7 +254,7 @@
       border-radius: 30px;
       background-color: #fafafa;
       transition: .2s ease background-color;
-      
+
       i {
         font-size: 17px;
         line-height: 1.41;
@@ -271,4 +272,153 @@
     }
   }
 
+}
+
+@media screen and (max-width: 1280px) {
+  .lastMinuteDealCard {
+    .imageBlock {
+      .badge {
+        width: 90px;
+        height: 106px;
+        top: -9px;
+        left: -2px;
+      }
+
+      .exposeTime {
+        .timeName {
+          font-size: 8px;
+        }
+
+        p {
+          font-size: 32px;
+          &.colon {
+            margin: 0 8px;
+          }
+        }
+      }
+
+      .sale {
+        height: 32px;
+
+        p {
+          font-size: 12px;
+        }
+      }
+    }
+
+    .cardDescription {
+      padding: 14px 12px 14px 12px;
+
+      .aboutPlace {
+        margin-bottom: 16px;
+
+        .rating {
+          i {
+            font-size: 10px;
+          }
+
+          span {
+            font-size: 10px;
+          }
+        }
+
+      .location {
+          i {
+            font-size: 12px;
+          }
+
+          span {
+            font-size: 10px;
+          }
+        }
+      }
+    }
+
+    .tour {
+      font-size: 20px;
+    }
+
+    .duration {
+      font-size: 12px;
+      line-height: 24px;
+    }
+
+    .valueAndLink {
+      margin-top: 14px;
+
+      .totalPrice {
+        .from {
+          font-size: 12px;
+
+        }
+
+        .price {
+          font-size: 14px;
+
+        }
+      }
+
+      button {
+        width: 76px;
+        height: 44px;
+        border-radius: 30px;
+      }
+    }
+
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .lastMinuteDealCard {
+    .imageBlock {
+      .badge {
+        width: 88px;
+        height: 100px;
+        top: -9px;
+        left: -2px;
+      }
+
+      .exposeTime {
+        .timeName {
+          font-size: 6px;
+        }
+
+        p {
+          font-size: 27px;
+          &.colon {
+            margin: 0 6px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 940px) {
+  .lastMinuteDealCard {
+    min-width: 272px;
+
+    .imageBlock {
+      .badge {
+        width: 90px;
+        height: 106px;
+        top: -9px;
+        left: -2px;
+      }
+
+      .exposeTime {
+        .timeName {
+          font-size: 8px;
+        }
+
+        p {
+          font-size: 32px;
+          &.colon {
+            margin: 0 8px;
+          }
+        }
+      }
+    }
+
+  }
 }
