@@ -48,7 +48,7 @@ export const InstagramSection: React.FC<IProps> = ({ className }) => {
     <CardsWrapper className={className} title="Inspiration from our instagram" linkTitle="Follow us">
       <div ref={setStartPos} onScroll={handleScroll} className={styles.instagramCards}>
         {renderCards()}
-        {renderCards()}
+        {renderCards(true)}
         {renderCard(images.v1, 'card', true)}
       </div>
     </CardsWrapper>
