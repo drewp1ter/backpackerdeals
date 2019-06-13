@@ -25,3 +25,30 @@
     z-index: 3;
   }
 }
+
+@media screen and (max-width: 1280px) {
+  .headWave {
+    .mask {
+      mask-image: url('./assets/wave1280.svg');
+      mask-position: 50% 170%;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .headWave {
+    .mask {
+      mask-image: url('./assets/waveIpad.svg');
+      mask-position: 50% 190%;
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .headWave {
+    .mask {
+      mask-image: url('./assets/wavePhone.svg');
+      mask-position: 50% 125%;
+    }
+  }
+}

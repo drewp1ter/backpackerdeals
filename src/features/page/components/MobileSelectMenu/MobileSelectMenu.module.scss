@@ -42,44 +42,4 @@
       }
     }
   }
-
-  .menu {
-    p {
-      padding-left: 10px;
-      color: #202020;
-      font-size: 12px;
-      font-weight: 400;
-      line-height: 40px;
-      border-bottom: 1px solid #fafafa;
-      margin-bottom: 10px;
-  
-      &:last-of-type {
-        border-bottom: 0px;
-        margin-bottom: 0;
-      }
-    }
-
-    .languages {
-      display: flex;
-      align-items: center;
-      padding-left: 10px;
-      color: #202020;
-      font-size: 12px;
-      font-weight: 400;
-      line-height: 40px;
-      border-bottom: 1px solid #fafafa;
-      margin-bottom: 10px;
-  
-      &:last-of-type {
-        border-bottom: 0px;
-        margin-bottom: 0;
-      }
-
-      img {
-        margin-right: 8px;
-        width: 24px;
-        height: 24px;
-      }
-    }
-  }
 }

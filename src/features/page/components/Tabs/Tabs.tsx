@@ -5,9 +5,11 @@ import styles from './Tabs.module.scss'
 export interface IProps {
   readonly children: JSX.Element[]
   readonly theme?: 'head' | 'leftmenu'
+  readonly bodyTheme?: 'mobile'
+  readonly displayTheme?: 'flex'
 }
 
-export const Tabs: React.FC<IProps> = ({ children, theme = 'head' }) => {
+export const Tabs: React.FC<IProps> = ({ children, theme = 'head', bodyTheme, displayTheme }) => {
   const [activeTab, setActiveTab] = useState<number>(0)
 
   const handleTabClick = (event: React.MouseEvent<HTMLElement>) => {
@@ -24,7 +26,7 @@ export const Tabs: React.FC<IProps> = ({ children, theme = 'head' }) => {
     ))
 
   return (
-    <div className={styles.root} data-theme={theme}>
+    <div className={styles.tabs} data-displaytheme={displayTheme} data-bodytheme={bodyTheme}>
       <ul data-theme={theme}>{renderTabs()}</ul>
       {children[activeTab]}
     </div>

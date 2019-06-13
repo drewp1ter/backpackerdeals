@@ -97,58 +97,6 @@ header {
       }
     }
 
-    .tabletTools {
-      display: none;
-
-      .tabletSearch {
-        cursor: pointer;
-        position: relative;
-
-        input {
-          cursor: pointer;
-          width: 80px;
-          height: 36px;
-          padding-left: 15px; 
-          border-radius: 30px;
-          border: 1px solid #ffffff;
-          background-color: transparent;
-          color: #fafafa;
-          font-size: 14px;
-          font-weight: 500;
-          line-height: 24px;
-
-          &::placeholder {
-            color: #fafafa;
-            font-size: 14px;
-            font-weight: 500;
-            line-height: 24px;
-          }
-        }
-
-        i {
-          position: absolute;
-          top: 14px;
-          right: 10px;
-          color: #fafafa;
-          font-size: 12px;
-        }
-      }
-
-      .sideMenu {
-        cursor: pointer;
-        margin-left: 12px;
-        border: 1px solid #ffffff;
-        border-radius: 50%;
-        text-align: center;
-
-        i {
-          padding: 14.5px 15.2px;
-          color: #ffffff;
-          font-size: 11px;
-        }
-      }
-    }
-
     .mobileTools {
       display: none;
     }
@@ -274,8 +222,8 @@ header {
       }
     }
 
-    .tabletTools {
-      .tabletSearch {
+    .mobileTools {
+      .searchIcon {
         input {
           border-color: #202020;
           color: #202020;
@@ -290,7 +238,7 @@ header {
         }
       }
 
-      .sideMenu {
+      .menuIcon {
         border-color: #202020;
 
         i {
@@ -394,7 +342,7 @@ header {
         display: none;
       }
 
-      .tabletTools {
+      .mobileTools {
         display: flex;
       }
     }
@@ -423,10 +371,6 @@ header {
       }
 
       .currencyAndLanguage {
-        display: none;
-      }
-
-      .tabletTools {
         display: none;
       }
 

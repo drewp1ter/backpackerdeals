@@ -64,10 +64,10 @@
   }
 }
 
-@media screen and (min-width: 1280px) and (max-width: 1415px) {
+@media screen and (min-width: 768px) and (max-width: 1415px) {
   .advancedSearchTravelInput {
     width: 611px;
-    height: 40px;
+    height: 42px;
   
     >button {
       width: 168px !important;
@@ -83,5 +83,11 @@
       width: 240px;
       height: 24px;
     }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .advancedSearchTravelInput {
+    display: none;
   }
 }

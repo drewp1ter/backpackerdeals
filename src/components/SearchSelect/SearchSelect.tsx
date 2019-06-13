@@ -15,6 +15,7 @@ interface IProps {
   readonly theme: 'dark' | 'light'
   readonly selectedOption: string
   readonly disabled?: boolean
+  readonly bodyTheme?: 'mobile'
   readonly handleSelect: (event: React.MouseEvent<HTMLElement>) => void
 }
 
@@ -42,10 +43,10 @@ export class SearchSelect extends React.Component<IProps, IState> {
   public toggleSelect = () => this.setState({ isOpen: !this.state.isOpen })
 
   render() {
-    const { children, className, options, theme, selectedOption, disabled = false, handleSelect } = this.props
+    const { children, className, options, theme, selectedOption, disabled = false, handleSelect, bodyTheme } = this.props
     const { isOpen } = this.state
     return (
-      <div ref={this.ref} className={styles.searchSelect} data-theme={theme}>
+      <div ref={this.ref} className={styles.searchSelect} data-theme={theme} data-bodytheme={bodyTheme}>
         <div
           className={ classNames(styles.select, className) }
           data-opened={isOpen && 'opened'}
