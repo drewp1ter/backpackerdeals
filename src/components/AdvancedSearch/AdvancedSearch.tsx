@@ -23,14 +23,18 @@ const startLocation = [
   'Jump Inn Hostel 5:20 AM',
 ]
 
-export const AdvancedSearch: React.FC = () => {
+interface IProps {
+  readonly theme?: string
+}
+
+export const AdvancedSearch: React.FC<IProps> = ({ theme }) => {
   const [isOpen, toggleSearch] = React.useState(false)
 
   const handleSelect = (event: React.MouseEvent<HTMLElement>) => console.log(event.currentTarget.dataset.value)
 
   return (
     <div className={styles.advancedSearch}>
-      <div onClick={() => toggleSearch(true)} className={styles.searchPlaceholder}>
+      <div data-theme={theme} onClick={() => toggleSearch(true)} className={styles.searchPlaceholder}>
         <input type="text" disabled={true} placeholder="Try Australia" />
         <OrangeButton theme="small">
           <i className="fas fa-search" />

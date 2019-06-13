@@ -8,7 +8,11 @@ import BlackLogo from './assets/blackLogo.svg'
 import { currencies, languages } from './constants'
 import styles from './Header.module.scss'
 
-export const Header: React.FC = () => {
+interface IProps {
+  readonly theme?: string
+}
+
+export const Header: React.FC<IProps> = ({ theme }) => {
   const [currentLanguage, setLanguage] = useState<string>('english')
   const [currentCurrency, setCurrency] = useState<string>('aud')
 
@@ -38,12 +42,12 @@ export const Header: React.FC = () => {
   const continentOpener: React.ReactNode = <span className={styles.continentOpener}>Explore by country</span>
 
   return (
-    <header>
+    <header data-theme={theme}>
       <div className={styles.tools}>
         <div className={styles.logoAndSearch}>
           <img src={Logo} alt="Logo" className={styles.logo} />
           <img src={BlackLogo} alt="Logo" className={styles.blackLogo} />
-          <AdvancedSearch />
+          <AdvancedSearch theme={theme} />
         </div>
         <div className={styles.tours}>
           <SelectMenu openerClass={styles.selectContinentOpener} opener={continentOpener} title="Select continent" size="lg" pos="left">

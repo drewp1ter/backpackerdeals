@@ -1,6 +1,20 @@
 .topActivities {
-  margin-top: 50px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  position: relative;
+  bottom: 25px;
+  z-index: 5;
+  
+  .cards {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  h2 {
+    text-align: center;
+    margin-bottom: 57px;
+    color: #ff5a39;
+    font-size: 56px;
+    font-weight: 700;
+    line-height: 32px;
+  }
 }

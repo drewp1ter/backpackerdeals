@@ -1,3 +1,4 @@
+export { ActivitiesSection } from './ActivitiesSection'
 export { CatalogLayout } from './CatalogLayout'
 export { HeaderCard } from './HeaderCard'
 export { MoreActivities } from './MoreActivities'
