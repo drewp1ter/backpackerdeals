@@ -6,6 +6,10 @@
     height: 100%;
     border-radius: 8px;
   }
+
+  &[data-hidden="true"] {
+    display: none;
+  }
 }
 
 .instagramCards {
@@ -41,6 +45,10 @@
 @media screen and (max-width: 767px) {
   .instagramCard {
     min-width: 128px;
+
+    &[data-hidden="true"] {
+      display: block;
+    }
   }
 
   .instagramCards {
