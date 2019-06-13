@@ -5,6 +5,10 @@ header {
   right: 0;
   z-index: 10;
   padding: 25px 30px;
+
+  .currencyOpener {
+    color: #fff;
+  }
   
   .selectContinentOpener {
     width: 200px !important;
@@ -178,6 +182,7 @@ header {
       height: 24px;
       margin-right: 10px;
     }
+
   }
 
   .note {
@@ -240,6 +245,86 @@ header {
       }
     }
   }
+
+  &[data-theme="dark"] {
+    background-color: #fff;
+
+    .tools {
+      .logoAndSearch {
+        .blackLogo {
+          display: block;
+        }
+
+        .logo {
+          display: none;
+        }
+      }
+
+      .tours, .currencyAndLanguage {
+        a {
+          font-weight: 500;
+          color: #202020;
+        }
+
+        .profileIcon {
+          i {
+            color: #202020;
+          }
+        }
+      }
+    }
+
+    .tabletTools {
+      .tabletSearch {
+        input {
+          border-color: #202020;
+          color: #202020;
+
+          &::placeholder {
+            color: #202020;
+          }
+        }
+
+        i {
+          color: #202020;
+        }
+      }
+
+      .sideMenu {
+        border-color: #202020;
+
+        i {
+          color: #202020;
+        }
+      }
+    }
+
+    .selectContinentOpener {
+      span {
+        font-weight: 500;
+      }
+
+      span, i {
+        color: #202020;
+      }
+    }
+  
+    .languageOpener, .currencyOpener {
+      span, i {
+        color: #202020;
+      }
+    }
+
+    .currencyAndLanguageOpener {
+      span, i {
+        color: #202020;
+
+        span, i {
+          color: #202020;
+        }
+      }
+    }
+  }
 }
 
 @media screen and (max-width: 1615px) {
@@ -299,6 +384,11 @@ header {
 @media screen and (min-width: 768px) and (max-width: 1280px) {
   header {
     .tools {
+      .logoAndSearch {
+        img {
+          margin-right: 0;
+        }
+      }
       .currencyAndLanguage {
         display: none;
       }

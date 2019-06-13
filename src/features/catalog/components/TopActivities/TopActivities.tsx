@@ -19,7 +19,7 @@ const data = [
     likeable: true,
     value: 1200,
     duration: '2 days, 1 night',
-    rating: 4.5
+    rating: 4.5,
   },
   {
     img: Picture2,
@@ -36,7 +36,7 @@ const data = [
       days: '02',
       hours: '10',
       minutes: '51',
-    }
+    },
   },
   {
     img: Picture3,
@@ -49,14 +49,18 @@ const data = [
     sellOut: true,
     value: 1200,
     duration: '2 days, 1 night',
-    rating: 4.5
-  }
+    rating: 4.5,
+  },
 ]
 
 export const TopActivities: React.FC = () => (
   <div className={styles.topActivities}>
-    {data.map((card, index) => (
-      <LastMinuteDealCard view="reversed" {...card} key={`${index}-card`} />
-    ))}
+    <h2>Top 3 Activities in Australia</h2>
+
+    <div className={styles.cards}>
+      {data.map((card, index) => (
+        <LastMinuteDealCard view="reversed" {...card} key={`${index}-card`} />
+      ))}
+    </div>
   </div>
 )

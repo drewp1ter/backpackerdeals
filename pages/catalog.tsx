@@ -5,7 +5,7 @@ import { Page } from 'features/page/containers'
 
 class Catalog extends React.Component {
   render = () => (
-    <Page>
+    <Page headerTheme="dark">
       <CatalogLayout />
     </Page>
   )

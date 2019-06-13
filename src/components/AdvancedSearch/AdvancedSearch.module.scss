@@ -28,6 +28,17 @@
       right: 4.5px;
       outline: none;
     }
+
+    &[data-theme="dark"] {
+      input {
+        border: 1px solid #fafafa;
+        color: #202020;
+
+        &::placeholder {
+          color: #202020;
+        }
+      }
+    }
   }
 
   .searchMenu {
