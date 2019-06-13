@@ -6,13 +6,9 @@ import styles from './Icon.module.scss'
 
 import images from './assets'
 
-const sizes = {
-  md: 64,
-}
-
 export interface IProps {
   readonly name: keyof typeof images
-  readonly size?: undefined | keyof typeof sizes
+  readonly size?: 'md'
   readonly className?: string
   readonly alt?: string
   readonly onClick?: () => void
