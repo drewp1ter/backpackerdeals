@@ -15,9 +15,8 @@
     z-index: 2;
     mask-image: url('./assets/wave.svg');
     mask-repeat: no-repeat;
-    height: 100%;
-    width: 100%;
-    mask-position: 50% 255%;
+    mask-size: 114vw;
+    mask-position: 50% calc(50% + 380px);
   }
 
   .children {
@@ -29,17 +28,7 @@
 @media screen and (max-width: 1280px) {
   .headWave {
     .mask {
-      mask-image: url('./assets/wave1280.svg');
-      mask-position: 50% 170%;
-    }
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .headWave {
-    .mask {
-      mask-image: url('./assets/waveIpad.svg');
-      mask-position: 50% 120%;
+      mask-position: 50% calc(50% + 290px);
     }
   }
 }
@@ -47,8 +36,7 @@
 @media screen and (max-width: 767px) {
   .headWave {
     .mask {
-      mask-image: url('./assets/waveIpad.svg');
-      mask-position: 50% 190%;
+      mask-position: 50% calc(50% + 180px);
     }
   }
 }
@@ -56,9 +44,7 @@
 @media screen and (max-width: 600px) {
   .headWave {
     .mask {
-      mask-image: url('./assets/wavePhone.svg');
-      mask-position: center calc(50% + 150px);
-      mask-size: 146vw;
+      mask-position: center calc(50% + 170px);
     }
   }
 }
