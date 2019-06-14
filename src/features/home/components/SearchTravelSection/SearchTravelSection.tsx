@@ -2,10 +2,11 @@ import * as React from 'react'
 
 import { HeaderWave } from 'components'
 import { AdvancedSearchTravelInput, SearchTravelInput } from '..'
+import { IProps } from '../HomeLayout/HomeLayout'
 
 import styles from './SearchTravelSection.module.scss'
 
-export const SearchTravelSection: React.FC = () => {
+export const SearchTravelSection: React.FC<IProps> = ({ openSearch, searchType }) => {
   const [advancedSearch, toggleSearch] = React.useState<boolean>(false)
   const handleToggleSeach = () => toggleSearch(!advancedSearch)
 
@@ -18,13 +19,13 @@ export const SearchTravelSection: React.FC = () => {
       ) : (
         <SearchTravelInput key="e4" toggleSearch={handleToggleSeach} />
       )}
-      <div className={styles.mobileInput}>
+      <div onClick={openSearch} className={styles.mobileInput}>
         <div>
           <i className="fas fa-search" />
           <span>Search</span>
         </div>
         <div>
-          <span>Advanced search</span>
+          <span>{ searchType === "basic" ? "Basic search" : "Advanced search" }</span>
           <i className="fas fa-filter" />
         </div>
       </div>

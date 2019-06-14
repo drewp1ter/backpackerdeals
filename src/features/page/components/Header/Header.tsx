@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 
 import { AdvancedSearch } from 'components'
 import { SelectContinent, SelectMenu, MobileMenu } from '..'
+import { IUiState } from 'store/ui/reducer'
+import { IPropsFromDispatch } from 'features/page/containers/Page/Page'
 
 import Logo from './assets/logo_Header.svg'
 import BlackLogo from './assets/blackLogo.svg'
@@ -10,9 +12,18 @@ import styles from './Header.module.scss'
 
 interface IProps {
   readonly theme?: string
+  readonly ui: IUiState
 }
 
-export const Header: React.FC<IProps> = ({ theme }) => {
+export const Header: React.FC<IProps & IPropsFromDispatch> = ({
+  theme,
+  ui,
+  openMenu,
+  closeMenu,
+  openSearch,
+  closeSearch,
+  changeSearchType,
+}) => {
   const [currentLanguage, setLanguage] = useState<string>('english')
   const [currentCurrency, setCurrency] = useState<string>('aud')
 
@@ -102,7 +113,14 @@ export const Header: React.FC<IProps> = ({ theme }) => {
           </div>
         </div>
         <div className={styles.mobileTools}>
-          <MobileMenu />
+          <MobileMenu
+            openMenu={openMenu}
+            closeMenu={closeMenu}
+            openSearch={openSearch}
+            closeSearch={closeSearch}
+            changeSearchType={changeSearchType}
+            ui={ui}
+          />
         </div>
       </div>
     </header>

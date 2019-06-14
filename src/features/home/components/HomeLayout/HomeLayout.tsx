@@ -1,4 +1,5 @@
 import * as React from 'react'
+import { openSearch } from 'store/ui/actions'
 
 import {
   ActivitiesSection,
@@ -15,9 +16,14 @@ import {
 
 import styles from './HomeLayout.module.scss'
 
-export const HomeLayout: React.FC = () => (
+export interface IProps {
+  readonly openSearch: typeof openSearch
+  readonly searchType: string
+}
+
+export const HomeLayout: React.FC<IProps> = ({ openSearch, searchType }) => (
   <>
-    <SearchTravelSection />
+    <SearchTravelSection openSearch={openSearch} searchType={searchType} />
     <BookWithUsSection />
     <TopDestinationsSection />
     <ActivitiesSection />
