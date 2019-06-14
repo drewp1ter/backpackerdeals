@@ -1,13 +1,36 @@
 import * as React from 'react'
+import { bindActionCreators, Dispatch } from 'redux'
+import { connect } from 'react-redux'
 
+import { IAppState } from 'store/root-reducer'
+import { IUiState } from 'store/ui/reducer'
 import { Cookies, Footer, Header } from '../../components'
+import * as uiActions from 'store/ui/actions'
+
+export interface IPropsFromDispatch {
+  readonly openMenu: typeof uiActions.openMenu
+  readonly closeMenu: typeof uiActions.closeMenu
+  readonly openSearch: typeof uiActions.openSearch
+  readonly closeSearch: typeof uiActions.closeSearch
+  readonly changeSearchType: typeof uiActions.changeSearchType
+}
 
 interface IProps {
   readonly children?: React.ReactNode
   readonly headerTheme?: string
+  readonly ui: IUiState
 }
 
-export const Page: React.FC<IProps> = ({ children, headerTheme }) => {
+const Page: React.FC<IProps & IPropsFromDispatch> = ({
+  children,
+  headerTheme,
+  ui,
+  openMenu,
+  closeMenu,
+  openSearch,
+  closeSearch,
+  changeSearchType,
+}) => {
   const [cookies, setCookies] = React.useState<boolean>(true)
 
   React.useEffect(() => {
@@ -26,9 +49,30 @@ export const Page: React.FC<IProps> = ({ children, headerTheme }) => {
   return (
     <>
       {!cookies && <Cookies setCookies={handleCookies} />}
-      <Header theme={headerTheme} />
+      <Header
+        openMenu={openMenu}
+        closeMenu={closeMenu}
+        openSearch={openSearch}
+        closeSearch={closeSearch}
+        changeSearchType={changeSearchType}
+        ui={ui}
+        theme={headerTheme}
+      />
       {children}
       <Footer />
     </>
   )
 }
+
+const mapStateToProps = (state: IAppState) => ({
+  ui: state.ui,
+})
+
+const mapDispatchToProps = (dispatch: Dispatch<any>) => {
+  return { ...bindActionCreators(uiActions, dispatch) }
+}
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Page)

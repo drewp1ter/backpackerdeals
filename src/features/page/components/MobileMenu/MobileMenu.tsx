@@ -3,53 +3,54 @@ import React from 'react'
 import { SearchSelect, OrangeButton, SearchRadio } from 'components'
 import { MobileSelectMenu } from 'features/page/components'
 import { SelectContinent } from '..'
+import { IPropsFromDispatch } from 'features/page/containers/Page/Page'
+import { IUiState } from 'store/ui/reducer'
 
 import { countries, cities, options } from './data'
 import { currencies, languages } from '../Header/constants'
 
 import styles from './MobileMenu.module.scss'
 
-interface IProps {}
+interface IProps {
+  readonly ui: IUiState
+}
 
-export const MobileMenu: React.FC<IProps> = () => {
-  const [isOpen, toggleMenu] = React.useState(false)
-  const [searchIsOpen, toggleSearch] = React.useState(false)
-  const [searchType, selectSearch] = React.useState('basic')
+export const MobileMenu: React.FC<IProps & IPropsFromDispatch> = ({ ui, openMenu, closeMenu, openSearch, closeSearch, changeSearchType }) => {
   const [search, changeSearch] = React.useState('')
   const [multiDayTour, selectTourType] = React.useState(false)
 
   return (
     <div className={styles.mobileMenu}>
-      <button onClick={() => toggleSearch(true)} className={styles.searchIcon}>
+      <button onClick={openSearch} className={styles.searchIcon}>
         <span>Search</span>
         <i className="fas fa-search" />
       </button>
-      <button onClick={() => toggleMenu(true)} className={styles.menuIcon}>
+      <button onClick={openMenu} className={styles.menuIcon}>
         <i className="fas fa-bars" />
       </button>
 
-      <div className={styles.menuBackground} data-open={isOpen} />
+      <div className={styles.menuBackground} data-open={ui.menuIsOpen || ui.searchIsOpen} />
 
-      <div className={styles.menu} data-open={isOpen}>
+      <div className={styles.menu} data-open={ui.menuIsOpen}>
         <div className={styles.mobileHeader}>
           <p>
             <i className="fas fa-phone-alt" />
             <span>+ 61 3 90163720</span>
           </p>
 
-          <button onClick={() => toggleMenu(false)}>
+          <button onClick={closeMenu}>
             <i className="fas fa-times" />
           </button>
         </div>
         <hr />
         <div className={styles.navigation}>
-          <div onClick={() => toggleSearch(true)} className={styles.menuItem}>
+          <div onClick={openSearch} className={styles.menuItem}>
             <div className={styles.title}>
               <i className="fas fa-search" />
               <span>Search</span>
             </div>
             <div className={styles.additionalTitle}>
-              <span>{searchType === 'advanced' ? 'Advanced search' : 'Basic search'}</span>
+              <span>{ui.searchType === 'advanced' ? 'Advanced search' : 'Basic search'}</span>
               <i className="fas fa-filter" />
             </div>
           </div>
@@ -98,19 +99,19 @@ export const MobileMenu: React.FC<IProps> = () => {
           </MobileSelectMenu>
         </div>
       </div>
-      <div className={styles.search} data-open={searchIsOpen}>
+      <div className={styles.search} data-open={ui.searchIsOpen}>
         <div className={styles.searchHeader}>
-          <i onClick={() => toggleSearch(false)} className="fas fa-arrow-left" />
-          <span onClick={() => selectSearch('basic')} data-active={searchType === 'basic'}>
+          <i onClick={closeSearch} className="fas fa-arrow-left" />
+          <span onClick={() => changeSearchType('basic')} data-active={ui.searchType === 'basic'}>
             Basic Search
           </span>
-          <span onClick={() => selectSearch('advanced')} data-active={searchType === 'advanced'}>
+          <span onClick={() => changeSearchType('advanced')} data-active={ui.searchType === 'advanced'}>
             Advanced Search
           </span>
         </div>
         <hr />
         <>
-          {searchType === 'basic' ? (
+          {ui.searchType === 'basic' ? (
             <>
               <div className={styles.searchInput}>
                 <input type="text" placeholder="Try Australia" value={search} onChange={event => changeSearch(event.target.value)} />

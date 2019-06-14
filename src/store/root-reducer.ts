@@ -1,3 +1,10 @@
 import { combineReducers } from 'redux'
+import { uiReducer, IUiState } from './ui'
 
-export default combineReducers({ dummy: () => ({}) })
+export interface IAppState {
+  ui: IUiState
+}
+
+export const rootReducer = combineReducers({ 
+  ui: uiReducer 
+})
