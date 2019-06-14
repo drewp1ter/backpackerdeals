@@ -8,13 +8,24 @@ import '@fortawesome/fontawesome-free/css/all.css'
 import 'normalize.css'
 import 'root.scss'
 
-class MyApp extends App<ProviderProps> {
+export interface IContextProps {
+  isServer: boolean
+}
+
+export const AppContext = React.createContext<Partial<IContextProps>>({
+  isServer: false,
+})
+
+class MyApp extends App<ProviderProps & IContextProps> {
   render() {
-    const { Component, pageProps, store } = this.props
+    const { Component, pageProps, store, isServer } = this.props
+    const context = { isServer }
     return (
       <Container>
         <Provider store={store}>
-          <Component {...pageProps} />
+          <AppContext.Provider value={context}>
+            <Component {...pageProps} />
+          </AppContext.Provider>
         </Provider>
       </Container>
     )
@@ -23,8 +34,8 @@ class MyApp extends App<ProviderProps> {
 
 MyApp.getInitialProps = async ({ Component, ctx }: any) => {
   const pageProps = Component.getInitialProps ? await Component.getInitialProps(ctx) : {}
-
-  return { pageProps }
+  const { isServer } = ctx
+  return { pageProps, isServer }
 }
 
 export default withRedux(makeStore)(MyApp)

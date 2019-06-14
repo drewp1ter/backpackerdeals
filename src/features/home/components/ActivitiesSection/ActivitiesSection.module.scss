@@ -1,7 +1,14 @@
 .activitiesTourThingsCardsRow {
-  display: flex;
   margin: 0 auto;
   max-width: 1520px;
+
+  &[data-hidden="true"] {
+    display: none;
+  }
+
+  &[data-hidden="false"] {
+    display: flex;
+  }
 
   >div {
     margin-right: 16px;
@@ -11,7 +18,7 @@
     }
   }
 
-  &:last-child {
+  &[data-bottom="true"] {
     margin-top: 16px;
   }
 }
@@ -28,7 +35,7 @@
       }
     }
 
-    &:last-child {
+    &[data-bottom="true"] {
       margin-top: 8px;
     }
   }
@@ -52,10 +59,14 @@
   }
 
   .activitiesTourThingsCardsRow {
+    margin-left: 8px;
 
-    &:last-child {
+    &[data-hidden="true"] {
+      display: flex;
+    }
+
+    &[data-bottom="true"] {
       margin-top: 0;
-      margin-left: 8px;
     }
   }
 }
