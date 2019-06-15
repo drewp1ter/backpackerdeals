@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { CardsWrapper } from '..'
-import images from './assets'
+import * as images from './assets'
 import styles from './InstagramSection.module.scss'
 
 export interface IProps {
@@ -16,19 +16,20 @@ export const InstagramSection: React.FC<IProps> = ({ className }) => {
     target.scrollTo(810, 0)
   }
 
-  const renderCard = (img: any, key?: string, forCarousel: boolean = false) => (
+  const renderCard = (img: keyof typeof images.w320, key?: string, forCarousel: boolean = false) => (
     <div key={key} className={styles.instagramCard} data-hidden={forCarousel}>
-      <img
-        srcSet={img.srcSet}
-        sizes="(max-width: 767px) 128px, (max-width: 1024px) 152px, (max-width: 1280px) 169px, 240px"
-        src={img.src}
-        alt="Instagram card"
-      />
+      <picture>
+        <source media="(max-width: 767px)" srcSet={images.w320[img].src} />
+        <source media="(max-width: 1024px)" srcSet={images.w1024[img].src} />
+        <source media="(max-width: 1280px)" srcSet={images.w1280[img].src} />
+        <source media="(max-width: 1920px)" srcSet={images.w1920[img]} />
+        <img src={images.w1920[img]} alt="Instagram" />
+      </picture>
     </div>
   )
 
   const renderCards = (forCarousel: boolean = false) =>
-    Object.entries(images).map((img: [string, any]) => renderCard(img[1], img[0], forCarousel))
+    Object.keys(images.w320).map((img: string) => renderCard(img as keyof typeof images.w320, img, forCarousel))
 
   const handleScroll = ({ target }: any) => {
     const { scrollLeft, offsetWidth } = target
@@ -49,7 +50,7 @@ export const InstagramSection: React.FC<IProps> = ({ className }) => {
       <div ref={setStartPos} onScroll={handleScroll} className={styles.instagramCards}>
         {renderCards()}
         {renderCards(true)}
-        {renderCard(images.v1, 'card', true)}
+        {renderCard('v1', 'card', true)}
       </div>
     </CardsWrapper>
   )

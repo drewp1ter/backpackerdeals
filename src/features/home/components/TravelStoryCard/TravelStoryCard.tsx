@@ -12,19 +12,7 @@ export interface IProps {
   readonly className?: string
 }
 
-const widths = {
-  image63: ['1520', '1048', '952', '304'],
-  image64: ['1008', '696', '632', '304'],
-  image65: ['496', '344', '312', '304'],
-}
-
 export const TravelStoryCard: React.FC<IProps> = ({ title, description, variant, gradDeg = 0, className }) => {
-  const srcSet = `${images.w1920[variant]} ${widths[variant][0]}w, ${images.w1280[variant]} ${widths[variant][1]}w, ${
-    images.w1024[variant]
-  } ${widths[variant][2]}w, ${images.w320[variant]} ${widths[variant][3]}w`
-  const sizes = `(max-width: 767px) ${widths[variant][3]}px, (max-width: 1024px) ${widths[variant][2]}px, (max-width: 1280px) ${
-    widths[variant][1]
-  }px, ${widths[variant][0]}px`
   const gradient = { backgroundImage: `linear-gradient(${gradDeg}deg, rgba(232, 232, 232, 0), rgba(0, 0, 0, 0.91))` }
   const mainClass = classNames(styles.travelStoryCard, className)
   return (
@@ -34,7 +22,13 @@ export const TravelStoryCard: React.FC<IProps> = ({ title, description, variant,
         <span>{description}</span>
       </div>
       <div className={styles.gradient} style={gradient} />
-      <img srcSet={srcSet} src={images.w1920[variant].src} sizes={sizes} alt="Travel story card" />
+      <picture>
+        <source media="(max-width: 767px)" srcSet={images.w320[variant]} />
+        <source media="(max-width: 1024px)" srcSet={images.w1024[variant]} />
+        <source media="(max-width: 1280px)" srcSet={images.w1280[variant]} />
+        <source media="(max-width: 1920px)" srcSet={images.w1920[variant]} />
+        <img src={images.w1920[variant]} alt="Travel story card" />
+      </picture>
     </div>
   )
 }
