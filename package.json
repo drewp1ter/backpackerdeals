@@ -3,6 +3,7 @@
   "scripts": {
     "build": "next build && ./src/webp_conv.py",
     "start": "node server.js",
+    "prod": "NODE_ENV=production node server.js",
     "tslint": "node_modules/.bin/tslint -p tsconfig.json --fix",
     "typecheck": "tsc -p tsconfig.json",
     "buildimage": "docker build -t backpackerdeals ."
