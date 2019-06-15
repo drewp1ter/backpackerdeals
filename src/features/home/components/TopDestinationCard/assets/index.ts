@@ -1,10 +1,28 @@
-export default {
-  maskGroup16: require('./maskGroup16.jpg?resize&sizes[]=312&sizes[]=345&sizes[]=496'),
-  maskGroup17: require('./maskGroup17.jpg?resize&sizes[]=152&sizes[]=168&sizes[]=240'),
-  maskGroup18: require('./maskGroup18.jpg?resize&sizes[]=152sizes[]=168&sizes[]=240'),
-  maskGroup19: require('./maskGroup19.jpg?resize&sizes[]=312&sizes[]=345&sizes[]=496'),
-  maskGroup20: require('./maskGroup20.jpg?resize&sizes[]=312&sizes[]=345&sizes[]=496'),
-  maskGroup21: require('./maskGroup21.jpg?resize&sizes[]=152&sizes[]=168&sizes[]=240'),
+export const w1920 = {
+  maskGroup16: require('./maskGroup16.jpg'),
+  maskGroup17: require('./maskGroup17.jpg'),
+  maskGroup18: require('./maskGroup18.jpg'),
+  maskGroup19: require('./maskGroup19.jpg'),
+  maskGroup20: require('./maskGroup20.jpg'),
+  maskGroup21: require('./maskGroup21.jpg'),
+}
+
+export const w1280 = {
+  maskGroup16: require('./maskGroup16.jpg?resize&size=345'),
+  maskGroup17: require('./maskGroup17.jpg?resize&size=168'),
+  maskGroup18: require('./maskGroup18.jpg?resize&size=168'),
+  maskGroup19: require('./maskGroup19.jpg?resize&size=345'),
+  maskGroup20: require('./maskGroup20.jpg?resize&size=345'),
+  maskGroup21: require('./maskGroup21.jpg?resize&size=168'),
+}
+
+export const w1024 = {
+  maskGroup16: require('./maskGroup16.jpg?resize&size=312'),
+  maskGroup17: require('./maskGroup17.jpg?resize&size=152'),
+  maskGroup18: require('./maskGroup18.jpg?resize&size=152'),
+  maskGroup19: require('./maskGroup19.jpg?resize&size=312'),
+  maskGroup20: require('./maskGroup20.jpg?resize&size=312'),
+  maskGroup21: require('./maskGroup21.jpg?resize&size=152'),
 }
 
 export const w320 = {
