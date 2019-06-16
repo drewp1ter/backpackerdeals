@@ -1,7 +1,7 @@
 import React from 'react'
 
-import { CardsWrapper } from '..'
 import { circleScroll } from 'utils'
+import { CardsWrapper } from '..'
 import * as images from './assets'
 import styles from './InstagramSection.module.scss'
 

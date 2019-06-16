@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
 
 import { AdvancedSearch } from 'components'
-import { SelectContinent, SelectMenu, MobileMenu } from '..'
-import { IUiState } from 'store/ui/reducer'
 import { IPropsFromDispatch } from 'features/page/containers/Page/Page'
+import { IUiState } from 'store/ui/reducer'
+import { MobileMenu, SelectContinent, SelectMenu } from '..'
 
-import Logo from './assets/logo_Header.svg'
 import BlackLogo from './assets/blackLogo.svg'
+import Logo from './assets/logo_Header.svg'
 import { currencies, languages } from './constants'
 import styles from './Header.module.scss'
 

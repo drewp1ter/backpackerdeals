@@ -1,7 +1,7 @@
 import React from 'react'
 
-import { HeaderCard } from '..'
 import { HeaderWave } from 'components'
+import { HeaderCard } from '..'
 
 import styles from './ActivitiesSection.module.scss'
 
