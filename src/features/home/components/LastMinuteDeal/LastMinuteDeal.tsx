@@ -3,6 +3,7 @@ import * as React from 'react'
 import styles from './LastMinuteDeal.module.scss'
 
 import { LastMinuteDealCard } from 'components'
+import { circleScroll } from 'utils'
 
 const data = [
   {
@@ -71,10 +72,26 @@ const data = [
   },
 ]
 
-export const LastMinuteDeal: React.FC = () => (
-  <div className={styles.lastMinuteDeal}>
-    {data.map((card, index) => (
-      <LastMinuteDealCard view="vertical" {...card} key={`${index}-card`} />
-    ))}
-  </div>
-)
+export const LastMinuteDeal: React.FC = () => {
+  const setStartPos = (target: any) => {
+    if (!target) {
+      return
+    }
+    target.scrollTo(1140, 0)
+  }
+
+  const handleScroll = ({ target }: any) =>
+    circleScroll({ target, maxScrollLeft: 84, maxScrollRight: 2468, offsetLeft: 1230, offsetRight: 1141 })
+
+  return (
+    <div ref={setStartPos} className={styles.lastMinuteDeal} onScroll={handleScroll}>
+      {data.map((card, index) => (
+        <LastMinuteDealCard view="vertical" {...card} key={`${index}-card`} />
+      ))}
+      {data.map((card, index) => (
+        <LastMinuteDealCard view="vertical" {...card} key={`${index}-card`} forCarousel={true} />
+      ))}
+      <LastMinuteDealCard view="vertical" {...data[0]} forCarousel={true} />
+    </div>
+  )
+}
