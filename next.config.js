@@ -5,6 +5,7 @@ const nextEnv = require('next-env')
 const dotenvLoad = require('dotenv-load')
 const fonts = require('next-fonts')
 const optimizedImages = require('next-optimized-images')
+const withAwesomeTypescript = require("next-awesome-typescript");
 
 dotenvLoad()
 
