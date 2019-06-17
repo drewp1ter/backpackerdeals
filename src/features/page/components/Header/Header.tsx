@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
+import { Actions } from '../..'
 
 import { AdvancedSearch } from 'components'
-import { IPropsFromDispatch } from 'features/page/containers/Page/Page'
-import { IUiState } from 'store/ui/reducer'
 import { MobileMenu, SelectContinent, SelectMenu } from '..'
+import { IPageState } from '../../reducer'
 
 import BlackLogo from './assets/blackLogo.svg'
 import Logo from './assets/logo_Header.svg'
@@ -12,10 +12,10 @@ import styles from './Header.module.scss'
 
 interface IProps {
   readonly theme?: string
-  readonly ui: IUiState
+  readonly ui: IPageState
 }
 
-export const Header: React.FC<IProps & IPropsFromDispatch> = ({
+export const Header: React.FC<IProps & Actions> = ({
   theme,
   ui,
   openMenu,

@@ -1,9 +1,8 @@
 import React from 'react'
 
 import { OrangeButton, SearchRadio, SearchSelect } from 'components'
+import { Actions, IPageState } from 'features/page'
 import { MobileSelectMenu } from 'features/page/components'
-import { IPropsFromDispatch } from 'features/page/containers/Page/Page'
-import { IUiState } from 'store/ui/reducer'
 import { SelectContinent } from '..'
 
 import { currencies, languages } from '../Header/constants'
@@ -12,10 +11,10 @@ import { cities, countries, options } from './data'
 import styles from './MobileMenu.module.scss'
 
 interface IProps {
-  readonly ui: IUiState
+  readonly ui: IPageState
 }
 
-export const MobileMenu: React.FC<IProps & IPropsFromDispatch> = ({ ui, openMenu, closeMenu, openSearch, closeSearch, changeSearchType }) => {
+export const MobileMenu: React.FC<IProps & Actions> = ({ ui, openMenu, closeMenu, openSearch, closeSearch, changeSearchType }) => {
   const [search, changeSearch] = React.useState('')
   const [multiDayTour, selectTourType] = React.useState(false)
 

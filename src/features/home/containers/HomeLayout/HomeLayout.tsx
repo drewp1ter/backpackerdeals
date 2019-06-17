@@ -1,5 +1,5 @@
+import { Actions as PageActions, IPageState } from 'features/page'
 import * as React from 'react'
-import { openSearch } from 'store/ui/actions'
 
 import {
   ActivitiesSection,
@@ -12,16 +12,11 @@ import {
   SearchTravelSection,
   TopDestinationsSection,
   TravelStoriesSection,
-} from '..'
+} from '../../components'
 
 import styles from './HomeLayout.module.scss'
 
-export interface IProps {
-  readonly openSearch: typeof openSearch
-  readonly searchType: string
-}
-
-export const HomeLayout: React.FC<IProps> = ({ openSearch, searchType }) => (
+export const HomeLayout: React.FC<Partial<IPageState> & Partial<PageActions>> = ({ openSearch, searchType }) => (
   <>
     <SearchTravelSection openSearch={openSearch} searchType={searchType} />
     <BookWithUsSection />

@@ -1387,6 +1387,13 @@
     "@types/prop-types" "*"
     csstype "^2.2.0"
 
+"@types/redux@^3.6.0":
+  version "3.6.0"
+  resolved "https://registry.yarnpkg.com/@types/redux/-/redux-3.6.0.tgz#f1ebe1e5411518072e4fdfca5c76e16e74c1399a"
+  integrity sha1-8evh5UEVGAcuT9/KXHbhbnTBOZo=
+  dependencies:
+    redux "*"
+
 "@types/tapable@*":
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/@types/tapable/-/tapable-1.0.4.tgz#b4ffc7dc97b498c969b360a41eee247f82616370"
@@ -7843,6 +7850,14 @@ redux-observable@^1.1.0:
   resolved "https://registry.yarnpkg.com/redux-observable/-/redux-observable-1.1.0.tgz#323a8fe53e89fdb519be2807b55f08e21c13e6f1"
   integrity sha512-G0nxgmTZwTK3Z3KoQIL8VQu9n0YCUwEP3wc3zxKQ8zAZm+iYkoZvBqAnBJfLi4EsD1E64KR4s4jFH/dFXpV9Og==
 
+redux@*, redux@^4.0.0, redux@^4.0.1:
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/redux/-/redux-4.0.1.tgz#436cae6cc40fbe4727689d7c8fae44808f1bfef5"
+  integrity sha512-R7bAtSkk7nY6O/OYMVR9RiBI+XghjF9rlbl5806HJbQph0LJVHZrU5oaO4q70eUKiqMRqm4y07KLTlMZ2BlVmg==
+  dependencies:
+    loose-envify "^1.4.0"
+    symbol-observable "^1.2.0"
+
 redux@^3.6.0:
   version "3.7.2"
   resolved "https://registry.yarnpkg.com/redux/-/redux-3.7.2.tgz#06b73123215901d25d065be342eb026bc1c8537b"
@@ -7852,14 +7867,6 @@ redux@^3.6.0:
     lodash-es "^4.2.1"
     loose-envify "^1.1.0"
     symbol-observable "^1.0.3"
-
-redux@^4.0.0:
-  version "4.0.1"
-  resolved "https://registry.yarnpkg.com/redux/-/redux-4.0.1.tgz#436cae6cc40fbe4727689d7c8fae44808f1bfef5"
-  integrity sha512-R7bAtSkk7nY6O/OYMVR9RiBI+XghjF9rlbl5806HJbQph0LJVHZrU5oaO4q70eUKiqMRqm4y07KLTlMZ2BlVmg==
-  dependencies:
-    loose-envify "^1.4.0"
-    symbol-observable "^1.2.0"
 
 reflect.ownkeys@^0.2.0:
   version "0.2.0"
@@ -9216,10 +9223,10 @@ typedarray@^0.0.6:
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
   integrity sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=
 
-typesafe-actions@^4.4.0:
-  version "4.4.0"
-  resolved "https://registry.yarnpkg.com/typesafe-actions/-/typesafe-actions-4.4.0.tgz#217320465f5921f438adda1e9ff5da09182bb266"
-  integrity sha512-91ZsGX/Ojo2lMeRCMwrjohzuGQfB6T7VSkn5HkV6ij4Q4Okhe5eeAXAlUY7erI0sNRGSOWCA6L+lH3PkpD/NlA==
+typesafe-actions@^4.4.1:
+  version "4.4.1"
+  resolved "https://registry.yarnpkg.com/typesafe-actions/-/typesafe-actions-4.4.1.tgz#92e4348289d932592f1f18c162f5c094aba8fe9a"
+  integrity sha512-uV74N8uDU2lVaNnYUGmg/Th/mPi9JQJJ5A8+YcHBE5GI+bdgFyl79zCZw4LLU331GCdHWDo6F2J7LVgBHRvaGQ==
 
 typescript@^3.4.5:
   version "3.4.5"

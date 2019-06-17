@@ -5,7 +5,7 @@ import { createEpicMiddleware } from 'redux-observable'
 import Types from 'Types'
 // import rootEpic from './root-epic'
 import services from '../services'
-import { rootReducer } from './root-reducer'
+import rootReducer from './root-reducer'
 
 export default function initStore(initState?: object) {
   const epicMiddleware = createEpicMiddleware<Types.RootAction, Types.RootAction, Types.RootState>({

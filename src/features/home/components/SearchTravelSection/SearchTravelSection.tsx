@@ -1,12 +1,12 @@
 import * as React from 'react'
 
 import { HeaderWave } from 'components'
+import { Actions as PageActions, IPageState } from 'features/page'
 import { AdvancedSearchTravelInput, SearchTravelInput } from '..'
-import { IProps } from '../HomeLayout/HomeLayout'
 
 import styles from './SearchTravelSection.module.scss'
 
-export const SearchTravelSection: React.FC<IProps> = ({ openSearch, searchType }) => {
+export const SearchTravelSection: React.FC<Partial<PageActions> & Partial<IPageState>> = ({ openSearch, searchType }) => {
   const [advancedSearch, toggleSearch] = React.useState<boolean>(false)
   const handleToggleSeach = () => toggleSearch(!advancedSearch)
 

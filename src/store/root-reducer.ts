@@ -1,10 +1,6 @@
 import { combineReducers } from 'redux'
-import { IUiState, uiReducer } from './ui'
+import { pageReducer } from '../features/page'
 
-export interface IAppState {
-  ui: IUiState
-}
-
-export const rootReducer = combineReducers({ 
-  ui: uiReducer 
+export default combineReducers({
+  ui: pageReducer,
 })
