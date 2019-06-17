@@ -4,7 +4,9 @@ header {
   left: 0;
   right: 0;
   z-index: 10;
+  background-color: transparent;
   padding: 25px 30px;
+  transition: .2s ease background-color;
 
   .currencyOpener {
     color: #fff;
@@ -69,7 +71,7 @@ header {
         line-height: 1.33;
         text-align: left;
         color: #ffffff;
-        transition: .2s ease color;
+        transition: .2s ease color, .2s ease font-weight;
 
         &:hover {
           color: #ff5a39;
