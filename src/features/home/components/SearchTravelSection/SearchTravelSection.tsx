@@ -1,19 +1,24 @@
 import * as React from 'react'
 
 import { HeaderWave } from 'components'
-import { Actions as PageActions, IPageState } from 'features/page'
+import { ISearchState, SearchActions } from 'features/search'
 import { AdvancedSearchTravelInput, SearchTravelInput } from '..'
 
 import styles from './SearchTravelSection.module.scss'
 
-export const SearchTravelSection: React.FC<Partial<PageActions> & Partial<IPageState>> = ({ openSearch, searchType }) => {
+export const SearchTravelSection: React.FC<Partial<SearchActions> & Partial<ISearchState>> = ({ openSearch, searchType }) => {
   const [advancedSearch, toggleSearch] = React.useState<boolean>(false)
   const handleToggleSeach = () => toggleSearch(!advancedSearch)
 
   return (
     <HeaderWave className={styles.searchTravelSection}>
-      <h1 key="e1">Search Less,<br/> Travel More!</h1>
-      <h2 key="e2">Great experience at <br/> backpacker prices</h2>
+      <h1 key="e1">
+        Search Less,
+        <br /> Travel More!
+      </h1>
+      <h2 key="e2">
+        Great experience at <br /> backpacker prices
+      </h2>
       {advancedSearch ? (
         <AdvancedSearchTravelInput key="e3" toggleSearch={handleToggleSeach} />
       ) : (
@@ -25,7 +30,7 @@ export const SearchTravelSection: React.FC<Partial<PageActions> & Partial<IPageS
           <span>Search</span>
         </div>
         <div>
-          <span>{ searchType === "basic" ? "Basic search" : "Advanced search" }</span>
+          <span>{searchType === 'basic' ? 'Basic search' : 'Advanced search'}</span>
           <i className="fas fa-filter" />
         </div>
       </div>

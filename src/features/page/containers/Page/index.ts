@@ -5,7 +5,7 @@ import * as actions from '../../actions'
 import Page from './Page'
 
 const mapStateToProps = (state: Types.RootState) => ({
-  ui: state.ui,
+  ui: { ...state.page, ...state.search }
 })
 
 const mapDispatchToProps = (dispatch: Dispatch) => bindActionCreators({ ...actions }, dispatch)

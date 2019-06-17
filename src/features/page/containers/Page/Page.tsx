@@ -1,15 +1,17 @@
+import { SearchActions } from 'features/search'
+import { ISearchState } from 'features/search'
 import * as React from 'react'
-import { Actions } from '../..'
+import { PageActions } from '../..'
 import { Cookies, Footer, Header } from '../../components'
 import { IPageState } from '../../reducer'
 
 interface IProps {
   readonly children?: React.ReactNode
   readonly headerTheme?: string
-  readonly ui: IPageState
+  readonly ui: IPageState & ISearchState
 }
 
-const Page: React.FC<IProps & Actions> = ({
+const Page: React.FC<IProps & SearchActions & PageActions> = ({
   children,
   headerTheme,
   ui,

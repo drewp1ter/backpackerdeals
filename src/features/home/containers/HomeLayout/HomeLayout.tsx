@@ -1,4 +1,4 @@
-import { Actions as PageActions, IPageState } from 'features/page'
+import { ISearchState, SearchActions } from 'features/search'
 import * as React from 'react'
 
 import {
@@ -16,7 +16,7 @@ import {
 
 import styles from './HomeLayout.module.scss'
 
-export const HomeLayout: React.FC<Partial<IPageState> & Partial<PageActions>> = ({ openSearch, searchType }) => (
+export const HomeLayout: React.FC<Partial<SearchActions> & Partial<ISearchState>> = ({ openSearch, searchType }) => (
   <>
     <SearchTravelSection openSearch={openSearch} searchType={searchType} />
     <BookWithUsSection />

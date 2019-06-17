@@ -1,4 +1,4 @@
-import { ActionType, getType, StateType } from 'typesafe-actions'
+import { ActionType, getType } from 'typesafe-actions'
 import * as actions from './actions'
 
 export interface IPageState {
@@ -15,7 +15,7 @@ const initialState: IPageState = {
   searchType: 'basic',
 }
 
-export const pageReducer = (state: IPageState = initialState, action: PageActionsTypes) => {
+export default (state: IPageState = initialState, action: PageActionsTypes): IPageState => {
   switch (action.type) {
     case getType(actions.closeMenu):
       return {
@@ -27,25 +27,8 @@ export const pageReducer = (state: IPageState = initialState, action: PageAction
         ...state,
         menuIsOpen: true,
       }
-    case getType(actions.closeSearch):
-      return {
-        ...state,
-        searchIsOpen: false,
-      }
-    case getType(actions.openSearch):
-      return {
-        ...state,
-        searchIsOpen: true,
-      }
-    case getType(actions.changeSearchType):
-      return {
-        ...state,
-        searchType: action.payload,
-      }
 
     default:
       return state
   }
 }
-
-export type PageState = StateType<typeof pageReducer>
