@@ -10,9 +10,9 @@ import {
   PromoutingSection,
   TopDestinationsSection,
   TravelStoriesSection,
-} from '../../components'
+} from '..'
 
-import { SearchTravelSection } from '..'
+import { SearchTravelSection } from '../../containers'
 
 import styles from './HomeLayout.module.scss'
 

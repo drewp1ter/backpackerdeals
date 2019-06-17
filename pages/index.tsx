@@ -1,8 +1,8 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
 
-import { HomeLayout } from 'features/home/containers'
-import { Page } from 'features/page/containers'
+import { HomeLayout } from 'features/home/components'
+import { Page } from 'features/page/components'
 
 class Index extends React.Component {
   render = () => (
