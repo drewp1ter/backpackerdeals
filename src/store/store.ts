@@ -7,18 +7,16 @@ import Types from 'Types'
 import services from '../services'
 import rootReducer from './root-reducer'
 
-export default function initStore(initState?: object) {
+const initialState = {}
+
+export default function initStore() {
   const epicMiddleware = createEpicMiddleware<Types.RootAction, Types.RootAction, Types.RootState>({
     dependencies: services,
   })
   const composeEnhancers = composeWithDevTools({})
   const middlewares = [epicMiddleware]
   const enhancer = composeEnhancers(applyMiddleware(...middlewares))
-  const store = createStore(rootReducer, initState!, enhancer)
+  const store = createStore(rootReducer, initialState, enhancer)
   // epicMiddleware.run(rootEpic)
   return store
 }
-
-
-
-

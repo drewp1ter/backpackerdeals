@@ -1,26 +1,12 @@
-import { SearchActions } from 'features/search'
-import { ISearchState } from 'features/search'
 import * as React from 'react'
-import { PageActions } from '../..'
 import { Cookies, Footer, Header } from '../../components'
-import { IPageState } from '../../reducer'
 
 interface IProps {
   readonly children?: React.ReactNode
   readonly headerTheme?: string
-  readonly ui: IPageState & ISearchState
 }
 
-const Page: React.FC<IProps & SearchActions & PageActions> = ({
-  children,
-  headerTheme,
-  ui,
-  openMenu,
-  closeMenu,
-  openSearch,
-  closeSearch,
-  changeSearchType,
-}) => {
+const Page: React.FC<IProps> = ({ children, headerTheme }) => {
   const [cookies, setCookies] = React.useState<boolean>(true)
 
   React.useEffect(() => {
@@ -39,15 +25,7 @@ const Page: React.FC<IProps & SearchActions & PageActions> = ({
   return (
     <>
       {!cookies && <Cookies setCookies={handleCookies} />}
-      <Header
-        openMenu={openMenu}
-        closeMenu={closeMenu}
-        openSearch={openSearch}
-        closeSearch={closeSearch}
-        changeSearchType={changeSearchType}
-        ui={ui}
-        theme={headerTheme}
-      />
+      <Header theme={headerTheme} />
       {children}
       <Footer />
     </>

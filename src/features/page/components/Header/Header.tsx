@@ -1,9 +1,8 @@
 import React, { useState } from 'react'
-import { Actions } from '../..'
 
 import { AdvancedSearch } from 'components'
-import { MobileMenu, SelectContinent, SelectMenu } from '..'
-import { IPageState } from '../../reducer'
+import { SelectContinent, SelectMenu } from '..'
+import { MobileMenu } from '../../containers'
 
 import BlackLogo from './assets/blackLogo.svg'
 import Logo from './assets/logo_Header.svg'
@@ -12,18 +11,9 @@ import styles from './Header.module.scss'
 
 interface IProps {
   readonly theme?: string
-  readonly ui: IPageState
 }
 
-export const Header: React.FC<IProps & Actions> = ({
-  theme,
-  ui,
-  openMenu,
-  closeMenu,
-  openSearch,
-  closeSearch,
-  changeSearchType,
-}) => {
+export const Header: React.FC<IProps> = ({ theme }) => {
   const [currentLanguage, setLanguage] = useState<string>('english')
   const [currentCurrency, setCurrency] = useState<string>('aud')
 
@@ -113,14 +103,7 @@ export const Header: React.FC<IProps & Actions> = ({
           </div>
         </div>
         <div className={styles.mobileTools}>
-          <MobileMenu
-            openMenu={openMenu}
-            closeMenu={closeMenu}
-            openSearch={openSearch}
-            closeSearch={closeSearch}
-            changeSearchType={changeSearchType}
-            ui={ui}
-          />
+          <MobileMenu />
         </div>
       </div>
     </header>

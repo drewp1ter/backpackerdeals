@@ -3,7 +3,7 @@ import * as actionTypes from './actionTypes'
 import * as components from './components'
 import * as containers from './containers'
 
-import { IPageState, PageActionsTypes } from './reducer'
+import pageReducer, { IPageState, PageActionsTypes } from './reducer'
 
 export type PageActions = typeof actions
-export { components, containers, actionTypes, actions, IPageState, PageActionsTypes }
+export { components, pageReducer, containers, actionTypes, actions, IPageState, PageActionsTypes }

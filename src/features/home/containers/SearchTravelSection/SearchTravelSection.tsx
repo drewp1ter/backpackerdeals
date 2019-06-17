@@ -2,7 +2,7 @@ import * as React from 'react'
 
 import { HeaderWave } from 'components'
 import { ISearchState, SearchActions } from 'features/search'
-import { AdvancedSearchTravelInput, SearchTravelInput } from '..'
+import { AdvancedSearchTravelInput, SearchTravelInput } from '../../components'
 
 import styles from './SearchTravelSection.module.scss'
 

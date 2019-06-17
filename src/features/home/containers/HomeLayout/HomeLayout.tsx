@@ -1,4 +1,3 @@
-import { ISearchState, SearchActions } from 'features/search'
 import * as React from 'react'
 
 import {
@@ -9,16 +8,17 @@ import {
   InstagramSection,
   LastMinuteDeal,
   PromoutingSection,
-  SearchTravelSection,
   TopDestinationsSection,
   TravelStoriesSection,
 } from '../../components'
 
+import { SearchTravelSection } from '..'
+
 import styles from './HomeLayout.module.scss'
 
-export const HomeLayout: React.FC<Partial<SearchActions> & Partial<ISearchState>> = ({ openSearch, searchType }) => (
+export const HomeLayout: React.FC = () => (
   <>
-    <SearchTravelSection openSearch={openSearch} searchType={searchType} />
+    <SearchTravelSection />
     <BookWithUsSection />
     <TopDestinationsSection />
     <ActivitiesSection />
