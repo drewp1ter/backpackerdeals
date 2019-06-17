@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux'
-import { uiReducer, IUiState } from './ui'
+import { IUiState, uiReducer } from './ui'
 
 export interface IAppState {
   ui: IUiState

@@ -1,6 +1,8 @@
 .instagramCard {
   position: relative;
   border-radius: 8px;
+  margin-right: 16px;
+
   img {
     width: 100%;
     height: 100%;
@@ -10,29 +12,25 @@
   &[data-hidden="true"] {
     display: none;
   }
+
+  &:nth-child(6) {
+    margin-right: 0;
+  }
 }
 
 .instagramCards {
   display: flex;
   margin: 0 auto;
   max-width: 1520px;
-
-  div {
-    margin-right: 16px;
-
-    &:last-child {
-      margin-right: 0;
-    }
-  }
 }
 
 @media screen and (max-width: 1280px) {
   .instagramCards {
     max-width: 1044px;
+  }
 
-    div {
-      margin-right: 8px;
-    }
+  .instagramCard {
+    margin-right: 8px;
   }
 }
 
@@ -46,6 +44,10 @@
   .instagramCard {
     min-width: 128px;
 
+    &:nth-child(6) {
+      margin-right: 8px;
+    }
+
     &[data-hidden="true"] {
       display: block;
     }
@@ -53,10 +55,11 @@
 
   .instagramCards {
     overflow-x: scroll;
+    overflow: -moz-scrollbars-none;
     overflow-y: hidden;
-    &::scrollbar {
-      width: 0px;
-      background: transparent;
+
+    &::-webkit-scrollbar {
+      width: 0 !important;
     }
   }
 }

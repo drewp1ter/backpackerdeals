@@ -1,11 +1,11 @@
 import * as React from 'react'
-import { bindActionCreators, Dispatch } from 'redux'
 import { connect } from 'react-redux'
+import { bindActionCreators, Dispatch } from 'redux'
 
 import { IAppState } from 'store/root-reducer'
+import * as uiActions from 'store/ui/actions'
 import { IUiState } from 'store/ui/reducer'
 import { Cookies, Footer, Header } from '../../components'
-import * as uiActions from 'store/ui/actions'
 
 export interface IPropsFromDispatch {
   readonly openMenu: typeof uiActions.openMenu

@@ -10,12 +10,12 @@
 
   .mask {
     position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
+    top: 0; left: -1px; right: -1px; bottom: -1px;
     background: #fff;
     z-index: 2;
     mask-image: url('./assets/wave.svg');
     mask-repeat: no-repeat;
-    mask-size: 114vw;
+    mask-size: 114.2vw;
     mask-position: 50% calc(50% + 380px);
   }
 

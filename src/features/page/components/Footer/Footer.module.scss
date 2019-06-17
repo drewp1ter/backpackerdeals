@@ -3,6 +3,8 @@ footer {
   padding: 218px 150px 0;
   mask-image: url('./assets/wave_bg.svg');
   mask-repeat: no-repeat;
+  mask-position: bottom;
+  // mask-size: 114.2vw;
 
   h2 {
     font-size: 56px;
@@ -242,7 +244,7 @@ footer {
 
     h2 {
       font-size: 47px;
-    } 
+    }
 
     h3 {
       font-size: 23px;
@@ -258,7 +260,7 @@ footer {
 
     .emailInput {
       width: 736px;
-      
+
       input {
         height: 48px !important;
         width: 460px;
@@ -313,18 +315,18 @@ footer {
         width: 105px;
         height: 38px;
       }
-  
+
       p {
         font-size: 12px;
       }
-  
+
       .secondImagesBlock {
         img {
           &:first-of-type {
             width: 83px;
             height: 32.5px;
           }
-  
+
           &:last-of-type {
             width: 95px;
             height: 37px;
@@ -341,7 +343,7 @@ footer {
 
     h2 {
       font-size: 38px;
-    } 
+    }
 
     h3 {
       font-size: 20px;
@@ -357,7 +359,7 @@ footer {
 
     .emailInput {
       width: 592px;
-      
+
       input {
         height: 40px !important;
         width: 335px;
@@ -412,18 +414,18 @@ footer {
         width: 89px;
         height: 32px;
       }
-  
+
       p {
         font-size: 10px;
       }
-  
+
       .secondImagesBlock {
         img {
           &:first-of-type {
             width: 74px;
             height: 29px;
           }
-  
+
           &:last-of-type {
             width: 85px;
             height: 33px;
@@ -450,10 +452,10 @@ footer {
             width: 41px;
             height: 23px;
           }
-  
+
           &:nth-child(3) {
            width: 55px;
-           height: 23px; 
+           height: 23px;
           }
 
           &:last-of-type {
@@ -471,7 +473,7 @@ footer {
             width: 64px;
             height: 26px;
           }
-  
+
           &:last-of-type {
             width: 67px;
             height: 29px;
@@ -489,7 +491,7 @@ footer {
     h2 {
       font-size: 32px;
       line-height: 40px;
-    } 
+    }
 
     h3 {
       margin-top: 0;
@@ -508,7 +510,7 @@ footer {
 
     .emailInput {
       width: 296px;
-      
+
       input {
         width: 190px !important;
         padding: 8px 30px 8px 20px !important;
@@ -588,7 +590,7 @@ footer {
       .logo {
         display: none;
       }
-  
+
       .firstImagesBlock, .secondImagesBlock {
         img {
           display: none;

@@ -1,8 +1,8 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
 
-import { Dispatch, bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
+import { bindActionCreators, Dispatch } from 'redux'
 import { IAppState } from 'store/root-reducer'
 import { openSearch } from 'store/ui/actions'
 

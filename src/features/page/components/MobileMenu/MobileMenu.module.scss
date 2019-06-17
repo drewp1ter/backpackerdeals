@@ -10,13 +10,13 @@
     span {
       display: none;
     }
-    
+
     i {
       color: #202020;
       font-size: 12px;
     }
   }
-  
+
   .searchIcon {
     margin-right: 25px;
   }
@@ -111,7 +111,7 @@
         line-height: 40px;
         border-bottom: 1px solid #fafafa;
         margin-bottom: 10px;
-    
+
         &:last-of-type {
           border-bottom: 0px;
           margin-bottom: 0;
@@ -130,12 +130,12 @@
         line-height: 40px;
         border-bottom: 1px solid #fafafa;
         margin-bottom: 10px;
-    
+
         &:last-of-type {
           border-bottom: 0px;
           margin-bottom: 0;
         }
-  
+
         img {
           margin-right: 8px;
           width: 24px;
@@ -195,6 +195,11 @@
 
   .search {
     overflow-y: scroll;
+    overflow: -moz-scrollbars-none;  //скроллбар ломает заголовок на 320
+
+    &::-webkit-scrollbar {
+      width: 0 !important;
+    }
 
     .searchHeader {
       i {
@@ -362,7 +367,7 @@
     .searchIcon {
       margin-right: 12px;
     }
-    
+
     .menuIcon {
       cursor: pointer;
       // margin-left: 12px;
@@ -406,5 +411,5 @@
         transform: translateX(-104.4%);
       }
     }
-  }  
+  }
 }

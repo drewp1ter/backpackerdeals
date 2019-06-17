@@ -11,8 +11,8 @@ export const circleScroll = ({ target, maxScrollRight, maxScrollLeft, offsetRigh
   if (scrollLeft + offsetWidth >= maxScrollRight) {
     target.scrollTo(maxScrollRight - offsetWidth - offsetRight, 0)
   }
-  if (scrollLeft + offsetWidth <= maxScrollLeft) {
-    target.scrollTo(offsetLeft - offsetWidth, 0)
+  if (scrollLeft <= maxScrollLeft) {
+    target.scrollTo(offsetLeft, 0)
   }
-  console.log(scrollLeft + ' ' + offsetWidth + ' ' + (scrollLeft + offsetWidth))
+  // console.log(scrollLeft + ' ' + offsetWidth + ' ' + (scrollLeft + offsetWidth))
 }

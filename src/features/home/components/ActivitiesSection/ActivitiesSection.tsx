@@ -5,19 +5,24 @@ import { ActivityCard, CardsWrapper } from '..'
 import styles from './ActivitiesSection.module.scss'
 
 export const ActivitiesSection: React.FC = () => {
-
   let w320 = false
 
   const setStartPos = (target: any) => {
     if (!target) {
       return
     }
-    target.scrollTo(545, 0)
     w320 = screen.availWidth <= 320
+    target.scrollTo(w320 ? 545 : 732, 0)
   }
 
   const handleScroll = ({ target }: any) =>
-    circleScroll({ target, maxScrollRight: w320 ? 1750 : 2333, maxScrollLeft: 676, offsetRight: w320 ? 1086 : 1451, offsetLeft: 2125 })
+    circleScroll({
+      target,
+      maxScrollRight: w320 ? 1750 : 2333,
+      maxScrollLeft: w320 ? 45 : 56,
+      offsetRight: w320 ? 1086 : 1451,
+      offsetLeft: w320 ? 1130 : 1510,
+    })
 
   const renderPart1 = (forCarousel: boolean = false) => (
     <div className={styles.activitiesTourThingsCardsRow} data-hidden={forCarousel}>

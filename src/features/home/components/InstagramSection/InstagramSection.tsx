@@ -1,5 +1,6 @@
 import React from 'react'
 
+import { circleScroll } from 'utils'
 import { CardsWrapper } from '..'
 import * as images from './assets'
 import styles from './InstagramSection.module.scss'
@@ -31,19 +32,7 @@ export const InstagramSection: React.FC<IProps> = ({ className }) => {
   const renderCards = (forCarousel: boolean = false) =>
     Object.keys(images.w320).map((img: string) => renderCard(img as keyof typeof images.w320, img, forCarousel))
 
-  const handleScroll = ({ target }: any) => {
-    const { scrollLeft, offsetWidth } = target
-    const maxScrollRight = 1680
-    const maxScrollLeft = 514
-    const offsetRight = 812
-    const offsetLeft = 1325
-    if (scrollLeft + offsetWidth >= maxScrollRight) {
-      target.scrollTo(maxScrollRight - offsetWidth - offsetRight, 0)
-    }
-    if (scrollLeft + offsetWidth < maxScrollLeft) {
-      target.scrollTo(offsetLeft - offsetWidth, 0)
-    }
-  }
+  const handleScroll = ({ target }: any) => circleScroll({ target, maxScrollRight: 1680, maxScrollLeft: 40, offsetRight: 812, offsetLeft: 852 })
 
   return (
     <CardsWrapper className={className} title="Inspiration from our instagram" linkTitle="Follow us">

@@ -4,6 +4,7 @@ import * as React from 'react'
 import { Provider, ProviderProps } from 'react-redux'
 import makeStore from 'store'
 
+// import '../node_modules/bootstrap/dist/css/bootstrap-grid.min.css'
 import '@fortawesome/fontawesome-free/css/all.css'
 import 'normalize.css'
 import 'root.scss'

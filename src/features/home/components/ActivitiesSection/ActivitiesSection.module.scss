@@ -51,10 +51,11 @@
   .activitiesContainer {
     display: flex;
     overflow-x: scroll;
+    overflow: -moz-scrollbars-none;
     overflow-y: hidden;
-    &::scrollbar {
-      width: 0px;
-      background: transparent;
+
+    &::-webkit-scrollbar {
+      width: 0 !important;
     }
   }
 
