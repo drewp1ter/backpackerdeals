@@ -21,6 +21,7 @@
     "add": "^2.0.6",
     "async-stylesheet-webpack-plugin": "^0.4.1",
     "autoprefixer": "^9.5.1",
+    "bootstrap": "^4.3.1",
     "classnames": "^2.2.6",
     "compression": "^1.7.4",
     "dotenv-load": "^2.0.0",
