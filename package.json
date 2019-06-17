@@ -3,6 +3,7 @@
   "scripts": {
     "build": "next build && ./src/webp_conv.py",
     "start": "node server.js",
+    "prod": "NODE_ENV=production node server.js",
     "tslint": "node_modules/.bin/tslint -p tsconfig.json --fix",
     "typecheck": "tsc -p tsconfig.json",
     "buildimage": "docker build -t backpackerdeals ."
@@ -51,6 +52,7 @@
     "responsive-loader": "^1.2.0",
     "rxjs": "^6.5.2",
     "svg-sprite-loader": "^4.1.6",
+    "tslint-loader": "^3.5.4",
     "typesafe-actions": "^4.4.0",
     "typescript": "^3.4.5",
     "universal-rxjs-ajax": "^2.0.1",

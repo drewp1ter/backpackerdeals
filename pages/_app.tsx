@@ -23,7 +23,6 @@ class MyApp extends App<ProviderProps> {
 
 MyApp.getInitialProps = async ({ Component, ctx }: any) => {
   const pageProps = Component.getInitialProps ? await Component.getInitialProps(ctx) : {}
-
   return { pageProps }
 }
 

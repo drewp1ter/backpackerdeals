@@ -1,13 +1,13 @@
 import React from 'react'
 
-import { SearchSelect, OrangeButton, SearchRadio } from 'components'
+import { OrangeButton, SearchRadio, SearchSelect } from 'components'
 import { MobileSelectMenu } from 'features/page/components'
-import { SelectContinent } from '..'
 import { IPropsFromDispatch } from 'features/page/containers/Page/Page'
 import { IUiState } from 'store/ui/reducer'
+import { SelectContinent } from '..'
 
-import { countries, cities, options } from './data'
 import { currencies, languages } from '../Header/constants'
+import { cities, countries, options } from './data'
 
 import styles from './MobileMenu.module.scss'
 

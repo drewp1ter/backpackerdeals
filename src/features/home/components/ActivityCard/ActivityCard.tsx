@@ -1,11 +1,11 @@
 import React from 'react'
 
 import styles from './ActivityCard.module.scss'
-import images from './assets'
+import * as images from './assets'
 
 export interface IProps {
   readonly title: string
-  readonly variant: keyof typeof images
+  readonly variant: keyof typeof images.w320
   readonly gradDeg?: number
 }
 
@@ -14,11 +14,12 @@ export const ActivityCard: React.FC<IProps> = ({ title, variant, gradDeg = 330 }
     <h3>{title}</h3>
     <span>24 Activities</span>
     <div style={{ backgroundImage: `linear-gradient(${gradDeg}deg, rgba(232, 232, 232, 0), rgba(0, 0, 0, 0.91))` }} />
-    <img
-      srcSet={images[variant].srcSet}
-      sizes="(max-width: 320px) 128px, (max-width: 1024px) 232px, (max-width: 1280px) 256px, 368px"
-      src={images[variant]}
-      alt="image"
-    />
+    <picture>
+      <source media="(max-width: 320px)" srcSet={images.w320[variant].src} />
+      <source media="(max-width: 1024px)" srcSet={images.w1024[variant].src} />
+      <source media="(max-width: 1280px)" srcSet={images.w1280[variant].src} />
+      <source media="(max-width: 1920px)" srcSet={images.w1920[variant]} />
+      <img src={images.w1920[variant]} alt="Activity" />
+    </picture>
   </div>
 )

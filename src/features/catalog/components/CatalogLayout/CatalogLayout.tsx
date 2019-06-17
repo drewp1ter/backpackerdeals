@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { MoreActivities, TopActivities, ActivitiesSection } from '..'
+import { ActivitiesSection, MoreActivities, TopActivities } from '..'
 
 export const CatalogLayout: React.FC = () => (
   <>
