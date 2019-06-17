@@ -57,13 +57,17 @@ const nextConfig = {
       {
         test: cssRegex,
         use: cssLoaderConfig(config, loaderConfig),
-      },
+      }
+    )
+
+    dev && config.module.rules.push(
       {
         test: /\.(ts|tsx)$/,
         enforce: 'pre',
         loader: 'tslint-loader',
       }
     )
+
     return config
   },
 }
