@@ -5,7 +5,7 @@ const nextEnv = require('next-env')
 const dotenvLoad = require('dotenv-load')
 const fonts = require('next-fonts')
 const optimizedImages = require('next-optimized-images')
-const withSize = require('next-size')
+// const withSize = require('next-size')
 
 dotenvLoad()
 
@@ -76,7 +76,7 @@ module.exports = withPlugins(
   [
     [typescript],
     [fonts],
-    [withSize],
+    // [withSize],
 
     [
       optimizedImages,
