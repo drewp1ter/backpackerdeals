@@ -43,7 +43,7 @@ export const ActivitiesSection: React.FC = () => {
   )
 
   return (
-    <CardsWrapper title="Activities, Tours & Things To D" linkTitle="Show more">
+    <CardsWrapper title="Activities, Tours & Things To D" linkTitle="Show more" linkURL="/catalog">
       <div ref={setStartPos} className={styles.activitiesContainer} onScroll={handleScroll}>
         {renderPart2(true)}
         {renderPart1()}
