@@ -6,11 +6,12 @@
 
   .opener {
     cursor: pointer;
-    display: flex;
+    display: inline-flex;
     align-items: center;
-    width: 100px;
+    // width: 100px;
 
     span {
+      white-space: nowrap;
       margin: 0;
       font-size: 18px;
       font-weight: 600;
@@ -92,7 +93,7 @@
     margin-right: 15px;
   
     .opener {
-      width: 90px;
+      // width: 90px;
   
       span {
         font-size: 16px;
@@ -117,7 +118,7 @@
     margin-right: 15px;
   
     .opener {
-      width: 80px;
+      // width: 80px;
   
       span {
         font-size: 14px;

@@ -21,6 +21,7 @@ const data = [
       hours: '10',
       minutes: '51',
     },
+    sizes: "(max-width: 767px) 272px, (max-width: 1024px) 232px, (max-width: 1280px) 256px, 368px"
   },
   {
     img: require('./assets/2.jpg?resize&sizes[]=232&sizes[]=256&sizes[]=368&sizes[]=272'),
@@ -37,6 +38,7 @@ const data = [
       hours: '10',
       minutes: '51',
     },
+    sizes: "(max-width: 767px) 272px, (max-width: 1024px) 232px, (max-width: 1280px) 256px, 368px"
   },
   {
     img: require('./assets/3.jpg?resize&sizes[]=232&sizes[]=256&sizes[]=368&sizes[]=272'),
@@ -53,6 +55,7 @@ const data = [
       hours: '10',
       minutes: '51',
     },
+    sizes: "(max-width: 767px) 272px, (max-width: 1024px) 232px, (max-width: 1280px) 256px, 368px"
   },
   {
     img: require('./assets/4.jpg?resize&sizes[]=232&sizes[]=256&sizes[]=368&sizes[]=272'),
@@ -69,6 +72,7 @@ const data = [
       hours: '10',
       minutes: '51',
     },
+    sizes: "(max-width: 767px) 272px, (max-width: 1024px) 232px, (max-width: 1280px) 256px, 368px"
   },
 ]
 

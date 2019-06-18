@@ -1,6 +1,12 @@
 .mobileMenu {
   margin-left: 30px;
 
+  &[data-theme="dark"] {
+    .searchIcon, .menuIcon {
+
+    }
+  }
+
   .searchIcon, .menuIcon {
     cursor: pointer;
     background-color: transparent;
@@ -46,7 +52,6 @@
     top: 0;
     bottom: 0;
     right: -100%;
-    // width: 285px;
     width: 89%;
     z-index: 15;
     overflow-y: scroll;
@@ -55,7 +60,6 @@
     transition: .2s ease transform;
 
     &[data-open="true"] {
-      // transform: translateX(-310px);
       transform: translateX(-103%);
     }
 
@@ -331,6 +335,20 @@
 
 @media screen and (min-width: 768px) and (max-width: 1280px) {
   .mobileMenu {
+    &[data-theme="dark"] {
+      .searchIcon, .menuIcon {
+        border-color: #202020;
+        
+        span {
+          color: #202020;
+        }
+  
+        i {
+          color: #202020;
+        }
+      }
+    }
+
     .menu, .search {
       width: 400px;
       right: -435px;
@@ -370,7 +388,6 @@
 
     .menuIcon {
       cursor: pointer;
-      // margin-left: 12px;
       border: 1px solid #ffffff;
       border-radius: 50%;
       text-align: center;

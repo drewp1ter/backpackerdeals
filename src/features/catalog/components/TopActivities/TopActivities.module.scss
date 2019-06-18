@@ -18,3 +18,19 @@
     line-height: 32px;
   }
 }
+
+@media screen and (min-width: 615px) and (max-width: 1279px) {
+  .topActivities {
+    h2 {
+      font-size: 38px;
+    }
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 615px) {
+  .topActivities {
+    h2 {
+      font-size: 28px;
+    }
+  }
+}

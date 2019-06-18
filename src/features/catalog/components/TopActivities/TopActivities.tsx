@@ -4,13 +4,9 @@ import styles from './TopActivities.module.scss'
 
 import { LastMinuteDealCard } from 'components'
 
-import Picture1 from './assets/picture1.png'
-import Picture2 from './assets/picture2.png'
-import Picture3 from './assets/picture3.png'
-
 const data = [
   {
-    img: Picture1,
+    img: require('./assets/picture1.png?resize&sizes[]=232&sizes[]=256&sizes[]=496&sizes[]=272'),
     tourName: 'Kakadu 4WD Adventure',
     price: 900,
     location: 'Australia, Sydney',
@@ -20,9 +16,10 @@ const data = [
     value: 1200,
     duration: '2 days, 1 night',
     rating: 4.5,
+    sizes: "(max-width: 767px) 272px, (max-width: 1024px) 232px, (max-width: 1280px) 256px, 496px"
   },
   {
-    img: Picture2,
+    img: require('./assets/picture2.png?resize&sizes[]=232&sizes[]=256&sizes[]=496&sizes[]=272'),
     tourName: 'Kakadu 4WD Adventure',
     price: 900,
     location: 'Australia, Sydney',
@@ -37,9 +34,10 @@ const data = [
       hours: '10',
       minutes: '51',
     },
+    sizes: "(max-width: 767px) 272px, (max-width: 1024px) 232px, (max-width: 1280px) 256px, 496px"
   },
   {
-    img: Picture3,
+    img: require('./assets/picture3.png?resize&sizes[]=232&sizes[]=256&sizes[]=496&sizes[]=272'),
     tourName: 'Kakadu 4WD Adventure',
     price: 900,
     location: 'Australia, Sydney',
@@ -50,6 +48,7 @@ const data = [
     value: 1200,
     duration: '2 days, 1 night',
     rating: 4.5,
+    sizes: "(max-width: 767px) 272px, (max-width: 1024px) 232px, (max-width: 1280px) 256px, 496px"
   },
 ]
 

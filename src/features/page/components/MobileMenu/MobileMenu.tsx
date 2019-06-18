@@ -13,14 +13,15 @@ import styles from './MobileMenu.module.scss'
 
 interface IProps {
   readonly ui: IUiState
+  readonly theme?: string
 }
 
-export const MobileMenu: React.FC<IProps & IPropsFromDispatch> = ({ ui, openMenu, closeMenu, openSearch, closeSearch, changeSearchType }) => {
+export const MobileMenu: React.FC<IProps & IPropsFromDispatch> = ({ ui, openMenu, closeMenu, openSearch, closeSearch, changeSearchType, theme }) => {
   const [search, changeSearch] = React.useState('')
   const [multiDayTour, selectTourType] = React.useState(false)
 
   return (
-    <div className={styles.mobileMenu}>
+    <div className={styles.mobileMenu} data-theme={theme}>
       <button onClick={openSearch} className={styles.searchIcon}>
         <span>Search</span>
         <i className="fas fa-search" />

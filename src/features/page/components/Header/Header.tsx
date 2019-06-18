@@ -69,7 +69,7 @@ export class Header extends Component<IProps & IPropsFromDispatch> {
   render() {
     const { theme, ui, openMenu, closeMenu, openSearch, closeSearch, changeSearchType } = this.props
     const { currentCurrency, currentLanguage, scrolled } = this.state
-    
+
     const languageOpener: React.ReactNode = (
       <div className={styles.languageOpener}>
         <img src={languages[currentLanguage].icon} alt={languages[currentLanguage].name} />
@@ -85,12 +85,12 @@ export class Header extends Component<IProps & IPropsFromDispatch> {
 
     const continentOpener: React.ReactNode = <span className={styles.continentOpener}>Explore by country</span>
     return (
-      <header data-theme={scrolled ? "dark" : theme}>
+      <header data-theme={scrolled ? 'dark' : theme}>
         <div className={styles.tools}>
           <div className={styles.logoAndSearch}>
             <img src={Logo} alt="Logo" className={styles.logo} />
             <img src={BlackLogo} alt="Logo" className={styles.blackLogo} />
-            <AdvancedSearch theme={scrolled ? "dark" : theme} />
+            <AdvancedSearch theme={scrolled ? 'dark' : theme} />
           </div>
           <div className={styles.tours}>
             <SelectMenu openerClass={styles.selectContinentOpener} opener={continentOpener} title="Select continent" size="lg" pos="left">
@@ -146,6 +146,7 @@ export class Header extends Component<IProps & IPropsFromDispatch> {
           </div>
           <div className={styles.mobileTools}>
             <MobileMenu
+              theme={scrolled ? 'dark' : theme}
               openMenu={openMenu}
               closeMenu={closeMenu}
               openSearch={openSearch}
