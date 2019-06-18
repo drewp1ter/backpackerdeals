@@ -1,0 +1,1 @@
+export { default as SearchTravelSection } from './SearchTravelSection'

@@ -1,5 +1,4 @@
 import * as React from 'react'
-import { openSearch } from 'store/ui/actions'
 
 import {
   ActivitiesSection,
@@ -9,21 +8,17 @@ import {
   InstagramSection,
   LastMinuteDeal,
   PromoutingSection,
-  SearchTravelSection,
   TopDestinationsSection,
   TravelStoriesSection,
 } from '..'
 
+import { SearchTravelSection } from '../../containers'
+
 import styles from './HomeLayout.module.scss'
 
-export interface IProps {
-  readonly openSearch: typeof openSearch
-  readonly searchType: string
-}
-
-export const HomeLayout: React.FC<IProps> = ({ openSearch, searchType }) => (
+export const HomeLayout: React.FC = () => (
   <>
-    <SearchTravelSection openSearch={openSearch} searchType={searchType} />
+    <SearchTravelSection />
     <BookWithUsSection />
     <TopDestinationsSection />
     <ActivitiesSection />
