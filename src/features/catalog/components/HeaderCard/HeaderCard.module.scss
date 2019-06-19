@@ -1,22 +1,22 @@
-.root {
+.headerCard {
   width: 417px;
   padding: 44px 40px 30px;
   opacity: .9;
   border-radius: 8px;
   background-color: #ffffff;
 
-  h1 {
+  h2 {
     text-align: left;
     font-size: 62px;
     line-height: 80px;
     color: #ff5a39;
   }
 
-  h2 {
+  h3 {
     text-align: left;
     font-size: 26px;
     line-height: 32px;
-    font-weight: bold;
+    font-weight: 700;
     color: #202020;
     margin-bottom: 27px;
   }
@@ -30,5 +30,71 @@
 
   .rating {
     margin-top: 58px;
+  }
+}
+
+@media screen and (min-width: 1280px) and (max-width: 1485px) {
+  .headerCard {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 615px) and (max-width: 1279px) {
+  .headerCard {
+    width: 272px;
+    padding: 10px 20px 7px 20px;
+
+    h2 {
+      font-size: 48px;
+      font-weight: 700;
+      line-height: 44px;
+    }
+
+    h3 {
+      font-size: 20px;
+      line-height: 24px;
+      margin-bottom: 14px;
+    }
+
+    p {
+      font-size: 12px;
+    }
+
+    .rating {
+      margin-top: 13px;
+    }
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 614px) {
+  .headerCard {
+    position: relative;
+    bottom: 25px;
+    z-index: 5;
+    width: auto;
+    padding: 0 15px 0;
+
+    h2 {
+      text-align: center;
+      font-size: 48px;
+      line-height: 55px;
+    }
+
+    h3 {
+      text-align: center;
+      font-size: 20px;
+      line-height: 24px;
+      margin-bottom: 12px;
+    }
+
+    p {
+      // text-align: center;
+      font-size: 12px;
+      line-height: 16px;
+    }
+
+    .rating {
+      margin-top: 5px;
+    }
   }
 }

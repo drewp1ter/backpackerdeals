@@ -1,26 +1,37 @@
 import React from 'react'
 
-import { OrangeButton, SearchRadio, SearchSelect } from 'components'
+import { OrangeButton, MobileMenuWrapper } from 'components'
 import { MobileSelectMenu } from 'features/page/components'
-import { IPropsFromDispatch } from 'features/page/containers/Page/Page'
-import { IUiState } from 'store/ui/reducer'
-import { SelectContinent } from '..'
+import { SearchActions } from 'features/search'
+import { SearchRadio, SearchSelect } from 'features/search/components'
+import { PageActions } from '../..'
+import { SelectContinent } from '../../components'
 
-import { currencies, languages } from '../Header/constants'
+import Types from 'Types'
+import { currencies, languages } from '../../components/Header/constants'
 import { cities, countries, options } from './data'
 
 import styles from './MobileMenu.module.scss'
 
 interface IProps {
-  readonly ui: IUiState
+  readonly theme?: 'dark'
 }
 
-export const MobileMenu: React.FC<IProps & IPropsFromDispatch> = ({ ui, openMenu, closeMenu, openSearch, closeSearch, changeSearchType }) => {
-  const [search, changeSearch] = React.useState('')
+export const MobileMenu: React.FC<Partial<Types.RootState> & PageActions & SearchActions & IProps> = ({
+  search,
+  page,
+  theme,
+  openMenu,
+  closeMenu,
+  openSearch,
+  closeSearch,
+  changeSearchType,
+}) => {
+  const [searchQuery, changeSearch] = React.useState('')
   const [multiDayTour, selectTourType] = React.useState(false)
 
   return (
-    <div className={styles.mobileMenu}>
+    <div className={styles.mobileMenu} data-theme={theme}>
       <button onClick={openSearch} className={styles.searchIcon}>
         <span>Search</span>
         <i className="fas fa-search" />
@@ -29,9 +40,7 @@ export const MobileMenu: React.FC<IProps & IPropsFromDispatch> = ({ ui, openMenu
         <i className="fas fa-bars" />
       </button>
 
-      <div className={styles.menuBackground} data-open={ui.menuIsOpen || ui.searchIsOpen} />
-
-      <div className={styles.menu} data-open={ui.menuIsOpen}>
+      <MobileMenuWrapper className={styles.menu} open={page!.menuIsOpen}>
         <div className={styles.mobileHeader}>
           <p>
             <i className="fas fa-phone-alt" />
@@ -50,7 +59,7 @@ export const MobileMenu: React.FC<IProps & IPropsFromDispatch> = ({ ui, openMenu
               <span>Search</span>
             </div>
             <div className={styles.additionalTitle}>
-              <span>{ui.searchType === 'advanced' ? 'Advanced search' : 'Basic search'}</span>
+              <span>{search!.searchType === 'advanced' ? 'Advanced search' : 'Basic search'}</span>
               <i className="fas fa-filter" />
             </div>
           </div>
@@ -82,14 +91,26 @@ export const MobileMenu: React.FC<IProps & IPropsFromDispatch> = ({ ui, openMenu
             </div>
           </div>
           <h5>Settings</h5>
-          <MobileSelectMenu childrenClassName={styles.currencies} leftIcon="fas fa-chevron-down" reversableIcon="left" title="$ AUD" reverseType="180">
+          <MobileSelectMenu
+            childrenClassName={styles.currencies}
+            leftIcon="fas fa-chevron-down"
+            reversableIcon="left"
+            title="$ AUD"
+            reverseType="180"
+          >
             {Object.entries(currencies).map((currency, index) => (
               <p key={`${currency[0]}-${index}`}>
                 {currency[1].name} {currency[1].icon}
               </p>
             ))}
           </MobileSelectMenu>
-          <MobileSelectMenu childrenClassName={styles.languages} leftIcon="fas fa-chevron-down" reversableIcon="left" title="English" reverseType="180">
+          <MobileSelectMenu
+            childrenClassName={styles.languages}
+            leftIcon="fas fa-chevron-down"
+            reversableIcon="left"
+            title="English"
+            reverseType="180"
+          >
             {Object.entries(languages).map((language, index) => (
               <div className={styles.languages} key={`language-${index}`}>
                 <img src={language[1].icon} alt={language[1].name} />
@@ -98,31 +119,31 @@ export const MobileMenu: React.FC<IProps & IPropsFromDispatch> = ({ ui, openMenu
             ))}
           </MobileSelectMenu>
         </div>
-      </div>
-      <div className={styles.search} data-open={ui.searchIsOpen}>
+      </MobileMenuWrapper>
+      <MobileMenuWrapper className={styles.search} open={search!.searchIsOpen}>
         <div className={styles.searchHeader}>
           <i onClick={closeSearch} className="fas fa-arrow-left" />
-          <span onClick={() => changeSearchType('basic')} data-active={ui.searchType === 'basic'}>
+          <span onClick={() => changeSearchType('basic')} data-active={search!.searchType === 'basic'}>
             Basic Search
           </span>
-          <span onClick={() => changeSearchType('advanced')} data-active={ui.searchType === 'advanced'}>
+          <span onClick={() => changeSearchType('advanced')} data-active={search!.searchType === 'advanced'}>
             Advanced Search
           </span>
         </div>
         <hr />
         <>
-          {ui.searchType === 'basic' ? (
+          {search!.searchType === 'basic' ? (
             <>
               <div className={styles.searchInput}>
-                <input type="text" placeholder="Try Australia" value={search} onChange={event => changeSearch(event.target.value)} />
+                <input type="text" placeholder="Try Australia" value={searchQuery} onChange={event => changeSearch(event.target.value)} />
                 <i className="fas fa-search" />
               </div>
-              {countries.filter(country => country.includes(search)).length > 0 && (
+              {countries.filter(country => country.includes(searchQuery)).length > 0 && (
                 <>
                   <h5>Countries</h5>
                   <div className={styles.results}>
                     {countries
-                      .filter(country => country.includes(search))
+                      .filter(country => country.includes(searchQuery))
                       .map((country, index) => (
                         <p key={`${country}-${index}`}>{country}</p>
                       ))}
@@ -130,12 +151,12 @@ export const MobileMenu: React.FC<IProps & IPropsFromDispatch> = ({ ui, openMenu
                 </>
               )}
 
-              {cities.filter(city => city.includes(search)).length > 0 && (
+              {cities.filter(city => city.includes(searchQuery)).length > 0 && (
                 <>
                   <h5>Cities</h5>
                   <div className={styles.results}>
                     {cities
-                      .filter(city => city.includes(search))
+                      .filter(city => city.includes(searchQuery))
                       .map((city, index) => (
                         <p key={`${city}-${index}`}>{city}</p>
                       ))}
@@ -162,7 +183,7 @@ export const MobileMenu: React.FC<IProps & IPropsFromDispatch> = ({ ui, openMenu
             </>
           )}
         </>
-      </div>
+      </MobileMenuWrapper>
     </div>
   )
 }

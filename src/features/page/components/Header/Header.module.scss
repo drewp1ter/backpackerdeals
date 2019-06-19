@@ -11,12 +11,10 @@ header {
   .currencyOpener {
     color: #fff;
   }
-  
-  .selectContinentOpener {
-    width: 200px !important;
-  }
 
   .currencyAndLanguageOpener {
+    width: 83px;
+    
     span {
       span {
         font-weight: 500 !important;
@@ -214,6 +212,11 @@ header {
         a {
           font-weight: 500;
           color: #202020;
+          transition: .2s ease color, .2s ease font-weight;
+
+          &:hover {
+            color: #ff5a39;
+          }
         }
 
         .profileIcon {
@@ -279,9 +282,6 @@ header {
 
 @media screen and (max-width: 1615px) {
   header {
-    .selectContinentOpener {
-      width: 170px !important;
-    }
     
     .logoAndSearch {
       img {
@@ -310,10 +310,6 @@ header {
 @media screen and (max-width: 1420px) {
   header {
     padding: 20px 30px;
-
-    .selectContinentOpener {
-      width: 150px !important;
-    }
 
     .logoAndSearch {
       img {

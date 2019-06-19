@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 const express = require('express')
 const next = require('next')
-const routes = require('./routes')
+const routes = require('./src/routes')
 const compression = require('compression')
 
 const devProxy = {

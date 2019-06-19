@@ -15,9 +15,9 @@ export interface IProps {
 export const HeaderCard: React.FC<IProps> = ({ title, description, body, rating, className }) => {
 
   return (
-    <div className={classNames(styles.root, className)}>
-      <h1>{title}</h1>
-      <h2>{description}</h2>
+    <div className={classNames(styles.headerCard, className)}>
+      <h2>{title}</h2>
+      <h3>{description}</h3>
       <p>{body}</p>
       <Rating className={styles.rating} rating={rating} />
     </div>

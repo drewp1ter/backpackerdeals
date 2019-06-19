@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux'
-import { IUiState, uiReducer } from './ui'
+import { pageReducer } from '../features/page'
+import { searchReducer } from '../features/search'
+import { filtersReducer } from '../features/catalog'
 
-export interface IAppState {
-  ui: IUiState
-}
-
-export const rootReducer = combineReducers({ 
-  ui: uiReducer 
+export default combineReducers({
+  page: pageReducer,
+  search: searchReducer,
+  filters: filtersReducer
 })

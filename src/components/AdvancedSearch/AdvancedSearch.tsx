@@ -1,6 +1,8 @@
 import * as React from 'react'
 
-import { OrangeButton, SearchSelect } from 'components'
+import { OrangeButton } from 'components'
+
+import { SearchSelect } from 'features/search/components'
 
 import styles from './AdvancedSearch.module.scss'
 

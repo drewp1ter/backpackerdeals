@@ -14,13 +14,36 @@
     line-height: 40px;
   }
 
-  .mask {
-    mask-position: 50% 550%;
-  }
-
   .card {
     position: absolute;
     right: 170px;
     top: -60px;
+  }
+}
+
+@media screen and (min-width: 615px) and (max-width: 1279px) {
+  .activitiesSection {
+    h1 {
+      display: none;
+    }
+
+    .card {
+      right: 36px;
+    }
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 615px) {
+  .activitiesSection {
+    padding: 125px 0;
+    background-size: contain;
+
+    .card, h1 {
+      display: none;
+    }
+
+    .mask {
+      mask-position: center calc(50% + 70px);
+    }
   }
 }

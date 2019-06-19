@@ -16,7 +16,7 @@ COPY *.json yarn.lock ./
 RUN yarn
 COPY . .
 RUN yarn build
-RUN rm -rf ./src ./pages ./interfaces ./.next/static
+RUN rm -rf ./src/features ./pages ./interfaces ./.next/static
 
 EXPOSE 3000
 CMD ["yarn", "start"]

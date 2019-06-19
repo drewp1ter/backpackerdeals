@@ -34,6 +34,7 @@ interface IProps {
   readonly description?: string
   readonly className?: string
   readonly forCarousel?: boolean
+  readonly sizes: string
 }
 
 export const LastMinuteDealCard: React.FC<IProps> = ({
@@ -53,6 +54,7 @@ export const LastMinuteDealCard: React.FC<IProps> = ({
   description,
   className,
   forCarousel = false,
+  sizes
 }) => {
   return (
     <div data-view={view} className={classNames(styles.lastMinuteDealCard, className)} data-hidden={forCarousel}>
@@ -85,7 +87,7 @@ export const LastMinuteDealCard: React.FC<IProps> = ({
         <img
           className={styles.background}
           srcSet={img.srcSet}
-          sizes="(max-width: 767px) 272px, (max-width: 1024px) 232px, (max-width: 1280px) 256px, 368px"
+          sizes={sizes}
           src={img.src}
           alt="Last Minute Deal Tour"
         />

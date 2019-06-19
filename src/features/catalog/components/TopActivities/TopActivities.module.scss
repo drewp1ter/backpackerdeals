@@ -18,3 +18,37 @@
     line-height: 32px;
   }
 }
+
+@media screen and (min-width: 615px) and (max-width: 1279px) {
+  .topActivities {
+    h2 {
+      font-size: 38px;
+    }
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 614px) {
+  .topActivities {
+    position: static;
+
+    h2 {
+      font-size: 28px;
+      margin-bottom: 16px;
+    }
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 900px) {
+  .topActivities {
+    .cards {
+      max-width: 1136px;
+      overflow-x: scroll;
+      overflow: -moz-scrollbars-none;
+      overflow-y: hidden;
+  
+      &::-webkit-scrollbar {
+        width: 0 !important;
+      }
+    }
+  }
+}

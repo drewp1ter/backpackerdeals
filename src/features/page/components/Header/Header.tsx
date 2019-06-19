@@ -1,9 +1,8 @@
 import React, { Component } from 'react'
 
 import { AdvancedSearch } from 'components'
-import { IPropsFromDispatch } from 'features/page/containers/Page/Page'
-import { IUiState } from 'store/ui/reducer'
-import { MobileMenu, SelectContinent, SelectMenu } from '..'
+import { SelectContinent, SelectMenu } from '..'
+import { MobileMenu } from '../../containers'
 
 import BlackLogo from './assets/blackLogo.svg'
 import Logo from './assets/logo_Header.svg'
@@ -12,10 +11,9 @@ import styles from './Header.module.scss'
 
 interface IProps {
   readonly theme?: string
-  readonly ui: IUiState
 }
 
-export class Header extends Component<IProps & IPropsFromDispatch> {
+export class Header extends Component<IProps> {
   state = {
     currentLanguage: 'english',
     currentCurrency: 'aud',
@@ -67,9 +65,9 @@ export class Header extends Component<IProps & IPropsFromDispatch> {
   }
 
   render() {
-    const { theme, ui, openMenu, closeMenu, openSearch, closeSearch, changeSearchType } = this.props
+    const { theme } = this.props
     const { currentCurrency, currentLanguage, scrolled } = this.state
-    
+
     const languageOpener: React.ReactNode = (
       <div className={styles.languageOpener}>
         <img src={languages[currentLanguage].icon} alt={languages[currentLanguage].name} />
@@ -85,12 +83,12 @@ export class Header extends Component<IProps & IPropsFromDispatch> {
 
     const continentOpener: React.ReactNode = <span className={styles.continentOpener}>Explore by country</span>
     return (
-      <header data-theme={scrolled ? "dark" : theme}>
+      <header data-theme={scrolled ? 'dark' : theme}>
         <div className={styles.tools}>
           <div className={styles.logoAndSearch}>
             <img src={Logo} alt="Logo" className={styles.logo} />
             <img src={BlackLogo} alt="Logo" className={styles.blackLogo} />
-            <AdvancedSearch theme={scrolled ? "dark" : theme} />
+            <AdvancedSearch theme={scrolled ? 'dark' : theme} />
           </div>
           <div className={styles.tours}>
             <SelectMenu openerClass={styles.selectContinentOpener} opener={continentOpener} title="Select continent" size="lg" pos="left">
@@ -145,14 +143,7 @@ export class Header extends Component<IProps & IPropsFromDispatch> {
             </div>
           </div>
           <div className={styles.mobileTools}>
-            <MobileMenu
-              openMenu={openMenu}
-              closeMenu={closeMenu}
-              openSearch={openSearch}
-              closeSearch={closeSearch}
-              changeSearchType={changeSearchType}
-              ui={ui}
-            />
+            <MobileMenu theme={scrolled ? 'dark' : theme} />
           </div>
         </div>
       </header>
