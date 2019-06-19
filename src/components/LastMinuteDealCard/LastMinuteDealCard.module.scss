@@ -382,6 +382,14 @@
         left: -2px;
       }
 
+      .sellOut {
+        top: 100px;
+        right: -33.5px;
+        height: 28px;
+        font-size: 11px;
+        line-height: 12px;
+      }
+
       .exposeTime {
         .timeName {
           font-size: 6px;
@@ -428,5 +436,17 @@
       }
     }
 
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .lastMinuteDealCard {
+    &[data-view="reversed"] {
+      .imageBlock {
+        .background {
+           height: 288px;
+        }
+      }
+    }
   }
 }
