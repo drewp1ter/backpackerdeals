@@ -1,7 +1,7 @@
 import * as React from 'react'
 
 import { MobileMenuWrapper, OrangeButton } from 'components'
-import { FiltersDropdown } from 'features/catalog/components'
+import { FiltersDropdown, PriceRange } from 'features/catalog/components'
 
 import { FiltersActions } from 'features/catalog'
 import Types from 'Types'
@@ -39,6 +39,8 @@ export const FiltersMenu: React.FC<Partial<Types.RootState> & FiltersActions & I
       <FiltersDropdown title="Style of travel">
 
       </FiltersDropdown>
+
+      <PriceRange />
 
       <div className={styles.filtersButtons}>
         <OrangeButton theme="rectangled" className={styles.orangeButton}>
