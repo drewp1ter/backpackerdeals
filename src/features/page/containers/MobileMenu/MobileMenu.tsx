@@ -1,8 +1,8 @@
 import React from 'react'
 
-import { OrangeButton } from 'components'
+import { OrangeButton, MobileMenuWrapper } from 'components'
 import { MobileSelectMenu } from 'features/page/components'
-import {  SearchActions } from 'features/search'
+import { SearchActions } from 'features/search'
 import { SearchRadio, SearchSelect } from 'features/search/components'
 import { PageActions } from '../..'
 import { SelectContinent } from '../../components'
@@ -40,9 +40,7 @@ export const MobileMenu: React.FC<Partial<Types.RootState> & PageActions & Searc
         <i className="fas fa-bars" />
       </button>
 
-      <div className={styles.menuBackground} data-open={page!.menuIsOpen || search!.searchIsOpen} />
-
-      <div className={styles.menu} data-open={page!.menuIsOpen}>
+      <MobileMenuWrapper className={styles.menu} open={page!.menuIsOpen}>
         <div className={styles.mobileHeader}>
           <p>
             <i className="fas fa-phone-alt" />
@@ -121,8 +119,8 @@ export const MobileMenu: React.FC<Partial<Types.RootState> & PageActions & Searc
             ))}
           </MobileSelectMenu>
         </div>
-      </div>
-      <div className={styles.search} data-open={search!.searchIsOpen}>
+      </MobileMenuWrapper>
+      <MobileMenuWrapper className={styles.search} open={search!.searchIsOpen}>
         <div className={styles.searchHeader}>
           <i onClick={closeSearch} className="fas fa-arrow-left" />
           <span onClick={() => changeSearchType('basic')} data-active={search!.searchType === 'basic'}>
@@ -185,7 +183,7 @@ export const MobileMenu: React.FC<Partial<Types.RootState> & PageActions & Searc
             </>
           )}
         </>
-      </div>
+      </MobileMenuWrapper>
     </div>
   )
 }

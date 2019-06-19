@@ -1,33 +1,5 @@
-.cardsRow {
-  display: flex;
-  justify-content: center;
-  >div, >img {
-    margin-right: 16px;
-
-    &:last-child {
-      margin-right: 0;
-    }
-  }
-}
-
 .instagramCards {
   position: relative;
   margin-bottom: -150px !important;
   z-index: 1;
-}
-
-@media screen and (max-width: 1280px) {
-
-}
-
-@media screen and (max-width: 1024px) {
-
-}
-
-@media screen and (max-width: 768px) {
-
-}
-
-@media screen and (max-width: 320px) {
-
 }

@@ -1,12 +1,6 @@
 .mobileMenu {
   margin-left: 30px;
 
-  &[data-theme="dark"] {
-    .searchIcon, .menuIcon {
-
-    }
-  }
-
   .searchIcon, .menuIcon {
     cursor: pointer;
     background-color: transparent;
@@ -27,42 +21,7 @@
     margin-right: 25px;
   }
 
-  .menuBackground {
-    position: fixed;
-    display: none;
-    top: 0;
-    right: 0;
-    left: 0;
-    bottom: 0;
-    z-index: 10;
-    background-color: rgba(#000, 0.4);
-
-    &[data-open="true"] {
-      display: block;
-
-      &~body {
-        position: fixed;
-        overflow-y: hidden;
-      }
-    }
-  }
-
   .menu, .search {
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    right: -100%;
-    width: 89%;
-    z-index: 15;
-    overflow-y: scroll;
-    background-color: #fff;
-    padding: 18px 8px 25px 17px;
-    transition: .2s ease transform;
-
-    &[data-open="true"] {
-      transform: translateX(-103%);
-    }
-
     .mobileHeader {
       display: flex;
       justify-content: space-between;
@@ -348,20 +307,12 @@
         }
       }
     }
-
-    .menu, .search {
-      width: 400px;
-      right: -435px;
-
-      &[data-open="true"] {
-        transform: translateX(-435px);
-      }
-    }
-
+    
     .searchIcon {
       cursor: pointer;
       height: 40px;
       padding: 0 9px 0 12px;
+      margin-right: 12px;
       border-radius: 30px;
       border: 1px solid #ffffff;
       background-color: transparent;
@@ -382,10 +333,6 @@
       }
     }
 
-    .searchIcon {
-      margin-right: 12px;
-    }
-
     .menuIcon {
       cursor: pointer;
       border: 1px solid #ffffff;
@@ -396,36 +343,6 @@
         padding: 14.5px 15.2px;
         color: #ffffff;
         font-size: 11px;
-      }
-    }
-  }
-}
-
-@media screen and (min-width: 401px) and (max-width: 600px) {
-  .mobileMenu {
-    .menu, .search {
-      &[data-open="true"] {
-        transform: translateX(-105.1%);
-      }
-    }
-  }
-}
-
-@media screen and (min-width: 375px) and (max-width: 400px) {
-  .mobileMenu {
-    .menu, .search {
-      &[data-open="true"] {
-        transform: translateX(-104.3%);
-      }
-    }
-  }
-}
-
-@media screen and (min-width: 340px) and (max-width: 360px) {
-  .mobileMenu {
-    .menu, .search {
-      &[data-open="true"] {
-        transform: translateX(-104.4%);
       }
     }
   }
