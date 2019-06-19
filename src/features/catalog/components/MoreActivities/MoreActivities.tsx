@@ -1,6 +1,7 @@
 import React, { useReducer } from 'react'
 
 import { Checkbox, LastMinuteDealCard } from 'components'
+import { FiltersMenu } from 'features/catalog/containers'
 import { cards, filters } from './data'
 import styles from './MoreActivities.module.scss'
 import reducer, { ActionType, IAction, initialState, IState, ViewType } from './reducer'
@@ -40,6 +41,7 @@ export const MoreActivities: React.FC = () => {
   return (
     <div className={styles.moreActivities}>
       <h3>More Activities</h3>
+      <FiltersMenu filters={renderFilters()} />
       <div className={styles.content}>
         <div className={styles.filters}>
           <h4>Select city</h4>
@@ -49,9 +51,11 @@ export const MoreActivities: React.FC = () => {
           <div className={styles.header}>
             <span>{cards.length} Activities</span>
             <span className={styles.viewStyle}>
-              List view:
-              <i onClick={handleChangeView} className="fas fa-th-large" data-active={view === ViewType.tile} data-view={ViewType.tile} />
-              <i onClick={handleChangeView} className="fas fa-list" data-active={view === ViewType.list} data-view={ViewType.list} />
+              <span className={styles.leftSide}>
+                List view:
+                <i onClick={handleChangeView} className="fas fa-th-large" data-active={view === ViewType.tile} data-view={ViewType.tile} />
+                <i onClick={handleChangeView} className="fas fa-list" data-active={view === ViewType.list} data-view={ViewType.list} />
+              </span>
               Sort by:
               <i onClick={handleChangeSortOrder} className={`fas ${sortDec ? 'fa-sort-amount-down' : 'fa-sort-amount-up'}`} />
             </span>
