@@ -1,5 +1,6 @@
 import React, { useReducer } from 'react'
 
+import { PriceRange } from '..'
 import { Checkbox, LastMinuteDealCard } from 'components'
 import { cards, filters } from './data'
 import styles from './MoreActivities.module.scss'
@@ -44,6 +45,7 @@ export const MoreActivities: React.FC = () => {
         <div className={styles.filters}>
           <h4>Select city</h4>
           {renderFilters()}
+          <PriceRange />
         </div>
         <div className={styles.cardsContainer}>
           <div className={styles.header}>
