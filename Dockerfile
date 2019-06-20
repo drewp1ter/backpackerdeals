@@ -16,6 +16,8 @@ COPY *.json yarn.lock ./
 RUN yarn
 COPY . .
 RUN yarn build
+RUN yarn webpconv
+RUN yarn purgecss
 RUN rm -rf ./src/features ./pages ./interfaces ./.next/static
 
 EXPOSE 3000
