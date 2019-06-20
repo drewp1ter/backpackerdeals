@@ -1,4 +1,4 @@
 module.exports = {
   content: ['.next/static/**/*.js'],
-  css: ['.next/static/css/*.css']
+  css: ['.next/static/chunks/*.css']
 }
