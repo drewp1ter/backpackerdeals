@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { OrangeButton, MobileMenuWrapper } from 'components'
+import { MobileMenuWrapper, OrangeButton } from 'components'
 import { MobileSelectMenu } from 'features/page/components'
 import { SearchActions } from 'features/search'
 import { SearchRadio, SearchSelect } from 'features/search/components'
