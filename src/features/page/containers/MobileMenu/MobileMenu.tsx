@@ -14,7 +14,7 @@ import { cities, countries, options } from './data'
 import styles from './MobileMenu.module.scss'
 
 interface IProps {
-  readonly theme?: 'dark'
+  readonly theme?: string
 }
 
 export const MobileMenu: React.FC<Partial<Types.RootState> & PageActions & SearchActions & IProps> = ({

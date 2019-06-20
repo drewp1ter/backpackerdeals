@@ -2,7 +2,7 @@
   margin: auto;
   position: relative;
   width: 1033px;
-  
+
   .imageBlock {
     position: absolute;
     bottom: -32px;
@@ -18,7 +18,7 @@
     color: #fff;
     font-size: 12px;
     background-color: #ff5a39;
-    
+
     i {
       margin-right: 5px;
     }
@@ -28,13 +28,14 @@
 .input {
   input {
     width: 753px;
+    padding: 8px 30px;
   }
 }
 
 @media screen and (max-width: 1615px) {
   .searchTravelInput {
     width: 865px;
-    
+
     .imageBlock {
       left: 300px;
       bottom: -28px;
@@ -42,7 +43,7 @@
       height: 28px;
     }
   }
-  
+
   .input {
     input {
       width: 585px;
@@ -62,7 +63,7 @@
 @media screen and (min-width: 768px) and (max-width: 1415px) {
   .searchTravelInput {
     width: 696px;
-    
+
     .imageBlock {
       left: 230px;
       bottom: -24px;
@@ -70,7 +71,7 @@
       height: 24px;
     }
   }
-  
+
   .input {
     input {
       width: 435px;
