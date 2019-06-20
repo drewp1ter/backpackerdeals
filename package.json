@@ -6,7 +6,8 @@
     "prod": "NODE_ENV=production node server.js",
     "tslint": "node_modules/.bin/tslint -p tsconfig.json --fix",
     "typecheck": "tsc -p tsconfig.json",
-    "buildimage": "docker build -t backpackerdeals ."
+    "buildimage": "docker build -t backpackerdeals .",
+    "purgecss": "purgecss -c purgecss.config.js -o .next/static/css/"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.9.0",
@@ -43,6 +44,7 @@
     "next-routes": "^1.4.2",
     "node-sass": "^4.12.0",
     "normalize.css": "^8.0.1",
+    "purgecss": "^1.3.0",
     "react": "^16.8.6",
     "react-compound-slider": "^2.0.0",
     "react-dom": "^16.8.6",

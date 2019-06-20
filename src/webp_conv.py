@@ -17,7 +17,7 @@ def main():
   os.chdir('./.next/static/images')
   for file in [f for f in os.listdir('.') if re.search(r'.+\.(jpg$|png$)', f)]:
     print file
-    subprocess.call(['cwebp', '-q', '80', file, '-o', file + '.webp'])
+    subprocess.call(['cwebp', '-q', '95', file, '-o', file + '.webp'])
 
 if __name__ == '__main__':
 	main()
