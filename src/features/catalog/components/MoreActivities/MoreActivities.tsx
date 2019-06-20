@@ -1,8 +1,8 @@
 import React, { useReducer } from 'react'
 
-import { PriceRange } from '..'
 import { Checkbox, LastMinuteDealCard } from 'components'
 import { FiltersMenu } from 'features/catalog/containers'
+import { PriceRange } from '..'
 import { cards, filters } from './data'
 import styles from './MoreActivities.module.scss'
 import reducer, { ActionType, IAction, initialState, IState, ViewType } from './reducer'

@@ -1,8 +1,8 @@
-.root {
+.input {
   position: relative;
 
   &[data-theme="search"] {
-    background: rgba(255, 255, 255, .26);
+    background: rgba(255, 255, 255, 0.26);
     border-radius: 60px;
   }
 
@@ -18,7 +18,7 @@
   }
 
   &[data-theme="email"] {
-    border: solid 1px rgba(#fff, .26);
+    border: solid 1px rgba(#fff, 0.26);
     border-radius: 60px;
   }
 
@@ -33,9 +33,17 @@
     }
   }
 
+  input[data-theme="standart"] {
+    border: 1px solid #e4e4e4;
+    border-radius: 4px;
+
+    &::placeholder {
+      color: #959595;
+    }
+  }
+
   input[data-size="md"] {
     height: 56px;
-    padding: 8px 30px;
     font-size: 16px;
 
     &::placeholder {
@@ -43,9 +51,38 @@
     }
   }
 
+  label[data-size="md"] {
+    display: block;
+    color: #202020;
+    font-size: 16px;
+    margin-bottom: 16px;
+  }
+
   &[data-size="md"] button {
     position: absolute;
     right: 8px;
     top: 8px;
+  }
+}
+
+.inputEl {
+  display: block;
+}
+
+@media screen and (max-width: 1024px) {
+  .input {
+    input[data-size="md"] {
+      height: 40px;
+      font-size: 12px;
+
+      &::placeholder {
+        font-size: 12px;
+      }
+    }
+
+    label[data-size="md"] {
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
   }
 }
