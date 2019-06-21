@@ -2,6 +2,7 @@ import React, { useReducer } from 'react'
 
 import { Checkbox, LastMinuteDealCard } from 'components'
 import { FiltersMenu } from 'features/catalog/containers'
+import { SearchSelect } from 'features/search/components'
 import { PriceRange } from '..'
 import { cards, filters } from './data'
 import styles from './MoreActivities.module.scss'
@@ -16,9 +17,17 @@ export const MoreActivities: React.FC = () => {
     dispatch({ type: ActionType.setView, payload: view })
   }
 
-  const renderFilters = () => filters && filters.map((filter, index) => <Checkbox key={`${index}-filter`} label={filter} />)
+  const renderFilters = () =>
+    filters && (
+      <div className={styles.filtersCheckboxes}>
+        {filters.map((filter, index) => (
+          <Checkbox key={`${index}-filter`} label={filter} />
+        ))}
+      </div>
+    )
   const handleChangeSortOrder = () => dispatch({ type: ActionType.toggleDec })
-  const renderCards = () => cards && cards.map((card, idx) => <LastMinuteDealCard className={styles.card} view={view} {...card} key={`${idx}-card`} />)
+  const renderCards = () =>
+    cards && cards.map((card, idx) => <LastMinuteDealCard className={styles.card} view={view} {...card} key={`${idx}-card`} />)
 
   const handlePageControls = ({ currentTarget }: React.MouseEvent<HTMLElement>) => {
     const { action } = currentTarget.dataset
@@ -45,8 +54,24 @@ export const MoreActivities: React.FC = () => {
       <FiltersMenu filters={renderFilters()} />
       <div className={styles.content}>
         <div className={styles.filters}>
+          <h4>SelectCountry</h4>
+          <SearchSelect
+            className={styles.filtersSelect}
+            handleSelect={() => {}}
+            options={['Australia', 'Australia', 'Australia', 'Australia']}
+            theme="dark"
+            selectedOption="Select country"
+          />
           <h4>Select city</h4>
           {renderFilters()}
+          <h4>Number of days</h4>
+          <SearchSelect
+            className={styles.filtersSelect}
+            handleSelect={() => {}}
+            options={['Australia', 'Australia', 'Australia', 'Australia']}
+            theme="dark"
+            selectedOption="Number of days"
+          />
           <PriceRange />
         </div>
         <div className={styles.cardsContainer}>
