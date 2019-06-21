@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { OrangeButton, MobileMenuWrapper } from 'components'
+import { MobileMenuWrapper, OrangeButton } from 'components'
 import { MobileSelectMenu } from 'features/page/components'
 import { SearchActions } from 'features/search'
 import { SearchRadio, SearchSelect } from 'features/search/components'
@@ -14,7 +14,7 @@ import { cities, countries, options } from './data'
 import styles from './MobileMenu.module.scss'
 
 interface IProps {
-  readonly theme?: 'dark'
+  readonly theme?: string
 }
 
 export const MobileMenu: React.FC<Partial<Types.RootState> & PageActions & SearchActions & IProps> = ({

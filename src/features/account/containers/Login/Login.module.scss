@@ -1,0 +1,249 @@
+.login {
+  width: 494px;
+  padding: 44px 104px 80px 152px;
+  border-radius: 8px;
+  border: 1px solid #e8e8e8;
+  margin: 152px auto auto;
+
+  h1 {
+    color: #ff5a39;
+    font-size: 62px;
+    font-weight: 700;
+  }
+
+  .oauthButtons {
+    display: flex;
+    margin-right: 24px;
+    margin-top: 40px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid #e8e8e8;
+  }
+
+  .buttonFacebook,
+  .buttonGoogle {
+    position: relative;
+    width: 232px;
+    height: 40px;
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 5px;
+    text-align: left;
+    padding-left: 40px;
+  }
+
+  .buttonFacebook {
+    border: none;
+    color: #fff;
+    background: #4267b2;
+    margin-right: 8px;
+
+    i {
+      position: absolute;
+      font-size: 18px;
+      left: 8px;
+      top: 12px;
+    }
+  }
+
+  .buttonGoogle {
+    color: #202020;
+    background: transparent;
+    border: 1px solid #e8e8e8;
+
+    img {
+      position: absolute;
+      left: 8px;
+      top: 12px;
+    }
+  }
+
+  .fields {
+    position: relative;
+    width: 100%;
+    margin-top: 25px;
+
+    h5 {
+      color: #202020;
+      font-size: 16px;
+    }
+
+    .input {
+      padding-left: 24px;
+      width: calc(100% - 24px);
+    }
+
+    .inputBox {
+      margin-top: 24px;
+    }
+
+    .forgotPass {
+      position: absolute;
+      display: flex;
+      align-items: flex-end;
+      top: 155px;
+      right: 0;
+      color: #959595;
+      font-size: 14px;
+
+      .help {
+        display: flex;
+        align-items: center;
+        margin-left: 2px;
+        margin-bottom: 5px;
+        justify-content: center;
+        border-radius: 50%;
+        color: #202020;
+        font-size: 10px;
+        width: 16px;
+        height: 16px;
+        border: 1px solid #00aaf6;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .buttons {
+    margin-top: 24px;
+
+    button:first-child {
+      width: 144px;
+      margin-right: 16px;
+    }
+
+    button:last-child {
+      width: 120px;
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .login {
+    width: 474px;
+    padding: 30px 80px 36px 80px;
+    border-radius: 8px;
+    margin: 104px auto auto;
+
+    h1 {
+      font-size: 48px;
+    }
+
+    .oauthButtons {
+      margin-right: 0;
+      margin-top: 20px;
+      padding-bottom: 24px;
+    }
+
+    .fields {
+      margin-top: 22px;
+
+      h5 {
+        font-size: 14px;
+      }
+
+      .input {
+        padding-left: 12px;
+        width: calc(100% - 12px);
+      }
+
+      .inputBox {
+        margin-top: 14px;
+      }
+
+      .forgotPass {
+        top: 106px;
+        font-size: 12px;
+
+        .help {
+          font-size: 8px;
+          width: 14px;
+          height: 14px;
+        }
+      }
+    }
+
+    .buttons {
+      margin-top: 20px;
+
+      button:first-child {
+        width: 92px;
+        margin-right: 8px;
+      }
+
+      button:last-child {
+        width: 92px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .login {
+    width: calc(100% - 40px);
+    padding: 20px 12px 40px 12px;
+    margin: 80px 8px auto 8px;
+
+    h1 {
+      text-align: center;
+    }
+
+    .oauthButtons {
+      display: flex;
+      flex-direction: column;
+      margin-right: 0;
+      padding-bottom: 20px;
+    }
+
+    .buttonFacebook,
+    .buttonGoogle {
+      width: 100%;
+    }
+
+    .buttonFacebook {
+      margin-bottom: 8px;
+    }
+
+    .fields {
+      margin-top: 30px;
+
+      h5 {
+        font-size: 20px;
+      }
+
+      .input {
+        padding-left: 12px;
+        width: calc(100% - 12px);
+      }
+
+      .inputBox {
+        margin-top: 14px;
+      }
+
+      .forgotPass {
+        top: 114px;
+        font-size: 12px;
+
+        .help {
+          font-size: 8px;
+          width: 14px;
+          height: 14px;
+        }
+      }
+    }
+
+    .buttons {
+      display: flex;
+      flex-direction: column;
+      margin-top: 24px;
+
+      button:first-child {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 12px;
+      }
+
+      button:last-child {
+        width: 100%;
+      }
+    }
+  }
+}

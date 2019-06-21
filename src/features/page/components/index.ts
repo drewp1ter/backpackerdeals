@@ -1,6 +1,6 @@
-export { Cookies } from './Cookies'
 export { Footer } from './Footer'
 export { FooterLinks } from './FooterLinks'
+export { Cookies } from './Cookies'
 export { Header } from './Header'
 export { MostPopular } from './MostPopular'
 export { MobileSelectMenu } from './MobileSelectMenu'

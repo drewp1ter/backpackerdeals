@@ -4,9 +4,10 @@ import { Cookies, Footer, Header } from '..'
 interface IProps {
   readonly children?: React.ReactNode
   readonly headerTheme?: string
+  readonly withoutFooter?: boolean
 }
 
-export const Page: React.FC<IProps> = ({ children, headerTheme }) => {
+export const Page: React.FC<IProps> = ({ children, headerTheme, withoutFooter = false }) => {
   const [cookies, setCookies] = React.useState<boolean>(true)
 
   React.useEffect(() => {
@@ -27,7 +28,7 @@ export const Page: React.FC<IProps> = ({ children, headerTheme }) => {
       {!cookies && <Cookies setCookies={handleCookies} />}
       <Header theme={headerTheme} />
       {children}
-      <Footer />
+      {!withoutFooter && <Footer />}
     </>
   )
 }

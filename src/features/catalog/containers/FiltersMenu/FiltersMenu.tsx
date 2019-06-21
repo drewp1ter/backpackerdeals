@@ -33,12 +33,8 @@ export const FiltersMenu: React.FC<Partial<Types.RootState> & IFiltersState & Fi
       <FiltersDropdown title="Select city">
         {filters}
       </FiltersDropdown>
-      <FiltersDropdown title="Number of days">
-
-      </FiltersDropdown>
-      <FiltersDropdown title="Style of travel">
-
-      </FiltersDropdown>
+      <FiltersDropdown title="Number of days"/>
+      <FiltersDropdown title="Style of travel"/>
 
       <PriceRange />
 
