@@ -4,7 +4,7 @@ import styles from './FiltersDropdown.module.scss'
 
 interface IProps {
   readonly title: string
-  readonly children: React.ReactNode
+  readonly children?: React.ReactNode
 }
 
 export const FiltersDropdown: React.FC<IProps> = ({ title, children }) => {
