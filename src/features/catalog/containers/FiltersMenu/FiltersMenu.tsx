@@ -3,7 +3,7 @@ import * as React from 'react'
 import { MobileMenuWrapper, OrangeButton } from 'components'
 import { FiltersDropdown, PriceRange } from 'features/catalog/components'
 
-import { FiltersActions } from 'features/catalog'
+import { FiltersActions, IFiltersState } from 'features/catalog'
 import Types from 'Types'
 
 import styles from './FiltersMenu.module.scss'
@@ -12,7 +12,7 @@ interface IProps {
   filters: JSX.Element | JSX.Element[]
 }
  
-export const FiltersMenu: React.FC<Partial<Types.RootState> & FiltersActions & IProps> = ({ filtersAreOpened, closeFilters, openFilters, filters }) => (
+export const FiltersMenu: React.FC<Partial<Types.RootState> & IFiltersState & FiltersActions & IProps> = ({ filtersAreOpened, closeFilters, openFilters, filters }) => (
   <div className={styles.filtersMenu}>
     <button onClick={openFilters}>Show filters</button>
 
