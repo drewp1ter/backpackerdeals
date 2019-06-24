@@ -60,7 +60,7 @@ export const Footer: React.FC<IProps> = ({ handleChange, handleSubmit, email }) 
           <li>Sitemap</li>
         </ul>
       </FooterLinks>
-      
+
 
       <div className={`${styles.linksWrapper}`}>
         <FooterLinks title="Business">
@@ -127,7 +127,7 @@ export const Footer: React.FC<IProps> = ({ handleChange, handleSubmit, email }) 
         </div>
 
         <div className={styles.payment}>
-          <h4>Payment we receive</h4>
+          <h4>Payment Channels</h4>
           <ul>
             <li>
               <i className="fab fa-cc-visa" />
