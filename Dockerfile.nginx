@@ -16,6 +16,8 @@ COPY *.json yarn.lock ./
 RUN yarn
 COPY . .
 RUN yarn build
+RUN yarn webpconv
+RUN yarn purgecss
 
 # production environment
 FROM nginx:alpine
