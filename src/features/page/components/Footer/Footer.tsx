@@ -6,7 +6,6 @@ import { FooterLinks } from 'features/page/components'
 import Adventure from './assets/adventure.svg'
 import Byata from './assets/byata.svg'
 import Logo from './assets/Logo.svg'
-import MemberOf from './assets/memberOf.svg'
 import Norton from './assets/norton.svg'
 import Wave from './assets/wave.svg'
 import Winner from './assets/winner.svg'
@@ -175,7 +174,7 @@ export const Footer: React.FC<IProps> = ({ handleChange, handleSubmit, email }) 
       </p>
 
       <div className={styles.firstImagesBlock}>
-        <img src={MemberOf} alt="Member of" />
+        <span>Member of</span>
         <img src={Byata} alt="Byata" />
         <img src={Adventure} alt="Adventure" />
         <img src={Wave} alt="Wave" />
