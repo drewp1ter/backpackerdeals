@@ -218,12 +218,25 @@ footer {
     }
 
     .firstImagesBlock {
-      img {
-        margin-right: 10px;
+      display: flex;
+      align-items: flex-start;
+      flex-wrap: wrap;
 
-        &:last-of-type {
-          margin-right: 0;
-        }
+      span {
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 1.78;
+        color: #959595;
+        margin-right: 30px;
+      }
+
+      img {
+        height: 25px;
+        margin-right: 10px;
+      }
+
+      *:last-child {
+        margin-right: 0;
       }
     }
 
@@ -593,7 +606,7 @@ footer {
       }
 
       .firstImagesBlock, .secondImagesBlock {
-        img {
+        img, span {
           display: none;
         }
       }
