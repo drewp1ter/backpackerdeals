@@ -8,7 +8,7 @@ interface IProps {
   readonly children: React.ReactNode
   readonly title: string
   readonly opener: React.ReactNode
-  readonly size?: 'md' | 'lg'
+  readonly size?: 'md' | 'lg' | 'unset'
   readonly pos?: 'right' | 'left'
   readonly openerClass?: string
 }
@@ -27,13 +27,16 @@ export const SelectMenu: React.FC<IProps> = ({ title, opener, children, size = '
 
       {isOpen && (
         <div className={styles.menu} data-size={size} data-pos={pos}>
-          <div className={styles.title}>
-            <h6>{title}</h6>
-            <i className="fas fa-times" onClick={collapse} />
-          </div>
+          { title && (
+            <div className={styles.title}>
+              <h6>{title}</h6>
+              <i className="fas fa-times" onClick={collapse} />
+            </div>
+          )}
           {children}
         </div>
       )}
+
     </div>
   )
 }
