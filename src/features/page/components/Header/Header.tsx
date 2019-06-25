@@ -36,6 +36,7 @@ export class Header extends Component<IProps> {
         method.apply(this, args)
         isThrottling = true
         setTimeout(() => {
+          method.apply(this, args)
           isThrottling = false
         }, wait)
       }
