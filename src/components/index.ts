@@ -1,4 +1,5 @@
 export { AdvancedSearch } from './AdvancedSearch'
+export { Calendar } from './Calendar'
 export { Checkbox } from './Checkbox'
 export { HeaderWave } from './HeaderWave'
 export { Icon } from './Icon'

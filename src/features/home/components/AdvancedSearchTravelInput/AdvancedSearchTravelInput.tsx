@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-import { OrangeButton } from 'components'
+import { OrangeButton, Calendar } from 'components'
 
 import { SearchSelect } from 'features/search/components'
 
@@ -55,10 +55,12 @@ export const AdvancedSearchTravelInput: React.FC<IProps> = ({ toggleSearch }) =>
       <SearchSelect
         className={styles.lastSelect}
         selectedOption="Select date"
-        options={startLocation}
+        // options={startLocation}
         handleSelect={option => console.log(option)}
         theme="light"
-      />
+      >
+        <Calendar />
+      </SearchSelect>
       <SearchSelect
         className={styles.lastSelect}
         selectedOption="Number of days"

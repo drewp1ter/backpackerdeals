@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-import { OrangeButton } from 'components'
+import { OrangeButton, Calendar } from 'components'
 
 import { SearchSelect } from 'features/search/components'
 
@@ -54,7 +54,9 @@ export const AdvancedSearch: React.FC<IProps> = ({ theme }) => {
           />
           <SearchSelect selectedOption="Type of tour" options={startLocation} handleSelect={handleSelect} theme="dark" />
           <SearchSelect selectedOption="End Location" disabled={true} options={startLocation} handleSelect={handleSelect} theme="dark" />
-          <SearchSelect selectedOption="Select date" options={startLocation} handleSelect={handleSelect} theme="dark" />
+          <SearchSelect selectedOption="Select date" handleSelect={handleSelect} theme="dark">
+            <Calendar />
+          </SearchSelect>
           <SearchSelect
             className={styles.lastSelect}
             selectedOption="Number of days"
