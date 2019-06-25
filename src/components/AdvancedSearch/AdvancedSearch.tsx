@@ -36,7 +36,7 @@ export const AdvancedSearch: React.FC<IProps> = ({ theme }) => {
             theme="dark"
           />
           <SearchSelect selectedOption="Type of tour" options={startLocation} handleSelect={handleSelect} theme="dark" />
-          <SearchSelect selectedOption="End Location" disabled={true} options={startLocation} handleSelect={handleSelect} theme="dark" />
+          <SearchSelect selectedOption="End Location" options={startLocation} handleSelect={handleSelect} theme="dark" />
           <SearchSelect selectedOption="Select date" options={startLocation} handleSelect={handleSelect} theme="dark" />
           <SearchSelect
             className={styles.lastSelect}
