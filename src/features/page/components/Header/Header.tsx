@@ -43,6 +43,12 @@ export class Header extends Component<IProps> {
     }
   }
 
+  blurActiveElement = () => {
+    if (window.document.activeElement !== null) {
+      (window.document.activeElement as HTMLElement).blur()
+    }
+  }
+
   handleScroll = () => {
     if (window.pageYOffset > 200) {
       if (!this.state.scrolled) {
@@ -57,11 +63,13 @@ export class Header extends Component<IProps> {
 
   handleChangeLanguage = (event: React.MouseEvent<HTMLElement>) => {
     const language = event.currentTarget.dataset.language || ''
+    this.blurActiveElement()
     this.setState({ currentLanguage: language })
   }
 
   handleChangeCurrency = (event: React.MouseEvent<HTMLElement>) => {
     const currency = event.currentTarget.dataset.currency || ''
+    this.blurActiveElement()
     this.setState({ currentCurrency: currency })
   }
 
@@ -107,10 +115,9 @@ export class Header extends Component<IProps> {
             <SelectMenu
               openerClass={styles.currencyAndLanguageOpener}
               opener={currencyOpener}
-              title={scrolled ? "Select currency" : ""}
-              size={scrolled ? 'md' : 'unset'}
+              title="Select currency"
             >
-              <div className={scrolled ? styles.currencies : styles.currenciesList}>
+              <div className={styles.currencies}>
                 {Object.entries(currencies).map((currency, index) => (
                   <p
                     onClick={this.handleChangeCurrency}
@@ -123,25 +130,18 @@ export class Header extends Component<IProps> {
                   </p>
                 ))}
               </div>
-
-              {scrolled && (
-                <div>
-                  <h6>Please note</h6>
-                  <p className={styles.note}>
-                    Currency Conversions are approximate guide only. All transactions are processed in their respective
-                    currency
-                  </p>
-                </div>
-              )}
-
+              <h6>Please note</h6>
+              <p className={styles.note}>
+                Currency Conversions are approximate guide only. All transactions are processed in their respective
+                currency
+              </p>
             </SelectMenu>
             <SelectMenu
               openerClass={styles.currencyAndLanguageOpener}
               opener={languageOpener}
-              title={scrolled ? "Select currency" : ""}
-              size={scrolled ? 'md' : 'unset'}
+              title="Select your language"
             >
-              <div className={scrolled ? styles.languages : styles.languagesList}>
+              <div className={styles.languages}>
                 {Object.entries(languages).map((language, index) => (
                   <div
                     onClick={this.handleChangeLanguage}
