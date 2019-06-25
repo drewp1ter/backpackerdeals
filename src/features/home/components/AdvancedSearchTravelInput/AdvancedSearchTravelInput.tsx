@@ -3,6 +3,7 @@ import * as React from 'react'
 import { OrangeButton } from 'components'
 
 import { SearchSelect } from 'features/search/components'
+import { numberOfDays } from '../../../../components/AdvancedSearch/data'
 
 import styles from './AdvancedSearchTravelInput.module.scss'
 
@@ -62,8 +63,7 @@ export const AdvancedSearchTravelInput: React.FC<IProps> = ({ toggleSearch }) =>
       <SearchSelect
         className={styles.lastSelect}
         selectedOption="Number of days"
-        disabled={true}
-        options={startLocation}
+        options={numberOfDays}
         handleSelect={option => console.log(option)}
         theme="light"
       />

@@ -6,6 +6,7 @@ import { FiltersDropdown, PriceRange } from 'features/catalog/components'
 
 import { FiltersActions, IFiltersState } from 'features/catalog'
 import Types from 'Types'
+import { numberOfDays } from '../../../../components/AdvancedSearch/data'
 
 import styles from './FiltersMenu.module.scss'
 
@@ -48,7 +49,7 @@ export const FiltersMenu: React.FC<Partial<Types.RootState> & IFiltersState & Fi
       <SearchSelect
         className={styles.filtersSelect}
         handleSelect={() => {}}
-        options={['Australia', 'Australia', 'Australia', 'Australia']}
+        options={numberOfDays}
         theme="dark"
         selectedOption="Number of days"
         bodyTheme="mobile"

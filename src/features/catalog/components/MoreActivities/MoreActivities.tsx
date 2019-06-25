@@ -4,6 +4,7 @@ import { Checkbox, LastMinuteDealCard } from 'components'
 import { FiltersMenu } from 'features/catalog/containers'
 import { SearchSelect } from 'features/search/components'
 import { PriceRange } from '..'
+import { numberOfDays } from '../../../../components/AdvancedSearch/data'
 import { cards, filters } from './data'
 import styles from './MoreActivities.module.scss'
 import reducer, { ActionType, IAction, initialState, IState, ViewType } from './reducer'
@@ -68,7 +69,7 @@ export const MoreActivities: React.FC = () => {
           <SearchSelect
             className={styles.filtersSelect}
             handleSelect={() => {}}
-            options={['Australia', 'Australia', 'Australia', 'Australia']}
+            options={numberOfDays}
             theme="dark"
             selectedOption="Number of days"
           />

@@ -8,6 +8,7 @@ import { PageActions } from '../..'
 import { SelectContinent } from '../../components'
 
 import Types from 'Types'
+import { numberOfDays } from '../../../../components/AdvancedSearch/data'
 import { currencies, languages } from '../../components/Header/constants'
 import { cities, countries, options } from './data'
 
@@ -173,7 +174,7 @@ export const MobileMenu: React.FC<Partial<Types.RootState> & PageActions & Searc
               </div>
               <SearchSelect bodyTheme="mobile" selectedOption="End Location" disabled={true} handleSelect={() => {}} theme="dark" />
               <SearchSelect bodyTheme="mobile" selectedOption="Select Date" options={options} handleSelect={() => {}} theme="dark" />
-              <SearchSelect bodyTheme="mobile" selectedOption="Number of days" disabled={true} handleSelect={() => {}} theme="dark" />
+              <SearchSelect bodyTheme="mobile" selectedOption="Number of days" options={numberOfDays} handleSelect={() => {}} theme="dark" />
               <div className={styles.advancedSearchButtons}>
                 <OrangeButton className={styles.orangeButton} theme="rectangled">
                   SEARCH
