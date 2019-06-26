@@ -71,14 +71,9 @@
       &:disabled {
         color: #dadada;
         border-color: #dadada;
-
-        &:hover {
-          background-color: #fff;
-          color: #dadada;
-        }
       }
 
-      &:hover {
+      &:hover:not(:disabled) {
         background-color: #ff5a39;
         color: #fff;
       }
