@@ -1,12 +1,13 @@
 import * as React from 'react'
 
-import { Calendar, OrangeButton } from 'components'
+import { Button, Calendar } from 'components'
 
-import { SearchSelect } from 'features/search/components'
+import { Select } from 'components'
 import styles from './AdvancedSearch.module.scss'
 import { numberOfDays, startLocation } from './data'
 
 import Logo from 'features/page/components/Header/assets/blackLogo.svg'
+
 
 interface IProps {
   readonly theme?: string
@@ -21,33 +22,33 @@ export const AdvancedSearch: React.FC<IProps> = ({ theme }) => {
     <div className={styles.advancedSearch}>
       <div data-theme={theme} onClick={() => toggleSearch(true)} className={styles.searchPlaceholder}>
         <input type="text" disabled={true} placeholder="Try Australia" />
-        <OrangeButton theme="small">
+        <Button form="circle" >
           <i className="fas fa-search" />
-        </OrangeButton>
+        </Button>
       </div>
       <div className={styles.searchMenu} data-opened={isOpen && 'opened'}>
         <img src={Logo} alt="Logo" className="logo" />
         <div className={styles.searchField}>
-          <SearchSelect
+          <Select
             className={styles.firstSelect}
             selectedOption="Start Location"
             options={startLocation}
             handleSelect={handleSelect}
             theme="dark"
           />
-          <SearchSelect selectedOption="Type of tour" options={startLocation} handleSelect={handleSelect} theme="dark" />
-          <SearchSelect selectedOption="End Location" options={startLocation} handleSelect={handleSelect} theme="dark" />
-          <SearchSelect selectedOption="Select date" handleSelect={handleSelect} theme="dark">
+          <Select selectedOption="Type of tour" options={startLocation} handleSelect={handleSelect} theme="dark" />
+          <Select selectedOption="End Location" options={startLocation} handleSelect={handleSelect} theme="dark" />
+          <Select selectedOption="Select date" handleSelect={handleSelect} theme="dark">
             <Calendar />
-          </SearchSelect>
-          <SearchSelect
+          </Select>
+          <Select
             className={styles.lastSelect}
             selectedOption="Number of days"
             options={numberOfDays}
             handleSelect={handleSelect}
             theme="dark"
           />
-          <OrangeButton theme="rectangled">SEARCH</OrangeButton>
+          <Button className={styles.searchbutton} theme="orange" form="rectangled" size='lg'>SEARCH</Button>
         </div>
         <button aria-label="search" onClick={() => toggleSearch(false)}>
           <i className="fas fa-times" />

@@ -2,7 +2,7 @@ import * as React from 'react'
 
 import classNames from 'classnames'
 
-import styles from './SearchSelect.module.scss'
+import styles from './Select.module.scss'
 
 interface IState {
   isOpen: boolean
@@ -19,7 +19,7 @@ interface IProps {
   readonly handleSelect: (event: React.MouseEvent<HTMLElement>) => void
 }
 
-export class SearchSelect extends React.Component<IProps, IState> {
+export class Select extends React.Component<IProps, IState> {
   state = {
     isOpen: false
   }
@@ -29,7 +29,7 @@ export class SearchSelect extends React.Component<IProps, IState> {
   componentDidMount() {
     window.addEventListener('click', this.handleClickOutside)
   }
-  
+
   componentWillUnmount() {
     window.removeEventListener('click', this.handleClickOutside)
   }
@@ -56,7 +56,7 @@ export class SearchSelect extends React.Component<IProps, IState> {
           <i className="fas fa-angle-down" />
           <span>{selectedOption}</span>
         </div>
-  
+
         {isOpen && (
           <div className={styles.optionBlock}>
             {options &&

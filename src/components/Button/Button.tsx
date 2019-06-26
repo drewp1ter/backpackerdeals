@@ -10,7 +10,7 @@ export interface IProps {
   readonly disabled?: boolean
   readonly onClick?: () => void
   readonly form?: 'rectangled' | 'rounded' | 'circle'
-  readonly size?: 'md'
+  readonly size?: 'md' | 'lg'
   readonly theme?: 'orange' | 'transparentBorderWhite' | 'transparentBorderOrange'
 }
 

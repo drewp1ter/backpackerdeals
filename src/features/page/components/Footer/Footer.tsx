@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-import { Input, OrangeButton } from 'components'
+import { Input, Button } from 'components'
 import { FooterLinks } from 'features/page/components'
 
 import Adventure from './assets/adventure.svg'
@@ -26,12 +26,14 @@ export const Footer: React.FC<IProps> = ({ handleChange, handleSubmit, email }) 
 
     <Input className={styles.emailInput} value={email} onChange={handleChange} placeholder="Your e-mail address" theme="email" size="md">
       <>
-      <OrangeButton className={styles.textButton} onClick={handleSubmit} theme="rounded">
-        SEARCH
-      </OrangeButton>
-      <OrangeButton className={styles.iconButton} onClick={handleSubmit} theme="rounded">
-        <i className="fas fa-arrow-right"/>
-      </OrangeButton>
+        <span className={styles.textButton}>
+          <Button size="lg">SEARCH</Button>
+        </span>
+        <span className={styles.iconButton}>
+          <Button form="circle">
+            <i className="fas fa-arrow-right" />
+          </Button>
+        </span>
       </>
     </Input>
 
@@ -59,7 +61,6 @@ export const Footer: React.FC<IProps> = ({ handleChange, handleSubmit, email }) 
           <li>Sitemap</li>
         </ul>
       </FooterLinks>
-
 
       <div className={`${styles.linksWrapper}`}>
         <FooterLinks title="Business">
@@ -156,7 +157,9 @@ export const Footer: React.FC<IProps> = ({ handleChange, handleSubmit, email }) 
         </div>
       </div>
 
-      <button aria-label="download app" className={styles.downloadAppButton}>Download Mobile App</button>
+      <button aria-label="download app" className={styles.downloadAppButton}>
+        Download Mobile App
+      </button>
     </div>
 
     <hr />

@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-import { Input, OrangeButton } from 'components'
+import { Button, Input } from 'components'
 
 import styles from './SearchTravelInput.module.scss'
 
@@ -11,7 +11,7 @@ interface IProps {
 export const SearchTravelInput: React.FC<IProps> = ({ toggleSearch }) => (
   <div className={styles.searchTravelInput}>
     <Input className={styles.input} placeholder="Search for a destination, activity or tour" theme="search" size="md">
-      <OrangeButton theme="rounded">SEARCH</OrangeButton>
+      <Button theme="orange" form="rounded" size="lg">SEARCH</Button>
     </Input>
     <div className={styles.imageBlock} onClick={toggleSearch}>
       <i className="fas fa-filter" />
