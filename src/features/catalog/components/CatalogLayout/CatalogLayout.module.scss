@@ -5,6 +5,14 @@
   z-index: 1;
 }
 
+.breadcrumbs {
+  position: relative;
+  max-width: 1528px;
+  margin: -28px auto 24px;
+  height: 16px;
+  z-index: 3;
+}
+
 @media screen and (min-width: 320px) and (max-width: 614px) {
   .instagramCards {
     margin-top: 72px;

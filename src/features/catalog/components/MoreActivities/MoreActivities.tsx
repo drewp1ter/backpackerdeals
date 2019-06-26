@@ -18,7 +18,7 @@ export const MoreActivities: React.FC = () => {
     dispatch({ type: ActionType.setView, payload: view })
   }
 
-  const renderFilters = (): JSX.Element =>
+  const renderFilters = () =>
     filters && (
       <div className={styles.filtersCheckboxes}>
         {filters.map((filter, index) => (
