@@ -1,6 +1,7 @@
 import * as React from 'react'
 
 import classNames from 'classnames'
+import { ScrollBar } from '../../../../components/ScrollBar'
 
 import styles from './SearchSelect.module.scss'
 
@@ -21,7 +22,7 @@ interface IProps {
 
 export class SearchSelect extends React.Component<IProps, IState> {
   state = {
-    isOpen: false
+    isOpen: false,
   }
 
   private ref = React.createRef<HTMLDivElement>()
@@ -29,7 +30,7 @@ export class SearchSelect extends React.Component<IProps, IState> {
   componentDidMount() {
     window.addEventListener('click', this.handleClickOutside)
   }
-  
+
   componentWillUnmount() {
     window.removeEventListener('click', this.handleClickOutside)
   }
@@ -48,24 +49,27 @@ export class SearchSelect extends React.Component<IProps, IState> {
     return (
       <div ref={this.ref} className={styles.searchSelect} data-theme={theme} data-bodytheme={bodyTheme}>
         <div
-          className={ classNames(styles.select, className) }
+          className={classNames(styles.select, className)}
           data-opened={isOpen && 'opened'}
           data-disabled={disabled && 'disabled'}
           onClick={() => !disabled && this.toggleSelect()}
         >
-          <i className="fas fa-angle-down" />
+          <i className="fas fa-angle-down"/>
           <span>{selectedOption}</span>
         </div>
-  
+
         {isOpen && (
+
           <div className={styles.optionBlock}>
-            {options &&
+            <ScrollBar>
+              {options &&
               options.map((option, index) => (
                 <p key={`option-${index}`} className={styles.option} onClick={handleSelect} data-value={option}>
                   {option}
                 </p>
               ))}
-            {children}
+              {children}
+            </ScrollBar>
           </div>
         )}
       </div>
