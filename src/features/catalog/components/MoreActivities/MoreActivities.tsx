@@ -18,7 +18,7 @@ export const MoreActivities: React.FC = () => {
     dispatch({ type: ActionType.setView, payload: view })
   }
 
-  const renderFilters = () =>
+  const renderFilters = (): JSX.Element =>
     filters && (
       <div className={styles.filtersCheckboxes}>
         {filters.map((filter, index) => (
@@ -34,20 +34,30 @@ export const MoreActivities: React.FC = () => {
     const { action } = currentTarget.dataset
     if (action) {
       action === 'next' && page + 1 <= pages && dispatch({ type: ActionType.nextPage })
+      action === 'prev' && page - 1 >= 1 && dispatch({ type: ActionType.prevPage })
     } else {
       dispatch({ type: ActionType.setPage, payload: +currentTarget.innerHTML })
     }
   }
 
-  const renderPageControls = () =>
-    [...Array(5).keys()].map(idx => {
-      const pageItem = page - 2 < 1 ? idx + 1 : page + 2 > pages ? pages - 4 + idx : page - 2 + idx
-      return (
-        <span key={pageItem} onClick={handlePageControls} data-active={page === pageItem}>
-          {pageItem}
-        </span>
-      )
-    })
+  const renderPageControls = () => (
+    <div className={styles.pagesControls}>
+      <button aria-label="prev" onClick={handlePageControls} data-action="prev" disabled={page === 1}>
+        <i className="fas fa-arrow-left" />
+      </button>
+      {[...Array(5).keys()].map(idx => {
+        const pageItem = page - 2 < 1 ? idx + 1 : page + 2 > pages ? pages - 4 + idx : page - 2 + idx
+        return (
+          <span key={pageItem} onClick={handlePageControls} data-active={page === pageItem}>
+            {pageItem}
+          </span>
+        )
+      })}
+      <button aria-label="next" onClick={handlePageControls} data-action="next" disabled={page === pages}>
+        <i className="fas fa-arrow-right" />
+      </button>
+    </div>
+  )
 
   return (
     <div className={styles.moreActivities}>
@@ -91,12 +101,7 @@ export const MoreActivities: React.FC = () => {
           <div data-view={view} className={styles.cards}>
             {renderCards()}
           </div>
-          <div className={styles.pagesControls}>
-            {renderPageControls()}
-            <button aria-label="next" onClick={handlePageControls} data-action="next">
-              <i className="fas fa-arrow-right" />
-            </button>
-          </div>
+          {renderPageControls()}
         </div>
       </div>
     </div>

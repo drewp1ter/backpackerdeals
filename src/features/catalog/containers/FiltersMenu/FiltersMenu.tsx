@@ -5,7 +5,6 @@ import { FiltersDropdown, PriceRange } from 'features/catalog/components'
 import { SearchSelect } from 'features/search/components'
 
 import { FiltersActions, IFiltersState } from 'features/catalog'
-import Types from 'Types'
 import { numberOfDays } from '../../../../components/AdvancedSearch/data'
 
 import styles from './FiltersMenu.module.scss'
@@ -14,7 +13,7 @@ interface IProps {
   filters: JSX.Element | JSX.Element[]
 }
 
-export const FiltersMenu: React.FC<Partial<Types.RootState> & IFiltersState & FiltersActions & IProps> = ({
+export const FiltersMenu: React.FC<IFiltersState & FiltersActions & IProps> = ({
   filtersAreOpened,
   closeFilters,
   openFilters,

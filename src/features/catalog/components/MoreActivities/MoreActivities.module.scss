@@ -64,6 +64,20 @@
       color: #ff5a39;
       transition: .2s ease background-color, .2s ease color;
 
+      &:first-child {
+        margin-right: 18px;
+      }
+
+      &:disabled {
+        color: #dadada;
+        border-color: #dadada;
+
+        &:hover {
+          background-color: #fff;
+          color: #dadada;
+        }
+      }
+
       &:hover {
         background-color: #ff5a39;
         color: #fff;
