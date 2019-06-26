@@ -16,6 +16,7 @@
       letter-spacing: normal;
       text-align: center;
       color: #202020;
+      outline: none;
     }
 
     .react-calendar__navigation__next-button, .react-calendar__navigation__prev-button {
@@ -31,6 +32,7 @@
       text-align: center;
       color: #dadada;
       transition: .2s ease color;
+      outline: none;
 
       &:hover {
         color: darken(#dadada, 15);
@@ -64,16 +66,32 @@
     }
 
     .react-calendar__month-view__days {
-      .react-calendar__tile.react-calendar__month-view__days__day.react-calendar__month-view__days__day--neighboringMonth, 
+      position: relative;
+
+      &:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url("./assets/calendar_grid.svg") no-repeat;
+        background-position: top left;
+        background-size: 100%;
+        pointer-events: none;
+      }
+
+      .react-calendar__tile.react-calendar__month-view__days__day.react-calendar__month-view__days__day--neighboringMonth,
       .react-calendar__tile.react-calendar__month-view__days__day.react-calendar__month-view__days__day--weekend, 
       .react-calendar__tile.react-calendar__month-view__days__day.react-calendar__month-view__days__day--weekend,
       .react-calendar__tile.react-calendar__month-view__days__day {
         cursor: pointer;
-        width: 41px;
+        width: 40px;
         height: 40px;
-        border: solid 1px #e8e8e8;
+        border: none;
         background-color: #ffffff;
         transition: .2s ease background-color;
+        outline: none;
 
         &:hover {
           background-color: darken(#ffffff, 5);
@@ -108,6 +126,7 @@
         text-align: center;
         color: #202020;
         transition: .2s ease color;
+        outline: none;
 
         &:hover {
           color: darken(#202020, 10);
@@ -131,6 +150,7 @@
         text-align: center;
         color: #202020;
         transition: .2s ease color;
+        outline: none;
 
         &:hover {
           color: darken(#202020, 10);
@@ -154,6 +174,7 @@
         text-align: center;
         color: #202020;
         transition: .2s ease color;
+        outline: none;
 
         &:hover {
           color: darken(#202020, 10);
