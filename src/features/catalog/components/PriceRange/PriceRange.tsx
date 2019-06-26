@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
 import classNames from 'classnames'
+import React, { useState } from 'react'
 import { Handles, Rail, Slider, SliderItem, Tracks } from 'react-compound-slider'
 
 import styles from './PriceRange.module.scss'

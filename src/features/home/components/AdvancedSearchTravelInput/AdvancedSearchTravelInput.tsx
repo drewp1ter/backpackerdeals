@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-import { OrangeButton, Calendar } from 'components'
+import { Calendar, OrangeButton } from 'components'
 
 import { SearchSelect } from 'features/search/components'
 import { numberOfDays, startLocation } from '../../../../components/AdvancedSearch/data'

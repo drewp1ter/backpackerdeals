@@ -1,8 +1,8 @@
 import * as React from 'react'
 
 import { MobileMenuWrapper, OrangeButton } from 'components'
-import { SearchSelect } from 'features/search/components'
 import { FiltersDropdown, PriceRange } from 'features/catalog/components'
+import { SearchSelect } from 'features/search/components'
 
 import { FiltersActions, IFiltersState } from 'features/catalog'
 import Types from 'Types'
