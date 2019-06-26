@@ -7,14 +7,43 @@
 
 .breadcrumbs {
   position: relative;
-  max-width: 1528px;
-  margin: -28px auto 24px;
-  height: 16px;
+  margin: -28px 0 24px 2vw;
   z-index: 3;
+}
+
+@media screen and (max-width: 1280px) {
+  .breadcrumbs {
+    margin-top: -56px;
+    margin-left: 5.5vw;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .breadcrumbs {
+    margin: -56px 0 16px 1.5vw;
+  }
 }
 
 @media screen and (min-width: 320px) and (max-width: 614px) {
   .instagramCards {
     margin-top: 72px;
+  }
+
+  .breadcrumbs {
+    margin: -242px 0 240px 3vw;
+  }
+}
+
+@media screen and (max-width: 462px) {
+  .breadcrumbs {
+    margin-top: -262px;
+    margin-bottom: 250px;
+  }
+}
+
+@media screen and (max-width: 444px) {
+  .breadcrumbs {
+    margin-top: -292px;
+    margin-bottom: 290px;
   }
 }
