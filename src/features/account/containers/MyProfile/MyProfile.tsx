@@ -1,6 +1,7 @@
 import React from 'react'
 
-import { Autocomplete, Button, Input } from 'components'
+import { Autocomplete, Button, Input, Select } from 'components'
+import options from './options'
 
 import styles from './MyProfile.module.scss'
 
@@ -27,6 +28,7 @@ export const MyProfile: React.FC = () => {
           label="Country"
         />
         <Input className={styles.field} theme="standart" type="email" label="Email" placeholder="Email Address" />
+        <Select options={options} />
         <Button>Update changes</Button>
       </div>
     </div>
