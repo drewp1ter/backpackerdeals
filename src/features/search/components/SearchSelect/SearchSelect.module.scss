@@ -47,12 +47,11 @@
     position: absolute;
     border-radius: 4px;
     top: 75px;
-    left: 0px;
+    left: 0;
     width: 320px;
     max-height: 370px;
     background: #fff;
     padding: 25px 0;
-    overflow-y: scroll;
 
     .option {
       cursor: pointer;
@@ -142,7 +141,7 @@
           margin-bottom: 10px;
   
           &:last-of-type {
-            border-bottom: 0px;
+            border-bottom: 0;
             margin-bottom: 0;
           }
         }

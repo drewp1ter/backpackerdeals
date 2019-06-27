@@ -8,36 +8,31 @@ export interface IProps {
   readonly children?: React.ReactNode
 }
 
-export class ScrollBar extends React.Component<IProps> {
+export const ScrollBar: React.FC<IProps> = ({ children }) => {
 
-  renderThumb({ ...props }) {
+  const renderThumb = ({ ...props }) => {
     return (
-      <div className={styles.scrollBarThumb}
-           {...props}/>
+      <div className={styles.scrollBarThumb} {...props}/>
     )
   }
 
-  renderTrackVertical({ ...props }) {
+  const renderTrackVertical = ({ ...props }) => {
     return (
-      <div className={styles.scrollBarTrack}
-           {...props}/>
+      <div className={styles.scrollBarTrack} {...props}/>
     )
   }
 
-  render() {
-    const { children } = this.props
-    return (
-      <Scrollbars
-        autoHeight={true}
-        autoHeightMax={370}
-        className={styles.scrollBar}
-        renderTrackVertical={this.renderTrackVertical}
-        renderThumbVertical={this.renderThumb}
-      >
-        {children}
-      </Scrollbars>
-    )
-  }
+  return (
+    <Scrollbars
+      autoHeight={true}
+      autoHeightMax={370}
+      className={styles.scrollBar}
+      renderTrackVertical={renderTrackVertical}
+      renderThumbVertical={renderThumb}
+    >
+      {children}
+    </Scrollbars>
+  )
 }
 
 
