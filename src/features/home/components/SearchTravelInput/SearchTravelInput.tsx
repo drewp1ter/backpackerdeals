@@ -10,9 +10,12 @@ interface IProps {
 
 export const SearchTravelInput: React.FC<IProps> = ({ toggleSearch }) => (
   <div className={styles.searchTravelInput}>
-    <Input className={styles.input} placeholder="Search for a destination, activity or tour" theme="search" size="md">
-      <Button theme="orange" form="rounded" size="lg">SEARCH</Button>
-    </Input>
+    <div className={styles.input}>
+      <Input placeholder="Search for a destination, activity or tour" theme="transparent" size="md" />
+      <Button theme="orange" form="rounded" size="lg">
+        SEARCH
+      </Button>
+    </div>
     <div className={styles.imageBlock} onClick={toggleSearch}>
       <i className="fas fa-filter" />
       <span>Advanced search</span>

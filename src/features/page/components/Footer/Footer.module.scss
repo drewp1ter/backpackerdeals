@@ -49,8 +49,11 @@ footer {
   }
 
   .emailInput {
+    position: relative;
     margin: auto;
     width: 880px;
+    border: solid 1px rgba(#fff, 0.26);
+    border-radius: 60px;
 
     input {
       width: 600px;

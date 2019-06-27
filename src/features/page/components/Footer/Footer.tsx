@@ -24,18 +24,15 @@ export const Footer: React.FC<IProps> = ({ handleChange, handleSubmit, email }) 
 
     <h3>Sent straight to your inbox</h3>
 
-    <Input className={styles.emailInput} value={email} onChange={handleChange} placeholder="Your e-mail address" theme="email" size="md">
-      <>
-        <span className={styles.textButton}>
-          <Button size="lg">SEARCH</Button>
-        </span>
-        <span className={styles.iconButton}>
-          <Button form="circle">
-            <i className="fas fa-arrow-right" />
-          </Button>
-        </span>
-      </>
-    </Input>
+    <div className={styles.emailInput}>
+      <Input value={email} onChange={handleChange} placeholder="Your e-mail address" theme="transparent" size="md" />
+      <Button className={styles.textButton} size="lg">
+        SEARCH
+      </Button>
+      <Button className={styles.iconButton} form="circle">
+        <i className="fas fa-arrow-right" />
+      </Button>
+    </div>
 
     <p>By clicking Subscribe, you have agreed to our Terms & Conditions and Privacy Policy</p>
 
