@@ -21,7 +21,7 @@ interface IProps {
 
 export class Select extends React.Component<IProps, IState> {
   state = {
-    isOpen: false
+    isOpen: false,
   }
 
   private ref = React.createRef<HTMLDivElement>()
@@ -48,7 +48,7 @@ export class Select extends React.Component<IProps, IState> {
     return (
       <div ref={this.ref} className={styles.searchSelect} data-theme={theme} data-bodytheme={bodyTheme}>
         <div
-          className={ classNames(styles.select, className) }
+          className={classNames(styles.select, className)}
           data-opened={isOpen && 'opened'}
           data-disabled={disabled && 'disabled'}
           onClick={() => !disabled && this.toggleSelect()}

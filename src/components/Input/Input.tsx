@@ -8,21 +8,21 @@ export interface IProps {
   readonly value?: string
   readonly placeholder?: string
   readonly label?: string
-  readonly type?: 'text' | 'email' | 'password'
+  readonly type?: 'text' | 'email' | 'password' | 'file'
   readonly className?: string
   readonly theme?: 'transparent' | 'standart'
   readonly size?: 'md'
   readonly labelID?: string
 }
 
-export const Input: React.FC<IProps> = ({ type = 'text', onChange, label, value, placeholder, className, theme, size, labelID = '' }) => {
+export const Input: React.FC<IProps> = ({ type = 'text', onChange, label, value, placeholder, className, theme, size = 'md', labelID = '' }) => {
   if (label && !labelID) {
     labelID = Math.random().toString()
   }
   return (
     <>
       {label && (
-        <label htmlFor={labelID} data-size={size} className={styles.label}>
+        <label htmlFor={labelID} data-size={size} className={styles.label} data-theme={theme}>
           {label}
         </label>
       )}
