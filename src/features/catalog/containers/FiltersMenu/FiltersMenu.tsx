@@ -2,17 +2,23 @@ import * as React from 'react'
 
 import { MobileMenuWrapper, OrangeButton } from 'components'
 import { FiltersDropdown, PriceRange } from 'features/catalog/components'
+import { SearchSelect } from 'features/search/components'
 
-import { FiltersActions } from 'features/catalog'
-import Types from 'Types'
+import { FiltersActions, IFiltersState } from 'features/catalog'
+import { numberOfDays } from '../../../../components/AdvancedSearch/data'
 
 import styles from './FiltersMenu.module.scss'
 
 interface IProps {
   filters: JSX.Element | JSX.Element[]
 }
- 
-export const FiltersMenu: React.FC<Partial<Types.RootState> & FiltersActions & IProps> = ({ filtersAreOpened, closeFilters, openFilters, filters }) => (
+
+export const FiltersMenu: React.FC<IFiltersState & FiltersActions & IProps> = ({
+  filtersAreOpened,
+  closeFilters,
+  openFilters,
+  filters,
+}) => (
   <div className={styles.filtersMenu}>
     <button onClick={openFilters}>Show filters</button>
 
@@ -30,23 +36,32 @@ export const FiltersMenu: React.FC<Partial<Types.RootState> & FiltersActions & I
 
       <input placeholder="Type country" type="text" />
 
-      <FiltersDropdown title="Select city">
-        {filters}
-      </FiltersDropdown>
-      <FiltersDropdown title="Number of days"/>
-      <FiltersDropdown title="Style of travel"/>
+      <FiltersDropdown title="Select city">{filters}</FiltersDropdown>
+      <SearchSelect
+        className={styles.filtersSelect}
+        handleSelect={() => {}}
+        options={['Australia', 'Australia', 'Australia', 'Australia']}
+        theme="dark"
+        selectedOption="Select country"
+        bodyTheme="mobile"
+      />
+      <SearchSelect
+        className={styles.filtersSelect}
+        handleSelect={() => {}}
+        options={numberOfDays}
+        theme="dark"
+        selectedOption="Number of days"
+        bodyTheme="mobile"
+      />
 
-      <PriceRange />
+      <PriceRange className={styles.filtersPriceRange} />
 
       <div className={styles.filtersButtons}>
         <OrangeButton theme="rectangled" className={styles.orangeButton}>
           Apply filter
         </OrangeButton>
 
-        <button className={styles.resetButton}>
-          Reset filter
-        </button>
-
+        <button className={styles.resetButton}>Reset filter</button>
       </div>
     </MobileMenuWrapper>
   </div>

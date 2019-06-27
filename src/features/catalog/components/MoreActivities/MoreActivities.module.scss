@@ -64,7 +64,16 @@
       color: #ff5a39;
       transition: .2s ease background-color, .2s ease color;
 
-      &:hover {
+      &:first-child {
+        margin-right: 18px;
+      }
+
+      &:disabled {
+        color: #dadada;
+        border-color: #dadada;
+      }
+
+      &:hover:not(:disabled) {
         background-color: #ff5a39;
         color: #fff;
       }
@@ -79,13 +88,27 @@
       width: 22%;
       padding-right: 88px;
 
+      .filtersCheckboxes {
+        border: 1px solid #fafafa;
+        padding: 18px 0 8px 24px;
+      }
+
+      .filtersSelect {
+        padding-left: 24px;
+        border-color: #fafafa;
+      }
+
       >h4 {
-        margin-bottom: 45px;
+        margin: 55px 0 27px 24px;
         font-size: 18px;
         font-weight: 600;
         line-height: 1.33;
         text-align: left;
         color: #202020;
+
+        &:first-of-type {
+          margin-top: 0;
+        }
       }
     }
 

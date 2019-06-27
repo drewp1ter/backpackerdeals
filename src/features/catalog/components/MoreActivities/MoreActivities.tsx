@@ -2,7 +2,9 @@ import React, { useReducer } from 'react'
 
 import { Checkbox, LastMinuteDealCard } from 'components'
 import { FiltersMenu } from 'features/catalog/containers'
+import { SearchSelect } from 'features/search/components'
 import { PriceRange } from '..'
+import { numberOfDays } from '../../../../components/AdvancedSearch/data'
 import { cards, filters } from './data'
 import styles from './MoreActivities.module.scss'
 import reducer, { ActionType, IAction, initialState, IState, ViewType } from './reducer'
@@ -16,28 +18,46 @@ export const MoreActivities: React.FC = () => {
     dispatch({ type: ActionType.setView, payload: view })
   }
 
-  const renderFilters = () => filters && filters.map((filter, index) => <Checkbox key={`${index}-filter`} label={filter} />)
+  const renderFilters = () =>
+    filters && (
+      <div className={styles.filtersCheckboxes}>
+        {filters.map((filter, index) => (
+          <Checkbox key={`${index}-filter`} label={filter} />
+        ))}
+      </div>
+    )
   const handleChangeSortOrder = () => dispatch({ type: ActionType.toggleDec })
-  const renderCards = () => cards && cards.map((card, idx) => <LastMinuteDealCard className={styles.card} view={view} {...card} key={`${idx}-card`} />)
+  const renderCards = () =>
+    cards && cards.map((card, idx) => <LastMinuteDealCard className={styles.card} view={view} {...card} key={`${idx}-card`} />)
 
   const handlePageControls = ({ currentTarget }: React.MouseEvent<HTMLElement>) => {
     const { action } = currentTarget.dataset
     if (action) {
       action === 'next' && page + 1 <= pages && dispatch({ type: ActionType.nextPage })
+      action === 'prev' && page - 1 >= 1 && dispatch({ type: ActionType.prevPage })
     } else {
       dispatch({ type: ActionType.setPage, payload: +currentTarget.innerHTML })
     }
   }
 
-  const renderPageControls = () =>
-    [...Array(5).keys()].map(idx => {
-      const pageItem = page - 2 < 1 ? idx + 1 : page + 2 > pages ? pages - 4 + idx : page - 2 + idx
-      return (
-        <span key={pageItem} onClick={handlePageControls} data-active={page === pageItem}>
-          {pageItem}
-        </span>
-      )
-    })
+  const renderPageControls = () => (
+    <div className={styles.pagesControls}>
+      <button aria-label="prev" onClick={handlePageControls} data-action="prev" disabled={page === 1}>
+        <i className="fas fa-arrow-left" />
+      </button>
+      {[...Array(5).keys()].map(idx => {
+        const pageItem = page - 2 < 1 ? idx + 1 : page + 2 > pages ? pages - 4 + idx : page - 2 + idx
+        return (
+          <span key={pageItem} onClick={handlePageControls} data-active={page === pageItem}>
+            {pageItem}
+          </span>
+        )
+      })}
+      <button aria-label="next" onClick={handlePageControls} data-action="next" disabled={page === pages}>
+        <i className="fas fa-arrow-right" />
+      </button>
+    </div>
+  )
 
   return (
     <div className={styles.moreActivities}>
@@ -45,8 +65,24 @@ export const MoreActivities: React.FC = () => {
       <FiltersMenu filters={renderFilters()} />
       <div className={styles.content}>
         <div className={styles.filters}>
+          <h4>SelectCountry</h4>
+          <SearchSelect
+            className={styles.filtersSelect}
+            handleSelect={() => {}}
+            options={['Australia', 'Australia', 'Australia', 'Australia']}
+            theme="dark"
+            selectedOption="Select country"
+          />
           <h4>Select city</h4>
           {renderFilters()}
+          <h4>Number of days</h4>
+          <SearchSelect
+            className={styles.filtersSelect}
+            handleSelect={() => {}}
+            options={numberOfDays}
+            theme="dark"
+            selectedOption="Number of days"
+          />
           <PriceRange />
         </div>
         <div className={styles.cardsContainer}>
@@ -65,12 +101,7 @@ export const MoreActivities: React.FC = () => {
           <div data-view={view} className={styles.cards}>
             {renderCards()}
           </div>
-          <div className={styles.pagesControls}>
-            {renderPageControls()}
-            <button aria-label="next" onClick={handlePageControls} data-action="next">
-              <i className="fas fa-arrow-right" />
-            </button>
-          </div>
+          {renderPageControls()}
         </div>
       </div>
     </div>

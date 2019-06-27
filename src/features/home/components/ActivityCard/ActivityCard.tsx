@@ -13,7 +13,7 @@ export const ActivityCard: React.FC<IProps> = ({ title, variant, gradDeg = 330 }
   <div className={styles.activityCard}>
     <h3>{title}</h3>
     <span>24 Activities</span>
-    <div style={{ backgroundImage: `linear-gradient(${gradDeg}deg, rgba(232, 232, 232, 0), rgba(0, 0, 0, 0.91))` }} />
+    <div className={styles.gradient} style={{ backgroundImage: `linear-gradient(${gradDeg}deg, rgba(232, 232, 232, 0), rgba(0, 0, 0, 0.91))` }} />
     <picture>
       <source media="(max-width: 320px)" srcSet={images.w320[variant].src} />
       <source media="(max-width: 1024px)" srcSet={images.w1024[variant].src} />

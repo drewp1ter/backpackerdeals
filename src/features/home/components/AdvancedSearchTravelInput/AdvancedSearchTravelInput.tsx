@@ -1,27 +1,11 @@
 import * as React from 'react'
 
-import { OrangeButton } from 'components'
+import { Calendar, OrangeButton } from 'components'
 
 import { SearchSelect } from 'features/search/components'
+import { numberOfDays, startLocation } from '../../../../components/AdvancedSearch/data'
 
 import styles from './AdvancedSearchTravelInput.module.scss'
-
-const startLocation = [
-  'Haven 5:20 AM',
-  'Diplomat 5:20 AM',
-  'Desert Rose AM',
-  'Aurora Alice Spring 5:25 AM',
-  'Todd Tavern 5:25 AM',
-  'Double Tree Hilton 5:20 AM',
-  'Jump Inn Hostel 5:20 AM',
-  'Haven 5:20 AM',
-  'Diplomat 5:20 AM',
-  'Desert Rose AM',
-  'Aurora Alice Spring 5:25 AM',
-  'Todd Tavern 5:25 AM',
-  'Double Tree Hilton 5:20 AM',
-  'Jump Inn Hostel 5:20 AM',
-]
 
 interface IProps {
   readonly toggleSearch?: () => void
@@ -47,7 +31,6 @@ export const AdvancedSearchTravelInput: React.FC<IProps> = ({ toggleSearch }) =>
       <SearchSelect
         className={styles.lastSelect}
         selectedOption="End location"
-        disabled={true}
         options={startLocation}
         handleSelect={option => console.log(option)}
         theme="light"
@@ -55,15 +38,16 @@ export const AdvancedSearchTravelInput: React.FC<IProps> = ({ toggleSearch }) =>
       <SearchSelect
         className={styles.lastSelect}
         selectedOption="Select date"
-        options={startLocation}
+        // options={startLocation}
         handleSelect={option => console.log(option)}
         theme="light"
-      />
+      >
+        <Calendar />
+      </SearchSelect>
       <SearchSelect
         className={styles.lastSelect}
         selectedOption="Number of days"
-        disabled={true}
-        options={startLocation}
+        options={numberOfDays}
         handleSelect={option => console.log(option)}
         theme="light"
       />

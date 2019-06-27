@@ -1,18 +1,23 @@
 .travelStoryCard {
   position: relative;
   border-radius: 8px;
-  transition: .2s ease box-shadow;
+  transition: box-shadow .2s ease-out;
+  cursor: pointer;
+  overflow: hidden;
 
   &:hover {
     box-shadow: 0 24px 32px rgba(0, 0, 0, 0.06);
-    transform: scale(1.005, 1.005);
+
+    img {
+      transform: scale3d(1.1,1.1,1.1);
+    }
   }
 
   .text {
     position: absolute;
     left: 24px;
     bottom: 32px;
-    z-index: 1;
+    z-index: 2;
 
     h3 {
       font-size: 26px;
@@ -37,11 +42,13 @@
     right: 0;
     border-radius: 8px;
     opacity: .8;
+    z-index: 1;
   }
 
   img {
     width: 100%;
     height: 100%;
+    transition: transform 1s;
   }
 
   &[data-variant="image63"] {
@@ -122,15 +129,15 @@
     }
 
     &[data-variant="image63"] {
-      max-width: 304px;
+      max-width: 100vw;
     }
 
     &[data-variant="image64"] {
-      max-width: 304px;
+      max-width: 100vw;
     }
 
     &[data-variant="image65"] {
-      max-width: 304px;
+      max-width: 100vw;
     }
   }
 }

@@ -1,29 +1,12 @@
 import * as React from 'react'
 
-import { OrangeButton } from 'components'
+import { Calendar, OrangeButton } from 'components'
 
 import { SearchSelect } from 'features/search/components'
-
 import styles from './AdvancedSearch.module.scss'
+import { numberOfDays, startLocation } from './data'
 
 import Logo from 'features/page/components/Header/assets/blackLogo.svg'
-
-const startLocation = [
-  'Haven 5:20 AM',
-  'Diplomat 5:20 AM',
-  'Desert Rose AM',
-  'Aurora Alice Spring 5:25 AM',
-  'Todd Tavern 5:25 AM',
-  'Double Tree Hilton 5:20 AM',
-  'Jump Inn Hostel 5:20 AM',
-  'Haven 5:20 AM',
-  'Diplomat 5:20 AM',
-  'Desert Rose AM',
-  'Aurora Alice Spring 5:25 AM',
-  'Todd Tavern 5:25 AM',
-  'Double Tree Hilton 5:20 AM',
-  'Jump Inn Hostel 5:20 AM',
-]
 
 interface IProps {
   readonly theme?: string
@@ -53,13 +36,14 @@ export const AdvancedSearch: React.FC<IProps> = ({ theme }) => {
             theme="dark"
           />
           <SearchSelect selectedOption="Type of tour" options={startLocation} handleSelect={handleSelect} theme="dark" />
-          <SearchSelect selectedOption="End Location" disabled={true} options={startLocation} handleSelect={handleSelect} theme="dark" />
-          <SearchSelect selectedOption="Select date" options={startLocation} handleSelect={handleSelect} theme="dark" />
+          <SearchSelect selectedOption="End Location" options={startLocation} handleSelect={handleSelect} theme="dark" />
+          <SearchSelect selectedOption="Select date" handleSelect={handleSelect} theme="dark">
+            <Calendar />
+          </SearchSelect>
           <SearchSelect
             className={styles.lastSelect}
             selectedOption="Number of days"
-            disabled={true}
-            options={startLocation}
+            options={numberOfDays}
             handleSelect={handleSelect}
             theme="dark"
           />

@@ -36,9 +36,16 @@ export class Header extends Component<IProps> {
         method.apply(this, args)
         isThrottling = true
         setTimeout(() => {
+          method.apply(this, args)
           isThrottling = false
         }, wait)
       }
+    }
+  }
+
+  blurActiveElement = () => {
+    if (window.document.activeElement !== null) {
+      (window.document.activeElement as HTMLElement).blur()
     }
   }
 
@@ -56,11 +63,13 @@ export class Header extends Component<IProps> {
 
   handleChangeLanguage = (event: React.MouseEvent<HTMLElement>) => {
     const language = event.currentTarget.dataset.language || ''
+    this.blurActiveElement()
     this.setState({ currentLanguage: language })
   }
 
   handleChangeCurrency = (event: React.MouseEvent<HTMLElement>) => {
     const currency = event.currentTarget.dataset.currency || ''
+    this.blurActiveElement()
     this.setState({ currentCurrency: currency })
   }
 
@@ -70,7 +79,7 @@ export class Header extends Component<IProps> {
 
     const languageOpener: React.ReactNode = (
       <div className={styles.languageOpener}>
-        <img src={languages[currentLanguage].icon} alt={languages[currentLanguage].name} />
+        <img src={languages[currentLanguage].icon} alt={languages[currentLanguage].name}/>
         <span> {languages[currentLanguage].name.slice(0, 3)}</span>
       </div>
     )
@@ -86,23 +95,28 @@ export class Header extends Component<IProps> {
       <header data-theme={scrolled ? 'dark' : theme}>
         <div className={styles.tools}>
           <div className={styles.logoAndSearch}>
-            <img src={Logo} alt="Logo" className={styles.logo} />
-            <img src={BlackLogo} alt="Logo" className={styles.blackLogo} />
-            <AdvancedSearch theme={scrolled ? 'dark' : theme} />
+            <img src={Logo} alt="Logo" className={styles.logo}/>
+            <img src={BlackLogo} alt="Logo" className={styles.blackLogo}/>
+            <AdvancedSearch theme={scrolled ? 'dark' : theme}/>
           </div>
           <div className={styles.tours}>
-            <SelectMenu openerClass={styles.selectContinentOpener} opener={continentOpener} title="Select continent" size="lg" pos="left">
-              <SelectContinent displayTheme="flex" />
+            <SelectMenu openerClass={styles.selectContinentOpener} opener={continentOpener} title="Select continent"
+                        size="lg" pos="left">
+              <SelectContinent displayTheme="flex"/>
             </SelectMenu>
             <a href="">Top Deals</a>
             <a href="">Last Minute Deals</a>
           </div>
           <div className={styles.currencyAndLanguage}>
             <a href="">
-              <i className="fas fa-phone" />
+              <i className="fas fa-phone"/>
               <span>+ 61 3 90163720</span>
             </a>
-            <SelectMenu openerClass={styles.currencyAndLanguageOpener} opener={currencyOpener} title="Select currency">
+            <SelectMenu
+              openerClass={styles.currencyAndLanguageOpener}
+              opener={currencyOpener}
+              title="Select currency"
+            >
               <div className={styles.currencies}>
                 {Object.entries(currencies).map((currency, index) => (
                   <p
@@ -116,13 +130,17 @@ export class Header extends Component<IProps> {
                   </p>
                 ))}
               </div>
-
               <h6>Please note</h6>
               <p className={styles.note}>
-                Currency Conversions are approximate guide only. All transactions are processed in their respective currency
+                Currency Conversions are approximate guide only. All transactions are processed in their respective
+                currency
               </p>
             </SelectMenu>
-            <SelectMenu openerClass={styles.currencyAndLanguageOpener} opener={languageOpener} title="Select your language">
+            <SelectMenu
+              openerClass={styles.currencyAndLanguageOpener}
+              opener={languageOpener}
+              title="Select your language"
+            >
               <div className={styles.languages}>
                 {Object.entries(languages).map((language, index) => (
                   <div
@@ -132,18 +150,18 @@ export class Header extends Component<IProps> {
                     data-active={language[0] === currentLanguage}
                     data-language={language[0]}
                   >
-                    <img src={language[1].icon} alt={language[1].name} />
+                    <img src={language[1].icon} alt={language[1].name}/>
                     <span>{language[1].name}</span>
                   </div>
                 ))}
               </div>
             </SelectMenu>
             <div className={styles.profileIcon}>
-              <i className="fas fa-user" />
+              <i className="fas fa-user"/>
             </div>
           </div>
           <div className={styles.mobileTools}>
-            <MobileMenu theme={scrolled ? 'dark' : theme} />
+            <MobileMenu theme={scrolled ? 'dark' : theme}/>
           </div>
         </div>
       </header>

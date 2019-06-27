@@ -47,12 +47,11 @@
     position: absolute;
     border-radius: 4px;
     top: 75px;
-    left: 0px;
+    left: 0;
     width: 330px;
     max-height: 370px;
     background: #fff;
     padding: 25px 0;
-    overflow-y: scroll;
 
     .option {
       cursor: pointer;
