@@ -18,7 +18,7 @@ export const CardsWrapper: React.FC<IProps> = ({ title, linkTitle, children, cla
     <section className={mainClass}>
       <h3>{title}</h3>
       <p>
-        <Link href={linkURL}>
+        <Link href={linkURL || '#'}>
           <a>
             {linkTitle}
             <i className="fas fa-angle-double-right" />
