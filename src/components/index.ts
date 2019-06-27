@@ -1,4 +1,5 @@
 export { AdvancedSearch } from './AdvancedSearch'
+export { Autocomplete } from './Autocomplete'
 export { Breadcrumbs } from './Breadcrumbs'
 export { Calendar } from './Calendar'
 export { Checkbox } from './Checkbox'
