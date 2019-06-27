@@ -1,12 +1,10 @@
 .myProfile {
   width: 1136px;
   border: 1px solid #e8e8e8;
-  margin-top: 152px;
 
-  h2 {
+  h3 {
     font-size: 32px;
     font-weight: bold;
-    color: #202020;
     margin: 48px auto 40px 24px;
   }
 
@@ -18,12 +16,6 @@
     i {
       font-size: 14px;
       margin-right: 8px;
-    }
-
-    label {
-      cursor: pointer;
-      font-size: 16px;
-      color: #202020;
     }
   }
 
@@ -47,10 +39,20 @@
     padding: 48px 24px;
     border-top: 1px solid #e8e8e8;
 
-    input {
-      width: calc(100% - 24px);
+    .autocomplete, > input {
       margin-bottom: 32px;
+      input {
+        padding-left: 24px;
+        // width: calc(100% - 24px);
+      }
+    }
+
+    > input {
       padding-left: 24px;
+    }
+
+    button {
+      max-width: 184px;
     }
   }
 
