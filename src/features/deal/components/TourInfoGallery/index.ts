@@ -1,0 +1,1 @@
+export { TourInfoGallery } from './TourInfoGallery'
