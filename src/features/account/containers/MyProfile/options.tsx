@@ -9,7 +9,7 @@ import Russian from 'features/page/components/Header/assets/russian.png'
 import Spanish from 'features/page/components/Header/assets/spain.png'
 
 export default [
-  <><img src={Chinese} />+11</>,
-  <><img src={Russian} />+7</>,
-  <><img src={English} />+44</>
+  <span key={1}><img src={Chinese} />+11</span>,
+  <span key={2}><img src={Russian} />+7</span>,
+  <span key={3}><img src={English} />+44</span>
 ]
