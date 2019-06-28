@@ -16,7 +16,7 @@ export const ProfileLayout: React.FC = ({ children }) => {
         </div>
         <ul>
           <li><i className="fas fa-envelope" />Johnd1996@gmail.com</li>
-          <li><i className="fas fa-phone-alt" />+ 44 767 786 78</li>
+          <li className={styles.phone}><i className="fas fa-phone" />+ 44 767 786 78</li>
           <li><i className="fas fa-map-marker-alt" />Sydney, Australia</li>
           <li><i className="fas fa-edit" />Edit my profile</li>
         </ul>

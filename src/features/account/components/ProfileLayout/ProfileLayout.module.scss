@@ -17,6 +17,12 @@
       font-size: 14px;
     }
 
+    .phone {
+      i {
+        transform: rotate(90deg);
+      }
+    }
+
     .image {
       display: flex;
       align-items: center;
