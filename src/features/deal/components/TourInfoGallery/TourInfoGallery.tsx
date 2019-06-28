@@ -1,5 +1,6 @@
 import * as React from 'react'
 
+import classNames from 'classnames'
 import { images } from './assets'
 import styles from './TourInfoGallery.module.scss'
 
@@ -15,7 +16,7 @@ export const TourInfoGallery: React.FC = () => {
   return (
     <div className={styles.tourInfoGallery}>
       <div className={styles.activeTile}>
-        <img src={images.test} alt=""/>
+        <img src={images.activeTour.src} alt={images.activeTour.alt}/>
         <div className={styles.toSell}>
           <div className={styles.toSellIcon}>
             <img src={images.cup} alt=""/>
@@ -26,24 +27,11 @@ export const TourInfoGallery: React.FC = () => {
         {renderGalleryControls()}
       </div>
       <div className={styles.tilesContainer}>
-        <div className={styles.tile}>
-          <img src={images.test} alt=""/>
-        </div>
-        <div className={styles.tile}>
-          <img src={images.test} alt=""/>
-        </div>
-        <div className={styles.tile}>
-          <img src={images.test} alt=""/>
-        </div>
-        <div className={styles.tile}>
-          <img src={images.test} alt=""/>
-        </div>
-        <div className={styles.tile}>
-          <img src={images.test} alt=""/>
-        </div>
-        <div className={styles.tile}>
-          <img src={images.test} alt=""/>
-        </div>
+        {images.tours.map((tour, index) => (
+          <div key={tour.alt} className={classNames(styles.tile, !index && styles.active )}>
+            <img src={tour.src} alt={tour.alt}/>
+          </div>
+        ))}
         {renderGalleryControls()}
       </div>
     </div>
