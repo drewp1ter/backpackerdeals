@@ -1,9 +1,9 @@
 import React from 'react'
 
-import { MobileMenuWrapper, OrangeButton } from 'components'
+import { Button, MobileMenuWrapper, Select } from 'components'
 import { MobileSelectMenu } from 'features/page/components'
 import { SearchActions } from 'features/search'
-import { SearchRadio, SearchSelect } from 'features/search/components'
+import { SearchRadio } from 'features/search/components'
 import { PageActions } from '../..'
 import { SelectContinent } from '../../components'
 
@@ -167,18 +167,18 @@ export const MobileMenu: React.FC<Partial<Types.RootState> & PageActions & Searc
             </>
           ) : (
             <>
-              <SearchSelect bodyTheme="mobile" selectedOption="Start Location" options={options} handleSelect={() => {}} theme="dark" />
+              <Select bodyTheme="mobile" selectedOption="Start Location" options={options} handleSelect={() => {}} theme="dark" />
               <div className={styles.radioButtons}>
                 <SearchRadio placeholder="Day Tour" selected={!multiDayTour} onClick={() => selectTourType(false)} />
                 <SearchRadio placeholder="Multi day Tour" selected={multiDayTour} onClick={() => selectTourType(true)} />
               </div>
-              <SearchSelect bodyTheme="mobile" selectedOption="End Location" options={startLocation} handleSelect={() => {}} theme="dark" />
-              <SearchSelect bodyTheme="mobile" selectedOption="Select Date" options={options} handleSelect={() => {}} theme="dark" />
-              <SearchSelect bodyTheme="mobile" selectedOption="Number of days" options={numberOfDays} handleSelect={() => {}} theme="dark" />
+              <Select bodyTheme="mobile" selectedOption="End Location" options={startLocation} handleSelect={() => {}} theme="dark" />
+              <Select bodyTheme="mobile" selectedOption="Select Date" options={options} handleSelect={() => {}} theme="dark" />
+              <Select bodyTheme="mobile" selectedOption="Number of days" options={numberOfDays} handleSelect={() => {}} theme="dark" />
               <div className={styles.advancedSearchButtons}>
-                <OrangeButton className={styles.orangeButton} theme="rectangled">
+                <Button className={styles.orangeButton} theme="orange" form="rectangled">
                   SEARCH
-                </OrangeButton>
+                </Button>
                 <button className={styles.resetButton}>Reset search</button>
               </div>
             </>

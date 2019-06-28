@@ -55,9 +55,10 @@
     background-color: #fafafa;
     transform: translateY(-104px);
     transition: .2s ease transform;
-    
-    button {
+
+    .searchbutton {
       margin-left: 8px;
+      width: 168px;
     }
 
     &[data-opened="opened"] {
@@ -106,7 +107,7 @@
       input {
         width: 310px;
         height: 48px;
-  
+
         &::placeholder {
           font-size: 16px;
         }
@@ -122,12 +123,15 @@
       input {
         width: 269px;
         height: 40px;
-  
+
         &::placeholder {
           font-size: 12px;
         }
       }
+    }
 
+    .searchbutton {
+      height: 44px !important;
     }
   }
 }

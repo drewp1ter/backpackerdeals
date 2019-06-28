@@ -1,8 +1,8 @@
 import * as React from 'react'
 
-import { MobileMenuWrapper, OrangeButton } from 'components'
+import { Button, MobileMenuWrapper } from 'components'
+import { Select } from 'components'
 import { FiltersDropdown, PriceRange } from 'features/catalog/components'
-import { SearchSelect } from 'features/search/components'
 
 import { FiltersActions, IFiltersState } from 'features/catalog'
 import { numberOfDays } from '../../../../components/AdvancedSearch/data'
@@ -37,7 +37,7 @@ export const FiltersMenu: React.FC<IFiltersState & FiltersActions & IProps> = ({
       <input placeholder="Type country" type="text" />
 
       <FiltersDropdown title="Select city">{filters}</FiltersDropdown>
-      <SearchSelect
+      <Select
         className={styles.filtersSelect}
         handleSelect={() => {}}
         options={['Australia', 'Australia', 'Australia', 'Australia']}
@@ -45,7 +45,7 @@ export const FiltersMenu: React.FC<IFiltersState & FiltersActions & IProps> = ({
         selectedOption="Select country"
         bodyTheme="mobile"
       />
-      <SearchSelect
+      <Select
         className={styles.filtersSelect}
         handleSelect={() => {}}
         options={numberOfDays}
@@ -57,9 +57,9 @@ export const FiltersMenu: React.FC<IFiltersState & FiltersActions & IProps> = ({
       <PriceRange className={styles.filtersPriceRange} />
 
       <div className={styles.filtersButtons}>
-        <OrangeButton theme="rectangled" className={styles.orangeButton}>
+        <Button theme="orange" form="rectangled" className={styles.orangeButton}>
           Apply filter
-        </OrangeButton>
+        </Button>
 
         <button className={styles.resetButton}>Reset filter</button>
       </div>

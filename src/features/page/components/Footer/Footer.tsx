@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-import { Input, OrangeButton } from 'components'
+import { Input, Button } from 'components'
 import { FooterLinks } from 'features/page/components'
 
 import Adventure from './assets/adventure.svg'
@@ -24,16 +24,15 @@ export const Footer: React.FC<IProps> = ({ handleChange, handleSubmit, email }) 
 
     <h3>Sent straight to your inbox</h3>
 
-    <Input className={styles.emailInput} value={email} onChange={handleChange} placeholder="Your e-mail address" theme="email" size="md">
-      <>
-      <OrangeButton className={styles.textButton} onClick={handleSubmit} theme="rounded">
+    <div className={styles.emailInput}>
+      <Input value={email} onChange={handleChange} placeholder="Your e-mail address" theme="transparent" size="md" />
+      <Button className={styles.textButton} size="lg">
         SEARCH
-      </OrangeButton>
-      <OrangeButton className={styles.iconButton} onClick={handleSubmit} theme="rounded">
-        <i className="fas fa-arrow-right"/>
-      </OrangeButton>
-      </>
-    </Input>
+      </Button>
+      <Button className={styles.iconButton} form="circle">
+        <i className="fas fa-arrow-right" />
+      </Button>
+    </div>
 
     <p>By clicking Subscribe, you have agreed to our Terms & Conditions and Privacy Policy</p>
 
@@ -59,7 +58,6 @@ export const Footer: React.FC<IProps> = ({ handleChange, handleSubmit, email }) 
           <li>Sitemap</li>
         </ul>
       </FooterLinks>
-
 
       <div className={`${styles.linksWrapper}`}>
         <FooterLinks title="Business">
@@ -156,7 +154,9 @@ export const Footer: React.FC<IProps> = ({ handleChange, handleSubmit, email }) 
         </div>
       </div>
 
-      <button aria-label="download app" className={styles.downloadAppButton}>Download Mobile App</button>
+      <button aria-label="download app" className={styles.downloadAppButton}>
+        Download Mobile App
+      </button>
     </div>
 
     <hr />

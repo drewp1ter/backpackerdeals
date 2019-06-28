@@ -1,8 +1,8 @@
 import React, { useReducer } from 'react'
 
 import { Checkbox, LastMinuteDealCard } from 'components'
+import { Select } from 'components'
 import { FiltersMenu } from 'features/catalog/containers'
-import { SearchSelect } from 'features/search/components'
 import { PriceRange } from '..'
 import { numberOfDays } from '../../../../components/AdvancedSearch/data'
 import { cards, filters } from './data'
@@ -66,7 +66,7 @@ export const MoreActivities: React.FC = () => {
       <div className={styles.content}>
         <div className={styles.filters}>
           <h4>SelectCountry</h4>
-          <SearchSelect
+          <Select
             className={styles.filtersSelect}
             handleSelect={() => {}}
             options={['Australia', 'Australia', 'Australia', 'Australia']}
@@ -76,7 +76,7 @@ export const MoreActivities: React.FC = () => {
           <h4>Select city</h4>
           {renderFilters()}
           <h4>Number of days</h4>
-          <SearchSelect
+          <Select
             className={styles.filtersSelect}
             handleSelect={() => {}}
             options={numberOfDays}

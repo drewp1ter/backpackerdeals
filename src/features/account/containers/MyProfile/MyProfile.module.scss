@@ -1,0 +1,59 @@
+.myProfile {
+  width: 1136px;
+  border: 1px solid #e8e8e8;
+
+  h3 {
+    font-size: 32px;
+    font-weight: bold;
+    margin: 48px auto 40px 24px;
+  }
+
+  .photo {
+    display: flex;
+    border-top: 1px solid #e8e8e8;
+    align-items: center;
+
+    i {
+      font-size: 14px;
+      margin-right: 8px;
+    }
+  }
+
+  .image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    width: 96px;
+    height: 96px;
+    color: #fff;
+    background-color: #ff5a39;
+    font-size: 36px;
+    font-weight: bold;
+    margin: 24px;
+  }
+
+  .fields {
+    display: flex;
+    flex-direction: column;
+    padding: 48px 24px;
+    border-top: 1px solid #e8e8e8;
+
+    .autocomplete, > input {
+      margin-bottom: 32px;
+      input {
+        padding-left: 24px;
+        // width: calc(100% - 24px);
+      }
+    }
+
+    > input {
+      padding-left: 24px;
+    }
+
+    button {
+      max-width: 184px;
+    }
+  }
+
+}
