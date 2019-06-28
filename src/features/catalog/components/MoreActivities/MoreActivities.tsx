@@ -1,6 +1,6 @@
 import React, { useReducer } from 'react'
 
-import { Checkbox, LastMinuteDealCard } from 'components'
+import { Button, Checkbox, LastMinuteDealCard } from 'components'
 import { Select } from 'components'
 import { FiltersMenu } from 'features/catalog/containers'
 import { PriceRange } from '..'
@@ -22,7 +22,7 @@ export const MoreActivities: React.FC = () => {
     filters && (
       <div className={styles.filtersCheckboxes}>
         {filters.map((filter, index) => (
-          <Checkbox key={`${index}-filter`} label={filter} />
+          <Checkbox className={styles.checkbox} key={`${index}-filter`} label={filter} />
         ))}
       </div>
     )
@@ -65,7 +65,7 @@ export const MoreActivities: React.FC = () => {
       <FiltersMenu filters={renderFilters()} />
       <div className={styles.content}>
         <div className={styles.filters}>
-          <h4>SelectCountry</h4>
+          <h4>Select country</h4>
           <Select
             className={styles.filtersSelect}
             handleSelect={() => {}}
@@ -83,7 +83,24 @@ export const MoreActivities: React.FC = () => {
             theme="dark"
             selectedOption="Number of days"
           />
+          <h4>Accomodation style</h4>
+          <Select
+            className={styles.filtersSelect}
+            handleSelect={() => {}}
+            options={['All accommodation styles', 'Australia', 'Australia', 'Australia']}
+            theme="dark"
+            selectedOption="All accommodation styles"
+          />
+          <h4>Style of travel</h4>
+          <Select
+            className={styles.filtersSelect}
+            handleSelect={() => {}}
+            options={['Family friendly', 'Australia', 'Australia', 'Australia']}
+            theme="dark"
+            selectedOption="Family friendly"
+          />
           <PriceRange />
+          <Button theme="transparent" form='standart' size="sm">Reset filter</Button>
         </div>
         <div className={styles.cardsContainer}>
           <div className={styles.header}>

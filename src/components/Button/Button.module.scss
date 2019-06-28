@@ -1,7 +1,7 @@
 .button {
   cursor: pointer;
   letter-spacing: normal;
-  transition: .2s ease box-shadow;
+  transition: 0.2s ease box-shadow;
 
   &[data-form="rounded"] {
     border-radius: 60px;
@@ -37,6 +37,18 @@
     &:hover {
       box-shadow: 0 12px 24px rgba(255, 90, 57, 0.28);
     }
+  }
+
+  &[data-theme="transparent"] {
+    color: #959595;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+  }
+
+  &[data-size="sm"] {
+    height: 32px;
+    font-size: 12px;
   }
 
   &[data-size="md"] {
@@ -82,6 +94,4 @@
 }
 
 @media screen and (max-width: 1280px) and (min-width: 768px) {
-
 }
-
