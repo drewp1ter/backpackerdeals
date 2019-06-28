@@ -18,7 +18,6 @@ COPY . .
 RUN yarn build
 RUN yarn webpconv
 RUN yarn purgecss
-RUN rm -rf ./src/features ./pages ./interfaces ./.next/static
 
 EXPOSE 3000
 CMD ["yarn", "start"]
