@@ -272,19 +272,13 @@
       margin-top: 15px;
 
       .orangeButton {
-        height: 48px;
         width: calc(60% - 10px);
-        font-size: 14px;
-        font-weight: 400;
-        line-height: 24px;
       }
 
       .resetButton {
         cursor: pointer;
         color: #959595;
         font-size: 12px;
-        font-weight: 400;
-        line-height: 32px;
         background-color: transparent;
         border: none;
       }
@@ -297,17 +291,17 @@
     &[data-theme="dark"] {
       .searchIcon, .menuIcon {
         border-color: #202020;
-        
+
         span {
           color: #202020;
         }
-  
+
         i {
           color: #202020;
         }
       }
     }
-    
+
     .searchIcon {
       cursor: pointer;
       height: 40px;

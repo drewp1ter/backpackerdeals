@@ -23,12 +23,24 @@
       margin-right: 5px;
     }
   }
-}
 
-.input {
-  input {
-    width: 753px;
-    padding: 8px 30px;
+  button {
+    position: absolute;
+    width: 188px;
+    height: 60px !important;
+    top: 6px;
+    right: 6px;
+  }
+
+  .input {
+    position: relative;
+    background: rgba(255, 255, 255, 0.26);
+    border-radius: 60px;
+
+    input {
+      width: 753px;
+      padding: 8px 30px;
+    }
   }
 }
 
@@ -51,10 +63,7 @@
     }
 
     button {
-      width: 188px !important;
       height: 52px !important;
-      top: 6px !important;
-      right: 6px !important;
       font-size: 16px !important;
     }
   }

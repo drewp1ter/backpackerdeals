@@ -1,7 +1,6 @@
 import * as React from 'react'
 
-// @ts-ignore
-import { Scrollbars } from 'react-custom-scrollbars'
+import Scrollbars from 'react-custom-scrollbars'
 import styles from './ScrollBar.module.scss'
 
 export interface IProps {

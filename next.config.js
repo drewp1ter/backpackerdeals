@@ -68,6 +68,17 @@ const nextConfig = {
       }
     )
 
+    config.devServer = config.devServer || {}
+    config.devServer.stats =  {
+      all: false,
+      modules: true,
+      maxModules: 0,
+      errors: true,
+      warnings: false,
+    }
+
+    //console.log(config)
+
     return config
   },
 }
