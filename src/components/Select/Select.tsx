@@ -1,7 +1,7 @@
 import * as React from 'react'
 
 import classNames from 'classnames'
-import { ScrollBar } from '../../../../components/ScrollBar'
+import { ScrollBar } from '..'
 
 import styles from './Select.module.scss'
 

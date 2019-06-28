@@ -25,13 +25,13 @@ const Breadcrumbs: React.FC<IProps & WithRouterProps> = ({ titles, router, class
         links += route
         return idx < routes!.length - 1 ? (
           <>
-            <Link href={links}>
+            <Link key={idx} href={links}>
               <a>{titles[idx]}</a>
             </Link>
-            <i className="fas fa-angle-right" />
+            <i key={idx} className="fas fa-angle-right" />
           </>
         ) : (
-          <a>{titles[idx]}</a>
+          <a key={idx}>{titles[idx]}</a>
         )
       })}
     </div>
