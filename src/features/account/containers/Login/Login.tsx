@@ -22,7 +22,6 @@ export const Login: React.FC = () => {
         <h5>Log in with Email</h5>
         <Input
           className={styles.inputBox}
-          inputClassName={styles.input}
           label="Email"
           placeholder="Enter your email"
           theme="standart"
@@ -33,7 +32,6 @@ export const Login: React.FC = () => {
         </div>
         <Input
           className={styles.inputBox}
-          inputClassName={styles.input}
           label="Password"
           type="password"
           placeholder="Enter your password"
