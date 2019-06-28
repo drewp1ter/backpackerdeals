@@ -2,7 +2,7 @@ import React from 'react'
 
 import styles from './DealLayout.module.scss'
 
-import { TourDescription, DealNavigation } from '..'
+import { DealNavigation, TourDescription } from '..'
 
 export const DealLayout: React.FC = () => (
   <div className={styles.dealLayout}>
