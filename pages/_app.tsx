@@ -5,6 +5,7 @@ import { Provider, ProviderProps } from 'react-redux'
 import makeStore from 'store'
 
 // import '@fortawesome/fontawesome-free/css/all.css'
+import 'fontAwesome.css'
 import 'normalize.css'
 import 'root.scss'
 

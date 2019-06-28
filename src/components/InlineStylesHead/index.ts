@@ -1,0 +1,1 @@
+export { InlineStylesHead } from './InlineStylesHead'

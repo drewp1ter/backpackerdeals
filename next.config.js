@@ -5,6 +5,7 @@ const nextEnv = require('next-env')
 const dotenvLoad = require('dotenv-load')
 const fonts = require('next-fonts')
 const optimizedImages = require('next-optimized-images')
+const webpack = require('webpack');
 // const withSize = require('next-size')
 
 dotenvLoad()
@@ -68,14 +69,14 @@ const nextConfig = {
       }
     )
 
-    config.devServer = config.devServer || {}
-    config.devServer.stats =  {
-      all: false,
-      modules: true,
-      maxModules: 0,
-      errors: true,
-      warnings: false,
-    }
+    // config.devServer = config.devServer || {}
+    // config.devServer.stats =  {
+    //   all: false,
+    //   modules: true,
+    //   maxModules: 0,
+    //   errors: true,
+    //   warnings: false,
+    // }
 
     //console.log(config)
 
@@ -88,6 +89,9 @@ module.exports = withPlugins(
     [typescript],
     [fonts],
     // [withSize],
+    [new webpack.optimize.LimitChunkCountPlugin({
+      maxChunks: 1
+    })],
 
     [
       optimizedImages,
