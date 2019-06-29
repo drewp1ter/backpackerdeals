@@ -30,7 +30,7 @@ export const Page: React.FC<IProps> = ({ children, headerTheme, withoutFooter = 
       <Header theme={headerTheme} />
       {children}
       {!withoutFooter && (
-        <LazyLoad offset={200}>
+        <LazyLoad height={500} offset={300}>
           <Footer />
         </LazyLoad>
       )}
