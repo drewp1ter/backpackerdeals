@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-import { Input, Button } from 'components'
+import { Button, Input } from 'components'
 import { FooterLinks } from 'features/page/components'
 
 import Adventure from './assets/adventure.svg'
