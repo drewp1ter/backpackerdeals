@@ -1,5 +1,6 @@
 import * as React from 'react'
 import { Cookies, Footer, Header } from '..'
+import LazyLoad from 'react-lazyload'
 
 interface IProps {
   readonly children?: React.ReactNode
@@ -28,7 +29,11 @@ export const Page: React.FC<IProps> = ({ children, headerTheme, withoutFooter = 
       {!cookies && <Cookies setCookies={handleCookies} />}
       <Header theme={headerTheme} />
       {children}
-      {!withoutFooter && <Footer />}
+      {!withoutFooter && (
+        <LazyLoad offset={200}>
+          <Footer />
+        </LazyLoad>
+      )}
     </>
   )
 }

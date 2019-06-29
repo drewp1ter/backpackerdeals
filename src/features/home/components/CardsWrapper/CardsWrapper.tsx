@@ -1,6 +1,7 @@
 import classNames from 'classnames'
 import Link from 'next/link'
 import * as React from 'react'
+import LazyLoad from 'react-lazyload'
 
 import styles from './CardsWrapper.module.scss'
 
@@ -25,7 +26,7 @@ export const CardsWrapper: React.FC<IProps> = ({ title, linkTitle, children, cla
           </a>
         </Link>
       </p>
-      {children}
+      <LazyLoad offset={100}>{children}</LazyLoad>
     </section>
   )
 }
