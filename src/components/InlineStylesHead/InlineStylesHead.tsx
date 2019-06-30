@@ -1,6 +1,9 @@
 import { readFileSync } from 'fs'
+import { memoize } from 'lodash'
 import { Head } from 'next/document'
-import { join } from 'path'
+import { resolve } from 'path'
+
+const doGetContent = memoize((file: string) => readFileSync(resolve(process.cwd(), '.next', file), 'utf8'))
 
 export class InlineStylesHead extends Head {
   getCssLinks() {
@@ -21,7 +24,7 @@ export class InlineStylesHead extends Head {
           nonce={this.props.nonce}
           data-href={`${assetPrefix}/_next/${file}`}
           dangerouslySetInnerHTML={{
-            __html: readFileSync(join(process.cwd(), '.next', file), 'utf-8'),
+            __html: doGetContent(file),
           }}
         />
       ))
