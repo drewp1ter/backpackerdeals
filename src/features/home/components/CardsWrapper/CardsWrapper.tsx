@@ -26,7 +26,7 @@ export const CardsWrapper: React.FC<IProps> = ({ title, linkTitle, children, cla
           </a>
         </Link>
       </p>
-      <LazyLoad height={500} offset={300}>{children}</LazyLoad>
+      <LazyLoad height={500} offset={400}>{children}</LazyLoad>
     </section>
   )
 }
