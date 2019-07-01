@@ -48,6 +48,11 @@ header {
 
     .logoAndSearch {
       display: flex;
+      align-items: center;
+
+      .logo, .blackLogo {
+        height: 51px;
+      }
 
       .blackLogo {
         display: none;
@@ -69,7 +74,7 @@ header {
         line-height: 1.33;
         text-align: left;
         color: #ffffff;
-        transition: .2s ease color, .2s ease font-weight;
+        transition: .2s ease color;
 
         &:hover {
           color: #ff5a39;
@@ -230,7 +235,7 @@ header {
         a {
           font-weight: 500;
           color: #202020;
-          transition: .2s ease color, .2s ease font-weight;
+          transition: .2s ease color;;
 
           &:hover {
             color: #ff5a39;
@@ -367,6 +372,8 @@ header {
 
       .logoAndSearch {
         img {
+          width: 98px;
+          height: 36px;
           margin-right: 0;
         }
       }
