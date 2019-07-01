@@ -36,6 +36,31 @@
 
 @media screen and (max-width: 767px) {
   .travelStories {
+    grid-template-columns: 1fr 1fr;
+    margin: 0 auto;
+    max-width: 100vw;
+
+    .item1 {
+      grid-column-start: 1;
+      grid-column-end: 3;
+    }
+
+    .item2 {
+      grid-column-start: 1;
+      grid-column-end: 2;
+      margin-top: 8px;
+    }
+
+    .item3 {
+      grid-column-start: 2;
+      grid-column-end: 3;
+      margin: 8px 0 0 8px;
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .travelStories {
     grid-template-columns: 1fr;
     margin: 0 auto;
     max-width: 100vw;
