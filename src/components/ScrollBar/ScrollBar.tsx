@@ -9,17 +9,9 @@ export interface IProps {
 
 export const ScrollBar: React.FC<IProps> = ({ children }) => {
 
-  const renderThumb = ({ ...props }) => {
-    return (
-      <div className={styles.scrollBarThumb} {...props}/>
-    )
-  }
+  const renderThumb = ({ ...props }) => (<div className={styles.scrollBarThumb} {...props}/>)
 
-  const renderTrackVertical = ({ ...props }) => {
-    return (
-      <div className={styles.scrollBarTrack} {...props}/>
-    )
-  }
+  const renderTrackVertical = ({ ...props }) => (<div className={styles.scrollBarTrack} {...props}/>)
 
   return (
     <Scrollbars
