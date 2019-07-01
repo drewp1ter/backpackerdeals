@@ -23,7 +23,8 @@ export const TopDestinationCard: React.FC<IProps> = ({ title, country, variant, 
       </div>
       <div className={styles.gradient} style={gradient} />
       <picture>
-        <source media="(max-width: 767px)" srcSet={images.w320[variant]} />
+        <source media="(max-width: 400px)" srcSet={images.w320[variant]} />
+        <source media="(max-width: 767px)" srcSet={images.w768[variant]} />
         <source media="(max-width: 1024px)" srcSet={images.w1024[variant].src} />
         <source media="(max-width: 1280px)" srcSet={images.w1280[variant].src} />
         <source media="(max-width: 1920px)" srcSet={images.w1920[variant]} />

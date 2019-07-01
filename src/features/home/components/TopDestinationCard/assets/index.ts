@@ -25,6 +25,15 @@ export const w1024 = {
   maskGroup21: require('./maskGroup21.jpg?resize&size=152'),
 }
 
+export const w768 = {
+  maskGroup16: require('./maskGroup16_768.jpg'),
+  maskGroup17: require('./maskGroup17_768.jpg'),
+  maskGroup18: require('./maskGroup18_768.jpg'),
+  maskGroup19: require('./maskGroup19_768.jpg'),
+  maskGroup20: require('./maskGroup20_768.jpg'),
+  maskGroup21: require('./maskGroup21_768.jpg'),
+}
+
 export const w320 = {
   maskGroup16: require('./maskGroup16_320.jpg'),
   maskGroup17: require('./maskGroup17_320.jpg'),

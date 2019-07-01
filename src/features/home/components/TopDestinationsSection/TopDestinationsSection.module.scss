@@ -89,6 +89,7 @@
 
 @media screen and (max-width: 767px) {
   .topDestinations {
+    max-width: 608px;
     grid-template-columns: 1fr 1fr;
     // grid-template-rows: 264px 196px 196px 264px;
 
