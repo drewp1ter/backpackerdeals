@@ -1,3 +1,5 @@
+@import "../../../../scss/device";
+
 .authenticCard {
   display: flex;
   flex-direction: column;
@@ -36,7 +38,7 @@
   }
 }
 
-@media screen and (max-width: 1280px) {
+@include device-tb {
   .authenticCard {
     padding: 18px 12px 20px 12px;
 
@@ -57,7 +59,7 @@
   }
 }
 
-@media screen and (max-width: 767px) {
+@include device-mb {
   .authenticCard {
     min-width: 244px;
   }

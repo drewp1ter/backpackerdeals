@@ -1,3 +1,5 @@
+@import "../../scss/device";
+
 .lastMinuteDealCard {
   margin-right: 15px;
   transition: .2s ease box-shadow;
@@ -10,7 +12,7 @@
     box-shadow: 0 24px 32px rgba(0, 0, 0, 0.06);
 
     .imageBlock .background {
-      transform: scale3d(1.1,1.1,1.1);
+      transform: scale3d(1.1, 1.1, 1.1);
     }
 
     .tour {
@@ -291,7 +293,7 @@
 
 }
 
-@media screen and (max-width: 1280px) {
+@include device-tb {
   .lastMinuteDealCard {
     &[data-view="horizontal"] {
       .cardDescription {
@@ -314,6 +316,7 @@
 
         p {
           font-size: 32px;
+
           &.colon {
             margin: 0 8px;
           }
@@ -345,7 +348,7 @@
           }
         }
 
-      .location {
+        .location {
           i {
             font-size: 12px;
           }
@@ -416,6 +419,7 @@
 
         p {
           font-size: 27px;
+
           &.colon {
             margin: 0 6px;
           }
@@ -448,6 +452,7 @@
 
         p {
           font-size: 32px;
+
           &.colon {
             margin: 0 8px;
           }
@@ -463,7 +468,7 @@
     &[data-view="reversed"] {
       .imageBlock {
         .background {
-           height: 288px;
+          height: 288px;
         }
       }
     }

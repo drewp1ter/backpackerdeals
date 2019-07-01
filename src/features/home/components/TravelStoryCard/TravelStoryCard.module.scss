@@ -1,3 +1,5 @@
+@import "../../../../scss/device";
+
 .travelStoryCard {
   position: relative;
   border-radius: 8px;
@@ -67,8 +69,7 @@
   }
 }
 
-
-@media screen and (max-width: 1280px) {
+@include device-tb {
   .travelStoryCard {
     .text {
       left: 16px;
@@ -120,7 +121,7 @@
   }
 }
 
-@media screen and (max-width: 767px) {
+@include device-mb {
   .travelStoryCard {
     .text {
       h3, span {

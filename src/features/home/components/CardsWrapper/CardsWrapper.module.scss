@@ -1,3 +1,5 @@
+@import "../../../../scss/device";
+
 .cardsWrapper {
   margin-bottom: 98px;
   padding: 0 15px;
@@ -32,7 +34,7 @@
   }
 }
 
-@media screen and (max-width: 1280px) {
+@include device-tb {
   .cardsWrapper {
     > h3 {
       font-size: 38px;
@@ -50,7 +52,7 @@
   }
 }
 
-@media screen and (max-width: 500px) {
+@include device((max: 500px)) {
   .cardsWrapper {
     > h3 {
       font-size: 32px;
@@ -58,7 +60,7 @@
   }
 }
 
-@media screen and (max-width: 350px) {
+@include device((max: 350px)) {
   .cardsWrapper {
     padding: 0 5px;
 

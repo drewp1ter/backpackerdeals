@@ -1,0 +1,47 @@
+$size-mb-min: 320px;
+$size-tb-min: 768px;
+$size-tb-max: 1280px;
+$size-pc-min: $size-tb-max;
+
+// Custom device resolution
+@mixin device($minMaxMap){
+  $min: map-get($minMaxMap, 'min');
+  $max: map-get($minMaxMap, 'max');
+
+  @if($min and $max) {
+    @media screen and (min-width: $min) and (max-width: $max) { @content; }
+  } @else if ($min) {
+    @media screen and (min-width: $min) { @content; }
+  } @else if ($max) {
+    @media screen and (max-width: $max) { @content; }
+  }
+}
+
+@mixin device-mb() {
+  $map: (min: $size-mb-min, max: $size-tb-min - 1);
+  @include device($map) {
+    @content
+  }
+}
+
+@mixin device-tb() {
+  $map: (min: $size-tb-min, max: $size-tb-max - 1);
+  @include device($map) {
+    @content
+  }
+}
+
+@mixin device-pc(){
+  $map: (min: $size-tb-max);
+  @include device($map) {
+    @content
+  }
+}
+
+@mixin device-ipad() {
+  $map: (min: $size-tb-min, max: $size-tb-max - 1);
+  @include device($map) {
+    @content
+  }
+}
+

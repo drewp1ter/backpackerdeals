@@ -22,7 +22,7 @@ export const InstagramSection: React.FC<IProps> = ({ className }) => {
       <picture>
         <source media="(max-width: 767px)" srcSet={images.w320[img].src} />
         <source media="(max-width: 1024px)" srcSet={images.w1024[img].src} />
-        <source media="(max-width: 1280px)" srcSet={images.w1280[img].src} />
+        <source media="(max-width: 1279px)" srcSet={images.w1280[img].src} />
         <source media="(max-width: 1920px)" srcSet={images.w1920[img]} />
         <img src={images.w1920[img]} alt="Instagram" />
       </picture>

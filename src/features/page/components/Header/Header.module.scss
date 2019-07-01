@@ -1,3 +1,5 @@
+@import "../../../../scss/device";
+
 header {
   position: fixed;
   top: 0;
@@ -303,7 +305,8 @@ header {
   }
 }
 
-@media screen and (max-width: 1615px) {
+
+@include device((max: 1615px)) {
   header {
     
     .logoAndSearch {
@@ -330,7 +333,7 @@ header {
   }
 }
 
-@media screen and (max-width: 1420px) {
+@include device((max: 1420px)) {
   header {
     padding: 20px 30px;
 
@@ -351,7 +354,7 @@ header {
   }
 }
 
-@media screen and (min-width: 768px) and (max-width: 1280px) {
+@include device-tb {
   header {
     padding: 20px 15px;
 
@@ -388,6 +391,7 @@ header {
   }
 }
 
+
 @media screen and (min-width: 768px) and (max-width: 810px) {
   header {
     .tools {
@@ -402,17 +406,17 @@ header {
   }
 }
 
-@media screen and (min-width: 320px) and (max-width: 767px) {
+@include device-mb {
   header {
     padding: 7.5px 23px 7.5px 10px;
     background-color: #ffffff;
-    
+
     .tools {
       .logoAndSearch {
         .logo {
           display: none;
         }
-  
+
         .blackLogo {
           display: block;
           width: 112px;
@@ -431,5 +435,11 @@ header {
         display: flex;
       }
     }
+  }
+}
+
+@include device-pc {
+  .mobileTools {
+    display: none;
   }
 }

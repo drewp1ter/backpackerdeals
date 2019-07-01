@@ -1,3 +1,5 @@
+@import "../../../../scss/device";
+
 footer {
   position: relative;
   padding: 218px 150px 0;
@@ -362,7 +364,7 @@ footer {
   }
 }
 
-@media screen and (max-width: 1280px) {
+@include device-tb {
   footer {
     padding: 218px 116px 0;
 
@@ -513,7 +515,7 @@ footer {
   }
 }
 
-@media screen and (min-width: 320px) and (max-width: 767px) {
+@include device-mb {
   footer {
     padding: 167px 10px 0;
 
