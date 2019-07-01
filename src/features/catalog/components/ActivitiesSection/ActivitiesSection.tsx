@@ -8,7 +8,7 @@ import styles from './ActivitiesSection.module.scss'
 export const ActivitiesSection: React.FC = () => (
   <HeaderWave className={styles.activitiesSection} maskClassName={styles.mask}>
     <h1>
-      Tours, day trips and activities 
+      Tours, day trips and activities
       <br/>
       in Australia
     </h1>

@@ -11,7 +11,7 @@ export const SearchTravelSection: React.FC<Partial<SearchActions> & Partial<ISea
   const handleToggleSeach = () => toggleSearch(!advancedSearch)
 
   return (
-    <HeaderWave className={styles.searchTravelSection}>
+    <HeaderWave className={styles.searchTravelSection} maskClassName={styles.mask}>
       <h1 key="e1">
         Search Less,
         <br /> Travel More!

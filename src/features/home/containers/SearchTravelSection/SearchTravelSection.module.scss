@@ -5,7 +5,12 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: scroll;
-  padding: 200px 0 400px 0;
+  padding: 200px 0 500px 0;
+
+  .mask {
+    mask-position: 50% calc(50% + 480px);
+  }
+
 
   h1 {
     position: relative;
@@ -87,6 +92,8 @@
 
 @media screen and (max-width: 1615px) {
   .searchTravelSection {
+    padding-bottom: 550px;
+
     h1 {
       margin: 0 0 5px 0;
       font-size: 62px;
@@ -118,6 +125,10 @@
   .searchTravelSection {
     padding: 150px 0 230px 0;
 
+    .mask {
+      mask-position: 50% calc(50% + 290px);
+    }
+
     h1 {
       font-size: 52px;
     }
@@ -131,6 +142,10 @@
 @media screen and (min-width: 320px) and (max-width: 767px) {
   .searchTravelSection {
     padding: 100px 0;
+
+    .mask {
+      mask-position: 50% calc(50% + 180px);
+    }
 
     h1 {
       font-size: 32px;
