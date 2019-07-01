@@ -17,7 +17,7 @@
       font-weight: 600;
       line-height: 1.33;
       color: #fafafa;
-      transition: .2s ease color, .2s ease font-weight;
+      transition: .2s ease color;;
     }
 
     i {
@@ -53,11 +53,11 @@
     border-radius: 7px;
 
     &[data-pos="right"] {
-      right: 0px;
+      right: 0;
     }
 
     &[data-pos="left"] {
-      left: 0px;
+      left: 0;
     }
 
     &[data-size="md"] {
