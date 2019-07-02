@@ -13,6 +13,8 @@ interface IProps {
   readonly disabled?: boolean
   readonly bodyTheme?: 'mobile'
   readonly onSelect?: () => void
+  readonly size?: 'md' | 'lg'
+  readonly anglePos?: 'left' | 'right'
 }
 
 export const NewSelect: React.FC<IProps> = ({
@@ -23,7 +25,9 @@ export const NewSelect: React.FC<IProps> = ({
   value,
   disabled = false,
   onSelect,
+  size = 'md',
   bodyTheme,
+  anglePos = 'left'
 }) => {
   const [isOpen, setOpen] = useState<boolean>(false)
 
@@ -34,27 +38,29 @@ export const NewSelect: React.FC<IProps> = ({
   }
 
   return (
-    <div className={styles.searchSelect} data-theme={theme} data-bodytheme={bodyTheme} tabIndex={0} onBlur={handleClose}>
+    <div className={classNames(styles.searchSelect, className)} data-theme={theme} data-bodytheme={bodyTheme} tabIndex={0} onBlur={handleClose}>
       <div
-        className={classNames(styles.select, className)}
-        data-opened={isOpen && 'opened'}
-        data-disabled={disabled && 'disabled'}
+        className={styles.select}
+        data-opened={isOpen}
+        data-disabled={disabled}
+        data-size={size}
         onClick={toggleSelect}
       >
-        <i className="fas fa-angle-down" />
+        { anglePos === 'left' && <i className="fas fa-angle-down" data-pos={anglePos} /> }
         {value}
+        { anglePos === 'right' && <i className="fas fa-angle-down" data-pos={anglePos} /> }
       </div>
 
       {isOpen && (
-        <div className={styles.optionBlock}>
+        <ul className={styles.optionBlock} data-size={size}>
           {options &&
             options.map((option, index) => (
-              <p key={`option-${index}`} className={styles.option} onClick={handleSelect} data-index={index}>
+              <li key={`option-${index}`} className={styles.option} onClick={handleSelect} data-index={index}>
                 {option}
-              </p>
+              </li>
             ))}
           {children}
-        </div>
+        </ul>
       )}
     </div>
   )

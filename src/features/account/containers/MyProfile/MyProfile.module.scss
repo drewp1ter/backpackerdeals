@@ -56,13 +56,24 @@
     }
   }
 
+  .select {
+    padding: 0 24px;
+    width: 96px;
+  }
+
 }
 
 .selectItem {
   display: flex;
   align-items: center;
+  min-width: 76px;
 
   img {
     margin-right: 8px;
+  }
+
+  span {
+    font-size: 18px;
+    font-weight: 500;
   }
 }
