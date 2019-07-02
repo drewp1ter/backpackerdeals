@@ -41,7 +41,7 @@
   }
 }
 
-@media screen and (min-width: 615px) and (max-width: 1279px) {
+@media screen and (min-width: 768px) and (max-width: 1279px) {
   .activitiesSection {
     h1 {
       display: none;
@@ -59,21 +59,6 @@
   }
 }
 
-@media screen and (min-width: 320px) and (max-width: 615px) {
-  .activitiesSection {
-    margin-top: 0;
-    padding: 125px 0;
-
-    .card, h1 {
-      display: none;
-    }
-
-    .mask {
-      mask-position: center calc(50% + 70px);
-    }
-  }
-}
-
 @include device-tb {
   .activitiesSection {
     margin-top: 72px;
@@ -86,6 +71,11 @@
     height: 252px;
     background-size: 153% auto;
     background-position-y: 52px;
+    padding: 130px 0;
+
+    .card, h1 {
+      display: none;
+    }
 
     .mask {
       mask-position: center calc(50% + -25px);
@@ -93,6 +83,24 @@
 
     &:after {
       height: 253px;
+    }
+  }
+}
+
+@include device((min: 615px, max: 769px)) {
+  .activitiesSection {
+    padding: 181px 0;
+    .mask {
+      mask-position: center calc(50% + -20px);
+    }
+  }
+}
+
+@include device((min: 615px, max: 745px)) {
+  .activitiesSection {
+    padding: 181px 0 72px 0;
+    .mask {
+      mask-position: center calc(50% + -57px);
     }
   }
 }
