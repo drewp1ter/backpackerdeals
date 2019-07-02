@@ -3,6 +3,8 @@
 .lastMinuteDealCard {
   margin-right: 15px;
   transition: .2s ease box-shadow;
+  border-radius: 8px;
+  border: 1px solid #fafafa;
 
   &[data-hidden="true"] {
     display: none;
@@ -32,7 +34,8 @@
     position: relative;
     transition: transform .2s ease-out;
     overflow: hidden;
-    border-radius: 7px 7px 0 0;
+    border-radius: 8px 8px 0 0;
+    margin: -1px;
 
     img:not(.background) {
       z-index: 2;
@@ -162,7 +165,6 @@
 
   .cardDescription {
     padding: 20px 24px 24px 24px;
-    border: solid 1px #fafafa;
     border-top: 0;
 
     &[data-view="horizontal"] {
@@ -451,8 +453,6 @@
         }
 
         p {
-          font-size: 32px;
-
           &.colon {
             margin: 0 8px;
           }
@@ -470,6 +470,65 @@
         .background {
           height: 288px;
         }
+      }
+    }
+  }
+}
+
+@include device-mb {
+  .lastMinuteDealCard {
+    .imageBlock {
+      .sale p {
+        font-size: 11px;
+      }
+    }
+
+    .cardDescription {
+      padding: 14px 12px 14px 12px;
+
+      .aboutPlace {
+        margin-bottom: 16px;
+
+        .rating {
+          i {
+            font-size: 10px;
+          }
+
+          span {
+            font-size: 10px;
+          }
+        }
+
+        .location {
+          i, span {
+            font-size: 10px;
+          }
+        }
+      }
+
+      .tour {
+        font-size: 20px;
+        font-weight: 700;
+      }
+
+      .duration {
+        font-size: 10px;
+      }
+    }
+
+    .valueAndLink {
+      margin-top: 14px;
+
+      .totalPrice {
+        .price {
+          font-size: 14px;
+        }
+      }
+
+      button {
+        width: 76px;
+        height: 44px;
+        border-radius: 30px;
       }
     }
   }

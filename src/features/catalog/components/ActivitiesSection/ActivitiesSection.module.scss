@@ -1,5 +1,7 @@
+@import '../../../../scss/device';
+
 .activitiesSection {
-  margin-top: 100px;
+  margin-top: 104px;
   position: relative;
   background-image: url('./assets/background1920.jpg');
   background-position: center;
@@ -35,7 +37,9 @@
     }
 
     .card {
-      left: 56%;
+      width: 312px;
+      right: 72px;
+      left: unset;
     }
 
     .mask {
@@ -55,6 +59,25 @@
 
     .mask {
       mask-position: center calc(50% + 70px);
+    }
+  }
+}
+
+@include device-tb {
+  .activitiesSection {
+    margin-top: 72px;
+  }
+}
+
+@include device-mb {
+  .activitiesSection {
+    margin-top: 0;
+    height: 252px;
+    background-size: 153% auto;
+    background-position-y: 52px;
+
+    .mask {
+      mask-position: center calc(50% + -25px);
     }
   }
 }

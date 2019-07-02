@@ -1,3 +1,5 @@
+@import "../../../../scss/device";
+
 .moreActivities {
   margin-top: 58px;
   padding: 0 100px;
@@ -90,6 +92,7 @@
 
       .filtersCheckboxes {
         border: 1px solid #fafafa;
+        border-radius: 0 4px 4px 0;
         padding: 24px 20px;
 
         .checkbox {
@@ -149,10 +152,37 @@
   }
 }
 
-@media screen and (min-width: 768px) and (max-width: 1280px) {
+@include device-tb {
   .moreActivities {
     padding: 0 50px;
 
+    h3 {
+      font-size: 38px;
+      line-height: 32px;
+    }
+
+    .cardsContainer {
+      .header span {
+        font-size: 12px;
+        font-weight: 400;
+      }
+    }
+
+    .content .filters {
+      & > h4 {
+        font-size: 14px;
+        font-weight: 600;
+      }
+
+      i + span {
+        font-size: 12px;
+      }
+
+      .filtersCheckboxes label {
+        font-size: 11px !important;
+        font-weight: 400;
+      }
+    }
     .content {
       .cards {
         &[data-view="reversed"] {
@@ -163,6 +193,7 @@
     }
   }
 }
+
 
 @media screen and (min-width: 615px) and (max-width: 900px) {
   .moreActivities {

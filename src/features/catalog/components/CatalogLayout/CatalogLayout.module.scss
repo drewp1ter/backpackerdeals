@@ -1,3 +1,5 @@
+@import "../../../../scss/device";
+
 .instagramCards {
   position: relative;
   margin-top: 103px;
@@ -13,28 +15,28 @@
   z-index: 3;
 }
 
-@media screen and (max-width: 1280px) {
+@include device-tb {
   .breadcrumbs {
     max-width: 1110px;
     margin-top: -56px;
   }
 }
 
-@media screen and (max-width: 1024px) {
+@include device-ipad {
   .breadcrumbs {
     max-width: 980px;
     margin: -56px auto 16px;
   }
 }
 
-@media screen and (min-width: 320px) and (max-width: 614px) {
+@include device-mb {
   .instagramCards {
     margin-top: 72px;
   }
 
   .breadcrumbs {
     position: absolute;
-    top: 250px;
+    top: 287px;
     left: 15px;
   }
 }

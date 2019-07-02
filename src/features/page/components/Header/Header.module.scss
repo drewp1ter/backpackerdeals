@@ -9,6 +9,10 @@ header {
   background-color: transparent;
   padding: 25px 30px;
   transition: .2s ease background-color;
+  height: 104px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
 
   .currencyOpener {
     color: #fff;
@@ -47,6 +51,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
 
     .logoAndSearch {
       display: flex;
@@ -357,6 +362,7 @@ header {
 @include device-tb {
   header {
     padding: 20px 15px;
+    height: 72px;
 
     .tools {
       display: grid;
@@ -410,6 +416,7 @@ header {
   header {
     padding: 7.5px 23px 7.5px 10px;
     background-color: #ffffff;
+    height: 56px;
 
     .tools {
       .logoAndSearch {
