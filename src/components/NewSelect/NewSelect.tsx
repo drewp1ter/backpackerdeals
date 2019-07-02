@@ -42,7 +42,7 @@ export const NewSelect: React.FC<IProps> = ({
         onClick={toggleSelect}
       >
         <i className="fas fa-angle-down" />
-        <span>{value}</span>
+        {value}
       </div>
 
       {isOpen && (
