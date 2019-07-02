@@ -43,9 +43,10 @@
   }
 }
 
-@include device((max: 1024px))
-.activitiesTourThingsCardsRow {
-  max-width: 952px;
+@include device((max: 1024px)) {
+  .activitiesTourThingsCardsRow {
+    max-width: 952px;
+  }
 }
 
 @include device-mb {
