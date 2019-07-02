@@ -1,15 +1,11 @@
 import React from 'react'
 
-import Chinese from 'features/page/components/Header/assets/chineese.png'
-import English from 'features/page/components/Header/assets/english.png'
-import French from 'features/page/components/Header/assets/french.png'
-import German from 'features/page/components/Header/assets/german.png'
-import Portuguese from 'features/page/components/Header/assets/portuguese.png'
-import Russian from 'features/page/components/Header/assets/russian.png'
-import Spanish from 'features/page/components/Header/assets/spain.png'
+import { Icon } from 'components'
+
+import styles from './MyProfile.module.scss'
 
 export default [
-  <span key={1}><img src={Chinese} />+11</span>,
-  <span key={2}><img src={Russian} />+7</span>,
-  <span key={3}><img src={English} />+44</span>
+  <div className={styles.selectItem} key={1}><Icon name="spain" /><span>+11</span></div>,
+  <div className={styles.selectItem} key={2}><Icon name="english" /><span>+7</span></div>,
+  <div className={styles.selectItem} key={3}><Icon name="german" /><span>+44</span></div>
 ]
