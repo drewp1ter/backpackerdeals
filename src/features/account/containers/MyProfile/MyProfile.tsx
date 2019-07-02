@@ -28,7 +28,7 @@ export const MyProfile: React.FC = () => {
           label="Country"
         />
         <Input className={styles.field} theme="standart" type="email" label="Email" placeholder="Email Address" />
-        <NewSelect options={options} theme="dark" value={options[1]} />
+        <NewSelect className={styles.select} options={options} theme="dark" value={options[1]} size="lg" anglePos="right" />
         <Button>Update changes</Button>
       </div>
     </div>

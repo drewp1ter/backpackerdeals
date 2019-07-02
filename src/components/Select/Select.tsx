@@ -17,7 +17,7 @@ interface IProps {
   readonly selectedOption: string
   readonly disabled?: boolean
   readonly bodyTheme?: 'mobile'
-  readonly handleSelect: (event: React.MouseEvent<HTMLElement>) => void
+  readonly onChange?: (value: any) => void
 }
 
 export class Select extends React.Component<IProps, IState> {
@@ -35,6 +35,13 @@ export class Select extends React.Component<IProps, IState> {
     window.removeEventListener('click', this.handleClickOutside)
   }
 
+  public handleChange = (event: React.MouseEvent<HTMLElement>) => {
+    const index = event.currentTarget.dataset.index || 0
+    const { onChange, options } = this.props
+    options && onChange && onChange(options[+index])
+    this.setState({ isOpen: false })
+  }
+
   public handleClickOutside = (event: MouseEvent) => {
     if (this.state.isOpen && this.ref.current && !this.ref.current.contains(event.target as Node)) {
       this.setState({ isOpen: false })
@@ -44,7 +51,7 @@ export class Select extends React.Component<IProps, IState> {
   public toggleSelect = () => this.setState({ isOpen: !this.state.isOpen })
 
   render() {
-    const { children, className, options, theme, selectedOption, disabled = false, handleSelect, bodyTheme } = this.props
+    const { children, className, options, theme, selectedOption, disabled = false, bodyTheme } = this.props
     const { isOpen } = this.state
     return (
       <div ref={this.ref} className={styles.searchSelect} data-theme={theme} data-bodytheme={bodyTheme}>
@@ -64,7 +71,7 @@ export class Select extends React.Component<IProps, IState> {
             <ScrollBar>
               {options &&
               options.map((option, index) => (
-                <p key={`option-${index}`} className={styles.option} onClick={handleSelect} data-value={option}>
+                <p key={`option-${index}`} className={styles.option} onClick={this.handleChange} data-index={index}>
                   {option}
                 </p>
               ))}

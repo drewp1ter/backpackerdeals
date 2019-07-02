@@ -38,7 +38,7 @@ export class Autocomplete extends React.Component<IProps, IState> {
     focus: false,
   }
 
-  public componentWillReceiveProps = ({ suggestions }: IProps) => this.setState({ suggestions })
+  public componentDidUpdate = ({ suggestions }: IProps) => suggestions !== this.props.suggestions && this.setState({ suggestions })
 
   public onInputFocus = () => {
     this.setState({ focus: true })
@@ -53,7 +53,9 @@ export class Autocomplete extends React.Component<IProps, IState> {
   public handleChange = ({ target: { value, name = '' } }: React.ChangeEvent<HTMLInputElement>) => {
     try {
       const { onChange } = this.props
-      const suggestions: string[] = this.props.suggestions.filter((suggestion: string) => suggestion.toLowerCase().includes(value!.toLowerCase()))
+      const suggestions: string[] = this.props.suggestions.filter((suggestion: string) =>
+        suggestion.toLowerCase().includes(value!.toLowerCase())
+      )
       this.setState({ suggestions, showSuggestions: suggestions.length > 0, suggestionIndex: -1 })
       onChange && onChange(value, name)
     } catch (e) {
