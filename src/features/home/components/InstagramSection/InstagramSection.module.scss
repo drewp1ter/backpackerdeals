@@ -1,3 +1,5 @@
+@import "../../../../scss/device";
+
 .instagramCard {
   position: relative;
   border-radius: 8px;
@@ -32,7 +34,7 @@
   max-width: 1520px;
 }
 
-@media screen and (max-width: 1280px) {
+@include device-tb {
   .instagramCards {
     max-width: 1044px;
   }
@@ -48,7 +50,7 @@
   }
 }
 
-@media screen and (max-width: 767px) {
+@include device-mb {
   .instagramCard {
     min-width: 128px;
 
