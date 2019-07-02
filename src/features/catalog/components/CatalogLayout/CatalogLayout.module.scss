@@ -11,14 +11,13 @@
   position: relative;
   padding: 0 100px;
   max-width: 1520px;
-  margin: -28px auto 24px;
+  margin: -15% auto 24px;
   height: 16px;
   z-index: 3;
 }
 
 @include device-tb {
   .breadcrumbs {
-    margin-top: -56px;
     padding: 0 50px;
   }
 }
@@ -26,7 +25,7 @@
 @include device-ipad {
   .breadcrumbs {
     max-width: 980px;
-    margin: -56px auto 16px;
+    margin: -14% auto 16px;
   }
 }
 
@@ -43,7 +42,7 @@
 
   .breadcrumbs {
     position: absolute;
-    top: 287px;
+    top: 76vw;
     padding: 0 8px;
   }
 }
