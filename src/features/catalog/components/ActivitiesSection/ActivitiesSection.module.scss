@@ -67,11 +67,16 @@
 
 @include device-mb {
   .activitiesSection {
+<<<<<<< HEAD
     margin-top: 0;
     height: 252px;
     background-size: 153% auto;
     background-position-y: 52px;
     padding: 130px 0;
+=======
+    margin-top: 50px;
+    padding: 125px 0;
+>>>>>>> BPD-35-my-profile
 
     .card, h1 {
       display: none;
