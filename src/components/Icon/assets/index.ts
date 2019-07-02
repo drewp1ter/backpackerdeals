@@ -11,6 +11,14 @@ import cart2 from './cart/cart2.svg'
 import cart3 from './cart/cart3.svg'
 import cart4 from './cart/cart4.svg'
 
+import chineese from './countries/chineese.png'
+import english from './countries/english.png'
+import french from './countries/french.png'
+import german from './countries/german.png'
+import portuguese from './countries/portuguese.png'
+import russian from './countries/russian.png'
+import spain from './countries/spain.png'
+
 import deal1 from './deal/deal1.svg'
 import deal10 from './deal/deal10.svg'
 import deal11 from './deal/deal11.svg'
@@ -33,6 +41,13 @@ import mostPopular from './mostPopular.svg'
 import topDeal from './topDeal.svg'
 
 export default {
+  chineese,
+  english,
+  german,
+  spain,
+  russian,
+  portuguese,
+  french,
   guarantee,
   group3,
   topDeal,
