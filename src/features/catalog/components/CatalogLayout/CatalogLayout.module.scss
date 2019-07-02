@@ -9,7 +9,8 @@
 
 .breadcrumbs {
   position: relative;
-  max-width: 1528px;
+  padding: 0 100px;
+  max-width: 1520px;
   margin: -28px auto 24px;
   height: 16px;
   z-index: 3;
@@ -17,8 +18,8 @@
 
 @include device-tb {
   .breadcrumbs {
-    max-width: 1110px;
     margin-top: -56px;
+    padding: 0 50px;
   }
 }
 
@@ -26,6 +27,12 @@
   .breadcrumbs {
     max-width: 980px;
     margin: -56px auto 16px;
+  }
+}
+
+@include device((max: 900px)) {
+  .breadcrumbs {
+    padding: 0 25px;
   }
 }
 
@@ -37,6 +44,6 @@
   .breadcrumbs {
     position: absolute;
     top: 287px;
-    left: 15px;
+    padding: 0 8px;
   }
 }

@@ -1,8 +1,9 @@
 @import "../../../../scss/device";
 
 .moreActivities {
-  margin-top: 58px;
   padding: 0 100px;
+  max-width: 1520px;
+  margin: 58px auto 0 auto;
 
   h3 {
     text-align: center;
@@ -183,6 +184,7 @@
         font-weight: 400;
       }
     }
+
     .content {
       .cards {
         &[data-view="reversed"] {
@@ -245,6 +247,11 @@
 
         .header {
           margin-bottom: 10px;
+
+          span {
+            font-size: 12px;
+            font-weight: 400;
+          }
 
           i {
             &:nth-child(2) {

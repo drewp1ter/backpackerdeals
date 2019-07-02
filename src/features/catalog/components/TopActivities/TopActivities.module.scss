@@ -1,11 +1,25 @@
+@import "../../../../scss/device";
+
 .topActivities {
   position: relative;
   z-index: 5;
+  padding: 0 100px;
+  max-width: 1520px;
+  margin: 0 auto;
+
+  @include device-tb {
+    padding: 0 50px;
+  }
 
   .cards {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-right: -15px;
+
+    & > div {
+      width: 100%;
+    }
   }
 
   h2 {
@@ -25,9 +39,28 @@
   }
 }
 
+@media screen and (min-width: 320px) and (max-width: 900px) {
+  .topActivities {
+    padding: 0 25px;
+
+    .cards {
+      max-width: 1136px;
+      overflow-x: scroll;
+      overflow: -moz-scrollbars-none;
+      overflow-y: hidden;
+      margin-right: 0;
+
+      &::-webkit-scrollbar {
+        width: 0 !important;
+      }
+    }
+  }
+}
+
 @media screen and (min-width: 320px) and (max-width: 614px) {
   .topActivities {
     position: static;
+    padding: 0 8px;
 
     h2 {
       font-size: 28px;
@@ -36,17 +69,4 @@
   }
 }
 
-@media screen and (min-width: 320px) and (max-width: 900px) {
-  .topActivities {
-    .cards {
-      max-width: 1136px;
-      overflow-x: scroll;
-      overflow: -moz-scrollbars-none;
-      overflow-y: hidden;
 
-      &::-webkit-scrollbar {
-        width: 0 !important;
-      }
-    }
-  }
-}
