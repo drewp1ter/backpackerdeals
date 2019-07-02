@@ -39,7 +39,7 @@ $size-pc-min: $size-tb-max;
 }
 
 @mixin device-ipad() {
-  $map: (min: $size-tb-min, max: $size-tb-max - 1);
+  $map: (max: 1024px);
   @include device($map) {
     @content
   }

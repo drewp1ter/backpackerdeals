@@ -1,108 +1,86 @@
+@import '../../../../scss/device';
+
 .searchTravelInput {
   margin: auto;
   position: relative;
-  width: 1033px;
+  width: 1008px;
+  box-sizing: border-box;
 
   .imageBlock {
     position: absolute;
     bottom: -32px;
-    left: 350px;
-    right: 0px;
+    left: 50%;
+    transform: translateX(-50%);
     cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
     width: 320px;
     height: 32px;
-    border-radius: 0 0 50px 50px;
     color: #fff;
     font-size: 12px;
-    background-color: #ff5a39;
+    background: url("./assets/Baidge.svg") no-repeat;
+    background-size: cover;
 
     i {
       margin-right: 5px;
     }
   }
 
-  button {
-    position: absolute;
-    width: 188px;
-    height: 60px !important;
-    top: 6px;
-    right: 6px;
+  .searchBtn {
+    font-size: 18px;
+    min-width: 208px;
+    height: 100%;
   }
 
   .input {
+    padding: 8px 8px 8px 32px;
+    height: 72px;
+    box-sizing: border-box;
     position: relative;
     background: rgba(255, 255, 255, 0.26);
     border-radius: 60px;
+    display: flex;
+    justify-content: space-between;
 
     input {
-      width: 753px;
-      padding: 8px 30px;
+      height: 100%;
+      width: 100%;
+      margin-right: 15px;
+
+      &, &::placeholder {
+        color: #CAD9EA;
+      }
     }
   }
 }
 
-@media screen and (max-width: 1615px) {
-  .searchTravelInput {
-    width: 865px;
-
-    .imageBlock {
-      left: 300px;
-      bottom: -28px;
-      width: 280px;
-      height: 28px;
-    }
-  }
-
-  .input {
-    input {
-      width: 585px;
-      height: 48px !important;
-    }
-
-    button {
-      height: 52px !important;
-      font-size: 16px !important;
-    }
-  }
-}
-
-@media screen and (min-width: 768px) and (max-width: 1415px) {
+@include device-tb {
   .searchTravelInput {
     width: 696px;
 
     .imageBlock {
-      left: 230px;
       bottom: -24px;
       width: 240px;
       height: 24px;
     }
-  }
 
-  .input {
-    input {
-      width: 435px;
-      height: 40px !important;
-      font-size: 14px !important;
+    .input {
+      height: 56px;
+      padding: 4px 4px 4px 20px;
 
-      &::placeholder {
-        font-size: 14px !important;
+      input, input::placeholder, .searchBtn {
+        font-size: 14px;
       }
-    }
 
-    button {
-      width: 168px !important;
-      height: 48px !important;
-      top: 4px !important;
-      right: 4px !important;
-      font-size: 14px !important;
+      .searchBtn {
+        min-width: 168px;
+      }
     }
   }
 }
 
-@media screen and (max-width: 767px) {
+@include device-mb {
   .searchTravelInput {
     display: none;
   }

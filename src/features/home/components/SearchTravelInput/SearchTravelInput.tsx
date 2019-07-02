@@ -12,7 +12,7 @@ export const SearchTravelInput: React.FC<IProps> = ({ toggleSearch }) => (
   <div className={styles.searchTravelInput}>
     <div className={styles.input}>
       <Input placeholder="Search for a destination, activity or tour" theme="transparent" size="md" />
-      <Button theme="orange" form="rounded" size="lg">
+      <Button className={styles.searchBtn} theme="orange" form="rounded">
         SEARCH
       </Button>
     </div>
