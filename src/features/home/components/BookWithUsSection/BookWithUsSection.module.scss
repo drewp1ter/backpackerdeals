@@ -1,3 +1,5 @@
+@import "../../../../scss/device";
+
 .bookWithUsSection {
   .whyBook {
     display: flex;
@@ -18,7 +20,7 @@
   }
 }
 
-@media screen and (max-width: 1280px) {
+@include device-tb {
   .bookWithUsSection {
     .whyBook {
       max-width: 936px;
@@ -30,8 +32,10 @@
   }
 }
 
-@media screen and (max-width: 768px) {
+@include device-mb {
   .bookWithUsSection {
+    margin: 15px 0 55px 0;
+
     .whyBook {
       padding: 0;
     }

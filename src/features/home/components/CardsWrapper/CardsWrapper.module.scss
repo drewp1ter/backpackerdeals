@@ -20,6 +20,7 @@
       color: #959595;
       margin-top: 16px;
       cursor: pointer;
+      text-decoration: none;
 
       i {
         margin-left: 5px;
@@ -52,19 +53,22 @@
   }
 }
 
-@include device((max: 500px)) {
+@include device-mb {
   .cardsWrapper {
-    > h3 {
-      font-size: 32px;
-    }
-  }
-}
-
-@include device((max: 350px)) {
-  .cardsWrapper {
+    margin-bottom: 33px;
     padding: 0 5px;
 
-    > h3 {
+    p {
+      margin-bottom: 23px;
+
+      a {
+        font-size: 14px;
+        font-weight: 400
+      }
+    }
+
+    & > h3 {
+      padding: 0 4px;
       font-size: 28px;
     }
   }
