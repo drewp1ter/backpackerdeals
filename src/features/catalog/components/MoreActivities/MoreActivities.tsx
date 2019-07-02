@@ -3,6 +3,7 @@ import React, { useReducer } from 'react'
 import { Button, Checkbox, LastMinuteDealCard } from 'components'
 import { Select } from 'components'
 import { FiltersMenu } from 'features/catalog/containers'
+import LazyLoad from 'react-lazyload'
 import { PriceRange } from '..'
 import { numberOfDays } from '../../../../components/AdvancedSearch/data'
 import { cards, filters } from './data'
@@ -116,7 +117,9 @@ export const MoreActivities: React.FC = () => {
             </span>
           </div>
           <div data-view={view} className={styles.cards}>
-            {renderCards()}
+            <LazyLoad height={500} offset={400}>
+              {renderCards()}
+            </LazyLoad>
           </div>
           {renderPageControls()}
         </div>
