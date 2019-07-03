@@ -20,7 +20,24 @@
         font-weight: 500;
         line-height: 1.33;
         text-align: left;
-        color: #fafafa;
+        color: #CAD9EA;
+      }
+    }
+
+    span {
+      color: #CAD9EA;
+      font-size: 13px;
+      font-weight: 400;
+      line-height: 24px;
+      position: absolute;
+      right: 15%;
+      top: 50%;
+      transform: translateY(-50%);
+
+      i {
+        color: #CAD9EA;
+        font-size: 12px;
+        margin-right: 5px;
       }
     }
 
@@ -39,6 +56,10 @@
         &::placeholder {
           color: #202020;
         }
+      }
+
+      span, span i {
+        color: #959595;
       }
     }
   }
@@ -127,6 +148,13 @@
 
         &::placeholder {
           font-size: 12px;
+        }
+      }
+
+      span {
+        font-size: 12px;
+        i {
+          font-size: 9px
         }
       }
     }

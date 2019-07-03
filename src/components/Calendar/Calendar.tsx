@@ -3,14 +3,22 @@ import Datepicker from 'react-calendar/dist/entry.nostyle'
 
 import './Calendar.scss'
 
-export const Calendar: React.FC = () => {
-  const [date, changeDate] = useState<Date | Date[]>(new Date())
+interface IProps {
+  date?: Date,
+  onChange?: (value: Date) => void
+}
 
-  const handleDateChange = (date: Date | Date[]) => changeDate(date)
+export const Calendar: React.FC<IProps> = ({date, onChange}) => {
+  const [selectedDate, setSelectedDate] = useState<Date | Date[]>(new Date())
+
+  const handleDateChange = (date: Date | Date[]) => {
+    setSelectedDate(date)
+    onChange && onChange(date as Date)
+  }
 
   return (
     <Datepicker
-      value={date}
+      value={date || selectedDate}
       locale="en"
       showNeighboringMonth={false}
       onChange={handleDateChange}

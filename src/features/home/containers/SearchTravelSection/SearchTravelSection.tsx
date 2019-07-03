@@ -8,6 +8,7 @@ import styles from './SearchTravelSection.module.scss'
 
 export const SearchTravelSection: React.FC<Partial<SearchActions> & Partial<ISearchState>> = ({ openSearch, searchType }) => {
   const [advancedSearch, toggleSearch] = React.useState<boolean>(false)
+
   const handleToggleSeach = () => toggleSearch(!advancedSearch)
 
   return (

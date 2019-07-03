@@ -1,4 +1,4 @@
-import React, { useReducer } from 'react'
+import React, { useReducer, useState } from 'react'
 
 import { Button, Checkbox, LastMinuteDealCard } from 'components'
 import { Select } from 'components'
@@ -13,6 +13,9 @@ import reducer, { ActionType, IAction, initialState, IState, ViewType } from './
 export const MoreActivities: React.FC = () => {
   const pages = 10
   const [{ view, sortDec, page }, dispatch] = useReducer<React.Reducer<IState, IAction>>(reducer, initialState)
+  const [selectedCountry, selectCountry] = useState('Select country')
+
+  const handleChangeCountry = (value: any) => selectCountry(value)
 
   const handleChangeView = (e: React.MouseEvent<HTMLElement>) => {
     const view = e.currentTarget.dataset.view as ViewType
@@ -69,17 +72,16 @@ export const MoreActivities: React.FC = () => {
           <h4>Select country</h4>
           <Select
             className={styles.filtersSelect}
-            handleSelect={() => {}}
+            onChange={handleChangeCountry}
             options={['Australia', 'Australia', 'Australia', 'Australia']}
             theme="dark"
-            selectedOption="Select country"
+            selectedOption={selectedCountry}
           />
           <h4>Select city</h4>
           {renderFilters()}
           <h4>Number of days</h4>
           <Select
             className={styles.filtersSelect}
-            handleSelect={() => {}}
             options={numberOfDays}
             theme="dark"
             selectedOption="Number of days"
@@ -87,7 +89,6 @@ export const MoreActivities: React.FC = () => {
           <h4>Accomodation style</h4>
           <Select
             className={styles.filtersSelect}
-            handleSelect={() => {}}
             options={['All accommodation styles', 'Australia', 'Australia', 'Australia']}
             theme="dark"
             selectedOption="All accommodation styles"
@@ -95,7 +96,6 @@ export const MoreActivities: React.FC = () => {
           <h4>Style of travel</h4>
           <Select
             className={styles.filtersSelect}
-            handleSelect={() => {}}
             options={['Family friendly', 'Australia', 'Australia', 'Australia']}
             theme="dark"
             selectedOption="Family friendly"

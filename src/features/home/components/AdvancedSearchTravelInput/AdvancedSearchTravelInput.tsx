@@ -1,3 +1,5 @@
+import moment from 'moment'
+import { useState } from 'react'
 import * as React from 'react'
 
 import { Button, Calendar } from 'components'
@@ -12,47 +14,54 @@ interface IProps {
 }
 
 export const AdvancedSearchTravelInput: React.FC<IProps> = ({ toggleSearch }) => {
+  const [selected, setSelected] = useState({
+    startLocation: 'Start location',
+    typeOfTour: 'Type of tour',
+    endLocation: 'End location',
+    date: new Date(),
+    numberOfDays: 'Number of days',
+  })
 
-  const handleSelect = (option => console.log(option));
+  const handleChange = (value: any, key: string) => setSelected({ ...selected, [key]: value })
+
+  const handleChangeDate = (value: Date) => handleChange(value, 'date')
 
   return (
     <div className={styles.advancedSearchTravelInput}>
       <div className={styles.searchBlock}>
         <Select
           className={styles.lastSelect}
-          selectedOption="Start location"
+          selectedOption={selected.startLocation}
           options={startLocation}
-          handleSelect={handleSelect}
+          onChange={value => handleChange(value, 'startLocation')}
           theme="light"
         />
         <Select
           className={styles.lastSelect}
-          selectedOption="Type of tour"
+          selectedOption={selected.typeOfTour}
           options={startLocation}
-          handleSelect={handleSelect}
+          onChange={value => handleChange(value, 'typeOfTour')}
           theme="light"
         />
         <Select
           className={styles.lastSelect}
-          selectedOption="End location"
+          selectedOption={selected.endLocation}
           options={startLocation}
-          handleSelect={handleSelect}
+          onChange={value => handleChange(value, 'endLocation')}
           theme="light"
         />
         <Select
           className={styles.lastSelect}
-          selectedOption="Select date"
-          // options={startLocation}
-          handleSelect={handleSelect}
+          selectedOption={moment(selected.date).format('DD/MM/YYYY')}
           theme="light"
         >
-          <Calendar/>
+          <Calendar date={selected.date} onChange={handleChangeDate}/>
         </Select>
         <Select
           className={styles.lastSelect}
-          selectedOption="Number of days"
+          selectedOption={selected.numberOfDays}
           options={numberOfDays}
-          handleSelect={handleSelect}
+          onChange={value => handleChange(value, 'numberOfDays')}
           theme="light"
         />
       </div>

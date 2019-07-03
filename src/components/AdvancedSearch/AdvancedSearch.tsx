@@ -18,10 +18,16 @@ export const AdvancedSearch: React.FC<IProps> = ({ theme }) => {
 
   const handleSelect = (event: React.MouseEvent<HTMLElement>) => console.log(event.currentTarget.dataset.value)
 
+  const handleClickSearch = () => toggleSearch(!isOpen)
+
   return (
     <div className={styles.advancedSearch}>
-      <div data-theme={theme} onClick={() => toggleSearch(true)} className={styles.searchPlaceholder}>
+      <div data-theme={theme} onClick={handleClickSearch} className={styles.searchPlaceholder}>
         <input type="text" disabled={true} placeholder="Try Australia" />
+        <span>
+          <i className="fas fa-filter" />
+          Advanced search
+        </span>
         <Button form="circle" >
           <i className="fas fa-search" />
         </Button>
@@ -50,7 +56,7 @@ export const AdvancedSearch: React.FC<IProps> = ({ theme }) => {
           />
           <Button className={styles.searchbutton} theme="orange" form="rectangled" size='lg'>SEARCH</Button>
         </div>
-        <button aria-label="search" onClick={() => toggleSearch(false)}>
+        <button aria-label="search" onClick={handleClickSearch}>
           <i className="fas fa-times" />
         </button>
       </div>

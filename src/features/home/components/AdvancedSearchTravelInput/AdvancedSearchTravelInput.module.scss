@@ -19,8 +19,16 @@
     display: flex;
     justify-content: space-between;
 
-    div[data-theme] {
-      flex: 1
+    & > div {
+      &[data-theme] {
+        flex: 1;
+
+        & > [data-opened] {
+          overflow: hidden;
+          max-height: 56px;
+          box-sizing: border-box;
+        }
+      }
     }
   }
 
@@ -68,6 +76,10 @@
     .searchBtn {
       width: 168px;
       font-size: 14px;
+    }
+
+    .searchBlock > div[data-theme] > div[data-opened] {
+      max-height: 39px;
     }
   }
 }
