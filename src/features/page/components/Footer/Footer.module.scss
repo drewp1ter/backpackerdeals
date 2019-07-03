@@ -367,6 +367,7 @@ footer {
 @include device-tb {
   footer {
     padding: 218px 116px 0;
+    background-image: url('./assets/backgroundFooter.jpg?reszie&size=1280');
 
     h2 {
       font-size: 38px;
@@ -518,6 +519,7 @@ footer {
 @include device-mb {
   footer {
     padding: 167px 10px 0;
+    background-image: url('./assets/backgroundFooter.jpg?resize&size=768');
 
     & > p {
       line-height: 16px;
