@@ -10,12 +10,24 @@ import { cards, filters } from './data'
 import styles from './MoreActivities.module.scss'
 import reducer, { ActionType, IAction, initialState, IState, ViewType } from './reducer'
 
+const counries = ['Australia', 'Australia', 'Australia', 'Australia'];
+const initFilters = {
+  country: counries[0],
+  city: '',
+  numberOfDays: 'Select Number of days',
+  accommodationStyle: 'All accommodation styles',
+  styleOfTravel: 'Family friendly',
+  priceRange: [100, 200]
+}
+
 export const MoreActivities: React.FC = () => {
   const pages = 10
   const [{ view, sortDec, page }, dispatch] = useReducer<React.Reducer<IState, IAction>>(reducer, initialState)
-  const [selectedCountry, selectCountry] = useState('Select country')
+  const [selectedFilters, setSelectedFilters] = useState({...initFilters})
 
-  const handleChangeCountry = (value: any) => selectCountry(value)
+  const resetFilters = () => setSelectedFilters({...initFilters})
+
+  const handleChangeSelect = (value: any, key: string) => setSelectedFilters({...selectedFilters, [key]: value})
 
   const handleChangeView = (e: React.MouseEvent<HTMLElement>) => {
     const view = e.currentTarget.dataset.view as ViewType
@@ -72,10 +84,10 @@ export const MoreActivities: React.FC = () => {
           <h4>Select country</h4>
           <Select
             className={styles.filtersSelect}
-            onChange={handleChangeCountry}
-            options={['Australia', 'Australia', 'Australia', 'Australia']}
+            options={counries}
             theme="dark"
-            selectedOption={selectedCountry}
+            selectedOption={selectedFilters.country}
+            onChange={value => handleChangeSelect(value, 'country')}
           />
           <h4>Select city</h4>
           {renderFilters()}
@@ -84,24 +96,30 @@ export const MoreActivities: React.FC = () => {
             className={styles.filtersSelect}
             options={numberOfDays}
             theme="dark"
-            selectedOption="Number of days"
+            selectedOption={selectedFilters.numberOfDays}
+            onChange={value => handleChangeSelect(value, 'numberOfDays')}
           />
           <h4>Accomodation style</h4>
           <Select
             className={styles.filtersSelect}
             options={['All accommodation styles', 'Australia', 'Australia', 'Australia']}
             theme="dark"
-            selectedOption="All accommodation styles"
+            selectedOption={selectedFilters.accommodationStyle}
+            onChange={value => handleChangeSelect(value, 'accommodationStyle')}
           />
           <h4>Style of travel</h4>
           <Select
             className={styles.filtersSelect}
             options={['Family friendly', 'Australia', 'Australia', 'Australia']}
             theme="dark"
-            selectedOption="Family friendly"
+            selectedOption={selectedFilters.styleOfTravel}
+            onChange={value => handleChangeSelect(value, 'styleOfTravel')}
           />
-          <PriceRange />
-          <Button theme="transparent" form='standart' size="sm">Reset filter</Button>
+          <PriceRange
+            range={selectedFilters.priceRange}
+            onChange={values => handleChangeSelect(values, 'priceRange')}
+          />
+          <Button theme="transparent" form='standart' size="sm" onClick={resetFilters}>Reset filter</Button>
         </div>
         <div className={styles.cardsContainer}>
           <div className={styles.header}>

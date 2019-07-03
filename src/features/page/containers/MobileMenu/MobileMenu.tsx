@@ -9,7 +9,7 @@ import { SelectContinent } from '../../components'
 
 import Types from 'Types'
 import { numberOfDays, startLocation } from '../../../../components/AdvancedSearch/data'
-import { currencies, languages } from '../../components/Header/constants'
+import { currencies, IIconInfo, languages } from '../../components/Header/constants'
 import { cities, countries, options } from './data'
 
 import styles from './MobileMenu.module.scss'
@@ -35,7 +35,10 @@ export const MobileMenu: React.FC<Partial<Types.RootState> & PageActions & Searc
     endLocation: 'End location',
     date: new Date(),
     numberOfDays: 'Number of days',
+    currency: currencies.aud,
+    language: languages.english,
   };
+
   const [searchQuery, changeSearch] = React.useState('')
   const [multiDayTour, selectTourType] = React.useState(false)
   const [selected, setSelected] = useState({...fields})
@@ -45,6 +48,19 @@ export const MobileMenu: React.FC<Partial<Types.RootState> & PageActions & Searc
   // const handleChangeDate = (value: Date) => handleChange(value, 'date')
 
   const handleClickReset = () => setSelected({...fields})
+  const handleClickOption = (value: any, key: string) => {
+    blurActiveElement();
+    handleChange(value, key)
+  }
+
+  const blurActiveElement = () => {
+      if (window.document.activeElement !== null) {
+        (window.document.activeElement as HTMLElement).blur()
+      }
+  }
+
+  const currencyFormatFn = (currency: IIconInfo) => `${currency.icon} ${currency.name}`
+  const languageFormatFn = (language: IIconInfo) => language.name
 
   return (
     <div className={styles.mobileMenu} data-theme={theme}>
@@ -111,11 +127,15 @@ export const MobileMenu: React.FC<Partial<Types.RootState> & PageActions & Searc
             childrenClassName={styles.currencies}
             leftIcon="fas fa-chevron-down"
             reversableIcon="left"
-            title="$ AUD"
+            selected={selected.currency}
+            format={currencyFormatFn}
             reverseType="180"
           >
             {Object.entries(currencies).map((currency, index) => (
-              <p key={`${currency[0]}-${index}`}>
+              <p key={`${currency[0]}-${index}`}
+                 data-currency={currency[1]}
+                 data-field="currency"
+                 onClick={() => handleClickOption(currency[1], 'currency')}>
                 {currency[1].name} {currency[1].icon}
               </p>
             ))}
@@ -124,11 +144,14 @@ export const MobileMenu: React.FC<Partial<Types.RootState> & PageActions & Searc
             childrenClassName={styles.languages}
             leftIcon="fas fa-chevron-down"
             reversableIcon="left"
-            title="English"
+            selected={selected.language}
+            format={languageFormatFn}
             reverseType="180"
           >
             {Object.entries(languages).map((language, index) => (
-              <div className={styles.languages} key={`language-${index}`}>
+              <div className={styles.languages}
+                   onMouseDown={() => handleClickOption(language[1], 'language')}
+                   key={`language-${index}`}>
                 <img src={language[1].icon} alt={language[1].name}/>
                 <span>{language[1].name}</span>
               </div>

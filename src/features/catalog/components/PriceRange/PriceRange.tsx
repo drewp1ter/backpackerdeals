@@ -1,5 +1,5 @@
 import classNames from 'classnames'
-import React, { useState } from 'react'
+import React from 'react'
 import { Handles, Rail, Slider, SliderItem, Tracks } from 'react-compound-slider'
 
 import styles from './PriceRange.module.scss'
@@ -7,16 +7,20 @@ import styles from './PriceRange.module.scss'
 const domain: number[] = [100, 900]
 
 interface IProps {
-  readonly className?: string
+  readonly range?: number[]
+  readonly className?: string,
+  readonly onChange?: (values: number[]) => void
 }
 
-export const PriceRange: React.FC<IProps> = ({ className }) => {
-  const [values, setValues] = useState<readonly number[]>([100, 500])
+export const PriceRange: React.FC<IProps> = ({ className, onChange, range = [100, 500] }) => {
+  const handleChangeRange = (values: readonly number[]) => {
+    onChange && onChange([...values]);
+  }
 
   return (
     <div className={ classNames(styles.priceRange, className)}>
       <h4 className={styles.title}>Price range</h4>
-      <Slider mode={1} step={1} domain={domain} className={styles.slider} onChange={setValues} values={values}>
+      <Slider mode={1} step={1} domain={domain} className={styles.slider} onChange={handleChangeRange} values={range}>
         <Rail>{({ getRailProps }) => <div className={styles.rail} {...getRailProps()} />}</Rail>
         <Handles>
           {({ handles, getHandleProps }) => (

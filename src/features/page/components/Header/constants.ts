@@ -6,11 +6,13 @@ import Portuguese from './assets/portuguese.png'
 import Russian from './assets/russian.png'
 import Spanish from './assets/spain.png'
 
+export interface IIconInfo {
+  icon: string
+  name: string
+}
+
 interface IIcons {
-  [key: string]: {
-    icon: string
-    name: string
-  }
+  [key: string]: IIconInfo
 }
 
 export const languages: IIcons = {

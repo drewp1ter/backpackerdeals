@@ -6,6 +6,7 @@
     position: relative;
 
     input {
+      text-overflow: ellipsis;
       padding: 0 195px 0 15px;
       background-color: rgba(#fafafa, .13);
       border-radius: 30px;
@@ -159,10 +160,9 @@
   .advancedSearch {
     .searchPlaceholder {
       input {
-        width: 88px;
+        width: 115px;
         height: 40px;
-        padding: 0 180px 0 15px;
-
+        padding: 0 163px 0 15px;
         &::placeholder {
           font-size: 12px;
         }
