@@ -24,6 +24,7 @@ export const TravelStoryCard: React.FC<IProps> = ({ title, description, variant,
       <div className={styles.gradient} style={gradient} />
       <picture>
         <source media="(max-width: 440px)" srcSet={images.w320[variant]} />
+        <source media="(max-width: 767px)" srcSet={images.w768[variant]} />
         <source media="(max-width: 1024px)" srcSet={images.w1024[variant]} />
         <source media="(max-width: 1279px)" srcSet={images.w1280[variant]} />
         <source media="(max-width: 1920px)" srcSet={images.w1920[variant]} />
