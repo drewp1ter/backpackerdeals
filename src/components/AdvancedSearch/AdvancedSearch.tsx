@@ -35,9 +35,9 @@ export const AdvancedSearch: React.FC<IProps> = ({ theme }) => {
 
   return (
     <div className={styles.advancedSearch}>
-      <div data-theme={theme} onClick={handleClickSearch} className={styles.searchPlaceholder}>
-        <input type="text" disabled={true} placeholder="Try Australia"/>
-        <span>
+      <div data-theme={theme} className={styles.searchPlaceholder}>
+        <input type="text" placeholder="Try Australia"/>
+        <span onClick={handleClickSearch}>
           <i className="fas fa-filter"/>
           Advanced search
         </span>
