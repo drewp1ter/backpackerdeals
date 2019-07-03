@@ -1,8 +1,10 @@
+import { useState } from 'react'
 import * as React from 'react'
 
-import { Button, Calendar } from 'components'
+import { Button } from 'components'
 
 import { Select } from 'components'
+import moment from 'moment'
 import styles from './AdvancedSearch.module.scss'
 import { numberOfDays, startLocation } from './data'
 
@@ -15,49 +17,68 @@ interface IProps {
 
 export const AdvancedSearch: React.FC<IProps> = ({ theme }) => {
   const [isOpen, toggleSearch] = React.useState(false)
+  const [selected, setSelected] = useState({
+    startLocation: 'Start location',
+    typeOfTour: 'Type of tour',
+    endLocation: 'End location',
+    date: new Date(),
+    numberOfDays: 'Number of days',
+  })
 
-  const handleSelect = (event: React.MouseEvent<HTMLElement>) => console.log(event.currentTarget.dataset.value)
+  const handleChange = (value: any, key: string) => setSelected({ ...selected, [key]: value })
+
+  const handleChangeDate = (value: Date) => handleChange(value, 'date')
 
   const handleClickSearch = () => toggleSearch(!isOpen)
+
+  const dateFormatFn = (date: Date) => moment(date).format('DD/MM/YYYY')
 
   return (
     <div className={styles.advancedSearch}>
       <div data-theme={theme} onClick={handleClickSearch} className={styles.searchPlaceholder}>
-        <input type="text" disabled={true} placeholder="Try Australia" />
+        <input type="text" disabled={true} placeholder="Try Australia"/>
         <span>
-          <i className="fas fa-filter" />
+          <i className="fas fa-filter"/>
           Advanced search
         </span>
-        <Button form="circle" >
-          <i className="fas fa-search" />
+        <Button form="circle">
+          <i className="fas fa-search"/>
         </Button>
       </div>
       <div className={styles.searchMenu} data-opened={isOpen && 'opened'}>
-        <img src={Logo} alt="Logo" className="logo" />
+        <img src={Logo} alt="Logo" className="logo"/>
         <div className={styles.searchField}>
           <Select
             className={styles.firstSelect}
-            selectedOption="Start Location"
+            selectedOption={selected.startLocation}
             options={startLocation}
-            handleSelect={handleSelect}
+            onChange={value => handleChange(value, 'startLocation')}
             theme="dark"
           />
-          <Select selectedOption="Type of tour" options={startLocation} handleSelect={handleSelect} theme="dark" />
-          <Select selectedOption="End Location" options={startLocation} handleSelect={handleSelect} theme="dark" />
-          <Select selectedOption="Select date" handleSelect={handleSelect} theme="dark">
-            <Calendar />
-          </Select>
+          <Select selectedOption={selected.typeOfTour}
+                  options={startLocation}
+                  onChange={value => handleChange(value, 'typeOfTour')}
+                  theme="dark"/>
+          <Select selectedOption={selected.endLocation}
+                  options={startLocation}
+                  onChange={value => handleChange(value, 'endLocation')}
+                  theme="dark"/>
+          <Select selectedOption={selected.date}
+                  format={dateFormatFn}
+                  onChange={handleChangeDate}
+                  type="calendar"
+                  theme="dark" />
           <Select
             className={styles.lastSelect}
-            selectedOption="Number of days"
+            selectedOption={selected.numberOfDays}
             options={numberOfDays}
-            handleSelect={handleSelect}
+            onChange={value => handleChange(value, 'numberOfDays')}
             theme="dark"
           />
           <Button className={styles.searchbutton} theme="orange" form="rectangled" size='lg'>SEARCH</Button>
         </div>
         <button aria-label="search" onClick={handleClickSearch}>
-          <i className="fas fa-times" />
+          <i className="fas fa-times"/>
         </button>
       </div>
     </div>

@@ -1,7 +1,7 @@
 import * as React from 'react'
 
 import classNames from 'classnames'
-import { ScrollBar } from '..'
+import { Calendar, ScrollBar } from '..'
 
 import styles from './Select.module.scss'
 
@@ -14,10 +14,12 @@ interface IProps {
   readonly children?: React.ReactNode
   readonly className?: string
   readonly theme: 'dark' | 'light'
-  readonly selectedOption: string
+  readonly selectedOption: any
   readonly disabled?: boolean
   readonly bodyTheme?: 'mobile'
   readonly onChange?: (value: any) => void
+  readonly type?: 'calendar' | 'default'
+  readonly format?: (value: any) => any
 }
 
 export class Select extends React.Component<IProps, IState> {
@@ -42,6 +44,12 @@ export class Select extends React.Component<IProps, IState> {
     this.setState({ isOpen: false })
   }
 
+  public handleChangeCalendar = (date: Date) => {
+    const { onChange } = this.props
+    onChange && onChange(date)
+    this.setState({ isOpen: false })
+  }
+
   public handleClickOutside = (event: MouseEvent) => {
     if (this.state.isOpen && this.ref.current && !this.ref.current.contains(event.target as Node)) {
       this.setState({ isOpen: false })
@@ -51,7 +59,7 @@ export class Select extends React.Component<IProps, IState> {
   public toggleSelect = () => this.setState({ isOpen: !this.state.isOpen })
 
   render() {
-    const { children, className, options, theme, selectedOption, disabled = false, bodyTheme } = this.props
+    const { children, className, options, theme, selectedOption, disabled = false, bodyTheme, type = 'default', format } = this.props
     const { isOpen } = this.state
     return (
       <div ref={this.ref} className={styles.searchSelect} data-theme={theme} data-bodytheme={bodyTheme}>
@@ -62,19 +70,22 @@ export class Select extends React.Component<IProps, IState> {
           onClick={() => !disabled && this.toggleSelect()}
         >
           <i className="fas fa-angle-down"/>
-          <span>{selectedOption}</span>
+          <span>{format ? format(selectedOption) : selectedOption}</span>
         </div>
 
         {isOpen && (
 
           <div className={styles.optionBlock}>
             <ScrollBar>
-              {options &&
+              {options && type === 'default' &&
               options.map((option, index) => (
                 <p key={`option-${index}`} className={styles.option} onClick={this.handleChange} data-index={index}>
                   {option}
                 </p>
               ))}
+              {type === 'calendar' &&
+                <Calendar date={selectedOption} onChange={this.handleChangeCalendar}/>
+              }
               {children}
             </ScrollBar>
           </div>

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 import { Button, MobileMenuWrapper, Select } from 'components'
 import { MobileSelectMenu } from 'features/page/components'
@@ -18,50 +18,65 @@ interface IProps {
   readonly theme?: string
 }
 
-export const MobileMenu: React.FC<Partial<Types.RootState> & PageActions & SearchActions & IProps> = ({
-  search,
-  page,
-  theme,
-  openMenu,
-  closeMenu,
-  openSearch,
-  closeSearch,
-  changeSearchType,
-}) => {
+export const MobileMenu: React.FC<Partial<Types.RootState> & PageActions & SearchActions & IProps> =
+  ({
+    search,
+    page,
+    theme,
+    openMenu,
+    closeMenu,
+    openSearch,
+    closeSearch,
+    changeSearchType,
+  }) => {
+  const fields = {
+    startLocation: 'Start location',
+    typeOfTour: 'Type of tour',
+    endLocation: 'End location',
+    date: new Date(),
+    numberOfDays: 'Number of days',
+  };
   const [searchQuery, changeSearch] = React.useState('')
   const [multiDayTour, selectTourType] = React.useState(false)
+  const [selected, setSelected] = useState({...fields})
+
+  const handleChange = (value: any, key: string) => setSelected({ ...selected, [key]: value })
+
+  // const handleChangeDate = (value: Date) => handleChange(value, 'date')
+
+  const handleClickReset = () => setSelected({...fields})
 
   return (
     <div className={styles.mobileMenu} data-theme={theme}>
       <button onClick={openSearch} className={styles.searchIcon}>
         <span>Search</span>
-        <i className="fas fa-search" />
+        <i className="fas fa-search"/>
       </button>
       <button onClick={openMenu} className={styles.menuIcon}>
-        <i className="fas fa-bars" />
+        <i className="fas fa-bars"/>
       </button>
 
       <MobileMenuWrapper className={styles.menu} open={page!.menuIsOpen}>
         <div className={styles.mobileHeader}>
           <p>
-            <i className="fas fa-phone-alt" />
+            <i className="fas fa-phone-alt"/>
             <span>+ 61 3 90163720</span>
           </p>
 
           <button onClick={closeMenu}>
-            <i className="fas fa-times" />
+            <i className="fas fa-times"/>
           </button>
         </div>
-        <hr />
+        <hr/>
         <div className={styles.navigation}>
           <div onClick={openSearch} className={styles.menuItem}>
             <div className={styles.title}>
-              <i className="fas fa-search" />
+              <i className="fas fa-search"/>
               <span>Search</span>
             </div>
             <div className={styles.additionalTitle}>
               <span>{search!.searchType === 'advanced' ? 'Advanced search' : 'Basic search'}</span>
-              <i className="fas fa-filter" />
+              <i className="fas fa-filter"/>
             </div>
           </div>
           <MobileSelectMenu
@@ -71,23 +86,23 @@ export const MobileMenu: React.FC<Partial<Types.RootState> & PageActions & Searc
             reversableIcon="right"
             reverseType="90"
           >
-            <SelectContinent theme="mobile" />
+            <SelectContinent theme="mobile"/>
           </MobileSelectMenu>
           <div className={styles.menuItem}>
             <div className={styles.title}>
-              <i className="fas fa-thumbs-up" />
+              <i className="fas fa-thumbs-up"/>
               <span>Top Deals</span>
             </div>
           </div>
           <div className={styles.menuItem}>
             <div className={styles.title}>
-              <i className="fas fa-clock" />
+              <i className="fas fa-clock"/>
               <span>Last Minute Deals</span>
             </div>
           </div>
           <div className={styles.menuItem}>
             <div className={styles.title}>
-              <i className="fas fa-user-alt" />
+              <i className="fas fa-user-alt"/>
               <span>Sign up</span>
             </div>
           </div>
@@ -114,7 +129,7 @@ export const MobileMenu: React.FC<Partial<Types.RootState> & PageActions & Searc
           >
             {Object.entries(languages).map((language, index) => (
               <div className={styles.languages} key={`language-${index}`}>
-                <img src={language[1].icon} alt={language[1].name} />
+                <img src={language[1].icon} alt={language[1].name}/>
                 <span>{language[1].name}</span>
               </div>
             ))}
@@ -123,7 +138,7 @@ export const MobileMenu: React.FC<Partial<Types.RootState> & PageActions & Searc
       </MobileMenuWrapper>
       <MobileMenuWrapper className={styles.search} open={search!.searchIsOpen}>
         <div className={styles.searchHeader}>
-          <i onClick={closeSearch} className="fas fa-arrow-left" />
+          <i onClick={closeSearch} className="fas fa-arrow-left"/>
           <span onClick={() => changeSearchType('basic')} data-active={search!.searchType === 'basic'}>
             Basic Search
           </span>
@@ -131,13 +146,14 @@ export const MobileMenu: React.FC<Partial<Types.RootState> & PageActions & Searc
             Advanced Search
           </span>
         </div>
-        <hr />
+        <hr/>
         <>
           {search!.searchType === 'basic' ? (
             <>
               <div className={styles.searchInput}>
-                <input type="text" placeholder="Try Australia" value={searchQuery} onChange={event => changeSearch(event.target.value)} />
-                <i className="fas fa-search" />
+                <input type="text" placeholder="Try Australia" value={searchQuery}
+                       onChange={event => changeSearch(event.target.value)}/>
+                <i className="fas fa-search"/>
               </div>
               {countries.filter(country => country.includes(searchQuery)).length > 0 && (
                 <>
@@ -167,19 +183,35 @@ export const MobileMenu: React.FC<Partial<Types.RootState> & PageActions & Searc
             </>
           ) : (
             <>
-              <Select bodyTheme="mobile" selectedOption="Start Location" options={options} handleSelect={() => {}} theme="dark" />
+              <Select bodyTheme="mobile"
+                      selectedOption={selected.startLocation}
+                      options={options}
+                      onChange={value => handleChange(value, 'startLocation')}
+                      theme="dark"/>
               <div className={styles.radioButtons}>
-                <SearchRadio placeholder="Day Tour" selected={!multiDayTour} onClick={() => selectTourType(false)} />
-                <SearchRadio placeholder="Multi day Tour" selected={multiDayTour} onClick={() => selectTourType(true)} />
+                <SearchRadio placeholder="Day Tour" selected={!multiDayTour} onClick={() => selectTourType(false)}/>
+                <SearchRadio placeholder="Multi day Tour" selected={multiDayTour} onClick={() => selectTourType(true)}/>
               </div>
-              <Select bodyTheme="mobile" selectedOption="End Location" options={startLocation} handleSelect={() => {}} theme="dark" />
-              <Select bodyTheme="mobile" selectedOption="Select Date" options={options} handleSelect={() => {}} theme="dark" />
-              <Select bodyTheme="mobile" selectedOption="Number of days" options={numberOfDays} handleSelect={() => {}} theme="dark" />
+              <Select bodyTheme="mobile"
+                      selectedOption={selected.typeOfTour}
+                      options={startLocation}
+                      onChange={value => handleChange(value, 'typeOfTour')}
+                      theme="dark"/>
+              <Select bodyTheme="mobile"
+                      selectedOption={selected.endLocation}
+                      options={options}
+                      onChange={value => handleChange(value, 'endLocation')}
+                      theme="dark"/>
+              <Select bodyTheme="mobile"
+                      selectedOption={selected.numberOfDays}
+                      options={numberOfDays}
+                      onChange={value => handleChange(value, 'numberOfDays')}
+                      theme="dark"/>
               <div className={styles.advancedSearchButtons}>
                 <Button className={styles.orangeButton} theme="orange" form="rectangled">
                   SEARCH
                 </Button>
-                <button className={styles.resetButton}>Reset search</button>
+                <button className={styles.resetButton} onClick={handleClickReset}>Reset search</button>
               </div>
             </>
           )}

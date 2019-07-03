@@ -2,7 +2,7 @@ import moment from 'moment'
 import { useState } from 'react'
 import * as React from 'react'
 
-import { Button, Calendar } from 'components'
+import { Button } from 'components'
 
 import { Select } from 'components'
 import { numberOfDays, startLocation } from '../../../../components/AdvancedSearch/data'
@@ -25,6 +25,8 @@ export const AdvancedSearchTravelInput: React.FC<IProps> = ({ toggleSearch }) =>
   const handleChange = (value: any, key: string) => setSelected({ ...selected, [key]: value })
 
   const handleChangeDate = (value: Date) => handleChange(value, 'date')
+
+  const dateFormatFn = (value: Date) => moment(value).format('DD/MM/YYYY')
 
   return (
     <div className={styles.advancedSearchTravelInput}>
@@ -52,11 +54,12 @@ export const AdvancedSearchTravelInput: React.FC<IProps> = ({ toggleSearch }) =>
         />
         <Select
           className={styles.lastSelect}
-          selectedOption={moment(selected.date).format('DD/MM/YYYY')}
+          selectedOption={selected.date}
+          format={dateFormatFn}
+          onChange={handleChangeDate}
+          type="calendar"
           theme="light"
-        >
-          <Calendar date={selected.date} onChange={handleChangeDate}/>
-        </Select>
+        />
         <Select
           className={styles.lastSelect}
           selectedOption={selected.numberOfDays}

@@ -111,6 +111,19 @@
     .searchField {
       display: flex;
       align-items: center;
+      width: 1008px;
+      justify-content: space-between;
+      margin: 0 0 0 -30px;
+
+      & > div {
+        flex: 1;
+
+        & > [data-opened] {
+          overflow: hidden;
+          max-height: 56px;
+          box-sizing: border-box;
+        }
+      }
 
       .firstSelect {
         border-radius: 4px 0 0 4px;
@@ -153,14 +166,19 @@
 
       span {
         font-size: 12px;
+
         i {
           font-size: 9px
         }
       }
     }
+  }
+}
 
-    .searchbutton {
-      height: 44px !important;
+@include device((max: 1338px)) {
+  .advancedSearch .searchMenu {
+    .searchField {
+      margin: 0 10px;
     }
   }
 }
