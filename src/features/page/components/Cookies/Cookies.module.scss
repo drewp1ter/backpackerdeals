@@ -1,18 +1,25 @@
+@import '../../../../scss/device';
+
 .cookiesStyle {
   position: fixed;
   top: 0;
   right: 0;
   left: 0;
-  height: 80px;
   background-color: #000;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 20px 100px;
   z-index: 20;
+  padding: 15px 0;
+  min-height: 80px;
+  box-sizing: border-box;
+
+  & > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 10vw;
+    max-width: 1520px;
+  }
 
   span {
-    margin-right: 90px;
     font-size: 14px;
     line-height: 1.71;
     text-align: left;
@@ -31,5 +38,18 @@
     text-align: center;
     color: #fafafa;
     background-color: transparent;
+  }
+}
+
+@include device-mb {
+  .cookiesStyle {
+    &  > div {
+      flex-direction: column;
+    }
+
+    button {
+      margin: 10px 0;
+      width: 100%;
+    }
   }
 }
