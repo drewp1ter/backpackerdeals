@@ -42,7 +42,7 @@
     margin: 0 auto;
 
     @include device((min: 1280px, max: 1505px)) {
-      display: none;
+      max-width: 1200px;
     }
 
     aside {
@@ -62,7 +62,6 @@
     }
 
     .card {
-      width: 312px;
       right: 50px;
       top: -124px;
       left: unset;
