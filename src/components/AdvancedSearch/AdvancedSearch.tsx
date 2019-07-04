@@ -3,7 +3,7 @@ import * as React from 'react'
 
 import { Button } from 'components'
 
-import { Select } from 'components'
+import { Input, Select } from 'components'
 import moment from 'moment'
 import styles from './AdvancedSearch.module.scss'
 import { numberOfDays, startLocation } from './data'
@@ -36,7 +36,7 @@ export const AdvancedSearch: React.FC<IProps> = ({ theme }) => {
   return (
     <div className={styles.advancedSearch}>
       <div data-theme={theme} className={styles.searchPlaceholder}>
-        <input type="text" placeholder="Try Australia"/>
+        <Input theme="transparent" placeholder="Try Australia" />
         <span onClick={handleClickSearch}>
           <i className="fas fa-filter"/>
           Advanced search
