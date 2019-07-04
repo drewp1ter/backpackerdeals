@@ -1,57 +1,22 @@
-import React, { useEffect } from 'react'
+import React from 'react'
+import { setCookie } from './CookieManager'
 
+import classNames from 'classnames'
 import styles from './Cookies.module.scss'
 
-export const Cookies: React.FC = () => {
-  const [hasCookies, setCookies] = React.useState<boolean>(true)
+interface IProps {
+  readonly className?: string,
+  readonly onSetCookies: () => void
+}
 
-  useEffect(() => {
-    const hasCookie = getCookie('disallow_page_cookies')
-
-    if (!hasCookie) {
-      setCookies(false)
-    }
-  })
-
-  const getCookie = (name: string) => {
-    const regex = new RegExp('(?:^|; )' + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + '=([^;]*)')
-    const matches = document.cookie.match(regex)
-    return matches ? decodeURIComponent(matches[1]) : undefined
-  }
-
-  const setCookie = (name: string, value: string, options?: { [key: string]: any }) => {
-    const _options = options || {}
-    const expires = _options.expires
-
-    if (expires && expires.toUTCString) {
-      _options.expires = expires.toUTCString()
-    }
-
-    let updatedCookie = name + '=' + encodeURIComponent(value)
-
-    for (const key in _options) {
-      if (_options.hasOwnProperty(key)) {
-        const optionValue = _options[key]
-        if (optionValue) {
-          updatedCookie += `; ${key}=${optionValue}`
-        }
-      }
-    }
-
-    document.cookie = updatedCookie
-  }
-
+export const Cookies: React.FC<IProps> = ({onSetCookies, className}) => {
   const handleClick = () => {
     setCookie('disallow_page_cookies', 'true')
-    setCookies(true)
-  }
-
-  const cookieStyles = {
-    display: hasCookies ? 'none' : 'block',
+    onSetCookies();
   }
 
   return (
-    <div style={cookieStyles} className={styles.cookiesStyle}>
+    <div className={classNames(styles.cookiesStyle, className)}>
       <div>
         <span>
           Backpacker Deals processes information about your visit using cookies to improve site performance, facilitate social media sharing
