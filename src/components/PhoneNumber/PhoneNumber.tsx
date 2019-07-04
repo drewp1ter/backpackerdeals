@@ -29,12 +29,14 @@ export const PhoneNumber: React.FC<IProps> = ({ className, onChange, name, size 
 
   const handleClose = () => setState({ ...state, isOpen: false })
   const toggleSelect = () => setState({ ...state, isOpen: !state.isOpen })
+
   const handleChange = ({ target }: React.ChangeEvent<HTMLInputElement>) => {
     const match = target.value.match(/\d+/g)
     const phone = match ? match[0] : ''
     setState({ ...state, phone })
     onChange && onChange(countries[state.countryCodeIdx][1] + phone, name)
   }
+
   const handleSelect = ({ currentTarget }: React.MouseEvent<HTMLElement>) => {
     const idx = currentTarget.dataset.idx || 0
     setState({ ...state, countryCodeIdx: +idx, isOpen: false })
