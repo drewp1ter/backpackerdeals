@@ -1,6 +1,27 @@
 .phoneNumber {
-  border: 1px solid #e8e8e8;
-  border-radius: 4px;
+  label {
+    display: block;
+    margin-bottom: 16px;
+    font-size: 16px;
+  }
+
+  .body {
+    display: flex;
+    border: 1px solid #e8e8e8;
+    border-radius: 4px;
+
+    input {
+      border: none;
+      outline: none;
+      flex-grow: 1;
+      padding-left: 24px;
+      font-size: 16px;
+
+      &::placeholder {
+        color: #959595;
+      }
+    }
+  }
 }
 
 .countryCode {
@@ -8,12 +29,45 @@
   outline: none;
   border-right: 1px solid #e8e8e8;
 
-  .currentValue {
-    position: relative;
-    transition: 0.2s ease border-color;
+  ul {
+    position: absolute;
+    display: none;
+    border-radius: 4px;
+    border: 1px solid #e8e8e8;
+    left: 0;
+    right: 0;
+    background: #fff;
+    // padding: 10px 0;
+    overflow-y: visible;
+    max-height: none;
 
-    i {
-      margin-left: 8px;
+    &[data-opened="true"] {
+      display: block;
+    }
+
+    &[data-size="md"] {
+      top: 75px;
+    }
+
+    &[data-size="lg"] {
+      top: 64px;
+    }
+
+    li {
+      &:hover {
+        background-color: darken(#fff, 5);
+      }
+    }
+  }
+
+  .currentValue {
+    width: 94px;
+    position: relative;
+    justify-content: space-between;
+
+    div {
+      display: flex;
+      align-items: center;
     }
 
     &[data-size="lg"] {
@@ -52,16 +106,14 @@
     }
   }
 
+  .currentValue,
   .option {
     cursor: pointer;
-    padding-left: 24px;
-    margin: 0;
-    font-size: 14px;
     background-color: #fff;
     transition: 0.2s ease background-color;
     display: flex;
     align-items: center;
-    min-width: 76px;
+    padding: 0 26px 0 24px;
 
     img {
       margin-right: 8px;
@@ -73,30 +125,8 @@
     }
   }
 
-  .optionBlock {
-    z-index: 5;
-    position: absolute;
-    border-radius: 4px;
-    left: 0px;
-    right: 0;
-    max-height: 370px;
-    background: #fff;
-    padding: 25px 0;
-    overflow-y: scroll;
-
-    &[data-size="md"] {
-      top: 75px;
-    }
-
-    &[data-size="lg"] {
-      top: 80px;
-    }
-
-    li {
-      &:hover {
-        background-color: darken(#fff, 5);
-      }
-    }
+  .option {
+    height: 56px;
   }
 }
 
