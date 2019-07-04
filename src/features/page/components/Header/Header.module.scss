@@ -11,6 +11,7 @@ header {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  margin-top: -104px;
 
   .cookiesContainer {
     width: 100%;
@@ -367,7 +368,7 @@ header {
 
 @include device-tb {
   header {
-
+    margin-top: -72px;
     .tools {
       & > div {
         height: 72px;
@@ -430,6 +431,7 @@ header {
 @include device-mb {
   header {
     background-color: #ffffff;
+    margin-top: -56px;
 
     .tools {
       & > div {

@@ -1,7 +1,6 @@
 @import '../../../../scss/device';
 
 .searchTravelSection {
-  margin-top: -104px;
   position: relative;
   background-image: url('./assets/background1920.jpg');
   background-position: bottom;
@@ -133,7 +132,6 @@
 
 @include device-tb {
   .searchTravelSection {
-    margin-top: -72px;
     padding: 150px 0 230px 0;
     background-image: url('./assets/background1920.jpg?resize&size=1280');
 
@@ -153,7 +151,6 @@
 
 @include device-mb {
   .searchTravelSection {
-    margin-top: -56px;
     padding: 100px 0;
     background-image: url('./assets/background1920.jpg?resize&size=768');
 
