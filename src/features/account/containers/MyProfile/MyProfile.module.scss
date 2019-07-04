@@ -39,16 +39,8 @@
     padding: 48px 24px;
     border-top: 1px solid #e8e8e8;
 
-    .autocomplete, > input {
+    .field, > input {
       margin-bottom: 32px;
-      input {
-        padding-left: 24px;
-        // width: calc(100% - 24px);
-      }
-    }
-
-    > input {
-      padding-left: 24px;
     }
 
     button {

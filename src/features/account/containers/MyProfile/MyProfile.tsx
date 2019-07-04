@@ -22,13 +22,13 @@ export const MyProfile: React.FC = () => {
         <Input theme="standart" label="State" placeholder="Enter your State" />
         <Input theme="standart" label="Postcode" placeholder="Postcode" />
         <Autocomplete
-          className={styles.autocomplete}
+          className={styles.field}
           suggestions={['USA', 'Australia', 'Argentina', 'Malasya']}
           placeholder="Type or choose your country"
           label="Country"
         />
-        <Input className={styles.field} theme="standart" type="email" label="Email" placeholder="Email Address" />
-        <PhoneNumber size="lg" />
+        <Input theme="standart" type="email" label="Email" placeholder="Email Address" />
+        <PhoneNumber className={styles.field} size="lg" />
         <Button>Update changes</Button>
       </div>
     </div>
