@@ -357,6 +357,10 @@ header {
     }
 
     .tools {
+      & > div {
+        padding: 0 16px;
+      }
+
       .currencyAndLanguage, .tours {
         a {
           font-size: 14px;
