@@ -67,7 +67,7 @@ export const TopActivities: React.FC = () => {
 
   return (
     <div className={styles.topActivities}>
-      <h2>Top 3 Activities in Australia</h2>
+      <h3>Top 3 Activities in Australia</h3>
 
       <div ref={setStartPos} className={styles.cards} onScroll={handleScroll}>
         {data.map((card, index) => (

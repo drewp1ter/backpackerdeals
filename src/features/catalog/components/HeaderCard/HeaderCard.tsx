@@ -16,8 +16,8 @@ export const HeaderCard: React.FC<IProps> = ({ title, description, body, rating,
 
   return (
     <div className={classNames(styles.headerCard, className)}>
-      <h2>{title}</h2>
-      <h3>{description}</h3>
+      <h1>{title}</h1>
+      <h2>{description}</h2>
       <p>{body}</p>
       <Rating className={styles.rating} rating={rating} />
     </div>
