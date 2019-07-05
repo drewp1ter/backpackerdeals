@@ -18,11 +18,11 @@ export interface IProps {
   readonly email?: string
 }
 
-export const Footer: React.FC<IProps> = ({ handleChange, handleSubmit, email }) => (
+export const Footer: React.FC<IProps> = ({ handleChange, email }) => (
   <footer>
-    <h2>Travel discounts up to 40% off</h2>
+    <h4>Travel discounts up to 40% off</h4>
 
-    <h3>Sent straight to your inbox</h3>
+    <h4>Sent straight to your inbox</h4>
 
     <div className={styles.emailInput}>
       <Input value={email} onChange={handleChange} placeholder="Your e-mail address" theme="transparent" size="md" />
@@ -91,12 +91,12 @@ export const Footer: React.FC<IProps> = ({ handleChange, handleSubmit, email }) 
           </ul>
 
           <div className={styles.contacts}>
-            <h5>E-mail:</h5>
+            <span>E-mail:</span>
             <p>support@backpackerdeals.co</p>
           </div>
 
           <div className={styles.contacts}>
-            <h5>Skype:</h5>
+            <span>Skype:</span>
             <p>backpackerdeals</p>
           </div>
         </FooterLinks>
@@ -106,7 +106,7 @@ export const Footer: React.FC<IProps> = ({ handleChange, handleSubmit, email }) 
     <div className={styles.appInfo}>
       <div className={styles.mediaAndPayment}>
         <div className={styles.socialMedia}>
-          <h4>Social media</h4>
+          <span>Social media</span>
           <ul>
             <li>
               <i className="fab fa-facebook-square" />
@@ -124,7 +124,7 @@ export const Footer: React.FC<IProps> = ({ handleChange, handleSubmit, email }) 
         </div>
 
         <div className={styles.payment}>
-          <h4>Payment Channels</h4>
+          <span>Payment Channels</span>
           <ul>
             <li>
               <i className="fab fa-cc-visa" />

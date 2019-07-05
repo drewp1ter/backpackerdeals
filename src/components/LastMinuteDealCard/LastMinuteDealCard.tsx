@@ -104,9 +104,9 @@ export const LastMinuteDealCard: React.FC<IProps> = ({
               </div>
             </div>
 
-            <p data-view={view} className={styles.tour}>
+            <h3 data-view={view} className={styles.tour}>
               {tourName}
-            </p>
+            </h3>
             <p className={styles.duration}>{duration}</p>
           </>
         )}
@@ -124,7 +124,7 @@ export const LastMinuteDealCard: React.FC<IProps> = ({
               </div>
             </div>
 
-            <p className={styles.tour}>{tourName}</p>
+            <h3 className={styles.tour}>{tourName}</h3>
             <Rating className={styles.rating} rating={rating} />
             {view === View.horizontal && <p className={styles.description}>{description}</p>}
           </div>

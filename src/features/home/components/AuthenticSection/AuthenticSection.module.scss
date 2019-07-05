@@ -14,6 +14,10 @@
   }
 }
 
+.blah {
+  display: flex;
+}
+
 @include device-tb {
   .authenticSection {
     max-width: 1044px;
