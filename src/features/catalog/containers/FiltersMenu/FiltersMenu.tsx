@@ -61,7 +61,7 @@ export const FiltersMenu: React.FC<IFiltersState & FiltersActions & IProps> = ({
           Apply filter
         </Button>
 
-        <button className={styles.resetButton}>Reset filter</button>
+        <Button theme="transparent" form='standart' size="sm">Reset filter</Button>
       </div>
     </MobileMenuWrapper>
   </div>
