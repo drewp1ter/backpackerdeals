@@ -9,6 +9,6 @@ COPY deploy/default.conf /etc/nginx/conf.d/
 COPY deploy/nginx.conf /etc/nginx/
 COPY deploy/start.sh ./
 COPY deploy/ssl/ca_bundled.crt deploy/ssl/private.key /etc/ssl/
-COPY --from=backpackerdeals ${APP_ROOT}/.next/static /usr/share/nginx/static
+COPY --from=backpackerdeals_express ${APP_ROOT}/.next/static /usr/share/nginx/static
 EXPOSE 80 443
 ENTRYPOINT [ "./start.sh" ]

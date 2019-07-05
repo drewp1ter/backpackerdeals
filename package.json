@@ -6,7 +6,7 @@
     "prod": "NODE_ENV=production node server.js",
     "tslint": "node_modules/.bin/tslint -p tsconfig.json --fix",
     "typecheck": "tsc -p tsconfig.json",
-    "buildimage": "docker build -t backpackerdeals .",
+    "buildimage": "docker build -t backpackerdeals_express .",
     "webpconv": "./src/webp_conv.py",
     "purgecss": "purgecss -c purgecss.config.js -o .next/static/chunks/"
   },

@@ -1,7 +1,7 @@
 version: "3"
 services:
   express:
-    image: backpackerdeals
+    image: backpackerdeals_express
     build:
       context: .
     container_name: backpacker_express
