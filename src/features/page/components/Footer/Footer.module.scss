@@ -8,34 +8,6 @@ footer {
   background: url('./assets/backgroundFooter.jpg') center center no-repeat;
   background-size: cover;
 
-  h2 {
-    font-size: 56px;
-    font-weight: 700;
-    line-height: 64px;
-    text-align: center;
-    color: #ffffff;
-  }
-
-  h3 {
-    margin-top: 10px;
-    margin-bottom: 45px;
-    font-size: 26px;
-    font-weight: 700;
-    line-height: 32px;
-    text-align: center;
-    color: #ffffff;
-  }
-
-  p {
-    margin: 12px 0 50px 0;
-    font-size: 14px;
-    font-weight: normal;
-    line-height: 2;
-    letter-spacing: normal;
-    text-align: center;
-    color: #959595;
-  }
-
   h4 {
     cursor: pointer;
     font-size: 18px;
@@ -48,6 +20,44 @@ footer {
     &:hover {
       color: #ff5a39;
     }
+
+    &:nth-child(2n + 1) {
+      font-size: 56px;
+      font-weight: 700;
+      line-height: 64px;
+      text-align: center;
+
+      @include device-mb {
+        font-size: 32px;
+        font-weight: 700;
+        line-height: 40px;
+      }
+    }
+
+    &:nth-child(2n) {
+      margin: 10px 0 45px 0;
+      font-size: 26px;
+      font-weight: 700;
+      line-height: 32px;
+      text-align: center;
+
+      @include device-mb {
+        margin: 0 0 25px 0;
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 24px;
+      }
+    }
+  }
+
+  p {
+    margin: 12px 0 50px 0;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 2;
+    letter-spacing: normal;
+    text-align: center;
+    color: #959595;
   }
 
   .emailInput {
@@ -60,6 +70,10 @@ footer {
     input {
       width: 600px;
       padding: 8px 30px;
+
+      @include device-mb {
+        height: 56px
+      }
     }
 
     .iconButton {
@@ -115,13 +129,13 @@ footer {
         margin-top: 20px;
       }
 
-      h5 {
+      span {
         cursor: pointer;
         font-size: 14px;
         font-weight: 600;
         line-height: 2.29;
         text-align: left;
-        color: #ffffff;
+        color: #959595;
         transition: .2s ease color;
 
         &:hover {
@@ -179,8 +193,62 @@ footer {
         }
       }
 
+      .socialHeader {
+        span {
+          display: block;
+          color: white;
+          font-size: 18px;
+          font-weight: 600;
+          margin-bottom: 28px;
+
+          @include device-tb {
+            margin-bottom: 15px;
+            font-size: 14px;
+            font-weight: 600;
+            line-height: 32px;
+          }
+        }
+      }
+
       .socialMedia {
         margin-right: 125px;
+        @extend .socialHeader;
+
+        i {
+          font-size: 24px;
+        }
+
+        @include device-mb {
+          span  {
+            font-size: 14px;
+            text-align: center;
+            margin-bottom: 20px;
+          }
+
+          i {
+            font-size: 18px
+          }
+        }
+      }
+
+      .payment {
+        @extend .socialHeader;
+
+        span {
+          margin-bottom: 25px;
+
+          @include device-tb {
+            margin-bottom: 12px;
+          }
+        }
+
+        i {
+          font-size: 27px;
+        }
+
+        li {
+          margin-right: 6px;
+        }
       }
     }
 
@@ -270,18 +338,6 @@ footer {
   footer {
     padding: 218px 100px 0;
 
-    h2 {
-      font-size: 47px;
-    }
-
-    h3 {
-      font-size: 23px;
-    }
-
-    h4 {
-      font-size: 16px;
-    }
-
     p {
       font-size: 13px;
     }
@@ -290,14 +346,7 @@ footer {
       width: 736px;
 
       input {
-        height: 48px !important;
         width: 460px;
-      }
-
-      button {
-        height: 52px !important;
-        top: 6px;
-        right: 6px;
       }
     }
 
@@ -369,17 +418,21 @@ footer {
     padding: 218px 116px 0;
     background-image: url('./assets/backgroundFooter.jpg?reszie&size=1280');
 
-    h2 {
-      font-size: 38px;
-    }
-
-    h3 {
-      font-size: 20px;
-    }
-
     h4 {
-      font-size: 14px;
+      &:nth-child(2n + 1) {
+        font-size: 38px;
+        font-weight: 700;
+        line-height: 32px;
+        margin-bottom: 0;
+      }
+
+      &:nth-child(2n) {
+        font-size: 20px;
+        font-weight: 700;
+        margin: 0 0 42px 0;
+      }
     }
+
 
     p {
       font-size: 12px;
@@ -525,28 +578,12 @@ footer {
       line-height: 16px;
     }
 
-    h2 {
-      font-size: 32px;
-      line-height: 40px;
-    }
-
-    h3 {
-      margin-top: 0;
-      margin-bottom: 25px;
-      font-size: 14px;
-      line-height: 24px;
-    }
-
-    h4 {
-      font-size: 14px;
-    }
-
     .mt {
       margin-top: 0;
     }
 
     .emailInput {
-      width: 296px;
+      width: 100%;
 
       input {
         width: 190px !important;
@@ -559,12 +596,17 @@ footer {
       }
 
       button {
-        width: 48px !important;
+        width: 48px;
         height: 48px;
       }
 
       .iconButton {
         display: inline-block;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 48px;
+        height: 48px;
+        right: 4px;
 
         i {
           color: #ffffff;
@@ -589,7 +631,7 @@ footer {
 
     .appInfo {
       flex-direction: column-reverse;
-      margin: 36px 0 30px 0;
+      margin: 52px 0 30px 0;
 
       .mediaAndPayment {
         ul {

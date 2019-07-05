@@ -13,11 +13,13 @@ interface IProps {
 export const FooterLinks: React.FC<IProps> = ({ title, children, className }) => {
   const [isOpen, toggleOpen] = useState(false)
 
+  const handleClick = () => toggleOpen(!isOpen)
+
   return (
     <div className={classNames(styles.footerLink, className)}>
-      <div onClick={() => toggleOpen(!isOpen)} className={styles.linkTitle} data-active={isOpen}>
-        <h4>{title}</h4>
-        <i className="fas fa-chevron-right" />
+      <div onClick={handleClick} className={styles.linkTitle} data-active={isOpen}>
+        <span>{title}</span>
+        <i className="fas fa-chevron-right"/>
       </div>
       <div className={styles.links} data-visible={isOpen}>
         {children}

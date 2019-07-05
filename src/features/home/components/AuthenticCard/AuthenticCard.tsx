@@ -17,7 +17,7 @@ export const AuthenticCard: React.FC<IProps> = ({ title, body, className, sign, 
   <div className={classNames(styles.authenticCard, className)}>
     <div>
       <Rating className={styles.rating} rating={rating} detail={false} />
-      <h3>{title}</h3>
+      <h3 class="ratingTitle">{title}</h3>
       <p className={styles.body}>{body}</p>
       <a>Read more</a>
     </div>
