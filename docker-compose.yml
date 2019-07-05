@@ -1,0 +1,28 @@
+version: "3"
+services:
+  express:
+    image: backpackerdeals
+    build:
+      context: .
+    container_name: backpacker_express
+    networks:
+      - frontend
+  nginx:
+    image: backpackerdeals_nginx
+    build:
+      context: .
+      dockerfile: Dockerfile.nginx
+    container_name: backpacker_nginx
+    networks:
+      - frontend
+    links:
+      - express
+    ports:
+      - "80:80"
+      - "443:443"
+    depends_on:
+      - express
+networks:
+  frontend:
+    external:
+      name: backpackerdeals
