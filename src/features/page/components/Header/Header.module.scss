@@ -322,11 +322,12 @@ header {
 
 @include device((max: 1615px)) {
   header {
-
-    .logoAndSearch {
-      .logo, .blackLogo {
-        width: 120px;
-        height: 43.5px;
+    .tools {
+      .logoAndSearch {
+        .logo, .blackLogo {
+          width: 120px;
+          height: 43.5px;
+        }
       }
     }
 
@@ -349,10 +350,12 @@ header {
 
 @include device((max: 1420px)) {
   header {
-    .logoAndSearch {
-      .logo, .blackLogo {
-        width: 98px;
-        height: 36px;
+    .tools {
+      .logoAndSearch {
+        .logo, .blackLogo {
+          width: 98px;
+          height: 36px;
+        }
       }
     }
 
