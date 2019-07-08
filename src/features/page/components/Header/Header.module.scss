@@ -23,7 +23,7 @@ header {
 
   .currencyAndLanguageOpener {
     width: 83px;
-    
+
     span {
       span {
         font-weight: 500 !important;
@@ -221,7 +221,7 @@ header {
       &[data-active="true"] {
         span {
           color: #ff5a39 !important;
-        }        
+        }
       }
     }
   }
@@ -300,7 +300,7 @@ header {
         color: #202020;
       }
     }
-  
+
     .languageOpener, .currencyOpener {
       span, i {
         color: #202020;
@@ -322,9 +322,9 @@ header {
 
 @include device((max: 1615px)) {
   header {
-    
+
     .logoAndSearch {
-      img {
+      .logo, .blackLogo {
         width: 120px;
         height: 43.5px;
       }
@@ -350,7 +350,7 @@ header {
 @include device((max: 1420px)) {
   header {
     .logoAndSearch {
-      img {
+      .logo, .blackLogo {
         width: 98px;
         height: 36px;
       }
@@ -391,7 +391,7 @@ header {
       }
 
       .logoAndSearch {
-        img {
+        .logo, .blackLogo {
           width: 98px;
           height: 36px;
           margin-right: 0;
@@ -423,7 +423,7 @@ header {
     .tools {
       .tours {
         justify-content: space-between;
-        
+
         a {
           margin-right: 0;
         }
