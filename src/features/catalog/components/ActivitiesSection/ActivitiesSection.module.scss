@@ -8,10 +8,13 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: scroll;
-  padding: 148px 0 0 0;
   box-sizing: border-box;
   height: 50vw;
   min-height: 856px;
+
+  .card {
+    width: 497px;
+  }
 
   &:after {
     content: '';
@@ -22,15 +25,6 @@
     height: 100%;
     background-image: linear-gradient(to top, rgba(0, 0, 0, 0) 0%, #000000 100%);
     opacity: 0.53;
-  }
-
-  h1 {
-    position: relative;
-    text-align: center;
-    color: #ffffff;
-    font-size: 32px;
-    font-weight: 700;
-    line-height: 40px;
   }
 
   .headerCardWrapper {
@@ -47,25 +41,23 @@
 
     aside {
       position: absolute;
-      top: -154px;
+      top: 76px;
     }
   }
 }
 
+@media screen and (min-width: 615px) and (max-width: 1505px) {
+  .activitiesSection {
+    .card {
+      width: 424px;
+    }
+  }
+}
 
 @media screen and (min-width: 768px) and (max-width: 1279px) {
   .activitiesSection {
     min-height: unset;
 
-    h1 {
-      display: none;
-    }
-
-    .card {
-      right: 50px;
-      top: -124px;
-      left: unset;
-    }
   }
 }
 
@@ -75,10 +67,16 @@
     height: 47vw;
     min-height: 541px;
 
-    .headerCardWrapper aside {
-      right: 50px;
-      top: -124px;
-      left: unset;
+    .card {
+      width: 312px;
+    }
+
+    .headerCardWrapper {
+      aside {
+        right: 50px;
+        top: 24px;
+        left: unset;
+      }
     }
   }
 }
@@ -92,7 +90,7 @@
     background-size: 153% auto;
     background-position-y: 52px;
 
-    .card, h1 {
+    aside {
       display: none;
     }
   }
