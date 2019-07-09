@@ -107,3 +107,7 @@ button, input {
   padding: 0;
   outline: none;
 }
+
+button, i, span, input, div {
+  color: inherit;
+}
