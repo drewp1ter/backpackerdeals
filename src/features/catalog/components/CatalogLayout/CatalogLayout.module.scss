@@ -13,7 +13,7 @@
   max-width: 1520px;
   margin: -13.5vw auto 24px;
   height: 16px;
-  z-index: 3;
+  z-index: 10;
 }
 
 @include device-tb {
@@ -24,8 +24,10 @@
 
 @include device-ipad {
   .breadcrumbs {
+    position: absolute;
+    top: 44vw;
     max-width: 980px;
-    margin: -14% auto 16px;
+    margin: 0 auto 16px;
   }
 }
 

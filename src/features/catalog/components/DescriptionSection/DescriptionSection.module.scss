@@ -1,9 +1,20 @@
+@import '../../../../scss/device';
+
 .countryDescription {
   display: none;
-}
 
-@media screen and (min-width: 320px) and (max-width: 615px) {
-  .countryDescription {
+  @include device-ipad {
     display: block;
+    margin-top: -12vw;
+    margin-bottom: 58px;
+    padding: 0 50px !important;
+  }
+
+  @include device-mb {
+    margin-bottom: 58px;
+    margin-top: 0;
+    padding: 0 8px !important;
   }
 }
+
+
