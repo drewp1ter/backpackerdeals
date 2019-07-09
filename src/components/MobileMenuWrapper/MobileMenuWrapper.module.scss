@@ -50,17 +50,38 @@
   }
 }
 
-@media screen and (min-width: 401px) and (max-width: 600px) {
+@media screen and (min-width: 700px) and (max-width: 768px) {
   .mobileMenuWrapper {
     .menu {
       &[data-open="true"] {
-        transform: translateX(-105.1%);
+        transform: translateX(-108.1%);
       }
     }
   }
 }
 
-@media screen and (min-width: 375px) and (max-width: 400px) {
+@media screen and (max-width: 700px) {
+  .mobileMenuWrapper {
+    .menu {
+      &[data-open="true"] {
+        transform: translateX(-106.9%)
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 565px) {
+  .mobileMenuWrapper {
+    .menu {
+      &[data-open="true"] {
+        transform: translateX(-105.8%)
+      }
+    }
+  }
+}
+
+
+@media screen and (min-width: 375px) and (max-width: 456px) {
   .mobileMenuWrapper {
     .menu {
       &[data-open="true"] {
@@ -70,11 +91,20 @@
   }
 }
 
-@media screen and (min-width: 340px) and (max-width: 360px) {
+@media screen and (min-width: 340px) and (max-width: 375px) {
   .mobileMenuWrapper {
     .menu {
       &[data-open="true"] {
-        transform: translateX(-104.4%);
+        transform: translateX(-103.4%);
+      }
+    }
+  }
+}
+@media screen and (min-width: 320px) and (max-width: 340px) {
+  .mobileMenuWrapper {
+    .menu {
+      &[data-open="true"] {
+        transform: translateX(-102.5%);
       }
     }
   }
