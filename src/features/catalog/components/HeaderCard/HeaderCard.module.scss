@@ -26,7 +26,7 @@
   p {
     text-align: left;
     font-size: 14px;
-    line-height: 1.71;
+    line-height: 24px;
     color: #959595;
   }
 
@@ -35,9 +35,9 @@
   }
 }
 
-@media screen and (min-width: 615px) and (max-width: 1505px) {
+@include device-tb {
   .headerCard {
-    padding: 10px 20px 7px 20px;
+    padding: 15px 20px 15px 20px;
 
     h1 {
       font-size: 48px;
@@ -53,6 +53,7 @@
 
     p {
       font-size: 12px;
+      line-height: 16px;
     }
 
     .rating {
@@ -61,11 +62,10 @@
   }
 }
 
-@include device-mb {
+@include device-ipad {
   .headerCard {
     display: block;
     position: relative;
-    margin-bottom: 25px;
     z-index: 5;
     width: auto;
     padding: 0 15px 0;

@@ -4,16 +4,45 @@
   margin-top: 104px;
   position: relative;
   background-image: url('./assets/background1920.jpg');
-  background-position: center -36px;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: 100%;
+  background-position: center 0;
   background-attachment: scroll;
   box-sizing: border-box;
-  height: 50vw;
-  min-height: 856px;
+  height: 49vw;
+  min-height: 850px;
+
+  @include device((min: 1279px, max: 1541px)) {
+    background-size: cover;
+  }
+
+  @include device-tb {
+    margin-top: 72px;
+    min-height: 537px;
+  }
+
+  @include device-ipad {
+    min-height: unset;
+  }
+
+  @include device-mb {
+    margin-top: 56px;
+    height: 70vw;
+    background-size: cover;
+  }
 
   .card {
     width: 497px;
+    margin-top: 75px;
+
+    @include device-tb {
+      margin-top: 25px;
+      width: 312px;
+    }
+
+    @include device-ipad {
+      display: none;
+    }
   }
 
   &:after {
@@ -29,69 +58,14 @@
 
   .headerCardWrapper {
     position: relative;
+    padding: 0 100px;
     max-width: 1520px;
-    width: 100%;
     display: flex;
     justify-content: flex-end;
     margin: 0 auto;
 
-    @include device((min: 1280px, max: 1505px)) {
-      max-width: 1200px;
-    }
-
-    aside {
-      position: absolute;
-      top: 76px;
-    }
-  }
-}
-
-@media screen and (min-width: 1280px) and (max-width: 1505px) {
-  .activitiesSection {
-    .card {
-      width: 312px;
-    }
-  }
-}
-
-@media screen and (min-width: 768px) and (max-width: 1279px) {
-  .activitiesSection {
-    min-height: unset;
-
-  }
-}
-
-@include device-tb {
-  .activitiesSection {
-    margin-top: 72px;
-    height: 47vw;
-    min-height: 541px;
-
-    .card {
-      width: 350px;
-    }
-
-    .headerCardWrapper {
-      aside {
-        right: 50px;
-        top: 24px;
-        left: unset;
-      }
-    }
-  }
-}
-
-
-@include device-mb {
-  .activitiesSection {
-    margin-top: 0;
-    min-height: unset;
-    height: 76vw;
-    background-size: 153% auto;
-    background-position-y: 52px;
-
-    aside {
-      display: none;
+    @include device-tb {
+      padding: 0 50px;
     }
   }
 }
