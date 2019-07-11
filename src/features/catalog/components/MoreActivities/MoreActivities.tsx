@@ -10,24 +10,24 @@ import { cards, filters } from './data'
 import styles from './MoreActivities.module.scss'
 import reducer, { ActionType, IAction, initialState, IState, ViewType } from './reducer'
 
-const counries = ['Australia', 'Australia', 'Australia', 'Australia'];
+const counries = ['Australia', 'Australia', 'Australia', 'Australia']
 const initFilters = {
   country: counries[0],
   city: '',
   numberOfDays: 'Select Number of days',
   accommodationStyle: 'All accommodation styles',
   styleOfTravel: 'Family friendly',
-  priceRange: [100, 200]
+  priceRange: [100, 200],
 }
 
 export const MoreActivities: React.FC = () => {
   const pages = 10
   const [{ view, sortDec, page }, dispatch] = useReducer<React.Reducer<IState, IAction>>(reducer, initialState)
-  const [selectedFilters, setSelectedFilters] = useState({...initFilters})
+  const [selectedFilters, setSelectedFilters] = useState({ ...initFilters })
 
-  const resetFilters = () => setSelectedFilters({...initFilters})
+  const resetFilters = () => setSelectedFilters({ ...initFilters })
 
-  const handleChangeSelect = (value: any, key: string) => setSelectedFilters({...selectedFilters, [key]: value})
+  const handleChangeSelect = (value: any, key: string) => setSelectedFilters({ ...selectedFilters, [key]: value })
 
   const handleChangeView = (e: React.MouseEvent<HTMLElement>) => {
     const view = e.currentTarget.dataset.view as ViewType
@@ -44,7 +44,16 @@ export const MoreActivities: React.FC = () => {
     )
   const handleChangeSortOrder = () => dispatch({ type: ActionType.toggleDec })
   const renderCards = () =>
-    cards && cards.map((card, idx) => <LastMinuteDealCard className={styles.card} view={view} {...card} key={`${idx}-card`} />)
+    cards &&
+    cards.map((card, idx) => (
+      <LastMinuteDealCard
+        className={styles.card}
+        view={view}
+        {...card}
+        key={`${idx}-card`}
+        likeable={view === ViewType.list ? 'wide' : 'short'}
+      />
+    ))
 
   const handlePageControls = ({ currentTarget }: React.MouseEvent<HTMLElement>) => {
     const { action } = currentTarget.dataset
@@ -115,11 +124,10 @@ export const MoreActivities: React.FC = () => {
             selectedOption={selectedFilters.styleOfTravel}
             onChange={value => handleChangeSelect(value, 'styleOfTravel')}
           />
-          <PriceRange
-            range={selectedFilters.priceRange}
-            onChange={values => handleChangeSelect(values, 'priceRange')}
-          />
-          <Button theme="transparent" form='standart' size="sm" onClick={resetFilters}>Reset filter</Button>
+          <PriceRange range={selectedFilters.priceRange} onChange={values => handleChangeSelect(values, 'priceRange')} />
+          <Button theme="transparent" form="standart" size="sm" onClick={resetFilters}>
+            Reset filter
+          </Button>
         </div>
         <div className={styles.cardsContainer}>
           <div className={styles.header}>

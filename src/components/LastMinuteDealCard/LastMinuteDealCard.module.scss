@@ -77,12 +77,21 @@
     .like {
       cursor: pointer;
       position: absolute;
-      bottom: 30px;
-      right: 25px;
-      font-size: 24px;
       color: #ffffff;
-      z-index: 1;
+      z-index: 10;
       transition: .2s ease color;
+
+      &[data-type="wide"] {
+        bottom: 30px;
+        right: 25px;
+        font-size: 24px;
+      }
+
+      &[data-type="short"] {
+        bottom: 32px;
+        right: 10px;
+        font-size: 20px;
+      }
 
       &:hover {
         color: #ff5a39;
@@ -170,7 +179,7 @@
     border-top: 0;
 
     &[data-view="horizontal"] {
-      width: 80%;
+      max-width: 40%;
       display: flex;
       flex-direction: column;
       padding: 12px 24px 24px 32px;

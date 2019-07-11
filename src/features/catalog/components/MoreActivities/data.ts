@@ -1,6 +1,6 @@
 export const cards = [
   {
-    img: require('./assets/1.jpg?resize&sizes[]=232&sizes[]=256&sizes[]=368&sizes[]=272'),
+    img: require('./assets/picture1.jpg?resize&sizes[]=272&sizes[]=312&sizes[]=356&sizes[]=496'),
     tourName: 'Kakadu 4WD Adventure',
     price: 900,
     location: 'Australia',
@@ -15,10 +15,10 @@ export const cards = [
       minutes: '51',
     },
     description: 'Explore one of the world`s oldest and most spectacular mountain ranges in the heart of Victoria on this full day adventure from Melbourne.',
-    sizes: "(max-width: 767px) 272px, (max-width: 1024px) 232px, (max-width: 1280px) 256px, 368px"
+    sizes: "(max-width: 767px) 272px, (max-width: 1024px) 312px, (max-width: 1280px) 356px, 496px"
   },
   {
-    img: require('./assets/2.jpg?resize&sizes[]=232&sizes[]=256&sizes[]=368&sizes[]=272'),
+    img: require('./assets/picture2.jpg?resize&sizes[]=272&sizes[]=312&sizes[]=356&sizes[]=496'),
     tourName: 'Kakadu 4WD Adventure',
     price: 900,
     location: 'Australia',
@@ -33,10 +33,10 @@ export const cards = [
       minutes: '51',
     },
     description: 'Explore one of the world`s oldest and most spectacular mountain ranges in the heart of Victoria on this full day adventure from Melbourne.',
-    sizes: "(max-width: 767px) 272px, (max-width: 1024px) 232px, (max-width: 1280px) 256px, 368px"
+    sizes: "(max-width: 767px) 272px, (max-width: 1024px) 312px, (max-width: 1280px) 356px, 496px"
   },
   {
-    img: require('./assets/3.jpg?resize&sizes[]=232&sizes[]=256&sizes[]=368&sizes[]=272'),
+    img: require('./assets/picture3.jpg?resize&sizes[]=272&sizes[]=312&sizes[]=356&sizes[]=496'),
     tourName: 'Kakadu 4WD Adventure',
     price: 900,
     location: 'Australia',
@@ -51,10 +51,10 @@ export const cards = [
       minutes: '51',
     },
     description: 'Explore one of the world`s oldest and most spectacular mountain ranges in the heart of Victoria on this full day adventure from Melbourne.',
-    sizes: "(max-width: 767px) 272px, (max-width: 1024px) 232px, (max-width: 1280px) 256px, 368px"
+    sizes: "(max-width: 767px) 272px, (max-width: 1024px) 312px, (max-width: 1280px) 356px, 496px"
   },
   {
-    img: require('./assets/4.jpg?resize&sizes[]=232&sizes[]=256&sizes[]=368&sizes[]=272'),
+    img: require('./assets/picture1.jpg?resize&sizes[]=272&sizes[]=312&sizes[]=356&sizes[]=496'),
     tourName: 'Kakadu 4WD Adventure',
     price: 900,
     location: 'Australia',
@@ -69,10 +69,10 @@ export const cards = [
       minutes: '51',
     },
     description: 'Explore one of the world`s oldest and most spectacular mountain ranges in the heart of Victoria on this full day adventure from Melbourne.',
-    sizes: "(max-width: 767px) 272px, (max-width: 1024px) 232px, (max-width: 1280px) 256px, 368px"
+    sizes: "(max-width: 767px) 272px, (max-width: 1024px) 312px, (max-width: 1280px) 356px, 496px"
   },
   {
-    img: require('./assets/1.jpg?resize&sizes[]=232&sizes[]=256&sizes[]=368&sizes[]=272'),
+    img: require('./assets/picture2.jpg?resize&sizes[]=272&sizes[]=312&sizes[]=356&sizes[]=496'),
     tourName: 'Kakadu 4WD Adventure',
     price: 900,
     location: 'Australia',
@@ -87,10 +87,10 @@ export const cards = [
       minutes: '51',
     },
     description: 'Explore one of the world`s oldest and most spectacular mountain ranges in the heart of Victoria on this full day adventure from Melbourne.',
-    sizes: "(max-width: 767px) 272px, (max-width: 1024px) 232px, (max-width: 1280px) 256px, 368px"
+    sizes: "(max-width: 767px) 272px, (max-width: 1024px) 312px, (max-width: 1280px) 356px, 496px"
   },
   {
-    img: require('./assets/2.jpg?resize&sizes[]=232&sizes[]=256&sizes[]=368&sizes[]=272'),
+    img: require('./assets/picture3.jpg?resize&sizes[]=272&sizes[]=312&sizes[]=356&sizes[]=496'),
     tourName: 'Kakadu 4WD Adventure',
     price: 900,
     location: 'Australia',
@@ -105,10 +105,10 @@ export const cards = [
       minutes: '51',
     },
     description: 'Explore one of the world`s oldest and most spectacular mountain ranges in the heart of Victoria on this full day adventure from Melbourne.',
-    sizes: "(max-width: 767px) 272px, (max-width: 1024px) 232px, (max-width: 1280px) 256px, 368px"
+    sizes: "(max-width: 767px) 272px, (max-width: 1024px) 312px, (max-width: 1280px) 356px, 496px"
   },
   {
-    img: require('./assets/3.jpg?resize&sizes[]=232&sizes[]=256&sizes[]=368&sizes[]=272'),
+    img: require('./assets/picture1.jpg?resize&sizes[]=272&sizes[]=312&sizes[]=356&sizes[]=496'),
     tourName: 'Kakadu 4WD Adventure',
     price: 900,
     location: 'Australia',
@@ -123,10 +123,10 @@ export const cards = [
       minutes: '51',
     },
     description: 'Explore one of the world`s oldest and most spectacular mountain ranges in the heart of Victoria on this full day adventure from Melbourne.',
-    sizes: "(max-width: 767px) 272px, (max-width: 1024px) 232px, (max-width: 1280px) 256px, 368px"
+    sizes: "(max-width: 767px) 272px, (max-width: 1024px) 312px, (max-width: 1280px) 356px, 496px"
   },
   {
-    img: require('./assets/4.jpg?resize&sizes[]=232&sizes[]=256&sizes[]=368&sizes[]=272'),
+    img: require('./assets/picture2.jpg?resize&sizes[]=272&sizes[]=312&sizes[]=356&sizes[]=496'),
     tourName: 'Kakadu 4WD Adventure',
     price: 900,
     location: 'Australia',
@@ -141,10 +141,10 @@ export const cards = [
       minutes: '51',
     },
     description: 'Explore one of the world`s oldest and most spectacular mountain ranges in the heart of Victoria on this full day adventure from Melbourne.',
-    sizes: "(max-width: 767px) 272px, (max-width: 1024px) 232px, (max-width: 1280px) 256px, 368px"
+    sizes: "(max-width: 767px) 272px, (max-width: 1024px) 312px, (max-width: 1280px) 356px, 496px"
   },
   {
-    img: require('./assets/1.jpg?resize&sizes[]=232&sizes[]=256&sizes[]=368&sizes[]=272'),
+    img: require('./assets/picture3.jpg?resize&sizes[]=272&sizes[]=312&sizes[]=356&sizes[]=496'),
     tourName: 'Kakadu 4WD Adventure',
     price: 900,
     location: 'Australia',
@@ -159,10 +159,10 @@ export const cards = [
       minutes: '51',
     },
     description: 'Explore one of the world`s oldest and most spectacular mountain ranges in the heart of Victoria on this full day adventure from Melbourne.',
-    sizes: "(max-width: 767px) 272px, (max-width: 1024px) 232px, (max-width: 1280px) 256px, 368px"
+    sizes: "(max-width: 767px) 272px, (max-width: 1024px) 312px, (max-width: 1280px) 356px, 496px"
   },
   {
-    img: require('./assets/2.jpg?resize&sizes[]=232&sizes[]=256&sizes[]=368&sizes[]=272'),
+    img: require('./assets/picture1.jpg?resize&sizes[]=272&sizes[]=312&sizes[]=356&sizes[]=496'),
     tourName: 'Kakadu 4WD Adventure',
     price: 900,
     location: 'Australia',
@@ -177,10 +177,10 @@ export const cards = [
       minutes: '51',
     },
     description: 'Explore one of the world`s oldest and most spectacular mountain ranges in the heart of Victoria on this full day adventure from Melbourne.',
-    sizes: "(max-width: 767px) 272px, (max-width: 1024px) 232px, (max-width: 1280px) 256px, 368px"
+    sizes: "(max-width: 767px) 272px, (max-width: 1024px) 312px, (max-width: 1280px) 356px, 496px"
   },
   {
-    img: require('./assets/3.jpg?resize&sizes[]=232&sizes[]=256&sizes[]=368&sizes[]=272'),
+    img: require('./assets/picture2.jpg?resize&sizes[]=272&sizes[]=312&sizes[]=356&sizes[]=496'),
     tourName: 'Kakadu 4WD Adventure',
     price: 900,
     location: 'Australia',
@@ -195,10 +195,10 @@ export const cards = [
       minutes: '51',
     },
     description: 'Explore one of the world`s oldest and most spectacular mountain ranges in the heart of Victoria on this full day adventure from Melbourne.',
-    sizes: "(max-width: 767px) 272px, (max-width: 1024px) 232px, (max-width: 1280px) 256px, 368px"
+    sizes: "(max-width: 767px) 272px, (max-width: 1024px) 312px, (max-width: 1280px) 356px, 496px"
   },
   {
-    img: require('./assets/4.jpg?resize&sizes[]=232&sizes[]=256&sizes[]=368&sizes[]=272'),
+    img: require('./assets/picture3.jpg?resize&sizes[]=272&sizes[]=312&sizes[]=356&sizes[]=496'),
     tourName: 'Kakadu 4WD Adventure',
     price: 900,
     location: 'Australia',
@@ -213,10 +213,10 @@ export const cards = [
       minutes: '51',
     },
     description: 'Explore one of the world`s oldest and most spectacular mountain ranges in the heart of Victoria on this full day adventure from Melbourne.',
-    sizes: "(max-width: 767px) 272px, (max-width: 1024px) 232px, (max-width: 1280px) 256px, 368px"
+    sizes: "(max-width: 767px) 272px, (max-width: 1024px) 312px, (max-width: 1280px) 356px, 496px"
   },
   {
-    img: require('./assets/1.jpg?resize&sizes[]=232&sizes[]=256&sizes[]=368&sizes[]=272'),
+    img: require('./assets/picture1.jpg?resize&sizes[]=272&sizes[]=312&sizes[]=356&sizes[]=496'),
     tourName: 'Kakadu 4WD Adventure',
     price: 900,
     location: 'Australia',
@@ -231,10 +231,10 @@ export const cards = [
       minutes: '51',
     },
     description: 'Explore one of the world`s oldest and most spectacular mountain ranges in the heart of Victoria on this full day adventure from Melbourne.',
-    sizes: "(max-width: 767px) 272px, (max-width: 1024px) 232px, (max-width: 1280px) 256px, 368px"
+    sizes: "(max-width: 767px) 272px, (max-width: 1024px) 312px, (max-width: 1280px) 356px, 496px"
   },
   {
-    img: require('./assets/2.jpg?resize&sizes[]=232&sizes[]=256&sizes[]=368&sizes[]=272'),
+    img: require('./assets/picture2.jpg?resize&sizes[]=272&sizes[]=312&sizes[]=356&sizes[]=496'),
     tourName: 'Kakadu 4WD Adventure',
     price: 900,
     location: 'Australia',
@@ -249,10 +249,10 @@ export const cards = [
       minutes: '51',
     },
     description: 'Explore one of the world`s oldest and most spectacular mountain ranges in the heart of Victoria on this full day adventure from Melbourne.',
-    sizes: "(max-width: 767px) 272px, (max-width: 1024px) 232px, (max-width: 1280px) 256px, 368px"
+    sizes: "(max-width: 767px) 272px, (max-width: 1024px) 312px, (max-width: 1280px) 356px, 496px"
   },
   {
-    img: require('./assets/3.jpg?resize&sizes[]=232&sizes[]=256&sizes[]=368&sizes[]=272'),
+    img: require('./assets/picture3.jpg'),
     tourName: 'Kakadu 4WD Adventure',
     price: 900,
     location: 'Australia',
@@ -267,7 +267,7 @@ export const cards = [
       minutes: '51',
     },
     description: 'Explore one of the world`s oldest and most spectacular mountain ranges in the heart of Victoria on this full day adventure from Melbourne.',
-    sizes: "(max-width: 767px) 272px, (max-width: 1024px) 232px, (max-width: 1280px) 256px, 368px"
+    sizes: "(max-width: 767px) 272px, (max-width: 1024px) 312px, (max-width: 1280px) 356px, 496px"
   },
 ]
 

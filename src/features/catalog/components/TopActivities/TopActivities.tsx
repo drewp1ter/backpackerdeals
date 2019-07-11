@@ -13,7 +13,6 @@ const data = [
     location: 'Australia, Sydney',
     sale: '30%',
     saleType: 'topDeal',
-    likeable: true,
     value: 1200,
     duration: '2 days, 1 night',
     rating: 4.5,
@@ -26,7 +25,6 @@ const data = [
     location: 'Australia, Sydney',
     sale: 'AUD$300',
     saleType: '',
-    likeable: true,
     value: 1200,
     duration: '2 days, 1 night',
     rating: 4.5,
@@ -44,7 +42,6 @@ const data = [
     location: 'Australia, Sydney',
     sale: '30%',
     saleType: 'topDeal',
-    likeable: true,
     sellOut: true,
     value: 1200,
     duration: '2 days, 1 night',
@@ -54,7 +51,7 @@ const data = [
 ]
 
 export const TopActivities: React.FC = () => {
-  
+
   const setStartPos = (target: any) => {
     if (!target) {
       return
@@ -71,12 +68,12 @@ export const TopActivities: React.FC = () => {
 
       <div ref={setStartPos} className={styles.cards} onScroll={handleScroll}>
         {data.map((card, index) => (
-          <LastMinuteDealCard view="reversed" {...card} key={`${index}-card`} />
+          <LastMinuteDealCard view="reversed" {...card} key={`${index}-card`} likeable={'wide'} />
         ))}
         {data.map((card, index) => (
-          <LastMinuteDealCard view="reversed" {...card} key={`${index}-card`} forCarousel={true} />
+          <LastMinuteDealCard view="reversed" {...card} key={`${index}-card`} forCarousel={true} likeable={'wide'} />
         ))}
-        <LastMinuteDealCard view="reversed" {...data[0]} forCarousel={true} />
+        <LastMinuteDealCard view="reversed" {...data[0]} forCarousel={true} likeable={'wide'} />
       </div>
     </div>
   )

@@ -26,7 +26,7 @@ interface IProps {
   readonly sale: string
   readonly saleType: string
   readonly sellOut?: boolean
-  readonly likeable?: boolean
+  readonly likeable?: 'wide' | 'short'
   readonly value: number
   readonly duration: string
   readonly rating: number
@@ -62,7 +62,7 @@ export const LastMinuteDealCard: React.FC<IProps> = ({
         {saleType === 'topDeal' && <Icon className={styles.badge} name="topDeal" alt="Top Deal" />}
         {saleType === 'mostPopular' && <Icon className={styles.badge} name="mostPopular" alt="Most Popular" />}
         {sellOut && <div className={styles.sellOut}>SELL OUT</div>}
-        {likeable && <i className={classNames('fas fa-heart', styles.like)} />}
+        {likeable && <i className={classNames('fas fa-heart', styles.like)} data-type={likeable} />}
         <div className={styles.sale}>
           <p>{sale}</p>
         </div>
