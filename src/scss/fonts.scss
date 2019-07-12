@@ -1,0 +1,25 @@
+@import "./device";
+@import "./utils";
+
+// Use numbers
+@mixin font($max-screen-size, $min-screen-size, $max-size, $min-size) {
+  $font-size-diff: $max-size - $min-size;
+  $screen-size-diff: $max-screen-size - $min-screen-size;
+
+  font-size: calc(#{$min-size}px + #{$font-size-diff} * (100vw - #{$min-screen-size}px) / #{$screen-size-diff});
+}
+
+@mixin font-mb($min-max-map) {
+  $min: map-get($min-max-map, 'min');
+  $max: map-get($min-max-map, 'max');
+
+  @include font(strip-unit($size-tb-min), strip-unit($size-mb-min), $max, $min)
+}
+
+@mixin font-tb($min-max-map) {
+  $min: map-get($min-max-map, 'min');
+  $max: map-get($min-max-map, 'max');
+
+  @include font(strip-unit($size-tb-max), strip-unit($size-tb-min), $max, $min)
+}
+

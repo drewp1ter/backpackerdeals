@@ -1,4 +1,5 @@
 @import "../../scss/device";
+@import "../../scss/fonts";
 
 .lastMinuteDealCard {
   margin-right: 15px;
@@ -223,7 +224,7 @@
 
   .tour {
     margin: 0;
-    font-size: 18px;
+    font-size: 1.266rem;
     font-weight: bold;
     line-height: 1.23;
     text-align: left;
@@ -373,10 +374,6 @@
       }
     }
 
-    .tour {
-      font-size: 14px;
-    }
-
     .duration {
       font-size: 12px;
       line-height: 24px;
@@ -515,11 +512,6 @@
             font-size: 10px;
           }
         }
-      }
-
-      .tour {
-        font-size: 14px;
-        font-weight: 700;
       }
 
       .duration {
