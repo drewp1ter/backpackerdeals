@@ -252,7 +252,7 @@ export const cards = [
     sizes: "(max-width: 767px) 272px, (max-width: 1024px) 312px, (max-width: 1280px) 356px, 496px"
   },
   {
-    img: require('./assets/picture3.jpg'),
+    img: require('./assets/picture3.jpg?resize&sizes[]=272&sizes[]=312&sizes[]=356&sizes[]=496'),
     tourName: 'Kakadu 4WD Adventure',
     price: 900,
     location: 'Australia',
