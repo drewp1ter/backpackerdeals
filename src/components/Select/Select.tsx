@@ -51,12 +51,18 @@ export class Select extends React.Component<IProps, IState> {
   }
 
   public handleClickOutside = (event: MouseEvent) => {
-    if (this.state.isOpen && this.ref.current && !this.ref.current.contains(event.target as Node)) {
+    if (this.state.isOpen && this.ref.current && !this.isContainNode(event.target as HTMLElement)) {
       this.setState({ isOpen: false })
     }
   }
 
-  public toggleSelect = () => this.setState({ isOpen: !this.state.isOpen })
+  public isContainNode(el: Node | null): boolean {
+    const { current } = this.ref
+    const isCalendarEl = !!el && (el.parentNode as HTMLElement).className.search('react-calendar') > -1;
+    return !!current && (current === el || current.contains(el) || isCalendarEl)
+  }
+
+  public toggleSelect = () => !this.props.disabled && this.setState({ isOpen: !this.state.isOpen })
 
   render() {
     const { children, className, options, theme, selectedOption, disabled = false, bodyTheme, type = 'default', format } = this.props
@@ -67,7 +73,7 @@ export class Select extends React.Component<IProps, IState> {
           className={classNames(styles.select, className)}
           data-opened={isOpen && 'opened'}
           data-disabled={disabled && 'disabled'}
-          onClick={() => !disabled && this.toggleSelect()}
+          onClick={this.toggleSelect}
         >
           <i className="fas fa-angle-down"/>
           <span>{format ? format(selectedOption) : selectedOption}</span>
@@ -84,7 +90,7 @@ export class Select extends React.Component<IProps, IState> {
                 </p>
               ))}
               {type === 'calendar' &&
-                <Calendar date={selectedOption} onChange={this.handleChangeCalendar}/>
+              <Calendar date={selectedOption} onChange={this.handleChangeCalendar}/>
               }
               {children}
             </ScrollBar>
