@@ -5,7 +5,7 @@ import styles from './TravelStoriesSection.module.scss'
 
 export const TravelStoriesSection: React.FC = () => (
   <CardsWrapper title="Travel stories" linkTitle="Read more">
-    <div className={styles.travelStories}>
+    <ul className={styles.travelStories}>
       <TravelStoryCard
         title="HOW TO TRAVEL BY RV ON A BACKPACKER BUDGET"
         description="America, Backpacking Tips, Budget tips, Road Trip, RV"
@@ -27,6 +27,6 @@ export const TravelStoriesSection: React.FC = () => (
         gradDeg={234}
         className={styles.item3}
       />
-    </div>
+    </ul>
   </CardsWrapper>
 )

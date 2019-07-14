@@ -57,7 +57,7 @@ export const LastMinuteDealCard: React.FC<IProps> = ({
   sizes
 }) => {
   return (
-    <div data-view={view} className={classNames(styles.lastMinuteDealCard, className)} data-hidden={forCarousel}>
+    <li data-view={view} className={classNames(styles.lastMinuteDealCard, className)} data-hidden={forCarousel}>
       <div className={styles.imageBlock}>
         {saleType === 'topDeal' && <Icon className={styles.badge} name="topDeal" alt="Top Deal" />}
         {saleType === 'mostPopular' && <Icon className={styles.badge} name="mostPopular" alt="Most Popular" />}
@@ -142,6 +142,6 @@ export const LastMinuteDealCard: React.FC<IProps> = ({
           </button>
         </div>
       </div>
-    </div>
+    </li>
   )
 }

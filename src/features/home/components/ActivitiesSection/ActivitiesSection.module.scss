@@ -2,7 +2,8 @@
 
 .activitiesTourThingsCardsRow {
   margin: 0 auto;
-  max-width: 1520px;
+  max-width: 79.1vw;
+  list-style-type: none;
 
   &[data-hidden="true"] {
     display: none;
@@ -12,8 +13,8 @@
     display: flex;
   }
 
-  > div {
-    margin-right: 16px;
+  li {
+    margin-right: 1rem;
 
     &:last-child {
       margin-right: 0;
@@ -21,33 +22,26 @@
   }
 
   &[data-bottom="true"] {
-    margin-top: 16px;
+    margin-top: 1rem;
   }
 }
 
 @include device-tb {
   .activitiesTourThingsCardsRow {
-    max-width: 1044px;
 
-    > div {
-      margin-right: 8px;
+    li {
 
       &:last-child {
         margin-right: 0;
       }
     }
 
-    &[data-bottom="true"] {
-      margin-top: 8px;
-    }
+    // &[data-bottom="true"] {
+    //   margin-top: 1rem;
+    // }
   }
 }
 
-@include device((max: 1024px)) {
-  .activitiesTourThingsCardsRow {
-    max-width: 952px;
-  }
-}
 
 @include device-mb {
   .activitiesContainer {
@@ -55,6 +49,7 @@
     overflow-x: scroll;
     overflow: -moz-scrollbars-none;
     overflow-y: hidden;
+    margin: 0 -5px;
 
     &::-webkit-scrollbar {
       width: 0 !important;
@@ -62,7 +57,16 @@
   }
 
   .activitiesTourThingsCardsRow {
-    margin-left: 8px;
+    margin-left: .5rem;
+    max-width: 100vw;
+
+    li {
+      // margin-right: .5rem;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
 
     &[data-hidden="true"] {
       display: flex;

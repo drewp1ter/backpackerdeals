@@ -25,21 +25,21 @@ export const ActivitiesSection: React.FC = () => {
     })
 
   const renderPart1 = (forCarousel: boolean = false) => (
-    <div className={styles.activitiesTourThingsCardsRow} data-hidden={forCarousel}>
+    <ul className={styles.activitiesTourThingsCardsRow} data-hidden={forCarousel}>
       <ActivityCard title="Dive & Snorkelling" variant="diveSnorkelling" />
       <ActivityCard title="Multi-days Tours" variant="multidaysTours" />
       <ActivityCard title="Surfing & SUP" variant="surfingSUP" />
       <ActivityCard title="Whale & dolphin watching" variant="whaleDolphinWatching" gradDeg={209} />
-    </div>
+    </ul>
   )
 
   const renderPart2 = (forCarousel: boolean = false) => (
-    <div className={styles.activitiesTourThingsCardsRow} data-hidden={forCarousel} data-bottom={true}>
+    <ul className={styles.activitiesTourThingsCardsRow} data-hidden={forCarousel} data-bottom={true}>
       <ActivityCard title="Classes & Workshops" variant="classesWorkshops" />
       <ActivityCard title="Skydiving" variant="skydiving" gradDeg={209} />
       <ActivityCard title="Bungee Jumping" variant="bungeeJumping" />
       <ActivityCard title="Attractions" variant="attractions" />
-    </div>
+    </ul>
   )
 
   return (
@@ -48,9 +48,9 @@ export const ActivitiesSection: React.FC = () => {
         {renderPart2(true)}
         {renderPart1()}
         {renderPart2()}
-        <div className={styles.activitiesTourThingsCardsRow} data-hidden={true}>
+        <ul className={styles.activitiesTourThingsCardsRow} data-hidden={true}>
           <ActivityCard title="Dive & Snorkelling" variant="diveSnorkelling" />
-        </div>
+        </ul>
       </div>
     </CardsWrapper>
   )

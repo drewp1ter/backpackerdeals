@@ -10,7 +10,7 @@ export interface IProps {
 }
 
 export const ActivityCard: React.FC<IProps> = ({ title, variant, gradDeg = 330 }) => (
-  <div className={styles.activityCard}>
+  <li className={styles.activityCard}>
     <h3>{title}</h3>
     <span>24 Activities</span>
     <a href="#">
@@ -24,5 +24,5 @@ export const ActivityCard: React.FC<IProps> = ({ title, variant, gradDeg = 330 }
         <img src={images.w1920[variant]} alt="Activity"/>
       </picture>
     </a>
-  </div>
+  </li>
 )

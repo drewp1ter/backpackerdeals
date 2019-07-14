@@ -3,8 +3,6 @@
 .activityCard {
   position: relative;
   display: flex;
-  width: 368px;
-  max-height: 576px;
   border-radius: 8px;
   overflow: hidden;
   transition: box-shadow .2s ease-out;
@@ -23,7 +21,7 @@
     left: 24px;
     right: 24px;
     top: 32px;
-    font-size: 32px;
+    font-size: 2rem;
     font-weight: bold;
     color: #fff;
     z-index: 2;
@@ -33,7 +31,7 @@
     position: absolute;
     left: 24px;
     bottom: 24px;
-    font-size: 16px;
+    font-size: 1rem;
     font-weight: normal;
     color: #fff;
     z-index: 2;
@@ -68,14 +66,14 @@
     max-height: 400px;
 
     h3 {
-      font-size: 26px;
+      // font-size: 26px;
       font-weight: 700;
       left: 16px;
       top: 16px;
     }
 
     span {
-      font-size: 14px;
+      // font-size: 14px;
       left: 16px;
       bottom: 16px;
     }
@@ -107,13 +105,13 @@
     h3 {
       left: 12px;
       top: 12px;
-      font-size: 20px;
+      // font-size: 20px;
     }
 
     span {
       left: 12px;
       bottom: 12px;
-      font-size: 13px;
+      // font-size: 13px;
     }
   }
 }
@@ -126,13 +124,13 @@
     h3 {
       left: 10px;
       top: 10px;
-      font-size: 16px;
+      // font-size: 16px;
     }
 
     span {
       left: 10px;
       bottom: 10px;
-      font-size: 12px;
+      // font-size: 12px;
     }
   }
 }

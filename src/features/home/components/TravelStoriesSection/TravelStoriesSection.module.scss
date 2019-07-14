@@ -5,6 +5,7 @@
   margin: 0 auto;
   max-width: 1520px;
   grid-template-columns: 1fr 1fr 1fr;
+  list-style-type: none;
 
   .item1 {
     grid-column-start: 1;

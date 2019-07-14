@@ -88,7 +88,7 @@ export const LastMinuteDeal: React.FC = () => {
     circleScroll({ target, maxScrollLeft: 84, maxScrollRight: 2468, offsetLeft: 1230, offsetRight: 1141 })
 
   return (
-    <div ref={setStartPos} className={styles.lastMinuteDeal} onScroll={handleScroll}>
+    <ul ref={setStartPos} className={styles.lastMinuteDeal} onScroll={handleScroll}>
       {data.map((card, index) => (
         <LastMinuteDealCard view="vertical" {...card} key={`${index}-card`} />
       ))}
@@ -96,6 +96,6 @@ export const LastMinuteDeal: React.FC = () => {
         <LastMinuteDealCard view="vertical" {...card} key={`${index}-card`} forCarousel={true} />
       ))}
       <LastMinuteDealCard view="vertical" {...data[0]} forCarousel={true} />
-    </div>
+    </ul>
   )
 }

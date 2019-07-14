@@ -1,4 +1,4 @@
-@import "../../../../scss/device";
+@import "src/scss/device";
 
 .travelStoryCard {
   position: relative;
@@ -126,6 +126,14 @@
 @include device-mb {
   .travelStoryCard {
     .text {
+      h3 {
+        font-size: 20px;
+      }
+
+      span {
+        font-size: 14px;
+      }
+
       h3, span {
         max-width: 250px;
       }

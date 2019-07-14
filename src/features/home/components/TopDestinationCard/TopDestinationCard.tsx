@@ -17,7 +17,7 @@ export const TopDestinationCard: React.FC<IProps> = ({ title, country, variant, 
   const rootClass = classNames(styles.topDestinationCard, className)
   const gradient = { backgroundImage: `linear-gradient(${gradDeg}deg, rgba(232, 232, 232, 0), rgba(0, 0, 0, 0.91))` }
   return (
-    <div className={rootClass}>
+    <li className={rootClass}>
       <div className={styles.text}>
         <span>{country}</span>
         <h3>{title}</h3>
@@ -35,6 +35,6 @@ export const TopDestinationCard: React.FC<IProps> = ({ title, country, variant, 
           </picture>
         </a>
       </Link>
-    </div>
+    </li>
   )
 }

@@ -18,7 +18,7 @@ export const InstagramSection: React.FC<IProps> = ({ className }) => {
   }
 
   const renderCard = (img: keyof typeof images.w320, key?: string, forCarousel: boolean = false) => (
-    <div key={key} className={styles.instagramCard} data-hidden={forCarousel}>
+    <li key={key} data-hidden={forCarousel}>
       <picture>
         <source media="(max-width: 767px)" srcSet={images.w320[img].src} />
         <source media="(max-width: 1024px)" srcSet={images.w1024[img].src} />
@@ -26,7 +26,7 @@ export const InstagramSection: React.FC<IProps> = ({ className }) => {
         <source media="(max-width: 1920px)" srcSet={images.w1920[img]} />
         <img src={images.w1920[img]} alt="Instagram" />
       </picture>
-    </div>
+    </li>
   )
 
   const renderCards = (forCarousel: boolean = false) =>
@@ -36,11 +36,11 @@ export const InstagramSection: React.FC<IProps> = ({ className }) => {
 
   return (
     <CardsWrapper className={className} title="Inspiration from our instagram" linkTitle="Follow us">
-      <div ref={setStartPos} onScroll={handleScroll} className={styles.instagramCards}>
+      <ul ref={setStartPos} onScroll={handleScroll} className={styles.instagramCards}>
         {renderCards()}
         {renderCards(true)}
         {renderCard('v1', 'card', true)}
-      </div>
+      </ul>
     </CardsWrapper>
   )
 }

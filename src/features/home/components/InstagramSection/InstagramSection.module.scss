@@ -1,46 +1,47 @@
 @import "../../../../scss/device";
 
-.instagramCard {
-  position: relative;
-  border-radius: 8px;
-  margin-right: 16px;
-  overflow: hidden;
-
-  &:hover {
-    img {
-      transform: scale3d(1.1,1.1,1.1);
-    }
-  }
-
-  img {
-    width: 100%;
-    height: 100%;
-    border-radius: 8px;
-    transition: transform 1s;
-  }
-
-  &[data-hidden="true"] {
-    display: none;
-  }
-
-  &:nth-child(6) {
-    margin-right: 0;
-  }
-}
-
 .instagramCards {
   display: flex;
   margin: 0 auto;
   max-width: 1520px;
+  list-style-type: none;
+
+  li {
+    position: relative;
+    border-radius: 8px;
+    margin-right: 16px;
+    overflow: hidden;
+
+    &:hover {
+      img {
+        transform: scale3d(1.1,1.1,1.1);
+      }
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      border-radius: 8px;
+      transition: transform 1s;
+    }
+
+    &[data-hidden="true"] {
+      display: none;
+    }
+
+    &:nth-child(6) {
+      margin-right: 0;
+    }
+  }
 }
 
 @include device-tb {
   .instagramCards {
     max-width: 1044px;
-  }
 
-  .instagramCard {
-    margin-right: 8px;
+    li {
+      margin-right: 8px;
+    }
   }
 }
 
@@ -51,22 +52,24 @@
 }
 
 @include device-mb {
-  .instagramCard {
-    min-width: 128px;
-
-    &:nth-child(6) {
-      margin-right: 8px;
-    }
-
-    &[data-hidden="true"] {
-      display: block;
-    }
-  }
-
   .instagramCards {
     overflow-x: scroll;
     overflow: -moz-scrollbars-none;
     overflow-y: hidden;
+    margin: 0 -5px;
+
+    li {
+      min-width: 128px;
+      margin-right: 8px;
+
+      &:nth-child(6) {
+        margin-right: 8px;
+      }
+
+      &[data-hidden="true"] {
+        display: block;
+      }
+    }
 
     &::-webkit-scrollbar {
       width: 0 !important;

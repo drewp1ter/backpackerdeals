@@ -93,15 +93,15 @@
 }
 
 html {
-  font-size: 1.4vw;
+  font-size: .83vw;
 
-  @include device-tb {
-    @include font-tb((min: 30, max: 40))
-  }
+  // @include device-tb {
+  //   @include font-tb((min: 30, max: 40))
+  // }
 
-  @include device-mb {
-    @include font-tb((min: 50, max: 60))
-  }
+  // @include device-mb {
+  //   @include font-tb((min: 50, max: 60))
+  // }
 }
 
 body {

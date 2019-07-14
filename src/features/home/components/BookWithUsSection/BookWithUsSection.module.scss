@@ -1,13 +1,14 @@
 @import "../../../../scss/device";
 
 .bookWithUsSection {
-  .whyBook {
+  ul {
     display: flex;
     justify-content: space-between;
     margin: 0 auto;
     max-width: 1344px;
+    list-style-type: none;
 
-    .icon {
+    li {
       text-align: center;
       width: 192px;
     }
@@ -22,7 +23,7 @@
 
 @include device-tb {
   .bookWithUsSection {
-    .whyBook {
+    ul {
       max-width: 936px;
 
       p {
@@ -36,22 +37,27 @@
   .bookWithUsSection {
     margin: 15px 0 55px 0;
 
-    .whyBook {
+    ul {
       padding: 0;
+      max-width: 936px;
+
+      p {
+        font-size: 14px;
+      }
     }
   }
 }
 
 @media screen and (max-width: 650px) {
   .bookWithUsSection {
-    .whyBook {
+    ul {
       display: grid;
       grid-template-columns: 90px 90px 90px;
       grid-template-rows: 130px 90px;
       grid-column-gap: 15px;
       grid-row-gap: 15px;
 
-      .icon {
+      li {
         width: 90px;
       }
 

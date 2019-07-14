@@ -8,33 +8,33 @@ import styles from './BookWithUsSection.module.scss'
 export const BookWithUsSection: React.FC = () => (
   <section className={styles.bookWithUsSection}>
     <CardsWrapper title="Why book with us?" linkTitle="Learn more">
-      <div className={styles.whyBook}>
-        <div className={styles.icon}>
+      <ul>
+        <li>
           <Icon name="liveAvailablityInstantConfirmations" size="md" />
           <p>Live Availablity</p>
-        </div>
-        <div className={styles.icon}>
+        </li>
+        <li>
           <Icon name="bestSelections" size="md" />
           <p>Best Selections</p>
-        </div>
-        <div className={styles.icon}>
+        </li>
+        <li>
           <Icon name="securePayment" size="md" />
           <p>100% Safe Payments</p>
-        </div>
+        </li>
 
-        <div className={styles.icon}>
+        <li>
           <Icon name="guarantee" size="md" />
           <p>100% Guarantee</p>
-        </div>
-        <div className={styles.icon}>
+        </li>
+        <li>
           <Icon name="liveChatExpertAgentAssistance" size="md" />
           <p>Live Chat</p>
-        </div>
-        <div className={styles.icon}>
+        </li>
+        <li>
           <Icon name="verifiedTourOperators" size="md" />
           <p>Verified Tour Operators</p>
-        </div>
-      </div>
+        </li>
+      </ul>
     </CardsWrapper>
   </section>
 )
