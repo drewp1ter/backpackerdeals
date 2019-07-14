@@ -20,7 +20,7 @@ export const TopDestinationCard: React.FC<IProps> = ({ title, country, variant, 
     <li className={rootClass}>
       <div className={styles.text}>
         <span>{country}</span>
-        <h3>{title}</h3>
+        <h4>{title}</h4>
       </div>
       <Link href="#">
         <a>

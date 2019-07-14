@@ -23,7 +23,7 @@
     }
   }
 
-  h3 {
+  h4 {
     position: absolute;
     left: 1.5rem;
     right: 1.5rem;
@@ -70,7 +70,7 @@
 @include device-tb{
   .activityCard {
 
-    h3 {
+    h4 {
       font-weight: 700;
       top: 1.5rem;
     }
@@ -82,7 +82,7 @@
     width: 174px;
     max-height: 270px;
 
-    h3 {
+    h4 {
       left: 12px;
       top: 12px;
       font-size: 20px;
@@ -101,7 +101,7 @@
     width: 128px;
     max-height: 208px;
 
-    h3 {
+    h4 {
       left: 10px;
       top: 10px;
       font-size: 16px;

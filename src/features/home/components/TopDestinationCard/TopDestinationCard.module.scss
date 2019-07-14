@@ -1,6 +1,8 @@
+@import "src/scss/device";
+
 .topDestinationCard {
   position: relative;
-  border-radius: 8px;
+  border-radius: .5rem;
   transition: box-shadow .2s ease-out;
   display: flex;
   overflow: hidden;
@@ -20,7 +22,7 @@
   }
 
   &:hover {
-    box-shadow: 0 24px 32px rgba(0, 0, 0, 0.06);
+    box-shadow: 0 1.5rem 2rem rgba(0, 0, 0, 0.06);
 
     img {
       transform: scale3d(1.1, 1.1, 1);
@@ -29,18 +31,18 @@
 
   .text {
     position: absolute;
-    left: 24px;
-    bottom: 32px;
+    left: 1.5rem;
+    bottom: 2rem;
     z-index: 2;
 
-    h3 {
-      font-size: 32px;
+    h4 {
+      font-size: 2rem;
       margin: 5px 0 0 0;
       color: #fff;
     }
 
     span {
-      font-size: 16px;
+      font-size: 1rem;
       color: #fff;
     }
   }
@@ -51,39 +53,44 @@
     top: 0;
     bottom: 0;
     right: 0;
-    border-radius: 8px;
+    border-radius: .5rem;
     opacity: .3;
     z-index: 1;
   }
 }
 
-@media screen and (max-width: 1280px) {
+@include device((max: 1280px)) {
   .topDestinationCard {
 
     .text {
-      left: 16px;
-      bottom: 16px;
+      bottom: 1rem;
 
-      h3 {
-        font-size: 26px;
-      }
-
-      span {
-        font-size: 14px;
-        color: #fff;
+      h4 {
+        font-size: 1.6rem;
       }
     }
   }
 }
 
-@media screen and (max-width: 900px) {
+@include device((max: 1024px)) {
+  .topDestinationCard {
+    .text {
+      h4 {
+        font-size: 1.4rem;
+      }
+    }
+  }
+}
+
+
+@include device((max: 900px)) {
   .topDestinationCard {
 
     .text {
       left: 12px;
       bottom: 12px;
 
-      h3 {
+      h4 {
         font-size: 20px;
       }
 
