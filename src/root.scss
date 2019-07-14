@@ -93,14 +93,14 @@
 }
 
 html {
-  font-size: .83vw;
+  font-size: .83vw; // 16px / 1920
 
   @include device((min: 1024px, max: 1279px)) {
-    font-size: 1.09vw;
+    font-size: 1.09vw; // 14 px / 1280
   }
 
   @include device((min: 768px, max: 1024px)) {
-    font-size: 1.26vw;
+    font-size: 1.26vw; // 13 px / 1024
   }
 
   @include device((min: 320px, max: 767px)) {
