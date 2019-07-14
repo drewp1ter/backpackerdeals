@@ -32,8 +32,8 @@
   }
 
   .card {
-    width: 497px;
-    margin-top: 75px;
+    max-width: 26vw;
+    margin-top: 4.68rem;
 
     @include device-tb {
       margin-top: 25px;
@@ -58,14 +58,8 @@
 
   .headerCardWrapper {
     position: relative;
-    padding: 0 100px;
-    max-width: 1520px;
+    margin: 0 12.5rem;
     display: flex;
     justify-content: flex-end;
-    margin: 0 auto;
-
-    @include device-tb {
-      padding: 0 50px;
-    }
   }
 }

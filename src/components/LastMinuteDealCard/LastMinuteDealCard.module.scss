@@ -2,7 +2,8 @@
 @import "../../scss/fonts";
 
 .lastMinuteDealCard {
-  margin-right: 15px;
+  list-style-type: none;
+  margin-right: 1rem;
   transition: .2s ease box-shadow;
   border-radius: 8px;
   border: 1px solid #fafafa;
@@ -59,18 +60,16 @@
 
     .sellOut {
       position: absolute;
-      top: 150px;
-      right: -28px;
-      transform: rotate(270deg);
-      width: 96px;
-      height: 40px;
+      top: 31%;
+      right: 0;
+      transform: rotate(270deg) translate(-50%, 50%);
+      padding: 1rem .75rem;
       display: flex;
       justify-content: center;
       align-items: center;
-      border-radius: 7px 7px 0 0;
+      border-radius: .4rem .4rem 0 0;
       background-color: #fafafa;
-      font-size: 13px;
-      line-height: 0.92;
+      font-size: .81rem;
       text-align: center;
       color: #202020;
     }
@@ -83,15 +82,15 @@
       transition: .2s ease color;
 
       &[data-type="wide"] {
-        bottom: 30px;
-        right: 25px;
-        font-size: 24px;
+        bottom: 1.875rem;
+        right: 1.6rem;
+        font-size: 1.5rem;
       }
 
       &[data-type="short"] {
-        bottom: 32px;
-        right: 10px;
-        font-size: 20px;
+        bottom: 2rem;
+        right: .625rem;
+        font-size: 1.25rem;
       }
 
       &:hover {
@@ -103,22 +102,20 @@
       display: flex;
       position: absolute;
       justify-content: center;
-      bottom: 10px;
+      bottom: 1.25rem;
       left: 0;
       right: 0;
       z-index: 2;
 
       .timeName {
-        font-size: 13px;
-        line-height: 1.85;
+        font-size: .81rem;
         color: #fafafa;
       }
 
       p {
         margin: 0;
-        font-size: 48px;
+        font-size: 3rem;
         font-weight: bold;
-        line-height: 0.67;
         color: #fafafa;
 
         &.colon {
@@ -128,7 +125,7 @@
 
       .days, .hours, .minutes {
         color: #fafafa;
-        font-size: 13px;
+        font-size: 0.81rem;
         font-weight: 400;
         line-height: 24px;
       }
@@ -157,8 +154,7 @@
       position: absolute;
       right: 0;
       top: 0;
-      width: 104px;
-      height: 40px;
+      padding: .81rem 1.43rem;
       background-color: #ff5a39;
       display: flex;
       justify-content: center;
@@ -167,9 +163,8 @@
 
       p {
         margin: 0;
-        font-size: 13px;
+        font-size: .81rem;
         font-weight: 600;
-        line-height: 1.23;
         color: #ffffff;
       }
     }
@@ -206,14 +201,14 @@
       .location {
         i {
           margin-right: 5px;
-          font-size: 16px;
+          font-size: 1rem;
           line-height: 1.5;
           text-align: left;
           color: #959595;
         }
 
         span {
-          font-size: 13px;
+          font-size: calc(1rem - 2px);
           line-height: 1.85;
           text-align: left;
           color: #959595;
@@ -224,7 +219,7 @@
 
   .tour {
     margin: 0;
-    font-size: 1.266rem;
+    font-size: calc(1rem + 2px);
     font-weight: bold;
     line-height: 1.23;
     text-align: left;
@@ -238,14 +233,14 @@
 
   .duration {
     margin: 0;
-    font-size: 13px;
+    font-size: .81rem;
     line-height: 1.85;
     text-align: left;
     color: #959595;
 
     i {
       margin-right: 5px;
-      font-size: 12px;
+      font-size: .75rem;
       line-height: 2;
       color: #959595;
     }
@@ -259,13 +254,13 @@
 
     .totalPrice {
       .from {
-        font-size: 12px;
+        font-size: .75rem;
         text-align: left;
         color: #dadada;
       }
 
       .price {
-        font-size: 18px;
+        font-size: 1.125rem;
         font-weight: bold;
         text-align: left;
         color: #202020;
@@ -273,7 +268,7 @@
       }
 
       .value {
-        font-size: 12px;
+        font-size: .75rem;
         text-align: left;
         color: #dadada;
       }
@@ -282,14 +277,13 @@
     button {
       cursor: pointer;
       border: none;
-      width: 96px;
-      height: 52px;
-      border-radius: 30px;
+      padding: .875rem 2.5rem;
+      border-radius: 1.875rem;
       background-color: #fafafa;
       transition: .2s ease background-color;
 
       i {
-        font-size: 17px;
+        font-size: 1.06rem;
         line-height: 1.41;
         color: #ff5a39;
         transition: .2s ease color;

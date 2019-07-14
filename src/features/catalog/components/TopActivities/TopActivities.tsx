@@ -66,7 +66,7 @@ export const TopActivities: React.FC = () => {
     <div className={styles.topActivities}>
       <h3>Top 3 Activities in Australia</h3>
 
-      <div ref={setStartPos} className={styles.cards} onScroll={handleScroll}>
+      <ul ref={setStartPos} className={styles.cards} onScroll={handleScroll}>
         {data.map((card, index) => (
           <LastMinuteDealCard view="reversed" {...card} key={`${index}-card`} likeable={'wide'} />
         ))}
@@ -74,7 +74,7 @@ export const TopActivities: React.FC = () => {
           <LastMinuteDealCard view="reversed" {...card} key={`${index}-card`} forCarousel={true} likeable={'wide'} />
         ))}
         <LastMinuteDealCard view="reversed" {...data[0]} forCarousel={true} likeable={'wide'} />
-      </div>
+      </ul>
     </div>
   )
 }

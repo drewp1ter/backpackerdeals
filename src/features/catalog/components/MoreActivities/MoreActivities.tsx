@@ -142,11 +142,11 @@ export const MoreActivities: React.FC = () => {
               <i onClick={handleChangeSortOrder} className={`fas ${sortDec ? 'fa-sort-amount-down' : 'fa-sort-amount-up'}`} />
             </span>
           </div>
-          <div data-view={view} className={styles.cards}>
+          <ul data-view={view} className={styles.cards}>
             <LazyLoad height={500} offset={400}>
               {renderCards()}
             </LazyLoad>
-          </div>
+          </ul>
           {renderPageControls()}
         </div>
       </div>

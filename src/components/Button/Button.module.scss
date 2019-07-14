@@ -10,7 +10,7 @@
 
   &[data-form="rectangled"] {
     border-radius: 8px;
-    font-size: 14px !important;
+    font-size: .875rem !important;
   }
 
   &[data-form="circle"] {
@@ -47,18 +47,18 @@
   }
 
   &[data-size="sm"] {
-    height: 32px;
-    font-size: 12px;
+    height: 2rem;
+    font-size: .75rem;
   }
 
   &[data-size="md"] {
-    height: 48px;
-    font-size: 16px;
+    height: 3rem;
+    font-size: 1rem;
   }
 
   &[data-size="lg"] {
-    height: 56px;
-    font-size: 18px;
+    height: 3.5rem;
+    font-size: 1.125rem;
   }
 }
 
@@ -87,11 +87,8 @@
 @media screen and (max-width: 1024px) {
   .button {
     &[data-size="md"] {
-      height: 40px;
-      font-size: 12px;
+      height: 2.5rem;
+      font-size: .75rem;
     }
   }
-}
-
-@media screen and (max-width: 1280px) and (min-width: 768px) {
 }

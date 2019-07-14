@@ -5,21 +5,19 @@
 
   .select {
     cursor: pointer;
-    padding: 7px 7px 7px 15px;
+    padding: .44rem .44rem .44rem .93rem;
     transition: .2s ease border-color;
 
     i {
-      margin-right: 8px;
-      font-size: 13px;
-      line-height: 1.85;
+      margin-right: .5rem;
+      font-size: .875rem;
       letter-spacing: normal;
       text-align: left;
       transition: .2s ease color, .2s ease transform;
     }
 
     span {
-      font-size: 13px;
-      line-height: 3.08;
+      font-size: .875rem;
       letter-spacing: normal;
       text-align: left;
     }
@@ -50,17 +48,16 @@
     border-radius: 4px;
     top: 75px;
     left: 0;
-    width: 330px;
     max-height: 370px;
     background: #fff;
-    padding: 25px 0;
+    padding: 1.56rem 0;
+    min-width: 330px;
 
     .option {
       cursor: pointer;
-      padding: 12.5px 0 12.5px 32px;
+      padding: .81rem 0 .81rem 2rem;
       margin: 0;
-      font-size: 14px;
-      line-height: 1.71;
+      font-size: .875rem;
       text-align: left;
       background-color: #fff;
       color: #202020;
