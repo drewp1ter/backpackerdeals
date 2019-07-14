@@ -95,13 +95,17 @@
 html {
   font-size: .83vw;
 
-  // @include device-tb {
-  //   @include font-tb((min: 30, max: 40))
-  // }
+  @include device((min: 1024px, max: 1279px)) {
+    font-size: 1.09vw;
+  }
 
-  // @include device-mb {
-  //   @include font-tb((min: 50, max: 60))
-  // }
+  @include device((min: 768px, max: 1024px)) {
+    font-size: 1.26vw;
+  }
+
+  @include device((min: 320px, max: 767px)) {
+    font-size: 1.69vw;
+  }
 }
 
 body {

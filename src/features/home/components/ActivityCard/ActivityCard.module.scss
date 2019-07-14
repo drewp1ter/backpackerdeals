@@ -1,15 +1,22 @@
-@import "../../../../scss/device";
+@import "src/scss/device";
 
 .activityCard {
   position: relative;
   display: flex;
-  border-radius: 8px;
+  width: 19.1vw;
+  max-height: 30vw;
+  border-radius: .5rem;
   overflow: hidden;
   transition: box-shadow .2s ease-out;
   cursor: pointer;
 
+  a {
+    display: block;
+    width: 100%;
+  }
+
   &:hover {
-    box-shadow: 0 24px 32px rgba(0, 0, 0, 0.06);
+    box-shadow: 0 1.5rem 2rem rgba(0, 0, 0, 0.06);
 
     img {
       transform: scale3d(1.1,1.1,1);
@@ -18,9 +25,9 @@
 
   h3 {
     position: absolute;
-    left: 24px;
-    right: 24px;
-    top: 32px;
+    left: 1.5rem;
+    right: 1.5rem;
+    top: 2rem;
     font-size: 2rem;
     font-weight: bold;
     color: #fff;
@@ -29,8 +36,8 @@
 
   span {
     position: absolute;
-    left: 24px;
-    bottom: 24px;
+    left: 1.5rem;
+    bottom: 1.5rem;
     font-size: 1rem;
     font-weight: normal;
     color: #fff;
@@ -52,7 +59,7 @@
     bottom: 0;
     right: 0;
     opacity: .3;
-    border-radius: 8px;
+    border-radius: .5rem;
   }
 
   .gradient {
@@ -62,37 +69,10 @@
 
 @include device-tb{
   .activityCard {
-    width: 256px;
-    max-height: 400px;
 
     h3 {
-      // font-size: 26px;
       font-weight: 700;
-      left: 16px;
-      top: 16px;
-    }
-
-    span {
-      // font-size: 14px;
-      left: 16px;
-      bottom: 16px;
-    }
-  }
-}
-
-@include device((max: 1024px)) {
-  .activityCard {
-    width: 232px;
-    max-height: 360px;
-
-    h3 {
-      left: 14px;
-      top: 14px;
-    }
-
-    span {
-      left: 14px;
-      bottom: 14px;
+      top: 1.5rem;
     }
   }
 }
@@ -105,13 +85,13 @@
     h3 {
       left: 12px;
       top: 12px;
-      // font-size: 20px;
+      font-size: 20px;
     }
 
     span {
       left: 12px;
       bottom: 12px;
-      // font-size: 13px;
+      font-size: 13px;
     }
   }
 }
@@ -124,13 +104,13 @@
     h3 {
       left: 10px;
       top: 10px;
-      // font-size: 16px;
+      font-size: 16px;
     }
 
     span {
       left: 10px;
       bottom: 10px;
-      // font-size: 12px;
+      font-size: 12px;
     }
   }
 }
