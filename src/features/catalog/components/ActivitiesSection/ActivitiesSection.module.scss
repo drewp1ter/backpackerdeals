@@ -61,5 +61,9 @@
     margin: 0 12.5rem;
     display: flex;
     justify-content: flex-end;
+
+    @include device-tb {
+      margin: 0 2.25rem;
+    }
   }
 }

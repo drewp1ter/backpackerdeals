@@ -5,15 +5,11 @@
 
   @include device-ipad {
     display: block;
-    margin-top: -12vw;
-    margin-bottom: 58px;
-    padding: 0 50px !important;
+    margin: -12vw 2.25rem 3.625rem 2.25rem;
   }
 
   @include device-mb {
-    margin-bottom: 58px;
-    margin-top: 0;
-    padding: 0 8px !important;
+    margin: 0 1.5rem 3.625rem 1.5rem;
   }
 }
 

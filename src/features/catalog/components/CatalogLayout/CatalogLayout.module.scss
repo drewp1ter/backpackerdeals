@@ -16,7 +16,7 @@
 
 @include device-tb {
   .breadcrumbs {
-    padding: 0 50px;
+    margin: -13.5vw 2.25rem auto 2.25rem;
   }
 }
 
@@ -24,16 +24,10 @@
   .breadcrumbs {
     position: absolute;
     top: 44vw;
-    max-width: 980px;
-    margin: 0 auto 16px;
+    margin: 0 2.25rem auto 2.25rem;
   }
 }
 
-@include device((max: 900px)) {
-  .breadcrumbs {
-    padding: 0 25px;
-  }
-}
 
 @include device-mb {
   .instagramCards {
@@ -43,6 +37,5 @@
   .breadcrumbs {
     position: absolute;
     top: 76vw;
-    padding: 0 8px;
   }
 }

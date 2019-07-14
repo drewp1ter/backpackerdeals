@@ -104,7 +104,7 @@ html {
   }
 
   @include device((min: 320px, max: 767px)) {
-    font-size: 1.69vw;
+    font-size: 4vmin;
   }
 }
 
