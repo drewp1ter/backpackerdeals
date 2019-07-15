@@ -1,30 +1,31 @@
-@import "../../../../scss/device";
+@import "src/scss/device";
 
 .cardsWrapper {
-  margin-bottom: 98px;
-  padding: 0 15px;
+  margin-bottom: 6.12rem;
+  padding: 0 1rem;
 
   > h3 {
     text-align: center;
-    font-size: 56px;
+    font-size: 3.5rem;
     font-weight: bold;
     color: #ff5a39;
   }
 
   p {
     text-align: center;
-    margin-bottom: 28px;
+    margin-bottom: 1.75rem;
 
     a {
-      font-size: 16px;
+      display: block;
+      font-size: 1rem;
       color: #959595;
-      margin-top: 16px;
+      margin-top: 1rem;
       cursor: pointer;
       text-decoration: none;
 
       i {
         margin-left: 5px;
-        font-size: 12px;
+        font-size: .75rem;
         color: #959595;
       }
     }
@@ -32,24 +33,6 @@
 
   .wrapper {
     margin: auto;
-  }
-}
-
-@include device-tb {
-  .cardsWrapper {
-    > h3 {
-      font-size: 38px;
-    }
-
-    p {
-      a {
-        font-size: 14px;
-
-        i {
-          font-size: 11px;
-        }
-      }
-    }
   }
 }
 

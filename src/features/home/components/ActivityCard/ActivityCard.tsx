@@ -12,7 +12,7 @@ export interface IProps {
 
 export const ActivityCard: React.FC<IProps> = ({ title, variant, gradDeg = 330 }) => (
   <li className={styles.activityCard}>
-    <h3>{title}</h3>
+    <h4>{title}</h4>
     <span>24 Activities</span>
     <Link href="#">
       <a>

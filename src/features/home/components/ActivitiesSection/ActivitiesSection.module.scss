@@ -1,4 +1,4 @@
-@import "../../../../scss/device";
+@import "src/scss/device";
 
 .activitiesTourThingsCardsRow {
   margin: 0 auto;
@@ -25,19 +25,6 @@
     margin-top: 1rem;
   }
 }
-
-// @include device-tb {
-//   .activitiesTourThingsCardsRow {
-
-//     li {
-
-//       &:last-child {
-//         margin-right: 0;
-//       }
-//     }
-//   }
-// }
-
 
 @include device-mb {
   .activitiesContainer {

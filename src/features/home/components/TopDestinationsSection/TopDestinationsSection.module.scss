@@ -1,18 +1,18 @@
-@import "../../../../scss/device";
+@import "src/scss/device";
 
 .topDestinations {
   display: grid;
   margin: 0 auto;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
   list-style-type: none;
-  max-width: 1520px;
+  max-width: 79.1vw;
 
   .td1 {
     grid-column-start: 1;
     grid-column-end: 3;
     grid-row-start: 1;
     grid-row-end: 3;
-    margin-right: 10px;
+    margin-right: .625rem;
   }
 
   .td2 {
@@ -24,7 +24,7 @@
   .td3 {
     grid-column-start: 4;
     grid-column-end: 6;
-    margin: 0 6px 0 8px;
+    margin: 0 .375rem 0 .5rem;
   }
 
   .td4 {
@@ -32,7 +32,7 @@
     grid-column-end: 7;
     grid-row-start: 1;
     grid-row-end: 3;
-    margin-left: 12px;
+    margin-left: .75rem;
   }
 
   .td5 {
@@ -40,8 +40,8 @@
     grid-column-end: 5;
     grid-row-start: 2;
     grid-row-end: 3;
-    margin-top: 16px;
-    margin-left: 6px;
+    margin-top: 1rem;
+    margin-left: .375rem;
   }
 
   .td6 {
@@ -49,50 +49,14 @@
     grid-column-end: 6;
     grid-row-start: 2;
     grid-row-end: 3;
-    margin: 16px 6px 0 16px;
-  }
-}
-
-@include device-tb {
-  .topDestinations {
-    max-width: 1044px;
-
-    .td1 {
-      margin-right: 5px;
-    }
-
-    .td2 {
-      margin: 0 3px;
-    }
-
-    .td3 {
-      margin: 0 3px 0 4px;
-    }
-
-    .td4 {
-      margin-left: 6px;
-    }
-
-    .td5 {
-      margin: 8px 0 0 3px;
-    }
-
-    .td6 {
-      margin: 8px 3px 0 8px;
-    }
-  }
-}
-
-@include device((max: 1024px)) {
-  .topDestinations {
-    max-width: 952px;
+    margin: 1rem .375rem 0 1rem;
   }
 }
 
 @include device-mb {
   .topDestinations {
     grid-template-columns: 1fr 1fr;
-    // grid-template-rows: 264px 196px 196px 264px;
+    max-width: unset;
 
     .td1 {
       grid-column-start: 1;
