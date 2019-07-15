@@ -19,7 +19,7 @@ export const TravelStoryCard: React.FC<IProps> = ({ title, description, variant,
   return (
     <li className={mainClass} data-variant={variant}>
       <div className={styles.text}>
-        <h3>{title}</h3>
+        <h4>{title}</h4>
         <span>{description}</span>
       </div>
       <Link href="#">

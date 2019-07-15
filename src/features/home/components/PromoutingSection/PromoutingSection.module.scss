@@ -1,30 +1,36 @@
-@import "../../../../scss/device";
+@import "src/scss/device";
 
 .promoutingSection {
   display: flex;
   justify-content: space-between;
   margin: 0 auto;
-  max-width: 1494px;
+  max-width: 77.8vw;
 
   picture[data-hidden="true"] {
     display: none;
   }
-}
 
-@include device-tb {
-  .promoutingSection {
-    max-width: 1024px;
+  img {
+    width: 100%;
+    height: 100%;
   }
 }
 
-@media screen and (max-width: 1024px) {
-  .promoutingSection {
-    max-width: 929px;
-  }
-}
+// @include device-tb {
+//   .promoutingSection {
+//     max-width: 1024px;
+//   }
+// }
+
+// @media screen and (max-width: 1024px) {
+//   .promoutingSection {
+//     max-width: 929px;
+//   }
+// }
 
 @media screen and (max-width: 700px) {
   .promoutingSection {
+    max-width: 929px;
     overflow-x: scroll;
     overflow: -moz-scrollbars-none;
     overflow-y: hidden;
@@ -35,6 +41,11 @@
 
     picture[data-hidden="true"] {
       display: block;
+    }
+
+    img {
+      width: unset;
+      height: unset;
     }
   }
 }

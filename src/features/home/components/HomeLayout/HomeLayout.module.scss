@@ -1,5 +1,13 @@
+@import "src/scss/device";
+
 .instagramCards {
   position: relative;
-  margin-bottom: -150px !important;
+  margin-bottom: -9.3rem !important;
   z-index: 1;
+}
+
+@include device-mb {
+  .instagramCards {
+    margin-bottom: -150px !important;
+  }
 }

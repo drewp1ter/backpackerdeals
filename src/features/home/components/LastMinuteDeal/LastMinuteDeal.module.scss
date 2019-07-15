@@ -1,30 +1,35 @@
-@import "../../../../scss/device";
+@import "src/scss/device";
 
 .lastMinuteDeal {
   display: flex;
   margin: 0 auto;
-  max-width: 1520px;
+  max-width: 79.1vw;
   list-style-type: none;
-}
 
-@include device-tb {
-  .lastMinuteDeal {
-    max-width: 1044px;
+  li {
+    width: 100%;
+    margin-right: 1rem;
+
+    &:nth-child(4) {
+      margin-right: 0;
+    }
   }
 }
 
-@include device((max: 1024px)) {
-  .lastMinuteDeal {
-    max-width: 952px;
-  }
-}
-
-@include device((max: 940px)) {
+@include device((max: 1128px)) { //940
   .lastMinuteDeal {
     max-width: 1136px;
     overflow-x: scroll;
     overflow: -moz-scrollbars-none;
     overflow-y: hidden;
+
+    li {
+      margin-right: 16px;
+
+      &:nth-child(4) {
+        margin-right: 16px;
+      }
+    }
 
     &::-webkit-scrollbar {
       width: 0 !important;

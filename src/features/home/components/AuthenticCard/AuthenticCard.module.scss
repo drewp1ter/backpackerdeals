@@ -1,45 +1,45 @@
-@import "../../../../scss/device";
+@import "src/scss/device";
 
 .authenticCard {
   display: flex;
   flex-direction: column;
   border-radius: 10px;
   border: solid 1px #fafafa;
-  padding: 38px 56px 20px 24px;
+  padding: 2.375rem 3.5rem 1.25rem 1.5rem;
 
-  h3 {
-    margin: 8px 0 0 0;
-    max-width: 290px;
-    line-height: 1.23;
-    font-size: 26px;
+  @include device ((min: 1920px)) {
+    border-width: .06rem;
+  }
+
+  h4 {
+    margin: .5rem 0 0 0;
+    max-width: 15.16vw;
+    font-size: 1.625rem;
     font-weight: bold;
     text-align: left;
-    color: #202020;
   }
 
   a {
-    font-size: 16px;
     color: #959595;
     cursor: pointer;
     text-decoration: underline;
   }
 
   .sign {
-    margin-top: 35px;
-    font-size: 16px;
+    margin-top: 2.18rem;
     color: #959595;
   }
 
   .body {
-    margin-top: 25px;
-    font-size: 16px;
+    margin-top: 1.56rem;
     text-align: left;
     color: #959595;
   }
 }
 
-@include device-tb {
+@include device-mb {
   .authenticCard {
+    min-width: 244px;
     padding: 18px 12px 20px 12px;
 
     .rating {
@@ -48,7 +48,7 @@
       }
     }
 
-    h3 {
+    h4 {
       font-size: 20px;
       max-width: 220px;
     }
@@ -56,11 +56,5 @@
     .body, .sign, a {
       font-size: 14px;
     }
-  }
-}
-
-@include device-mb {
-  .authenticCard {
-    min-width: 244px;
   }
 }

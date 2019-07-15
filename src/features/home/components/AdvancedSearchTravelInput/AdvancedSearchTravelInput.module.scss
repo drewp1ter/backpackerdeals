@@ -3,14 +3,13 @@
 .advancedSearchTravelInput {
   position: relative;
   background: rgba(255, 255, 255, .26);
-  border-radius: 60px;
+  border-radius: 3.75rem;
   margin: 0 auto;
-  padding: 8px 8px 8px 30px;
-  font-size: 16px;
+  padding: .5rem .5rem .5rem 1.875rem;
   display: flex;
   align-items: center;
-  width: 1008px;
-  height: 72px;
+  width: 52.5vw;
+  height: 4.5rem;
   box-sizing: border-box;
 
 
@@ -25,7 +24,7 @@
 
         & > [data-opened] {
           overflow: hidden;
-          max-height: 56px;
+          max-height: 3.5rem;
           box-sizing: border-box;
         }
       }
@@ -33,25 +32,25 @@
   }
 
   .searchBtn {
-    font-size: 18px;
-    width: 208px;
+    font-size: 1.125rem;
+    width: 13rem;
     height: 100%;
   }
 
   .searchImage {
     user-select: none;
     position: absolute;
-    bottom: -32px;
+    bottom: -2rem;
     left: 50%;
     transform: translateX(-50%);
     cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 320px;
-    height: 32px;
+    width: 20rem;
+    height: 2rem;
     color: #fff;
-    font-size: 12px;
+    font-size: .75rem;
     background: url("./assets/Baidge.svg") no-repeat;
     background-size: cover;
 
@@ -61,28 +60,28 @@
   }
 }
 
-@include device-tb {
-  .advancedSearchTravelInput {
-    width: 696px;
-    height: 56px;
-    padding: 4px 4px 4px 20px;
+// @include device-tb {
+//   .advancedSearchTravelInput {
+//     width: 696px;
+//     height: 56px;
+//     padding: 4px 4px 4px 20px;
 
-    .searchImage {
-      bottom: -24px;
-      width: 240px;
-      height: 24px;
-    }
+//     .searchImage {
+//       bottom: -24px;
+//       width: 240px;
+//       height: 24px;
+//     }
 
-    .searchBtn {
-      width: 168px;
-      font-size: 14px;
-    }
+//     .searchBtn {
+//       width: 168px;
+//       font-size: 14px;
+//     }
 
-    .searchBlock > div[data-theme] > div[data-opened] {
-      max-height: 39px;
-    }
-  }
-}
+//     .searchBlock > div[data-theme] > div[data-opened] {
+//       max-height: 39px;
+//     }
+//   }
+// }
 
 @include device-mb {
   .advancedSearchTravelInput {

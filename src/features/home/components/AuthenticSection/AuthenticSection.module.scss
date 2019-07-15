@@ -1,12 +1,12 @@
-@import "../../../../scss/device";
+@import "src/scss/device";
 
 .authenticSection {
   display: flex;
   margin: 0 auto;
-  max-width: 1520px;
+  max-width: 79.1vw;
 
   li {
-    margin-right: 16px;
+    margin-right: 1rem;
 
     &:last-child {
       margin-right: 0;
@@ -18,20 +18,21 @@
   display: flex;
 }
 
-@include device-tb {
-  .authenticSection {
-    max-width: 1044px;
-  }
-}
+// @include device-tb {
+//   .authenticSection {
+//     max-width: 1044px;
+//   }
+// }
 
-@media screen and (max-width: 1024px) {
-  .authenticSection {
-    max-width: 952px;
-  }
-}
+// @media screen and (max-width: 1024px) {
+//   .authenticSection {
+//     max-width: 952px;
+//   }
+// }
 
 @include device-mb {
   .authenticSection {
+    max-width: unset;
     overflow-x: scroll;
     overflow-y: hidden;
     &::scrollbar {
