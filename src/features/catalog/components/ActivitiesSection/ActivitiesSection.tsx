@@ -1,12 +1,12 @@
 import React from 'react'
 
+import { HeaderWave } from 'components'
 import { HeaderCard } from '..'
-import { HeaderWave2 } from '../../../../components/HeaderWave2'
 
 import styles from './ActivitiesSection.module.scss'
 
 export const ActivitiesSection: React.FC = () => (
-  <HeaderWave2 className={styles.activitiesSection}>
+  <HeaderWave className={styles.activitiesSection}>
     <div className={styles.headerCardWrapper}>
       <HeaderCard
         title="Australia"
@@ -19,5 +19,5 @@ export const ActivitiesSection: React.FC = () => (
         className={styles.card}
       />
     </div>
-  </HeaderWave2>
+  </HeaderWave>
 )

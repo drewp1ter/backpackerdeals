@@ -11,7 +11,7 @@ export interface IProps {
 }
 
 export const HeaderWave: React.FC<IProps> = ({ children, className, maskClassName, hasGradient = true }) => (
-  <section className={classNames(styles.headWave, className)}>
+  <section className={classNames(styles.headWave2, className)}>
     <div className={styles.children}>
       {children}
     </div>

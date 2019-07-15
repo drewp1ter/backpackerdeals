@@ -1,4 +1,4 @@
-@import '../../../../scss/device';
+@import 'src/scss/device';
 
 .activitiesSection {
   margin-top: 5.4vw;
@@ -10,34 +10,15 @@
   background-attachment: scroll;
   box-sizing: border-box;
   height: 49vw;
-  min-height: 850px;
-
-  @include device((min: 1279px, max: 1541px)) {
-    background-size: cover;
-  }
-
-  @include device-tb {
-    margin-top: 72px;
-    min-height: 537px;
-  }
-
-  @include device-ipad {
-    min-height: unset;
-  }
-
-  @include device-mb {
-    margin-top: 56px;
-    height: 70vw;
-    background-size: cover;
-  }
+  min-height: 44.2vw;
 
   .card {
     max-width: 26vw;
     margin-top: 4.68rem;
 
-    @include device-tb {
-      margin-top: 25px;
-      width: 312px;
+    @include device((max: 1152px)) {
+      margin-top: 3rem;
+      max-width: 30vw;
     }
 
     @include device-ipad {

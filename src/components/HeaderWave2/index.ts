@@ -1,1 +1,0 @@
-export { HeaderWave2 } from './HeaderWave2'
