@@ -13,14 +13,20 @@
 
 .breadcrumbs {
   position: relative;
-  margin-left: 10.5vw;
+  margin-top: -1.875rem;
+  margin-left: 12.5rem;
   height: 1rem;
   z-index: 9;
 
-  @include device((max: 1024px)) {
+  @include device-tb {
+    margin-top: -1rem;
+    margin-left: 2.25rem;
+  }
+
+  @include device-mb {
     position: absolute;
     margin: unset;
-    top: 45vw;
+    top: 72vw;
     left: 6vw;
   }
 }

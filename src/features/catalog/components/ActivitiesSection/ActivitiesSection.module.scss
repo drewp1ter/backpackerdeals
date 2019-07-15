@@ -1,7 +1,7 @@
 @import 'src/scss/device';
 
 .activitiesSection {
-  margin-top: 6vw;
+  margin-top: 5.4vw;
   position: relative;
   background-image: url('./assets/background1920.jpg');
   background-repeat: no-repeat;
@@ -10,11 +10,25 @@
   background-attachment: scroll;
   box-sizing: border-box;
   height: 40vw;
-  // min-height: 44.2vw;
+
+  @include device-tb {
+    margin-top: 72px;
+  }
+
+  @include device-mb {
+    margin-top: 56px;
+    height: 66.3vw;
+    background-size: cover;
+  }
 
   .card {
     max-width: 26vw;
     margin-top: 4.68rem;
+
+    @include device-tb {
+      max-width: 24.41vw;
+      margin-top: 1.71rem;
+    }
 
     @include device((max: 1152px)) {
       margin-top: 3rem;
@@ -28,6 +42,8 @@
 
   .mask {
     mask-position: 50% calc(50% + 22vw);
+    right: -2%;
+    bottom: -2%;
   }
 
   &:after {
@@ -48,7 +64,7 @@
     justify-content: flex-end;
 
     @include device-tb {
-      margin: 0 2.25rem;
+      margin: 0 2.57rem;
     }
   }
 }

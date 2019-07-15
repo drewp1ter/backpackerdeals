@@ -26,17 +26,18 @@
 
   &[data-view="horizontal"] {
     display: flex;
-  }
 
-  // &:last-of-type {
-  //   margin-right: 0;
-  // }
+    .imageBlock {
+      border-radius: .5rem 0 0 .5rem;
+      width: 73%;
+    }
+  }
 
   .imageBlock {
     position: relative;
     transition: transform .2s ease-out;
     overflow: hidden;
-    border-radius: 8px 8px 0 0;
+    border-radius: .5rem .5rem 0 0;
     margin: -1px;
 
     img:not(.background) {
@@ -72,13 +73,14 @@
       font-size: .81rem;
       text-align: center;
       color: #202020;
+      z-index: 1;
     }
 
     .like {
       cursor: pointer;
       position: absolute;
       color: #ffffff;
-      z-index: 10;
+      z-index: 1;
       transition: .2s ease color;
 
       &[data-type="wide"] {
@@ -154,12 +156,13 @@
       position: absolute;
       right: 0;
       top: 0;
-      padding: .81rem 1.43rem;
+      padding: .75rem .5rem;
       background-color: #ff5a39;
       display: flex;
       justify-content: center;
       align-items: center;
       z-index: 2;
+      min-width: 4.6vw;
 
       p {
         margin: 0;
@@ -171,14 +174,13 @@
   }
 
   .cardDescription {
-    padding: 20px 24px 24px 24px;
+    padding: 1.18rem 1.43rem 1.56rem 1.43rem;
     border-top: 0;
 
     &[data-view="horizontal"] {
-      max-width: 40%;
       display: flex;
       flex-direction: column;
-      padding: 12px 24px 24px 32px;
+      padding: .5rem 1.5rem 1.81rem 2rem;
     }
 
     div[data-view="horizontal"] {
@@ -193,23 +195,21 @@
     }
 
     .aboutPlace {
-      margin-bottom: 20px;
+      margin-bottom: 1.25rem;
       display: flex;
       justify-content: space-between;
-      align-items: center;
+      align-items: flex-start;
 
       .location {
         i {
           margin-right: 5px;
           font-size: 1rem;
-          line-height: 1.5;
           text-align: left;
           color: #959595;
         }
 
         span {
-          font-size: calc(1rem - 2px);
-          line-height: 1.85;
+          font-size: .81rem;
           text-align: left;
           color: #959595;
         }
@@ -234,14 +234,12 @@
   .duration {
     margin: 0;
     font-size: .81rem;
-    line-height: 1.85;
     text-align: left;
     color: #959595;
 
     i {
       margin-right: 5px;
       font-size: .75rem;
-      line-height: 2;
       color: #959595;
     }
   }
@@ -255,6 +253,7 @@
     .totalPrice {
       .from {
         font-size: .75rem;
+        line-height: 1.35rem;
         text-align: left;
         color: #dadada;
       }
@@ -268,6 +267,8 @@
       }
 
       .value {
+        display: block;
+        line-height: .8rem;
         font-size: .75rem;
         text-align: left;
         color: #dadada;
@@ -277,7 +278,7 @@
     button {
       cursor: pointer;
       border: none;
-      padding: .875rem 2.5rem;
+      padding: .9rem 2.55rem;
       border-radius: 1.875rem;
       background-color: #fafafa;
       transition: .2s ease background-color;
@@ -310,11 +311,22 @@
     }
 
     .imageBlock {
+      border-radius: .57rem .57rem 0 0;
+
+      .like[data-type="wide"] { right: .72rem }
+
       .badge {
         width: 90px;
         height: 106px;
         top: -9px;
         left: -2px;
+      }
+
+      .sellOut {
+        transform: rotate(270deg) translate(-50%, 117%);
+        border-radius: .57rem .57rem 0 0;
+        padding: .57rem 1.43rem;
+        font-size: .79rem;
       }
 
       .exposeTime {
@@ -332,54 +344,31 @@
       }
 
       .sale {
-        height: 32px;
+        border-radius: 0 .57rem;
+        min-width: 7.1vw;
+        padding: 0.72rem;
 
         p {
-          font-size: 12px;
+          font-size: .79rem;
         }
       }
     }
 
     .cardDescription {
-      padding: 14px 12px 14px 12px;
+      padding: .65rem .86rem 1.43rem .86rem;
 
       .aboutPlace {
-        margin-bottom: 14px;
-
-        .rating {
-          i {
-            font-size: 10px;
-          }
-
-          span {
-            font-size: 10px;
-          }
-        }
-
-        .location {
-          i {
-            font-size: 12px;
-          }
-
-          span {
-            font-size: 10px;
-          }
-        }
+        margin-bottom: 1rem;
+        align-items: center;
       }
     }
 
-    .duration {
-      font-size: 12px;
-      line-height: 24px;
-    }
-
     .valueAndLink {
-      margin-top: 14px;
+      margin-top: 1rem;
 
       .totalPrice {
         .from {
           font-size: 12px;
-
         }
 
         .price {
@@ -389,12 +378,10 @@
       }
 
       button {
-        width: 76px;
-        height: 44px;
-        border-radius: 30px;
+        padding: 0.9rem 2.43rem;
+        i { font-size: 1.21rem; }
       }
     }
-
   }
 }
 
@@ -425,12 +412,16 @@
   }
 }
 
-@media screen and (max-width: 1128px) { // 940
+@media screen and (max-width: 768px) { // 940
   .lastMinuteDealCard {
     min-width: 272px;
 
     &[data-hidden="true"] {
       display: block;
+
+      &:first-child {
+        margin-left: .57rem;
+      }
     }
 
     .imageBlock {
@@ -472,8 +463,17 @@
 @include device-mb {
   .lastMinuteDealCard {
     .imageBlock {
-      .sale p {
-        font-size: 11px;
+      .sale {
+        padding: .72rem;
+        min-width: 27vw;
+        p { font-size: .85rem }
+      }
+
+      .sellOut {
+        transform: rotate(270deg) translate(-50%, 117%);
+        border-radius: .57rem .57rem 0 0;
+        padding: .57rem 1.43rem;
+        font-size: .79rem;
       }
     }
 
@@ -481,7 +481,7 @@
       padding: 14px 12px 14px 12px;
 
       .aboutPlace {
-        margin-bottom: 14px;
+        margin-bottom: .5rem;
 
         .rating {
           i {

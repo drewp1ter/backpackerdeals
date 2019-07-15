@@ -287,7 +287,7 @@
   .mobileMenu {
     &[data-theme="dark"] {
       .searchIcon, .menuIcon {
-        border-color: #202020;
+        border-color: #e8e8e8;
 
         span {
           color: #202020;
@@ -303,8 +303,8 @@
       cursor: pointer;
       height: 40px;
       padding: 0 9px 0 12px;
-      margin-right: 12px;
-      border-radius: 30px;
+      margin-right: 0.86rem;
+      border-radius: 2.14rem;
       border: 1px solid #ffffff;
       background-color: transparent;
 
