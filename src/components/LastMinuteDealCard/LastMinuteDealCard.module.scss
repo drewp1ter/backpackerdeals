@@ -367,12 +367,11 @@
 
       .totalPrice {
         .from {
-          font-size: 12px;
+          font-size: .875rem;
         }
 
         .price {
-          font-size: 14px;
-
+          font-size: 1rem;
         }
       }
 
@@ -455,9 +454,14 @@
   .lastMinuteDealCard {
     .imageBlock {
       .sale {
-        padding: .72rem;
+        padding: 9px 26px;
         min-width: 27vw;
-        p { font-size: .85rem }
+        max-width: 104px;
+        box-sizing: border-box;
+
+        p {
+          @include font-mb((min: 11, max: 15))
+        }
       }
 
       .sellOut {

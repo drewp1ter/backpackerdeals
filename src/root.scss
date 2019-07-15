@@ -103,7 +103,11 @@ html {
     font-size: 1.26vw; // 13 px / 1024
   }
 
-  @include device((min: 320px, max: 767px)) {
+  @include device((min: 420px, max: 767px)) {
+    font-size: 1.26vw; // 13 / 320
+  }
+
+  @include device((min: 320px, max: 420px)) {
     font-size: 4vmin; // 13 / 320
   }
 }
