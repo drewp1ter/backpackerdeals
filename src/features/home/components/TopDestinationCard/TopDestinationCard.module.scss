@@ -83,7 +83,7 @@
 }
 
 
-@include device((max: 900px)) {
+@include device((max: 768px)) {
   .topDestinationCard {
 
     .text {

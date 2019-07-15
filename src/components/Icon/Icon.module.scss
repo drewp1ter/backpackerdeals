@@ -1,3 +1,5 @@
+@import "src/scss/device";
+
 .icon {
   &[data-size="md"] {
     height: 4rem;
@@ -5,11 +7,11 @@
   }
 }
 
-// @media screen and (max-width: 1280px) {
-//   .icon {
-//     &[data-size="md"] {
-//       height: 56px;
-//       width: 56px;
-//     }
-//   }
-// }
+@include device((max: 768px)) {
+  .icon {
+    &[data-size="md"] {
+      height: 56px;
+      width: 56px;
+    }
+  }
+}

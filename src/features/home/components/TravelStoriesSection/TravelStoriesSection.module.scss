@@ -1,9 +1,9 @@
-@import "../../../../scss/device";
+@import "src/scss/device";
 
 .travelStories {
   display: grid;
   margin: 0 auto;
-  max-width: 1520px;
+  max-width: 79.1vw;
   grid-template-columns: 1fr 1fr 1fr;
   list-style-type: none;
 
@@ -15,29 +15,17 @@
   .item2 {
     grid-column-start: 1;
     grid-column-end: 3;
-    margin-top: 8px;
+    margin-top: .5rem;
   }
 
   .item3 {
     grid-column-start: 3;
     grid-column-end: 4;
-    margin: 8px 0 0 8px;
+    margin: .5rem 0 0 .5rem;
   }
 }
 
-@include device-tb {
-  .travelStories {
-    max-width: 1044px;
-  }
-}
-
-@media screen and (max-width: 1024px) {
-  .travelStories {
-    max-width: 952px;
-  }
-}
-
-@include device-mb {
+@include device((max: 768px)) {
   .travelStories {
     grid-template-columns: 1fr 1fr;
     margin: 0 auto;
@@ -83,6 +71,10 @@
       grid-column-start: 1;
       grid-column-end: 2;
       margin: 8px 0 0 0;
+    }
+
+    img {
+      height: 100vw;
     }
   }
 }

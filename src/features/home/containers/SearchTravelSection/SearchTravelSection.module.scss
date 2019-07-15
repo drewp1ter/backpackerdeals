@@ -1,4 +1,4 @@
-@import '../../../../scss/device';
+@import 'src/scss/device';
 
 .searchTravelSection {
   position: relative;
@@ -7,20 +7,19 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: scroll;
-  padding: 200px 0 500px 0;
+  padding: 12.5rem 0 31.25rem 0;
 
   .mask {
-    mask-position: 50% calc(50% + 480px);
+    mask-position: 50% calc(50% + 30rem);
   }
 
 
   h1 {
     position: relative;
     z-index: 1;
-    margin: 0 0 10px 0;
-    font-size: 72px;
+    margin: 0 0 .625rem 0;
+    font-size: 4.5rem;
     font-weight: bold;
-    line-height: 1.69;
     text-align: center;
     color: #ffffff;
 
@@ -32,10 +31,9 @@
   h2 {
     position: relative;
     z-index: 1;
-    margin-bottom: 35px;
-    font-size: 32px;
+    margin-bottom: 2.18rem;
+    font-size: 2rem;
     font-weight: bold;
-    line-height: 0.62;
     text-align: center;
     color: #ffffff;
 
@@ -92,23 +90,23 @@
   }
 }
 
-@media screen and (max-width: 1615px) {
-  .searchTravelSection {
-    padding-bottom: 550px;
+// @media screen and (max-width: 1615px) {
+//   .searchTravelSection {
+//     padding-bottom: 550px;
 
-    h1 {
-      margin: 0 0 5px 0;
-      font-size: 62px;
-      line-height: 88px;
-    }
+//     h1 {
+//       margin: 0 0 5px 0;
+//       font-size: 62px;
+//       line-height: 88px;
+//     }
 
-    h2 {
-      margin-bottom: 33px;
-      font-size: 29px;
-      line-height: 16px;
-    }
-  }
-}
+//     h2 {
+//       margin-bottom: 33px;
+//       font-size: 29px;
+//       line-height: 16px;
+//     }
+//   }
+// }
 
 @media screen and (min-width: 1920px) {
   .searchTravelSection {

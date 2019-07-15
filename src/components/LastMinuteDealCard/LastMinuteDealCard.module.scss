@@ -3,7 +3,7 @@
 
 .lastMinuteDealCard {
   list-style-type: none;
-  margin-right: 1rem;
+  // margin-right: 1rem;
   transition: .2s ease box-shadow;
   border-radius: 8px;
   border: 1px solid #fafafa;
@@ -28,9 +28,9 @@
     display: flex;
   }
 
-  &:last-of-type {
-    margin-right: 0;
-  }
+  // &:last-of-type {
+  //   margin-right: 0;
+  // }
 
   .imageBlock {
     position: relative;
@@ -425,7 +425,7 @@
   }
 }
 
-@media screen and (max-width: 940px) {
+@media screen and (max-width: 1128px) { // 940
   .lastMinuteDealCard {
     min-width: 272px;
 
