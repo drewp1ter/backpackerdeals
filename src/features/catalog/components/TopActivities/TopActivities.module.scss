@@ -53,9 +53,22 @@
 
 @include device-tb {
   .topActivities {
-    .cards > li { margin-right: .57rem; }
-    h3 { font-size: 2.714rem; }
+    .cards > li {
+      margin-right: .57rem;
+    }
+
+    h3 {
+      font-size: 2.714rem;
+    }
   }
+}
+
+@include device((max: 900px, min: 768px)) {
+  .topActivities {
+    .cards li {
+        min-width: 30vw;
+      }
+    }
 }
 
 @media screen and (min-width: 320px) and (max-width: 900px) {
@@ -82,7 +95,7 @@
   }
 }
 
-@media screen and (min-width: 320px) and (max-width: 614px) {
+@media screen and (min-width: 320px) and (max-width: 768px) {
   .topActivities {
     position: static;
 

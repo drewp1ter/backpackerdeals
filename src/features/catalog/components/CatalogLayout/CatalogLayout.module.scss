@@ -12,34 +12,28 @@
 }
 
 .breadcrumbs {
-  position: absolute;
-  top: 38vw;
-  left: 10.5vw;
+  position: relative;
+  margin-top: -1.875rem;
+  margin-left: 12.5rem;
   height: 1rem;
   z-index: 9;
 
-  @include device((max: 1024px)) {
-    top: 45vw;
+  @include device-tb {
+    margin-top: -1rem;
+    margin-left: 2.25rem;
+  }
+
+  @include device-ipad {
+    position: absolute;
+    margin: unset;
+    top: 42vw;
+    left: 2.57rem;
+  }
+
+  @include device-mb {
+    position: absolute;
+    margin: unset;
+    top: 72vw;
     left: 6vw;
   }
 }
-
-//.breadcrumbs {
-//  position: relative;
-//  margin-top: -1.875rem;
-//  margin-left: 12.5rem;
-//  height: 1rem;
-//  z-index: 9;
-//
-//  @include device-tb {
-//    margin-top: -1rem;
-//    margin-left: 2.25rem;
-//  }
-//
-//  @include device-mb {
-//    position: absolute;
-//    margin: unset;
-//    top: 72vw;
-//    left: 6vw;
-//  }
-//}

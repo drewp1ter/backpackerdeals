@@ -31,11 +31,6 @@
       margin-top: 1.71rem;
     }
 
-    @include device((max: 1152px)) {
-      margin-top: 3rem;
-      max-width: 30vw;
-    }
-
     @include device-ipad {
       display: none;
     }
@@ -45,6 +40,10 @@
     mask-position: 50% 25.6vw;
     right: -2%;
     bottom: -2%;
+
+    @include device-mb {
+      mask-position: 50% 44.6vw;
+    }
   }
 
   &:after {
