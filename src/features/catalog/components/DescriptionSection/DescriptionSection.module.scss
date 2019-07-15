@@ -1,15 +1,15 @@
-@import '../../../../scss/device';
+@import 'src/scss/device';
 
 .countryDescription {
   display: none;
 
   @include device-ipad {
     display: block;
-    margin: -12vw 2.25rem 3.625rem 2.25rem;
+    margin: 0 2.25rem 3.625rem 2.25rem;
   }
 
   @include device-mb {
-    margin: 0 1.5rem 3.625rem 1.5rem;
+    margin: .8rem 1.5rem 3.625rem 1.5rem;
   }
 }
 

@@ -1,41 +1,26 @@
-@import "../../../../scss/device";
+@import "src/scss/device";
 
 .instagramCards {
   position: relative;
-  margin-top: 103px;
-  margin-bottom: -115px !important;
+  margin-top: 6.43rem;
+  margin-bottom: -7.8rem !important;
   z-index: 1;
+
+  @include device-mb {
+    margin-top: 72px;
+  }
 }
 
 .breadcrumbs {
   position: relative;
-  margin: -13.5vw 12.5rem auto 12.5rem;
+  margin-left: 10.5vw;
   height: 1rem;
   z-index: 9;
-}
 
-@include device-tb {
-  .breadcrumbs {
-    margin: -13.5vw 2.25rem auto 2.25rem;
-  }
-}
-
-@include device-ipad {
-  .breadcrumbs {
+  @include device((max: 1024px)) {
     position: absolute;
-    top: 44vw;
-    margin: 0 2.25rem auto 2.25rem;
-  }
-}
-
-
-@include device-mb {
-  .instagramCards {
-    margin-top: 72px;
-  }
-
-  .breadcrumbs {
-    position: absolute;
-    top: 76vw;
+    margin: unset;
+    top: 45vw;
+    left: 6vw;
   }
 }

@@ -1,16 +1,16 @@
 @import 'src/scss/device';
 
 .activitiesSection {
-  margin-top: 5.4vw;
+  margin-top: 6vw;
   position: relative;
   background-image: url('./assets/background1920.jpg');
   background-repeat: no-repeat;
   background-size: 100%;
-  background-position: center 0;
+  background-position: bottom;
   background-attachment: scroll;
   box-sizing: border-box;
-  height: 49vw;
-  min-height: 44.2vw;
+  height: 40vw;
+  // min-height: 44.2vw;
 
   .card {
     max-width: 26vw;
@@ -24,6 +24,10 @@
     @include device-ipad {
       display: none;
     }
+  }
+
+  .mask {
+    mask-position: 50% calc(50% + 22vw);
   }
 
   &:after {
