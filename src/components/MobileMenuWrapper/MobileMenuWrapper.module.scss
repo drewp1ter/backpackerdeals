@@ -20,13 +20,13 @@
   }
 
   .menu {
+    overflow: hidden;
     position: fixed;
     top: 0;
     bottom: 0;
     right: -100%;
     width: 89%;
     z-index: 15;
-    overflow-y: scroll;
     background-color: #fff;
     padding: 18px 8px 25px 17px;
     transition: .2s ease transform;
@@ -54,7 +54,7 @@
   .mobileMenuWrapper {
     .menu {
       &[data-open="true"] {
-        transform: translateX(-108.1%);
+        transform: translateX(-102.1%);
       }
     }
   }

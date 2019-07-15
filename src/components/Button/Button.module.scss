@@ -9,13 +9,13 @@
   }
 
   &[data-form="rectangled"] {
-    border-radius: 8px;
+    border-radius: .5rem;
     font-size: .875rem !important;
   }
 
   &[data-form="circle"] {
-    width: 48px;
-    height: 48px;
+    width: 3rem;
+    height: 3rem;
     border-radius: 50%;
   }
 
@@ -62,14 +62,14 @@
   }
 }
 
-@media screen and (max-width: 1615px) {
-  .button {
-    &[data-form="circle"] {
-      width: 40px;
-      height: 40px;
-    }
-  }
-}
+//@media screen and (max-width: 1615px) {
+//  .button {
+//    &[data-form="circle"] {
+//      width: 40px;
+//      height: 40px;
+//    }
+//  }
+//}
 
 @media screen and (max-width: 1420px) {
   .button {

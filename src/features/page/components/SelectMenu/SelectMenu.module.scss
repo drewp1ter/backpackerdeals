@@ -1,6 +1,6 @@
 .headerSelectMenu {
   position: relative;
-  margin-right: 25px;
+  margin-right: 1.56rem;
   z-index: 5;
   outline: none;
 
@@ -13,17 +13,16 @@
     span {
       white-space: nowrap;
       margin: 0;
-      font-size: 18px;
+      font-size: 1.125rem;
       font-weight: 600;
-      line-height: 1.33;
       color: #fafafa;
       transition: .2s ease color;;
     }
 
     i {
-      margin-left: 10px;
+      margin-left: .625rem;
       color: #fafafa;
-      font-size: 12px;
+      font-size: .75rem;
       transition: .2s ease transform, .2s ease color;
     }
 
@@ -47,9 +46,9 @@
 
   .menu {
     position: absolute;
-    top: 35px;
+    top: 2rem;
     background: #fff;
-    padding: 25px 30px;
+    padding: 1.56rem 1.875rem;
     border-radius: 7px;
 
     &[data-pos="right"] {
@@ -70,19 +69,19 @@
 
     h6 {
       color: #000000;
-      font-size: 16px;
+      font-size: 1rem;
     }
 
     .title {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 20px;
+      margin-bottom: 1.25rem;
 
       i {
         cursor: pointer;
         color: #000000;
-        font-size: 16px;
+        font-size: 1rem;
       }
     }
   }
