@@ -1,4 +1,4 @@
-@import "../../../../scss/device";
+@import "src/scss/device";
 
 .topActivities {
   position: relative;
@@ -16,6 +16,10 @@
   .cards {
     display: flex;
     margin-right: -1rem;
+
+    .carousel {
+      display: none;
+    }
 
     @include device-mb {
       display: flex;
@@ -59,6 +63,10 @@
       overflow: -moz-scrollbars-none;
       overflow-y: hidden;
       margin-right: 0;
+
+      .carousel {
+        display: block;
+      }
 
       > li:nth-child(3) {
         margin-right: 1rem;

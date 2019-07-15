@@ -1,9 +1,8 @@
-@import "../../scss/device";
-@import "../../scss/fonts";
+@import "src/scss/device";
+@import "src/scss/fonts";
 
 .lastMinuteDealCard {
   list-style-type: none;
-  // margin-right: 1rem;
   transition: .2s ease box-shadow;
   border-radius: 8px;
   border: 1px solid #fafafa;
@@ -27,10 +26,6 @@
   &[data-view="horizontal"] {
     display: flex;
   }
-
-  // &:last-of-type {
-  //   margin-right: 0;
-  // }
 
   .imageBlock {
     position: relative;
@@ -428,10 +423,6 @@
 @media screen and (max-width: 1128px) { // 940
   .lastMinuteDealCard {
     min-width: 272px;
-
-    &[data-hidden="true"] {
-      display: block;
-    }
 
     .imageBlock {
       .badge {

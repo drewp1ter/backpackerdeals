@@ -6,6 +6,10 @@
   max-width: 79.1vw;
   list-style-type: none;
 
+  .carousel {
+    display: none;
+  }
+
   li {
     width: 100%;
     margin-right: 1rem;
@@ -22,6 +26,10 @@
     overflow-x: scroll;
     overflow: -moz-scrollbars-none;
     overflow-y: hidden;
+
+    .carousel {
+      display: block;
+    }
 
     li {
       margin-right: 16px;

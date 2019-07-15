@@ -12,14 +12,13 @@
 }
 
 .breadcrumbs {
-  position: relative;
-  margin-left: 10.5vw;
+  position: absolute;
+  top: 38vw;
+  left: 10.5vw;
   height: 1rem;
   z-index: 9;
 
   @include device((max: 1024px)) {
-    position: absolute;
-    margin: unset;
     top: 45vw;
     left: 6vw;
   }
