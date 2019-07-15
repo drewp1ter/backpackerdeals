@@ -68,12 +68,12 @@ export const TopActivities: React.FC = () => {
 
       <ul ref={setStartPos} className={styles.cards} onScroll={handleScroll}>
         {data.map((card, index) => (
-          <LastMinuteDealCard view="reversed" {...card} key={`${index}-card`} likeable={'wide'} />
+          <LastMinuteDealCard view="reversed" {...card} key={`${index}-card`} likeable="wide" />
         ))}
         {data.map((card, index) => (
-          <LastMinuteDealCard view="reversed" {...card} key={`${index}-card`} forCarousel={true} likeable={'wide'} />
+          <LastMinuteDealCard view="reversed" {...card} key={`${index}-card`} forCarousel={true} likeable="wide" />
         ))}
-        <LastMinuteDealCard view="reversed" {...data[0]} forCarousel={true} likeable={'wide'} />
+        <LastMinuteDealCard view="reversed" {...data[0]} forCarousel={true} likeable="wide" />
       </ul>
     </div>
   )
