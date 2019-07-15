@@ -1,4 +1,4 @@
-@import '../../scss/device';
+@import 'src/scss/device';
 
 .searchSelect {
   position: relative;
@@ -7,21 +7,24 @@
     cursor: pointer;
     padding: .44rem .44rem .44rem .93rem;
     transition: .2s ease border-color;
+    height: 100%;
+    // display: flex;
+    // align-items: center;
 
     i {
       margin-right: .5rem;
-      font-size: .875rem;
+      font-size: .812rem;
       letter-spacing: normal;
       text-align: left;
       transition: .2s ease color, .2s ease transform;
     }
 
     span {
-      font-size: .875rem;
+      font-size: .812rem;
       letter-spacing: normal;
       text-align: left;
     }
-    
+
     &[data-opened="opened"] {
       border-color: #ff5a39 !important;
 
@@ -37,7 +40,7 @@
       }
 
       span {
-        color: #959595 !important; 
+        color: #959595 !important;
       }
     }
   }
@@ -72,7 +75,7 @@
       }
     }
   }
-  
+
   &[data-theme="dark"] {
     .select {
       border: solid 1px #e8e8e8;
@@ -109,19 +112,19 @@
     &[data-bodytheme="mobile"] {
       position: static;
       margin-bottom: 12px;
-  
+
       &:last-of-type {
         margin-bottom: 0;
       }
-  
+
       .select {
         padding: 16px;
-  
+
         span {
           font-size: 1rem;
         }
       }
-  
+
       .optionBlock {
         position: static;
         background: transparent;
@@ -129,7 +132,7 @@
         overflow-y: visible;
         max-height: none;
         width: auto;
-  
+
         .option {
           padding: 0 0 0 10px;
           color: #202020;
@@ -138,14 +141,14 @@
           line-height: 40px;
           border-bottom: 1px solid #fafafa;
           margin-bottom: 10px;
-  
+
           &:last-of-type {
             border-bottom: 0;
             margin-bottom: 0;
           }
         }
       }
-  
+
       &[data-theme="dark"] {
         .select {
           border-radius: 4px;
@@ -161,13 +164,13 @@
     .optionBlock {
       top: 65px;
       padding: 20px 0;
-  
+
       .option {
         padding: 10px 0 10px 32px;
         font-size: 13px;
       }
     }
-  
+
     &[data-theme="light"] {
       .select {
         margin-right: 8px;
@@ -181,13 +184,13 @@
     .optionBlock {
       top: 65px;
       padding: 20px 0;
-  
+
       .option {
         padding: 10px 0 10px 32px;
         font-size: 13px;
       }
     }
-  
+
     &[data-theme="light"] {
       .select {
         margin-right: 8px;

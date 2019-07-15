@@ -71,9 +71,9 @@ export const TopActivities: React.FC = () => {
           <LastMinuteDealCard view="reversed" {...card} key={`${index}-card`} likeable="wide" />
         ))}
         {data.map((card, index) => (
-          <LastMinuteDealCard view="reversed" {...card} key={`${index}-card`} forCarousel={true} likeable="wide" />
+          <LastMinuteDealCard view="reversed" {...card} key={`${index}-card`} className={styles.carousel} likeable="wide" />
         ))}
-        <LastMinuteDealCard view="reversed" {...data[0]} forCarousel={true} likeable="wide" />
+        <LastMinuteDealCard view="reversed" {...data[0]} className={styles.carousel} likeable="wide" />
       </ul>
     </div>
   )

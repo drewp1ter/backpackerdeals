@@ -1,4 +1,4 @@
-@import '../../../../scss/device';
+@import 'src/scss/device';
 
 .headerCard {
   box-sizing: border-box;
@@ -35,26 +35,25 @@
 
 @include device-tb {
   .headerCard {
-    padding: 1.43rem;
-
+    padding: .76rem 1.61rem;
+    //padding: 1.43rem; conf
     h1 {
-      font-size: 3.5rem;
+      font-size: 3.42rem;
       font-weight: 700;
     }
 
     h2 {
-      font-size: 20px;
-      line-height: 24px;
-      margin-bottom: 14px;
+      font-size: 1.42rem;
+      margin-bottom: 1rem;
     }
 
     p {
-      font-size: 12px;
+      font-size: .85rem;
       line-height: 16px;
     }
 
     .rating {
-      margin-top: 13px;
+      margin-top: .92rem;
     }
   }
 }

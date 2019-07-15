@@ -33,7 +33,6 @@ interface IProps {
   readonly exposeTime?: IExposeTime
   readonly description?: string
   readonly className?: string
-  readonly forCarousel?: boolean
   readonly sizes: string
 }
 
@@ -53,11 +52,10 @@ export const LastMinuteDealCard: React.FC<IProps> = ({
   exposeTime,
   description,
   className,
-  forCarousel = false,
   sizes
 }) => {
   return (
-    <li data-view={view} className={classNames(styles.lastMinuteDealCard, className)} data-hidden={forCarousel}>
+    <li data-view={view} className={classNames(styles.lastMinuteDealCard, className)}>
       <div className={styles.imageBlock}>
         {saleType === 'topDeal' && <Icon className={styles.badge} name="topDeal" alt="Top Deal" />}
         {saleType === 'mostPopular' && <Icon className={styles.badge} name="mostPopular" alt="Most Popular" />}

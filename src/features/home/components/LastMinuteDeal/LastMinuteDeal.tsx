@@ -93,9 +93,9 @@ export const LastMinuteDeal: React.FC = () => {
         <LastMinuteDealCard view="vertical" {...card} key={`${index}-card`} />
       ))}
       {data.map((card, index) => (
-        <LastMinuteDealCard view="vertical" {...card} key={`${index}-card`} forCarousel={true} />
+        <LastMinuteDealCard view="vertical" {...card} key={`${index}-card`} className={styles.carousel} />
       ))}
-      <LastMinuteDealCard view="vertical" {...data[0]} forCarousel={true} />
+      <LastMinuteDealCard view="vertical" {...data[0]} className={styles.carousel} />
     </ul>
   )
 }
