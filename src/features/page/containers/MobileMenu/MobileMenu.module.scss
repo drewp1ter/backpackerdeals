@@ -28,6 +28,8 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      padding-bottom: 8px;
+      border-bottom: 1px solid #e8e8e8;
 
       p {
         margin: 0;
@@ -52,9 +54,12 @@
         padding: 0;
         border: 1px solid #fafafa;
         border-radius: 50%;
+        display: grid;
+        place-items: center;
+        width: 40px;
+        height: 40px;
 
         i {
-          padding: 13.5px 15.2px;
           color: #202020;
           font-size: 11px;
         }
@@ -62,7 +67,7 @@
     }
 
     hr {
-      margin: 15px 0;
+      margin: 19px 0;
       height: 0;
       border: 1px solid #e8e8e8;
     }
@@ -110,15 +115,20 @@
     }
 
     .navigation {
+      padding: 17px 12px 0 0;
+
       .menuItem {
         border-bottom: 1px solid #fafafa;
-        padding: 5px 0 10px 0;
+        padding: 0 0 10px 0;
         margin-bottom: 10px;
         display: flex;
         justify-content: space-between;
         align-items: center;
 
         .title {
+          display: flex;
+          align-items: center;
+
           i {
             margin-right: 10px;
             color: #959595;
@@ -159,6 +169,7 @@
   }
 
   .search {
+    padding-top: 19px;
     overflow-y: scroll;
     overflow: -moz-scrollbars-none; //скроллбар ломает заголовок на 320
 
@@ -273,10 +284,14 @@
       margin-top: 15px;
 
       .orangeButton {
-        width: calc(60% - 10px);
+        width: 47.8%;
+        height: 15vw;
+        max-height: 48px;
+        font-size: 1rem;
       }
 
       .resetButton {
+        font-size: .9rem;
         margin-left: 8px;
       }
     }

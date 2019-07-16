@@ -83,7 +83,7 @@ export const MobileMenu: React.FC<Partial<Types.RootState> & PageActions & Searc
             <i className="fas fa-times"/>
           </button>
         </div>
-        <hr/>
+
         <div className={styles.navigation}>
           <div onClick={openSearch} className={styles.menuItem}>
             <div className={styles.title}>

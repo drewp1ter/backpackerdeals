@@ -1,6 +1,6 @@
 .filtersDropdown {
   margin-top: 8px;
-  
+
   .dropdown {
     display: flex;
     justify-content: space-between;
@@ -13,14 +13,14 @@
     
     span {
       color: #202020;
-      font-size: 12px;
+      font-size: 1rem;
       font-weight: 400;
       line-height: 40px;
     }
 
     i {
       color: #959595;
-      font-size: 13px;
+      font-size: .812rem;
       transition: .2s ease transform, .2s ease color;
     }
 

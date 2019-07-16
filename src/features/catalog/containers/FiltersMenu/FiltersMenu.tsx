@@ -22,14 +22,17 @@ export const FiltersMenu: React.FC<IFiltersState & FiltersActions & IProps> = ({
   <div className={styles.filtersMenu}>
     <button onClick={openFilters}>Show filters</button>
 
-    <MobileMenuWrapper open={filtersAreOpened}>
+    <MobileMenuWrapper open={filtersAreOpened} className={styles.filtersMenuWrapper}>
       <div className={styles.filtersHeader}>
         <div>
           <i onClick={closeFilters} className="fas fa-arrow-left" />
           <span>Filter</span>
         </div>
 
-        <i className="fas fa-search" />
+        <div className={styles.filtersHeaderControls}>
+          <i className="fas fa-search" />
+          <i className="fas fa-filter" />
+        </div>
       </div>
 
       <hr />

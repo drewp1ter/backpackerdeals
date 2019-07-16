@@ -1,7 +1,7 @@
 @import 'src/scss/device';
 
 .activitiesSection {
-  margin-top: 6vw;
+  margin-top: 5.4vw;
   position: relative;
   background-image: url('./assets/background1920.jpg');
   background-repeat: no-repeat;
@@ -10,7 +10,6 @@
   background-attachment: scroll;
   box-sizing: border-box;
   height: 35vw;
-  // min-height: 44.2vw;
 
   @include device-tb {
     margin-top: 72px;

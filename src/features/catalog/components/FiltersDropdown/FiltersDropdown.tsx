@@ -14,7 +14,7 @@ export const FiltersDropdown: React.FC<IProps> = ({ title, children }) => {
     <div className={styles.filtersDropdown}>
       <div className={styles.dropdown} onClick={() => toggleDropdown(!isOpen)} data-open={isOpen}>
         <span>{title}</span>
-        <i className="fas fa-chevron-right" />
+        <i className="fas fa-chevron-right"/>
       </div>
 
       {isOpen && children}

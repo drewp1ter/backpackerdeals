@@ -82,18 +82,23 @@
   }
 
   .searchMenu {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
     position: fixed;
     z-index: 15;
     left: 0;
     right: 0;
     top: -5.4vw;
     height: 5.4vw;
-    display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 6rem 0 2rem;
     background-color: #fafafa;
     transition: top .2s ease;
+
+    & > img {
+      width: 7.4vw;
+      margin-left: 2rem;
+    }
 
     .searchbutton {
       margin-left: .5rem;
@@ -115,6 +120,8 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      margin-right: 6rem;
+      place-self: center end;
 
       &:hover {
         background-color: darken(#fafafa, 2.5);
@@ -132,7 +139,6 @@
       align-items: center;
       width: 52.5vw;
       justify-content: space-between;
-      margin: 0 0 0 -30px;
 
       & > div {
         flex: 1;
@@ -145,11 +151,11 @@
       }
 
       .firstSelect {
-        border-radius: 4px 0 0 4px;
+        border-radius: .5rem 0 0 .5rem;
       }
 
       .lastSelect {
-        border-radius: 0 4px 4px 0;
+        border-radius: 0 .5rem .5rem 0;
       }
     }
   }
