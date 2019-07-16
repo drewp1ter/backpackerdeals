@@ -1,4 +1,4 @@
-@import "../../../../scss/device";
+@import "src/scss/device";
 
 .moreActivities {
   margin: 3.5rem 12.5rem 0 12.5rem;
@@ -157,17 +157,17 @@
         grid-template-columns: 1fr 1fr 1fr;
         grid-column-gap: 1rem;
         grid-row-gap: 1rem;
-      }
 
-      .card > div:first-child {
-        height: 18.6vw;
+        .card > div:first-child {
+          height: 18.6vw;
 
-        @include device-tb {
-          height: 17.3vw;
-        }
+          @include device-tb {
+            height: 17.3vw;
+          }
 
-        @include device-mb {
-          height: unset;
+          @include device-mb {
+            height: unset;
+          }
         }
       }
 

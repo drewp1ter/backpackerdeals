@@ -286,6 +286,10 @@ footer {
     margin-top: 40px;
     padding-bottom: 64px;
 
+    @include device-mb {
+      grid-template-columns: 1fr;
+    }
+
     .logo {
       width: 120px;
       height: 43px;

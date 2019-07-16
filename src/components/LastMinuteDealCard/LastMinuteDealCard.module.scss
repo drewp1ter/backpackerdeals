@@ -29,6 +29,10 @@
     .imageBlock {
       border-radius: .5rem 0 0 .5rem;
       width: 73%;
+
+      .sale {
+        border-top-right-radius: 0;
+      }
     }
   }
 
@@ -57,7 +61,7 @@
       top: 0;
       left: 2rem;
       width: 3.75vw;
-      min-width: 48px;
+      min-width: 35px;
       box-sizing: border-box;
 
       @include device-tb {
@@ -70,6 +74,7 @@
         left: 1.23rem;
         width: 4.75vw;
         border-radius: 0 0 8px 8px;
+        min-width: 48px;
       }
     }
 
@@ -326,8 +331,11 @@
 
     .imageBlock {
       border-radius: .57rem .57rem 0 0;
+      height: 21.5vw;
 
-      .like[data-type="wide"] { right: .72rem }
+      .like[data-type="wide"] {
+        right: .72rem
+      }
 
       .sellOut {
         transform: rotate(270deg) translate(-50%, 117%);
@@ -385,7 +393,10 @@
 
       button {
         padding: 0.9rem 2.43rem;
-        i { font-size: 1.21rem; }
+
+        i {
+          font-size: 1.21rem;
+        }
       }
     }
   }
