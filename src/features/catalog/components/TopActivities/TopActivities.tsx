@@ -60,7 +60,7 @@ export const TopActivities: React.FC = () => {
   }
 
   const handleScroll = ({ target }: any) =>
-    circleScroll({ target, maxScrollLeft: 84, maxScrollRight: 2468, offsetLeft: 1230, offsetRight: 1141 })
+    circleScroll({ target, maxScrollLeft: 95, maxScrollRight: 1795, offsetLeft: 935, offsetRight: 847 })
 
   return (
     <div className={styles.topActivities}>

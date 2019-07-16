@@ -21,11 +21,11 @@
       margin-right: 0;
     }
 
-    @include device-mb {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
+    // @include device-mb {
+    //   display: flex;
+    //   justify-content: center;
+    //   align-items: center;
+    // }
 
     .carousel {
       display: none;
@@ -74,7 +74,7 @@
 @media screen and (min-width: 320px) and (max-width: 900px) {
   .topActivities {
     .cards {
-      max-width: 1136px;
+      max-width: unset;
       overflow-x: scroll;
       overflow: -moz-scrollbars-none;
       overflow-y: hidden;
