@@ -443,18 +443,6 @@
   }
 }
 
-@media screen and (max-width: 900px) {
-  .lastMinuteDealCard {
-    &[data-view="reversed"] {
-      .imageBlock {
-        .background {
-          height: 288px;
-        }
-      }
-    }
-  }
-}
-
 @include device-mb {
   .lastMinuteDealCard {
     .imageBlock {
