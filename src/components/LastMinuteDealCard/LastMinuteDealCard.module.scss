@@ -206,9 +206,9 @@
       flex: 1;
 
       .description {
-        margin-top: 22px;
-        font-size: 14px;
-        line-height: 1.71;
+        margin-top: 1.56rem;
+        font-size: .875rem;
+        line-height: 1.5rem;
         color: #959595;
       }
     }
@@ -326,6 +326,11 @@
     &[data-view="horizontal"] {
       .cardDescription {
         width: 65%;
+      }
+
+      .imageBlock {
+        height: unset;
+        width: unset;
       }
     }
 
