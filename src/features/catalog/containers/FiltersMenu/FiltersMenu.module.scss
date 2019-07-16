@@ -55,6 +55,7 @@
     i:first-child {
       margin-right: 16px;
     }
+
     i:last-child {
       color: #ff5a39;
     }
@@ -69,6 +70,24 @@
   .filtersSelect {
     margin-top: 8px;
     margin-bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 15px !important;
+
+    &[data-opened="opened"] i {
+      transform: rotate(90deg);
+    }
+
+    i {
+      order: 2;
+      margin: 0;
+      font-size: .812rem;
+
+      &:before {
+        content: "\f054";
+      }
+    }
   }
 
   .filtersPriceRange {
