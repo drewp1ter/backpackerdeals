@@ -165,6 +165,7 @@
         @include device-tb {
           height: 17.3vw;
         }
+
         @include device-mb {
           height: unset;
         }
@@ -243,36 +244,7 @@
   }
 }
 
-
-//@media screen and (min-width: 615px) and (max-width: 900px) {
-//  .moreActivities {
-//    h3 {
-//      margin-left: 0;
-//      font-size: 38px;
-//      line-height: 32px;
-//    }
-//
-//    .content {
-//      margin-top: 25px;
-//
-//      .filters {
-//        display: none;
-//      }
-//
-//      .cardsContainer {
-//        width: 100%;
-//      }
-//
-//      .cards {
-//        &[data-view="reversed"] {
-//          grid-template-columns: 1fr 1fr;
-//        }
-//      }
-//    }
-//  }
-//}
-
-@media screen and (min-width: 320px) and (max-width: 768px) {
+@include device-mb {
   .moreActivities {
     margin-top: 30px;
 
@@ -321,6 +293,18 @@
         &[data-view="reversed"] {
           grid-template-columns: 1fr;
           grid-row-gap: 8px;
+        }
+      }
+    }
+  }
+}
+
+@include device((max: 767px, min: 500px)) {
+  .moreActivities {
+    .content {
+      .cards {
+        &[data-view="reversed"] {
+          grid-template-columns: 1fr 1fr;
         }
       }
     }
