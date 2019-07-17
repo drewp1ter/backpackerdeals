@@ -1,3 +1,5 @@
+@import "src/scss/device";
+
 .rating {
   i {
     font-size: .875rem;
@@ -15,5 +17,9 @@
     font-size: .81rem;
     text-align: left;
     color: #959595;
+
+    @include device-mb {
+      font-size: .77rem;
+    }
   }
 }

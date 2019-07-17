@@ -304,9 +304,12 @@
 
       i {
         font-size: 1.06rem;
-        line-height: 1.41;
         color: #ff5a39;
         transition: .2s ease color;
+
+        @include device-mb {
+          font-size: 1.3rem;
+        }
       }
 
       &:hover {
@@ -475,15 +478,11 @@
         }
 
         .location {
-          i, span {
-            font-size: 10px;
-          }
+          i, span {font-size: .77rem;}
         }
       }
 
-      .duration {
-        font-size: 10px;
-      }
+      .duration {font-size: .77rem;}
     }
 
     .valueAndLink {

@@ -37,8 +37,8 @@ import deal8 from './deal/deal8.svg'
 import deal9 from './deal/deal9.svg'
 
 import group3 from './group3.svg'
-import mostPopular from './mostPopular.svg'
-import topDeal from './topDeal.svg'
+import mostPopular from './mostPopular_cuted.svg'
+import topDeal from './topDeal_cuted.svg'
 
 export default {
   chineese,
