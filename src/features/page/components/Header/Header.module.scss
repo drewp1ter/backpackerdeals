@@ -42,10 +42,16 @@ header {
     background-color: transparent;
     width: 2.6vw;
     height: 2.6vw;
+
+    @include device((min: 1280px, max: 1919px)) {
+      min-width: 40px;
+      min-height: 40px;
+    }
+
     i {
       cursor: pointer;
       color: #fff;
-      font-size: .875rem;
+      font-size: 1rem;
       transition: .2s ease background-color, .2s ease border-color;
 
       &:hover {

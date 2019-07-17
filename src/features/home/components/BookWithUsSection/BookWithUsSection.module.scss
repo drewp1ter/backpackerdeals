@@ -5,8 +5,12 @@
     display: flex;
     justify-content: space-between;
     margin: 0 auto;
-    max-width: 70vw;
     list-style-type: none;
+    padding: 0 2rem;
+
+    @include device((min: 1280px, max: 1919px)) {
+      padding: 0 1.5rem;
+    }
 
     li {
       text-align: center;

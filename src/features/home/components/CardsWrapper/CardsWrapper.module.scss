@@ -1,8 +1,19 @@
 @import "src/scss/device";
 
 .cardsWrapper {
-  margin-bottom: 6.12rem;
-  padding: 0 1rem;
+  margin: 0 12.5rem 6.12rem 12.5rem;
+
+  @include device((max: 1024px)) {
+    margin: 0 3rem 6.12rem 3rem;
+  }
+
+  @include device((min: 1280px, max: 1919)) {
+    margin: 0 9.65rem 6.12rem 9.65rem;
+  }
+
+  @include device-mb {
+    margin: 0 .6rem 6.12rem .6rem;
+  }
 
   > h3 {
     text-align: center;
@@ -19,7 +30,6 @@
       display: block;
       font-size: 1rem;
       color: #959595;
-      margin-top: 1rem;
       cursor: pointer;
       text-decoration: none;
 

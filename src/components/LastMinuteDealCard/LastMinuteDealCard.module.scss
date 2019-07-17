@@ -244,10 +244,6 @@
     text-align: left;
     color: #202020;
     transition: .2s ease color;
-
-    &[data-view="vertical"] {
-      width: 186px;
-    }
   }
 
   .duration {
@@ -339,7 +335,8 @@
 
     .imageBlock {
       border-radius: .57rem .57rem 0 0;
-      height: 21.5vw;
+      //height: 21.5vw;
+      //width: 22.7vw;
 
       .like[data-type="wide"] {
         right: .72rem
