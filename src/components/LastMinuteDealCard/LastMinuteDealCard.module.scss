@@ -490,9 +490,9 @@
       margin-top: 14px;
 
       .totalPrice {
-        .price {
-          font-size: 14px;
-        }
+        .price {font-size: 1.07rem;}
+        .from, .value {font-size: .92rem;}
+        .value {line-height:1.5rem}
       }
 
       button {
