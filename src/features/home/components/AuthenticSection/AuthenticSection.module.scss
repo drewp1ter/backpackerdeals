@@ -34,6 +34,8 @@
     max-width: unset;
     overflow-x: scroll;
     overflow-y: hidden;
+    margin: 0 -0.6rem;
+
     &::scrollbar {
       width: 0;
       background: transparent;
