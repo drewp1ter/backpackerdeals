@@ -1,14 +1,14 @@
 @import "src/scss/device";
 
 .moreActivities {
-  margin: 3.5rem 12.5rem 0 12.5rem;
+  margin: 3.5rem 12.5rem 6.1rem 12.5rem;
 
   @include device-tb {
-    margin: 3.9rem 2.57rem 0 2.57rem;
+    margin: 3.9rem 2.57rem 6.1rem 2.57rem;
   }
 
   @include device-mb {
-    margin: 2rem .63rem 0 .63rem;
+    margin: 2rem .63rem 5.5rem .63rem;
   }
 
   h3 {
