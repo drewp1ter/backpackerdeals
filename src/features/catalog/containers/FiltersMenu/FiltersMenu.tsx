@@ -34,7 +34,7 @@ export const FiltersMenu: React.FC<IFiltersState & FiltersActions & IProps> = ({
           </div>
 
           <div className={styles.filtersHeaderControls}>
-            <i className="fas fa-search" />
+            <i onClick={closeFilters} className="fas fa-search" />
             <i className="fas fa-filter" />
           </div>
         </div>
