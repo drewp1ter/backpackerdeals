@@ -20,7 +20,10 @@ export const FiltersMenu: React.FC<IFiltersState & FiltersActions & IProps> = ({
   filters,
 }) => (
   <div className={styles.filtersMenu}>
-    <button onClick={openFilters}>Show filters</button>
+    <button onClick={openFilters}>
+      <i className="fas fa-filter"/>
+      <span>Show filters</span>
+    </button>
 
     <MobileMenuWrapper open={filtersAreOpened} className={styles.filtersMenuWrapper}>
       <div className={styles.filtersHeader}>

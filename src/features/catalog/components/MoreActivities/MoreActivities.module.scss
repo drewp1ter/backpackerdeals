@@ -298,15 +298,3 @@
     }
   }
 }
-
-@include device((max: 767px, min: 500px)) {
-  .moreActivities {
-    .content {
-      .cards {
-        &[data-view="reversed"] {
-          grid-template-columns: 1fr 1fr;
-        }
-      }
-    }
-  }
-}
