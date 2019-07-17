@@ -84,7 +84,7 @@ header {
 
       a {
         text-decoration: none;
-        margin-right: 1rem;
+        margin-right: 1.56rem;
         font-size: 1.125rem;
         font-weight: 600;
         text-align: left;
@@ -287,7 +287,6 @@ header {
 
     .selectContinentOpener {
       span {
-        font-size: 14px;
         font-weight: 500;
       }
 
@@ -314,60 +313,60 @@ header {
   }
 }
 
+//
+//@include device((max: 1615px)) {
+//  header {
+//    .tools {
+//      .logoAndSearch {
+//        .logo, .blackLogo {
+//          width: 120px;
+//          height: 43.5px;
+//        }
+//      }
+//    }
+//
+//    .profileIcon {
+//      i {
+//        padding: 7px 14.2px;
+//        font-size: 11px;
+//      }
+//    }
+//
+//    .tools {
+//      .currencyAndLanguage, .tours {
+//        a {
+//          font-size: 16px;
+//        }
+//      }
+//    }
+//  }
+//}
 
-@include device((max: 1615px)) {
-  header {
-    .tools {
-      .logoAndSearch {
-        .logo, .blackLogo {
-          width: 120px;
-          height: 43.5px;
-        }
-      }
-    }
-
-    .profileIcon {
-      i {
-        padding: 7px 14.2px;
-        font-size: 11px;
-      }
-    }
-
-    .tools {
-      .currencyAndLanguage, .tours {
-        a {
-          font-size: 16px;
-        }
-      }
-    }
-  }
-}
-
-@include device((max: 1420px)) {
-  header {
-    .tools {
-      .logoAndSearch {
-        .logo, .blackLogo {
-          width: 98px;
-          height: 36px;
-        }
-      }
-    }
-
-    .tools {
-      & > div {
-        padding: 0 16px;
-        margin: 0;
-      }
-
-      .currencyAndLanguage, .tours {
-        a {
-          font-size: 14px;
-        }
-      }
-    }
-  }
-}
+//@include device((max: 1420px)) {
+//  header {
+//    .tools {
+//      .logoAndSearch {
+//        .logo, .blackLogo {
+//          width: 98px;
+//          height: 36px;
+//        }
+//      }
+//    }
+//
+//    .tools {
+//      & > div {
+//        padding: 0 16px;
+//        margin: 0;
+//      }
+//
+//      .currencyAndLanguage, .tours {
+//        a {
+//          font-size: 14px;
+//        }
+//      }
+//    }
+//  }
+//}
 
 @include device-tb {
   header {
