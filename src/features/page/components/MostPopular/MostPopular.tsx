@@ -11,26 +11,27 @@ export interface IProps {
   readonly places: IPlace[]
   readonly title: string
   readonly theme?: 'mobile'
+  readonly handleClose?: () => void
 }
 
-export const MostPopular: React.FC<IProps> = ({ places, title, theme }) => {
+export const MostPopular: React.FC<IProps> = ({ places, title, theme, handleClose }) => {
 
   const renderPlaces = () => places && places.map((place, idx) => place.img ? (
-    <div key={`${place.title}-${idx}`} className={styles.withImg}>
+    <li onClick={handleClose} key={idx} className={styles.withImg}>
       <img src={place.img} alt="place" />
       <h6>{place.title}</h6>
       <div />
-    </div>
+    </li>
   ) : (
-    <h6 key={`${place.title}-${idx}`} className={styles.withoutImg}>{place.title}</h6>
+    <li onClick={handleClose} key={idx} className={styles.withoutImg}><h6>{place.title}</h6></li>
   ))
 
   return (
     <div data-theme={theme} className={styles.root}>
       <h5>{title}</h5>
-      <div className={styles.places}>
+      <ul className={styles.places}>
         {renderPlaces()}
-      </div>
+      </ul>
     </div>
   )
 }
