@@ -21,11 +21,11 @@
   .header {
     display: flex;
     justify-content: space-between;
-    font-size: .81rem;
+    font-size: 1rem;
     margin-bottom: 1.75rem;
 
     .viewStyle {
-      font-size: .81rem;
+      font-size: 1rem;
 
       &, i[data-active="false"] {
         color: #959595;
@@ -114,6 +114,10 @@
             margin: 0;
           }
         }
+
+        label {
+          font-size: 1rem;
+        }
       }
 
       .filtersSelect {
@@ -141,6 +145,7 @@
 
       button {
         margin-top: 3.5rem;
+        font-size: 1rem;
       }
     }
 
@@ -212,10 +217,6 @@
         }
       }
 
-      i + span {
-        font-size: 12px;
-      }
-
       .filtersCheckboxes {
         padding: .93rem .93rem;
 
@@ -224,11 +225,6 @@
           height: 8px;
           box-sizing: border-box;
           margin-right: .57rem;
-        }
-
-        label {
-          font-size: .79rem;
-          font-weight: 400;
         }
       }
     }
