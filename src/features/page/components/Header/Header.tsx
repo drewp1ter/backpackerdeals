@@ -113,7 +113,7 @@ export class Header extends Component<IProps> {
               <AdvancedSearch theme={scrolled ? 'dark' : theme} />
             </div>
             <div className={styles.tours}>
-              <SelectMenu openerClass={styles.selectContinentOpener} opener={continentOpener} title="Select continent" size="lg" pos="left">
+              <SelectMenu openerClass={styles.selectContinentOpener} opener={continentOpener} title="Select continent" size="lg" pos="left" >
                 <SelectContinent displayTheme="flex" />
               </SelectMenu>
               <a href="">Top Deals</a>
@@ -139,7 +139,7 @@ export class Header extends Component<IProps> {
                       </p>
                     ))}
                   </div>
-                  <h6>Please note</h6>
+                  <h6 className={styles.noteTitle}>Please note</h6>
                   <p className={styles.note}>
                     Currency Conversions are approximate guide only. All transactions are processed in their respective currency
                   </p>

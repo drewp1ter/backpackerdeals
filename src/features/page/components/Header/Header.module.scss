@@ -101,6 +101,11 @@ header {
       display: flex;
       align-items: center;
 
+      .noteTitle {
+        font-size: 1.125rem;
+        margin-bottom: .5rem;
+      }
+
       a {
         text-decoration: none;
         margin-right: 1.875rem;
@@ -154,12 +159,12 @@ header {
     font-size: .875rem;
   }
 
-  .currencies, .currenciesList {
+  .currencies /*.currenciesList*/ {
     .currency {
       cursor: pointer;
       display: inline-block;
       margin: 0 0 1.25rem 0;
-      width: 8.85vw;
+      width: 7.42vw;
       font-size: .875rem;
       color: #959595;
       transition: .2s ease color;
@@ -174,15 +179,15 @@ header {
     }
   }
 
-  .currenciesList {
-    .currency {
-      width: 45px;
+  // .currenciesList {
+  //   .currency {
+  //     width: 45px;
 
-      &:last-child {
-        margin-bottom: 0;
-      }
-    }
-  }
+  //     &:last-child {
+  //       margin-bottom: 0;
+  //     }
+  //   }
+  // }
 
   .languages, .languagesList {
     display: flex;
@@ -220,13 +225,13 @@ header {
     }
   }
 
-  .languagesList {
-    flex-direction: column;
+  // .languagesList {
+  //   flex-direction: column;
 
-    .language:last-child {
-      margin-bottom: 0;
-    }
-  }
+  //   .language:last-child {
+  //     margin-bottom: 0;
+  //   }
+  // }
 
   &[data-theme="dark"] {
     .tools {
@@ -315,59 +320,59 @@ header {
 }
 
 
-@include device((max: 1615px)) {
-  header {
-    .tools {
-      .logoAndSearch {
-        .logo, .blackLogo {
-          width: 120px;
-          height: 43.5px;
-        }
-      }
-    }
+// @include device((max: 1615px)) {
+//   header {
+//     .tools {
+//       .logoAndSearch {
+//         .logo, .blackLogo {
+//           width: 120px;
+//           height: 43.5px;
+//         }
+//       }
+//     }
 
-    .profileIcon {
-      i {
-        padding: 7px 14.2px;
-        font-size: 11px;
-      }
-    }
+//     .profileIcon {
+//       i {
+//         padding: 7px 14.2px;
+//         font-size: 11px;
+//       }
+//     }
 
-    .tools {
-      .currencyAndLanguage, .tours {
-        a {
-          font-size: 16px;
-        }
-      }
-    }
-  }
-}
+//     .tools {
+//       .currencyAndLanguage, .tours {
+//         a {
+//           font-size: 16px;
+//         }
+//       }
+//     }
+//   }
+// }
 
-@include device((max: 1420px)) {
-  header {
-    .tools {
-      .logoAndSearch {
-        .logo, .blackLogo {
-          width: 98px;
-          height: 36px;
-        }
-      }
-    }
+// @include device((max: 1420px)) {
+//   header {
+//     .tools {
+//       .logoAndSearch {
+//         .logo, .blackLogo {
+//           width: 98px;
+//           height: 36px;
+//         }
+//       }
+//     }
 
-    .tools {
-      & > div {
-        padding: 0 16px;
-        margin: 0;
-      }
+//     .tools {
+//       & > div {
+//         padding: 0 16px;
+//         margin: 0;
+//       }
 
-      .currencyAndLanguage, .tours {
-        a {
-          font-size: 14px;
-        }
-      }
-    }
-  }
-}
+//       .currencyAndLanguage, .tours {
+//         a {
+//           font-size: 14px;
+//         }
+//       }
+//     }
+//   }
+// }
 
 @include device-tb {
   header {
