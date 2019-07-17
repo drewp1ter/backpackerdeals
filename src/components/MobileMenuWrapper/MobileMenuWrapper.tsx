@@ -6,7 +6,7 @@ import styles from './MobileMenuWrapper.module.scss'
 
 interface IProps {
   readonly open: boolean
-  readonly children: React.ReactNode
+  readonly children: JSX.Element
   readonly className?: string
 }
 
