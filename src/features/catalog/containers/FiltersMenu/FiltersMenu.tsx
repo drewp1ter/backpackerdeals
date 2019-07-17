@@ -21,54 +21,58 @@ export const FiltersMenu: React.FC<IFiltersState & FiltersActions & IProps> = ({
 }) => (
   <div className={styles.filtersMenu}>
     <button onClick={openFilters}>
-      <i className="fas fa-filter"/>
+      <i className="fas fa-filter" />
       <span>Show filters</span>
     </button>
 
     <MobileMenuWrapper open={filtersAreOpened} className={styles.filtersMenuWrapper}>
-      <div className={styles.filtersHeader}>
-        <div>
-          <i onClick={closeFilters} className="fas fa-arrow-left" />
-          <span>Filter</span>
+      <>
+        <div className={styles.filtersHeader}>
+          <div>
+            <i onClick={closeFilters} className="fas fa-arrow-left" />
+            <span>Filter</span>
+          </div>
+
+          <div className={styles.filtersHeaderControls}>
+            <i className="fas fa-search" />
+            <i className="fas fa-filter" />
+          </div>
         </div>
 
-        <div className={styles.filtersHeaderControls}>
-          <i className="fas fa-search" />
-          <i className="fas fa-filter" />
+        <hr />
+
+        <input placeholder="Type country" type="text" />
+
+        <FiltersDropdown title="Select city">{filters}</FiltersDropdown>
+        <Select
+          className={styles.filtersSelect}
+          onChange={() => {}}
+          options={['Australia', 'Australia', 'Australia', 'Australia']}
+          theme="dark"
+          selectedOption="Select country"
+          bodyTheme="mobile"
+        />
+        <Select
+          className={styles.filtersSelect}
+          onChange={() => {}}
+          options={numberOfDays}
+          theme="dark"
+          selectedOption="Number of days"
+          bodyTheme="mobile"
+        />
+
+        <PriceRange className={styles.filtersPriceRange} />
+
+        <div className={styles.filtersButtons}>
+          <Button onClick={closeFilters} theme="orange" form="rectangled" className={styles.orangeButton}>
+            Apply filter
+          </Button>
+
+          <Button theme="transparent" form="standart" size="sm">
+            Reset filter
+          </Button>
         </div>
-      </div>
-
-      <hr />
-
-      <input placeholder="Type country" type="text" />
-
-      <FiltersDropdown title="Select city">{filters}</FiltersDropdown>
-      <Select
-        className={styles.filtersSelect}
-        handleSelect={() => {}}
-        options={['Australia', 'Australia', 'Australia', 'Australia']}
-        theme="dark"
-        selectedOption="Select country"
-        bodyTheme="mobile"
-      />
-      <Select
-        className={styles.filtersSelect}
-        handleSelect={() => {}}
-        options={numberOfDays}
-        theme="dark"
-        selectedOption="Number of days"
-        bodyTheme="mobile"
-      />
-
-      <PriceRange className={styles.filtersPriceRange} />
-
-      <div className={styles.filtersButtons}>
-        <Button onClick={closeFilters} theme="orange" form="rectangled" className={styles.orangeButton}>
-          Apply filter
-        </Button>
-
-        <Button theme="transparent" form='standart' size="sm">Reset filter</Button>
-      </div>
+      </>
     </MobileMenuWrapper>
   </div>
 )
