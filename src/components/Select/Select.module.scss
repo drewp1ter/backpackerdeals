@@ -8,6 +8,7 @@
     padding: .44rem .44rem .44rem .93rem;
     transition: .2s ease border-color;
     height: 100%;
+    box-sizing: border-box;
     // display: flex;
     // align-items: center;
 
@@ -49,12 +50,12 @@
     z-index: 5;
     position: absolute;
     border-radius: 4px;
-    top: 75px;
+    top: 4.68rem;
     left: 0;
-    max-height: 370px;
+    max-height: 19.27vw;
+    min-width: 17.18vw;
     background: #fff;
     padding: 1.56rem 0;
-    min-width: 330px;
 
     .option {
       cursor: pointer;
@@ -63,7 +64,6 @@
       font-size: .875rem;
       text-align: left;
       background-color: #fff;
-      color: #202020;
       transition: .2s ease background-color;
 
       &:hover {
@@ -84,9 +84,9 @@
         color: #959595;
       }
 
-      span {
-        color: #202020;
-      }
+      // span {
+      //   color: #202020;
+      // }
     }
   }
 
@@ -138,7 +138,7 @@
 
         .option {
           padding: 0 0 0 10px;
-          color: #202020;
+          // color: #202020;
           font-size: 12px;
           font-weight: 400;
           line-height: 40px;
@@ -161,46 +161,46 @@
   }
 }
 
-@media screen and (max-width: 1615px) {
-  .searchSelect {
+// @media screen and (max-width: 1615px) {
+//   .searchSelect {
 
-    .optionBlock {
-      top: 65px;
-      padding: 20px 0;
+//     .optionBlock {
+//       top: 65px;
+//       padding: 20px 0;
 
-      .option {
-        padding: 10px 0 10px 32px;
-        font-size: 13px;
-      }
-    }
+//       .option {
+//         padding: 10px 0 10px 32px;
+//         font-size: 13px;
+//       }
+//     }
 
-    &[data-theme="light"] {
-      .select {
-        margin-right: 8px;
-      }
-    }
-  }
-}
+//     &[data-theme="light"] {
+//       .select {
+//         margin-right: 8px;
+//       }
+//     }
+//   }
+// }
 
-@media screen and (min-width: 768px) and (max-width: 1415px) {
-  .searchSelect {
-    .optionBlock {
-      top: 65px;
-      padding: 20px 0;
+// @media screen and (min-width: 768px) and (max-width: 1415px) {
+//   .searchSelect {
+//     .optionBlock {
+//       top: 65px;
+//       padding: 20px 0;
 
-      .option {
-        padding: 10px 0 10px 32px;
-        font-size: 13px;
-      }
-    }
+//       .option {
+//         padding: 10px 0 10px 32px;
+//         font-size: 13px;
+//       }
+//     }
 
-    &[data-theme="light"] {
-      .select {
-        margin-right: 8px;
-      }
-    }
-  }
-}
+//     &[data-theme="light"] {
+//       .select {
+//         margin-right: 8px;
+//       }
+//     }
+//   }
+// }
 
 @include device-tb {
   .searchSelect {
