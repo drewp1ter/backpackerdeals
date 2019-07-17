@@ -60,7 +60,7 @@ export const FiltersMenu: React.FC<IFiltersState & FiltersActions & IProps> = ({
       <PriceRange className={styles.filtersPriceRange} />
 
       <div className={styles.filtersButtons}>
-        <Button theme="orange" form="rectangled" className={styles.orangeButton}>
+        <Button onClick={closeFilters} theme="orange" form="rectangled" className={styles.orangeButton}>
           Apply filter
         </Button>
 
