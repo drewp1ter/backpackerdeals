@@ -46,17 +46,18 @@
 
   .menu {
     position: absolute;
-    top: 2rem;
+    top: 4rem;
     background: #fff;
     padding: 1.56rem 1.875rem;
     border-radius: 7px;
+    box-sizing: border-box;
 
     &[data-pos="right"] {
       right: 0;
     }
 
     &[data-pos="left"] {
-      left: 0;
+      left: -1.5rem;
     }
 
     &[data-size="md"] {
@@ -67,16 +68,16 @@
       width: 47.5vw;
     }
 
-    h6 {
-      color: #000000;
-      font-size: 1rem;
-    }
-
     .title {
       display: flex;
       justify-content: space-between;
       align-items: center;
       margin-bottom: 1.25rem;
+
+      h6 {
+        color: #000000;
+        font-size: 1rem;
+      }
 
       i {
         cursor: pointer;
@@ -86,50 +87,6 @@
     }
   }
 }
-
-// @media screen and (max-width: 1615px) {
-//   .headerSelectMenu {
-//     margin-right: 15px;
-
-//     .opener {
-//       // width: 90px;
-
-//       span {
-//         font-size: 16px;
-//       }
-
-//       i {
-//         margin-left: 10px;
-//         font-size: 12px;
-//       }
-//     }
-
-//     .menu {
-//       &[data-size="lg"] {
-//         width: 700px;
-//       }
-//     }
-//   }
-// }
-
-// @media screen and (max-width: 1420px) {
-//   .headerSelectMenu {
-//     margin-right: 15px;
-
-//     .opener {
-//       // width: 80px;
-
-//       span {
-//         font-size: 14px;
-//       }
-
-//       i {
-//         margin-left: 5px;
-//         font-size: 12px;
-//       }
-//     }
-//   }
-// }
 
 @media screen and (max-width: 1280px) and (min-width: 768px) {
   .headerSelectMenu {
