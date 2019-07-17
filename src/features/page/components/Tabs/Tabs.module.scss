@@ -1,3 +1,5 @@
+@import "src/scss/device";
+
 .tabs {
   li {
     cursor: pointer;
@@ -8,11 +10,11 @@
     border-bottom: 2px solid #fafafa;
 
     li {
-      padding: 22px 0;
+      padding: 1.375rem 0;
       border-bottom: 2px solid #fafafa;
       display: inline-block;
-      margin-right: 54px;
-      font-size: 14px;
+      margin-right: 3.375rem;
+      font-size: .875rem;
       color: #959595;
       margin-bottom: -2px;
       transition: .2s ease color, .2s ease border-bottom-color;
@@ -27,25 +29,24 @@
   &[data-displaytheme="flex"] {
     display: flex;
   }
-  
+
   &[data-theme="leftmenu"] {
     display: flex;
   }
 
   > ul[data-theme="leftmenu"] {
-    margin-top: 32px;
+    margin-top: 2rem;
 
     li {
-      font-size: 14px;
-      width: 168px;
-      color: #202020;
-      padding: 10px 26px;
-      margin-left: -26px;
-      margin-bottom: 8px;
+      font-size: .875rem;
+      width: 8.75vw;
+      padding: .625rem 1.625rem;
+      margin-left: -1.625rem;
+      margin-bottom: .5rem;
 
       p {
         margin: 2px 0 0 0;
-        font-size: 12px;
+        font-size: .75rem;
         color: #dadada;
       }
 
@@ -56,17 +57,7 @@
   }
 }
 
-@media screen and (max-width: 1280px) and (min-width: 768px) {
-  .tabs {
-    > ul[data-theme="leftmenu"] {
-      li {
-        margin-left: -20px;
-      }
-    }
-  }
-}
-
-@media screen and (min-width: 320px) and (max-width: 1280px) {
+@include device-mb {
   .tabs {
     &[data-bodytheme="mobile"] {
       display: block;
@@ -74,7 +65,7 @@
       > ul[data-theme="head"] {
         overflow-x: auto;
         white-space: nowrap;
-  
+
         li {
           margin: 0 20px 0 0;
           font-size: 12px;
@@ -82,7 +73,7 @@
         }
       }
 
-      >ul[data-theme="leftmenu"] {
+      > ul[data-theme="leftmenu"] {
         margin-top: 8px;
         overflow-x: auto;
         white-space: nowrap;
@@ -107,7 +98,7 @@
             font-size: 12px !important;
             font-weight: 400 !important;
             line-height: 16px !important;
-            transition: .2s ease color;  
+            transition: .2s ease color;
           }
 
           &:last-of-type {
@@ -118,7 +109,7 @@
             border-color: #ff5a39;
             color: #202020;
             background: transparent;
-            
+
             p {
               color: #202020;
             }
