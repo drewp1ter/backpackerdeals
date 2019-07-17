@@ -6,25 +6,40 @@ import data from './data'
 interface IProps {
   readonly theme?: 'mobile'
   readonly displayTheme?: 'flex'
+  readonly handleClose?: () => void
 }
 
-export const SelectContinent: React.FC<IProps> = ({ theme, displayTheme }) => (
+export const SelectContinent: React.FC<IProps> = ({ theme, handleClose, displayTheme }) => (
   <Tabs bodyTheme={theme}>
     <Tab label="Australia & NZ">
       <Tabs displayTheme={displayTheme} bodyTheme={theme} theme="leftmenu">
         <Tab label="Australia" description="258 Activities">
-          <MostPopular theme={theme} places={data} title="Most popular cities in Australia" />
+          <MostPopular handleClose={handleClose} theme={theme} places={data} title="Most popular cities in Australia" />
         </Tab>
         <Tab label="New Zealand" description="258 Activities">
-          adas
+          <MostPopular handleClose={handleClose} theme={theme} places={data} title="Most popular cities in Australia" />
         </Tab>
       </Tabs>
     </Tab>
     <Tab label="Africa">
-      After &apos;while, <em>Crocodile</em>!
+      <Tabs displayTheme={displayTheme} bodyTheme={theme} theme="leftmenu">
+        <Tab label="Australia" description="258 Activities">
+          <MostPopular handleClose={handleClose} theme={theme} places={data} title="Most popular cities in Australia" />
+        </Tab>
+        <Tab label="New Zealand" description="258 Activities">
+          <MostPopular handleClose={handleClose} theme={theme} places={data} title="Most popular cities in Australia" />
+        </Tab>
+      </Tabs>
     </Tab>
     <Tab label="Asia">
-      Nothing to see here, this tab is <em>extinct</em>!
+      <Tabs displayTheme={displayTheme} bodyTheme={theme} theme="leftmenu">
+        <Tab label="Australia" description="258 Activities">
+          <MostPopular handleClose={handleClose} theme={theme} places={data} title="Most popular cities in Australia" />
+        </Tab>
+        <Tab label="New Zealand" description="258 Activities">
+          <MostPopular handleClose={handleClose} theme={theme} places={data} title="Most popular cities in Australia" />
+        </Tab>
+      </Tabs>
     </Tab>
   </Tabs>
 )

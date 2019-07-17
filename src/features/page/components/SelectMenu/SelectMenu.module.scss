@@ -60,11 +60,11 @@
     }
 
     &[data-size="md"] {
-      width: 345px;
+      width: 17.96vw;
     }
 
     &[data-size="lg"] {
-      width: 912px;
+      width: 47.5vw;
     }
 
     h6 {
@@ -87,49 +87,49 @@
   }
 }
 
-@media screen and (max-width: 1615px) {
-  .headerSelectMenu {
-    margin-right: 15px;
-  
-    .opener {
-      // width: 90px;
-  
-      span {
-        font-size: 16px;
-      }
-  
-      i {
-        margin-left: 10px;
-        font-size: 12px;
-      }
-    }
+// @media screen and (max-width: 1615px) {
+//   .headerSelectMenu {
+//     margin-right: 15px;
 
-    .menu {
-      &[data-size="lg"] {
-        width: 700px;
-      }
-    }
-  }
-}
+//     .opener {
+//       // width: 90px;
 
-@media screen and (max-width: 1420px) {
-  .headerSelectMenu {
-    margin-right: 15px;
-  
-    .opener {
-      // width: 80px;
-  
-      span {
-        font-size: 14px;
-      }
-  
-      i {
-        margin-left: 5px;
-        font-size: 12px;
-      }
-    }
-  }
-}
+//       span {
+//         font-size: 16px;
+//       }
+
+//       i {
+//         margin-left: 10px;
+//         font-size: 12px;
+//       }
+//     }
+
+//     .menu {
+//       &[data-size="lg"] {
+//         width: 700px;
+//       }
+//     }
+//   }
+// }
+
+// @media screen and (max-width: 1420px) {
+//   .headerSelectMenu {
+//     margin-right: 15px;
+
+//     .opener {
+//       // width: 80px;
+
+//       span {
+//         font-size: 14px;
+//       }
+
+//       i {
+//         margin-left: 5px;
+//         font-size: 12px;
+//       }
+//     }
+//   }
+// }
 
 @media screen and (max-width: 1280px) and (min-width: 768px) {
   .headerSelectMenu {

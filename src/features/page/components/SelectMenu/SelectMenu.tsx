@@ -5,7 +5,7 @@ import classNames from 'classnames'
 import styles from './SelectMenu.module.scss'
 
 interface IProps {
-  readonly children: React.ReactNode
+  readonly children: JSX.Element
   readonly title: string
   readonly opener: React.ReactNode
   readonly size?: 'md' | 'lg'
@@ -17,6 +17,10 @@ export const SelectMenu: React.FC<IProps> = ({ title, opener, children, size = '
   const [isOpen, setIsOpen] = useState<boolean>(false)
   const toggle = () => setIsOpen(!isOpen)
   const collapse = () => setIsOpen(false)
+
+  const childrenWithHanleClose = children.props ? React.Children.map(children, (child: JSX.Element) =>
+    React.cloneElement(child, { handleClose: collapse})
+  ) : children
 
   return (
     <div className={styles.headerSelectMenu} tabIndex={0} onBlur={collapse}>
@@ -31,7 +35,7 @@ export const SelectMenu: React.FC<IProps> = ({ title, opener, children, size = '
             <h6>{title}</h6>
             <i className="fas fa-times" onClick={collapse}/>
           </div>
-          {children}
+          {childrenWithHanleClose}
         </div>
       )}
 
