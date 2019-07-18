@@ -6,7 +6,7 @@ import { Page } from 'features/page/components'
 
 class Index extends React.Component {
   render = () => (
-    <Page>
+    <Page withInstagramCards={true}>
       <Helmet>
         <title>Backpackerdeals</title>
       </Helmet>

@@ -4,19 +4,18 @@ import {
   ActivitiesSection,
   AuthenticSection,
   BookWithUsSection,
-  CardsWrapper,
-  InstagramSection,
   LastMinuteDeal,
   PromoutingSection,
   TopDestinationsSection,
   TravelStoriesSection,
 } from '..'
 
+import { CardsWrapper } from 'components'
+
 import { getOffset } from 'utils'
 
 import LazyLoad from 'react-lazyload'
 import { SearchTravelSection } from '../../containers'
-import styles from './HomeLayout.module.scss'
 
 export const HomeLayout: React.FC = () => {
 
@@ -45,9 +44,6 @@ export const HomeLayout: React.FC = () => {
       </LazyLoad>
       <LazyLoad height={500} offset={offset}>
         <PromoutingSection />
-      </LazyLoad>
-      <LazyLoad height={500} offset={offset}>
-        <InstagramSection className={styles.instagramCards} />
       </LazyLoad>
     </>
   )

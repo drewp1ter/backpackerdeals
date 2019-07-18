@@ -1,7 +1,8 @@
 import * as React from 'react'
 
+import { CardsWrapper } from 'components'
 import { circleScroll } from 'utils'
-import { ActivityCard, CardsWrapper } from '..'
+import { ActivityCard } from '..'
 import styles from './ActivitiesSection.module.scss'
 
 export const ActivitiesSection: React.FC = () => {

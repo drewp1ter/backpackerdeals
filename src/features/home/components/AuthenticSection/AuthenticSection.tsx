@@ -1,7 +1,8 @@
 import * as React from 'react'
 
 import classNames from 'classnames'
-import { AuthenticCard, CardsWrapper } from '..'
+import { CardsWrapper } from 'components'
+import { AuthenticCard } from '..'
 import styles from './AuthenticSection.module.scss'
 
 export const AuthenticSection: React.FC = () => (

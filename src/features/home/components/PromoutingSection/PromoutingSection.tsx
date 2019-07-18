@@ -1,7 +1,7 @@
 import * as React from 'react'
 
+import { CardsWrapper } from 'components'
 import { circleScroll } from 'utils'
-import { CardsWrapper } from '..'
 import * as images from './assets'
 import styles from './PromoutingSection.module.scss'
 

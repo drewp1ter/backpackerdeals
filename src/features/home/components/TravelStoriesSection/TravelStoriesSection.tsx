@@ -1,6 +1,7 @@
 import * as React from 'react'
 
-import { CardsWrapper, TravelStoryCard } from '..'
+import { CardsWrapper } from 'components'
+import { TravelStoryCard } from '..'
 import styles from './TravelStoriesSection.module.scss'
 
 export const TravelStoriesSection: React.FC = () => (
