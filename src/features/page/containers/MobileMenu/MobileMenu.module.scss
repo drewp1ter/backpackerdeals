@@ -1,4 +1,4 @@
-@import "../../../../scss/device";
+@import "src/scss/device";
 
 .mobileMenu {
   .searchIcon, .menuIcon {
@@ -33,7 +33,7 @@
         margin: 0;
 
         span {
-          color: #202020;
+          // color: #202020;
           font-size: 14px;
           font-weight: 500;
           line-height: 24px;
@@ -41,7 +41,7 @@
 
         i {
           margin-right: 8px;
-          color: #202020;
+          // color: #202020;
           font-size: 11px;
         }
       }
@@ -58,7 +58,7 @@
         height: 40px;
 
         i {
-          color: #202020;
+          // color: #202020;
           font-size: 11px;
         }
       }
@@ -73,7 +73,7 @@
     .currencies {
       p {
         padding-left: 10px;
-        color: #202020;
+        // color: #202020;
         font-size: 12px;
         font-weight: 400;
         line-height: 40px;
@@ -92,7 +92,7 @@
         display: flex;
         align-items: center;
         padding-left: 10px;
-        color: #202020;
+        // color: #202020;
         font-size: 12px;
         font-weight: 400;
         line-height: 40px;
@@ -134,7 +134,7 @@
           }
 
           span {
-            color: #202020;
+            // color: #202020;
             font-size: 14px;
             font-weight: 400;
             line-height: 32px;
@@ -144,7 +144,7 @@
         .additionalTitle {
           span {
             margin-right: 7px;
-            color: #202020;
+            // color: #202020;
             font-size: 11px;
             font-weight: 400;
             line-height: 32px;
@@ -205,13 +205,13 @@
         padding-left: 15px;
         border-radius: 30px;
         border: 1px solid #e8e8e8;
-        color: #202020;
+        // color: #202020;
         font-size: 14px;
         font-weight: 400;
         line-height: 32px;
 
         &::placeholder {
-          color: #202020;
+          // color: #202020;
           font-size: 14px;
           font-weight: 400;
           line-height: 32px;
@@ -236,7 +236,7 @@
 
     .language {
       padding-left: 10px;
-      color: #202020;
+      // color: #202020;
       font-size: 12px;
       font-weight: 400;
       line-height: 40px;
@@ -258,7 +258,7 @@
 
       p {
         padding-left: 10px;
-        color: #202020;
+        // color: #202020;
         font-size: 12px;
         font-weight: 400;
         line-height: 40px;
