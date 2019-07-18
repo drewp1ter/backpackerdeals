@@ -9,7 +9,8 @@
   background-position: center 0;
   background-attachment: scroll;
   box-sizing: border-box;
-  height: 38vw;
+  height: 37.5vw;
+  min-height: 214px;
 
   @include device-tb {
     margin-top: 72px;
@@ -17,8 +18,26 @@
 
   @include device-mb {
     margin-top: 56px;
-    height: 66.3vw;
     background-size: cover;
+  }
+
+  .breadcrumbs {
+    position: absolute;
+    bottom: 3%;
+    margin: 0 12.5rem;
+
+    @include device-tb {
+      margin: 0 2.57rem;
+    }
+
+    @include device((max: 1024px)) {
+      bottom: 0;
+    }
+
+    @include device-mb {
+      margin: 0 1.5rem;
+      bottom: -5%;
+    }
   }
 
   .card {
@@ -36,17 +55,7 @@
   }
 
   .mask {
-    mask-position: 50% 29.6vw;
-    right: -2%;
-    bottom: -2%;
-
-    @include device((max: 1024px)) {
-      mask-position: 50% 25.6vw;
-    }
-
-    @include device-mb {
-      mask-position: 50% 45.6vw;
-    }
+    bottom: -13vw;
   }
 
   &:after {

@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { HeaderWave } from 'components'
+import { Breadcrumbs, HeaderWave } from 'components'
 import { HeaderCard } from '..'
 
 import styles from './ActivitiesSection.module.scss'
@@ -19,5 +19,6 @@ export const ActivitiesSection: React.FC = () => (
         className={styles.card}
       />
     </div>
+    <Breadcrumbs titles={['Australia']} className={styles.breadcrumbs} />
   </HeaderWave>
 )

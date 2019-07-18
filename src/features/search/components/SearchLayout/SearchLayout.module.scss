@@ -11,29 +11,3 @@
   }
 }
 
-.breadcrumbs {
-  position: relative;
-  margin-top: -1.875rem;
-  margin-left: 12.5rem;
-  height: 1rem;
-  z-index: 9;
-
-  @include device-tb {
-    margin-top: -1rem;
-    margin-left: 2.25rem;
-  }
-
-  @include device-ipad {
-    position: absolute;
-    margin: unset;
-    top: 42vw;
-    left: 2.57rem;
-  }
-
-  @include device-mb {
-    position: absolute;
-    margin: unset;
-    top: 75vw;
-    left: 6vw;
-  }
-}
