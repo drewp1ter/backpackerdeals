@@ -1,16 +1,37 @@
+@import "src/scss/device";
+
 .scrollBar {
   .scrollBarTrack {
     position: absolute;
-    width: 6px;
-    right: 16px;
-    bottom: 2px;
-    top: 2px;
+    width: .375rem;
+    right: 1rem;
+    bottom: .125rem;
+    top: .125rem;
     border-radius: 3px;
   }
 
   .scrollBarThumb {
-    max-width: 8px;
-    border-radius: 16px;
+    max-width: .5rem;
+    border-radius: 1rem;
     background-color: #e8e8e8;
+  }
+}
+
+@include device-mb {
+  .scrollBar {
+    .scrollBarTrack {
+      position: absolute;
+      width: 6px;
+      right: 16px;
+      bottom: 2px;
+      top: 2px;
+      border-radius: 3px;
+    }
+
+    .scrollBarThumb {
+      max-width: 8px;
+      border-radius: 16px;
+      background-color: #e8e8e8;
+    }
   }
 }

@@ -1,7 +1,7 @@
 import React, { useReducer, useState } from 'react'
 
 import { Button, Checkbox, LastMinuteDealCard } from 'components'
-import { Select } from 'components'
+import { NewSelect } from 'components'
 import { FiltersMenu } from 'features/search/containers'
 import { numberOfDays } from '../../../../components/AdvancedSearch/data'
 import { PriceRange } from '../../components'
@@ -9,7 +9,7 @@ import { cards, filters } from './data'
 import styles from './MoreActivities.module.scss'
 import reducer, { ActionType, IAction, initialState, IState, ViewType } from './reducer'
 
-const counries = ['Australia', 'Australia', 'Australia', 'Australia']
+const counries = ['Australia', 'Dania', 'Australia', 'Iceland', 'New Zeland', 'Canada', 'New Zeland', 'Canada', 'Dania', 'Australia', 'Iceland', 'New Zeland', 'Canada', 'New Zeland', 'Canada']
 const initFilters = {
   country: counries[0],
   city: '',
@@ -90,38 +90,46 @@ export const MoreActivities: React.FC = () => {
       <div className={styles.content}>
         <div className={styles.filters}>
           <h4>Select country</h4>
-          <Select
+          <NewSelect
             className={styles.filtersSelect}
             options={counries}
             theme="dark"
-            selectedOption={selectedFilters.country}
-            onChange={value => handleChangeSelect(value, 'country')}
+            name="country"
+            size="lg"
+            value={selectedFilters.country}
+            onChange={handleChangeSelect}
           />
           <h4>Select city</h4>
           {renderFilters()}
           <h4>Number of days</h4>
-          <Select
+          <NewSelect
             className={styles.filtersSelect}
+            name="numberOfDays"
             options={numberOfDays}
             theme="dark"
-            selectedOption={selectedFilters.numberOfDays}
-            onChange={value => handleChangeSelect(value, 'numberOfDays')}
+            size="lg"
+            value={selectedFilters.numberOfDays}
+            onChange={handleChangeSelect}
           />
           <h4>Accomodation style</h4>
-          <Select
+          <NewSelect
             className={styles.filtersSelect}
+            name="accommodationStyle"
+            size="lg"
             options={['All accommodation styles', 'Australia', 'Australia', 'Australia']}
             theme="dark"
-            selectedOption={selectedFilters.accommodationStyle}
-            onChange={value => handleChangeSelect(value, 'accommodationStyle')}
+            value={selectedFilters.accommodationStyle}
+            onChange={handleChangeSelect}
           />
           <h4>Style of travel</h4>
-          <Select
+          <NewSelect
             className={styles.filtersSelect}
+            name="styleOfTravel"
+            size="lg"
             options={['Family friendly', 'Australia', 'Australia', 'Australia']}
             theme="dark"
-            selectedOption={selectedFilters.styleOfTravel}
-            onChange={value => handleChangeSelect(value, 'styleOfTravel')}
+            value={selectedFilters.styleOfTravel}
+            onChange={handleChangeSelect}
           />
           <PriceRange range={selectedFilters.priceRange} onChange={handleChangeSelect} name="priceRange" />
           <Button theme="transparent" form="standart" size="sm" onClick={resetFilters}>
