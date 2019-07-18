@@ -8,13 +8,14 @@ const domain: number[] = [100, 900]
 
 interface IProps {
   readonly range?: number[]
-  readonly className?: string,
-  readonly onChange?: (values: number[]) => void
+  readonly className?: string
+  readonly name?: string
+  readonly onChange?: (value: number[], name: string) => void
 }
 
 export const PriceRange: React.FC<IProps> = ({ className, onChange, range = [100, 500] }) => {
   const handleChangeRange = (values: readonly number[]) => {
-    onChange && onChange([...values]);
+    onChange && onChange([...values], name);
   }
 
   return (
