@@ -9,7 +9,7 @@
   background-position: center 0;
   background-attachment: scroll;
   box-sizing: border-box;
-  height: 35vw;
+  height: 38vw;
 
   @include device-tb {
     margin-top: 72px;
@@ -36,9 +36,13 @@
   }
 
   .mask {
-    mask-position: 50% 25.6vw;
+    mask-position: 50% 29.6vw;
     right: -2%;
     bottom: -2%;
+
+    @include device((max: 1024px)) {
+      mask-position: 50% 25.6vw;
+    }
 
     @include device-mb {
       mask-position: 50% 45.6vw;

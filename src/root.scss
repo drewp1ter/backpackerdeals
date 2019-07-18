@@ -142,25 +142,21 @@
 html {
   font-size: .83vw; // 16px / 1920
 
+  @include device((min: 1280px, max: 1919px)) {
+    @include font(1919, 1280, 16, 12)
+  }
+
   @include device((min: 1024px, max: 1279px)) {
-    font-size: 1.09vw; // 14 px / 1280
+    @include font(1279, 1024, 12, 12)
   }
 
   @include device((min: 768px, max: 1023px)) {
-    font-size: 1.26vw; // 13 px / 1024
+    @include font(1023, 768, 12, 11)
   }
 
   @include device-mb {
     @include font-mb((min: 13, max: 15))
   }
-  //
-  //@include device((min: 420px, max: 767px)) {
-  //  font-size: 1.26vw; // 13 / 320
-  //}
-  //
-  //@include device((min: 320px, max: 420px)) {
-  //  font-size: 4vmin; // 13 / 320
-  //}
 }
 
 body {

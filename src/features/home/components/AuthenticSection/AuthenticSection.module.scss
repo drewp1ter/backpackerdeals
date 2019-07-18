@@ -3,7 +3,6 @@
 .authenticSection {
   display: flex;
   margin: 0 auto;
-  max-width: 79.1vw;
 
   li {
     margin-right: 1rem;
@@ -35,6 +34,8 @@
     max-width: unset;
     overflow-x: scroll;
     overflow-y: hidden;
+    margin: 0 -0.6rem;
+
     &::scrollbar {
       width: 0;
       background: transparent;

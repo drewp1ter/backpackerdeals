@@ -19,7 +19,7 @@
     width: 20rem;
     height: 2rem;
     color: #fff;
-    font-size: .75rem;
+    font-size: 1rem;
     background: url("./assets/Baidge.svg") no-repeat;
     background-size: cover;
 
@@ -48,9 +48,11 @@
       height: 100%;
       width: 100%;
       margin-right: 1rem;
+      font-size: 1rem;
 
       &, &::placeholder {
         color: #CAD9EA;
+        font-size: inherit;
       }
     }
   }

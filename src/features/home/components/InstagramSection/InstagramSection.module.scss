@@ -3,7 +3,6 @@
 .instagramCards {
   display: flex;
   margin: 0 auto;
-  max-width: 79.1vw;
   list-style-type: none;
 
   li {
@@ -63,7 +62,7 @@
     overflow-x: scroll;
     overflow: -moz-scrollbars-none;
     overflow-y: hidden;
-    margin: 0 -5px;
+    margin: 0 -0.6rem;
 
     li {
       min-width: 128px;

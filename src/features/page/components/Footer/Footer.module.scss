@@ -89,6 +89,10 @@ footer {
       width: 188px;
       top: 8px;
       right: 8px;
+
+      &[data-form="rounded"] {
+        height: calc(100% - 16px);
+      }
     }
   }
 

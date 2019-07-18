@@ -16,6 +16,14 @@
   @include font(strip-unit($size-tb-min), strip-unit($size-mb-min), $max, $min)
 }
 
+@mixin font-ipad($min-max-map) {
+  $min: map-get($min-max-map, 'min');
+  $max: map-get($min-max-map, 'max');
+
+  @include font(1023, strip-unit($size-tb-min), $max, $min)
+}
+
+
 @mixin font-tb($min-max-map) {
   $min: map-get($min-max-map, 'min');
   $max: map-get($min-max-map, 'max');

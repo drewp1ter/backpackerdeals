@@ -32,15 +32,26 @@ header {
   }
 
   .profileIcon {
+    min-width: 50px;
+    min-height: 50px;
+    box-sizing: border-box;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    border: 1px solid #ffffff;
+    background-color: transparent;
+    width: 2.6vw;
+    height: 2.6vw;
+
+    @include device((min: 1280px, max: 1919px)) {
+      min-width: 40px;
+      min-height: 40px;
+    }
+
     i {
       cursor: pointer;
-      border-radius: 50%;
-      padding: 12px 18px;
-      border: 1px solid #ffffff;
-      background-color: transparent;
       color: #fff;
-      font-size: 14px;
-      line-height: 24px;
+      font-size: 1rem;
       transition: .2s ease background-color, .2s ease border-color;
 
       &:hover {
@@ -67,7 +78,21 @@ header {
       align-items: center;
 
       .logo, .blackLogo {
-        height: 51px;
+        width: 7.4vw;
+
+        @include device-tb {
+          width: 40%;
+          min-width: 98px;
+        }
+
+        @include device((max: 1024px)) {
+          width: 40%;
+          min-width: 98px;
+        }
+
+        @include device-mb {
+          width: 85%;
+        }
       }
 
       .blackLogo {
@@ -84,7 +109,7 @@ header {
 
       a {
         text-decoration: none;
-        margin-right: 1rem;
+        margin-right: 1.56rem;
         font-size: 1.125rem;
         font-weight: 600;
         text-align: left;
@@ -258,6 +283,8 @@ header {
         }
 
         .profileIcon {
+          border-color: #202020;
+
           i {
             color: #202020;
           }
@@ -292,7 +319,6 @@ header {
 
     .selectContinentOpener {
       span {
-        font-size: 14px;
         font-weight: 500;
       }
 
@@ -394,13 +420,13 @@ header {
         justify-content: flex-end;
       }
 
-      .logoAndSearch {
-        .logo, .blackLogo {
-          width: 98px;
-          height: 36px;
-          margin-right: 0;
-        }
-      }
+      //.logoAndSearch {
+      //  .logo, .blackLogo {
+      //    width: 98px;
+      //    height: 36px;
+      //    margin-right: 0;
+      //  }
+      //}
       .currencyAndLanguage {
         display: none;
       }
@@ -412,15 +438,6 @@ header {
   }
 }
 
-@include device-ipad {
-  header {
-    .tools {
-      & > div {
-        padding: 0 19px;
-      }
-    }
-  }
-}
 
 @media screen and (min-width: 768px) and (max-width: 810px) {
   header {
@@ -444,6 +461,8 @@ header {
     .tools {
       & > div {
         height: 56px;
+        padding: 0;
+        margin: 0.62rem;
       }
 
       .logoAndSearch {
@@ -453,8 +472,6 @@ header {
 
         .blackLogo {
           display: block;
-          width: 112px;
-          height: 41px;
         }
       }
       .tours {

@@ -3,7 +3,6 @@
 .lastMinuteDeal {
   display: flex;
   margin: 0 auto;
-  max-width: 79.1vw;
   list-style-type: none;
 
   .carousel {
@@ -20,12 +19,13 @@
   }
 }
 
-@include device((max: 1128px)) { //940
+@include device((max: 768px)) { //940
   .lastMinuteDeal {
     max-width: 1136px;
     overflow-x: scroll;
     overflow: -moz-scrollbars-none;
     overflow-y: hidden;
+    margin: 0 -0.6rem;
 
     .carousel {
       display: block;

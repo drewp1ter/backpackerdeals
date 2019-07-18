@@ -15,7 +15,6 @@
 
   .cards {
     display: flex;
-    margin-right: -1rem;
 
     @include device-tb {
       margin-right: 0;
