@@ -2,9 +2,9 @@ import * as React from 'react'
 
 import { Button, MobileMenuWrapper } from 'components'
 import { Select } from 'components'
-import { FiltersDropdown, PriceRange } from 'features/catalog/components'
+import { FiltersDropdown, PriceRange } from 'features/search/components'
 
-import { FiltersActions, IFiltersState } from 'features/catalog'
+import { FiltersActions, IFiltersState } from 'features/search'
 import { numberOfDays } from '../../../../components/AdvancedSearch/data'
 
 import styles from './FiltersMenu.module.scss'

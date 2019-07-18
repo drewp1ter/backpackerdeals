@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 
 import { Button, MobileMenuWrapper, Select } from 'components'
+import { SearchActions } from 'features/find'
+import { SearchRadio } from 'features/find/components'
 import { MobileSelectMenu } from 'features/page/components'
-import { SearchActions } from 'features/search'
-import { SearchRadio } from 'features/search/components'
 import { PageActions } from '../..'
 import { SelectContinent } from '../../components'
 

@@ -1,6 +1,6 @@
-import { FiltersActionsTypes } from 'features/catalog'
+import { FiltersActionsTypes } from 'features/search'
 import { PageActionsTypes } from 'features/page'
-import { SearchActionsTypes } from 'features/search'
+import { SearchActionsTypes } from 'features/find'
 import { StateType } from 'typesafe-actions'
 import rootReducer from './root-reducer'
 

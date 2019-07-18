@@ -1,7 +1,5 @@
 import { createStandardAction } from 'typesafe-actions'
 import * as actionTypes from './actionTypes'
 
-export const openSearch = createStandardAction(actionTypes.MOBILE_SEARCH_OPEN)<undefined>()
-export const closeSearch = createStandardAction(actionTypes.MOBILE_SEARCH_CLOSE)<undefined>()
-
-export const changeSearchType = createStandardAction(actionTypes.SEARCH_TYPE_CHANGE)<'advanced' | 'basic'>()
+export const openFilters = createStandardAction(actionTypes.FILTERS_MENU_OPEN)<undefined>()
+export const closeFilters = createStandardAction(actionTypes.FILTERS_MENU_CLOSE)<undefined>()

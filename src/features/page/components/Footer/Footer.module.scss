@@ -1,4 +1,4 @@
-@import "../../../../scss/device";
+@import "src/scss/device";
 
 footer {
   position: relative;
@@ -79,6 +79,10 @@ footer {
     .iconButton {
       display: none;
     }
+
+    // .textButton {
+    //   height: 100%;
+    // }
 
     button {
       position: absolute;

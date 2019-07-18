@@ -1,6 +1,6 @@
 import { MobileMenu } from './MobileMenu'
 
-import { actions as searchActions } from 'features/search'
+import { actions as searchActions } from 'features/find'
 import { connect } from 'react-redux'
 import { bindActionCreators, Dispatch } from 'redux'
 import Types from 'Types'

@@ -1,34 +1,27 @@
 import { ActionType, getType } from 'typesafe-actions'
 import * as actions from './actions'
 
-export interface ISearchState {
-  readonly searchIsOpen: boolean
-  readonly searchType: 'basic' | 'advanced'
+export interface IFiltersState {
+  readonly filtersAreOpened: boolean
 }
 
-export type SearchActionsTypes = ActionType<typeof actions>
+export type FiltersActionsTypes = ActionType<typeof actions>
 
-const initialState: ISearchState = {
-  searchIsOpen: false,
-  searchType: 'basic',
+const initialState: IFiltersState = {
+  filtersAreOpened: false,
 }
 
-export default (state: ISearchState = initialState, action: SearchActionsTypes): ISearchState => {
+export default (state: IFiltersState = initialState, action: FiltersActionsTypes): IFiltersState => {
   switch (action.type) {
-    case getType(actions.closeSearch):
+    case getType(actions.closeFilters):
       return {
         ...state,
-        searchIsOpen: false,
+        filtersAreOpened: false,
       }
-    case getType(actions.openSearch):
+    case getType(actions.openFilters):
       return {
         ...state,
-        searchIsOpen: true,
-      }
-    case getType(actions.changeSearchType):
-      return {
-        ...state,
-        searchType: action.payload,
+        filtersAreOpened: true,
       }
 
     default:

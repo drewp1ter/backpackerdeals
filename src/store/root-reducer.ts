@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux'
-import { filtersReducer } from '../features/catalog'
+import { filtersReducer } from '../features/search'
+import { searchReducer } from '../features/find'
 import { pageReducer } from '../features/page'
-import { searchReducer } from '../features/search'
 
 export default combineReducers({
   page: pageReducer,

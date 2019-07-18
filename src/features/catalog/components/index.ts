@@ -1,8 +1,0 @@
-export { ActivitiesSection } from './ActivitiesSection'
-export { CatalogLayout } from './CatalogLayout'
-export { DescriptionSection } from './DescriptionSection'
-export { FiltersDropdown } from './FiltersDropdown'
-export { HeaderCard } from './HeaderCard'
-export { MoreActivities } from './MoreActivities'
-export { TopActivities } from './TopActivities'
-export { PriceRange } from './PriceRange'

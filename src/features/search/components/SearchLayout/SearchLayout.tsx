@@ -1,12 +1,13 @@
+
 import React from 'react'
 
-import styles from './CatalogLayout.module.scss'
+import styles from './SearchLayout.module.scss'
 
 import { Breadcrumbs } from 'components'
 import { InstagramSection } from 'features/home/components'
 import { ActivitiesSection, DescriptionSection, MoreActivities, TopActivities } from '..'
 
-export const CatalogLayout: React.FC = () => (
+export const SearchLayout: React.FC = () => (
   <>
     <ActivitiesSection />
     <DescriptionSection />
