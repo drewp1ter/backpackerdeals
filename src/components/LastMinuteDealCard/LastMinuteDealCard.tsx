@@ -3,6 +3,7 @@ import * as React from 'react'
 import classNames from 'classnames'
 
 import { Icon, Rating } from 'components'
+import LazyLoad from 'react-lazyload'
 import styles from './LastMinuteDealCard.module.scss'
 
 interface IExposeTime {
@@ -52,7 +53,7 @@ export const LastMinuteDealCard: React.FC<IProps> = ({
   exposeTime,
   description,
   className,
-  sizes
+  sizes,
 }) => {
   return (
     <li data-view={view} className={classNames(styles.lastMinuteDealCard, className)}>
@@ -82,13 +83,9 @@ export const LastMinuteDealCard: React.FC<IProps> = ({
             </div>
           </div>
         )}
-        <img
-          className={styles.background}
-          srcSet={img.srcSet}
-          sizes={sizes}
-          src={img.src}
-          alt="Last Minute Deal Tour"
-        />
+        <LazyLoad offset={400}>
+          <img className={styles.background} srcSet={img.srcSet} sizes={sizes} src={img.src} alt="Last Minute Deal Tour" />
+        </LazyLoad>
       </div>
 
       <div data-view={view} className={styles.cardDescription}>

@@ -3,9 +3,8 @@ import React, { useReducer, useState } from 'react'
 import { Button, Checkbox, LastMinuteDealCard } from 'components'
 import { Select } from 'components'
 import { FiltersMenu } from 'features/search/containers'
-import LazyLoad from 'react-lazyload'
-import { PriceRange } from '../../components'
 import { numberOfDays } from '../../../../components/AdvancedSearch/data'
+import { PriceRange } from '../../components'
 import { cards, filters } from './data'
 import styles from './MoreActivities.module.scss'
 import reducer, { ActionType, IAction, initialState, IState, ViewType } from './reducer'
@@ -124,7 +123,7 @@ export const MoreActivities: React.FC = () => {
             selectedOption={selectedFilters.styleOfTravel}
             onChange={value => handleChangeSelect(value, 'styleOfTravel')}
           />
-          <PriceRange range={selectedFilters.priceRange} onChange={values => handleChangeSelect(values, 'priceRange')} />
+          <PriceRange range={selectedFilters.priceRange} onChange={handleChangeSelect} name="priceRange" />
           <Button theme="transparent" form="standart" size="sm" onClick={resetFilters}>
             Reset filter
           </Button>
@@ -143,9 +142,7 @@ export const MoreActivities: React.FC = () => {
             </span>
           </div>
           <ul data-view={view} className={styles.cards}>
-            <LazyLoad height={500} offset={400}>
-              {renderCards()}
-            </LazyLoad>
+            {renderCards()}
           </ul>
           {renderPageControls()}
         </div>
