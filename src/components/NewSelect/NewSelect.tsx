@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 
 import classNames from 'classnames'
-import { ScrollBar } from '..'
 
 import styles from './NewSelect.module.scss'
 
@@ -59,15 +58,13 @@ export const NewSelect: React.FC<IProps> = ({
 
       {isOpen && (
         <ul className={styles.optionBlock} data-size={size}>
-          <ScrollBar>
-            {options &&
-              options.map((option, index) => (
-                <li key={`option-${index}`} className={styles.option} onClick={handleClick} data-index={index}>
-                  {option}
-                </li>
-              ))}
-            {children}
-          </ScrollBar>
+          {options &&
+            options.map((option, index) => (
+              <li key={`option-${index}`} className={styles.option} onClick={handleClick} data-index={index}>
+                {option}
+              </li>
+            ))}
+          {children}
         </ul>
       )}
     </div>

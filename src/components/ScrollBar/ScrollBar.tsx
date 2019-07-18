@@ -13,6 +13,10 @@ export const ScrollBar: React.FC<IProps> = ({ children }) => {
 
   const renderTrackVertical = ({ ...props }) => (<div className={styles.scrollBarTrack} {...props}/>)
 
+  const renderTrackHorizontal = () => (<div />)
+
+  const renderThumbHorizontal = () => (<div />)
+
   return (
     <Scrollbars
       autoHeight={true}
@@ -20,6 +24,8 @@ export const ScrollBar: React.FC<IProps> = ({ children }) => {
       className={styles.scrollBar}
       renderTrackVertical={renderTrackVertical}
       renderThumbVertical={renderThumb}
+      renderTrackHorizontal={renderTrackHorizontal}
+      renderThumbHorizontal={renderThumbHorizontal}
     >
       {children}
     </Scrollbars>

@@ -94,8 +94,22 @@
     background: #fff;
     padding: 1.56rem 0;
     box-sizing: border-box;
-    overflow: hidden;
+    overflow-y: auto;
+    overflow-x: hidden;
     border: 1px solid #efefef;
+
+    &::-webkit-scrollbar-track {
+	    background-color: #fafafa;
+    }
+
+    &::-webkit-scrollbar {
+	    width: 6px;
+	    background-color: #fafafa;
+    }
+
+    &::-webkit-scrollbar-thumb {
+	    background-color: #efefef;
+    }
 
     &[data-size="md"] {
       top: 4.68rem;
