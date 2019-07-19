@@ -1,3 +1,5 @@
+@import "src/scss/_utils";
+
 .autocomplete {
   position: relative;
 
@@ -10,23 +12,33 @@
     top: calc(100% + .5rem);
     left: 0;
     right: 0;
-    max-height: 16.56vw;
+    max-height: 15.83vw;
     overflow: auto;
     margin: 0 1rem;
+    list-style-type: none;
+
+    @include scrollbar;
   }
 
   .suggestion {
-    font-size: 1rem;
+    font-size: .875rem;
     padding: .625rem 1.5rem;
     cursor: pointer;
+
     &:hover {
       background-color: #d1ecf1;
     }
+
+    &[data-current="true"] {
+      color: #fafafa;
+      background-color: #e4e4e4 !important;
+    }
   }
 
-  .suggestionCurrent {
-    color: #fafafa;
-    background-color: #e4e4e4 !important;
+  .suggestionName {
+    padding: 1.625rem 1.5rem .625rem;
+    font-size: .875rem;
+    color: #959595;
   }
 
   .field {

@@ -13,7 +13,21 @@ export const SearchTravelInput: React.FC<IProps> = ({ toggleSearch }) => (
     <Autocomplete
       className={styles.autocomplete}
       placeholder="Search for a destination, activity or tour"
-      suggestions={['Sydney', 'Sydney Fish Market Tour & Harbor Cruise - Half Day', 'Sydney Harbour Bridge Climb: Day Tour']}
+      suggestions={[
+        {
+          name: 'Activities',
+          data: ['Wine tasting', 'Adrenaline']
+        },
+        {
+          name: 'Locations',
+          data: ['Sydney']
+        },
+        {
+          name: 'Offers',
+          data: ['Sydney Fish Market Tour & Harbor Cruise - Half Day', 'Sydney Harbour Bridge Climb: Day Tour']
+        }
+      ]}
+
       theme="roundedTransparent"
       size="ulg"
     >
