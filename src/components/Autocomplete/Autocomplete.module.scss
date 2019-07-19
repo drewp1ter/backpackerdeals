@@ -6,22 +6,18 @@
     z-index: 10;
     background-color: #fff;
     box-shadow: 0 1px 6px 3px rgba(0, 0, 0, 0.1);
-    top: 100%;
+    border-radius: 4px;
+    top: calc(100% + .5rem);
     left: 0;
     right: 0;
-    max-height: 318px;
+    max-height: 16.56vw;
     overflow: auto;
-  }
-
-  .suggestionNote {
-    font-size: 14px;
-    color: #828282;
-    padding: 10px 10px 5px 10px;
+    margin: 0 1rem;
   }
 
   .suggestion {
-    font-size: 15px;
-    padding: 7px 10px;
+    font-size: 1rem;
+    padding: .625rem 1.5rem;
     cursor: pointer;
     &:hover {
       background-color: #d1ecf1;
@@ -36,20 +32,58 @@
   .field {
     display: flex;
     align-items: center;
-    border-radius: 4px;
-    border: 1px solid #e4e4e4;
+    height: 100%;
+    box-sizing: border-box;
+
+    &[data-size="lg"] {
+      height: 3.5rem;
+    }
+
+    &[data-size="ulg"] {
+      height: 4.5rem;
+    }
 
     input {
-      padding-left: 24px;
       flex-grow: 1;
-      height: 56px;
-      font-size: 16px;
-      background: #fff;
+      font-size: 1rem;
       border: none;
+      height: 100%;
+
+      &[data-theme="default"] {
+        background: #fff;
+      }
+
+      &[data-theme="roundedTransparent"] {
+        background: transparent;
+        color: #cad9ea;
+
+        &::placeholder {
+          color: #cad9ea;
+        }
+      }
+
+      &[data-size="lg"] {
+        padding: 0 1.5rem;
+      }
+
+      &[data-size="ulg"] {
+        padding: 0 2rem;
+      }
+    }
+
+    &[data-theme="default"] {
+      border-radius: 4px;
+      border: 1px solid #e4e4e4;
+    }
+
+    &[data-theme="roundedTransparent"] {
+      border: 1px solid transparent;
+      background: rgba(255, 255, 255, 0.26);
+      border-radius: 3.75rem;
     }
 
     i {
-      margin-left: 24px;
+      margin-left: 1.5rem;
       cursor: pointer;
       outline: none;
       transition: .2s ease color, .2s ease transform;
@@ -68,7 +102,7 @@
   label {
     display: block;
     cursor: pointer;
-    font-size: 16px;
-    margin-bottom: 16px;
+    font-size: 1rem;
+    margin-bottom: 1rem;
   }
 }

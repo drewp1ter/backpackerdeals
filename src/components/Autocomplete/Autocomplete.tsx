@@ -3,6 +3,11 @@ import * as React from 'react'
 
 import styles from './Autocomplete.module.scss'
 
+enum Themes {
+  default = 'default',
+  roundedTransparent = 'roundedTransparent',
+}
+
 export interface IProps {
   readonly suggestions: string[]
   readonly className?: string
@@ -10,10 +15,12 @@ export interface IProps {
   readonly name?: string
   readonly label?: string
   readonly value?: string
-  readonly theme?: 'default'
+  readonly theme?: keyof typeof Themes
   readonly onChange?: (value: string, name?: string, onSelect?: boolean) => void
   readonly placeholder?: string
   readonly labelId?: string
+  readonly children?: JSX.Element
+  readonly size?: 'lg' | 'ulg'
 }
 
 export interface IState {
@@ -25,10 +32,11 @@ export interface IState {
 
 export class Autocomplete extends React.Component<IProps, IState> {
   public static defaultProps: Partial<IProps> = {
-    theme: 'default',
+    theme: Themes.default,
     inputClassName: '',
     className: '',
     placeholder: '',
+    size: 'lg',
   }
 
   public state = {
@@ -145,7 +153,7 @@ export class Autocomplete extends React.Component<IProps, IState> {
 
   public render = () => {
     const { showSuggestions, focus } = this.state
-    const { className, name, theme, value, placeholder, inputClassName, label } = this.props
+    const { className, name, theme, value, placeholder, inputClassName, label, children, size } = this.props
     let { labelId } = this.props
     const wrpClass = classNames(styles.autocomplete, className)
     if (label && !labelId) {
@@ -154,14 +162,16 @@ export class Autocomplete extends React.Component<IProps, IState> {
     return (
       <div className={wrpClass}>
         {label && <label htmlFor={labelId}>{label}</label>}
-        <div className={styles.field} data-focus={focus || showSuggestions}>
-          <i
-            onClick={this.toggleShowSuggestions}
-            tabIndex={0}
-            onBlur={this.onInputBlur}
-            className="fas fa-angle-down"
-            data-suggestions={showSuggestions}
-          />
+        <div className={styles.field} data-size={size} data-theme={theme} data-focus={focus || showSuggestions}>
+          {theme === Themes.default && (
+            <i
+              onClick={this.toggleShowSuggestions}
+              tabIndex={0}
+              onBlur={this.onInputBlur}
+              className="fas fa-angle-down"
+              data-suggestions={showSuggestions}
+            />
+          )}
           <input
             id={labelId}
             value={value}
@@ -175,11 +185,12 @@ export class Autocomplete extends React.Component<IProps, IState> {
             onBlur={this.onInputBlur}
             autoComplete="off"
             placeholder={placeholder}
+            data-size={size}
           />
+          {children}
         </div>
         {showSuggestions && (
           <div className={styles.suggestions}>
-            <div className={styles.suggestionNote}>select variant or continue typing</div>
             {this.suggestionsList()}
           </div>
         )}
