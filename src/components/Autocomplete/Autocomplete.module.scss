@@ -12,10 +12,9 @@
     top: calc(100% + .5rem);
     left: 0;
     right: 0;
-    max-height: 15.83vw;
+    max-height: 19rem;
     overflow: auto;
     margin: 0 1rem;
-    list-style-type: none;
 
     @include scrollbar;
   }
@@ -30,8 +29,7 @@
     }
 
     &[data-current="true"] {
-      color: #fafafa;
-      background-color: #e4e4e4 !important;
+      background-color: #e8e8e8;
     }
   }
 

@@ -3,12 +3,7 @@ import * as React from 'react'
 import { Button, Input } from 'components'
 import { FooterLinks } from 'features/page/components'
 
-import Adventure from './assets/adventure.svg'
-import Byata from './assets/byata.svg'
-import Logo from './assets/Logo.svg'
-import Norton from './assets/norton.svg'
-import Wave from './assets/wave.svg'
-import Winner from './assets/winner.svg'
+import images from './assets'
 
 import styles from './Footer.module.scss'
 
@@ -66,12 +61,6 @@ export const Footer: React.FC<IProps> = ({ handleChange, email }) => (
             <li>Merchant Portal</li>
           </ul>
         </FooterLinks>
-
-        <FooterLinks className={styles.mt} title="Students">
-          <ul className={styles.linksList}>
-            <li>Students Discounts</li>
-          </ul>
-        </FooterLinks>
       </div>
 
       <FooterLinks title="Work with us">
@@ -112,10 +101,10 @@ export const Footer: React.FC<IProps> = ({ handleChange, email }) => (
               <i className="fab fa-facebook-square" />
             </li>
             <li>
-              <i className="fab fa-twitter" />
+              <i className="fab fa-google-plus-g" />
             </li>
             <li>
-              <i className="fab fa-instagram" />
+              <i className="fab fa-pinterest" />
             </li>
             <li>
               <i className="fab fa-instagram" />
@@ -141,14 +130,10 @@ export const Footer: React.FC<IProps> = ({ handleChange, email }) => (
             <li>
               <i className="fab fa-cc-apple-pay" />
             </li>
-            <li>
-              <i className="fab fa-cc-apple-pay" />
-            </li>
-            <li>
-              <i className="fab fa-cc-apple-pay" />
-            </li>
-            <li>
-              <i className="fab fa-cc-apple-pay" />
+            <li dangerouslySetInnerHTML={images.gPay} />
+            <li dangerouslySetInnerHTML={images.aliPay} />
+            <li className={styles.poli}>
+              <img src={images.poli} alt="poli" />
             </li>
           </ul>
         </div>
@@ -162,27 +147,27 @@ export const Footer: React.FC<IProps> = ({ handleChange, email }) => (
     <hr />
 
     <div className={styles.copyrightAndPartners}>
-      <img className={styles.logo} src={Logo} alt="logo" />
+      <img className={styles.logo} src={images.logo} alt="logo" />
 
       <p>
         Backpackerdeals.com is owned and operated by Backpacker
         <br />
         Deals Pty Ltd. ABN 81 600 829 838
         <br />
-        Level 1, 20 Queen Street, Melbourne 3000, Australia
+        Level 22, 120 Spencer Street, Melbourne 3000, Australia
         <br />© 2014-2018 Backpacker Deals All rights reserved.
       </p>
 
       <div className={styles.firstImagesBlock}>
         <span>Member of</span>
-        <img src={Byata} alt="Byata" />
-        <img src={Adventure} alt="Adventure" />
-        <img src={Wave} alt="Wave" />
+        <img src={images.byata} alt="Byata" />
+        <img src={images.adventure} alt="Adventure" />
+        <img src={images.wave} alt="Wave" />
       </div>
 
       <div className={styles.secondImagesBlock}>
-        <img src={Norton} alt="Norton" />
-        <img src={Winner} alt="Winner" />
+        <img src={images.norton} alt="Norton" />
+        <img src={images.winner} alt="Winner" />
       </div>
     </div>
   </footer>

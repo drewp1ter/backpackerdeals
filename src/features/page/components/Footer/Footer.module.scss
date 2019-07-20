@@ -80,10 +80,6 @@ footer {
       display: none;
     }
 
-    // .textButton {
-    //   height: 100%;
-    // }
-
     button {
       position: absolute;
       width: 188px;
@@ -177,22 +173,43 @@ footer {
       display: flex;
 
       ul {
-        padding: 0;
 
         li {
-          list-style: none;
           display: inline;
           margin-right: 15px;
+          max-height: 24px;
 
           &:last-of-type {
             margin-right: 0;
           }
 
+          &.poli {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 24px;
+            width: 31px;
+            background: #959595;
+            border-radius: 2px;
+            cursor: pointer;
+
+            &:hover {
+              background: #ff5a39;
+            }
+          }
+
+          svg:hover {
+            cursor: pointer;
+            path {
+              fill: #ff5a39;
+            }
+          }
+
           i {
+            margin-top: -2px;
             cursor: pointer;
             color: #959595;
             font-size: 24px;
-            transition: .2s ease color;
 
             &:hover {
               color: #ff5a39;
@@ -241,6 +258,10 @@ footer {
 
       .payment {
         @extend .socialHeader;
+
+        ul {
+          display: flex;
+        }
 
         span {
           margin-bottom: 25px;

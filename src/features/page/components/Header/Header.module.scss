@@ -38,26 +38,26 @@ header {
     display: grid;
     place-items: center;
     border-radius: 50%;
-    border: 1px solid #ffffff;
+    border: 1px solid #fff;
     background-color: transparent;
     width: 2.6vw;
     height: 2.6vw;
+    cursor: pointer;
+    transition: .2s ease background-color, .2s ease border-color;
 
     @include device((min: 1280px, max: 1919px)) {
       min-width: 40px;
       min-height: 40px;
     }
 
+    &:hover {
+      background-color: #ff5a39;
+      border-color: #ff5a39;
+    }
+
     i {
-      cursor: pointer;
       color: #fff;
       font-size: 1rem;
-      transition: .2s ease background-color, .2s ease border-color;
-
-      &:hover {
-        background-color: #ff5a39;
-        border-color: #ff5a39;
-      }
     }
   }
 
@@ -204,16 +204,6 @@ header {
     }
   }
 
-  // .currenciesList {
-  //   .currency {
-  //     width: 45px;
-
-  //     &:last-child {
-  //       margin-bottom: 0;
-  //     }
-  //   }
-  // }
-
   .languages, .languagesList {
     display: flex;
     flex-wrap: wrap;
@@ -250,14 +240,6 @@ header {
     }
   }
 
-  // .languagesList {
-  //   flex-direction: column;
-
-  //   .language:last-child {
-  //     margin-bottom: 0;
-  //   }
-  // }
-
   &[data-theme="dark"] {
     .tools {
       background-color: #fff;
@@ -284,6 +266,15 @@ header {
 
         .profileIcon {
           border-color: #202020;
+
+          &:hover {
+            background-color: #ff5a39;
+            border-color: #ff5a39;
+
+            i {
+              color: #fff;
+            }
+          }
 
           i {
             color: #202020;
@@ -344,61 +335,6 @@ header {
     }
   }
 }
-
-
-// @include device((max: 1615px)) {
-//   header {
-//     .tools {
-//       .logoAndSearch {
-//         .logo, .blackLogo {
-//           width: 120px;
-//           height: 43.5px;
-//         }
-//       }
-//     }
-
-//     .profileIcon {
-//       i {
-//         padding: 7px 14.2px;
-//         font-size: 11px;
-//       }
-//     }
-
-//     .tools {
-//       .currencyAndLanguage, .tours {
-//         a {
-//           font-size: 16px;
-//         }
-//       }
-//     }
-//   }
-// }
-
-// @include device((max: 1420px)) {
-//   header {
-//     .tools {
-//       .logoAndSearch {
-//         .logo, .blackLogo {
-//           width: 98px;
-//           height: 36px;
-//         }
-//       }
-//     }
-
-//     .tools {
-//       & > div {
-//         padding: 0 16px;
-//         margin: 0;
-//       }
-
-//       .currencyAndLanguage, .tours {
-//         a {
-//           font-size: 14px;
-//         }
-//       }
-//     }
-//   }
-// }
 
 @include device-tb {
   header {

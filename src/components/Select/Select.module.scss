@@ -9,21 +9,24 @@
     transition: .2s ease border-color;
     height: 100%;
     box-sizing: border-box;
-    // display: flex;
-    // align-items: center;
+    display: flex;
+    align-items: center;
 
     i {
       margin-right: .5rem;
-      font-size: 1rem;
+      font-size: .812rem;
       letter-spacing: normal;
       text-align: left;
       transition: .2s ease color, .2s ease transform;
     }
 
     span {
-      font-size: 1rem;
+      font-size: .812rem;
       letter-spacing: normal;
       text-align: left;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
     }
 
     &[data-opened="opened"] {
