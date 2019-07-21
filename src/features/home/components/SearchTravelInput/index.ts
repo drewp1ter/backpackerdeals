@@ -1,1 +1,0 @@
-export { SearchTravelInput } from './SearchTravelInput'

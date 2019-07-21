@@ -2,7 +2,8 @@ import * as React from 'react'
 
 import { HeaderWave } from 'components'
 import { ISearchState, SearchActions } from 'features/find'
-import { AdvancedSearchTravelInput, SearchTravelInput } from '../../components'
+import { BasicSearchTravel } from '..'
+import { AdvancedSearchTravelInput } from '../../components'
 
 import styles from './SearchTravelSection.module.scss'
 
@@ -13,17 +14,18 @@ export const SearchTravelSection: React.FC<Partial<SearchActions> & Partial<ISea
 
   return (
     <HeaderWave className={styles.searchTravelSection} maskClassName={styles.mask}>
-      <h1 key="e1">
+      <>
+      <h1>
         Search Less,
         <br /> Travel More!
       </h1>
-      <h2 key="e2">
+      <h2>
         Great experience at <br /> backpacker prices
       </h2>
       {advancedSearch ? (
-        <AdvancedSearchTravelInput key="e3" toggleSearch={handleToggleSeach} />
+        <AdvancedSearchTravelInput toggleSearch={handleToggleSeach} />
       ) : (
-        <SearchTravelInput key="e4" toggleSearch={handleToggleSeach} />
+        <BasicSearchTravel toggleSearch={handleToggleSeach} />
       )}
       <div onClick={openSearch} className={styles.mobileInput}>
         <div>
@@ -35,6 +37,7 @@ export const SearchTravelSection: React.FC<Partial<SearchActions> & Partial<ISea
           <i className="fas fa-filter" />
         </div>
       </div>
+      </>
     </HeaderWave>
   )
 }

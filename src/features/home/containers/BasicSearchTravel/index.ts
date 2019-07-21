@@ -1,0 +1,1 @@
+export { BasicSearchTravel } from './BasicSearchTravel'
