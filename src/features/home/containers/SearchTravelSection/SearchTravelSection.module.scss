@@ -13,6 +13,28 @@
     mask-position: 50% calc(50% + 30rem);
   }
 
+  .searchImage {
+    user-select: none;
+    position: absolute;
+    bottom: -2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20rem;
+    height: 2rem;
+    color: #fff;
+    font-size: .75rem;
+    background: url("./assets/baidge.svg") no-repeat;
+    background-size: cover;
+
+    i {
+      margin-right: 5px;
+    }
+  }
+
 
   h1 {
     position: relative;

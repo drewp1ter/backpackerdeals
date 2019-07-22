@@ -41,52 +41,7 @@
     width: 13rem;
     height: 100%;
   }
-
-  .searchImage {
-    user-select: none;
-    position: absolute;
-    bottom: -2rem;
-    left: 50%;
-    transform: translateX(-50%);
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 20rem;
-    height: 2rem;
-    color: #fff;
-    font-size: .75rem;
-    background: url("./assets/Baidge.svg") no-repeat;
-    background-size: cover;
-
-    i {
-      margin-right: 5px;
-    }
-  }
 }
-
-// @include device-tb {
-//   .advancedSearchTravelInput {
-//     width: 696px;
-//     height: 56px;
-//     padding: 4px 4px 4px 20px;
-
-//     .searchImage {
-//       bottom: -24px;
-//       width: 240px;
-//       height: 24px;
-//     }
-
-//     .searchBtn {
-//       width: 168px;
-//       font-size: 14px;
-//     }
-
-//     .searchBlock > div[data-theme] > div[data-opened] {
-//       max-height: 39px;
-//     }
-//   }
-// }
 
 @include device-mb {
   .advancedSearchTravelInput {

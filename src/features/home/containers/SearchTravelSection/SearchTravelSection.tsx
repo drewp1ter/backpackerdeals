@@ -15,28 +15,32 @@ export const SearchTravelSection: React.FC<Partial<SearchActions> & Partial<ISea
   return (
     <HeaderWave className={styles.searchTravelSection} maskClassName={styles.mask}>
       <>
-      <h1>
-        Search Less,
-        <br /> Travel More!
-      </h1>
-      <h2>
-        Great experience at <br /> backpacker prices
-      </h2>
-      {advancedSearch ? (
-        <AdvancedSearchTravelInput toggleSearch={handleToggleSeach} />
-      ) : (
-        <BasicSearchTravel toggleSearch={handleToggleSeach} />
-      )}
-      <div onClick={openSearch} className={styles.mobileInput}>
-        <div>
-          <i className="fas fa-search" />
-          <span>Search</span>
+        <h1>
+          Search Less,
+          <br /> Travel More!
+        </h1>
+        <h2>
+          Great experience at <br /> backpacker prices
+        </h2>
+        {advancedSearch ? (
+          <AdvancedSearchTravelInput />
+        ) : (
+          <BasicSearchTravel />
+        )}
+        <div className={styles.searchImage} onClick={handleToggleSeach}>
+          <i className={`fas ${advancedSearch ? 'fa-search' : 'fa-filter'}`} />
+          {`${advancedSearch ? 'Basic' : 'Advanced'} search`}
         </div>
-        <div>
-          <span>{searchType === 'basic' ? 'Basic search' : 'Advanced search'}</span>
-          <i className="fas fa-filter" />
+        <div onClick={openSearch} className={styles.mobileInput}>
+          <div>
+            <i className="fas fa-search" />
+            <span>Search</span>
+          </div>
+          <div>
+            <span>{searchType === 'basic' ? 'Basic search' : 'Advanced search'}</span>
+            <i className="fas fa-filter" />
+          </div>
         </div>
-      </div>
       </>
     </HeaderWave>
   )

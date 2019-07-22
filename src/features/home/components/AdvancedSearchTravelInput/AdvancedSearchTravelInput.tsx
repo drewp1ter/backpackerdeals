@@ -9,11 +9,7 @@ import { numberOfDays, startLocation } from '../../../../components/AdvancedSear
 
 import styles from './AdvancedSearchTravelInput.module.scss'
 
-interface IProps {
-  readonly toggleSearch?: () => void
-}
-
-export const AdvancedSearchTravelInput: React.FC<IProps> = ({ toggleSearch }) => {
+export const AdvancedSearchTravelInput: React.FC = () => {
   const [selected, setSelected] = useState({
     startLocation: 'Start location',
     typeOfTour: 'Type of tour',
@@ -69,10 +65,6 @@ export const AdvancedSearchTravelInput: React.FC<IProps> = ({ toggleSearch }) =>
         />
       </div>
       <Button theme="orange" className={styles.searchBtn}>SEARCH</Button>
-      <div className={styles.searchImage} onClick={toggleSearch}>
-        <i className="fas fa-search"/>
-        Basic Search
-      </div>
     </div>
   )
 }

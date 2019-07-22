@@ -10,10 +10,6 @@ export interface ISuggestion {
   readonly data: string[]
 }
 
-export interface IProps {
-  readonly toggleSearch: () => void
-}
-
 export interface ISuggestions {
   readonly activities: IConfigItem[]
   readonly locations: IConfigItem[]
@@ -29,7 +25,7 @@ export interface IState {
   readonly inputValue: string
 }
 
-export class BasicSearchTravel extends React.Component<IProps, IState> {
+export class BasicSearchTravel extends React.Component<{}, IState> {
   public state: IState = {
     suggestions: {
       activities: [],
@@ -53,7 +49,7 @@ export class BasicSearchTravel extends React.Component<IProps, IState> {
     this.setState({ showSuggestions: false, focus: false })
   }
 
-  public toggleShowSuggestions = () => this.setState(prev => ({ ...prev, showSuggestions: !prev.showSuggestions }))
+  // public toggleShowSuggestions = () => this.setState(prev => ({ ...prev, showSuggestions: !prev.showSuggestions }))
 
   public handleChange = ({ target: { value } }: React.ChangeEvent<HTMLInputElement>) => {
     try {
@@ -181,10 +177,8 @@ export class BasicSearchTravel extends React.Component<IProps, IState> {
 
   public render = () => {
     const { showSuggestions, focus, inputValue, suggestionIndex } = this.state
-    const { toggleSearch } = this.props
     return (
-      <div className={styles.searchTravelInput}>
-        <div className={styles.autocomplete}>
+      <div className={styles.basicSearchTravel}>
           <div className={styles.field} data-focus={focus || showSuggestions}>
             <input
               value={suggestionIndex >= 0 ? this.getCurrentSuggestion().name : inputValue }
@@ -201,11 +195,6 @@ export class BasicSearchTravel extends React.Component<IProps, IState> {
             </Button>
           </div>
           {showSuggestions && this.renderSuggestionsList()}
-        </div>
-        <div className={styles.imageBlock} onClick={toggleSearch}>
-          <i className="fas fa-filter" />
-          <span>Advanced search</span>
-        </div>
       </div>
     )
   }
