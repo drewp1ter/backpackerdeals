@@ -1,6 +1,6 @@
 import { MobileMenu } from './MobileMenu'
 
-import { actions as searchActions } from 'features/find'
+import { actions as searchActions } from 'features/search'
 import { connect } from 'react-redux'
 import { bindActionCreators, Dispatch } from 'redux'
 import Types from 'Types'
@@ -11,7 +11,16 @@ const mapStateToProps = ({ page, search }: Types.RootState) => ({
   search,
 })
 
-const mapDispatchToProps = (dispatch: Dispatch) => bindActionCreators({ ...pageActions, ...searchActions }, dispatch)
+const mapDispatchToProps = (dispatch: Dispatch) =>
+  bindActionCreators(
+    {
+      ...pageActions,
+      changeSearchType: searchActions.changeSearchType,
+      openSearch: searchActions.openSearch,
+      closeSearch: searchActions.closeSearch,
+    },
+    dispatch
+  )
 
 export default connect(
   mapStateToProps,

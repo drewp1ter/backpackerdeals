@@ -6,8 +6,7 @@ const compression = require('compression')
 
 const devProxy = {
   '/api': {
-    target: 'https://api.github.com/',
-    pathRewrite: { '^/api': '' },
+    target: 'https://backpackerdeals.com/',
     changeOrigin: true
   }
 }

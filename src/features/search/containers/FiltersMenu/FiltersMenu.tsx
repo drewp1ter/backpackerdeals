@@ -4,7 +4,7 @@ import { Button, MobileMenuWrapper } from 'components'
 import { Select } from 'components'
 import { FiltersDropdown, PriceRange } from 'features/search/components'
 
-import { FiltersActions, IFiltersState } from 'features/search'
+import { ISearchState, SearchActions } from 'features/search'
 import { numberOfDays } from '../../../../components/AdvancedSearch/data'
 
 import styles from './FiltersMenu.module.scss'
@@ -13,7 +13,7 @@ interface IProps {
   filters: JSX.Element | JSX.Element[]
 }
 
-export const FiltersMenu: React.FC<IFiltersState & FiltersActions & IProps> = ({
+export const FiltersMenu: React.FC<ISearchState & SearchActions & IProps> = ({
   filtersAreOpened,
   closeFilters,
   openFilters,

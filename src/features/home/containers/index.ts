@@ -1,2 +1,2 @@
 export { default as SearchTravelSection } from './SearchTravelSection'
-export { BasicSearchTravel } from './BasicSearchTravel'
+export { default as BasicSearchTravel } from './BasicSearchTravel'

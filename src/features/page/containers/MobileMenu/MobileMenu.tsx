@@ -1,11 +1,10 @@
 import React, { useState } from 'react'
 
 import { Button, MobileMenuWrapper, Select } from 'components'
-import { SearchActions } from 'features/find'
-import { SearchRadio } from 'features/find/components'
 import { MobileSelectMenu } from 'features/page/components'
+import { SearchActions } from 'features/search'
 import { PageActions } from '../..'
-import { SelectContinent } from '../../components'
+import { SearchRadio, SelectContinent } from '../../components'
 
 import Types from 'Types'
 import { numberOfDays, startLocation } from '../../../../components/AdvancedSearch/data'

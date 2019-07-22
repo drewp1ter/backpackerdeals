@@ -1,6 +1,6 @@
 import { SearchTravelSection } from './SearchTravelSection'
 
-import { actions as searchActions } from 'features/find'
+import { actions as searchActions } from 'features/search'
 import { connect } from 'react-redux'
 import { bindActionCreators, Dispatch } from 'redux'
 import Types from 'Types'

@@ -4,13 +4,13 @@ import { actions as searchActions } from 'features/search'
 import { connect } from 'react-redux'
 import { bindActionCreators, Dispatch } from 'redux'
 import Types from 'Types'
-import * as pageActions from '../../actions'
 
-const mapStateToProps = ({ filters }: Types.RootState) => ({
-  filtersAreOpened: filters.filtersAreOpened,
+const mapStateToProps = ({ search }: Types.RootState) => ({
+  filtersAreOpened: search.filtersAreOpened,
 })
 
-const mapDispatchToProps = (dispatch: Dispatch) => bindActionCreators({ ...pageActions, ...searchActions }, dispatch)
+const mapDispatchToProps = (dispatch: Dispatch) =>
+  bindActionCreators({ openFilters: searchActions.openFilters, closeFilters: searchActions.closeFilters }, dispatch)
 
 export default connect(
   mapStateToProps,
