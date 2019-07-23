@@ -35,8 +35,10 @@
   }
 
   span {
-    display: inline-flex;
-    justify-content: center;
+    // display: inline-flex;
+    // justify-content: center;
+    // align-items: center;
+    position: relative;
     width: .75rem;
     height: .75rem;
     margin-right: .75rem;
@@ -46,11 +48,17 @@
 
     &::after {
       display: none;
+      width: .6rem;
+      height: .6rem;
       font-family: "Font Awesome 5 Free";
       font-weight: 900;
       content: "\f00c";
       font-size: .625rem;
       color: #ff5a39;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
 
       @include device ((min: 320px, max: 1279px)) {
         font-size: .5rem;
