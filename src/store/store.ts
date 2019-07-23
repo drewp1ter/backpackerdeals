@@ -3,8 +3,8 @@ import { composeWithDevTools } from 'redux-devtools-extension'
 import { createEpicMiddleware } from 'redux-observable'
 
 import Types from 'Types'
-// import rootEpic from './root-epic'
 import services from '../services'
+import rootEpic from './root-epic'
 import rootReducer from './root-reducer'
 
 const initialState = {}
@@ -17,6 +17,6 @@ export default function initStore() {
   const middlewares = [epicMiddleware]
   const enhancer = composeEnhancers(applyMiddleware(...middlewares))
   const store = createStore(rootReducer, initialState, enhancer)
-  // epicMiddleware.run(rootEpic)
+  epicMiddleware.run(rootEpic)
   return store
 }

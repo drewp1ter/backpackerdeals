@@ -1,7 +1,9 @@
 import * as React from 'react'
 
 import { Button } from 'components'
+import { ISearchActions } from 'features/search'
 
+import { IContextSearchResult } from 'features/search/models'
 import styles from './BasicSearchTravel.module.scss'
 import configData, { IConfigItem } from './configData'
 
@@ -13,7 +15,11 @@ export interface ISuggestion {
 export interface ISuggestions {
   readonly activities: IConfigItem[]
   readonly locations: IConfigItem[]
-  readonly offers: IConfigItem[]
+  readonly offers: IContextSearchResult[]
+}
+
+export interface IProps {
+  readonly contextSearchResult: IContextSearchResult[]
 }
 
 export interface IState {
@@ -25,7 +31,7 @@ export interface IState {
   readonly inputValue: string
 }
 
-export class BasicSearchTravel extends React.Component<{}, IState> {
+export class BasicSearchTravel extends React.Component<Partial<ISearchActions> & IProps, IState> {
   public state: IState = {
     suggestions: {
       activities: [],
@@ -36,10 +42,18 @@ export class BasicSearchTravel extends React.Component<{}, IState> {
     suggestionIndex: -1,
     focus: false,
     suggestionsLength: 0,
-    inputValue: ''
+    inputValue: '',
   }
 
-  // public componentDidUpdate = ({ suggestions }: IProps) => suggestions !== this.props.suggestions && this.setState({ suggestions })
+  public componentDidUpdate = ({ contextSearchResult }: IProps) =>
+  contextSearchResult !== this.props.contextSearchResult &&
+    this.setState(prev => ({
+      ...prev,
+      suggestions: {
+        ...prev.suggestions,
+        offers: contextSearchResult,
+      },
+    }))
 
   public onInputFocus = () => {
     this.setState({ focus: true })
@@ -49,10 +63,9 @@ export class BasicSearchTravel extends React.Component<{}, IState> {
     this.setState({ showSuggestions: false, focus: false })
   }
 
-  // public toggleShowSuggestions = () => this.setState(prev => ({ ...prev, showSuggestions: !prev.showSuggestions }))
-
   public handleChange = ({ target: { value } }: React.ChangeEvent<HTMLInputElement>) => {
     try {
+      // const { contextSearch } = this.props
       const { categories, countries } = configData
       const suggestions = {
         activities: categories.filter((category: IConfigItem) => category.name.toLowerCase().includes(value!.toLowerCase())),
@@ -69,6 +82,7 @@ export class BasicSearchTravel extends React.Component<{}, IState> {
         offers: [],
       }
       const suggestionsLength = suggestions.activities.length + suggestions.locations.length
+      // contextSearch && contextSearch(value)
       this.setState({ suggestions, showSuggestions: suggestionsLength > 0, suggestionIndex: -1, inputValue: value, suggestionsLength })
     } catch (e) {
       console.error(e)
@@ -76,8 +90,15 @@ export class BasicSearchTravel extends React.Component<{}, IState> {
   }
 
   public getCurrentSuggestion = () => {
-    const { suggestions: { activities, locations, offers }, suggestionIndex } = this.state
-    return activities[suggestionIndex] || locations[suggestionIndex - activities.length] || offers[suggestionIndex - activities.length - locations.length]
+    const {
+      suggestions: { activities, locations, offers },
+      suggestionIndex,
+    } = this.state
+    return (
+      activities[suggestionIndex] ||
+      locations[suggestionIndex - activities.length] ||
+      offers[suggestionIndex - activities.length - locations.length]
+    )
   }
 
   public onKeyPress = (event: React.KeyboardEvent<HTMLInputElement>) => {
@@ -143,10 +164,10 @@ export class BasicSearchTravel extends React.Component<{}, IState> {
     try {
       let idx = -1
       const { suggestions } = this.state
-      const renderCategory = (name: string, items: IConfigItem[]) => (
+      const renderCategory = (name: string, items: any[]) => (
         <>
           <li className={styles.suggestionName}>{name}</li>
-          {items.map(item => {
+          {items.map((item: any) => {
             idx += 1
             return (
               <li
@@ -177,24 +198,25 @@ export class BasicSearchTravel extends React.Component<{}, IState> {
 
   public render = () => {
     const { showSuggestions, focus, inputValue, suggestionIndex } = this.state
+    console.log(this.props.contextSearchResult)
     return (
       <div className={styles.basicSearchTravel}>
-          <div className={styles.field} data-focus={focus || showSuggestions}>
-            <input
-              value={suggestionIndex >= 0 ? this.getCurrentSuggestion().name : inputValue }
-              onChange={this.handleChange}
-              onKeyPress={this.onKeyPress}
-              onKeyDown={this.onKeyPress}
-              onFocus={this.onInputFocus}
-              onBlur={this.onInputBlur}
-              autoComplete="off"
-              placeholder="Search for a destination, activity or tour"
-            />
-            <Button className={styles.searchBtn} theme="orange" form="rounded" size="lg">
-              SEARCH
-            </Button>
-          </div>
-          {showSuggestions && this.renderSuggestionsList()}
+        <div className={styles.field} data-focus={focus || showSuggestions}>
+          <input
+            value={suggestionIndex >= 0 ? this.getCurrentSuggestion().name : inputValue}
+            onChange={this.handleChange}
+            onKeyPress={this.onKeyPress}
+            onKeyDown={this.onKeyPress}
+            onFocus={this.onInputFocus}
+            onBlur={this.onInputBlur}
+            autoComplete="off"
+            placeholder="Search for a destination, activity or tour"
+          />
+          <Button className={styles.searchBtn} theme="orange" form="rounded" size="lg">
+            SEARCH
+          </Button>
+        </div>
+        {showSuggestions && this.renderSuggestionsList()}
       </div>
     )
   }

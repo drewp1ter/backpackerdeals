@@ -6,8 +6,8 @@ import { BasicSearchTravel } from './BasicSearchTravel'
 import { actions } from 'features/search'
 
 const mapStateToProps = (state: Types.RootState) => {
-  const { fetching, error, contextSearch } = state.search
-  return { fetching, error, contextSearch }
+  const { fetching, error, contextSearchResult } = state.search
+  return { fetching, error, contextSearchResult }
 }
 
 const mapDispatchToProps = (dispatch: Dispatch) =>

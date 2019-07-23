@@ -2,13 +2,13 @@
 const express = require('express')
 const next = require('next')
 const routes = require('./src/routes')
-const compression = require('compression')
+const proxyMiddleware = require('http-proxy-middleware')
 
 const devProxy = {
   '/api': {
-    target: 'https://backpackerdeals.com/',
-    changeOrigin: true
-  }
+    target: 'https://backpackerdeals.com',
+    changeOrigin: true,
+  },
 }
 
 const port = parseInt(process.env.PORT, 10) || 3000
@@ -16,7 +16,7 @@ const env = process.env.NODE_ENV || 'development'
 const dev = env !== 'production'
 const app = next({
   dir: '.', // base directory where everything is, could move to src later
-  dev
+  dev,
 })
 
 const handle = routes.getRequestHandler(app)
@@ -27,14 +27,16 @@ app
   .then(() => {
     server = express()
 
-    server.use(compression())
+    server.use(express.static('static'))
 
-    server.use(express.static('static'));
+    // server.use(function(req, res, next) {
+    //   req.header(':method', 'GET')
+    //   next()
+    // })
 
     // Set up the proxy.
     if (dev && devProxy) {
-      const proxyMiddleware = require('http-proxy-middleware')
-      Object.keys(devProxy).forEach(function (context) {
+      Object.keys(devProxy).forEach(function(context) {
         server.use(proxyMiddleware(context, devProxy[context]))
       })
     }

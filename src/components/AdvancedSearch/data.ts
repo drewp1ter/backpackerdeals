@@ -1,4 +1,4 @@
-const numberOfDays = new Array(20).fill(0).map((a, index) => `${index + 1}`);
+const numberOfDays = new Array(20).fill(0).map((_a, index) => `${index + 1}`);
 
 const startLocation = [
   'Haven 5:20 AM',

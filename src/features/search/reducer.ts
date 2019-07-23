@@ -1,6 +1,6 @@
 import { ActionType, getType } from 'typesafe-actions'
 import * as actions from './actions'
-import { IContextSearch } from './models'
+import { IContextSearchResult } from './models'
 
 export interface ISearchState {
   filtersAreOpened: boolean
@@ -8,7 +8,7 @@ export interface ISearchState {
   searchType: 'basic' | 'advanced'
   fetching: boolean
   error: IRequestError
-  contextSearch: IContextSearch[]
+  contextSearchResult: IContextSearchResult[]
 }
 
 export type SearchActionsTypes = ActionType<typeof actions>
@@ -19,7 +19,7 @@ const initialState: ISearchState = {
   searchIsOpen: false,
   searchType: 'basic',
   error: { message: '', status: 0 },
-  contextSearch: [],
+  contextSearchResult: [],
 }
 
 export default (state: ISearchState = initialState, action: SearchActionsTypes): ISearchState => {
@@ -58,7 +58,7 @@ export default (state: ISearchState = initialState, action: SearchActionsTypes):
       return {
         ...state,
         fetching: false,
-        contextSearch: action.payload,
+        contextSearchResult: action.payload,
       }
     case getType(actions.contextSearch.failure):
       return {

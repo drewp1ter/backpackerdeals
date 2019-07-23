@@ -6,7 +6,7 @@ import { isActionOf } from 'typesafe-actions'
 
 import { contextSearch } from './actions'
 import * as apiEndpoints from './apiEndpoints'
-import { ContextSearch, IContextSearch } from './models'
+import { ContextSearchResult, IContextSearchResult } from './models'
 
 export const contextSearchAction: Epic = (
   action$,
@@ -23,7 +23,7 @@ export const contextSearchAction: Epic = (
       }).pipe(
         timeout(10000),
         pluck('response'),
-        map((res: any) => res.map((searchResult: IContextSearch) => ContextSearch.create(searchResult))),
+        map((res: any) => res.map((searchResult: IContextSearchResult) => ContextSearchResult.create(searchResult))),
         map(contextSearch.success),
         catchError(error => of(contextSearch.failure(error.response ? { message: error.response.message, status: error.status } : error)))
       )

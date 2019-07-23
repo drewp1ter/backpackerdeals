@@ -23,7 +23,7 @@
     top: calc(100% + .5rem);
     left: 0;
     right: 0;
-    max-height: 19rem;
+    // max-height: 19rem;
     overflow: auto;
     margin: 0 1rem;
 
@@ -94,7 +94,7 @@
 
 
 @include device-mb {
-  .searchTravelInput {
+  .basicSearchTravel {
     display: none;
   }
 }

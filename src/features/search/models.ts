@@ -7,16 +7,16 @@ export interface IUri {
   slug: string
 }
 
-export interface IContextSearch {
+export interface IContextSearchResult {
   id: number | null
   name: string
   uri: IUri
 }
 
-export class ContextSearch implements IContextSearch {
-  public static create(dto: {}): IContextSearch {
+export class ContextSearchResult implements IContextSearchResult {
+  public static create(dto: {}): IContextSearchResult {
     const offer: any = humps.camelizeKeys(dto)
-    return new ContextSearch(offer)
+    return new ContextSearchResult(offer)
   }
 
   public id: number | null
