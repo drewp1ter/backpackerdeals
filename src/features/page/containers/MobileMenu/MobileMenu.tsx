@@ -17,7 +17,7 @@ interface IProps {
   readonly theme?: string
 }
 
-export const MobileMenu: React.FC<Partial<Types.RootState> & PageActions & ISearchActions & IProps> = ({
+export const MobileMenu: React.FC<Partial<Types.RootState> & Partial<PageActions> & Partial<ISearchActions> & IProps> = ({
   search,
   page,
   theme,
