@@ -83,7 +83,7 @@ export class BasicSearchTravel extends React.Component<Partial<ISearchActions> &
       }
       const suggestionsLength = suggestions.activities.length + suggestions.locations.length
       // contextSearch && contextSearch(value)
-      this.setState({ suggestions, showSuggestions: suggestionsLength > 0, suggestionIndex: -1, inputValue: value, suggestionsLength })
+      this.setState({ suggestions, showSuggestions: suggestionsLength > 0 && value !== '', suggestionIndex: -1, inputValue: value, suggestionsLength })
     } catch (e) {
       console.error(e)
     }
