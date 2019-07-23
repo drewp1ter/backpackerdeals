@@ -9,6 +9,7 @@ import BlackLogo from './assets/blackLogo.svg'
 import Logo from './assets/logo_Header.svg'
 import { currencies, languages } from './constants'
 import styles from './Header.module.scss'
+import Link from 'next/link'
 
 interface IProps {
   readonly theme?: string
@@ -108,12 +109,16 @@ export class Header extends Component<IProps> {
         <div className={styles.tools}>
           <div>
             <div className={styles.logoAndSearch}>
-              <img src={Logo} alt="Logo" className={styles.logo} />
-              <img src={BlackLogo} alt="Logo" className={styles.blackLogo} />
+              <Link href="/">
+                <a>
+                  <img src={Logo} alt="Logo" className={styles.logo} />
+                  <img src={BlackLogo} alt="Logo" className={styles.blackLogo} />
+                </a>
+              </Link>
               <AdvancedSearch theme={scrolled ? 'dark' : theme} />
             </div>
             <div className={styles.tours}>
-              <SelectMenu openerClass={styles.selectContinentOpener} opener={continentOpener} title="Select continent" size="lg" pos="left" >
+              <SelectMenu openerClass={styles.selectContinentOpener} opener={continentOpener} title="Select continent" size="lg" pos="left">
                 <SelectContinent displayTheme="flex" />
               </SelectMenu>
               <a href="">Top Deals</a>

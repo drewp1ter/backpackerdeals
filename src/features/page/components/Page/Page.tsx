@@ -22,11 +22,7 @@ export const Page: React.FC<IProps> = ({ children, headerTheme, withoutFooter = 
           <InstagramSection className={styles.instagramCards} />
         </LazyLoad>
       )}
-      {!withoutFooter && (
-        <LazyLoad height={500} offset={getOffset()}>
-          <Footer />
-        </LazyLoad>
-      )}
+      {!withoutFooter && <Footer />}
     </>
   )
 }

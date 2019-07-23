@@ -198,7 +198,6 @@ export class BasicSearchTravel extends React.Component<Partial<ISearchActions> &
 
   public render = () => {
     const { showSuggestions, focus, inputValue, suggestionIndex } = this.state
-    console.log(this.props.contextSearchResult)
     return (
       <div className={styles.basicSearchTravel}>
         <div className={styles.field} data-focus={focus || showSuggestions}>
