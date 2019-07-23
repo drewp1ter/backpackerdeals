@@ -101,13 +101,10 @@ export const Footer: React.FC<IProps> = ({ handleChange, email }) => (
               <i className="fab fa-facebook-square" />
             </li>
             <li>
-              <i className="fab fa-google-plus-g" />
-            </li>
-            <li>
-              <i className="fab fa-pinterest" />
-            </li>
-            <li>
               <i className="fab fa-instagram" />
+            </li>
+            <li>
+              <i className="fab fa-google-plus-g" />
             </li>
           </ul>
         </div>
