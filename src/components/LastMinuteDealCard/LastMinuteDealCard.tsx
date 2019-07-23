@@ -128,7 +128,7 @@ export const LastMinuteDealCard: React.FC<IProps> = ({
         <div className={styles.valueAndLink}>
           <div className={styles.totalPrice}>
             <span className={styles.from}>From</span>
-            <p className={styles.price}>${price} AUD</p>
+            <p className={styles.price}>AUD ${price}</p>
             <span className={styles.value}>Value AUD{value}</span>
           </div>
 

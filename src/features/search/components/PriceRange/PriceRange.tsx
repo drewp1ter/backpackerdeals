@@ -61,9 +61,9 @@ export const PriceRange: React.FC<IProps> = ({ className, onChange, range = [100
           )}
         </Tracks>
       </Slider>
-      <div className={styles.aud}>
-        <span>$100 AUD</span>
-        <span>$900 AUD</span>
+      <div className={styles.price}>
+        <span>AUD $100</span>
+        <span>AUD $900</span>
       </div>
     </div>
   )
