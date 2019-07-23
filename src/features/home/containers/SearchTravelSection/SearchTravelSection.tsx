@@ -1,13 +1,13 @@
 import * as React from 'react'
 
 import { HeaderWave } from 'components'
-import { ISearchState, SearchActions } from 'features/find'
+import { ISearchActions, ISearchState } from 'features/search'
 import { BasicSearchTravel } from '..'
 import { AdvancedSearchTravelInput } from '../../components'
 
 import styles from './SearchTravelSection.module.scss'
 
-export const SearchTravelSection: React.FC<Partial<SearchActions> & Partial<ISearchState>> = ({ openSearch, searchType }) => {
+export const SearchTravelSection: React.FC<Partial<ISearchActions> & Partial<ISearchState>> = ({ openSearch, searchType }) => {
   const [advancedSearch, toggleSearch] = React.useState<boolean>(false)
 
   const handleToggleSeach = () => toggleSearch(!advancedSearch)

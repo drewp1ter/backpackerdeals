@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 
 import { Button, MobileMenuWrapper, Select } from 'components'
 import { MobileSelectMenu } from 'features/page/components'
-import { SearchActions } from 'features/search'
+import { ISearchActions } from 'features/search'
 import { PageActions } from '../..'
 import { SearchRadio, SelectContinent } from '../../components'
 
@@ -17,7 +17,7 @@ interface IProps {
   readonly theme?: string
 }
 
-export const MobileMenu: React.FC<Partial<Types.RootState> & PageActions & SearchActions & IProps> = ({
+export const MobileMenu: React.FC<Partial<Types.RootState> & PageActions & ISearchActions & IProps> = ({
   search,
   page,
   theme,
