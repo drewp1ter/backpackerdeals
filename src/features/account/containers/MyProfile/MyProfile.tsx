@@ -1,7 +1,6 @@
 import React from 'react'
 
-import { Autocomplete, Button, Input, NewSelect, PhoneNumber } from 'components'
-import options from './options'
+import { Autocomplete, Button, Input, PhoneNumber } from 'components'
 
 import styles from './MyProfile.module.scss'
 
