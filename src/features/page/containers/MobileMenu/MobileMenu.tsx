@@ -27,25 +27,25 @@ export const MobileMenu: React.FC<Partial<Types.RootState> & Partial<PageActions
   closeSearch,
   changeSearchType,
 }) => {
-  const fields = {
-    startLocation: 'Start location',
+  const initialState = {
+    startLocation: '',
     // typeOfTour: 'Type of tour',
-    endLocation: 'End location',
-    date: new Date(),
-    numberOfDays: 'Number of days',
+    endLocation: '',
+    date: undefined,
+    numberOfDays: '',
     currency: currencies.aud,
     language: languages.english,
   }
 
   const [searchQuery, changeSearch] = React.useState('')
   const [multiDayTour, selectTourType] = React.useState(false)
-  const [selected, setSelected] = useState({ ...fields })
+  const [state, setState] = useState({ ...initialState })
 
-  const handleChange = (value: any, key: string) => setSelected({ ...selected, [key]: value })
+  const handleChange = (value: any, key: string) => setState({ ...state, [key]: value })
 
-  // const handleChangeDate = (value: Date) => handleChange(value, 'date')
+  const handleChangeDate = (value: Date) => handleChange(value, 'date')
 
-  const handleClickReset = () => setSelected({ ...fields })
+  const handleClickReset = () => setState({ ...initialState })
   const handleClickOption = (value: any, key: string) => {
     blurActiveElement()
     handleChange(value, key)
@@ -59,7 +59,7 @@ export const MobileMenu: React.FC<Partial<Types.RootState> & Partial<PageActions
 
   const currencyFormatFn = (currency: IIconInfo) => `${currency.icon} ${currency.name}`
   const languageFormatFn = (language: IIconInfo) => language.name
-  const dateFormatFn = (date: Date) => moment(date).format('DD/MM/YYYY')
+  const dateFormatFn = () => state.date && moment(state.date).format('DD/MM/YYYY')
 
   return (
     <div className={styles.mobileMenu} data-theme={theme}>
@@ -127,17 +127,12 @@ export const MobileMenu: React.FC<Partial<Types.RootState> & Partial<PageActions
               childrenClassName={styles.currencies}
               leftIcon="fas fa-chevron-down"
               reversableIcon="left"
-              selected={selected.currency}
+              selected={state.currency}
               format={currencyFormatFn}
               reverseType="180"
             >
               {Object.entries(currencies).map((currency, index) => (
-                <p
-                  key={`${currency[0]}-${index}`}
-                  data-currency={currency[1]}
-                  data-field="currency"
-                  onClick={() => handleClickOption(currency[1], 'currency')}
-                >
+                <p key={index} data-currency={currency[1]} data-field="currency" onClick={() => handleClickOption(currency[1], 'currency')}>
                   {currency[1].name} {currency[1].icon}
                 </p>
               ))}
@@ -146,7 +141,7 @@ export const MobileMenu: React.FC<Partial<Types.RootState> & Partial<PageActions
               childrenClassName={styles.languages}
               leftIcon="fas fa-chevron-down"
               reversableIcon="left"
-              selected={selected.language}
+              selected={state.language}
               format={languageFormatFn}
               reverseType="180"
             >
@@ -210,7 +205,7 @@ export const MobileMenu: React.FC<Partial<Types.RootState> & Partial<PageActions
                 <NewSelect
                   className={styles.select}
                   placeholder="Start location"
-                  value={selected.startLocation}
+                  value={state.startLocation}
                   options={startLocation}
                   name="startLocation"
                   onChange={handleChange}
@@ -223,20 +218,21 @@ export const MobileMenu: React.FC<Partial<Types.RootState> & Partial<PageActions
                 <NewSelect
                   className={styles.select}
                   placeholder="End location"
-                  value={selected.endLocation}
+                  value={state.endLocation}
                   options={options}
                   name="endLocation"
                   onChange={handleChange}
                   size="lg"
                 />
-                <NewSelect className={styles.select} placeholder="Select date" size="lg">
+                <NewSelect className={styles.select} placeholder="Select date" value={dateFormatFn()} size="lg">
                   <div className={styles.calendar}>
-                    <Calendar date={new Date()} />
+                    <Calendar date={state.date || new Date()} onChange={handleChangeDate} />
                   </div>
                 </NewSelect>
                 <NewSelect
+                  placeholder="Number of days"
                   className={styles.select}
-                  value={selected.numberOfDays}
+                  value={state.numberOfDays}
                   options={numberOfDays}
                   name="numberOfDays"
                   onChange={handleChange}

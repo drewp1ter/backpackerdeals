@@ -13,7 +13,7 @@
     }
 
     .optionBlock {
-      right: 0;
+      right: -1px;
       max-height: 23.12rem;
     }
   }
@@ -38,9 +38,9 @@
       padding: 0 1.5rem;
     }
 
-    .optionBlock {
-      top: 5rem;
-    }
+    // .optionBlock {
+    //   top: 5rem;
+    // }
 
     i, span {
       font-size: .93rem;
@@ -52,9 +52,9 @@
       padding: 0 1.125rem;
     }
 
-    .optionBlock {
-      top: 4.68rem;
-    }
+    // .optionBlock {
+    //   top: 4.68rem;
+    // }
 
     i, span {
       font-size: .812rem;
@@ -73,46 +73,46 @@
     }
   }
 
-  &[data-bodystyle="mobile"] {
-    position: static;
+  // &[data-bodystyle="mobile"] {
+  //   position: static;
 
-    .select {
+  //   .select {
 
-      span {
-        font-size: 1rem;
-      }
-    }
+  //     span {
+  //       font-size: 1rem;
+  //     }
+  //   }
 
-    .optionBlock {
-      position: static;
-      background: transparent;
-      padding: 10px 0;
-      overflow-y: visible;
-      max-height: none;
-      width: auto;
-      max-width: 20.625rem;
+  //   .optionBlock {
+  //     position: static;
+  //     background: transparent;
+  //     padding: 10px 0;
+  //     overflow-y: visible;
+  //     max-height: none;
+  //     width: auto;
+  //     max-width: 20.625rem;
 
-      .option {
-        padding: 0 0 0 10px;
-        font-size: 12px;
-        font-weight: 400;
-        line-height: 40px;
-        border-bottom: 1px solid #fafafa;
-        margin-bottom: 10px;
+  //     .option {
+  //       padding: 0 0 0 10px;
+  //       font-size: 12px;
+  //       font-weight: 400;
+  //       line-height: 40px;
+  //       border-bottom: 1px solid #fafafa;
+  //       margin-bottom: 10px;
 
-        &:last-of-type {
-          border-bottom: 0;
-          margin-bottom: 0;
-        }
-      }
-    }
+  //       &:last-of-type {
+  //         border-bottom: 0;
+  //         margin-bottom: 0;
+  //       }
+  //     }
+  //   }
 
-    &[data-theme="default"] {
-      .select {
-        border-radius: 4px;
-      }
-    }
-  }
+  //   &[data-theme="default"] {
+  //     .select {
+  //       border-radius: 4px;
+  //     }
+  //   }
+  // }
 
   .select {
     box-sizing: border-box;
@@ -165,7 +165,8 @@
     z-index: 5;
     position: absolute;
     border-radius: 4px;
-    left: 0;
+    top: 4.68rem;
+    left: -1px;
     background: #fff;
     padding: 1.56rem 0;
     box-sizing: border-box;
