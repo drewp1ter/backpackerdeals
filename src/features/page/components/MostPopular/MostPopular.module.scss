@@ -24,9 +24,19 @@
       grid-template-columns: 1fr 1fr;
     }
 
+    h6 {
+      transition: .2s ease color;
+    }
+
     li {
       grid-column-start: auto;
       grid-row-start: auto;
+
+      &:hover {
+        h6 {
+          color: #ff5a39;
+        }
+      }
     }
 
     .withoutImg {
