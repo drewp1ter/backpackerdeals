@@ -103,15 +103,6 @@
       text-overflow: ellipsis;
     }
 
-    // &[data-opened="true"] {
-    //   // border-color: #ff5a39 !important;
-
-    //   i {
-    //     color: #ff5a39 !important;
-    //     transform: rotate(180deg);
-    //   }
-    // }
-
     &[data-disabled="true"] {
       i {
         color: #959595 !important;
