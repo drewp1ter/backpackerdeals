@@ -54,8 +54,9 @@ export const NewSelect: React.FC<IProps> = ({
       tabIndex={0}
       onBlur={handleClckOutside}
       data-size={size}
+      data-opened={isOpen}
     >
-      <div className={styles.select} data-opened={isOpen} data-disabled={disabled} onClick={toggleSelect}>
+      <div className={styles.select} data-disabled={disabled} onClick={toggleSelect}>
         {anglePos === 'left' && <i className="fas fa-angle-down" data-pos={anglePos} />}
         <span>{value || placeholder}</span>
         {anglePos === 'right' && <i className="fas fa-angle-down" data-pos={anglePos} />}

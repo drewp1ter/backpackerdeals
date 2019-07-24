@@ -32,15 +32,22 @@
     }
   }
 
+  &[data-opened="true"] {
+    border-color: #ff5a39 !important;
+
+    .select {
+      i {
+        color: #ff5a39 !important;
+        transform: rotate(180deg);
+      }
+    }
+  }
+
   &[data-size="lg"] {
     .select {
       height: 3.5rem;
       padding: 0 1.5rem;
     }
-
-    // .optionBlock {
-    //   top: 5rem;
-    // }
 
     i, span {
       font-size: .93rem;
@@ -51,10 +58,6 @@
     .select {
       padding: 0 1.125rem;
     }
-
-    // .optionBlock {
-    //   top: 4.68rem;
-    // }
 
     i, span {
       font-size: .812rem;
@@ -72,47 +75,6 @@
       height: 100%;
     }
   }
-
-  // &[data-bodystyle="mobile"] {
-  //   position: static;
-
-  //   .select {
-
-  //     span {
-  //       font-size: 1rem;
-  //     }
-  //   }
-
-  //   .optionBlock {
-  //     position: static;
-  //     background: transparent;
-  //     padding: 10px 0;
-  //     overflow-y: visible;
-  //     max-height: none;
-  //     width: auto;
-  //     max-width: 20.625rem;
-
-  //     .option {
-  //       padding: 0 0 0 10px;
-  //       font-size: 12px;
-  //       font-weight: 400;
-  //       line-height: 40px;
-  //       border-bottom: 1px solid #fafafa;
-  //       margin-bottom: 10px;
-
-  //       &:last-of-type {
-  //         border-bottom: 0;
-  //         margin-bottom: 0;
-  //       }
-  //     }
-  //   }
-
-  //   &[data-theme="default"] {
-  //     .select {
-  //       border-radius: 4px;
-  //     }
-  //   }
-  // }
 
   .select {
     box-sizing: border-box;
@@ -141,14 +103,14 @@
       text-overflow: ellipsis;
     }
 
-    &[data-opened="true"] {
-      border-color: #ff5a39 !important;
+    // &[data-opened="true"] {
+    //   // border-color: #ff5a39 !important;
 
-      i {
-        color: #ff5a39 !important;
-        transform: rotate(180deg);
-      }
-    }
+    //   i {
+    //     color: #ff5a39 !important;
+    //     transform: rotate(180deg);
+    //   }
+    // }
 
     &[data-disabled="true"] {
       i {
