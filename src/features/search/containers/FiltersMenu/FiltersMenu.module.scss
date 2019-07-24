@@ -17,18 +17,17 @@
 
   > button {
     display: block;
-    margin: 25px auto 0 auto;
+    margin: 1.5rem auto 0 auto;
     padding: 0;
     cursor: pointer;
     width: calc(45%);
-    height: 48px;
+    height: 3rem;
     border-radius: 8px;
     border: 1px solid #e8e8e8;
     background: transparent;
     color: #202020;
     font-size: .92rem;
     font-weight: 400;
-    line-height: 24px;
     position: relative;
 
     i {
@@ -75,77 +74,6 @@
     margin: 15px 0;
     height: 0;
     border: 1px solid #e8e8e8;
-  }
-
-  .filtersSelect {
-    margin-top: 8px;
-    margin-bottom: 0;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding-right: 15px !important;
-
-    &[data-opened="opened"] i {
-      transform: rotate(90deg);
-    }
-
-    i {
-      order: 2;
-      margin: 0;
-      font-size: .812rem;
-
-      &:before {
-        content: "\f054";
-      }
-    }
-  }
-
-  .filtersPriceRange {
-    margin-top: 14px;
-  }
-
-  input {
-    padding: 0 15px;
-    width: calc(100% - 32px);
-    height: 48px;
-    border-radius: 4px;
-    background: transparent;
-    border: 1px solid #e8e8e8;
-    color: #202020;
-    font-weight: 400;
-    transition: .2s ease border-color;
-    font-size: 1rem;
-
-    &::placeholder {
-      color: #202020;
-      font-weight: 400;
-    }
-
-    &:focus {
-      border-color: #ff5a39;
-    }
-  }
-
-  .filtersButtons {
-    margin-top: 15px;
-
-    .orangeButton {
-      width: 47.8%;
-      height: 15vw;
-      max-height: 40px;
-      font-size: 1rem !important;
-    }
-
-    button:last-child {
-      font-size: .9rem;
-      margin-left: 1rem;
-      cursor: pointer;
-      color: #959595;
-      font-weight: 400;
-      line-height: 32px;
-      background-color: transparent;
-      border: none;
-    }
   }
 }
 

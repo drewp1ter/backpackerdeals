@@ -18,6 +18,10 @@
     margin-left: 24rem;
   }
 
+  .filters {
+    margin-right: 3.5rem;
+  }
+
   .header {
     display: flex;
     justify-content: space-between;
@@ -99,56 +103,6 @@
     display: flex;
     margin-top: 2.8rem;
 
-    .filters {
-      margin-right: 3.5rem;
-
-      .filtersCheckboxes {
-        border: 1px solid #efefef;
-        border-radius: 0 .25rem .25rem 0;
-        padding: 1.5rem 1.25rem;
-
-        .checkbox {
-          margin-bottom: 1.75rem;
-
-          &:last-child {
-            margin: 0;
-          }
-        }
-
-        label {
-          font-size: 1rem;
-        }
-      }
-
-      .filtersSelect {
-        // padding: 1rem 1rem 1.2rem 1.5rem;
-        border-color: #efefef;
-        border-radius: 0 .25rem .25rem 0;
-        min-width: 14.9vw;
-
-        i {
-          margin-right: 1rem;
-        }
-      }
-
-      > h4 {
-        margin: 3.5rem 0 1.56rem 1.5rem;
-        font-size: 1.125rem;
-        font-weight: 600;
-        text-align: left;
-        color: #202020;
-
-        &:first-of-type {
-          margin-top: 0;
-        }
-      }
-
-      button {
-        margin-top: 3.5rem;
-        font-size: 1rem;
-      }
-    }
-
     .cardsContainer {
       width: 100%;
     }
@@ -206,26 +160,6 @@
         font-size: 1rem;
         font-weight: 600;
         margin: 2.43rem 0 1.4rem .857rem;
-      }
-
-      .filtersSelect {
-        // padding: .86rem;
-        min-width: 19.2vw;
-
-        i {
-          margin-right: .57rem;
-        }
-      }
-
-      .filtersCheckboxes {
-        padding: .93rem .93rem;
-
-        .checkbox span {
-          width: 8px;
-          height: 8px;
-          box-sizing: border-box;
-          margin-right: .57rem;
-        }
       }
     }
 

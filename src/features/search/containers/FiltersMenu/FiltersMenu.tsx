@@ -1,16 +1,13 @@
 import * as React from 'react'
 
 import { Button, MobileMenuWrapper } from 'components'
-import { Select } from 'components'
-import { FiltersDropdown, PriceRange } from 'features/search/components'
-
+import { Filters } from '../../components'
+import { filters } from '../../components/MoreActivities/data'
 import { ISearchActions } from 'features/search'
-import { numberOfDays } from '../../../../components/AdvancedSearch/data'
 
 import styles from './FiltersMenu.module.scss'
 
 interface IProps {
-  readonly filters: JSX.Element | JSX.Element[]
   readonly filtersAreOpened: boolean
 }
 
@@ -18,7 +15,6 @@ export const FiltersMenu: React.FC<Partial<ISearchActions> & IProps> = ({
   filtersAreOpened,
   closeFilters,
   openFilters,
-  filters,
 }) => (
   <div className={styles.filtersMenu}>
     <button onClick={openFilters}>
@@ -42,37 +38,7 @@ export const FiltersMenu: React.FC<Partial<ISearchActions> & IProps> = ({
 
         <hr />
 
-        <input placeholder="Type country" type="text" />
-
-        <FiltersDropdown title="Select city">{filters}</FiltersDropdown>
-        <Select
-          className={styles.filtersSelect}
-          onChange={() => {}}
-          options={['Australia', 'Australia', 'Australia', 'Australia']}
-          theme="dark"
-          selectedOption="Select country"
-          bodyTheme="mobile"
-        />
-        <Select
-          className={styles.filtersSelect}
-          onChange={() => {}}
-          options={numberOfDays}
-          theme="dark"
-          selectedOption="Number of days"
-          bodyTheme="mobile"
-        />
-
-        <PriceRange className={styles.filtersPriceRange} />
-
-        <div className={styles.filtersButtons}>
-          <Button onClick={closeFilters} theme="orange" form="rectangled" className={styles.orangeButton}>
-            Apply filter
-          </Button>
-
-          <Button theme="transparent" form="standart" size="sm">
-            Reset filter
-          </Button>
-        </div>
+        <Filters filters={filters} viewType="mobile" />
       </>
     </MobileMenuWrapper>
   </div>
