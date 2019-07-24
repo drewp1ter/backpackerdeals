@@ -5,30 +5,116 @@
   position: relative;
   outline: none;
 
-  &[data-theme="dark"] {
+  &[data-theme="default"] {
     border: solid 1px #e8e8e8;
 
     i {
       color: #959595;
     }
+
+    .optionBlock {
+      right: 0;
+      max-height: 23.12rem;
+    }
   }
 
-  &[data-theme="light"] {
-    margin-right: .625rem;
+  &[data-theme="theme1"] {
     border-radius: 5px;
     border: solid 1px #efefef;
 
-    i {
+    i, span {
       color: #fafafa;
     }
 
-    span {
-      color: #fafafa;
+    .optionBlock {
+      max-height: 23.5rem;
+      min-width: 20.625rem;
+    }
+  }
+
+  &[data-size="lg"] {
+    .select {
+      height: 3.5rem;
+      padding: 0 1.5rem;
+    }
+
+    .optionBlock {
+      top: 5rem;
+    }
+
+    i, span {
+      font-size: .93rem;
+    }
+  }
+
+  &[data-size="md"], &[data-size="md-font"] {
+    .select {
+      padding: 0 1.125rem;
+    }
+
+    .optionBlock {
+      top: 4.68rem;
+    }
+
+    i, span {
+      font-size: .812rem;
+    }
+  }
+
+  &[data-size="md"] {
+    .select {
+      height: 2.5rem;
+    }
+  }
+
+  &[data-size="md-font"] {
+    .select {
+      height: 100%;
+    }
+  }
+
+  &[data-bodystyle="mobile"] {
+    position: static;
+
+    .select {
+
+      span {
+        font-size: 1rem;
+      }
+    }
+
+    .optionBlock {
+      position: static;
+      background: transparent;
+      padding: 10px 0;
+      overflow-y: visible;
+      max-height: none;
+      width: auto;
+      max-width: 20.625rem;
+
+      .option {
+        padding: 0 0 0 10px;
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 40px;
+        border-bottom: 1px solid #fafafa;
+        margin-bottom: 10px;
+
+        &:last-of-type {
+          border-bottom: 0;
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    &[data-theme="default"] {
+      .select {
+        border-radius: 4px;
+      }
     }
   }
 
   .select {
-    padding-left: 1.5rem;
     box-sizing: border-box;
     position: relative;
     cursor: pointer;
@@ -49,20 +135,10 @@
       }
     }
 
-    &[data-size="lg"] {
-      height: 3.5rem;
-
-      i {
-        font-size: .93rem;
-      }
-    }
-
-    &[data-size="md"] {
-      height: 2.5rem;
-
-      i {
-        font-size: .81rem;
-      }
+    span {
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
     }
 
     &[data-opened="true"] {
@@ -89,9 +165,7 @@
     z-index: 5;
     position: absolute;
     border-radius: 4px;
-    left: 0px;
-    right: 0;
-    max-height: 23.12rem;
+    left: 0;
     background: #fff;
     padding: 1.56rem 0;
     box-sizing: border-box;
@@ -100,14 +174,6 @@
     border: 1px solid #efefef;
 
     @include scrollbar;
-
-    &[data-size="md"] {
-      top: 4.68rem;
-    }
-
-    &[data-size="lg"] {
-      top: 5rem;
-    }
 
     .option {
       cursor: pointer;
@@ -154,112 +220,10 @@
       }
     }
 
-    &[data-theme="light"] {
+    &[data-theme="theme1"] {
       .select {
         margin-right: 8px;
       }
     }
   }
-
-  // .searchSelect {
-  //   &[data-bodytheme="mobile"] {
-  //     position: static;
-  //     margin-bottom: 12px;
-
-  //     &:last-of-type {
-  //       margin-bottom: 0;
-  //     }
-
-  //     .select {
-  //       padding-left: 15px;
-  //     }
-
-  //     .optionBlock {
-  //       position: static;
-  //       background: transparent;
-  //       padding: 10px 0;
-  //       overflow-y: visible;
-  //       max-height: none;
-  //       width: auto;
-
-  //       .option {
-  //         padding: 0 0 0 10px;
-  //         font-size: 12px;
-  //         font-weight: 400;
-  //         border-bottom: 1px solid #fafafa;
-  //         margin-bottom: 10px;
-
-  //         &:last-of-type {
-  //           border-bottom: 0px;
-  //           margin-bottom: 0;
-  //         }
-  //       }
-  //     }
-
-  //     &[data-theme="dark"] {
-  //       .select {
-  //         border-radius: 4px;
-  //       }
-  //     }
-  //   }
-  // }
 }
-
-// @media screen and (max-width: 1615px) {
-//   .searchSelect {
-//     .select {
-//       i {
-//         font-size: 12px;
-//       }
-//     }
-
-//     .optionBlock {
-//       top: 65px;
-//       padding: 20px 0;
-
-//       .option {
-//         padding: 10px 0 10px 32px;
-//         font-size: 13px;
-//       }
-//     }
-
-//     &[data-theme="light"] {
-//       .select {
-//         margin-right: 8px;
-//       }
-//     }
-//   }
-// }
-
-// @media screen and (min-width: 768px) and (max-width: 1415px) {
-//   .searchSelect {
-//     .select {
-//       padding: 3px 6px 3px 3px;
-
-//       i {
-//         font-size: 12px;
-//         margin-right: 4px;
-//       }
-
-//       span {
-//         font-size: 12px;
-//       }
-//     }
-
-//     .optionBlock {
-//       top: 65px;
-//       padding: 20px 0;
-
-//       .option {
-//         padding: 10px 0 10px 32px;
-//         font-size: 13px;
-//       }
-//     }
-
-//     &[data-theme="light"] {
-//       .select {
-//         margin-right: 8px;
-//       }
-//     }
-//   }
-// }

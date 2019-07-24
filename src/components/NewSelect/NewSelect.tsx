@@ -8,32 +8,36 @@ interface IProps {
   readonly options?: string[]
   readonly children?: React.ReactNode
   readonly className?: string
-  readonly theme: 'dark' | 'light'
-  readonly value: string
+  readonly theme?: 'default' | 'theme1'
+  readonly value?: string
   readonly disabled?: boolean
-  readonly bodyTheme?: 'mobile'
+  readonly bodyStyle?: 'mobile'
   readonly name?: string
   readonly onChange?: (value: any, name: string) => void
-  readonly size?: 'md' | 'lg'
+  readonly size?: 'md' | 'md-font' | 'lg'
   readonly anglePos?: 'left' | 'right'
+  readonly placeholder?: string
 }
 
 export const NewSelect: React.FC<IProps> = ({
   children,
   className,
   options,
-  theme,
+  theme = 'default',
   value,
   disabled = false,
   onChange,
   size = 'md',
-  bodyTheme,
+  bodyStyle,
   name = '',
   anglePos = 'left',
+  placeholder,
 }) => {
   const [isOpen, setOpen] = useState<boolean>(false)
 
-  const handleClose = () => setOpen(false)
+  const handleClckOutside = (event: React.FocusEvent<HTMLDivElement>) =>
+    !event.currentTarget.contains(event.relatedTarget as Node) && setOpen(false)
+
   const toggleSelect = () => !disabled && setOpen(!isOpen)
 
   const handleClick = (event: React.MouseEvent<HTMLElement>) => {
@@ -46,21 +50,22 @@ export const NewSelect: React.FC<IProps> = ({
     <div
       className={classNames(styles.searchSelect, className)}
       data-theme={theme}
-      data-bodytheme={bodyTheme}
+      data-bodystyle={bodyStyle}
       tabIndex={0}
-      onBlur={handleClose}
+      onBlur={handleClckOutside}
+      data-size={size}
     >
-      <div className={styles.select} data-opened={isOpen} data-disabled={disabled} data-size={size} onClick={toggleSelect}>
+      <div className={styles.select} data-opened={isOpen} data-disabled={disabled} onClick={toggleSelect}>
         {anglePos === 'left' && <i className="fas fa-angle-down" data-pos={anglePos} />}
-        <span>{value}</span>
+        <span>{value || placeholder}</span>
         {anglePos === 'right' && <i className="fas fa-angle-down" data-pos={anglePos} />}
       </div>
 
       {isOpen && (
-        <ul className={styles.optionBlock} data-size={size}>
+        <ul className={styles.optionBlock}>
           {options &&
-            options.map((option, index) => (
-              <li key={`option-${index}`} className={styles.option} onClick={handleClick} data-index={index}>
+            options.map((option, idx) => (
+              <li key={idx} className={styles.option} onClick={handleClick} data-index={idx}>
                 {option}
               </li>
             ))}

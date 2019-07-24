@@ -4,64 +4,85 @@ import * as React from 'react'
 
 import { Button } from 'components'
 
-import { Select } from 'components'
+import { Calendar, NewSelect } from 'components'
 import { numberOfDays, startLocation } from '../../../../components/AdvancedSearch/data'
 
 import styles from './AdvancedSearchTravelInput.module.scss'
 
+// export interface IState {
+//   readonly startLocation: string
+//   readonly typeOfTour: string
+//   readonly endLocation: string
+//   readonly date: Date | undefined
+//   readonly numberOfDays: string
+// }
+
 export const AdvancedSearchTravelInput: React.FC = () => {
-  const [selected, setSelected] = useState({
-    startLocation: 'Start location',
-    typeOfTour: 'Type of tour',
-    endLocation: 'End location',
-    date: new Date(),
-    numberOfDays: 'Number of days',
+  const [state, setState] = useState({
+    startLocation: '',
+    typeOfTour: '',
+    endLocation: '',
+    date: undefined,
+    numberOfDays: '',
   })
 
-  const handleChange = (value: any, key: string) => setSelected({ ...selected, [key]: value })
+  const handleChange = (value: any, key: string) => setState({ ...state, [key]: value })
 
   const handleChangeDate = (value: Date) => handleChange(value, 'date')
 
-  const dateFormatFn = (value: Date) => moment(value).format('DD/MM/YYYY')
+  const dateFormatFn = () => state.date && moment(state.date).format('DD/MM/YYYY')
 
   return (
     <div className={styles.advancedSearchTravelInput}>
       <div className={styles.searchBlock}>
-        <Select
+        <NewSelect
+          placeholder="Start location"
           className={styles.lastSelect}
-          selectedOption={selected.startLocation}
+          value={state.startLocation}
           options={startLocation}
-          onChange={value => handleChange(value, 'startLocation')}
-          theme="light"
+          name="startLocation"
+          size="md-font"
+          onChange={handleChange}
+          theme="theme1"
         />
-        <Select
+        <NewSelect
+          placeholder="Type of tour"
           className={styles.lastSelect}
-          selectedOption={selected.typeOfTour}
+          value={state.typeOfTour}
           options={startLocation}
-          onChange={value => handleChange(value, 'typeOfTour')}
-          theme="light"
+          name="typeOfTour"
+          size="md-font"
+          onChange={handleChange}
+          theme="theme1"
         />
-        <Select
+        <NewSelect
+          placeholder="End location"
           className={styles.lastSelect}
-          selectedOption={selected.endLocation}
+          value={state.endLocation}
           options={startLocation}
-          onChange={value => handleChange(value, 'endLocation')}
-          theme="light"
+          name="endLocation"
+          size="md-font"
+          onChange={handleChange}
+          theme="theme1"
         />
-        <Select
+        <NewSelect
           className={styles.lastSelect}
-          selectedOption={selected.date}
-          format={dateFormatFn}
-          onChange={handleChangeDate}
-          type="calendar"
-          theme="light"
-        />
-        <Select
+          placeholder="Select date"
+          size="md-font"
+          value={dateFormatFn()}
+          theme="theme1"
+        >
+          <Calendar date={state.date || new Date()} onChange={handleChangeDate} />
+        </NewSelect>
+        <NewSelect
+          placeholder="Number of days"
           className={styles.lastSelect}
-          selectedOption={selected.numberOfDays}
+          value={state.numberOfDays}
           options={numberOfDays}
-          onChange={value => handleChange(value, 'numberOfDays')}
-          theme="light"
+          name="numberOfDays"
+          size="md-font"
+          onChange={handleChange}
+          theme="theme1"
         />
       </div>
       <Button theme="orange" className={styles.searchBtn}>SEARCH</Button>

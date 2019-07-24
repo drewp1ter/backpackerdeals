@@ -58,7 +58,7 @@ export class Select extends React.Component<IProps, IState> {
 
   public isContainNode(el: Node | null): boolean {
     const { current } = this.ref
-    const isCalendarEl = !!el && (el.parentNode as HTMLElement).className.search('react-calendar') > -1;
+    const isCalendarEl = !!el && (el.parentNode as HTMLElement).className.search('react-calendar') > -1
     return !!current && (current === el || current.contains(el) || isCalendarEl)
   }
 
@@ -75,23 +75,21 @@ export class Select extends React.Component<IProps, IState> {
           data-disabled={disabled && 'disabled'}
           onClick={this.toggleSelect}
         >
-          <i className="fas fa-angle-down"/>
+          <i className="fas fa-angle-down" />
           <span>{format ? format(selectedOption) : selectedOption}</span>
         </div>
 
         {isOpen && (
-
           <div className={styles.optionBlock}>
             <ScrollBar>
-              {options && type === 'default' &&
-              options.map((option, index) => (
-                <p key={`option-${index}`} className={styles.option} onClick={this.handleChange} data-index={index}>
-                  {option}
-                </p>
-              ))}
-              {type === 'calendar' &&
-              <Calendar date={selectedOption} onChange={this.handleChangeCalendar}/>
-              }
+              {options &&
+                type === 'default' &&
+                options.map((option, index) => (
+                  <p key={`option-${index}`} className={styles.option} onClick={this.handleChange} data-index={index}>
+                    {option}
+                  </p>
+                ))}
+              {type === 'calendar' && <Calendar date={selectedOption} onChange={this.handleChangeCalendar} />}
               {children}
             </ScrollBar>
           </div>

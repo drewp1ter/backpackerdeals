@@ -11,7 +11,7 @@ import reducer, { ActionType, IAction, initialState, IState, ViewType } from './
 
 const counries = ['Australia', 'Dania', 'Australia', 'Iceland', 'New Zeland', 'Canada', 'New Zeland', 'Canada', 'Dania', 'Australia', 'Iceland', 'New Zeland', 'Canada', 'New Zeland', 'Canada']
 const initFilters = {
-  country: counries[0],
+  country: '',
   city: '',
   numberOfDays: 'Select Number of days',
   accommodationStyle: 'All accommodation styles',
@@ -91,9 +91,9 @@ export const MoreActivities: React.FC = () => {
         <div className={styles.filters}>
           <h4>Select country</h4>
           <NewSelect
+            placeholder="Select Coz"
             className={styles.filtersSelect}
             options={counries}
-            theme="dark"
             name="country"
             size="lg"
             value={selectedFilters.country}
@@ -106,7 +106,6 @@ export const MoreActivities: React.FC = () => {
             className={styles.filtersSelect}
             name="numberOfDays"
             options={numberOfDays}
-            theme="dark"
             size="lg"
             value={selectedFilters.numberOfDays}
             onChange={handleChangeSelect}
@@ -117,7 +116,6 @@ export const MoreActivities: React.FC = () => {
             name="accommodationStyle"
             size="lg"
             options={['All accommodation styles', 'Australia', 'Australia', 'Australia']}
-            theme="dark"
             value={selectedFilters.accommodationStyle}
             onChange={handleChangeSelect}
           />
@@ -127,7 +125,6 @@ export const MoreActivities: React.FC = () => {
             name="styleOfTravel"
             size="lg"
             options={['Family friendly', 'Australia', 'Australia', 'Australia']}
-            theme="dark"
             value={selectedFilters.styleOfTravel}
             onChange={handleChangeSelect}
           />

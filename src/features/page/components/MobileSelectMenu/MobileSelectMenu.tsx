@@ -40,7 +40,7 @@ export const MobileSelectMenu: React.FC<IProps> = ({
   }
 
   return (
-    <div className={styles.mobileSelectMenu}>
+    <li className={styles.mobileSelectMenu}>
       <div className={classNames(styles.opener, openerClass, isOpen && styles.opened)} onClick={toggle}>
         <div>
           {leftIcon && <i className={leftIcon} data-reversable={reversableIcon === 'left'} data-reversetype={reverseType} />}
@@ -50,6 +50,6 @@ export const MobileSelectMenu: React.FC<IProps> = ({
       </div>
 
       {isOpen && (childrenClassName ? <div className={childrenClassName} onClick={toggle}>{children}</div> : children)}
-    </div>
+    </li>
   )
 }

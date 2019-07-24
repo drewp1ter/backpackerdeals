@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 
-import { Button, MobileMenuWrapper, Select } from 'components'
-import { MobileSelectMenu } from 'features/page/components'
+import { Button, MobileMenuWrapper, Select, NewSelect, Calendar } from 'components'
 import { ISearchActions } from 'features/search'
+import moment from 'moment'
 import { PageActions } from '../..'
-import { SearchRadio, SelectContinent } from '../../components'
+import { MobileSelectMenu, SearchRadio, SelectContinent } from '../../components'
 
 import Types from 'Types'
 import { numberOfDays, startLocation } from '../../../../components/AdvancedSearch/data'
@@ -29,7 +29,7 @@ export const MobileMenu: React.FC<Partial<Types.RootState> & Partial<PageActions
 }) => {
   const fields = {
     startLocation: 'Start location',
-    typeOfTour: 'Type of tour',
+    // typeOfTour: 'Type of tour',
     endLocation: 'End location',
     date: new Date(),
     numberOfDays: 'Number of days',
@@ -59,6 +59,7 @@ export const MobileMenu: React.FC<Partial<Types.RootState> & Partial<PageActions
 
   const currencyFormatFn = (currency: IIconInfo) => `${currency.icon} ${currency.name}`
   const languageFormatFn = (language: IIconInfo) => language.name
+  const dateFormatFn = (date: Date) => moment(date).format('DD/MM/YYYY')
 
   return (
     <div className={styles.mobileMenu} data-theme={theme}>
@@ -83,8 +84,8 @@ export const MobileMenu: React.FC<Partial<Types.RootState> & Partial<PageActions
             </button>
           </div>
 
-          <div className={styles.navigation}>
-            <div onClick={openSearch} className={styles.menuItem}>
+          <ul className={styles.navigation}>
+            <li onClick={openSearch} className={styles.menuItem}>
               <div className={styles.title}>
                 <i className="fas fa-search" />
                 <span>Search</span>
@@ -93,7 +94,7 @@ export const MobileMenu: React.FC<Partial<Types.RootState> & Partial<PageActions
                 <span>{search!.searchType === 'advanced' ? 'Advanced search' : 'Basic search'}</span>
                 <i className="fas fa-filter" />
               </div>
-            </div>
+            </li>
             <MobileSelectMenu
               title="Explore by country"
               leftIcon="fas fa-map-marker-alt"
@@ -103,24 +104,24 @@ export const MobileMenu: React.FC<Partial<Types.RootState> & Partial<PageActions
             >
               <SelectContinent theme="mobile" handleClose={closeMenu} />
             </MobileSelectMenu>
-            <div className={styles.menuItem}>
+            <li className={styles.menuItem}>
               <div className={styles.title}>
                 <i className="fas fa-thumbs-up" />
                 <span>Top Deals</span>
               </div>
-            </div>
-            <div className={styles.menuItem}>
+            </li>
+            <li className={styles.menuItem}>
               <div className={styles.title}>
                 <i className="fas fa-clock" />
                 <span>Last Minute Deals</span>
               </div>
-            </div>
-            <div className={styles.menuItem}>
+            </li>
+            <li className={styles.menuItem}>
               <div className={styles.title}>
                 <i className="fas fa-user-alt" />
                 <span>Sign up</span>
               </div>
-            </div>
+            </li>
             <h5>Settings</h5>
             <MobileSelectMenu
               childrenClassName={styles.currencies}
@@ -150,13 +151,13 @@ export const MobileMenu: React.FC<Partial<Types.RootState> & Partial<PageActions
               reverseType="180"
             >
               {Object.entries(languages).map((language, index) => (
-                <div className={styles.languages} onMouseDown={() => handleClickOption(language[1], 'language')} key={`language-${index}`}>
+                <div className={styles.languages} onMouseDown={() => handleClickOption(language[1], 'language')} key={index}>
                   <img src={language[1].icon} alt={language[1].name} />
                   <span>{language[1].name}</span>
                 </div>
               ))}
             </MobileSelectMenu>
-          </div>
+          </ul>
         </>
       </MobileMenuWrapper>
       <MobileMenuWrapper className={styles.search} open={search!.searchIsOpen}>
@@ -185,7 +186,7 @@ export const MobileMenu: React.FC<Partial<Types.RootState> & Partial<PageActions
                       {countries
                         .filter(country => country.includes(searchQuery))
                         .map((country, index) => (
-                          <p key={`${country}-${index}`}>{country}</p>
+                          <p key={index}>{country}</p>
                         ))}
                     </div>
                   </>
@@ -198,7 +199,7 @@ export const MobileMenu: React.FC<Partial<Types.RootState> & Partial<PageActions
                       {cities
                         .filter(city => city.includes(searchQuery))
                         .map((city, index) => (
-                          <p key={`${city}-${index}`}>{city}</p>
+                          <p key={index}>{city}</p>
                         ))}
                     </div>
                   </>
@@ -206,37 +207,40 @@ export const MobileMenu: React.FC<Partial<Types.RootState> & Partial<PageActions
               </>
             ) : (
               <>
-                <Select
-                  bodyTheme="mobile"
-                  selectedOption={selected.startLocation}
-                  options={options}
-                  onChange={value => handleChange(value, 'startLocation')}
-                  theme="dark"
+                <NewSelect
+                  className={styles.select}
+                  placeholder="Start location"
+                  value={selected.startLocation}
+                  options={startLocation}
+                  name="startLocation"
+                  onChange={handleChange}
+                  size="lg"
                 />
                 <div className={styles.radioButtons}>
                   <SearchRadio placeholder="Day Tour" selected={!multiDayTour} onClick={() => selectTourType(false)} />
                   <SearchRadio placeholder="Multi day Tour" selected={multiDayTour} onClick={() => selectTourType(true)} />
                 </div>
-                <Select
-                  bodyTheme="mobile"
-                  selectedOption={selected.typeOfTour}
-                  options={startLocation}
-                  onChange={value => handleChange(value, 'typeOfTour')}
-                  theme="dark"
-                />
-                <Select
-                  bodyTheme="mobile"
-                  selectedOption={selected.endLocation}
+                <NewSelect
+                  className={styles.select}
+                  placeholder="End location"
+                  value={selected.endLocation}
                   options={options}
-                  onChange={value => handleChange(value, 'endLocation')}
-                  theme="dark"
+                  name="endLocation"
+                  onChange={handleChange}
+                  size="lg"
                 />
-                <Select
-                  bodyTheme="mobile"
-                  selectedOption={selected.numberOfDays}
+                <NewSelect className={styles.select} placeholder="Select date" size="lg">
+                  <div className={styles.calendar}>
+                    <Calendar date={new Date()} />
+                  </div>
+                </NewSelect>
+                <NewSelect
+                  className={styles.select}
+                  value={selected.numberOfDays}
                   options={numberOfDays}
-                  onChange={value => handleChange(value, 'numberOfDays')}
-                  theme="dark"
+                  name="numberOfDays"
+                  onChange={handleChange}
+                  size="lg"
                 />
                 <div className={styles.advancedSearchButtons}>
                   <Button className={styles.orangeButton} theme="orange" form="rectangled">

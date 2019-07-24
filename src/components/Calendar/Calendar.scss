@@ -1,16 +1,15 @@
 .react-calendar {
-  padding: 0 23.1px;
+  padding: 0 1.5rem;
   font-family: 'Montserrat', sans-serif !important;
 
   .react-calendar__navigation {
-    margin-bottom: 26.9px;
+    margin-bottom: 1.75rem;
 
     .react-calendar__navigation__label {
       background-color: transparent;
       border: none;
-      font-size: 14px;
+      font-size: .875rem;
       text-align: center;
-      color: #202020;
       outline: none;
     }
 
@@ -18,8 +17,7 @@
       cursor: pointer;
       background-color: transparent;
       border: none;
-      font-size: 24px;
-      line-height: 1;
+      font-size: 1.5rem;
       text-align: center;
       color: #dadada;
       transition: .2s ease color;
@@ -36,17 +34,16 @@
 
   .react-calendar__month-view {
     .react-calendar__month-view__weekdays {
-      margin-bottom: 5px;
+      margin-bottom: .375rem;
 
       .react-calendar__month-view__weekdays__weekday {
         text-align: center;
 
         abbr {
           text-decoration: none;
-          font-size: 12px;
+          font-size: .75rem;
           line-height: 2;
           text-align: center;
-          color: #202020;
         }
       }
     }
@@ -61,7 +58,7 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background: url("./assets/calendar_grid.svg") no-repeat;
+        background: url("./assets/calendarGrid.svg") no-repeat;
         background-position: top left;
         background-size: 100%;
         pointer-events: none;
@@ -71,25 +68,25 @@
       .react-calendar__tile.react-calendar__month-view__days__day.react-calendar__month-view__days__day--weekend,
       .react-calendar__tile.react-calendar__month-view__days__day.react-calendar__month-view__days__day--weekend,
       .react-calendar__tile.react-calendar__month-view__days__day {
+        // position: relative;
         cursor: pointer;
-        width: 40px;
-        height: 40px;
+        width: 2.5rem;
+        height: 2.46rem;
         border: none;
         transition: .2s ease background-color;
         outline: none;
         background: none;
         z-index: 1;
         margin-left: 0;
+        box-sizing: border-box;
 
         &:not(.react-calendar__tile--active):hover {
           background-color: darken(#ffffff, 5);
         }
 
         abbr {
-          font-size: 12px;
-          line-height: 2;
+          font-size: .75rem;
           text-align: center;
-          color: #202020;
         }
       }
 
@@ -108,10 +105,8 @@
         cursor: pointer;
         background-color: transparent;
         border: none;
-        font-size: 14px;
-        line-height: 1.71;
+        font-size: .875rem;
         text-align: center;
-        color: #202020;
         transition: .2s ease color;
         outline: none;
 
@@ -128,10 +123,8 @@
         cursor: pointer;
         background-color: transparent;
         border: none;
-        font-size: 14px;
-        line-height: 1.71;
+        font-size: .875rem;
         text-align: center;
-        color: #202020;
         transition: .2s ease color;
         outline: none;
 
@@ -148,10 +141,8 @@
         cursor: pointer;
         background-color: transparent;
         border: none;
-        font-size: 14px;
-        line-height: 1.71;
+        font-size: .875rem;
         text-align: center;
-        color: #202020;
         transition: .2s ease color;
         outline: none;
 
