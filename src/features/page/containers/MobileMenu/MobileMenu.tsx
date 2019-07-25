@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 
-import { Button, MobileMenuWrapper, Select, NewSelect, Calendar } from 'components'
+import { Button, Calendar, MobileMenuWrapper, NewSelect } from 'components'
 import { ISearchActions } from 'features/search'
 import moment from 'moment'
 import { PageActions } from '../..'
-import { MobileSelectMenu, SearchRadio, SelectContinent } from '../../components'
+import { MobileSelectMenu, SelectContinent } from '../../components'
 
 import Types from 'Types'
 import { numberOfDays, startLocation } from '../../../../components/AdvancedSearch/data'
@@ -29,7 +29,6 @@ export const MobileMenu: React.FC<Partial<Types.RootState> & Partial<PageActions
 }) => {
   const initialState = {
     startLocation: '',
-    // typeOfTour: 'Type of tour',
     endLocation: '',
     date: undefined,
     numberOfDays: '',
@@ -38,7 +37,6 @@ export const MobileMenu: React.FC<Partial<Types.RootState> & Partial<PageActions
   }
 
   const [searchQuery, changeSearch] = React.useState('')
-  const [multiDayTour, selectTourType] = React.useState(false)
   const [state, setState] = useState({ ...initialState })
 
   const handleChange = (value: any, key: string) => setState({ ...state, [key]: value })
@@ -211,10 +209,6 @@ export const MobileMenu: React.FC<Partial<Types.RootState> & Partial<PageActions
                   onChange={handleChange}
                   size="lg"
                 />
-                <div className={styles.radioButtons}>
-                  <SearchRadio placeholder="Day Tour" selected={!multiDayTour} onClick={() => selectTourType(false)} />
-                  <SearchRadio placeholder="Multi day Tour" selected={multiDayTour} onClick={() => selectTourType(true)} />
-                </div>
                 <NewSelect
                   className={styles.select}
                   placeholder="End location"

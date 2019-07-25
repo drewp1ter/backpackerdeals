@@ -27,7 +27,7 @@ export const MostPopular: React.FC<IProps> = ({ places, title, theme, handleClos
   ))
 
   return (
-    <div data-theme={theme} className={styles.root}>
+    <div data-theme={theme} className={styles.mostPopular}>
       <h5>{title}</h5>
       <ul className={styles.places}>
         {renderPlaces()}
