@@ -90,7 +90,7 @@ export const Filters: React.FC<IProps> = ({ filters, className, applyFilter, vie
       />
       {viewType === ViewType.normal && <h4>Accomodation style</h4>}
       <NewSelect
-        placeholder="All accommodation styles"
+        placeholder="All accommodation style"
         className={styles.filtersSelect}
         name="accommodationStyle"
         size="lg"
@@ -100,7 +100,7 @@ export const Filters: React.FC<IProps> = ({ filters, className, applyFilter, vie
       />
       {viewType === ViewType.normal && <h4>Style of travel</h4>}
       <NewSelect
-        placeholder="Family friendly"
+        placeholder="Style of travel"
         className={styles.filtersSelect}
         name="styleOfTravel"
         size="lg"
