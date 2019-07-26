@@ -5,7 +5,7 @@ import { DealLayout } from 'features/deal/components'
 import { Page } from 'features/page/components'
 
 const Deal = () => (
-  <Page>
+  <Page headerTheme="dark">
     <Helmet>
       <title>Deal</title>
     </Helmet>
