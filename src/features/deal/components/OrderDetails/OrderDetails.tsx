@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Button } from 'components'
+import { Button, ExposeTime } from 'components'
 import flash from './assets/flash.svg'
 import styles from './OrderDetails.module.scss'
 
@@ -30,22 +30,7 @@ export const OrderDetails: React.FC = () => {
           <div className={styles.lmd}>
             <p>Last Minute Deal</p>
           </div>
-          <div className={styles.exposeTime}>
-            <div className={styles.daysBlock}>
-              <p>02</p>
-              <p className={styles.timeName}>Days</p>
-            </div>
-            <p className={styles.colon}>:</p>
-            <div className={styles.hoursBlock}>
-              <p>10</p>
-              <p className={styles.timeName}>Hours</p>
-            </div>
-            <p className={styles.colon}>:</p>
-            <div className={styles.minutesBlock}>
-              <p>51</p>
-              <p className={styles.timeName}>Minutes</p>
-            </div>
-          </div>
+          <ExposeTime days="02" hours="10" minutes="51" size='md' className={styles.exposeTime} />
           <p className={styles.dealInfo}>Valid for travel between</p>
           <p className={styles.dealInfo}>04.03.2018 to 06.03.2018</p>
         </div>

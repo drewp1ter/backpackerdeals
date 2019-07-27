@@ -90,47 +90,7 @@
   }
 
   .exposeTime {
-    display: flex;
-    justify-content: center;
     margin-top: 1.125rem;
-
-    .timeName {
-      font-size: .5rem;
-    }
-
-    p {
-      margin: 0;
-      font-size: 1.875rem;
-      font-weight: bold;
-
-      &.colon {
-        margin: 0 .5rem;
-      }
-    }
-
-    .days, .hours, .minutes {
-      color: #fafafa;
-      font-size: 0.81rem;
-      font-weight: 400;
-    }
-
-    .daysBlock {
-      p {
-        text-align: left;
-      }
-    }
-
-    .hoursBlock {
-      p {
-        text-align: center;
-      }
-    }
-
-    .minutesBlock {
-      p {
-        text-align: right;
-      }
-    }
   }
 
   .instant {

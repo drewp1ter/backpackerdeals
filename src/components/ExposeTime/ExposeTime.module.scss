@@ -1,0 +1,58 @@
+.exposeTime {
+  display: flex;
+  justify-content: center;
+
+  &[data-size="lg"] {
+    .timeName {
+      font-size: .81rem;
+    }
+
+    p {
+      font-size: 3rem;
+
+      &.colon {
+        margin: 0 1rem;
+      }
+    }
+  }
+
+  &[data-size="md"] {
+    .timeName {
+      font-size: .5rem;
+    }
+
+    p {
+      font-size: 1.875rem;
+
+      &.colon {
+        margin: 0 .5rem;
+      }
+    }
+  }
+
+  .days, .hours, .minutes {
+    font-size: 0.81rem;
+  }
+
+  p {
+    font-weight: bold;
+  }
+
+  .daysBlock {
+    p {
+      text-align: left;
+    }
+  }
+
+  .hoursBlock {
+    p {
+      text-align: center;
+    }
+  }
+
+  .minutesBlock {
+    p {
+      text-align: right;
+    }
+  }
+}

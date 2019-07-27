@@ -2,7 +2,7 @@ import * as React from 'react'
 
 import classNames from 'classnames'
 
-import { Icon, Rating } from 'components'
+import { ExposeTime, Icon, Rating } from 'components'
 import LazyLoad from 'react-lazyload'
 import styles from './LastMinuteDealCard.module.scss'
 
@@ -18,6 +18,11 @@ enum View {
   horizontal = 'horizontal',
 }
 
+enum SaleType {
+  topDeal = 'topDeal',
+  mostPopular = 'mostPopular'
+}
+
 interface IProps {
   readonly view: keyof typeof View
   readonly img: any
@@ -25,7 +30,7 @@ interface IProps {
   readonly price: number
   readonly location: string
   readonly sale: string
-  readonly saleType: string
+  readonly saleType: keyof typeof SaleType
   readonly sellOut?: boolean
   readonly likeable?: 'wide' | 'short'
   readonly value: number
@@ -58,31 +63,14 @@ export const LastMinuteDealCard: React.FC<IProps> = ({
   return (
     <li data-view={view} className={classNames(styles.lastMinuteDealCard, className)}>
       <div className={styles.imageBlock}>
-        {saleType === 'topDeal' && <Icon className={styles.badge} name="topDeal" alt="Top Deal" />}
-        {saleType === 'mostPopular' && <Icon className={styles.badge} name="mostPopular" alt="Most Popular" />}
+        {saleType === SaleType.topDeal && <Icon className={styles.badge} name={SaleType.topDeal} alt="Top Deal" />}
+        {saleType === SaleType.mostPopular && <Icon className={styles.badge} name={SaleType.mostPopular} alt="Most Popular" />}
         {sellOut && <div className={styles.sellOut}>SELL OUT</div>}
         {likeable && <i className={classNames('fas fa-heart', styles.like)} data-type={likeable} />}
         <div className={styles.sale}>
           <p>{sale}</p>
         </div>
-        {exposeTime && (
-          <div className={styles.exposeTime}>
-            <div className={styles.daysBlock}>
-              <p>{exposeTime.days}</p>
-              <p className={styles.timeName}>Days</p>
-            </div>
-            <p className={styles.colon}>:</p>
-            <div className={styles.hoursBlock}>
-              <p>{exposeTime.hours}</p>
-              <p className={styles.timeName}>Hours</p>
-            </div>
-            <p className={styles.colon}>:</p>
-            <div className={styles.minutesBlock}>
-              <p>{exposeTime.minutes}</p>
-              <p className={styles.timeName}>Minutes</p>
-            </div>
-          </div>
-        )}
+        {exposeTime && <ExposeTime {...exposeTime} className={styles.exposeTime} size="lg" />}
         <LazyLoad offset={400}>
           <img className={styles.background} srcSet={img.srcSet} sizes={sizes} src={img.src} alt="Last Minute Deal Tour" />
         </LazyLoad>
