@@ -11,7 +11,7 @@ export interface IProps {
   readonly onClick?: () => void
   readonly form?: 'rectangled' | 'rounded' | 'circle' | 'standart'
   readonly size?: 'sm' | 'md' | 'lg'
-  readonly theme?: 'orange' | 'transparentBorderWhite' | 'transparentBorderOrange' | 'transparent'
+  readonly theme?: 'orange' | 'transparentBorderWhite' | 'transparentBorderOrange' | 'transparent' | 'standart'
 }
 
 export const Button: React.FC<IProps> = ({

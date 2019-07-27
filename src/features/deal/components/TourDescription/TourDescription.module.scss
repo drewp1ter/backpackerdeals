@@ -1,15 +1,15 @@
 .tourDescription {
   .descriptionHeader {
-    margin-top: 30px;
+    margin: 1.875rem 0 2rem;
 
     h1 {
-      margin: 0 0 22px 0;
-      font-size: 48px;
+      margin-bottom: 1.375rem;
+      font-size: 3rem;
       font-weight: bold;
       text-align: left;
       color: #ff5a39;
     }
-    
+
     .location {
       display: flex;
       align-items: center;
@@ -17,32 +17,30 @@
       .locationPart {
         display: flex;
         align-items: center;
-        margin-right: 15px;
+        margin-right: 1rem;
 
         &:last-of-type {
           margin-right: 0;
         }
 
         >i {
-          font-size: 12px;
+          font-size: .75rem;
           text-align: left;
           color: #959595;
         }
 
         span {
-          margin-left: 5px;
-          font-size: 16px;
+          margin-left: .5rem;
+          font-size: 1rem;
           text-align: left;
-          color: #202020;
         }
       }
     }
 
     p {
-      margin: 12px 0 32px 0;
-      font-size: 16px;
+      margin-top: .75rem;
+      font-size: 1rem;
       text-align: left;
-      color: #202020;
     }
   }
 }

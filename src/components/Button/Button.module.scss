@@ -29,6 +29,15 @@
     }
   }
 
+  &[data-theme="standart"] {
+    border: 1px solid #e8e8e8;
+    background-color: #fff;
+
+    &:hover {
+      box-shadow: 0 12px 24px rgba(255, 90, 57, 0.28);
+    }
+  }
+
   &[data-theme="transparentBorderOrange"] {
     background: transparent;
     border: 1px solid #ff5a39;

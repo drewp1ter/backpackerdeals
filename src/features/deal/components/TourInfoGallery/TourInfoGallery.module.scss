@@ -10,12 +10,12 @@
 }
 
 .tourInfoGallery {
-  width: 1136px;
+  width: 71rem;
 
   .activeTile {
     border-radius: 8px;
     position: relative;
-    height: 576px;
+    height: 36rem;
     overflow: hidden;
 
     & > img {
@@ -25,17 +25,17 @@
   }
 
   .tilesContainer {
-    margin-top: 24px;
+    margin-top: 1.5rem;
     position: relative;
-    max-height: 120px;
+    max-height: 7.5rem;
     display: flex;
   }
 
   .tile {
     position: relative;
     border-radius: 5px;
-    width: 176px;
-    height: 120px;
+    width: 11rem;
+    height: 7.5rem;
     overflow: hidden;
 
     img {
@@ -48,7 +48,7 @@
     }
 
     & + .tile {
-      margin-left: 16px;
+      margin-left: 1rem;
     }
   }
 
@@ -56,24 +56,24 @@
     display: flex;
     position: absolute;
     right: 0;
-    bottom: 32px;
-    width: 160px;
-    height: 64px;
+    bottom: 2rem;
+    width: 10rem;
+    height: 4rem;
     border-radius: 8px 0 0 8px;
     background-color: #ff5a39;
     color: white;
     cursor: pointer;
 
     & > div:last-child {
-      padding: 11px;
+      padding: .75rem;
       box-sizing: border-box;
-      font-size: 14px;
+      font-size: .875rem;
       line-height: 1.71;
     }
   }
 
   .toSellIcon {
-    width: 65px;
+    width: 4rem;
     box-sizing: border-box;
     border-right: 1px solid #F45636;
     position: relative;
@@ -89,14 +89,14 @@
   .galleryControls {
     img {
       position: absolute;
-      left: 16px;
+      left: 1rem;
       top: 50%;
       transform: translateY(-50%);
       cursor: pointer;
 
       &:last-of-type {
         left: unset;
-        right: 16px;
+        right: 1rem;
         transform: translateY(-50%) rotate(180deg);
       }
     }

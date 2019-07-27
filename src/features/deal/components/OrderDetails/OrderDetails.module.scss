@@ -1,0 +1,205 @@
+.orderDetails {
+  width: 23rem;
+  margin-left: 1rem;
+
+  .main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    border: 1px solid #e8e8e8;
+    border-radius: 8px;
+
+    > p:nth-child(2) {
+      color: #4eb62a;
+      margin-bottom: .5rem;
+
+      i {
+        margin-left: .2rem;
+      }
+    }
+
+    > p:nth-child(5) {
+      font-size: .875rem;
+    }
+  }
+
+  .price {
+    display: flex;
+    align-items: baseline;
+    margin: 4rem 0 .5rem;
+
+    span {
+      font-size: .875rem;
+      margin-right: .5rem;
+    }
+
+    h5 {
+      color: #ff5a39;
+      font-size: 1.625rem;
+    }
+  }
+
+  .childAndFamily {
+    display: flex;
+    justify-content: space-between;
+    font-size: .875rem;
+    padding: 1.625rem 0;
+    border-top: 1px dashed #e4e4e4;
+    border-bottom: 1px dashed #e4e4e4;
+    margin: 1.25rem 1rem 1.625rem;
+
+    strong {
+      margin-right: .5rem;
+    }
+
+    p:first-child {
+      margin-right: 2rem;
+    }
+  }
+
+  .deal {
+    position: relative;
+    width: 100%;
+    border: 1px solid #ffcb00;
+    margin-top: 1rem;
+    padding-bottom: 1.25rem;
+  }
+
+  .dealInfo {
+    font-size: .875rem;
+    text-align: center;
+    margin-top: .625rem;
+  }
+
+  .lmd {
+    border-radius: 0 0 0 8px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: .375rem .625rem;
+    background-color: #ffcb00;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    p {
+      font-size: .625rem;
+      color: #fff;
+    }
+  }
+
+  .exposeTime {
+    display: flex;
+    justify-content: center;
+    margin-top: 1.125rem;
+
+    .timeName {
+      font-size: .5rem;
+    }
+
+    p {
+      margin: 0;
+      font-size: 1.875rem;
+      font-weight: bold;
+
+      &.colon {
+        margin: 0 .5rem;
+      }
+    }
+
+    .days, .hours, .minutes {
+      color: #fafafa;
+      font-size: 0.81rem;
+      font-weight: 400;
+    }
+
+    .daysBlock {
+      p {
+        text-align: left;
+      }
+    }
+
+    .hoursBlock {
+      p {
+        text-align: center;
+      }
+    }
+
+    .minutesBlock {
+      p {
+        text-align: right;
+      }
+    }
+  }
+
+  .instant {
+    margin-top: 1.625rem;
+    display: flex;
+    align-items: center;
+
+    img {
+      width: .625rem;
+      height: 1rem;
+      margin-right: .375rem;
+    }
+  }
+
+  .included {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1.75rem auto 1rem;
+    width: 21rem;
+    height: 2.5rem;
+    border-radius: 8px;
+    border: 1px solid #e8e8e8;
+
+    p {
+      color: #4eb62a;
+      font-size: .875rem;
+    }
+  }
+
+  .bookButton {
+    width: 21rem;
+  }
+
+  .aviableDate {
+    margin: 1.625rem 0;
+
+    i {
+      margin-right: .375rem;
+    }
+
+    span {
+      margin-left: .375rem;
+      color: #ff5a39;
+    }
+  }
+
+  .button {
+    margin-top: 16px;
+    width: 100%;
+    border-radius: 4px;
+
+    i {
+      margin-right: .375rem;
+    }
+  }
+
+  .share {
+    text-align: center;
+    font-size: .875rem;
+    margin-top: .5rem;
+
+    i {
+      cursor: pointer;
+      margin-left: .5rem;
+    }
+
+    &:first-of-type {
+      margin-top: 1.625rem;
+    }
+  }
+}
