@@ -2,7 +2,7 @@ import * as React from 'react'
 
 import styles from './LastMinuteDeal.module.scss'
 
-import { LastMinuteDealCard } from 'components'
+import { DealCard } from 'components'
 import { circleScroll } from 'utils'
 
 const data = [
@@ -29,7 +29,7 @@ const data = [
     price: 900,
     location: 'Australia',
     sale: 'AUD$300',
-    saleType: '',
+    saleType: undefined,
     value: 1200,
     duration: '2 days, 1 night',
     rating: 4.5,
@@ -63,7 +63,7 @@ const data = [
     price: 900,
     location: 'Australia',
     sale: 'AUD$300',
-    saleType: 'mostPopular',
+    saleType: 'mostPopular' as any,
     value: 1200,
     duration: '2 days, 1 night',
     rating: 4.5,
@@ -90,12 +90,12 @@ export const LastMinuteDeal: React.FC = () => {
   return (
     <ul ref={setStartPos} className={styles.lastMinuteDeal} onScroll={handleScroll}>
       {data.map((card, index) => (
-        <LastMinuteDealCard view="vertical" {...card} key={`${index}-card`} />
+        <DealCard view="vertical" {...card} key={index} />
       ))}
       {data.map((card, index) => (
-        <LastMinuteDealCard view="vertical" {...card} key={`${index}-card`} className={styles.carousel} />
+        <DealCard view="vertical" {...card} key={index} className={styles.carousel} />
       ))}
-      <LastMinuteDealCard view="vertical" {...data[0]} className={styles.carousel} />
+      <DealCard view="vertical" {...data[0]} className={styles.carousel} />
     </ul>
   )
 }

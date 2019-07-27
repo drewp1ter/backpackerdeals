@@ -1,1 +1,0 @@
-export { LastMinuteDealCard } from './LastMinuteDealCard'

@@ -2,7 +2,7 @@ import * as React from 'react'
 
 import styles from './TopActivities.module.scss'
 
-import { LastMinuteDealCard } from 'components'
+import { DealCard } from 'components'
 import { circleScroll } from 'utils'
 
 const data = [
@@ -12,7 +12,7 @@ const data = [
     price: 900,
     location: 'Australia, Sydney',
     sale: '30% OFF',
-    saleType: 'topDeal',
+    saleType: 'topDeal' as any,
     value: 1200,
     duration: '2 days, 1 night',
     rating: 4.5,
@@ -24,7 +24,7 @@ const data = [
     price: 900,
     location: 'Australia, Sydney',
     sale: 'AUD$300',
-    saleType: '',
+    saleType: undefined,
     value: 1200,
     duration: '2 days, 1 night',
     rating: 4.5,
@@ -41,7 +41,7 @@ const data = [
     price: 900,
     location: 'Australia, Sydney',
     sale: '30% OFF',
-    saleType: 'topDeal',
+    saleType: 'topDeal' as any,
     sellOut: true,
     value: 1200,
     duration: '2 days, 1 night',
@@ -68,12 +68,12 @@ export const TopActivities: React.FC = () => {
 
       <ul ref={setStartPos} className={styles.cards} onScroll={handleScroll}>
         {data.map((card, index) => (
-          <LastMinuteDealCard view="reversed" {...card} key={`${index}-card`} likeable="wide" />
+          <DealCard view="reversed" {...card} key={index} likeable="wide" />
         ))}
         {data.map((card, index) => (
-          <LastMinuteDealCard view="reversed" {...card} key={`${index}-card`} className={styles.carousel} likeable="wide" />
+          <DealCard view="reversed" {...card} key={index} className={styles.carousel} likeable="wide" />
         ))}
-        <LastMinuteDealCard view="reversed" {...data[0]} className={styles.carousel} likeable="wide" />
+        <DealCard view="reversed" {...data[0]} className={styles.carousel} likeable="wide" />
       </ul>
     </div>
   )

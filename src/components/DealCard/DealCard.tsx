@@ -4,7 +4,7 @@ import classNames from 'classnames'
 
 import { ExposeTime, Icon, Rating } from 'components'
 import LazyLoad from 'react-lazyload'
-import styles from './LastMinuteDealCard.module.scss'
+import styles from './DealCard.module.scss'
 
 interface IExposeTime {
   days: string
@@ -23,14 +23,14 @@ enum SaleType {
   mostPopular = 'mostPopular'
 }
 
-interface IProps {
-  readonly view: keyof typeof View
+export interface IProps {
+  readonly view?: keyof typeof View
   readonly img: any
   readonly tourName: string
   readonly price: number
   readonly location: string
   readonly sale: string
-  readonly saleType: keyof typeof SaleType
+  readonly saleType?: keyof typeof SaleType
   readonly sellOut?: boolean
   readonly likeable?: 'wide' | 'short'
   readonly value: number
@@ -42,8 +42,8 @@ interface IProps {
   readonly sizes: string
 }
 
-export const LastMinuteDealCard: React.FC<IProps> = ({
-  view,
+export const DealCard: React.FC<IProps> = ({
+  view = View.vertical,
   img,
   tourName,
   rating,
@@ -61,7 +61,7 @@ export const LastMinuteDealCard: React.FC<IProps> = ({
   sizes,
 }) => {
   return (
-    <li data-view={view} className={classNames(styles.lastMinuteDealCard, className)}>
+    <li data-view={view} className={classNames(styles.dealCard, className)}>
       <div className={styles.imageBlock}>
         {saleType === SaleType.topDeal && <Icon className={styles.badge} name={SaleType.topDeal} alt="Top Deal" />}
         {saleType === SaleType.mostPopular && <Icon className={styles.badge} name={SaleType.mostPopular} alt="Most Popular" />}

@@ -1,6 +1,6 @@
 import React, { useReducer } from 'react'
 
-import { LastMinuteDealCard } from 'components'
+import { DealCard } from 'components'
 import { Filters } from '..'
 import { FiltersMenu } from '../../containers'
 import { cards, filters } from './data'
@@ -21,7 +21,7 @@ export const MoreActivities: React.FC = () => {
   const renderCards = () =>
     cards &&
     cards.map((card, idx) => (
-      <LastMinuteDealCard className={styles.card} view={view} {...card} key={idx} likeable={view === ViewType.list ? 'wide' : 'short'} />
+      <DealCard className={styles.card} view={view} {...card} key={idx} likeable={view === ViewType.list ? 'wide' : 'short'} />
     ))
 
   const handlePageControls = ({ currentTarget }: React.MouseEvent<HTMLElement>) => {

@@ -1,0 +1,23 @@
+.dealsSection {
+  h3 {
+    color: #ff5a39;
+    font-size: 3.5rem;
+    font-weight: bold;
+    text-align: center;
+    margin: 6.25rem auto 4.5rem;
+  }
+
+  .lastMinuteDeal {
+    display: flex;
+    margin: 0 auto;
+
+    li {
+      width: 100%;
+      margin-right: 1rem;
+
+      &:nth-child(4) {
+        margin-right: 0;
+      }
+    }
+  }
+}

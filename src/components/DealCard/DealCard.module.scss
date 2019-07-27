@@ -1,7 +1,7 @@
 @import "src/scss/device";
 @import "src/scss/fonts";
 
-.lastMinuteDealCard {
+.dealCard {
   transition: .2s ease box-shadow;
   border-radius: 8px;
   border: 1px solid #efefef;
@@ -15,10 +15,12 @@
 
     .imageBlock .background {
       transform: scale3d(1.1, 1.1, 1.1);
+      cursor: pointer;
     }
 
     .tour {
       color: #ff5a39;
+      cursor: pointer;
     }
   }
 
@@ -100,17 +102,16 @@
       color: #ffffff;
       z-index: 1;
       transition: .2s ease color;
+      font-size: 1.5rem;
 
       &[data-type="wide"] {
         bottom: 1.875rem;
         right: 1.6rem;
-        font-size: 1.5rem;
       }
 
       &[data-type="short"] {
         bottom: 1.5rem;
         right: .625rem;
-        font-size: 1.5rem;
       }
 
       &:hover {
@@ -278,7 +279,7 @@
 }
 
 @include device-tb {
-  .lastMinuteDealCard {
+  .dealCard {
     &[data-view="horizontal"] {
       .cardDescription {
         width: 65%;
@@ -365,7 +366,7 @@
 }
 
 @media screen and (max-width: 1024px) {
-  .lastMinuteDealCard {
+  .dealCard {
     .imageBlock {
       .exposeTime {
         .timeName {
@@ -385,13 +386,13 @@
 }
 
 @media screen and (max-width: 768px) { // 940
-  .lastMinuteDealCard {
+  .dealCard {
     min-width: 272px;
   }
 }
 
 @include device-mb {
-  .lastMinuteDealCard {
+  .dealCard {
     .imageBlock {
       height: 90vw;
       max-height: 288px;
