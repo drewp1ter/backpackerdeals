@@ -68,7 +68,7 @@ export const LastMinuteDealCard: React.FC<IProps> = ({
         {exposeTime && (
           <div className={styles.exposeTime}>
             <div className={styles.daysBlock}>
-              <p>{exposeTime.hours}</p>
+              <p>{exposeTime.days}</p>
               <p className={styles.timeName}>Days</p>
             </div>
             <p className={styles.colon}>:</p>
