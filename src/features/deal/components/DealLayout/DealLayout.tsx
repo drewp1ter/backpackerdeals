@@ -18,18 +18,18 @@ import { recommendedDeals } from './data'
 export const DealLayout: React.FC = () => (
   <div className={styles.dealLayout}>
     <DealNavigation />
-    <TourDescription />
+    <TourDescription className={styles.tourDescription} />
     <div className={styles.header}>
       <div>
-        <TourInfoGallery />
-        <TourIcons />
+        <TourInfoGallery className={styles.tourInfoGallery} />
+        <TourIcons className={styles.tourIcons} />
       </div>
-      <OrderDetails />
+      <OrderDetails className={styles.orderDetails} />
     </div>
     <TourDetailsSection />
-    <FaqSection />
-    <RelatedTravelBlogs />
-    <DealsSection title="Recommended Deals" data={recommendedDeals} />
-    <DealsSection title="Recently viewed deals" data={recommendedDeals} />
+    <FaqSection className={styles.faqSection} />
+    <RelatedTravelBlogs className={styles.relatedTravelBlogs} />
+    <DealsSection className={styles.dealsSection} title="Recommended Deals" data={recommendedDeals} />
+    <DealsSection className={styles.dealsSection} title="Recently viewed deals" data={recommendedDeals} />
   </div>
 )

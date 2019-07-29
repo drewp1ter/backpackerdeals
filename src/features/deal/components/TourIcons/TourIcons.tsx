@@ -1,11 +1,16 @@
+import classNames from 'classnames'
 import React from 'react'
 
 import { Icon } from 'components'
 import styles from './TourIcons.module.scss'
 
-export const TourIcons: React.FC = () => {
+export interface IProps {
+  readonly className?: string
+}
+
+export const TourIcons: React.FC<IProps> = ({ className }) => {
   return (
-    <ul className={styles.tourIcons}>
+    <ul className={classNames(styles.tourIcons, className)}>
       <li>
         <Icon name="deal1" />
         <p>3 days and</p>

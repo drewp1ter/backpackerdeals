@@ -1,3 +1,4 @@
+import classNames from 'classnames'
 import React from 'react'
 
 import { DealCard } from 'components'
@@ -7,11 +8,12 @@ import styles from './DealsSection.module.scss'
 export interface IProps {
   readonly title: string
   readonly data: IDealCardProps[]
+  readonly className?: string
 }
 
-export const DealsSection: React.FC<IProps> = ({ title, data }) => {
+export const DealsSection: React.FC<IProps> = ({ title, data, className }) => {
   return (
-    <div className={styles.dealsSection}>
+    <div className={classNames(styles.dealsSection, className)}>
       <h3>{title}</h3>
 
       <ul className={styles.lastMinuteDeal}>

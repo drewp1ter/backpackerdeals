@@ -1,12 +1,18 @@
 import React from 'react'
 
+import classNames from 'classnames'
+
 import { Button, ExposeTime } from 'components'
 import flash from './assets/flash.svg'
 import styles from './OrderDetails.module.scss'
 
-export const OrderDetails: React.FC = () => {
+export interface IProps {
+  readonly className?: string
+}
+
+export const OrderDetails: React.FC<IProps> = ({ className }) => {
   return (
-    <div className={styles.orderDetails}>
+    <div className={classNames(styles.orderDetails, className)}>
       <div className={styles.main}>
         <div className={styles.price}>
           <span>From</span>
@@ -30,7 +36,7 @@ export const OrderDetails: React.FC = () => {
           <div className={styles.lmd}>
             <p>Last Minute Deal</p>
           </div>
-          <ExposeTime days="02" hours="10" minutes="51" size='md' className={styles.exposeTime} />
+          <ExposeTime days="02" hours="10" minutes="51" size="md" className={styles.exposeTime} />
           <p className={styles.dealInfo}>Valid for travel between</p>
           <p className={styles.dealInfo}>04.03.2018 to 06.03.2018</p>
         </div>

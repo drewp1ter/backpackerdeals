@@ -1,11 +1,15 @@
-import * as React from 'react'
+import classNames from 'classnames'
+import React from 'react'
 
 import { Rating } from 'components'
-
 import styles from './TourDescription.module.scss'
 
-export const TourDescription: React.FC = () => (
-  <div className={styles.tourDescription}>
+export interface IProps {
+  readonly className?: string
+}
+
+export const TourDescription: React.FC<IProps> = ({ className }) => (
+  <div className={classNames(styles.tourDescription, className)}>
     <div className={styles.descriptionHeader}>
       <h1>Alice Springs to Alice Springs Uluru Tour - 3 Days 2 Nights</h1>
 

@@ -4,32 +4,38 @@ import classNames from 'classnames'
 import { images } from './assets'
 import styles from './TourInfoGallery.module.scss'
 
-export const TourInfoGallery: React.FC = () => {
+export interface IProps {
+  readonly className?: string
+}
 
+export const TourInfoGallery: React.FC<IProps> = ({ className }) => {
   const renderGalleryControls = () => (
     <div className={styles.galleryControls}>
-      <img src={images.control} alt="Control Left"/>
-      <img src={images.control} alt="Control Right"/>
+      <img src={images.control} alt="Control Left" />
+      <img src={images.control} alt="Control Right" />
     </div>
   )
 
   return (
-    <div className={styles.tourInfoGallery}>
+    <div className={classNames(styles.tourInfoGallery, className)}>
       <div className={styles.activeTile}>
-        <img src={images.activeTour.src} alt={images.activeTour.alt}/>
+        <img src={images.activeTour.src} alt={images.activeTour.alt} />
         <div className={styles.toSell}>
           <div className={styles.toSellIcon}>
-            <img src={images.cup} alt=""/>
+            <img src={images.cup} alt="" />
           </div>
-          <div>Likely<br/> To Sell Out</div>
+          <div>
+            Likely
+            <br /> To Sell Out
+          </div>
         </div>
 
         {renderGalleryControls()}
       </div>
       <div className={styles.tilesContainer}>
         {images.tours.map((tour, index) => (
-          <div key={tour.alt} className={classNames(styles.tile, !index && styles.active )}>
-            <img src={tour.src} alt={tour.alt}/>
+          <div key={tour.alt} className={classNames(styles.tile, !index && styles.active)}>
+            <img src={tour.src} alt={tour.alt} />
           </div>
         ))}
         {renderGalleryControls()}
