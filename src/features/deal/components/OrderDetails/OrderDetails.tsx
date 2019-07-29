@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 import classNames from 'classnames'
 
-import { Button, ExposeTime } from 'components'
+import { Button, ExposeTime, Modal } from 'components'
+import { AddToWishlist } from '..'
 import flash from './assets/flash.svg'
 import styles from './OrderDetails.module.scss'
 
@@ -11,8 +12,13 @@ export interface IProps {
 }
 
 export const OrderDetails: React.FC<IProps> = ({ className }) => {
+  const [modalVisible, setModalVisible] = useState<boolean>(false)
+  const toggleModal = () => setModalVisible(!modalVisible)
   return (
     <div className={classNames(styles.orderDetails, className)}>
+      <Modal isOpen={modalVisible} onClose={toggleModal}>
+        <AddToWishlist />
+      </Modal>
       <div className={styles.main}>
         <div className={styles.price}>
           <span>From</span>
@@ -59,7 +65,7 @@ export const OrderDetails: React.FC<IProps> = ({ className }) => {
         <i className="fas fa-gift" />
         Buy as a gift or open dated
       </Button>
-      <Button className={styles.button} form="rectangled" size="lg" theme="standart">
+      <Button className={styles.button} onClick={toggleModal} form="rectangled" size="lg" theme="standart">
         <i className="fas fa-heart" />
         Add to Wishlist
       </Button>
