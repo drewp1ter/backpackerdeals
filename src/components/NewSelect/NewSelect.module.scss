@@ -36,7 +36,7 @@
     border-color: #ff5a39 !important;
 
     .select {
-      i {
+      .icon {
         color: #ff5a39 !important;
         transform: rotate(180deg);
       }
@@ -85,16 +85,9 @@
     transition: 0.2s ease border-color;
     align-items: center;
 
-    i {
+    .icon {
       transition: 0.2s ease color, 0.2s ease transform;
-
-      &[data-pos="left"] {
-        margin-right: .5rem;
-      }
-
-      &[data-pos="right"] {
-        margin-left: .5rem;
-      }
+      margin-right: .5rem;
     }
 
     span {

@@ -15,7 +15,7 @@ export interface IProps {
   readonly labelID?: string
 }
 
-export const Input: React.FC<IProps> = ({ type = 'text', onChange, label, value, placeholder, className, theme, size = 'md', labelID = '' }) => {
+export const Input: React.FC<IProps> = ({ type = 'text', onChange, label, value, placeholder, className, theme = 'standart', size = 'md', labelID = '' }) => {
   if (label && !labelID) {
     labelID = Math.random().toString()
   }

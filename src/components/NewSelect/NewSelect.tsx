@@ -15,8 +15,8 @@ interface IProps {
   readonly name?: string
   readonly onChange?: (value: any, name: string) => void
   readonly size?: 'md' | 'md-font' | 'lg'
-  readonly anglePos?: 'left' | 'right'
   readonly placeholder?: string
+  readonly renderIcon?: () => JSX.Element
 }
 
 export const NewSelect: React.FC<IProps> = ({
@@ -30,8 +30,8 @@ export const NewSelect: React.FC<IProps> = ({
   size = 'md',
   bodyStyle,
   name = '',
-  anglePos = 'left',
   placeholder,
+  renderIcon,
 }) => {
   const [isOpen, setOpen] = useState<boolean>(false)
 
@@ -57,9 +57,8 @@ export const NewSelect: React.FC<IProps> = ({
       data-opened={isOpen}
     >
       <div className={styles.select} data-disabled={disabled} onClick={toggleSelect}>
-        {anglePos === 'left' && <i className="fas fa-angle-down" data-pos={anglePos} />}
+        {renderIcon ? renderIcon() : <i className={classNames(styles.icon, "fas fa-angle-down")} />}
         <span>{value || placeholder}</span>
-        {anglePos === 'right' && <i className="fas fa-angle-down" data-pos={anglePos} />}
       </div>
 
       {isOpen && (

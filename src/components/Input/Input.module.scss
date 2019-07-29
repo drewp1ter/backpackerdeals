@@ -18,7 +18,7 @@
   &[data-theme="standart"] {
     border: 1px solid #e4e4e4;
     border-radius: 4px;
-    padding-left: 24px;
+    padding-left: 1.5rem;
 
     &::placeholder {
       color: #959595;
@@ -30,11 +30,10 @@
   }
 
   &[data-size="md"] {
-    height: 56px;
-    font-size: 16px;
+    height: 3.5rem;
 
     &::placeholder {
-      font-size: 16px;
+      font-size: 1rem;
     }
   }
 }
@@ -44,11 +43,11 @@
   display: block;
 
   &[data-size="md"] {
-    font-size: 16px;
+    font-size: 1rem;
   }
 
   &[data-size="md"][data-theme="standart"] {
-    margin-bottom: 16px;
+    margin-bottom: 1rem;
   }
 }
 
