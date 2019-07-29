@@ -1,0 +1,35 @@
+.faqCard {
+  position: relative;
+  width: 23rem;
+  height: 8.5rem;
+  border-radius: 8px;
+  border: 1px solid #e8e8e8;
+  padding: 1.625rem 1.5rem 4rem 1.5rem;
+  box-sizing: border-box;
+
+  p {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+
+  .add {
+    position: absolute;
+    width: 1.5rem;
+    height: 1.5rem;
+    right: 1rem;
+    bottom: 1rem;
+    border: 1px solid #ff5a39;
+    border-radius: 50%;
+    cursor: pointer;
+
+    &:after {
+      content: '+';
+      font-size: 1rem;
+      color: #ff5a39;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+}

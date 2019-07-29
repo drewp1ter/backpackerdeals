@@ -1,0 +1,1 @@
+export { FaqCard, IProps } from './FaqCard'

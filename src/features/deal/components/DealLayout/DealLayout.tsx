@@ -5,12 +5,13 @@ import styles from './DealLayout.module.scss'
 import {
   DealNavigation,
   DealsSection,
+  FaqSection,
   OrderDetails,
   RelatedTravelBlogs,
   TourDescription,
   TourDetailsSection,
   TourIcons,
-  TourInfoGallery,
+  TourInfoGallery
 } from '..'
 import { recommendedDeals } from './data'
 
@@ -26,6 +27,7 @@ export const DealLayout: React.FC = () => (
       <OrderDetails />
     </div>
     <TourDetailsSection />
+    <FaqSection />
     <RelatedTravelBlogs />
     <DealsSection title="Recommended Deals" data={recommendedDeals} />
     <DealsSection title="Recently viewed deals" data={recommendedDeals} />
