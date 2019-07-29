@@ -19,6 +19,10 @@ export const DealsSection: React.FC<IProps> = ({ title, data }) => {
           <DealCard view="vertical" {...card} key={index} />
         ))}
       </ul>
+      <div className={styles.nav}>
+        <i className="fas fa-chevron-left" />
+        <i className="fas fa-chevron-right" />
+      </div>
     </div>
   )
 }

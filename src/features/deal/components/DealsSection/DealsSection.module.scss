@@ -20,4 +20,20 @@
       }
     }
   }
+
+  .nav {
+    margin-top: 1.25rem;
+
+    i {
+      color: #dadada;
+      font-size: 1.5rem;
+      margin-left: 1.5rem;
+      cursor: pointer;
+      transition: .2s ease color;
+
+      &:hover {
+        color: #ff5a39;
+      }
+    }
+  }
 }
