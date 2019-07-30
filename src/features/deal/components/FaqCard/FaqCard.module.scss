@@ -32,4 +32,18 @@
       transform: translate(-50%, -50%);
     }
   }
+
+  .modal {
+    top: -.5rem;
+    left: -.5rem;
+    right: -.5rem;
+
+    h6 {
+      font-size: 1.125rem;
+      font-weight: 600;
+      padding-bottom: 1.625rem;
+      border-bottom: 1px solid #fafafa;
+      margin-bottom: 1.125rem;
+    }
+  }
 }

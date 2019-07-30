@@ -21,10 +21,18 @@ export const circleScroll = ({ target, maxScrollRight, maxScrollLeft, offsetRigh
   // console.log(scrollLeft + ' ' + offsetWidth + ' ' + (scrollLeft + offsetWidth))
 }
 
-export const getOffset = () => {
+export const isServer = () => {
   try {
-    return screen.height * 2
+    return !window
   } catch (e) {
-    return 600
+    return true
   }
 }
+
+// export const getOffset = () => {
+//   try {
+//     return screen.height * 2
+//   } catch (e) {
+//     return 600
+//   }
+// }
