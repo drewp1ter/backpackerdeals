@@ -15,6 +15,7 @@ export default class CustomDocument extends Document {
         <body>
           <Main />
           <NextScript />
+          <div id="modal-root" />
         </body>
       </html>
     )
