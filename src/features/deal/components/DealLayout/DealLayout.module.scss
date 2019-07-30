@@ -6,6 +6,10 @@
   }
 }
 
+.breadcrumbs {
+  margin-top: 1.125rem;
+}
+
 .orderDetails {
   width: 23rem;
   margin-left: 1rem;
@@ -35,4 +39,19 @@
 
 .dealsSection {
   margin-top: 6.25rem;
+}
+
+.card {
+  margin-top: 2.5rem;
+  width: 71rem;
+
+  p {
+    line-height: 1.5rem;
+  }
+
+  a {
+    display: block;
+    color: #202020;
+    margin-top: .5rem;
+  }
 }

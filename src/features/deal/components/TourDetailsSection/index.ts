@@ -1,1 +1,0 @@
-export { TourDetailsSection } from './TourDetailsSection'

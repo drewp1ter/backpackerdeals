@@ -5,10 +5,14 @@ import { Button, Calendar, Input, NewSelect } from 'components'
 import styles from './AddToWishlist.module.scss'
 import tour from './assets/tour.jpg'
 
-export const AddToWishlist: React.FC = () => {
+export interface IProps {
+  readonly className?: string
+}
+
+export const AddToWishlist: React.FC<IProps> = ({ className }) => {
   const selectIcon = () => <i className={classNames(styles.selectIcon, 'fas fa-calendar')} />
   return (
-    <div className={styles.addToWishlist}>
+    <div className={classNames(styles.addToWishlist, className)}>
       <h5>ADD TO WISHLIST</h5>
       <div className={styles.tour}>
         <img src={tour} alt="tour" />

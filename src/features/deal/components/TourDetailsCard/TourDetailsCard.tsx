@@ -1,5 +1,5 @@
 import classNames from 'classnames'
-import React from 'react'
+import React, { RefObject } from 'react'
 
 import styles from './TourDetailsCard.module.scss'
 
@@ -8,24 +8,23 @@ export interface IProps {
   readonly title: string
   readonly items?: string[]
   readonly children?: JSX.Element
+  readonly rf?: RefObject<HTMLDivElement>
 }
 
-export const TourDetailsCard: React.FC<IProps> = ({ className, title, items, children }) => {
+export const TourDetailsCard: React.FC<IProps> = ({ className, title, items, children, rf }) => {
   return (
-    <div className={classNames(styles.tourDetails, className)}>
+    <div ref={rf} className={classNames(styles.tourDetails, className)}>
       <h4>{title}</h4>
-      {children ? (
-        children
-      ) : (
+      {items && (
         <ul>
-          {items &&
-            items.map((item: string, idx: number) => (
-              <li key={idx}>
-                <span>{item}</span>
-              </li>
-            ))}
+          {items.map((item: string, idx: number) => (
+            <li key={idx}>
+              <span>{item}</span>
+            </li>
+          ))}
         </ul>
       )}
+      {children}
     </div>
   )
 }

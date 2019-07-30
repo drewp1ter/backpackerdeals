@@ -7,7 +7,7 @@ import makeStore from 'store'
 // import '@fortawesome/fontawesome-free/css/all.css'
 import 'fontAwesome.css'
 import 'normalize.css'
-import 'root.scss'
+import 'scss/root.scss'
 
 class MyApp extends App<ProviderProps> {
   render() {

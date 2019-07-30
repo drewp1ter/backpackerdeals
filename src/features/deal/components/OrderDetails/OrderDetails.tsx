@@ -17,7 +17,7 @@ export const OrderDetails: React.FC<IProps> = ({ className }) => {
   return (
     <div className={classNames(styles.orderDetails, className)}>
       <Modal isOpen={modalVisible} onClose={toggleModal}>
-        <AddToWishlist />
+        <AddToWishlist className={styles.addToWishlist} />
       </Modal>
       <div className={styles.main}>
         <div className={styles.price}>
