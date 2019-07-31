@@ -32,7 +32,7 @@ export class BookingCalendar extends Component<IProps, IState> {
     return [...Array(weekCount).keys()].map(i => days.slice(i * 7, (i + 1) * 7))
   }
 
-  static isSameDay(a, b) {
+  static isSameDay(a: Date, b: Date) {
     return a && b && a.getFullYear() === b.getFullYear() && a.getMonth() === b.getMonth() && a.getDate() === b.getDate()
   }
 
@@ -51,7 +51,6 @@ export class BookingCalendar extends Component<IProps, IState> {
 
   previousMonth = () => {
     const { month, year } = this.state
-
     this.setState({
       month: month !== 0 ? month - 1 : 11,
       year: month !== 0 ? year : year - 1,
@@ -60,7 +59,6 @@ export class BookingCalendar extends Component<IProps, IState> {
 
   nextMonth = () => {
     const { month, year } = this.state
-
     this.setState({
       month: month !== 11 ? month + 1 : 0,
       year: month !== 11 ? year : year + 1,
@@ -73,12 +71,12 @@ export class BookingCalendar extends Component<IProps, IState> {
     }
   }
 
-  renderDay = (day, index) => {
-    const { date, month, today, year } = this.state
+  renderDay = (day: Date | null, index: number) => {
+    const { month, today, year } = this.state
     const { active } = this.props
 
     const isToday = day && day.valueOf() === today.valueOf()
-    const isActive = active && day && DayPicker.isSameDay(active, day)
+    const isActive = active && day && BookingCalendar.isSameDay(active, day)
 
     return (
       <td
@@ -91,9 +89,8 @@ export class BookingCalendar extends Component<IProps, IState> {
     )
   }
 
-  renderWeek = (days, index) => {
+  renderWeek = (days: Array<Date | null>, index: number) => {
     const { month, year } = this.state
-
     return <tr key={`${year}.${month}.week.${index}`}>{days.map(this.renderDay)}</tr>
   }
 
