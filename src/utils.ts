@@ -29,10 +29,10 @@ export const isServer = () => {
   }
 }
 
-// export const getOffset = () => {
-//   try {
-//     return screen.height * 2
-//   } catch (e) {
-//     return 600
-//   }
-// }
+export const getOffset = () => {
+  try {
+    return screen.height * 2
+  } catch (e) {
+    return 600
+  }
+}
