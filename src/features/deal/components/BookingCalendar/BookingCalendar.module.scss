@@ -1,0 +1,158 @@
+.bookingCalendar {
+  ul {
+    display: grid;
+    grid-template-columns: repeat(7, 9rem);
+    grid-column-gap: 0.5rem;
+    grid-row-gap: 1rem;
+
+    li {
+      grid-column-start: auto;
+      grid-row-start: auto;
+
+      &.header {
+        position: relative;
+        text-align: center;
+        margin-bottom: 2.25rem;
+
+        &:after {
+          content: '';
+          position: absolute;
+          top: -0.25rem;
+          right: -0.3rem;
+          height: 1.5rem;
+          width: 2px;
+          background: #e8e8e8;
+        }
+
+        &:nth-child(7) {
+          &:after {
+            display: none;
+          }
+        }
+      }
+
+      &.dayDetails {
+        grid-column-start: 1;
+        grid-column-end: 8;
+
+        &[data-week="0"] {
+          display: none;
+        }
+
+        &[data-week="1"] {
+          grid-row-start: 3;
+          grid-row-end: 4;
+        }
+
+        &[data-week="2"] {
+          grid-row-start: 4;
+          grid-row-end: 5;
+        }
+
+        &[data-week="3"] {
+          grid-row-start: 5;
+          grid-row-end: 6;
+        }
+
+        &[data-week="4"] {
+          grid-row-start: 6;
+          grid-row-end: 7;
+        }
+
+        &[data-week="5"] {
+          grid-row-start: 7;
+          grid-row-end: 8;
+        }
+      }
+
+      &.day {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-between;
+        height: 8.5rem;
+        border-radius: 4px;
+        border: 1px solid #e8e8e8;
+        padding: .25rem .5rem .5rem;
+        box-sizing: border-box;
+
+        .sticker {
+          border-radius: 0 0 0 4px;
+        }
+
+        &[data-day-type="dummy"] {
+          border: none;
+        }
+
+        &[data-day-type="topDeal"] {
+          border-color: #00aaf6;
+        }
+
+        &[data-day-type="lastMinuteDeal"] {
+          border-color: #ffcb00;
+
+          .sticker p {
+            font-size: .5rem;
+          }
+        }
+
+        &[data-day-type="soldOut"] {
+          border-color: #959595;
+
+          .sticker {
+            border-radius: 0 3px 0 4px;
+          }
+        }
+
+        .date span {
+          margin-left: .2rem;
+          font-size: .75rem;
+        }
+
+        .priceAndSpaces {
+          width: 100%;
+          text-align: center;
+
+          p:first-child {
+            font-weight: 500;
+          }
+
+          p:last-child {
+            font-size: .875rem;
+          }
+        }
+
+        button {
+          cursor: pointer;
+          margin: 0 auto;
+          padding: 0 .5rem;
+          height: 1.375rem;
+          font-size: .75rem;
+          border-radius: 1.875rem;
+          border: 1px solid;
+          background: #fff;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+
+          &[data-theme="select"] {
+            border-color: #e8e8e8;
+            color: #ff5a39;
+          }
+
+          &[data-theme="selected"] {
+            color: #fff;
+            background: #ff5a39;
+            border-color: #ff5a39;
+          }
+
+          &[data-theme="wait"] {
+            color: #4eb62a;
+            border-color: #4eb62a;
+          }
+        }
+      }
+    }
+  }
+}

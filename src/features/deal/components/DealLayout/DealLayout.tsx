@@ -3,6 +3,7 @@ import React, { useRef } from 'react'
 
 import { Breadcrumbs } from 'components'
 import {
+  BookingCalendar,
   DealsSection,
   FaqSection,
   Navigation,
@@ -101,6 +102,8 @@ export const DealLayout: React.FC = () => {
           the region has to offer! It’s affordable and great fun!
         </p>
       </TourDetailsCard>
+
+      <BookingCalendar />
 
       <FaqSection className={styles.faqSection} />
 
