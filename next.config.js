@@ -6,6 +6,7 @@ const dotenvLoad = require('dotenv-load')
 const fonts = require('next-fonts')
 const optimizedImages = require('next-optimized-images')
 const webpack = require('webpack');
+const IgnoreNotFoundExportPlugin = require('ignore-not-found-export-webpack-plugin')
 // const withSize = require('next-size')
 
 dotenvLoad()
@@ -69,6 +70,12 @@ const nextConfig = {
       }
     )
 
+    dev && config.plugins.push( // ignore import inerfaces warnings
+      new IgnoreNotFoundExportPlugin({
+        include: [/\.tsx?$/]
+      })
+    )
+
     // config.devServer = config.devServer || {}
     // config.devServer.stats =  {
     //   all: false,
@@ -78,7 +85,7 @@ const nextConfig = {
     //   warnings: false,
     // }
 
-    //console.log(config)
+    // console.log(config)
 
     return config
   },
