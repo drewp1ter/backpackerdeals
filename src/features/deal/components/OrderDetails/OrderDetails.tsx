@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import classNames from 'classnames'
 
 import { Button, ExposeTime, Modal } from 'components'
-import { AddToWishlist } from '..'
+import { AddToWishlist, Sticker } from '..'
 import flash from './assets/flash.svg'
 import styles from './OrderDetails.module.scss'
 
@@ -39,9 +39,7 @@ export const OrderDetails: React.FC<IProps> = ({ className }) => {
         </div>
         <p>Group discount info</p>
         <div className={styles.deal}>
-          <div className={styles.lmd}>
-            <p>Last Minute Deal</p>
-          </div>
+          <Sticker variant="lastMinuteDeal" />
           <ExposeTime days="02" hours="10" minutes="51" size="md" className={styles.exposeTime} />
           <p className={styles.dealInfo}>Valid for travel between</p>
           <p className={styles.dealInfo}>04.03.2018 to 06.03.2018</p>
