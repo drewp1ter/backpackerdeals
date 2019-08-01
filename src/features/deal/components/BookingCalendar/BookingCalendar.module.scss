@@ -34,9 +34,6 @@
       &.dayDetails {
         grid-column-start: 1;
         grid-column-end: 8;
-        height: 25rem;
-        border-radius: 4px;
-        border: 1px solid #ff5a39;
 
         &[data-week="0"] {
           display: none;

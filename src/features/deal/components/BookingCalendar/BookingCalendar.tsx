@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 
 import { DAYS, MONTHS_LONG, MONTHS_SHORT } from './constants'
 
-import { Sticker } from '..'
+import { Sticker, BookingDetails } from '..'
 import styles from './BookingCalendar.module.scss'
 
 import { lastMinuteDeals, soldOuts, topDeals } from './data'
@@ -133,7 +133,9 @@ export class BookingCalendar extends Component<IProps, IState> {
         <ul>
           {this.renderHeader()}
           {this.days.map(this.renderDay)}
-          <li className={styles.dayDetails} data-week={Math.ceil((selectedDay + 1) / 7)} />
+          <li className={styles.dayDetails} data-week={Math.ceil((selectedDay + 1) / 7)}>
+            <BookingDetails />
+          </li>
         </ul>
       </div>
     )
