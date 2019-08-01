@@ -20,6 +20,7 @@ export const Calendar: React.FC<IProps> = ({ date, onChange }) => {
     <Datepicker
       value={date || selectedDate}
       locale="en-US"
+      showNeighboringMonth={false}
       onChange={handleChange}
     />
   )
