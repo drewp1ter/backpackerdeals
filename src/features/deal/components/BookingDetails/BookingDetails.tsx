@@ -1,11 +1,18 @@
+import classNames from 'classnames'
 import React from 'react'
 
-import { Button } from 'components'
+import { Button, NewSelect } from 'components'
+import { CalendarButton } from '..'
 import styles from './BookingDetails.module.scss'
 
-export const BookingDetails: React.FC = () => {
+export interface IProps {
+  readonly onClose?: () => void
+}
+
+export const BookingDetails: React.FC<IProps> = ({ onClose }) => {
   return (
     <div className={styles.bookingDetails}>
+      <i onClick={onClose} className={classNames(styles.close, 'fas fa-times')} />
       <div className={styles.leftSection}>
         <h5>Alice Springs to Alice Springs Uluru Tour - 3 Days 2 Nights</h5>
 
@@ -19,44 +26,61 @@ export const BookingDetails: React.FC = () => {
         </p>
 
         <div className={styles.group}>
-          <p>
+          <div>
             <span className={styles.category}>
               <b>Adult</b>
               <span>From 10 to 15 years</span>
             </span>
             <span className={styles.price}>AUD $1 200</span>
-          </p>
-          <p>
+            <NewSelect className={styles.select} theme="defaultNoBorder" size="no" value="0" options={['0', '1', '2', '3']} />
+          </div>
+          <div>
             <span className={styles.category}>4 Adults x AUD $1 000;</span>
-          </p>
-          <p>
+            <CalendarButton className={styles.button} theme="green">
+              Group discount applied
+            </CalendarButton>
+          </div>
+          <div>
             <span className={styles.category}>3 Adults x AUD $1 200; </span>
-          </p>
-          <p>
+          </div>
+          <div>
             <span className={styles.category}>1 Adult x AUD $1 400;</span>
-          </p>
+          </div>
         </div>
 
         <div className={styles.group}>
-          <span className={styles.category}>
-            <b>Child</b>
-            <span>From 10 to 15 years</span>
-          </span>
-          <span className={styles.price}>AUD $1 200</span>
+          <div>
+            <span className={styles.category}>
+              <b>Child</b>
+              <span>From 10 to 15 years</span>
+            </span>
+            <span className={styles.price}>AUD $1 200</span>
+            <NewSelect className={styles.select} theme="defaultNoBorder" size="no" value="0" options={['0', '1', '2', '3']} />
+          </div>
         </div>
 
         <div className={styles.group}>
-          <span className={styles.category}>
-            <b>Family</b>
-            <span>From 10 to 15 years</span>
-          </span>
-          <span className={styles.price}>AUD $1 200</span>
+          <div>
+            <span className={styles.category}>
+              <b>Family</b>
+              <span>From 10 to 15 years</span>
+            </span>
+            <span className={styles.price}>AUD $1 200</span>
+            <NewSelect className={styles.select} theme="defaultNoBorder" size="no" value="0" options={['0', '1', '2', '3']} />
+          </div>
         </div>
       </div>
 
       <div className={styles.rightSection}>
         <h4>AUD $13 690</h4>
         <Button>BOOK NOW</Button>
+        <p className={styles.levy}>Levy of AUD $35 payable on the day</p>
+        <p>
+          Total saving:{' '}
+          <b>
+            AUD <span>$1 200</span>
+          </b>
+        </p>
       </div>
     </div>
   )

@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 
 import { DAYS, MONTHS_LONG, MONTHS_SHORT } from './constants'
 
-import { Sticker, BookingDetails } from '..'
+import { BookingDetails, CalendarButton, Sticker } from '..'
 import styles from './BookingCalendar.module.scss'
 
 import { lastMinuteDeals, soldOuts, topDeals } from './data'
@@ -57,10 +57,12 @@ export class BookingCalendar extends Component<IProps, IState> {
     })
   }
 
-  handleSelectDay = ({ currentTarget }: React.MouseEvent<HTMLButtonElement>) => {
-    const selectedDay = Number(currentTarget.dataset.idx)
+  handleSelectDay = (idx: string) => {
+    const selectedDay = Number(idx)
     this.setState({ selectedDay })
   }
+
+  handleCloseBookingDetails = () => this.setState({ selectedDay: -1 })
 
   renderDay = (day: Date | null, idx: number) => {
     const { month, year, selectedDay } = this.state
@@ -93,13 +95,11 @@ export class BookingCalendar extends Component<IProps, IState> {
               <p>17 spaces left</p>
             </div>
             {dayType === DayTypes.soldOut ? (
-              <button data-theme="wait" data-idx={idx}>
-                Add me to waitlist
-              </button>
+              <CalendarButton className={styles.button} theme="green">Add me to waitlist</CalendarButton>
             ) : (
-              <button data-theme={`select${selectedDay === idx ? 'ed' : ''}`} data-idx={idx} onClick={this.handleSelectDay}>{`Select${
+              <CalendarButton className={styles.button} theme={selectedDay === idx ? 'selected' : 'select'} data={idx} onClick={this.handleSelectDay}>{`Select${
                 selectedDay === idx ? 'ed' : ''
-              }`}</button>
+              }`}</CalendarButton>
             )}
           </>
         )}
@@ -120,21 +120,17 @@ export class BookingCalendar extends Component<IProps, IState> {
     return (
       <div className={styles.bookingCalendar}>
         <div>
-          <div onClick={this.previousMonth}>
-            ◀
-          </div>
+          <div onClick={this.previousMonth}>◀</div>
           <div>
             {MONTHS_LONG[month]} {year}
           </div>
-          <div onClick={this.nextMonth}>
-            ▶
-          </div>
+          <div onClick={this.nextMonth}>▶</div>
         </div>
         <ul>
           {this.renderHeader()}
           {this.days.map(this.renderDay)}
           <li className={styles.dayDetails} data-week={Math.ceil((selectedDay + 1) / 7)}>
-            <BookingDetails />
+            <BookingDetails onClose={this.handleCloseBookingDetails} />
           </li>
         </ul>
       </div>

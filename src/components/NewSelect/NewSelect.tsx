@@ -8,13 +8,12 @@ interface IProps {
   readonly options?: string[]
   readonly children?: React.ReactNode
   readonly className?: string
-  readonly theme?: 'default' | 'theme1'
+  readonly theme?: 'default' | 'theme1' | 'defaultNoBorder'
   readonly value?: string
   readonly disabled?: boolean
-  readonly bodyStyle?: 'mobile'
   readonly name?: string
   readonly onChange?: (value: any, name: string) => void
-  readonly size?: 'md' | 'md-font' | 'lg'
+  readonly size?: 'md' | 'md-font' | 'lg' | 'no'
   readonly placeholder?: string
   readonly renderIcon?: () => JSX.Element
 }
@@ -28,7 +27,6 @@ export const NewSelect: React.FC<IProps> = ({
   disabled = false,
   onChange,
   size = 'md',
-  bodyStyle,
   name = '',
   placeholder,
   renderIcon,
@@ -50,7 +48,6 @@ export const NewSelect: React.FC<IProps> = ({
     <div
       className={classNames(styles.searchSelect, className)}
       data-theme={theme}
-      data-bodystyle={bodyStyle}
       tabIndex={0}
       onBlur={handleClckOutside}
       data-size={size}

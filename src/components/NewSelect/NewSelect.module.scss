@@ -18,6 +18,19 @@
     }
   }
 
+  &[data-theme="defaultNoBorder"] {
+    height: unset !important;
+
+    i, span {
+      color: #202020;
+    }
+
+    .optionBlock {
+      right: -1px;
+      max-height: 23.12rem;
+    }
+  }
+
   &[data-theme="theme1"] {
     border-radius: 5px;
     border: solid 1px #efefef;
@@ -76,6 +89,12 @@
     }
   }
 
+  &[data-size="no"] {
+    .optionBlock {
+      top: 2em;
+    }
+  }
+
   .select {
     box-sizing: border-box;
     position: relative;
@@ -111,7 +130,7 @@
     z-index: 5;
     position: absolute;
     border-radius: 4px;
-    top: 4.68rem;
+    top: 4em;
     left: -1px;
     background: #fff;
     padding: 1.56rem 0;
