@@ -5,11 +5,11 @@ import { Cookies, SelectContinent, SelectMenu } from '..'
 import { MobileMenu } from '../../containers'
 import { getCookie } from '../Cookies/CookieManager'
 
+import Link from 'next/link'
 import BlackLogo from './assets/blackLogo.svg'
 import Logo from './assets/logo_Header.svg'
 import { currencies, languages } from './constants'
 import styles from './Header.module.scss'
-import Link from 'next/link'
 
 interface IProps {
   readonly theme?: string

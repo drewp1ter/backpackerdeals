@@ -2,9 +2,9 @@ import classNames from 'classnames'
 import Link from 'next/link'
 import React from 'react'
 
+import LazyLoad from 'react-lazyload'
 import * as images from './assets'
 import styles from './TravelStoryCard.module.scss'
-import LazyLoad from 'react-lazyload'
 
 export interface IProps {
   readonly title: string
