@@ -1,5 +1,6 @@
-import React, { Component } from 'react'
+import React from 'react'
 
+import { CalendarBase } from 'components'
 import { BookingDetails, CalendarButton, Sticker } from '..'
 import styles from './BookingCalendar.module.scss'
 import { DAYS, DAYS_US, MONTHS_LONG, MONTHS_SHORT } from './constants'
@@ -11,44 +12,20 @@ export interface IProps {
 }
 
 export interface IState {
-  readonly month: number
-  readonly year: number
-  readonly selectedDay: number
   readonly monthsToRender: number
 }
 
-export class BookingCalendar extends Component<IProps, IState> {
-  get days(): Array<Date | null> {
-    const { month, year } = this.state
-    const daysInMonth = new Date(year, month + 1, 0).getDate()
-    const offset = new Date(year, month, this.isUSStandart ? 1 : 0).getDay()
-    const dummyDays = offset < 7 ? [...Array(offset).keys()].map(_day => null) : []
-    return [...dummyDays, ...[...Array(daysInMonth).keys()].map(day => new Date(year, month, day + 1))]
-  }
-
-  public nowYear: number
-  public nowMonth: number
-  public isUSStandart: boolean
+export class BookingCalendar extends CalendarBase<IProps, IState> {
   private navigation = React.createRef<HTMLUListElement>()
 
   constructor(props: IProps) {
     super(props)
-    const now = new Date()
-
-    this.nowMonth = now.getMonth()
-    this.nowYear = now.getFullYear()
-    this.isUSStandart = now.toLocaleTimeString().search(/(AM|PM)/) !== -1
 
     this.state = {
-      month: this.nowMonth,
-      year: this.nowYear,
-      selectedDay: -1,
+      ...this.state,
       monthsToRender: 12,
     }
   }
-
-  isSameDay = (a: Date | null, b: Date | null) =>
-    a && b && a.getFullYear() === b.getFullYear() && a.getMonth() === b.getMonth() && a.getDate() === b.getDate()
 
   scrollLeft = () => {
     const { current } = this.navigation
