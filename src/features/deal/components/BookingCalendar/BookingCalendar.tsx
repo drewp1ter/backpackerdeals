@@ -1,9 +1,8 @@
 import React from 'react'
 
-import { CalendarBase } from 'components'
+import { Calendar, CalendarBase, NewSelect } from 'components'
 import { BookingDetails, CalendarButton, Sticker } from '..'
 import styles from './BookingCalendar.module.scss'
-import { DAYS, DAYS_US, MONTHS_LONG, MONTHS_SHORT } from './constants'
 
 import { lastMinuteDeals, soldOuts, topDeals } from './data'
 
@@ -13,6 +12,7 @@ export interface IProps {
 
 export interface IState {
   readonly monthsToRender: number
+  readonly selectedDay: number
 }
 
 export class BookingCalendar extends CalendarBase<IProps, IState> {
@@ -24,6 +24,7 @@ export class BookingCalendar extends CalendarBase<IProps, IState> {
     this.state = {
       ...this.state,
       monthsToRender: 12,
+      selectedDay: -1,
     }
   }
 
@@ -98,7 +99,7 @@ export class BookingCalendar extends CalendarBase<IProps, IState> {
             )}
             <p className={styles.date}>
               {day.getDate()}
-              <span>{MONTHS_SHORT[month]}</span>
+              <span>{this.monthsShort[month]}</span>
             </p>
             <div className={styles.priceAndSpaces}>
               <p>AUD $1 300</p>
@@ -125,7 +126,7 @@ export class BookingCalendar extends CalendarBase<IProps, IState> {
   renderHeader = () => {
     return [...Array(7).keys()].map(dayOfWeek => (
       <li className={styles.header} key={dayOfWeek}>
-        {this.isUSStandart ? DAYS_US[dayOfWeek] : DAYS[dayOfWeek]}
+        {this.daysLong[dayOfWeek]}
       </li>
     ))
   }
@@ -141,7 +142,7 @@ export class BookingCalendar extends CalendarBase<IProps, IState> {
           data-offset={offsetMonth}
           onClick={this.handleClickMonth}
         >
-          {MONTHS_LONG[month]} {year}
+          {this.monthsLong[month]} {year}
         </li>
       )
     })
@@ -153,9 +154,9 @@ export class BookingCalendar extends CalendarBase<IProps, IState> {
     return (
       <div className={styles.bookingCalendar}>
         <h3>Booking calendar</h3>
-        <h4>
-          {MONTHS_LONG[month]} {year}
-        </h4>
+        <NewSelect className={styles.select} placeholder={`${this.monthsLong[month]} ${year}`} theme="booking" size="no" arrowPos="right">
+          <Calendar />
+        </NewSelect>
         <div className={styles.navigation}>
           <i className="fas fa-chevron-left" onClick={this.scrollLeft} />
           <ul ref={this.navigation} className={styles.navigation}>

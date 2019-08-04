@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import React, { useRef } from 'react'
 
-import { Breadcrumbs, NewCalendar } from 'components'
+import { Breadcrumbs } from 'components'
 import {
   BookingCalendar,
   DealsSection,
@@ -102,8 +102,6 @@ export const DealLayout: React.FC = () => {
           the region has to offer! It’s affordable and great fun!
         </p>
       </TourDetailsCard>
-
-      {/* <NewCalendar /> */}
 
       <BookingCalendar />
 

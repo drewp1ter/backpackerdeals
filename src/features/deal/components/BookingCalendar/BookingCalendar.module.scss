@@ -11,6 +11,23 @@
     margin-top: 2rem;
   }
 
+  .select {
+    width: 16rem;
+    margin: .5rem auto 2.5rem;
+
+    > div {
+      justify-content: center;
+    }
+
+    > ul {
+      max-height: 23.5rem;
+      width: 20.625rem;
+      left: 50%;
+      top: 3rem !important;
+      transform: translateX(-50%);
+    }
+  }
+
   h4 {
     color: #ff5a39;
     font-size: 1.625em;
