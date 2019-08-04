@@ -20,6 +20,13 @@
     justify-content: space-between;
 
     .lastSelect {
+      > ul {
+        max-height: 23.5rem;
+        min-width: 20.625rem;
+      }
+    }
+
+    .numberOfDays, .lastSelect {
       margin-right: .5rem;
     }
 

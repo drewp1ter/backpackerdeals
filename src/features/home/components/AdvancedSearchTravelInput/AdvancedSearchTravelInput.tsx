@@ -9,14 +9,6 @@ import { numberOfDays, startLocation } from '../../../../components/AdvancedSear
 
 import styles from './AdvancedSearchTravelInput.module.scss'
 
-// export interface IState {
-//   readonly startLocation: string
-//   readonly typeOfTour: string
-//   readonly endLocation: string
-//   readonly date: Date | undefined
-//   readonly numberOfDays: string
-// }
-
 export const AdvancedSearchTravelInput: React.FC = () => {
   const [state, setState] = useState({
     startLocation: '',
@@ -43,7 +35,7 @@ export const AdvancedSearchTravelInput: React.FC = () => {
           name="startLocation"
           size="md-font"
           onChange={handleChange}
-          theme="theme1"
+          theme="light"
         />
         <NewSelect
           placeholder="Type of tour"
@@ -53,7 +45,7 @@ export const AdvancedSearchTravelInput: React.FC = () => {
           name="typeOfTour"
           size="md-font"
           onChange={handleChange}
-          theme="theme1"
+          theme="light"
         />
         <NewSelect
           placeholder="End location"
@@ -63,26 +55,26 @@ export const AdvancedSearchTravelInput: React.FC = () => {
           name="endLocation"
           size="md-font"
           onChange={handleChange}
-          theme="theme1"
+          theme="light"
         />
         <NewSelect
           className={styles.lastSelect}
           placeholder="Select date"
           size="md-font"
           value={dateFormatFn()}
-          theme="theme1"
+          theme="light"
         >
-          <Calendar date={state.date || new Date()} onChange={handleChangeDate} />
+          <Calendar value={state.date || new Date()} onChange={handleChangeDate} />
         </NewSelect>
         <NewSelect
           placeholder="Number of days"
-          className={styles.lastSelect}
+          className={styles.numberOfDays}
           value={state.numberOfDays}
           options={numberOfDays}
           name="numberOfDays"
           size="md-font"
           onChange={handleChange}
-          theme="theme1"
+          theme="light"
         />
       </div>
       <Button theme="orange" className={styles.searchBtn}>SEARCH</Button>

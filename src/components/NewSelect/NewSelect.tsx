@@ -8,7 +8,7 @@ interface IProps {
   readonly options?: string[]
   readonly children?: React.ReactNode
   readonly className?: string
-  readonly theme?: 'default' | 'theme1' | 'defaultNoBorder'
+  readonly theme?: 'default' | 'light' | 'defaultNoBorder' | 'booking'
   readonly value?: string
   readonly disabled?: boolean
   readonly name?: string
@@ -16,6 +16,7 @@ interface IProps {
   readonly size?: 'md' | 'md-font' | 'lg' | 'no'
   readonly placeholder?: string
   readonly renderIcon?: () => JSX.Element
+  readonly arrowPos?: 'left' | 'right'
 }
 
 export const NewSelect: React.FC<IProps> = ({
@@ -30,6 +31,7 @@ export const NewSelect: React.FC<IProps> = ({
   name = '',
   placeholder,
   renderIcon,
+  arrowPos = 'left'
 }) => {
   const [isOpen, setOpen] = useState<boolean>(false)
 
@@ -54,8 +56,9 @@ export const NewSelect: React.FC<IProps> = ({
       data-opened={isOpen}
     >
       <div className={styles.select} data-disabled={disabled} onClick={toggleSelect}>
-        {renderIcon ? renderIcon() : <i className={classNames(styles.icon, "fas fa-angle-down")} />}
+        {renderIcon ? renderIcon() : arrowPos === 'left' && <i data-pos={arrowPos} className="fas fa-angle-down" />}
         <span>{value || placeholder}</span>
+        {renderIcon ? renderIcon() : arrowPos === 'right' && <i data-pos={arrowPos} className="fas fa-angle-down" />}
       </div>
 
       {isOpen && (
