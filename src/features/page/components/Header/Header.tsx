@@ -22,7 +22,7 @@ export class Header extends Component<IProps> {
   }
 
   componentDidMount() {
-    window.addEventListener('scroll', this.throttle(this.handleScroll, 400))
+    addEventListener('scroll', this.handleTrottleScroll)
 
     const hasCookie = getCookie('disallow_page_cookies')
 
@@ -32,21 +32,20 @@ export class Header extends Component<IProps> {
   }
 
   componentWillUnmount() {
-    window.removeEventListener('scroll', this.throttle(this.handleScroll, 400))
+    removeEventListener('scroll', this.handleTrottleScroll)
   }
+
+  handleTrottleScroll = () => this.throttle(this.handleScroll, 400)
 
   throttle = (method: () => void, wait: number) => {
     let isThrottling = false
-
-    return (...args: any) => {
-      if (!isThrottling) {
-        method.apply(this, args)
-        isThrottling = true
-        setTimeout(() => {
-          method.apply(this, args)
-          isThrottling = false
-        }, wait)
-      }
+    if (!isThrottling) {
+      method.apply(this)
+      isThrottling = true
+      setTimeout(() => {
+        method.apply(this)
+        isThrottling = false
+      }, wait)
     }
   }
 
