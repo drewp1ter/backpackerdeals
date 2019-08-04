@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 
 import { Button } from 'components'
 
-import { Calendar, NewSelect } from 'components'
+import { Calendar, Select } from 'components'
 import { numberOfDays, startLocation } from './data'
 
 import styles from './AdvancedSearchTravel.module.scss'
@@ -30,7 +30,7 @@ export const AdvancedSearchTravel: React.FC<IProps> = ({ forHeader }) => {
   return (
     <div className={styles.advancedSearchTravel}>
       <div className={styles.searchBlock}>
-        <NewSelect
+        <Select
           placeholder="Start location"
           className={styles.lastSelect}
           value={state.startLocation}
@@ -40,7 +40,7 @@ export const AdvancedSearchTravel: React.FC<IProps> = ({ forHeader }) => {
           onChange={handleChange}
           theme={selectTheme}
         />
-        <NewSelect
+        <Select
           placeholder="Type of tour"
           className={styles.lastSelect}
           value={state.typeOfTour}
@@ -50,7 +50,7 @@ export const AdvancedSearchTravel: React.FC<IProps> = ({ forHeader }) => {
           onChange={handleChange}
           theme={selectTheme}
         />
-        <NewSelect
+        <Select
           placeholder="End location"
           className={styles.lastSelect}
           value={state.endLocation}
@@ -60,7 +60,7 @@ export const AdvancedSearchTravel: React.FC<IProps> = ({ forHeader }) => {
           onChange={handleChange}
           theme={selectTheme}
         />
-        <NewSelect
+        <Select
           className={styles.lastSelect}
           placeholder="Select date"
           size="md-font"
@@ -68,8 +68,8 @@ export const AdvancedSearchTravel: React.FC<IProps> = ({ forHeader }) => {
           theme={selectTheme}
         >
           <Calendar value={state.date || new Date()} onChange={handleChangeDate} />
-        </NewSelect>
-        <NewSelect
+        </Select>
+        <Select
           placeholder="Number of days"
           className={styles.numberOfDays}
           value={state.numberOfDays}

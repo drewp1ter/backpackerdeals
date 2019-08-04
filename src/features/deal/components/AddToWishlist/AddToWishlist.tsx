@@ -1,7 +1,7 @@
 import classNames from 'classnames'
 import React from 'react'
 
-import { Button, Calendar, Input, NewSelect } from 'components'
+import { Button, Calendar, Input, Select } from 'components'
 import styles from './AddToWishlist.module.scss'
 import tour from './assets/tour.jpg'
 
@@ -20,11 +20,11 @@ export const AddToWishlist: React.FC<IProps> = ({ className }) => {
         <p>Uluru Tour - 3 Days 2 Nights</p>
       </div>
       <label>Remind me on date</label>
-      <NewSelect className={styles.select} placeholder="Select date" size="lg" renderIcon={selectIcon}>
+      <Select className={styles.select} placeholder="Select date" size="lg" renderIcon={selectIcon}>
         <div className={styles.calendar}>
           <Calendar date={new Date()} />
         </div>
-      </NewSelect>
+      </Select>
       <Input className={styles.email} type="email" label="Email" placeholder="Email Address" labelID="wishlist-email" />
       <Button>Remind me</Button>
       <p>

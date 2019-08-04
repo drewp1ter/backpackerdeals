@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-import { Button, Calendar, MobileMenuWrapper, NewSelect } from 'components'
+import { Button, Calendar, MobileMenuWrapper, Select } from 'components'
 import { ISearchActions } from 'features/search'
 import moment from 'moment'
 import { PageActions } from '../..'
@@ -200,7 +200,7 @@ export const MobileMenu: React.FC<Partial<Types.RootState> & Partial<PageActions
               </>
             ) : (
               <>
-                <NewSelect
+                <Select
                   className={styles.select}
                   placeholder="Start location"
                   value={state.startLocation}
@@ -209,7 +209,7 @@ export const MobileMenu: React.FC<Partial<Types.RootState> & Partial<PageActions
                   onChange={handleChange}
                   size="lg"
                 />
-                <NewSelect
+                <Select
                   className={styles.select}
                   placeholder="End location"
                   value={state.endLocation}
@@ -218,10 +218,10 @@ export const MobileMenu: React.FC<Partial<Types.RootState> & Partial<PageActions
                   onChange={handleChange}
                   size="lg"
                 />
-                <NewSelect className={styles.select} placeholder="Select date" value={dateFormatFn()} size="lg">
+                <Select className={styles.select} placeholder="Select date" value={dateFormatFn()} size="lg">
                   <Calendar className={styles.calendar} value={state.date || new Date()} onChange={handleChangeDate} />
-                </NewSelect>
-                <NewSelect
+                </Select>
+                <Select
                   placeholder="Number of days"
                   className={styles.select}
                   value={state.numberOfDays}

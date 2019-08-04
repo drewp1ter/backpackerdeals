@@ -1,7 +1,7 @@
 import classNames from 'classnames'
 import React from 'react'
 
-import { Button, NewSelect } from 'components'
+import { Button, Select } from 'components'
 import { CalendarButton } from '..'
 import styles from './BookingDetails.module.scss'
 
@@ -32,7 +32,7 @@ export const BookingDetails: React.FC<IProps> = ({ onClose }) => {
               <span>From 10 to 15 years</span>
             </span>
             <span className={styles.price}>AUD $1 200</span>
-            <NewSelect className={styles.select} theme="defaultNoBorder" size="no" value="0" options={['0', '1', '2', '3']} />
+            <Select className={styles.select} theme="defaultNoBorder" size="no" value="0" options={['0', '1', '2', '3']} />
           </div>
           <div>
             <span className={styles.category}>4 Adults x AUD $1 000;</span>
@@ -55,7 +55,7 @@ export const BookingDetails: React.FC<IProps> = ({ onClose }) => {
               <span>From 10 to 15 years</span>
             </span>
             <span className={styles.price}>AUD $1 200</span>
-            <NewSelect className={styles.select} theme="defaultNoBorder" size="no" value="0" options={['0', '1', '2', '3']} />
+            <Select className={styles.select} theme="defaultNoBorder" size="no" value="0" options={['0', '1', '2', '3']} />
           </div>
         </div>
 
@@ -66,7 +66,7 @@ export const BookingDetails: React.FC<IProps> = ({ onClose }) => {
               <span>From 10 to 15 years</span>
             </span>
             <span className={styles.price}>AUD $1 200</span>
-            <NewSelect className={styles.select} theme="defaultNoBorder" size="no" value="0" options={['0', '1', '2', '3']} />
+            <Select className={styles.select} theme="defaultNoBorder" size="no" value="0" options={['0', '1', '2', '3']} />
           </div>
         </div>
       </div>

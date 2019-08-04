@@ -1,5 +1,5 @@
 import classNames from 'classnames'
-import { Button, Checkbox, NewSelect } from 'components'
+import { Button, Checkbox, Select } from 'components'
 import { numberOfDays } from 'features/page/components/AdvancedSearch/data'
 import React, { useState } from 'react'
 import { FiltersDropdown, PriceRange } from '..'
@@ -45,7 +45,7 @@ export const Filters: React.FC<IProps> = ({ filters, className, applyFilter, vie
   return (
     <div className={classNames(styles.filters, className)} data-view-type={viewType}>
       {viewType === ViewType.normal && <h4>Select country</h4>}
-      <NewSelect
+      <Select
         placeholder="Select country"
         className={styles.filtersSelect}
         options={[
@@ -79,7 +79,7 @@ export const Filters: React.FC<IProps> = ({ filters, className, applyFilter, vie
         <FiltersDropdown className={styles.filtersSelect} title="Select city">{renderFilters()}</FiltersDropdown>
       )}
       {viewType === ViewType.normal && <h4>Number of days</h4>}
-      <NewSelect
+      <Select
         placeholder="Select number of days"
         className={styles.filtersSelect}
         name="numberOfDays"
@@ -89,7 +89,7 @@ export const Filters: React.FC<IProps> = ({ filters, className, applyFilter, vie
         onChange={handleChange}
       />
       {viewType === ViewType.normal && <h4>Accomodation style</h4>}
-      <NewSelect
+      <Select
         placeholder="All accommodation style"
         className={styles.filtersSelect}
         name="accommodationStyle"
@@ -99,7 +99,7 @@ export const Filters: React.FC<IProps> = ({ filters, className, applyFilter, vie
         onChange={handleChange}
       />
       {viewType === ViewType.normal && <h4>Style of travel</h4>}
-      <NewSelect
+      <Select
         placeholder="Style of travel"
         className={styles.filtersSelect}
         name="styleOfTravel"

@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Calendar, CalendarBase, NewSelect } from 'components'
+import { Calendar, CalendarBase, Select } from 'components'
 import { BookingDetails, CalendarButton, Sticker } from '..'
 import styles from './BookingCalendar.module.scss'
 
@@ -154,9 +154,9 @@ export class BookingCalendar extends CalendarBase<IProps, IState> {
     return (
       <div className={styles.bookingCalendar}>
         <h3>Booking calendar</h3>
-        <NewSelect className={styles.select} placeholder={`${this.monthsLong[month]} ${year}`} theme="booking" size="no" arrowPos="right">
+        <Select className={styles.select} placeholder={`${this.monthsLong[month]} ${year}`} theme="booking" size="no" arrowPos="right">
           <Calendar />
-        </NewSelect>
+        </Select>
         <div className={styles.navigation}>
           <i className="fas fa-chevron-left" onClick={this.scrollLeft} />
           <ul ref={this.navigation} className={styles.navigation}>
