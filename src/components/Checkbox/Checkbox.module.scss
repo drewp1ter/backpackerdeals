@@ -48,7 +48,7 @@
       font-family: "Font Awesome 5 Free";
       font-weight: 900;
       content: "\f00c";
-      font-size: .625rem;
+      font-size: .625em;
       color: #ff5a39;
       position: absolute;
       top: 50%;
@@ -56,14 +56,14 @@
       transform: translate(-50%, -50%);
 
       @include device ((min: 320px, max: 1279px)) {
-        font-size: .5rem;
+        font-size: .5em;
       }
     }
   }
 
   label {
     cursor: pointer;
-    font-size: .875rem;
+    font-size: .875em;
     text-align: left;
     color: #959595;
     transition: .2s ease color;

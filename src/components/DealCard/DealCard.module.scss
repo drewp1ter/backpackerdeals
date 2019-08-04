@@ -90,7 +90,7 @@
       align-items: center;
       border-radius: .4rem .4rem 0 0;
       background-color: #fafafa;
-      font-size: .81rem;
+      font-size: .81em;
       text-align: center;
       color: #202020;
       z-index: 1;
@@ -102,7 +102,7 @@
       color: #ffffff;
       z-index: 1;
       transition: .2s ease color;
-      font-size: 1.5rem;
+      font-size: 1.5em;
 
       &[data-type="wide"] {
         bottom: 1.875rem;
@@ -143,7 +143,7 @@
 
       p {
         margin: 0;
-        font-size: .81rem;
+        font-size: .81em;
         font-weight: 600;
         color: #ffffff;
       }
@@ -165,7 +165,7 @@
 
       .description {
         margin-top: 1.56rem;
-        font-size: .875rem;
+        font-size: .875em;
         line-height: 1.5rem;
         color: #959595;
       }
@@ -180,13 +180,13 @@
       .location {
         i {
           margin-right: 5px;
-          font-size: 1rem;
+          font-size: 1em;
           text-align: left;
           color: #959595;
         }
 
         span {
-          font-size: .9rem;
+          font-size: .9em;
           text-align: left;
           color: #959595;
         }
@@ -196,7 +196,7 @@
 
   .tour {
     margin: 0;
-    font-size: 1.125rem;
+    font-size: 1.125em;
     font-weight: bold;
     line-height: 1.23;
     text-align: left;
@@ -206,13 +206,13 @@
 
   .duration {
     margin: 0;
-    font-size: .9rem;
+    font-size: .9em;
     text-align: left;
     color: #959595;
 
     i {
       margin-right: 5px;
-      font-size: .75rem;
+      font-size: .75em;
       color: #959595;
     }
   }
@@ -225,14 +225,14 @@
 
     .totalPrice {
       .from {
-        font-size: .9rem;
+        font-size: .9em;
         line-height: 1.35rem;
         text-align: left;
         color: #dadada;
       }
 
       .price {
-        font-size: 1.125rem;
+        font-size: 1.125em;
         font-weight: bold;
         text-align: left;
         color: #202020;
@@ -242,7 +242,7 @@
       .value {
         display: block;
         margin-top: .2rem;
-        font-size: .9rem;
+        font-size: .9em;
         text-align: left;
         color: #dadada;
       }
@@ -257,12 +257,12 @@
       transition: .2s ease background-color;
 
       i {
-        font-size: 1.06rem;
+        font-size: 1.06em;
         color: #ff5a39;
         transition: .2s ease color;
 
         @include device-mb {
-          font-size: 1.3rem;
+          font-size: 1.3em;
         }
       }
 
@@ -304,7 +304,7 @@
         transform: rotate(270deg) translate(-50%, 117%);
         border-radius: .57rem .57rem 0 0;
         padding: .57rem 1.43rem;
-        font-size: .79rem;
+        font-size: .79em;
       }
 
       .exposeTime {
@@ -327,7 +327,7 @@
         padding: 0.72rem;
 
         p {
-          font-size: .84rem;
+          font-size: .84em;
         }
       }
     }
@@ -346,11 +346,11 @@
 
       .totalPrice {
         .from {
-          font-size: .875rem;
+          font-size: .875em;
         }
 
         .price {
-          font-size: 1rem;
+          font-size: 1em;
         }
       }
 
@@ -358,7 +358,7 @@
         padding: 0.9rem 2.43rem;
 
         i {
-          font-size: 1.21rem;
+          font-size: 1.21em;
         }
       }
     }
@@ -370,11 +370,11 @@
     .imageBlock {
       .exposeTime {
         .timeName {
-          font-size: .46rem;
+          font-size: .46em;
         }
 
         p {
-          font-size: 2rem;
+          font-size: 2em;
 
           &.colon {
             margin: 0 6px;
@@ -411,7 +411,7 @@
         transform: rotate(270deg) translate(-50%, 117%);
         border-radius: .57rem .57rem 0 0;
         padding: .57rem 1.43rem;
-        font-size: .79rem;
+        font-size: .79em;
       }
     }
 
@@ -433,19 +433,19 @@
         }
 
         .location {
-          i, span {font-size: .77rem;}
+          i, span {font-size: .77em;}
         }
       }
 
-      .duration {font-size: .77rem;}
+      .duration {font-size: .77em;}
     }
 
     .valueAndLink {
       margin-top: 14px;
 
       .totalPrice {
-        .price {font-size: 1.07rem;}
-        .from, .value {font-size: .92rem;}
+        .price {font-size: 1.07em;}
+        .from, .value {font-size: .92em;}
         .value {line-height:1.5rem}
       }
 

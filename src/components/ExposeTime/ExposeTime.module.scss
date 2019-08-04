@@ -4,11 +4,11 @@
 
   &[data-size="lg"] {
     .timeName {
-      font-size: .81rem;
+      font-size: .81em;
     }
 
     p {
-      font-size: 3rem;
+      font-size: 3em;
 
       &.colon {
         margin: 0 1rem;
@@ -18,11 +18,11 @@
 
   &[data-size="md"] {
     .timeName {
-      font-size: .5rem;
+      font-size: .5em;
     }
 
     p {
-      font-size: 1.875rem;
+      font-size: 1.875em;
 
       &.colon {
         margin: 0 .5rem;
@@ -31,7 +31,7 @@
   }
 
   .days, .hours, .minutes {
-    font-size: 0.81rem;
+    font-size: 0.81em;
   }
 
   p {

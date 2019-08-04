@@ -15,7 +15,7 @@
     }
 
     label {
-      font-size: 1rem;
+      font-size: 1em;
     }
   }
 
@@ -31,7 +31,7 @@
 
   > h4 {
     margin: 3.5rem 0 1.56rem 1.5rem;
-    font-size: 1.125rem;
+    font-size: 1.125em;
     font-weight: 600;
     text-align: left;
 
@@ -47,11 +47,11 @@
       width: 47.8%;
       height: 15vw;
       max-height: 40px;
-      font-size: 1rem !important;
+      font-size: 1em !important;
     }
 
     .reset {
-      font-size: .9rem;
+      font-size: .9em;
       margin-left: 1rem;
     }
   }
@@ -60,7 +60,7 @@
 @include device-tb {
   .filters {
     & > h4 {
-      font-size: 1rem;
+      font-size: 1em;
       font-weight: 600;
       margin: 2.43rem 0 1.4rem 0.857rem;
     }

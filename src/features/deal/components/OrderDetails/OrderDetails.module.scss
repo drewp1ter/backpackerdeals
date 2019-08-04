@@ -18,7 +18,7 @@
     }
 
     > p:nth-child(5) {
-      font-size: .875rem;
+      font-size: .875em;
     }
   }
 
@@ -28,20 +28,20 @@
     margin: 4rem 0 .5rem;
 
     span {
-      font-size: .875rem;
+      font-size: .875em;
       margin-right: .5rem;
     }
 
     h5 {
       color: #ff5a39;
-      font-size: 1.625rem;
+      font-size: 1.625em;
     }
   }
 
   .childAndFamily {
     display: flex;
     justify-content: space-between;
-    font-size: .875rem;
+    font-size: .875em;
     padding: 1.625rem 0;
     border-top: 1px dashed #e4e4e4;
     border-bottom: 1px dashed #e4e4e4;
@@ -65,7 +65,7 @@
   }
 
   .dealInfo {
-    font-size: .875rem;
+    font-size: .875em;
     text-align: center;
     margin-top: .625rem;
   }
@@ -98,7 +98,7 @@
 
     p {
       color: #4eb62a;
-      font-size: .875rem;
+      font-size: .875em;
     }
   }
 
@@ -131,7 +131,7 @@
 
   .share {
     text-align: center;
-    font-size: .875rem;
+    font-size: .875em;
     margin-top: .5rem;
 
     i {

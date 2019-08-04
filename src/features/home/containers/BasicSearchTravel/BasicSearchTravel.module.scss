@@ -9,7 +9,7 @@
   box-sizing: border-box;
 
   .searchBtn {
-    font-size: 1.125rem;
+    font-size: 1.125em;
     width: 13rem;
     margin-right: .5rem;
   }
@@ -31,7 +31,7 @@
   }
 
   .suggestion {
-    font-size: .875rem;
+    font-size: .875em;
     padding: .625rem 1.5rem;
     cursor: pointer;
 
@@ -46,7 +46,7 @@
 
   .suggestionName {
     padding: 1.625rem 1.5rem .625rem;
-    font-size: .875rem;
+    font-size: .875em;
     color: #959595;
   }
 
@@ -62,7 +62,7 @@
 
     input {
       flex-grow: 1;
-      font-size: 1rem;
+      font-size: 1em;
       border: none;
       height: 100%;
       background: transparent;

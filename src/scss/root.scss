@@ -186,11 +186,11 @@ html {
   font-size: .83vw; // 16px / 1920
 
   @include device((min: 1025px, max: 1280px)) {
-    font-size: 1.09vw; // 14 px / 1280
+    font-size: 1.1vw; // 14 px / 1280
   }
 
   @include device((min: 768px, max: 1024px)) {
-    font-size: 1.26vw; // 13 px / 1024
+    font-size: 1.28vw; // 13 px / 1024
   }
 
   @include device-mb {
@@ -206,6 +206,8 @@ body {
   overflow-x: hidden;
   color: #202020;
   background-color: #fff;
+
+  font-size: .83vw; // 16px / 1920
 
   // from 12px to 16px
   @include device((min: 1280px, max: 1919px)) {

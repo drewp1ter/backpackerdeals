@@ -25,10 +25,10 @@
       width: 10.25rem;
       height: 3.5rem;
       border-radius: 1.875rem;
-      font-size: 1.125rem;
+      font-size: 1.125em;
 
       &::placeholder {
-        font-size: 1.125rem;
+        font-size: 1.125em;
         font-weight: 500;
         text-align: left;
         z-index: 1;
@@ -39,7 +39,7 @@
     span {
       cursor: pointer;
       color: #CAD9EA;
-      font-size: .81rem;
+      font-size: .81em;
       font-weight: 400;
       position: absolute;
       right: 3.625rem;
@@ -48,7 +48,7 @@
 
       i {
         color: #CAD9EA;
-        font-size: .75rem;
+        font-size: .75em;
         margin-right: .31rem;
       }
     }
@@ -123,7 +123,7 @@
       }
 
       i {
-        font-size: .875rem;
+        font-size: .875em;
         text-align: center;
       }
     }

@@ -13,7 +13,7 @@
     span {
       white-space: nowrap;
       margin: 0;
-      font-size: 1.125rem;
+      font-size: 1.125em;
       font-weight: 600;
       color: #fafafa;
       transition: .2s ease color;;
@@ -22,7 +22,7 @@
     i {
       margin-left: .625rem;
       color: #fafafa;
-      font-size: .75rem;
+      font-size: .75em;
       transition: .2s ease transform, .2s ease color;
     }
 
@@ -76,13 +76,13 @@
 
       h6 {
         color: #000000;
-        font-size: 1rem;
+        font-size: 1em;
       }
 
       i {
         cursor: pointer;
         color: #000000;
-        font-size: 1rem;
+        font-size: 1em;
       }
     }
   }

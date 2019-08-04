@@ -33,7 +33,7 @@
     height: 3.5rem;
 
     &::placeholder {
-      font-size: 1rem;
+      font-size: 1em;
     }
   }
 }
@@ -43,7 +43,7 @@
   display: block;
 
   &[data-size="md"] {
-    font-size: 1rem;
+    font-size: 1em;
   }
 
   &[data-size="md"][data-theme="standart"] {

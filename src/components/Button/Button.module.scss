@@ -10,7 +10,7 @@
 
   &[data-form="rectangled"] {
     border-radius: .5rem;
-    font-size: .875rem !important;
+    font-size: .875em !important;
   }
 
   &[data-form="circle"] {
@@ -57,17 +57,17 @@
 
   &[data-size="sm"] {
     height: 2rem;
-    font-size: .75rem;
+    font-size: .75em;
   }
 
   &[data-size="md"] {
     height: 3rem;
-    font-size: 1rem;
+    font-size: 1em;
   }
 
   &[data-size="lg"] {
     height: 3.5rem;
-    font-size: 1.125rem;
+    font-size: 1.125em;
   }
 }
 
@@ -88,7 +88,7 @@
   .button {
     &[data-size="md"] {
       height: 2.5rem;
-      font-size: .75rem;
+      font-size: .75em;
     }
   }
 }
