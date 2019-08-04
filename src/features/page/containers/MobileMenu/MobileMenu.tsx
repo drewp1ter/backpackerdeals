@@ -219,9 +219,7 @@ export const MobileMenu: React.FC<Partial<Types.RootState> & Partial<PageActions
                   size="lg"
                 />
                 <NewSelect className={styles.select} placeholder="Select date" value={dateFormatFn()} size="lg">
-                  <div className={styles.calendar}>
-                    <Calendar date={state.date || new Date()} onChange={handleChangeDate} />
-                  </div>
+                  <Calendar className={styles.calendar} value={state.date || new Date()} onChange={handleChangeDate} />
                 </NewSelect>
                 <NewSelect
                   placeholder="Number of days"
