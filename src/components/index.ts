@@ -1,4 +1,4 @@
-export { AdvancedSearch } from './AdvancedSearch'
+export { AdvancedSearchTravel } from './AdvancedSearchTravel'
 export { Autocomplete } from './Autocomplete'
 export { Breadcrumbs } from './Breadcrumbs'
 export { Calendar } from './Calendar'

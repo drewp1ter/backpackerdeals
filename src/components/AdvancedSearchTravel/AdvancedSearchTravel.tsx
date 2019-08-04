@@ -1,15 +1,19 @@
 import moment from 'moment'
-import { useState } from 'react'
-import * as React from 'react'
+import React, { useState } from 'react'
 
 import { Button } from 'components'
 
 import { Calendar, NewSelect } from 'components'
-import { numberOfDays, startLocation } from '../../../../components/AdvancedSearch/data'
+import { numberOfDays, startLocation } from './data'
 
-import styles from './AdvancedSearchTravelInput.module.scss'
+import styles from './AdvancedSearchTravel.module.scss'
 
-export const AdvancedSearchTravelInput: React.FC = () => {
+
+export interface IProps {
+  readonly forHeader?: boolean
+}
+
+export const AdvancedSearchTravel: React.FC<IProps> = ({ forHeader }) => {
   const [state, setState] = useState({
     startLocation: '',
     typeOfTour: '',
@@ -19,13 +23,12 @@ export const AdvancedSearchTravelInput: React.FC = () => {
   })
 
   const handleChange = (value: any, key: string) => setState({ ...state, [key]: value })
-
   const handleChangeDate = (value: Date) => handleChange(value, 'date')
-
   const dateFormatFn = () => state.date && moment(state.date).format('DD/MM/YYYY')
+  const selectTheme = forHeader ? 'default' : 'light'
 
   return (
-    <div className={styles.advancedSearchTravelInput}>
+    <div className={styles.advancedSearchTravel}>
       <div className={styles.searchBlock}>
         <NewSelect
           placeholder="Start location"
@@ -35,7 +38,7 @@ export const AdvancedSearchTravelInput: React.FC = () => {
           name="startLocation"
           size="md-font"
           onChange={handleChange}
-          theme="light"
+          theme={selectTheme}
         />
         <NewSelect
           placeholder="Type of tour"
@@ -45,7 +48,7 @@ export const AdvancedSearchTravelInput: React.FC = () => {
           name="typeOfTour"
           size="md-font"
           onChange={handleChange}
-          theme="light"
+          theme={selectTheme}
         />
         <NewSelect
           placeholder="End location"
@@ -55,14 +58,14 @@ export const AdvancedSearchTravelInput: React.FC = () => {
           name="endLocation"
           size="md-font"
           onChange={handleChange}
-          theme="light"
+          theme={selectTheme}
         />
         <NewSelect
           className={styles.lastSelect}
           placeholder="Select date"
           size="md-font"
           value={dateFormatFn()}
-          theme="light"
+          theme={selectTheme}
         >
           <Calendar value={state.date || new Date()} onChange={handleChangeDate} />
         </NewSelect>
@@ -74,10 +77,10 @@ export const AdvancedSearchTravelInput: React.FC = () => {
           name="numberOfDays"
           size="md-font"
           onChange={handleChange}
-          theme="light"
+          theme={selectTheme}
         />
       </div>
-      <Button theme="orange" className={styles.searchBtn}>SEARCH</Button>
+      <Button theme="orange" form={forHeader ? 'rectangled' : 'rounded'} className={styles.searchBtn} size="lg">SEARCH</Button>
     </div>
   )
 }

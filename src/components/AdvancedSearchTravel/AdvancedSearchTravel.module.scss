@@ -1,6 +1,6 @@
 @import 'src/scss/device';
 
-.advancedSearchTravelInput {
+.advancedSearchTravel {
   position: relative;
   background: rgba(255, 255, 255, .26);
   border-radius: 3.75rem;
@@ -44,9 +44,7 @@
   }
 
   .searchBtn {
-    font-size: 1.125rem;
     width: 13rem;
-    height: 100%;
   }
 }
 

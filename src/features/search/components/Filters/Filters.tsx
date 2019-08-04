@@ -1,8 +1,8 @@
 import classNames from 'classnames'
 import { Button, Checkbox, NewSelect } from 'components'
+import { numberOfDays } from 'features/page/components/AdvancedSearch/data'
 import React, { useState } from 'react'
 import { FiltersDropdown, PriceRange } from '..'
-import { numberOfDays } from '../../../../components/AdvancedSearch/data'
 
 import styles from './Filters.module.scss'
 

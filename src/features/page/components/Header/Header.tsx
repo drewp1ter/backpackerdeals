@@ -1,11 +1,9 @@
+import Link from 'next/link'
 import React, { Component } from 'react'
 
-import { AdvancedSearch } from 'components'
-import { Cookies, SelectContinent, SelectMenu } from '..'
+import { AdvancedSearch, Cookies, SelectContinent, SelectMenu } from '..'
 import { MobileMenu } from '../../containers'
 import { getCookie } from '../Cookies/CookieManager'
-
-import Link from 'next/link'
 import BlackLogo from './assets/blackLogo.svg'
 import Logo from './assets/logo_Header.svg'
 import { currencies, languages } from './constants'

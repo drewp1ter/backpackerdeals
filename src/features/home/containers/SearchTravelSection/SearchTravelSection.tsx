@@ -1,9 +1,9 @@
 import * as React from 'react'
 
 import { HeaderWave } from 'components'
+import { AdvancedSearchTravel } from 'components'
 import { ISearchActions, ISearchState } from 'features/search'
 import { BasicSearchTravel } from '..'
-import { AdvancedSearchTravelInput } from '../../components'
 
 import styles from './SearchTravelSection.module.scss'
 
@@ -23,7 +23,7 @@ export const SearchTravelSection: React.FC<Partial<ISearchActions> & Partial<ISe
           Great experience at <br /> backpacker prices
         </h2>
         {advancedSearch ? (
-          <AdvancedSearchTravelInput />
+          <AdvancedSearchTravel />
         ) : (
           <BasicSearchTravel />
         )}

@@ -6,8 +6,8 @@ import moment from 'moment'
 import { PageActions } from '../..'
 import { MobileSelectMenu, SelectContinent } from '../../components'
 
+import { numberOfDays, startLocation } from 'features/page/components/AdvancedSearch/data'
 import Types from 'Types'
-import { numberOfDays, startLocation } from '../../../../components/AdvancedSearch/data'
 import { currencies, IIconInfo, languages } from '../../components/Header/constants'
 import { cities, countries, options } from './data'
 

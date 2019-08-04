@@ -1,3 +1,4 @@
+export { AdvancedSearch } from './AdvancedSearch'
 export { Footer } from './Footer'
 export { FooterLinks } from './FooterLinks'
 export { Cookies } from './Cookies'
