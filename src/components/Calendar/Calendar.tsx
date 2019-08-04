@@ -1,27 +1,72 @@
-import React, { useState } from 'react'
-import Datepicker from 'react-calendar/dist/entry.nostyle'
-import './Calendar.scss'
+import classNames from 'classnames'
+import React from 'react'
 
-interface IProps {
-  date?: Date,
-  onChange?: (value: Date) => void
+import { CalendarBase } from '../CalendarBase'
+import styles from './Calendar.module.scss'
+
+export interface IProps {
+  readonly className?: string
+  readonly onChange?: (value: Date) => void
+  readonly value?: Date
 }
 
-
-export const Calendar: React.FC<IProps> = ({ date, onChange }) => {
-  const [selectedDate, setSelectedDate] = useState<Date | Date[]>(new Date())
-
-  const handleChange = (newDate: Date | Date[]) => {
-    setSelectedDate(newDate)
-    onChange && onChange(newDate as Date)
+export class Calendar extends CalendarBase<IProps, {}> {
+  previousMonth = () => {
+    const { month, year } = this.state
+    this.setState({
+      month: month !== 0 ? month - 1 : 11,
+      year: month !== 0 ? year : year - 1,
+    })
   }
 
-  return (
-    <Datepicker
-      value={date || selectedDate}
-      locale="en-US"
-      showNeighboringMonth={false}
-      onChange={handleChange}
-    />
-  )
+  nextMonth = () => {
+    const { month, year } = this.state
+    this.setState({
+      month: month !== 11 ? month + 1 : 0,
+      year: month !== 11 ? year : year + 1,
+    })
+  }
+
+  renderDay = (day: Date | null, idx: number) => {
+    const { month, year } = this.state
+    const { value } = this.props
+    return (
+      <li data-empty={!day} data-active={this.isSameDay(value, day)} key={`${year}-${month}-day-${idx}`} data-dayid={idx} onClick={this.handleClickDay}>
+        {day && day.getDate()}
+      </li>
+    )
+  }
+
+  handleClickDay = ({ currentTarget }: React.MouseEvent<HTMLLIElement>) => {
+    const day = this.days[Number(currentTarget.dataset.dayid)]
+    const { onChange } = this.props
+    day && onChange && onChange(day)
+  }
+
+  renderHeader = () => {
+    return [...Array(7).keys()].map(dayOfWeek => (
+      <li key={dayOfWeek}>
+        <abbr title={this.daysLong[dayOfWeek]}>{this.daysShort[dayOfWeek]}</abbr>
+      </li>
+    ))
+  }
+
+  render() {
+    const { month, year } = this.state
+    const { className } = this.props
+
+    return (
+      <div className={classNames(styles.calendar, className)}>
+        <div className={styles.navigation}>
+          <i className="fas fa-chevron-left" onClick={this.previousMonth} />
+          <div>
+            {this.monthsLong[month]} {year}
+          </div>
+          <i className="fas fa-chevron-right" onClick={this.nextMonth} />
+        </div>
+        <ul className={styles.header}>{this.renderHeader()}</ul>
+        <ul className={styles.days}>{this.days.map(this.renderDay)}</ul>
+      </div>
+    )
+  }
 }

@@ -1,13 +1,8 @@
 import React from 'react'
 
-const MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
-const DAYS_LONG = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
-const DAYS_SHORT = ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa']
-
 export interface IState {
   readonly month: number
   readonly year: number
-  readonly selectedDay: number
 }
 
 export class CalendarBase<IProps, IStateP> extends React.Component<IProps, IState & IStateP> {
@@ -25,6 +20,10 @@ export class CalendarBase<IProps, IStateP> extends React.Component<IProps, IStat
   public nowYear: number
   public nowMonth: number
   public isUSStandart: boolean
+  public monthsLong: string[]
+  public monthsShort: string[]
+  public daysLong: string[]
+  public daysShort: string[]
 
   constructor(props: IProps) {
     super(props)
@@ -34,14 +33,33 @@ export class CalendarBase<IProps, IStateP> extends React.Component<IProps, IStat
     this.nowYear = now.getFullYear()
     this.isUSStandart = now.toLocaleTimeString().search(/(AM|PM)/) !== -1
 
+    this.monthsLong = [
+      'January',
+      'February',
+      'March',
+      'April',
+      'May',
+      'June',
+      'July',
+      'August',
+      'September',
+      'October',
+      'November',
+      'December',
+    ]
+    this.monthsShort = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+    this.daysLong = this.isUSStandart
+      ? ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+      : ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
+    this.daysShort = this.isUSStandart ? ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'] : ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa']
+
     this.state = {
       ...this.state,
       month: this.nowMonth,
       year: this.nowYear,
-      selectedDay: -1,
     }
   }
 
-  isSameDay = (a: Date | null, b: Date | null) =>
+  isSameDay = (a: Date | null | undefined, b: Date | null | undefined) =>
     a && b && a.getFullYear() === b.getFullYear() && a.getMonth() === b.getMonth() && a.getDate() === b.getDate()
 }

@@ -1,8 +1,5 @@
 .calendar {
-  width: 20.7rem;
-  border: 1px solid #e4e4e4;
-  border-radius: 4px;
-  padding: 2rem 1.5rem 2rem;
+  padding: 0 1.5rem;
   box-sizing: border-box;
 
   .navigation {
@@ -31,18 +28,26 @@
       border-left: 1px solid #e8e8e8;
 
       li {
-        cursor: pointer;
         border-right: 1px solid #e8e8e8;
         border-bottom: 1px solid #e8e8e8;
 
+        &[data-active="true"] {
+          background-color: #ff5a39 !important;
+        }
+
         &[data-empty="false"]:hover {
           background: #e8e8e8;
+          cursor: pointer;
         }
       }
     }
 
     &.header {
       border-bottom: 1px solid #e8e8e8;
+
+      abbr {
+        text-decoration: none;
+      }
     }
 
     li {
