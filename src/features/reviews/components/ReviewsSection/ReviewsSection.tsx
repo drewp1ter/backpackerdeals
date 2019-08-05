@@ -1,7 +1,7 @@
 import classNames from 'classnames'
-import React from 'react'
+import React, { useState } from 'react'
 
-import { Rating } from 'components'
+import { Pagenation, Rating } from 'components'
 import { Filter, Review } from '..'
 import reviews from './data'
 // import { IProps as IReviewProps } from '../Review'
@@ -17,6 +17,8 @@ export interface IProps {
 
 export const ReviewsSection: React.FC<IProps> = ({ title, rating, className }) => {
 
+  const [page, setPage] = useState<number>(1)
+
   const renderReviews = () => reviews.map((review, idx) => <Review key={idx} {...review} />)
 
   return (
@@ -25,6 +27,7 @@ export const ReviewsSection: React.FC<IProps> = ({ title, rating, className }) =
       <Rating value={rating} detail={true} />
       <Filter className={styles.filter} />
       {renderReviews()}
+      <Pagenation className={styles.pagenation} value={page} onChange={setPage} maxPages={10} />
     </div>
   )
 }
