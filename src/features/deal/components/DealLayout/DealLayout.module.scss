@@ -1,5 +1,7 @@
 .dealLayout {
   padding: 90px 12.5rem 0 12.5rem;
+  box-sizing: border-box;
+  width: 100%;
 
   .header {
     display: flex;
@@ -29,7 +31,7 @@
 
 .relatedTravelBlogs {
   margin-top: 4rem;
-  margin-right: 22.5rem;
+  width: 71rem;
 }
 
 .faqSection {

@@ -177,12 +177,11 @@
       padding: 3px 6px 3px 3px;
 
       i {
-        font-size: 12px;
         margin-right: 4px;
       }
 
-      span {
-        font-size: 12px;
+      i, span {
+        font-size: 12px !important;
       }
     }
 

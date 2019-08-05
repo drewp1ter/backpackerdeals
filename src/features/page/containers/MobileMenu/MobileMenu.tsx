@@ -34,14 +34,17 @@ export const MobileMenu: React.FC<Partial<Types.RootState> & Partial<PageActions
     numberOfDays: '',
     currency: currencies.aud,
     language: languages.english,
+    searchQuery: ''
   }
 
-  const [searchQuery, changeSearch] = React.useState('')
   const [state, setState] = useState({ ...initialState })
-
   const handleChange = (value: any, key: string) => setState({ ...state, [key]: value })
-
   const handleChangeDate = (value: Date) => handleChange(value, 'date')
+  const handleChangeSearch = ({ target: { name, value } }: React.ChangeEvent<HTMLInputElement>) => setState({ ...state, [name]: value })
+  const handleChangeSearchType = ({ currentTarget }: React.MouseEvent<HTMLSpanElement>) => {
+    const searchType: any = currentTarget.dataset.type
+    changeSearchType && changeSearchType(searchType)
+  }
 
   const handleClickReset = () => setState({ ...initialState })
   const handleClickOption = (value: any, key: string) => {
@@ -157,10 +160,10 @@ export const MobileMenu: React.FC<Partial<Types.RootState> & Partial<PageActions
         <>
           <div className={styles.searchHeader}>
             <i onClick={closeSearch} className="fas fa-arrow-left" />
-            <span onClick={() => changeSearchType('basic')} data-active={search!.searchType === 'basic'}>
+            <span onClick={handleChangeSearchType} data-type="basic" data-active={search!.searchType === 'basic'}>
               Basic Search
             </span>
-            <span onClick={() => changeSearchType('advanced')} data-active={search!.searchType === 'advanced'}>
+            <span onClick={handleChangeSearchType} data-type="advanced" data-active={search!.searchType === 'advanced'}>
               Advanced Search
             </span>
           </div>
@@ -169,15 +172,15 @@ export const MobileMenu: React.FC<Partial<Types.RootState> & Partial<PageActions
             {search!.searchType === 'basic' ? (
               <>
                 <div className={styles.searchInput}>
-                  <input type="text" placeholder="Try Australia" value={searchQuery} onChange={event => changeSearch(event.target.value)} />
+                  <input type="text" placeholder="Try Australia" value={state.searchQuery} name="searchQuery" onChange={handleChangeSearch} />
                   <i className="fas fa-search" />
                 </div>
-                {countries.filter(country => country.includes(searchQuery)).length > 0 && (
+                {countries.filter(country => country.includes(state.searchQuery)).length > 0 && (
                   <>
                     <h5>Countries</h5>
                     <div className={styles.results}>
                       {countries
-                        .filter(country => country.includes(searchQuery))
+                        .filter(country => country.includes(state.searchQuery))
                         .map((country, index) => (
                           <p key={index}>{country}</p>
                         ))}
@@ -185,12 +188,12 @@ export const MobileMenu: React.FC<Partial<Types.RootState> & Partial<PageActions
                   </>
                 )}
 
-                {cities.filter(city => city.includes(searchQuery)).length > 0 && (
+                {cities.filter(city => city.includes(state.searchQuery)).length > 0 && (
                   <>
                     <h5>Cities</h5>
                     <div className={styles.results}>
                       {cities
-                        .filter(city => city.includes(searchQuery))
+                        .filter(city => city.includes(state.searchQuery))
                         .map((city, index) => (
                           <p key={index}>{city}</p>
                         ))}
