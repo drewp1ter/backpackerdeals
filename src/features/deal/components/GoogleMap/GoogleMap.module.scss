@@ -1,0 +1,73 @@
+.googleMap {
+  padding: 2rem 1.5rem 3rem;
+  box-sizing: border-box;
+  border: 1px solid #e8e8e8;
+  border-radius: 8px;
+
+  h3 {
+    font-size: 2em;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+  }
+
+  .tourOperator {
+    position: absolute;
+    top: 1.5rem;
+    bottom: 5.125rem;
+    right: 1.5rem;
+    left: 46.5rem;
+    padding: 1.25rem 1rem 1rem;
+    border-radius: 8px;
+    background: #fff;
+    z-index: 1;
+
+    h4 {
+      font-size: 1em;
+
+      &:first-of-type {
+        text-align: center;
+        padding-bottom: 1rem;
+        border-bottom: 1px solid #e8e8e8
+      }
+
+      &:last-of-type {
+        padding-top: 1.5rem;
+        border-top: 1px solid #e8e8e8;
+      }
+    }
+
+    p {
+      margin-top: .5rem;
+      font-size: .98em;
+      line-height: 1.5em;
+    }
+  }
+
+  .img {
+    width: 13.5rem;
+    height: 9rem;
+    margin: 0 auto;
+
+    img {
+      display: flex;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .container {
+    overflow: hidden;
+    padding-bottom: 28.625rem;
+    position: relative;
+    height: 0;
+
+    iframe {
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      border: 0;
+    }
+  }
+}

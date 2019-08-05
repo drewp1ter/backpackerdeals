@@ -2,10 +2,12 @@ import Link from 'next/link'
 import React, { useRef } from 'react'
 
 import { Breadcrumbs } from 'components'
+import { ReviewsSection } from 'features/reviews/components'
 import {
   BookingCalendar,
   DealsSection,
   FaqSection,
+  GoogleMap,
   Navigation,
   OrderDetails,
   RelatedTravelBlogs,
@@ -15,7 +17,6 @@ import {
   TourInfoGallery,
 } from '..'
 import { recommendedDeals } from './data'
-import { ReviewsSection } from 'features/reviews/components'
 import styles from './DealLayout.module.scss'
 
 export const DealLayout: React.FC = () => {
@@ -132,6 +133,8 @@ export const DealLayout: React.FC = () => {
           'Cancellations 30 days or more before departure: 25% of the total cost',
         ]}
       />
+
+      <GoogleMap className={styles.googleMap} />
 
       <ReviewsSection className={styles.reviews} title="Reviews" rating={4} />
 
