@@ -211,7 +211,7 @@ export class BasicSearchTravel extends React.Component<Partial<ISearchActions> &
             autoComplete="off"
             placeholder="Search for a destination, activity or tour"
           />
-          <Button className={styles.searchBtn} theme="orange" form="rounded" size="lg">
+          <Button className={styles.searchBtn} theme="orange" form="rounded" size="xl">
             SEARCH
           </Button>
         </div>

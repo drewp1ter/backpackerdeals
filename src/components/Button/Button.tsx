@@ -10,7 +10,7 @@ export interface IProps {
   readonly disabled?: boolean
   readonly onClick?: () => void
   readonly form?: 'rectangled' | 'rounded' | 'circle' | 'standart'
-  readonly size?: 'sm' | 'md' | 'lg'
+  readonly size?: 'sm' | 'md' | 'lg' | 'xl'
   readonly theme?: 'orange' | 'transparentBorderWhite' | 'transparentBorderOrange' | 'transparent' | 'standart'
 }
 
@@ -21,7 +21,7 @@ export const Button: React.FC<IProps> = ({
   disabled = false,
   form = 'rounded',
   theme = 'orange',
-  size = 'md'
+  size = 'lg'
 }) => {
   return (
     <button

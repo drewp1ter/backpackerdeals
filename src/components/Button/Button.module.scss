@@ -61,11 +61,16 @@
   }
 
   &[data-size="md"] {
+    height: 2.5rem;
+    font-size: .75em;
+  }
+
+  &[data-size="lg"] {
     height: 3rem;
     font-size: 1em;
   }
 
-  &[data-size="lg"] {
+  &[data-size="xl"] {
     height: 3.5rem;
     font-size: 1.125em;
   }

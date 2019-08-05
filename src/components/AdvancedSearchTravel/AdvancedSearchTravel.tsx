@@ -80,7 +80,7 @@ export const AdvancedSearchTravel: React.FC<IProps> = ({ forHeader }) => {
           theme={selectTheme}
         />
       </div>
-      <Button theme="orange" form={forHeader ? 'rectangled' : 'rounded'} className={styles.searchBtn} size="lg">SEARCH</Button>
+      <Button theme="orange" form={forHeader ? 'rectangled' : 'rounded'} className={styles.searchBtn} size="xl">SEARCH</Button>
     </div>
   )
 }

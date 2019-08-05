@@ -21,7 +21,7 @@ export const Footer: React.FC<IProps> = ({ handleChange, email }) => (
 
     <div className={styles.emailInput}>
       <Input value={email} onChange={handleChange} placeholder="Your e-mail address" theme="transparent" size="md" />
-      <Button className={styles.textButton} size="lg">
+      <Button className={styles.textButton} size="xl">
         SEARCH
       </Button>
       <Button className={styles.iconButton} form="circle">

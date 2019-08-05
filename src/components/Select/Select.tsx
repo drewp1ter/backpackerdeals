@@ -56,9 +56,9 @@ export const Select: React.FC<IProps> = ({
       data-opened={isOpen}
     >
       <div className={styles.select} data-disabled={disabled} onClick={toggleSelect}>
-        {renderIcon ? renderIcon() : arrowPos === 'left' && <i data-pos={arrowPos} className="fas fa-angle-down" />}
+        {arrowPos === 'left' && (renderIcon ? renderIcon() :  <i data-pos={arrowPos} className="fas fa-angle-down" />)}
         <span>{value || placeholder}</span>
-        {renderIcon ? renderIcon() : arrowPos === 'right' && <i data-pos={arrowPos} className="fas fa-angle-down" />}
+        {arrowPos === 'right' && (renderIcon ? renderIcon() : <i data-pos={arrowPos} className="fas fa-angle-down" />)}
       </div>
 
       {isOpen && (

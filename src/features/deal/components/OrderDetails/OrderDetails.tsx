@@ -51,7 +51,7 @@ export const OrderDetails: React.FC<IProps> = ({ className }) => {
         <div className={styles.included}>
           <p>Park fees $25 included</p>
         </div>
-        <Button className={styles.bookButton} form="rectangled" size="lg">
+        <Button className={styles.bookButton} form="rectangled" size="xl">
           <strong>BOOK NOW</strong>
         </Button>
         <p className={styles.aviableDate}>
@@ -59,11 +59,11 @@ export const OrderDetails: React.FC<IProps> = ({ className }) => {
           Next available date:<span>03/05/2019</span>
         </p>
       </div>
-      <Button className={styles.button} form="rectangled" size="lg" theme="standart">
+      <Button className={styles.button} form="rectangled" size="xl" theme="standart">
         <i className="fas fa-gift" />
         Buy as a gift or open dated
       </Button>
-      <Button className={styles.button} onClick={toggleModal} form="rectangled" size="lg" theme="standart">
+      <Button className={styles.button} onClick={toggleModal} form="rectangled" size="xl" theme="standart">
         <i className="fas fa-heart" />
         Add to Wishlist
       </Button>

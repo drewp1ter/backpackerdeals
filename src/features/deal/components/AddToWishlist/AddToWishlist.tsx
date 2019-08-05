@@ -21,9 +21,7 @@ export const AddToWishlist: React.FC<IProps> = ({ className }) => {
       </div>
       <label>Remind me on date</label>
       <Select className={styles.select} placeholder="Select date" size="lg" renderIcon={selectIcon}>
-        <div className={styles.calendar}>
-          <Calendar date={new Date()} />
-        </div>
+        <Calendar className={styles.calendar} value={new Date()} />
       </Select>
       <Input className={styles.email} type="email" label="Email" placeholder="Email Address" labelID="wishlist-email" />
       <Button>Remind me</Button>
