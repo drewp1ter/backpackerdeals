@@ -1,0 +1,1 @@
+export { Review, IProps } from './Review'

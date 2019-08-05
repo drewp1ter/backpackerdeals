@@ -27,7 +27,7 @@ export const TourDescription: React.FC<IProps> = ({ className }) => (
           <span>2 days, 1 night</span>
         </div>
         <div className={styles.locationPart}>
-          <Rating rating={4} detail={false} />
+          <Rating value={4} />
           <span>90 reviews</span>
         </div>
       </div>

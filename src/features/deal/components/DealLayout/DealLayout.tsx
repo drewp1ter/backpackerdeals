@@ -15,16 +15,16 @@ import {
   TourInfoGallery,
 } from '..'
 import { recommendedDeals } from './data'
+import { Review } from 'features/reviews/components'
 import styles from './DealLayout.module.scss'
 
 export const DealLayout: React.FC = () => {
-
   const refs = {
     included: useRef<HTMLDivElement>(null),
     excluded: useRef<HTMLDivElement>(null),
     whereWeVisit: useRef<HTMLDivElement>(null),
     terms: useRef<HTMLDivElement>(null),
-    policy: useRef<HTMLDivElement>(null)
+    policy: useRef<HTMLDivElement>(null),
   }
 
   return (
@@ -131,6 +131,17 @@ export const DealLayout: React.FC = () => {
           'Cancellations 30 days or more before departure: 25% of the total cost',
           'Cancellations 30 days or more before departure: 25% of the total cost',
         ]}
+      />
+
+      <Review
+        rating={4}
+        title="Easy and convenient booking"
+        author="Megan S."
+        date={new Date()}
+        body="The tour was my best experience in Australia so far and definitely one of the best experiences in my life! So well organized, a fantastic small group, lots of fun and a funny tourguide. So sad that the tour was finished after three days I could have stayed longer with the group in this beautiful place!"
+        dislikes={1}
+        likes={3}
+        commentsCount={1}
       />
 
       <RelatedTravelBlogs className={styles.relatedTravelBlogs} />
