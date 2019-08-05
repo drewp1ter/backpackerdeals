@@ -15,7 +15,7 @@ import {
   TourInfoGallery,
 } from '..'
 import { recommendedDeals } from './data'
-import { Review } from 'features/reviews/components'
+import { ReviewsSection } from 'features/reviews/components'
 import styles from './DealLayout.module.scss'
 
 export const DealLayout: React.FC = () => {
@@ -133,16 +133,7 @@ export const DealLayout: React.FC = () => {
         ]}
       />
 
-      <Review
-        rating={4}
-        title="Easy and convenient booking"
-        author="Megan S."
-        date={new Date()}
-        body="The tour was my best experience in Australia so far and definitely one of the best experiences in my life! So well organized, a fantastic small group, lots of fun and a funny tourguide. So sad that the tour was finished after three days I could have stayed longer with the group in this beautiful place!"
-        dislikes={1}
-        likes={3}
-        commentsCount={1}
-      />
+      <ReviewsSection className={styles.reviews} title="Reviews" rating={4} />
 
       <RelatedTravelBlogs className={styles.relatedTravelBlogs} />
       <DealsSection className={styles.dealsSection} title="Recommended Deals" data={recommendedDeals} />

@@ -1,2 +1,5 @@
+export { Checkbox } from './Checkbox'
+export { Filter } from './Filter'
+export { ReviewsSection } from './ReviewsSection'
 export { Comment } from './Comment'
 export { Review } from './Review'

@@ -1,0 +1,41 @@
+.filter {
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+
+    h4 {
+      font-size: 1.125em;
+      font-weight: 600;
+      margin-left: 1.5rem;
+    }
+
+    button {
+      width: 10rem;
+    }
+  }
+
+  .controls {
+    display: flex;
+  }
+
+  .select {
+    width: 15rem;
+  }
+
+  .select, .checkbox {
+    margin-right: 1rem;
+  }
+
+  .ellipsis, .checkbox {
+    width: 7rem;
+  }
+
+  .ellipsis {
+    font-size: 2.25em;
+    align-items: baseline;
+    line-height: .875em;
+  }
+}

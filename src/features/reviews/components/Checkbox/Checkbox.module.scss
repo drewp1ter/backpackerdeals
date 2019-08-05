@@ -1,0 +1,22 @@
+.checkbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 3.5rem;
+  border: 1px solid #e8e8e8;
+  border-radius: 4px;
+  color: #959595;
+  font-size: .875em;
+  cursor: pointer;
+  transition: .2s ease color;
+  box-sizing: border-box;
+
+  &:hover {
+    color: #ff5a39 !important;
+  }
+
+  &[data-checked="true"] {
+    border-color: #ff5a39;
+    color: #202020;
+  }
+}
