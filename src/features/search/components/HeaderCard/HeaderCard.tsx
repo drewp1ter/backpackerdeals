@@ -19,7 +19,7 @@ export const HeaderCard: React.FC<IProps> = ({ title, description, body, rating,
       <h1>{title}</h1>
       <h2>{description}</h2>
       <p>{body}</p>
-      <Rating className={styles.rating} rating={rating} />
+      <Rating className={styles.rating} value={rating} detail={true} />
     </div>
   )
 }

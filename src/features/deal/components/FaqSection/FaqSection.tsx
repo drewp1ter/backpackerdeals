@@ -14,7 +14,7 @@ export const FaqSection: React.FC<IProps> = ({ className }) => {
   return (
     <div className={classNames(styles.faqSection, className)}>
       <div className={styles.head}>
-        <h4>FAQ</h4>
+        <h3>FAQ</h3>
         <p>
           Expand all
           <i className="fas fa-angle-double-down" />

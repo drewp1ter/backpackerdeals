@@ -207,7 +207,7 @@ body {
   color: #202020;
   background-color: #fff;
 
-  font-size: .83vw; // 16px / 1920
+  font-size: .833333vw; // 16px / 1920
 
   // from 12px to 16px
   @include device((min: 1280px, max: 1919px)) {

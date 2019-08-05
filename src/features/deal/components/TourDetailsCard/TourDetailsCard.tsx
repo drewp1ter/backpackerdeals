@@ -14,7 +14,7 @@ export interface IProps {
 export const TourDetailsCard: React.FC<IProps> = ({ className, title, items, children, rf }) => {
   return (
     <div ref={rf} className={classNames(styles.tourDetails, className)}>
-      <h4>{title}</h4>
+      <h3>{title}</h3>
       {items && (
         <ul>
           {items.map((item: string, idx: number) => (

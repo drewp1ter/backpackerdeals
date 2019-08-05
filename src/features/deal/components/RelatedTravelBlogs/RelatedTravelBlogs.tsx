@@ -15,7 +15,7 @@ export const RelatedTravelBlogs: React.FC<IProps> = ({ className }) => {
 
   return (
     <div className={classNames(styles.relatedTravelBlogs, className)}>
-      <h4>Related Travel Blogs</h4>
+      <h3>Related Travel Blogs</h3>
       <ul>{renderCards()}</ul>
     </div>
   )

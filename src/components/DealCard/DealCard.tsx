@@ -80,7 +80,7 @@ export const DealCard: React.FC<IProps> = ({
         {view === View.vertical && (
           <>
             <div className={styles.aboutPlace}>
-              <Rating className={styles.rating} rating={rating} />
+              <Rating className={styles.rating} value={rating} detail={true} />
               <div className={styles.location}>
                 <i className="fas fa-map-marker-alt" />
                 <span>{location}</span>
@@ -108,7 +108,7 @@ export const DealCard: React.FC<IProps> = ({
             </div>
 
             <h3 className={styles.tour}>{tourName}</h3>
-            <Rating className={styles.rating} rating={rating} />
+            <Rating className={styles.rating} value={rating} detail={true} />
             {view === View.horizontal && <p className={styles.description}>{description}</p>}
           </div>
         )}
