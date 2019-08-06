@@ -15,6 +15,7 @@ import {
   TourDetailsCard,
   TourIcons,
   TourInfoGallery,
+  WhatsToExpect
 } from '..'
 import { recommendedDeals } from './data'
 import styles from './DealLayout.module.scss'
@@ -96,13 +97,7 @@ export const DealLayout: React.FC = () => {
         </p>
       </TourDetailsCard>
 
-      <TourDetailsCard className={styles.card} title="What to expect">
-        <p>
-          No trip to Australia is complete without visiting Uluru, in the ‘Red Centre’ - a region famous for its cultural connection, native
-          vegetation and stunning landscape. This trip is the perfect choice for budget-conscious travellers looking to experience all that
-          the region has to offer! It’s affordable and great fun!
-        </p>
-      </TourDetailsCard>
+      <WhatsToExpect className={styles.whatsToExpect} />
 
       <BookingCalendar />
 

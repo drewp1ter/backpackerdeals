@@ -1,14 +1,13 @@
-import * as React from 'react'
+import React from 'react'
 
 import classNames from 'classnames'
 
-import styles from './Icon.module.scss'
-
 import images from './assets'
+import styles from './Icon.module.scss'
 
 export interface IProps {
   readonly name: keyof typeof images
-  readonly size?: 'md'
+  readonly size?: 'xl' | 'md'
   readonly className?: string
   readonly alt?: string
   readonly onClick?: () => void

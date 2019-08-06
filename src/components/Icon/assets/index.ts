@@ -27,6 +27,7 @@ import deal13 from './deal/deal13.svg'
 import deal14 from './deal/deal14.svg'
 import deal15 from './deal/deal15.svg'
 import deal16 from './deal/deal16.svg'
+import deal17 from './deal/deal17.svg'
 import deal2 from './deal/deal2.svg'
 import deal3 from './deal/deal3.svg'
 import deal4 from './deal/deal4.svg'
@@ -78,4 +79,5 @@ export default {
   deal14,
   deal15,
   deal16,
+  deal17
 }

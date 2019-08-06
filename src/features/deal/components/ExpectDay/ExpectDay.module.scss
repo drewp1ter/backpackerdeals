@@ -1,0 +1,84 @@
+.expectDay {
+
+  &:last-of-type {
+    p {
+      border: none;
+    }
+  }
+
+  .day {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    background: #ff5a39;
+    color: #fff;
+    font-size: 1em;
+    font-weight: bold;
+
+    b:last-of-type {
+      font-size: .625em;
+    }
+  }
+
+  .info {
+    margin-left: 1.5rem;
+
+    h5 {
+      font-size: 1em;
+      font-weight: bold;
+      margin-bottom: .5rem;
+    }
+
+    i {
+      font-size: .75em;
+      margin-right: .25rem;
+    }
+
+    span {
+      display: inline-flex;
+      margin-right: 1.25rem;
+    }
+  }
+
+  .dayHeader {
+    display: flex;
+  }
+
+  p {
+    line-height: 1.5em;
+    margin: 1.5rem 0 0 1.5rem;
+    border-left: 1px dashed #00aaf6;
+    padding: 0 0 2.5rem 3rem;
+    box-sizing: border-box;
+    max-height: 6.5rem;
+    transition: .8s ease max-height;
+    overflow: hidden;
+
+    &[data-expanded="true"] {
+      max-height: 15rem;
+
+      .expand i {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  .expand {
+    cursor: pointer;
+    margin-left: 1rem;
+
+    i {
+      font-size: .75em;
+      transition: .2s ease transform;
+      margin-left: .5rem;
+    }
+
+    &:hover {
+      color: #ff5a39;
+    }
+  }
+}

@@ -21,21 +21,7 @@
   margin: 1.875rem 0 2rem;
 }
 
-.tourInfoGallery {
-  width: 71rem;
-}
-
-.tourIcons {
-  margin-top: 4rem;
-}
-
-.relatedTravelBlogs {
-  margin-top: 4rem;
-  width: 71rem;
-}
-
-.faqSection {
-  width: 71rem;
+.faqSection, .relatedTravelBlogs, .tourIcons {
   margin-top: 4rem;
 }
 
@@ -45,17 +31,18 @@
 
 .reviews {
   margin-top: 2rem;
-  width: 71rem;
 }
 
-.googleMap {
-  width: 71rem;
+.googleMap, .whatsToExpect {
   margin-top: 3rem;
+}
+
+.googleMap, .reviews, .faqSection, .relatedTravelBlogs, .tourInfoGallery, .card, .whatsToExpect {
+  width: 71rem;
 }
 
 .card {
   margin-top: 2.5rem;
-  width: 71rem;
 
   p {
     line-height: 1.5rem;

@@ -1,15 +1,20 @@
 @import "src/scss/device";
 
 .icon {
-  &[data-size="md"] {
+  &[data-size="xl"] {
     height: 4rem;
     width: 4rem;
+  }
+
+  &[data-size="md"] {
+    height: 3rem;
+    width: 3rem;
   }
 }
 
 @include device((max: 768px)) {
   .icon {
-    &[data-size="md"] {
+    &[data-size="xl"] {
       height: 56px;
       width: 56px;
     }
