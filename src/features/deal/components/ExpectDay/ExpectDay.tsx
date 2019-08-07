@@ -1,5 +1,5 @@
 import classNames from 'classnames'
-import React, { useState } from 'react'
+import React from 'react'
 
 import styles from './ExpectDay.module.scss'
 
@@ -7,22 +7,18 @@ export interface IProps {
   readonly day: number
   readonly className?: string
   readonly body: string
+  readonly isExpanded: number
+  readonly isAnimated: number
+  readonly onClick: (value: number) => void
 }
 
-export const ExpectDay: React.FC<IProps> = ({ day, className, body }) => {
+export const ExpectDay: React.FC<IProps> = ({ day, isExpanded, isAnimated, className, onClick, body }) => {
   const maxLength = 288
-  const [isExpanded, setExpanded] = useState<boolean>(false)
-  const [isAnimated, setAnimation] = useState<boolean>(false)
+  const value = Math.pow(2, day - 1)
   const isOverflow = body!.length > maxLength
-  const text = isOverflow && !isAnimated && !isExpanded ? body.slice(0, body!.indexOf(' ', maxLength)) + '…' : body
+  const text = isOverflow && !(isAnimated & value) && !(isExpanded & value) ? body.slice(0, body!.indexOf(' ', maxLength)) + '…' : body
 
-  const handleClick = () => {
-    if (isExpanded) {
-      setAnimation(true)
-      setTimeout(() => setAnimation(false), 800)
-    }
-    setExpanded(!isExpanded)
-  }
+  const handleClick = () => onClick(value)
 
   return (
     <div className={classNames(styles.expectDay, className)}>
@@ -55,11 +51,11 @@ export const ExpectDay: React.FC<IProps> = ({ day, className, body }) => {
           </div>
         </div>
       </div>
-      <p data-expanded={isExpanded}>
+      <p data-expanded={!!(isExpanded & value)}>
         {text}
         {isOverflow && (
           <span className={styles.expand} onClick={handleClick}>
-            {isExpanded ? 'Collapse' : 'Expand'}
+            {!!(isExpanded & value) ? 'Collapse' : 'Expand'}
             <i className="fas fa-angle-double-down" />
           </span>
         )}

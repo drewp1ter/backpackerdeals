@@ -29,12 +29,17 @@
 
     p {
       margin-left: .875rem;
-      // font-size: .75em;
       transition: .2s ease color;
       cursor: pointer;
 
       &:hover {
         color: #ff5a39;
+      }
+
+      &[data-expanded="true"] {
+        i {
+          transform: rotate(180deg);
+        }
       }
     }
 

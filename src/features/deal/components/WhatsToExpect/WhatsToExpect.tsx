@@ -1,5 +1,5 @@
 import classNames from 'classnames'
-import React from 'react'
+import React, { useState } from 'react'
 
 import { Icon } from 'components'
 import { ExpectDay } from '..'
@@ -11,6 +11,26 @@ export interface IProps {
 }
 
 export const WhatsToExpect: React.FC<IProps> = ({ className }) => {
+  const [isExpanded, setExpanded] = useState<number>(0)
+  const [isAnimated, setAnimation] = useState<number>(0)
+
+  const handleClick = (value: number) => {
+    if (isExpanded & value) {
+      setAnimation(isAnimated + value)
+      setTimeout(() => setAnimation(0), 800)
+    }
+    setExpanded(isExpanded ^ value)
+  }
+
+  const handleExpandAll = () => {
+    if (isExpanded) {
+      setAnimation(isExpanded)
+      setExpanded(0)
+      setTimeout(() => setAnimation(0), 800)
+    } else {
+      setExpanded(7)
+    }
+  }
 
   return (
     <div className={classNames(styles.whatsToExpect, className)}>
@@ -23,8 +43,8 @@ export const WhatsToExpect: React.FC<IProps> = ({ className }) => {
       <div className={styles.head}>
         <div className={styles.itinerary}>
           <h3>Itinerary</h3>
-          <p>
-            Expand all
+          <p onClick={handleExpandAll} data-expanded={!!isExpanded}>
+            {isExpanded ? 'Collapse all' : 'Expand all'}
             <i className="fas fa-angle-double-down" />
           </p>
         </div>
@@ -38,14 +58,40 @@ export const WhatsToExpect: React.FC<IProps> = ({ className }) => {
           </button>
         </div>
       </div>
-      <ExpectDay body="THIS IS OVERFLOW Be ready for a 5.30 am pick up from your accommodation. You’ll soon be on your way to your first destination, the spectacular Kings
+      <ExpectDay
+        isAnimated={isAnimated}
+        isExpanded={isExpanded}
+        onClick={handleClick}
+        body="THIS IS OVERFLOW Be ready for a 5.30 am pick up from your accommodation. You’ll soon be on your way to your first destination, the spectacular Kings
         Canyon. Here you will enjoy a 3-hour guided hike to the rim of the canyon to see the ‘Lost City’ and witness the morning sun gleam
         over the sandstone domes. Be ready for a 5.30 am pick up from your accommodation. You’ll soon be on your way to your first destination, the spectacular Kings
         Canyon. Here you will enjoy a 3-hour guided hike to the rim of the canyon to see the ‘Lost City’ and witness the morning sun gleam
-        over the sandstone domes" day={1} className={styles.expectDay} />
-      <ExpectDay body="THIS IS NO OVERFLOW Be ready for a 5.30 am pick up from your accommodation. You’ll soon be on your way to your first destination, the spectacular Kings
+        over the sandstone domes"
+        day={1}
+        className={styles.expectDay}
+      />
+      <ExpectDay
+        isAnimated={isAnimated}
+        isExpanded={isExpanded}
+        onClick={handleClick}
+        body="THIS IS OVERFLOW Be ready for a 5.30 am pick up from your accommodation. You’ll soon be on your way to your first destination, the spectacular Kings
         Canyon. Here you will enjoy a 3-hour guided hike to the rim of the canyon to see the ‘Lost City’ and witness the morning sun gleam
-        over" day={2} className={styles.expectDay} />
+        over the sandstone domes. Be ready for a 5.30 am pick up from your accommodation. You’ll soon be on your way to your first destination, the spectacular Kings
+        Canyon. Here you will enjoy a 3-hour guided hike to the rim of the canyon to see the ‘Lost City’ and witness the morning sun gleam
+        over the sandstone domes"
+        day={2}
+        className={styles.expectDay}
+      />
+      <ExpectDay
+        isAnimated={isAnimated}
+        isExpanded={isExpanded}
+        onClick={handleClick}
+        body="THIS IS NO OVERFLOW Be ready for a 5.30 am pick up from your accommodation. You’ll soon be on your way to your first destination, the spectacular Kings
+        Canyon. Here you will enjoy a 3-hour guided hike to the rim of the canyon to see the ‘Lost City’ and witness the morning sun gleam
+        over"
+        day={3}
+        className={styles.expectDay}
+      />
     </div>
   )
 }
