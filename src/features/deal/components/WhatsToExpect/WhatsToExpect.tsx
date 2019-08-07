@@ -28,7 +28,7 @@ export const WhatsToExpect: React.FC<IProps> = ({ className }) => {
       setExpanded(0)
       setTimeout(() => setAnimation(0), 800)
     } else {
-      setExpanded(7)
+      setExpanded(3)
     }
   }
 
