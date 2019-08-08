@@ -6,7 +6,7 @@ const dotenvLoad = require('dotenv-load')
 const fonts = require('next-fonts')
 const optimizedImages = require('next-optimized-images')
 const webpack = require('webpack')
-// const withSize = require('next-size')
+const withSize = require('next-size')
 
 dotenvLoad()
 
@@ -61,6 +61,12 @@ const nextConfig = {
       }
     )
 
+    config.plugins.push(
+      new webpack.optimize.LimitChunkCountPlugin({
+        maxChunks: 1,
+      })
+    )
+
     if (dev) {
       config.module.rules.push({
         test: /\.(ts|tsx)$/,
@@ -85,18 +91,10 @@ module.exports = withPlugins(
   [
     [typescript],
     [fonts],
-    // [withSize],
-    [
-      new webpack.optimize.LimitChunkCountPlugin({
-        maxChunks: 1,
-      }),
-    ],
-
+    [withSize],
     [
       optimizedImages,
       {
-        // these are the default values so you don't have to provide them if they are good enough for your use-case.
-        // but you can overwrite them here with any valid value you want.
         inlineImageLimit: 8192,
         imagesFolder: 'images',
         imagesName: '[name]-[hash].[ext]',
@@ -123,7 +121,6 @@ module.exports = withPlugins(
         },
       },
     ],
-
     nextEnv(),
   ],
   nextConfig
