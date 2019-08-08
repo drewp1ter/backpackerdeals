@@ -6,7 +6,6 @@ import styles from './Select.module.scss'
 
 interface IProps {
   readonly options?: string[]
-  readonly children?: React.ReactNode
   readonly className?: string
   readonly theme?: 'default' | 'light' | 'defaultNoBorder' | 'booking'
   readonly value?: string
@@ -16,7 +15,11 @@ interface IProps {
   readonly size?: 'md' | 'md-font' | 'lg' | 'no'
   readonly placeholder?: string
   readonly renderIcon?: () => JSX.Element
-  readonly arrowPos?: 'left' | 'right'
+  readonly arrowPos?: 'left' | 'right' // стрелка вниз
+  // если требуется отоброзить что то отличное от простого списка, например календарь
+  readonly children?: React.ReactNode
+  readonly onClick?: () => void
+  readonly open?: boolean
 }
 
 export const Select: React.FC<IProps> = ({
@@ -31,20 +34,26 @@ export const Select: React.FC<IProps> = ({
   name = '',
   placeholder,
   renderIcon,
-  arrowPos = 'left'
+  arrowPos = 'left',
+  onClick,
+  open
 }) => {
   const [isOpen, setOpen] = useState<boolean>(false)
 
   const handleClckOutside = (event: React.FocusEvent<HTMLDivElement>) =>
     !event.currentTarget.contains(event.relatedTarget as Node) && setOpen(false)
 
-  const toggleSelect = () => !disabled && setOpen(!isOpen)
+  const toggleSelect = () => {
+    onClick ? onClick() : !disabled && setOpen(!isOpen)
+  }
 
   const handleClick = (event: React.MouseEvent<HTMLElement>) => {
     const index = event.currentTarget.dataset.index || 0
     options && onChange && onChange(options[+index], name)
     setOpen(false)
   }
+
+  const showOptions = open === undefined ? isOpen : open
 
   return (
     <div
@@ -61,7 +70,7 @@ export const Select: React.FC<IProps> = ({
         {arrowPos === 'right' && (renderIcon ? renderIcon() : <i data-pos={arrowPos} className="fas fa-angle-down" />)}
       </div>
 
-      {isOpen && (
+      {showOptions && (
         <ul className={styles.optionBlock}>
           {options &&
             options.map((option, idx) => (
