@@ -1,4 +1,10 @@
 .reviewsSection {
+  position: relative;
+
+  .anchor {
+    position: absolute;
+    top: -7.25rem;
+  }
 
   h3 {
     font-size: 2rem;

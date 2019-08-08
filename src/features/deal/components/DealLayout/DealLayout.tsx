@@ -7,7 +7,6 @@ import {
   BookingCalendar,
   DealsSection,
   FaqSection,
-  GoogleMap,
   Navigation,
   OrderDetails,
   RelatedTravelBlogs,
@@ -15,6 +14,7 @@ import {
   TourDetailsCard,
   TourIcons,
   TourInfoGallery,
+  TourOperator,
   WhatsToExpect,
 } from '..'
 import { recommendedDeals } from './data'
@@ -25,8 +25,11 @@ export const DealLayout: React.FC = () => {
     included: useRef<HTMLDivElement>(null),
     excluded: useRef<HTMLDivElement>(null),
     whereWeVisit: useRef<HTMLDivElement>(null),
+    whatsToExpect: useRef<HTMLDivElement>(null),
+    bookingCalendar: useRef<HTMLDivElement>(null),
     terms: useRef<HTMLDivElement>(null),
     policy: useRef<HTMLDivElement>(null),
+    reviews: useRef<HTMLDivElement>(null),
   }
 
   return (
@@ -48,7 +51,7 @@ export const DealLayout: React.FC = () => {
 
         <TourDetailsCard
           className={styles.card}
-          rf={refs.included}
+          navAnchor={refs.included}
           title="What’s included"
           items={[
             'Alice Springs to Uluru (Ayers Rock) to Alice Springs - all transport',
@@ -62,7 +65,7 @@ export const DealLayout: React.FC = () => {
 
         <TourDetailsCard
           className={styles.card}
-          rf={refs.excluded}
+          navAnchor={refs.excluded}
           title="What’s excluded"
           items={[
             'Sleeping bag hire for $20 (or bring your own)',
@@ -74,7 +77,7 @@ export const DealLayout: React.FC = () => {
 
         <TourDetailsCard
           className={styles.card}
-          rf={refs.whereWeVisit}
+          navAnchor={refs.whereWeVisit}
           title="Where we visit"
           items={[
             'Uluru sunrise',
@@ -98,13 +101,13 @@ export const DealLayout: React.FC = () => {
           </p>
         </TourDetailsCard>
 
-        <WhatsToExpect className={styles.whatsToExpect} />
-        <BookingCalendar />
+        <WhatsToExpect navAnchor={refs.whatsToExpect} className={styles.whatsToExpect} />
+        <BookingCalendar navAnchor={refs.bookingCalendar} className={styles.bookingCalendar} />
         <FaqSection className={styles.faqSection} />
 
         <TourDetailsCard
           className={styles.card}
-          rf={refs.terms}
+          navAnchor={refs.terms}
           title="Terms & Conditions"
           items={[
             'Itinerary may change due to cultural reasons, seasonal changes, operational logistics and accessibility.',
@@ -119,7 +122,7 @@ export const DealLayout: React.FC = () => {
 
         <TourDetailsCard
           className={styles.card}
-          rf={refs.policy}
+          navAnchor={refs.policy}
           title="Cancellation policy"
           items={[
             'Cancellations 30 days or more before departure: 25% of the total cost',
@@ -128,8 +131,8 @@ export const DealLayout: React.FC = () => {
           ]}
         />
 
-        <GoogleMap className={styles.googleMap} />
-        <ReviewsSection className={styles.reviews} title="Reviews" rating={4} />
+        <TourOperator className={styles.tourOperator} />
+        <ReviewsSection navAnchor={refs.reviews} className={styles.reviews} title="Reviews" rating={4} />
         <RelatedTravelBlogs className={styles.relatedTravelBlogs} />
       </div>
       <div className={styles.section}>

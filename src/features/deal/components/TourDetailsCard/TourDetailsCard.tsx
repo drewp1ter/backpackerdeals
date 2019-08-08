@@ -8,12 +8,13 @@ export interface IProps {
   readonly title: string
   readonly items?: string[]
   readonly children?: JSX.Element
-  readonly rf?: RefObject<HTMLDivElement>
+  readonly navAnchor?: RefObject<HTMLDivElement>
 }
 
-export const TourDetailsCard: React.FC<IProps> = ({ className, title, items, children, rf }) => {
+export const TourDetailsCard: React.FC<IProps> = ({ className, title, items, children, navAnchor }) => {
   return (
-    <div ref={rf} className={classNames(styles.tourDetails, className)}>
+    <div className={classNames(styles.tourDetails, className)}>
+      <div ref={navAnchor} className={styles.anchor} />
       <h3>{title}</h3>
       {items && (
         <ul>

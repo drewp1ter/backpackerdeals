@@ -1,4 +1,5 @@
-import React from 'react'
+import classNames from 'classnames'
+import React, { RefObject } from 'react'
 
 import { Calendar, CalendarBase, Select } from 'components'
 import { BookingDetails, CalendarButton, Sticker } from '..'
@@ -8,6 +9,7 @@ import { lastMinuteDeals, soldOuts, topDeals } from './data'
 
 export interface IProps {
   readonly className?: string
+  readonly navAnchor?: RefObject<HTMLDivElement>
 }
 
 export interface IState {
@@ -150,9 +152,11 @@ export class BookingCalendar extends CalendarBase<IProps, IState> {
 
   render() {
     const { month, year, selectedDay } = this.state
+    const { navAnchor, className } = this.props
 
     return (
-      <div className={styles.bookingCalendar}>
+      <div className={classNames(styles.bookingCalendar, className)}>
+        <div className={styles.anchor} ref={navAnchor} />
         <h3>Booking calendar</h3>
         <Select className={styles.select} placeholder={`${this.monthsLong[month]} ${year}`} theme="booking" size="no" arrowPos="right">
           <Calendar />

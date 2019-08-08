@@ -1,9 +1,13 @@
 .bookingCalendar {
-  margin-top: 3rem;
   border-radius: 8px;
   border: 1px solid #e4e4e4;
-  width: 71rem;
   box-sizing: border-box;
+  position: relative;
+
+  .anchor {
+    position: absolute;
+    top: -7.25rem;
+  }
 
   h3 {
     font-size: 2em;

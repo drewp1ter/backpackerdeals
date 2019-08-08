@@ -1,21 +1,20 @@
 import classNames from 'classnames'
-import React, { useState } from 'react'
+import React, { RefObject, useState } from 'react'
 
 import { Pagenation, Rating } from 'components'
 import { Filter, Review } from '..'
 import reviews from './data'
-// import { IProps as IReviewProps } from '../Review'
 
 import styles from './ReviewsSection.module.scss'
 
 export interface IProps {
-  // readonly reviews: IReviewProps[]
   readonly rating: number
   readonly title: string
   readonly className?: string
+  readonly navAnchor?: RefObject<HTMLDivElement>
 }
 
-export const ReviewsSection: React.FC<IProps> = ({ title, rating, className }) => {
+export const ReviewsSection: React.FC<IProps> = ({ title, rating, className, navAnchor }) => {
 
   const [page, setPage] = useState<number>(1)
 
@@ -23,6 +22,7 @@ export const ReviewsSection: React.FC<IProps> = ({ title, rating, className }) =
 
   return (
     <div className={classNames(styles.reviewsSection, className)}>
+      <div className={styles.anchor} ref={navAnchor} />
       <h3>{title}</h3>
       <Rating value={rating} detail={true} />
       <Filter className={styles.filter} />

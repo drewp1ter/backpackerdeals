@@ -15,17 +15,17 @@ export const Navigation: React.FC<IProps> = ({ refs }) => {
     { icon: icons.visit, label: 'Where we Visit', refname: 'whereWeVisit' },
     { icon: icons.video, label: 'Video' },
     { icon: icons.tour, label: 'Tour Map' },
-    { icon: icons.details, label: 'Details Itinerary' },
-    { icon: icons.booking, label: 'Booking Calendar' },
+    { icon: icons.details, label: 'Details Itinerary', refname: 'whatsToExpect' },
+    { icon: icons.booking, label: 'Booking Calendar', refname: 'bookingCalendar' },
     { icon: icons.pickup, label: 'Pickup Locations' },
     { icon: icons.terms, label: 'Terms & Conditions', refname: 'terms' },
     { icon: icons.cancellation, label: 'Cancellation Policy', refname: 'policy' },
-    { icon: icons.reviews, label: 'Reviews' },
+    { icon: icons.reviews, label: 'Reviews', refname: 'reviews' },
   ]
 
   const handleClick = ({ currentTarget }: React.MouseEvent<HTMLLIElement>) => {
     const refname = currentTarget.dataset.refname || ''
-    refs[refname] && refs[refname].current!.scrollIntoView({ behavior: 'smooth', block: 'center' })
+    refs[refname] && refs[refname].current!.scrollIntoView({ behavior: 'smooth', block: 'start' })
   }
 
   return (

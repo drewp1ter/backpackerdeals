@@ -1,5 +1,5 @@
 import classNames from 'classnames'
-import React, { useState } from 'react'
+import React, { RefObject, useState } from 'react'
 
 import { Icon } from 'components'
 import { ExpectDay } from '..'
@@ -8,9 +8,10 @@ import styles from './WhatsToExpect.module.scss'
 
 export interface IProps {
   readonly className?: string
+  readonly navAnchor?: RefObject<HTMLDivElement>
 }
 
-export const WhatsToExpect: React.FC<IProps> = ({ className }) => {
+export const WhatsToExpect: React.FC<IProps> = ({ className, navAnchor }) => {
   const [isExpanded, setExpanded] = useState<number>(0)
   const [isAnimated, setAnimation] = useState<number>(0)
 
@@ -34,6 +35,7 @@ export const WhatsToExpect: React.FC<IProps> = ({ className }) => {
 
   return (
     <div className={classNames(styles.whatsToExpect, className)}>
+      <div className={styles.anchor} ref={navAnchor} />
       <h3>What to expect</h3>
       <p>
         No trip to Australia is complete without visiting Uluru, in the ‘Red Centre’ - a region famous for its cultural connection, native
