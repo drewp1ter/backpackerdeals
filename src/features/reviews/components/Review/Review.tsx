@@ -1,5 +1,4 @@
 import classNames from 'classnames'
-import moment from 'moment'
 import React from 'react'
 
 import { Rating } from 'components'
@@ -23,7 +22,7 @@ export const Review: React.FC<IProps> = ({ title, author, rating, date, body, li
       <Rating value={rating} />
       <h6>{title}</h6>
       <p>
-        {author} {moment(date).format('DD.MM.YYYY')}
+        {author} {date && date.toLocaleDateString()}
       </p>
       <p>{body}</p>
       <div className={styles.bottom}>

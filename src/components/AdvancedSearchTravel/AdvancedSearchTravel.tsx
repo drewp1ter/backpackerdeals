@@ -1,4 +1,3 @@
-import moment from 'moment'
 import React, { useState } from 'react'
 
 import { Button } from 'components'
@@ -13,8 +12,16 @@ export interface IProps {
   readonly forHeader?: boolean
 }
 
+export interface IState {
+  readonly startLocation: string
+  readonly typeOfTour: string
+  readonly endLocation: string
+  readonly date: Date | undefined
+  readonly numberOfDays: string
+}
+
 export const AdvancedSearchTravel: React.FC<IProps> = ({ forHeader }) => {
-  const [state, setState] = useState({
+  const [state, setState] = useState<IState>({
     startLocation: '',
     typeOfTour: '',
     endLocation: '',
@@ -24,7 +31,6 @@ export const AdvancedSearchTravel: React.FC<IProps> = ({ forHeader }) => {
 
   const handleChange = (value: any, key: string) => setState({ ...state, [key]: value })
   const handleChangeDate = (value: Date) => handleChange(value, 'date')
-  const dateFormatFn = () => state.date && moment(state.date).format('DD/MM/YYYY')
   const selectTheme = forHeader ? 'default' : 'light'
 
   return (
@@ -64,7 +70,7 @@ export const AdvancedSearchTravel: React.FC<IProps> = ({ forHeader }) => {
           className={styles.lastSelect}
           placeholder="Select date"
           size="md-font"
-          value={dateFormatFn()}
+          value={state.date && state.date.toLocaleDateString()}
           theme={selectTheme}
         >
           <Calendar value={state.date || new Date()} onChange={handleChangeDate} />

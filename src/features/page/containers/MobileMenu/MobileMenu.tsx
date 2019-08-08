@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 
 import { Button, Calendar, MobileMenuWrapper, Select } from 'components'
 import { ISearchActions } from 'features/search'
-import moment from 'moment'
 import { PageActions } from '../..'
 import { MobileSelectMenu, SelectContinent } from '../../components'
 
@@ -17,6 +16,16 @@ interface IProps {
   readonly theme?: string
 }
 
+export interface IState {
+  readonly startLocation: string
+  readonly endLocation: string
+  readonly date: Date | undefined
+  readonly numberOfDays: string
+  readonly currency: IIconInfo
+  readonly language: IIconInfo
+  readonly searchQuery: string
+}
+
 export const MobileMenu: React.FC<Partial<Types.RootState> & Partial<PageActions> & Partial<ISearchActions> & IProps> = ({
   search,
   page,
@@ -27,14 +36,14 @@ export const MobileMenu: React.FC<Partial<Types.RootState> & Partial<PageActions
   closeSearch,
   changeSearchType,
 }) => {
-  const initialState = {
+  const initialState: IState = {
     startLocation: '',
     endLocation: '',
     date: undefined,
     numberOfDays: '',
     currency: currencies.aud,
     language: languages.english,
-    searchQuery: ''
+    searchQuery: '',
   }
 
   const [state, setState] = useState({ ...initialState })
@@ -60,7 +69,6 @@ export const MobileMenu: React.FC<Partial<Types.RootState> & Partial<PageActions
 
   const currencyFormatFn = (currency: IIconInfo) => `${currency.icon} ${currency.name}`
   const languageFormatFn = (language: IIconInfo) => language.name
-  const dateFormatFn = () => state.date && moment(state.date).format('DD/MM/YYYY')
 
   return (
     <div className={styles.mobileMenu} data-theme={theme}>
@@ -172,7 +180,13 @@ export const MobileMenu: React.FC<Partial<Types.RootState> & Partial<PageActions
             {search!.searchType === 'basic' ? (
               <>
                 <div className={styles.searchInput}>
-                  <input type="text" placeholder="Try Australia" value={state.searchQuery} name="searchQuery" onChange={handleChangeSearch} />
+                  <input
+                    type="text"
+                    placeholder="Try Australia"
+                    value={state.searchQuery}
+                    name="searchQuery"
+                    onChange={handleChangeSearch}
+                  />
                   <i className="fas fa-search" />
                 </div>
                 {countries.filter(country => country.includes(state.searchQuery)).length > 0 && (
@@ -221,7 +235,7 @@ export const MobileMenu: React.FC<Partial<Types.RootState> & Partial<PageActions
                   onChange={handleChange}
                   size="lg"
                 />
-                <Select className={styles.select} placeholder="Select date" value={dateFormatFn()} size="lg">
+                <Select className={styles.select} placeholder="Select date" value={state.date && state.date.toLocaleDateString()} size="lg">
                   <Calendar className={styles.calendar} value={state.date || new Date()} onChange={handleChangeDate} />
                 </Select>
                 <Select
