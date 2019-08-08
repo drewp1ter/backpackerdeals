@@ -2,18 +2,18 @@ import classNames from 'classnames'
 import React from 'react'
 
 import image from './assets/image_85.jpg'
-import styles from './GoogleMap.module.scss'
+import styles from './TourOperator.module.scss'
 
 export interface IProps {
   readonly className?: string
 }
 
-export const GoogleMap: React.FC<IProps> = ({ className }) => {
+export const TourOperator: React.FC<IProps> = ({ className }) => {
   return (
-    <div className={classNames(styles.googleMap, className)}>
+    <div className={classNames(styles.tourOperator, className)}>
       <h3>Tour Operator</h3>
       <div className={styles.container}>
-        <div className={styles.tourOperator}>
+        <div className={styles.card}>
           <h4>Tour Operator</h4>
           <div className={styles.img}>
             <img src={image} alt="" />
