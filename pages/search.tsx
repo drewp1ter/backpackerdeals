@@ -5,7 +5,7 @@ import { SearchLayout } from 'features/search/components'
 
 class Catalog extends React.Component {
   render = () => (
-    <Page headerTheme="dark" withInstagramCards={true}>
+    <Page headerTheme="dark">
       <SearchLayout />
     </Page>
   )
