@@ -1,4 +1,6 @@
 .orderDetails {
+  position: sticky;
+  top: 7.25rem;
 
   .main {
     display: flex;
@@ -6,6 +8,7 @@
     align-items: center;
     width: 100%;
     border: 1px solid #e8e8e8;
+    box-sizing: border-box;
     border-radius: 8px;
 
     > p:nth-child(2) {
@@ -143,8 +146,8 @@
       margin-top: 1.625rem;
     }
   }
+}
 
-  .addToWishlist {
-    width: 25.83vw;
-  }
+.addToWishlist {
+  width: 31rem;
 }

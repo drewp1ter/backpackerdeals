@@ -1,11 +1,18 @@
-.dealLayout {
-  padding: 90px 12.5rem 0 12.5rem;
-  box-sizing: border-box;
-  width: 100%;
+.headerSection {
+  margin: 6.25rem 12.5rem 0;
+}
 
-  .header {
-    display: flex;
-  }
+.section {
+  position: relative;
+  margin: 0 12.5rem;
+}
+
+.stickyWrapper {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 23rem;
 }
 
 .breadcrumbs {
@@ -14,7 +21,6 @@
 
 .orderDetails {
   width: 23rem;
-  margin-left: 1rem;
 }
 
 .tourDescription {
