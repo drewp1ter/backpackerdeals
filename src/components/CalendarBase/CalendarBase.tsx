@@ -61,5 +61,5 @@ export class CalendarBase<IProps, IStateP> extends React.Component<IProps, IStat
   }
 
   isSameDay = (a: Date | null | undefined, b: Date | null | undefined) =>
-    a && b && a.getFullYear() === b.getFullYear() && a.getMonth() === b.getMonth() && a.getDate() === b.getDate()
+    !!a && !!b && a.getFullYear() === b.getFullYear() && a.getMonth() === b.getMonth() && a.getDate() === b.getDate()
 }

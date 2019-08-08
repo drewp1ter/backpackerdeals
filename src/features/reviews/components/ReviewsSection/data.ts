@@ -1,5 +1,4 @@
 import { IProps as IReviewProps } from '../Review'
-import { Rating } from 'components';
 
 const reviews: IReviewProps[] = [
   {

@@ -90,9 +90,9 @@ export class BookingCalendar extends CalendarBase<IProps, IState> {
 
     const dayType =
       (day === null && DayTypes.dummy) ||
-      (topDeals.find(topDeal => this.isSameDay(topDeal, day)) && DayTypes.topDeal) ||
-      (lastMinuteDeals.find(lastMinuteDeal => this.isSameDay(lastMinuteDeal, day)) && DayTypes.lastMinuteDeal) ||
-      (soldOuts.find(soldOut => this.isSameDay(soldOut, day)) && DayTypes.soldOut)
+      (!!topDeals.find(topDeal => this.isSameDay(topDeal, day)) && DayTypes.topDeal) ||
+      (!!lastMinuteDeals.find(lastMinuteDeal => this.isSameDay(lastMinuteDeal, day)) && DayTypes.lastMinuteDeal) ||
+      (!!soldOuts.find(soldOut => this.isSameDay(soldOut, day)) && DayTypes.soldOut)
 
     return (
       <li data-day-type={dayType} className={styles.day} key={`${year}-${month}-day-${idx}`}
