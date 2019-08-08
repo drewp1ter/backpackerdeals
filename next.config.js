@@ -7,6 +7,7 @@ const fonts = require('next-fonts')
 const optimizedImages = require('next-optimized-images')
 const webpack = require('webpack')
 const withSize = require('next-size')
+const FilterWarningsPlugin = require('webpack-filter-warnings-plugin')
 
 dotenvLoad()
 
@@ -61,6 +62,13 @@ const nextConfig = {
       }
     )
 
+    config.plugins.unshift(
+      // эти варнинги не важны т.к. используется CSSModules https://github.com/webpack-contrib/mini-css-extract-plugin/issues/250
+      new FilterWarningsPlugin({
+        exclude: /\[mini-css-extract-plugin\][^]*Conflicting order between:/,
+      })
+    )
+
     config.plugins.push(
       new webpack.optimize.LimitChunkCountPlugin({
         maxChunks: 1,
@@ -82,7 +90,6 @@ const nextConfig = {
         })
       )
     }
-
     return config
   },
 }

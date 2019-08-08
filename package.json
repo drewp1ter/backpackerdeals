@@ -70,7 +70,8 @@
     "typesafe-actions": "^4.4.1",
     "typescript": "^3.4.5",
     "universal-rxjs-ajax": "^2.0.1",
-    "webp-loader": "^0.5.0"
+    "webp-loader": "^0.5.0",
+    "webpack-filter-warnings-plugin": "^1.2.1"
   },
   "devDependencies": {
     "ignore-not-found-export-webpack-plugin": "^1.0.0",
