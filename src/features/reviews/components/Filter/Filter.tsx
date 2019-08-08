@@ -15,12 +15,12 @@ export interface IState {
 }
 
 enum CheckBoxes {
-  tour = 0b000001,
-  trip = 0b000010,
-  guide = 0b000100,
-  hiking = 0b001000,
-  people = 0b010000,
-  food = 0b100000,
+  tour = 1,
+  trip = 2,
+  guide = 4,
+  hiking = 8,
+  people = 16,
+  food = 32,
 }
 
 export const Filter: React.FC<IProps> = ({ className }) => {
