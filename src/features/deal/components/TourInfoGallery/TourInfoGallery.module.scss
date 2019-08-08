@@ -57,13 +57,17 @@
     bottom: 2rem;
     width: 10rem;
     height: 4rem;
+    min-width: 120px;
+    min-height: 48px;
     border-radius: 8px 0 0 8px;
     background-color: #ff5a39;
     color: white;
     cursor: pointer;
 
     & > div:last-child {
-      padding: .75rem;
+      display: flex;
+      align-items: center;
+      padding: 0.56rem .2rem 0.56rem 0.68rem;
       box-sizing: border-box;
       font-size: .875em;
       line-height: 1.71;
@@ -71,7 +75,7 @@
   }
 
   .toSellIcon {
-    width: 4rem;
+    width: 40%;
     box-sizing: border-box;
     border-right: 1px solid #F45636;
     position: relative;

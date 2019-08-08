@@ -12,37 +12,53 @@ export const TourIcons: React.FC<IProps> = ({ className }) => {
   return (
     <ul className={classNames(styles.tourIcons, className)}>
       <li>
-        <Icon name="deal1" />
-        <p>3 days and</p>
-        <p>2 nights</p>
-      </li>
-      <li>
-        <Icon name="deal9" />
-        <p>Start 7:00 am</p>
-        <p>End 5.30 pm</p>
-      </li>
-      <li>
-        <Icon name="deal10" />
-        <p>Start & End</p>
-        <p>Location</p>
-      </li>
-      <li>
-        <Icon name="deal12" />
-        <div className={styles.subcard}>
-          <div className={styles.help} />
-          <p>Pick-up & Drop off Included</p>
-          <p>From your hotel/hostel in Alice Springs</p>
+        <Icon name="deal1"/>
+        <div>
+          <p>3 days and</p>
+          <p>2 nights</p>
         </div>
       </li>
       <li>
-        <Icon name="deal14" />
-        <p>Fitness Level</p>
-        <p>Medium</p>
+        <Icon name="deal9"/>
+        <div>
+          <p>Start 7:00 am</p>
+          <p>End 5.30 pm</p>
+        </div>
       </li>
       <li>
-        <Icon name="deal16" />
-        <p>Meals</p>
-        <p>Included</p>
+        <Icon name="deal10"/>
+        <div>
+          <p>Start & End</p>
+          <p>Location</p>
+        </div>
+      </li>
+      <li>
+        <Icon name="deal12"/>
+        <div>
+          <div className={styles.helpContainer}>
+            <div className={styles.help}/>
+            <div className={styles.subcard}>
+              <p>Pick-up & Drop off Included</p>
+              <p>From your hotel/hostel in Alice Springs</p>
+            </div>
+          </div>
+          <p>Pick-up & Drop off</p>
+          <p>Included</p>
+        </div>
+      </li>
+      <li>
+        <Icon name="deal14"/>
+        <div>
+          <p>Fitness Level</p>
+          <p>Medium</p>
+        </div>
+      </li>
+      <li>
+        <Icon name="deal16"/>
+        <div>
+          <p>Meals</p>
+          <p>Included</p>
+        </div>
       </li>
     </ul>
   )

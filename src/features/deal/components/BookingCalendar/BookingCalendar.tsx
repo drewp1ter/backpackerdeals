@@ -17,6 +17,13 @@ export interface IState {
   readonly selectedDay: number
 }
 
+enum DayTypes {
+  dummy = 'dummy',
+  topDeal = 'topDeal',
+  lastMinuteDeal = 'lastMinuteDeal',
+  soldOut = 'soldOut',
+}
+
 export class BookingCalendar extends CalendarBase<IProps, IState> {
   private navigation = React.createRef<HTMLUListElement>()
 
@@ -66,8 +73,9 @@ export class BookingCalendar extends CalendarBase<IProps, IState> {
     }
   }
 
-  handleSelectDay = (idx: string) => {
-    const selectedDay = Number(idx)
+  handleSelectDay = ({ currentTarget }: React.MouseEvent<HTMLLIElement>) => {
+    if (currentTarget.dataset.dayType === DayTypes.soldOut) { return; }
+    const selectedDay = Number(currentTarget.dataset.idx)
     this.setState({ selectedDay })
   }
 
@@ -79,12 +87,6 @@ export class BookingCalendar extends CalendarBase<IProps, IState> {
 
   renderDay = (day: Date | null, idx: number) => {
     const { month, year, selectedDay } = this.state
-    enum DayTypes {
-      dummy = 'dummy',
-      topDeal = 'topDeal',
-      lastMinuteDeal = 'lastMinuteDeal',
-      soldOut = 'soldOut',
-    }
 
     const dayType =
       (day === null && DayTypes.dummy) ||
@@ -93,7 +95,8 @@ export class BookingCalendar extends CalendarBase<IProps, IState> {
       (soldOuts.find(soldOut => this.isSameDay(soldOut, day)) && DayTypes.soldOut)
 
     return (
-      <li data-day-type={dayType} className={styles.day} key={`${year}-${month}-day-${idx}`}>
+      <li data-day-type={dayType} className={styles.day} key={`${year}-${month}-day-${idx}`}
+          data-idx={idx} onClick={this.handleSelectDay}>
         {day && (
           <>
             {(dayType === DayTypes.topDeal || dayType === DayTypes.soldOut || dayType === DayTypes.lastMinuteDeal) && (
@@ -115,8 +118,6 @@ export class BookingCalendar extends CalendarBase<IProps, IState> {
               <CalendarButton
                 className={styles.button}
                 theme={selectedDay === idx ? 'selected' : 'select'}
-                data={idx}
-                onClick={this.handleSelectDay}
               >{`Select${selectedDay === idx ? 'ed' : ''}`}</CalendarButton>
             )}
           </>

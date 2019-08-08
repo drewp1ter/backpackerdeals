@@ -9,17 +9,12 @@ footer {
   background-size: cover;
 
   h4 {
-    cursor: pointer;
     font-size: 18px;
     font-weight: 600;
     line-height: 2.29;
     text-align: left;
     color: #ffffff;
     transition: .2s ease color;
-
-    &:hover {
-      color: #ff5a39;
-    }
 
     &:nth-child(2n + 1) {
       font-size: 56px;

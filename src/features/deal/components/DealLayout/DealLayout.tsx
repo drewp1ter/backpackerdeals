@@ -94,12 +94,12 @@ export const DealLayout: React.FC = () => {
           ]}
         />
 
-        <TourDetailsCard className={styles.card} title="Why we love this">
-          <p>
-            We love how many walks you get to do on this tour. It’s a great way to see the landscape and immerse yourself in the outback
-            experience.
-          </p>
-        </TourDetailsCard>
+        {/*<TourDetailsCard className={styles.card} title="Why we love this">*/}
+        {/*  <p>*/}
+        {/*    We love how many walks you get to do on this tour. It’s a great way to see the landscape and immerse yourself in the outback*/}
+        {/*    experience.*/}
+        {/*  </p>*/}
+        {/*</TourDetailsCard>*/}
 
         <WhatsToExpect navAnchor={refs.whatsToExpect} className={styles.whatsToExpect} />
         <BookingCalendar navAnchor={refs.bookingCalendar} className={styles.bookingCalendar} />
