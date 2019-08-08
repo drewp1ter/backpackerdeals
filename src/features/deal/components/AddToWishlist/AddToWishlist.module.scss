@@ -8,11 +8,12 @@
     text-transform: uppercase;
     padding-bottom: 1.5rem;
     border-bottom: 2px solid #fafafa;
+    box-sizing: border-box;
   }
 
   .tour {
     position: relative;
-    margin: 3rem 0 2.625rem;
+    margin: 1.5rem 0 2.625rem;
 
     img {
       width: 100%;
@@ -27,11 +28,11 @@
       font-weight: bold;
 
       &:first-of-type {
-        top: 9.68vw;
+        top: 11.5rem;
       }
 
       &:last-of-type {
-        top: 11vw;
+        top: 13rem;
       }
     }
   }
@@ -51,12 +52,12 @@
   }
 
   > label:last-of-type {
-    margin-top: 2rem;
+    margin-top: 1rem;
   }
 
   > button {
     width: 12rem;
-    margin: 2rem 0;
+    margin: 1rem 0;
   }
 
   > p {

@@ -2,9 +2,10 @@ import classNames from 'classnames'
 import React from 'react'
 import ReactDOM from 'react-dom'
 
-import { isServer } from 'utils'
 import styles from './Modal.module.scss'
 
+// fixed - компонент будет отрендерен в портал
+// raltive - в древе текущего элемента с position: absolute
 enum Position {
   fixed = 'fixed',
   relative = 'relative',
@@ -18,29 +19,65 @@ export interface IProps {
   readonly position?: keyof typeof Position
 }
 
-export const Modal: React.FC<IProps> = ({ isOpen, onClose, className, children, position = Position.fixed }) => {
-  let portal = null
+export interface IState {
+  readonly animated: boolean
+}
 
-  if (position === Position.relative && !isServer()) {
-    portal = document.getElementById('modal-root')
+export class Modal extends React.Component<IProps, IState> {
+
+  public static defaultProps: Partial<IProps> = {
+    position: Position.fixed
   }
 
-  const mask = <div className={styles.mask} data-visible={isOpen} onClick={onClose} />
-  const icon = <i onClick={onClose} className={classNames(styles.close, 'fas fa-times')} />
+  public state = {
+    animated: false
+  }
 
-  return (
-    <div data-visible={isOpen} data-position={position} className={styles.modal}>
-      <div className={classNames(styles.body, className)}>
-        {position === Position.fixed ? (
-          icon
-        ) : (
-          <div className={styles.iconContainer} onClick={onClose}>
-            {icon}
-          </div>
-        )}
-        {children}
+  private node: any
+
+  handleClose = () => {
+    const { onClose } = this.props
+    this.setState({ animated: true })
+    setTimeout(() => {
+      this.setState({ animated: false })
+      onClose && onClose()
+    }, 500)
+  }
+
+  renderMask = () => {
+    const { isOpen } = this.props
+    return <div className={styles.mask} data-visible={isOpen} onClick={this.handleClose} />
+  }
+
+  renderIcon = () => <i onClick={this.props.onClose} className={classNames(styles.close, 'fas fa-times')} />
+
+  componentDidMount = () => {
+    this.node = document.getElementById('modal-root')
+  }
+
+  renderModal = () => {
+    const { isOpen, className, children, position} = this.props
+    const { animated } = this.state
+    return (
+      <div data-animated={animated} data-position={position} className={styles.modal}>
+        <div className={classNames(styles.body, className)}>
+          {position === Position.fixed ? (
+            this.renderIcon()
+          ) : (
+            <div className={styles.iconContainer} onClick={this.handleClose}>
+              {this.renderIcon()}
+            </div>
+          )}
+          {children}
+        </div>
+        {position === Position.fixed ? this.renderMask() : this.node && isOpen && ReactDOM.createPortal(this.renderMask(), this.node)}
       </div>
-      {position === Position.fixed ? mask : portal && isOpen && ReactDOM.createPortal(mask, portal)}
-    </div>
-  )
+    )
+  }
+
+  render = () => {
+    const { isOpen, position } = this.props
+    if (!isOpen) { return null }
+    return position === Position.fixed ? ReactDOM.createPortal(this.renderModal() , this.node) : this.renderModal()
+  }
 }
