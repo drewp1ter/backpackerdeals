@@ -49,7 +49,7 @@ export class Modal extends React.Component<IProps, IState> {
     return <div className={styles.mask} data-visible={isOpen} onClick={this.handleClose} />
   }
 
-  renderIcon = () => <i onClick={this.props.onClose} className={classNames(styles.close, 'fas fa-times')} />
+  renderIcon = () => <i onClick={this.handleClose} className={classNames(styles.close, 'fas fa-times')} />
 
   componentDidMount = () => {
     this.node = document.getElementById('modal-root')
