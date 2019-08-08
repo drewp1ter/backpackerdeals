@@ -1,5 +1,5 @@
 import classNames from 'classnames'
-import React from 'react'
+import React, { useState } from 'react'
 
 import { Button, Calendar, Input, Select } from 'components'
 import styles from './AddToWishlist.module.scss'
@@ -10,7 +10,17 @@ export interface IProps {
 }
 
 export const AddToWishlist: React.FC<IProps> = ({ className }) => {
+  const [date, setDate] = useState<Date>()
+  const [openCalendar, setOpenCalendar] = useState<boolean>(false)
+
+  const toggleSelect = () => setOpenCalendar(!openCalendar)
+  const handleChange = (date: Date) => {
+    setOpenCalendar(false)
+    setDate(date)
+  }
+
   const selectIcon = () => <i className={classNames(styles.selectIcon, 'fas fa-calendar')} />
+
   return (
     <div className={classNames(styles.addToWishlist, className)}>
       <h5>ADD TO WISHLIST</h5>
@@ -20,8 +30,16 @@ export const AddToWishlist: React.FC<IProps> = ({ className }) => {
         <p>Uluru Tour - 3 Days 2 Nights</p>
       </div>
       <label>Remind me on date</label>
-      <Select className={styles.select} placeholder="Select date" size="lg" renderIcon={selectIcon}>
-        <Calendar className={styles.calendar} value={new Date()} />
+      <Select
+        className={styles.select}
+        open={openCalendar}
+        onClick={toggleSelect}
+        value={date && date.toLocaleDateString()}
+        placeholder="Select date"
+        size="lg"
+        renderIcon={selectIcon}
+      >
+        <Calendar className={styles.calendar} onChange={handleChange} value={date || new Date()} />
       </Select>
       <Input className={styles.email} type="email" label="Email" placeholder="Email Address" labelID="wishlist-email" />
       <Button>Remind me</Button>
