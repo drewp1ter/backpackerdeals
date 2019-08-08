@@ -16,7 +16,7 @@ interface IProps {
   readonly placeholder?: string
   readonly renderIcon?: () => JSX.Element
   readonly arrowPos?: 'left' | 'right' // стрелка вниз
-  // если требуется отоброзить что то отличное от простого списка, например календарь
+  // custom behavior
   readonly children?: React.ReactNode
   readonly onClick?: () => void
   readonly open?: boolean
