@@ -8,15 +8,19 @@ export interface IProps {
   readonly className?: string
   readonly onChange?: (value: Date) => void
   readonly value?: Date
+  readonly minDate?: Date
 }
 
 export class Calendar extends CalendarBase<IProps, {}> {
   previousMonth = () => {
     const { month, year } = this.state
-    this.setState({
-      month: month !== 0 ? month - 1 : 11,
-      year: month !== 0 ? year : year - 1,
-    })
+    const { minDate } = this.props
+    year >= ((minDate && minDate.getFullYear()) || 0) &&
+      month > ((minDate && minDate.getMonth()) || 0) &&
+      this.setState({
+        month: month !== 0 ? month - 1 : 11,
+        year: month !== 0 ? year : year - 1,
+      })
   }
 
   nextMonth = () => {
@@ -31,7 +35,13 @@ export class Calendar extends CalendarBase<IProps, {}> {
     const { month, year } = this.state
     const { value } = this.props
     return (
-      <li data-empty={!day} data-active={this.isSameDay(value, day)} key={`${year}-${month}-day-${idx}`} data-dayid={idx} onClick={this.handleClickDay}>
+      <li
+        data-empty={!day}
+        data-active={this.isSameDay(value, day)}
+        key={`${year}-${month}-day-${idx}`}
+        data-dayid={idx}
+        onClick={this.handleClickDay}
+      >
         {day && day.getDate()}
       </li>
     )
@@ -40,7 +50,10 @@ export class Calendar extends CalendarBase<IProps, {}> {
   handleClickDay = ({ currentTarget }: React.MouseEvent<HTMLLIElement>) => {
     const day = this.days[Number(currentTarget.dataset.dayid)]
     const { onChange } = this.props
-    day && onChange && onChange(day)
+    if (day) {
+      this.setState({ year: day.getFullYear(), month: day.getMonth() })
+      onChange && onChange(day)
+    }
   }
 
   renderHeader = () => {

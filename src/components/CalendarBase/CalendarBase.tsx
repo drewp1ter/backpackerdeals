@@ -5,7 +5,11 @@ export interface IState {
   readonly year: number
 }
 
-export class CalendarBase<IProps, IStateP> extends React.Component<IProps, IState & IStateP> {
+export interface IProps {
+  readonly value?: Date
+}
+
+export class CalendarBase<IPropsP, IStateP> extends React.Component<IProps & IPropsP, IState & IStateP> {
   get days(): Array<Date | null> {
     const getNullDays = (count: number) => [...Array(count).keys()].map(_day => null)
     const { month, year } = this.state
@@ -24,14 +28,14 @@ export class CalendarBase<IProps, IStateP> extends React.Component<IProps, IStat
   public monthsShort: string[]
   public daysLong: string[]
   public daysShort: string[]
+  public now: Date
 
-  constructor(props: IProps) {
+  constructor(props: IProps & IPropsP) {
     super(props)
-    const now = new Date()
-
-    this.nowMonth = now.getMonth()
-    this.nowYear = now.getFullYear()
-    this.isUSStandart = now.toLocaleTimeString().search(/(AM|PM)/) !== -1
+    this.now = new Date()
+    this.nowMonth = props.value && props.value.getMonth() || this.now.getMonth()
+    this.nowYear = props.value && props.value.getFullYear() || this.now.getFullYear()
+    this.isUSStandart = this.now.toLocaleTimeString().search(/(AM|PM)/) !== -1
 
     this.monthsLong = [
       'January',

@@ -15,6 +15,8 @@ export interface IProps {
 export interface IState {
   readonly monthsToRender: number
   readonly selectedDay: number
+  readonly isOpenSmallCalendar: boolean
+  readonly valueSmallCalendar: Date | undefined
 }
 
 enum DayTypes {
@@ -34,6 +36,8 @@ export class BookingCalendar extends CalendarBase<IProps, IState> {
       ...this.state,
       monthsToRender: 12,
       selectedDay: -1,
+      isOpenSmallCalendar: false,
+      valueSmallCalendar: undefined,
     }
   }
 
@@ -46,14 +50,15 @@ export class BookingCalendar extends CalendarBase<IProps, IState> {
 
   scrollRight = () => {
     const { current } = this.navigation
-    if (current) {
-      current.scrollLeft + current.offsetWidth > current.scrollWidth - current.offsetWidth / 2 &&
-        this.setState(prev => ({
-          ...prev,
-          monthsToRender: prev.monthsToRender + 12,
-        }))
-      current.scrollTo({ left: current.scrollLeft + current.offsetWidth / 2, behavior: 'smooth' })
-    }
+    current && current.scrollTo({ left: current.scrollLeft + current.offsetWidth / 2, behavior: 'smooth' })
+  }
+
+  handleNavScroll = ({ target }: any) => {
+    target.scrollLeft + target.offsetWidth > target.scrollWidth - target.offsetWidth / 2 &&
+      this.setState(prev => ({
+        ...prev,
+        monthsToRender: prev.monthsToRender + 12,
+      }))
   }
 
   shiftByMonths = (offset: number) => {
@@ -74,15 +79,46 @@ export class BookingCalendar extends CalendarBase<IProps, IState> {
   }
 
   handleSelectDay = ({ currentTarget }: React.MouseEvent<HTMLLIElement>) => {
-    if (currentTarget.dataset.dayType === DayTypes.soldOut) { return; }
+    const { dayType } = currentTarget.dataset
+    if (dayType === DayTypes.soldOut || dayType === DayTypes.dummy) {
+      return
+    }
     const selectedDay = Number(currentTarget.dataset.idx)
-    this.setState({ selectedDay })
+    this.setState({ selectedDay, valueSmallCalendar: this.days[selectedDay] as Date })
   }
 
   handleCloseBookingDetails = () => this.setState({ selectedDay: -1 })
 
   handleClickMonth = ({ currentTarget }: React.MouseEvent<HTMLLIElement>) => {
     this.setState({ ...this.shiftByMonths(Number(currentTarget.dataset.offset)) })
+  }
+
+  handleChangeSmallCalendar = (value: Date) => {
+    const months = ((value.getTime() - this.now.getTime()) / 2592000000) | 0
+    this.setState(
+      prev => ({
+        ...prev,
+        valueSmallCalendar: value,
+        year: value.getFullYear(),
+        month: value.getMonth(),
+        isOpenSmallCalendar: false,
+        monthsToRender: months > prev.monthsToRender ? months + 10 : prev.monthsToRender,
+      }),
+      () => {
+        const navigation = this.navigation.current
+        if (navigation) {
+          const activeMonth = Array.from(navigation.children as HTMLCollectionOf<HTMLElement>).find(elem => elem.dataset.active === 'true')
+          activeMonth && navigation.scrollTo({ left: activeMonth.offsetLeft - navigation.offsetWidth / 2, behavior: 'smooth' })
+        }
+      }
+    )
+  }
+
+  handleClickSelect = () => {
+    this.setState(prev => ({
+      ...prev,
+      isOpenSmallCalendar: !prev.isOpenSmallCalendar,
+    }))
   }
 
   renderDay = (day: Date | null, idx: number) => {
@@ -94,9 +130,16 @@ export class BookingCalendar extends CalendarBase<IProps, IState> {
       (!!lastMinuteDeals.find(lastMinuteDeal => this.isSameDay(lastMinuteDeal, day)) && DayTypes.lastMinuteDeal) ||
       (!!soldOuts.find(soldOut => this.isSameDay(soldOut, day)) && DayTypes.soldOut)
 
+    const selected = selectedDay === idx
+
     return (
-      <li data-day-type={dayType} className={styles.day} key={`${year}-${month}-day-${idx}`}
-          data-idx={idx} onClick={this.handleSelectDay}>
+      <li
+        data-day-type={selected || dayType}
+        className={styles.day}
+        key={`${year}-${month}-day-${idx}`}
+        data-idx={idx}
+        onClick={this.handleSelectDay}
+      >
         {day && (
           <>
             {(dayType === DayTypes.topDeal || dayType === DayTypes.soldOut || dayType === DayTypes.lastMinuteDeal) && (
@@ -115,10 +158,9 @@ export class BookingCalendar extends CalendarBase<IProps, IState> {
                 Add me to waitlist
               </CalendarButton>
             ) : (
-              <CalendarButton
-                className={styles.button}
-                theme={selectedDay === idx ? 'selected' : 'select'}
-              >{`Select${selectedDay === idx ? 'ed' : ''}`}</CalendarButton>
+              <CalendarButton className={styles.button} theme={selected ? 'selected' : 'select'}>{`Select${
+                selected ? 'ed' : ''
+              }`}</CalendarButton>
             )}
           </>
         )}
@@ -138,13 +180,9 @@ export class BookingCalendar extends CalendarBase<IProps, IState> {
     const { month: currentMonth, year: currentYear, monthsToRender } = this.state
     return [...Array(monthsToRender).keys()].map(offsetMonth => {
       const { year, month } = this.shiftByMonths(offsetMonth)
+      const active = year === currentYear && month === currentMonth
       return (
-        <li
-          key={`${year}-${month}`}
-          data-active={year === currentYear && month === currentMonth}
-          data-offset={offsetMonth}
-          onClick={this.handleClickMonth}
-        >
+        <li key={`${year}-${month}`} data-active={active} data-offset={offsetMonth} onClick={this.handleClickMonth}>
           {this.monthsLong[month]} {year}
         </li>
       )
@@ -152,19 +190,27 @@ export class BookingCalendar extends CalendarBase<IProps, IState> {
   }
 
   render() {
-    const { month, year, selectedDay } = this.state
+    const { month, year, selectedDay, isOpenSmallCalendar, valueSmallCalendar } = this.state
     const { navAnchor, className } = this.props
 
     return (
       <div className={classNames(styles.bookingCalendar, className)}>
         <div className={styles.anchor} ref={navAnchor} />
         <h3>Booking calendar</h3>
-        <Select className={styles.select} placeholder={`${this.monthsLong[month]} ${year}`} theme="booking" size="no" arrowPos="right">
-          <Calendar />
+        <Select
+          open={isOpenSmallCalendar}
+          onClick={this.handleClickSelect}
+          className={styles.select}
+          placeholder={`${this.monthsLong[month]} ${year}`}
+          theme="booking"
+          size="no"
+          arrowPos="right"
+        >
+          <Calendar minDate={this.now} value={valueSmallCalendar} onChange={this.handleChangeSmallCalendar} />
         </Select>
         <div className={styles.navigation}>
           <i className="fas fa-chevron-left" onClick={this.scrollLeft} />
-          <ul ref={this.navigation} className={styles.navigation}>
+          <ul ref={this.navigation} onScroll={this.handleNavScroll} className={styles.navigation}>
             {this.renderNavigation()}
           </ul>
           <i className="fas fa-chevron-right" onClick={this.scrollRight} />
