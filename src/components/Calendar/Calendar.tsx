@@ -6,7 +6,7 @@ import styles from './Calendar.module.scss'
 
 export interface IProps {
   readonly className?: string
-  readonly onChange?: (value: Date) => void
+  readonly onChange?: (value: Date, dayid?: number) => void
   readonly value?: Date
   readonly minDate?: Date
 }
@@ -48,11 +48,12 @@ export class Calendar extends CalendarBase<IProps, {}> {
   }
 
   handleClickDay = ({ currentTarget }: React.MouseEvent<HTMLLIElement>) => {
-    const day = this.days[Number(currentTarget.dataset.dayid)]
+    const dayid = Number(currentTarget.dataset.dayid)
+    const day = this.days[dayid]
     const { onChange } = this.props
     if (day) {
       this.setState({ year: day.getFullYear(), month: day.getMonth() })
-      onChange && onChange(day)
+      onChange && onChange(day, dayid)
     }
   }
 

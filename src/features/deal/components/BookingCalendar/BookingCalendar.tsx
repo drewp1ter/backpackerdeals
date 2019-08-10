@@ -16,7 +16,7 @@ export interface IState {
   readonly monthsToRender: number
   readonly selectedDay: number
   readonly isOpenSmallCalendar: boolean
-  readonly valueSmallCalendar: Date | undefined
+  readonly value: Date | undefined
 }
 
 enum DayTypes {
@@ -37,7 +37,7 @@ export class BookingCalendar extends CalendarBase<IProps, IState> {
       monthsToRender: 12,
       selectedDay: -1,
       isOpenSmallCalendar: false,
-      valueSmallCalendar: undefined,
+      value: undefined,
     }
   }
 
@@ -84,21 +84,22 @@ export class BookingCalendar extends CalendarBase<IProps, IState> {
       return
     }
     const selectedDay = Number(currentTarget.dataset.idx)
-    this.setState({ selectedDay, valueSmallCalendar: this.days[selectedDay] as Date })
+    this.setState({ selectedDay, value: this.days[selectedDay] as Date })
   }
 
   handleCloseBookingDetails = () => this.setState({ selectedDay: -1 })
 
   handleClickMonth = ({ currentTarget }: React.MouseEvent<HTMLLIElement>) => {
-    this.setState({ ...this.shiftByMonths(Number(currentTarget.dataset.offset)) })
+    this.setState({ ...this.shiftByMonths(Number(currentTarget.dataset.offset)), selectedDay: -1 })
   }
 
-  handleChangeSmallCalendar = (value: Date) => {
+  handleChangeSmallCalendar = (value: Date, selectedDay = -1) => {
     const months = ((value.getTime() - this.now.getTime()) / 2592000000) | 0
     this.setState(
       prev => ({
         ...prev,
-        valueSmallCalendar: value,
+        value,
+        selectedDay,
         year: value.getFullYear(),
         month: value.getMonth(),
         isOpenSmallCalendar: false,
@@ -120,6 +121,8 @@ export class BookingCalendar extends CalendarBase<IProps, IState> {
       isOpenSmallCalendar: !prev.isOpenSmallCalendar,
     }))
   }
+
+  handleCloseSelect = () => this.setState({ isOpenSmallCalendar: false })
 
   renderDay = (day: Date | null, idx: number) => {
     const { month, year, selectedDay } = this.state
@@ -190,7 +193,7 @@ export class BookingCalendar extends CalendarBase<IProps, IState> {
   }
 
   render() {
-    const { month, year, selectedDay, isOpenSmallCalendar, valueSmallCalendar } = this.state
+    const { month, year, selectedDay, isOpenSmallCalendar, value } = this.state
     const { navAnchor, className } = this.props
 
     return (
@@ -200,13 +203,14 @@ export class BookingCalendar extends CalendarBase<IProps, IState> {
         <Select
           open={isOpenSmallCalendar}
           onClick={this.handleClickSelect}
+          onClickOutside={this.handleCloseSelect}
           className={styles.select}
-          placeholder={`${this.monthsLong[month]} ${year}`}
+          placeholder={`${this.monthsLong[value ? value.getMonth() : month]} ${value ? value.getFullYear() : year}`}
           theme="booking"
           size="no"
           arrowPos="right"
         >
-          <Calendar minDate={this.now} value={valueSmallCalendar} onChange={this.handleChangeSmallCalendar} />
+          <Calendar minDate={this.now} value={value} onChange={this.handleChangeSmallCalendar} />
         </Select>
         <div className={styles.navigation}>
           <i className="fas fa-chevron-left" onClick={this.scrollLeft} />
