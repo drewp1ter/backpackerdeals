@@ -14,6 +14,7 @@ export const AddToWishlist: React.FC<IProps> = ({ className }) => {
   const [openCalendar, setOpenCalendar] = useState<boolean>(false)
 
   const toggleSelect = () => setOpenCalendar(!openCalendar)
+  const closeSelect = () => setOpenCalendar(false)
   const handleChange = (date: Date) => {
     setOpenCalendar(false)
     setDate(date)
@@ -34,6 +35,7 @@ export const AddToWishlist: React.FC<IProps> = ({ className }) => {
         className={styles.select}
         open={openCalendar}
         onClick={toggleSelect}
+        onClickOutside={closeSelect}
         value={date && date.toLocaleDateString()}
         placeholder="Select date"
         size="lg"

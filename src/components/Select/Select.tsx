@@ -19,6 +19,7 @@ interface IProps {
   // custom behavior
   readonly children?: React.ReactNode
   readonly onClick?: () => void
+  readonly onClickOutside?: () => void
   readonly open?: boolean
 }
 
@@ -36,12 +37,17 @@ export const Select: React.FC<IProps> = ({
   renderIcon,
   arrowPos = 'left',
   onClick,
+  onClickOutside,
   open
 }) => {
   const [isOpen, setOpen] = useState<boolean>(false)
 
-  const handleClckOutside = (event: React.FocusEvent<HTMLDivElement>) =>
-    !event.currentTarget.contains(event.relatedTarget as Node) && setOpen(false)
+  const handleClckOutside = (event: React.FocusEvent<HTMLDivElement>) => {
+    if (!event.currentTarget.contains(event.relatedTarget as Node)) {
+      onClickOutside && onClickOutside()
+      !onClickOutside && setOpen(false)
+    }
+  }
 
   const toggleSelect = () => {
     onClick ? onClick() : !disabled && setOpen(!isOpen)
