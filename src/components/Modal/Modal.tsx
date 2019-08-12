@@ -45,8 +45,8 @@ export class Modal extends React.Component<IProps, IState> {
   }
 
   renderMask = () => {
-    const { isOpen } = this.props
-    return <div className={styles.mask} data-visible={isOpen} onClick={this.handleClose} />
+    const { animated } = this.state
+    return <div data-animated={animated} className={styles.mask} onClick={this.handleClose} />
   }
 
   renderIcon = () => <i onClick={this.handleClose} className={classNames(styles.close, 'fas fa-times')} />
