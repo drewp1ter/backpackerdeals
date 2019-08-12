@@ -293,8 +293,6 @@
 
     .imageBlock {
       border-radius: .57rem .57rem 0 0;
-      //height: 21.5vw;
-      //width: 22.7vw;
 
       .like[data-type="wide"] {
         right: .72rem
@@ -305,20 +303,6 @@
         border-radius: .57rem .57rem 0 0;
         padding: .57rem 1.43rem;
         font-size: .79em;
-      }
-
-      .exposeTime {
-        .timeName {
-          font-size: 8px;
-        }
-
-        p {
-          font-size: 32px;
-
-          &.colon {
-            margin: 0 8px;
-          }
-        }
       }
 
       .sale {
@@ -359,26 +343,6 @@
 
         i {
           font-size: 1.21em;
-        }
-      }
-    }
-  }
-}
-
-@media screen and (max-width: 1024px) {
-  .dealCard {
-    .imageBlock {
-      .exposeTime {
-        .timeName {
-          font-size: .46em;
-        }
-
-        p {
-          font-size: 2em;
-
-          &.colon {
-            margin: 0 6px;
-          }
         }
       }
     }
