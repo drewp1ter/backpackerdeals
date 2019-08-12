@@ -3,7 +3,7 @@ import React, { RefObject } from 'react'
 
 import { Calendar, CalendarBase, Select } from 'components'
 import { BookingDetails, CalendarButton, Sticker } from '..'
-import styles from './BookingCalendar.module.scss'
+import styles from './BookingCalendarMonth.module.scss'
 
 import { lastMinuteDeals, soldOuts, topDeals } from './data'
 
@@ -26,7 +26,7 @@ enum DayTypes {
   soldOut = 'soldOut',
 }
 
-export class BookingCalendar extends CalendarBase<IProps, IState> {
+export class BookingCalendarMonth extends CalendarBase<IProps, IState> {
   private navigation = React.createRef<HTMLUListElement>()
 
   constructor(props: IProps) {
@@ -44,17 +44,17 @@ export class BookingCalendar extends CalendarBase<IProps, IState> {
   scrollLeft = () => {
     const { current } = this.navigation
     if (current) {
-      current.scrollTo({ left: current.scrollLeft - current.offsetWidth / 2, behavior: 'smooth' })
+      current.scrollTo({ left: current.scrollLeft - current.offsetWidth - 50, behavior: 'smooth' })
     }
   }
 
   scrollRight = () => {
     const { current } = this.navigation
-    current && current.scrollTo({ left: current.scrollLeft + current.offsetWidth / 2, behavior: 'smooth' })
+    current && current.scrollTo({ left: current.scrollLeft + current.offsetWidth - 50, behavior: 'smooth' })
   }
 
   handleNavScroll = ({ target }: any) => {
-    target.scrollLeft + target.offsetWidth > target.scrollWidth - target.offsetWidth / 2 &&
+    target.scrollLeft + target.offsetWidth > target.scrollWidth - target.offsetWidth &&
       this.setState(prev => ({
         ...prev,
         monthsToRender: prev.monthsToRender + 12,
@@ -206,7 +206,7 @@ export class BookingCalendar extends CalendarBase<IProps, IState> {
           onClickOutside={this.handleCloseSelect}
           className={styles.select}
           placeholder={`${this.monthsLong[value ? value.getMonth() : month]} ${value ? value.getFullYear() : year}`}
-          theme="booking"
+          theme="orange"
           size="no"
           arrowPos="right"
         >

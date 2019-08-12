@@ -7,11 +7,13 @@ import styles from './BookingDetails.module.scss'
 
 export interface IProps {
   readonly onClose?: () => void
+  readonly className?: string
+  readonly variant?: 'inMonth' | 'inWeek'
 }
 
-export const BookingDetails: React.FC<IProps> = ({ onClose }) => {
+export const BookingDetails: React.FC<IProps> = ({ onClose, className, variant = 'inMonth' }) => {
   return (
-    <div className={styles.bookingDetails}>
+    <div className={classNames(styles.bookingDetails, className)} data-variant={variant}>
       <i onClick={onClose} className={classNames(styles.close, 'fas fa-times')} />
       <div className={styles.leftSection}>
         <h5>Alice Springs to Alice Springs Uluru Tour - 3 Days 2 Nights</h5>
