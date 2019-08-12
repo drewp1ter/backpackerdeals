@@ -4,7 +4,8 @@ import React, { useRef } from 'react'
 import { Breadcrumbs } from 'components'
 import { ReviewsSection } from 'features/reviews/components'
 import {
-  BookingCalendar,
+  BookingCalendarMonth,
+  BookingCalendarWeek,
   DealsSection,
   FaqSection,
   Navigation,
@@ -102,7 +103,8 @@ export const DealLayout: React.FC = () => {
         {/*</TourDetailsCard>*/}
 
         <WhatsToExpect navAnchor={refs.whatsToExpect} className={styles.whatsToExpect} />
-        <BookingCalendar navAnchor={refs.bookingCalendar} className={styles.bookingCalendar} />
+        <BookingCalendarMonth navAnchor={refs.bookingCalendar} className={styles.bookingCalendar} />
+        <BookingCalendarWeek />
         <FaqSection className={styles.faqSection} />
 
         <TourDetailsCard
