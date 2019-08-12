@@ -7,7 +7,7 @@ import styles from './Select.module.scss'
 interface IProps {
   readonly options?: string[]
   readonly className?: string
-  readonly theme?: 'default' | 'light' | 'defaultNoBorder' | 'booking'
+  readonly theme?: 'default' | 'light' | 'defaultNoBorder' | 'orange' | 'fillOrange'
   readonly value?: string
   readonly disabled?: boolean
   readonly name?: string

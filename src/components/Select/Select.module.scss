@@ -23,14 +23,23 @@
     }
   }
 
-  &[data-theme="booking"] {
-    height: unset !important;
-
+  &[data-theme="orange"] {
     .select {
       i, span {
         color: #ff5a39;
         font-weight: bold;
         font-size: 1.625em;
+      }
+    }
+  }
+
+  &[data-theme="fillOrange"] {
+    border-radius: 8px;
+    background-color: #ff5a39;
+
+    .select {
+      i, span {
+        color: #fff;
       }
     }
   }
