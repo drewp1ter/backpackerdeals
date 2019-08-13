@@ -4,12 +4,10 @@ import React, { useRef } from 'react'
 import { Breadcrumbs } from 'components'
 import { ReviewsSection } from 'features/reviews/components'
 import {
-  BookingCalendarMonth,
   BookingCalendarWeek,
   DealsSection,
   FaqSection,
   Navigation,
-  OrderDetails,
   RelatedTravelBlogs,
   TourDescription,
   TourDetailsCard,
@@ -18,6 +16,7 @@ import {
   TourOperator,
   WhatsToExpect,
 } from '..'
+import { BookingCalendarMonth, OrderDetails } from '../../containers'
 import { recommendedDeals } from './data'
 import styles from './DealLayout.module.scss'
 

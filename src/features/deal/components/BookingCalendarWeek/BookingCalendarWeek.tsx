@@ -65,7 +65,7 @@ export class BookingCalendarWeek extends React.Component<IProps, IState> {
 
   renderDay = (day: Date, idx: number) => {
     return (
-      <li className={styles.header} key={idx}>
+      <li className={styles.header} key={`header-${idx}`}>
         <b>{DAYS_LONG[day.getDay()]}</b>
         <p>
           {day.getDate()} {MONTHS_LONG[day.getMonth()]}
@@ -100,7 +100,7 @@ export class BookingCalendarWeek extends React.Component<IProps, IState> {
       events.map((event: any, idx: number) => {
         const selected = selectedEvent === idx && 'selected'
         return (
-          <>
+          <React.Fragment key={idx}>
             {idx % 7 === 0 && (
               <li className={styles.eventTime}>
                 <p>10:00 AM</p>
@@ -109,14 +109,13 @@ export class BookingCalendarWeek extends React.Component<IProps, IState> {
               </li>
             )}
             {this.days[idx % 7].getTime() <= this.now.getTime() ? (
-              <li className={styles.notAviable} key={idx}>Not aviable</li>
+              <li className={styles.notAviable}>Not aviable</li>
             ) : (
               <li
                 className={styles.event}
                 data-type={selected || event.eventType}
                 onClick={this.handleSelectEvent}
                 data-idx={idx}
-                key={idx}
               >
                 {(event.eventType === 'topDeal' || event.eventType === 'soldOut' || event.eventType === 'lastMinuteDeal') && (
                   <Sticker className={styles.sticker} variant={event.eventType} />
@@ -136,7 +135,7 @@ export class BookingCalendarWeek extends React.Component<IProps, IState> {
                 )}
               </li>
             )}
-          </>
+          </React.Fragment>
         )
       })
     )

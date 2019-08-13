@@ -3,7 +3,8 @@ import React, { useState } from 'react'
 import classNames from 'classnames'
 
 import { Button, ExposeTime, Modal } from 'components'
-import { AddToWishlist, Sticker } from '..'
+import { IDealActions } from 'features/deal'
+import { AddToWishlist, Sticker } from '../../components'
 import flash from './assets/flash.svg'
 import styles from './OrderDetails.module.scss'
 
@@ -11,9 +12,17 @@ export interface IProps {
   readonly className?: string
 }
 
-export const OrderDetails: React.FC<IProps> = ({ className }) => {
+type AllProps = IProps & Partial<IDealActions>
+
+export const OrderDetails: React.FC<AllProps> = ({ className, onClickNextAviable }) => {
   const [modalVisible, setModalVisible] = useState<boolean>(false)
   const toggleModal = () => setModalVisible(!modalVisible)
+  const nextAviable = new Date(2019, 8, 24)
+
+  const handleClickNextAviable = () => {
+    onClickNextAviable && onClickNextAviable(new Date(nextAviable))
+  }
+
   return (
     <div className={classNames(styles.orderDetails, className)}>
       <Modal isOpen={modalVisible} onClose={toggleModal}>
@@ -56,7 +65,7 @@ export const OrderDetails: React.FC<IProps> = ({ className }) => {
         </Button>
         <p className={styles.aviableDate}>
           <i className="fas fa-calendar" />
-          Next available date:<span>03/05/2019</span>
+          Next available date:<span onClick={handleClickNextAviable}>{nextAviable.toLocaleDateString()}</span>
         </p>
       </div>
       <Button className={styles.button} form="rectangled" size="xl" theme="standart">

@@ -2,9 +2,9 @@ import classNames from 'classnames'
 import React, { RefObject } from 'react'
 
 import { Calendar, CalendarBase, Select } from 'components'
-import { BookingDetails, CalendarButton, Sticker } from '..'
+import { BookingDetails, CalendarButton, Sticker } from '../../components'
+import { IDealState } from '../../reducer'
 import styles from './BookingCalendarMonth.module.scss'
-
 import { lastMinuteDeals, soldOuts, topDeals } from './data'
 
 export interface IProps {
@@ -26,8 +26,11 @@ enum DayTypes {
   soldOut = 'soldOut',
 }
 
-export class BookingCalendarMonth extends CalendarBase<IProps, IState> {
+type AllProps = IProps & Partial<IDealState>
+
+export class BookingCalendarMonth extends CalendarBase<AllProps, IState> {
   private navigation = React.createRef<HTMLUListElement>()
+  private bookingDetailsAnchor = React.createRef<HTMLDivElement>()
 
   constructor(props: IProps) {
     super(props)
@@ -39,6 +42,27 @@ export class BookingCalendarMonth extends CalendarBase<IProps, IState> {
       isOpenSmallCalendar: false,
       value: undefined,
     }
+  }
+
+  componentWillUpdate = (nextProps: AllProps) => {
+    const { nextAviableDate } = nextProps
+    if (this.props.nextAviableDate === nextAviableDate) {
+      return
+    }
+    let monthsToRender = Number(nextAviableDate && ((nextAviableDate.getTime() - this.now.getTime()) / 2592000000) | 0)
+    monthsToRender = monthsToRender > this.state.monthsToRender ? monthsToRender + 10 : this.state.monthsToRender
+    const year = (nextAviableDate && nextAviableDate.getFullYear()) || 0
+    const month = (nextAviableDate && nextAviableDate.getMonth()) || 0
+    nextAviableDate &&
+      this.setState(
+        {
+          year,
+          month,
+          selectedDay: nextAviableDate.getDate() + new Date(year, month, this.isUSStandart ? 1 : 0).getDay() - 1,
+          monthsToRender,
+        },
+        () => this.bookingDetailsAnchor.current!.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      )
   }
 
   scrollLeft = () => {
@@ -223,6 +247,7 @@ export class BookingCalendarMonth extends CalendarBase<IProps, IState> {
           {this.renderHeader()}
           {this.days.map(this.renderDay)}
           <li className={styles.dayDetails} data-week={Math.ceil((selectedDay + 1) / 7)}>
+            <div ref={this.bookingDetailsAnchor} className={styles.bookingDetailsAnchor} />
             <BookingDetails onClose={this.handleCloseBookingDetails} />
           </li>
         </ul>
