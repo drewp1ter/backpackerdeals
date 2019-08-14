@@ -12,11 +12,16 @@
   }
 }
 
-@include device((max: 768px)) {
+@include device-ipad {
   .icon {
     &[data-size="xl"] {
-      height: 56px;
-      width: 56px;
+      height: 6.5rem;
+      width: 6.5rem;
+    }
+
+    &[data-size="md"] {
+      height: 5rem;
+      width: 5rem;
     }
   }
 }

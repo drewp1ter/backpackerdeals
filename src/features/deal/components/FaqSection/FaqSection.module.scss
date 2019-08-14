@@ -1,9 +1,11 @@
+@import "src/scss/device";
+
 .faqSection {
 
   h3 {
     font-size: 2em;
     font-weight: bold;
-    margin: 0  0 2.5rem 1.5rem;
+    margin: 0 0 2.5rem 1.5rem;
   }
 
   .head {
@@ -36,6 +38,27 @@
     li {
       grid-column-start: auto;
       grid-row-start: auto;
+    }
+  }
+}
+
+@include device-ipad {
+  .faqSection {
+
+    h3 {
+      font-size: 2.1666666em;
+      margin: 0 0 2rem 2rem;
+    }
+
+    .head {
+      p {
+        margin-left: 1.25rem;
+        font-size: .916em;
+      }
+
+      i {
+        font-size: 1.1666666em;
+      }
     }
   }
 }

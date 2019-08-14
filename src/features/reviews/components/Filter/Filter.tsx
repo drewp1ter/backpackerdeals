@@ -1,7 +1,7 @@
 import classNames from 'classnames'
 import React, { useState } from 'react'
 
-import { Button, Select } from 'components'
+import { Button, Rating, Select } from 'components'
 import { Checkbox } from '..'
 import styles from './Filter.module.scss'
 
@@ -32,17 +32,33 @@ export const Filter: React.FC<IProps> = ({ className }) => {
   const [state, setState] = useState<IState>(initialState)
   const { rating, checkBoxes } = state
   const handleClick = (value: number = 0) => setState({ ...state, checkBoxes: checkBoxes ^ value })
-  const handleChange = (value: string) => setState({...state, rating: value})
+  const handleChange = (value: string) => setState({ ...state, rating: value })
 
   return (
     <div className={classNames(styles.filter, className)}>
       <div className={styles.header}>
         <h4>Filter</h4>
-        <Button form="rectangled" size="md">Write a review</Button>
+        <Button form="rectangled" size="md">
+          Write a review
+        </Button>
       </div>
 
       <div className={styles.controls}>
-        <Select className={styles.select} value={rating} onChange={handleChange} placeholder="Rating" options={['1', '2', '3', '4', '5']} size="lg" />
+        <Select
+          className={styles.select}
+          value={rating}
+          onChange={handleChange}
+          placeholder="Rating"
+          options={[
+            'All',
+            <Rating key={1} value={5} />,
+            <Rating key={2} value={4} />,
+            <Rating key={3} value={3} />,
+            <Rating key={4} value={2} />,
+            <Rating key={5} value={1} />,
+          ]}
+          size="lg"
+        />
         <Checkbox
           className={styles.checkbox}
           onClick={handleClick}
@@ -85,10 +101,7 @@ export const Filter: React.FC<IProps> = ({ className }) => {
           value={CheckBoxes.food}
           placeholder="Food"
         />
-        <Checkbox
-          className={styles.ellipsis}
-          placeholder="..."
-        />
+        <Checkbox className={styles.ellipsis} placeholder="..." />
       </div>
     </div>
   )

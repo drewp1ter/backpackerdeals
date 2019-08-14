@@ -31,7 +31,7 @@ export const BookingDetails: React.FC<IProps> = ({ onClose, className, variant =
           <div>
             <span className={styles.category}>
               <b>Adult</b>
-              <span>From 10 to 15 years</span>
+              <span className={styles.adult}>From 10 to 15 years</span>
             </span>
             <span className={styles.price}>AUD $1 200</span>
             <Select className={styles.select} theme="defaultNoBorder" size="no" value="0" options={['0', '1', '2', '3']} />
@@ -77,7 +77,7 @@ export const BookingDetails: React.FC<IProps> = ({ onClose, className, variant =
         <h4>AUD $13 690</h4>
         <Button>BOOK NOW</Button>
         <p className={styles.levy}>Levy of AUD $35 payable on the day</p>
-        <p>
+        <p className={styles.total}>
           Total saving:{' '}
           <b>
             AUD <span>$1 200</span>

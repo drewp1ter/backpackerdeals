@@ -12,28 +12,28 @@ export const TourIcons: React.FC<IProps> = ({ className }) => {
   return (
     <ul className={classNames(styles.tourIcons, className)}>
       <li>
-        <Icon name="deal1"/>
+        <Icon name="deal1" size="xl"/>
         <div>
           <p>3 days and</p>
           <p>2 nights</p>
         </div>
       </li>
       <li>
-        <Icon name="deal9"/>
+        <Icon name="deal9" size="xl"/>
         <div>
           <p>Start 7:00 am</p>
           <p>End 5.30 pm</p>
         </div>
       </li>
       <li>
-        <Icon name="deal10"/>
+        <Icon name="deal10" size="xl"/>
         <div>
           <p>Start & End</p>
           <p>Location</p>
         </div>
       </li>
       <li>
-        <Icon name="deal12"/>
+        <Icon name="deal12" size="xl"/>
         <div>
           <div className={styles.helpContainer}>
             <div className={styles.help}/>
@@ -47,14 +47,14 @@ export const TourIcons: React.FC<IProps> = ({ className }) => {
         </div>
       </li>
       <li>
-        <Icon name="deal14"/>
+        <Icon name="deal14" size="xl"/>
         <div>
           <p>Fitness Level</p>
           <p>Medium</p>
         </div>
       </li>
       <li>
-        <Icon name="deal16"/>
+        <Icon name="deal16" size="xl"/>
         <div>
           <p>Meals</p>
           <p>Included</p>

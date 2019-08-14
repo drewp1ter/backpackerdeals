@@ -103,7 +103,7 @@ export const DealLayout: React.FC = () => {
 
         <WhatsToExpect navAnchor={refs.whatsToExpect} className={styles.whatsToExpect} />
         <BookingCalendarMonth navAnchor={refs.bookingCalendar} className={styles.bookingCalendar} />
-        <BookingCalendarWeek />
+        <BookingCalendarWeek className={styles.bookingCalendar} />
         <FaqSection className={styles.faqSection} />
 
         <TourDetailsCard

@@ -1,3 +1,5 @@
+@import "src/scss/device";
+
 .whatsToExpect {
   border: 1px solid #e8e8e8;
   border-radius: 8px;
@@ -108,5 +110,61 @@
 
   .expectDay {
     margin-top: 1rem;
+  }
+}
+
+@include device-ipad {
+  .whatsToExpect {
+    padding: 3rem 2rem;
+
+    h3 {
+      font-size: 2.1666666em;
+      margin-bottom: 2.25rem;
+    }
+
+    i {
+      font-size: .833em;
+    }
+
+    .head {
+      margin: 3.25rem 0 5rem;
+
+      p {
+        margin-left: 1.5rem;
+        font-size: 1.1666666em;
+      }
+    }
+
+    .location {
+      span {
+        margin-left: 1rem;
+        font-size: 1.1666666em;
+      }
+
+      button {
+        margin-left: 2rem;
+        width: 16.5rem;
+        height: 6rem;
+        border-radius: 3.75rem;
+
+        span {
+          font-size: 1.1666666em;
+        }
+
+        i {
+          font-size: 1.333em;
+          left: 1.5rem;
+        }
+
+        img {
+          width: 5rem;
+          height: 5rem;
+        }
+      }
+    }
+
+    .expectDay {
+      margin-top: 2rem;
+    }
   }
 }

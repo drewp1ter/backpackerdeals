@@ -1,3 +1,5 @@
+@import "src/scss/device";
+
 .headerSection {
   width: 95rem;
   margin: 6.25rem auto 0;
@@ -40,11 +42,11 @@
   margin-top: 2rem;
 }
 
-.tourOperator, .whatsToExpect, .bookingCalendar {
+.tourOperator, .whatsToExpect, .bookingCalendar, .bookingCalendar {
   margin-top: 3rem;
 }
 
-.tourOperator, .bookingCalendar, .reviews, .faqSection, .relatedTravelBlogs, .tourInfoGallery, .card, .whatsToExpect {
+.tourOperator, .tourIcons, .bookingCalendarMonth, .bookingCalendar, .reviews, .faqSection, .relatedTravelBlogs, .tourInfoGallery, .card, .whatsToExpect {
   width: 71rem;
 }
 
@@ -59,5 +61,31 @@
     display: block;
     color: #202020;
     margin-top: .5rem;
+  }
+}
+
+@include device-ipad {
+  .headerSection, .section  {
+    width: 119rem;
+  }
+
+  .orderDetails {
+    width: 29rem;
+  }
+
+  .tourOperator, .tourIcons, .bookingCalendarMonth, .bookingCalendar, .reviews, .faqSection, .relatedTravelBlogs, .tourInfoGallery, .card, .whatsToExpect {
+    width: 89rem;
+  }
+
+  .card {
+    margin-top: 4rem;
+
+    p {
+      line-height: 2.5rem;
+    }
+
+    a {
+      margin-top: 2rem;
+    }
   }
 }

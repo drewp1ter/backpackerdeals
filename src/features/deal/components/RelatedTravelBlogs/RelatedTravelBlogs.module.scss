@@ -1,5 +1,6 @@
-.relatedTravelBlogs {
+@import "src/scss/device";
 
+.relatedTravelBlogs {
   h3 {
     font-size: 2em;
     font-weight: bold;
@@ -15,6 +16,14 @@
 
     &:last-of-type {
       margin-right: 0;
+    }
+  }
+}
+
+@include device-ipad {
+  .relatedTravelBlogs {
+    h3 {
+      font-size: 2.166666em;
     }
   }
 }

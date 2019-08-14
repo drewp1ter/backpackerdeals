@@ -1,3 +1,5 @@
+@import "src/scss/device";
+
 .expectDay {
 
   &:last-of-type {
@@ -79,6 +81,47 @@
 
     &:hover {
       color: #ff5a39;
+    }
+  }
+}
+
+@include device-ipad {
+  .expectDay {
+    .day {
+      width: 5rem;
+      height: 5rem;
+      font-size: 1.1666666em;
+
+      b:last-of-type {
+        font-size: .714em;
+      }
+    }
+
+    .info {
+      margin-left: 2rem;
+
+      h5 {
+        font-size: 1.1666666em;
+      }
+
+      i {
+        font-size: .833em;
+        margin-right: .5rem;
+      }
+
+      span {
+        margin-right: 1.5rem;
+      }
+    }
+
+    p {
+      margin: 2.5rem 0 0 2.5rem;
+      padding: 0 0 2.5rem 4.5rem;
+      max-height: 10rem;
+
+      &[data-expanded="true"] {
+        max-height: 30rem;
+      }
     }
   }
 }

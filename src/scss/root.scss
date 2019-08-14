@@ -183,15 +183,11 @@
 }
 
 html {
-  font-size: .833333vw; // 16px / 1920
+  font-size: .833333vw; // 1rem = 16px / 1920
 
-  // @include device((min: 1025px, max: 1280px)) {
-  //   font-size: 1.1vw; // 14 px / 1280
-  // }
-
-  // @include device((min: 768px, max: 1024px)) {
-  //    font-size: .78125vw; // 13 px / 1024 // 1.28
-  // }
+  @include device-ipad {
+    font-size: .78125vw; // 1rem = 8px / 1024
+  }
 
   @include device-mb {
     @include font-mb((min: 13, max: 15))
@@ -219,7 +215,7 @@ body {
 
   // from 11px to 12px
   @include device((min: 768px, max: 1023px)) {
-    @include font(1023, 768, 12, 11)
+    @include font(1023, 768, 12, 10)
   }
 }
 
