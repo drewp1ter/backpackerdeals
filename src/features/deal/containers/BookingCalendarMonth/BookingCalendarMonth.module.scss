@@ -9,6 +9,11 @@
     top: -7.25rem;
   }
 
+  .bookingDetailsAnchor {
+    position: absolute;
+    top: -16.875rem;
+  }
+
   h3 {
     font-size: 2em;
     font-weight: bold;
@@ -121,6 +126,7 @@
       }
 
       &.dayDetails {
+        position: relative;
         grid-column-start: 1;
         grid-column-end: 8;
 

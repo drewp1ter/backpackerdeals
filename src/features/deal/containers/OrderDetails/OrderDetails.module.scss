@@ -119,6 +119,11 @@
     span {
       margin-left: .375rem;
       color: #ff5a39;
+      cursor: pointer;
+
+      &:hover {
+        text-decoration: underline;
+      }
     }
   }
 
