@@ -1,15 +1,13 @@
+import classNames from 'classnames'
 import React, { useState } from 'react'
 
-import { Button } from 'components'
-
-import { Calendar, Select } from 'components'
-import { numberOfDays, startLocation } from './data'
-
+import { Button, Calendar, Select } from 'components'
 import styles from './AdvancedSearchTravel.module.scss'
-
+import { numberOfDays, startLocation } from './data'
 
 export interface IProps {
   readonly forHeader?: boolean
+  readonly className?: string
 }
 
 export interface IState {
@@ -20,7 +18,7 @@ export interface IState {
   readonly numberOfDays: string
 }
 
-export const AdvancedSearchTravel: React.FC<IProps> = ({ forHeader }) => {
+export const AdvancedSearchTravel: React.FC<IProps> = ({ forHeader, className }) => {
   const [state, setState] = useState<IState>({
     startLocation: '',
     typeOfTour: '',
@@ -34,7 +32,7 @@ export const AdvancedSearchTravel: React.FC<IProps> = ({ forHeader }) => {
   const selectTheme = forHeader ? 'default' : 'light'
 
   return (
-    <div className={styles.advancedSearchTravel}>
+    <div className={classNames(styles.advancedSearchTravel, className)}>
       <div className={styles.searchBlock}>
         <Select
           placeholder="Start location"
