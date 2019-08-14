@@ -1,3 +1,5 @@
+@import "src/scss/device";
+
 .travelCard {
   position: relative;
   border-radius: 8px;
@@ -60,5 +62,25 @@
     transition: transform 1s;
     object-fit: cover;
     object-position: center;
+  }
+}
+
+@include device-ipad {
+  .travelCard {
+    .text {
+      bottom: 1.5rem;
+
+      h5 {
+        font-size: 1.666666em;
+      }
+
+      span {
+        font-size: 1em;
+      }
+
+      h4, span {
+        max-width: 26rem;
+      }
+    }
   }
 }

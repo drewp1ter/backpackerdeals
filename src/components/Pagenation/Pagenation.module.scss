@@ -1,5 +1,6 @@
-.pagenation {
+@import "src/scss/device";
 
+.pagenation {
   span {
     display: inline-block;
     font-size: .81em;
@@ -28,7 +29,7 @@
     color: #ff5a39;
     transition: 0.2s ease background-color, 0.2s ease color;
 
-    &:first-child {
+    &:first-of-type {
       margin-right: 1.625rem;
     }
 
@@ -40,6 +41,25 @@
     &:hover:not(:disabled) {
       background-color: #ff5a39;
       color: #fff;
+    }
+  }
+}
+
+@include device-ipad {
+  .pagenation {
+    span {
+      font-size: 1em;
+      margin-right: 2rem;
+    }
+
+    button {
+      width: 5rem;
+      height: 5rem;
+      font-size: .916em;
+
+      &:first-of-type {
+        margin-right: 2rem;
+      }
     }
   }
 }

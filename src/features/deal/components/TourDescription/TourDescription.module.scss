@@ -1,45 +1,68 @@
-.tourDescription {
-  .descriptionHeader {
+@import "src/scss/device";
 
+.tourDescription {
+  h1 {
+    margin-bottom: 1.375rem;
+    font-size: 3em;
+    font-weight: bold;
+    text-align: left;
+    color: #ff5a39;
+  }
+
+  .location {
+    display: flex;
+    align-items: center;
+
+    .locationPart {
+      display: flex;
+      align-items: center;
+      margin-right: 1rem;
+
+      &:last-of-type {
+        margin-right: 0;
+      }
+
+      > i {
+        font-size: 0.75em;
+        text-align: left;
+        color: #959595;
+      }
+
+      span {
+        margin-left: 0.5rem;
+        font-size: 1em;
+        text-align: left;
+      }
+    }
+  }
+
+  p {
+    margin-top: 0.75rem;
+    font-size: 1em;
+    text-align: left;
+  }
+}
+
+@include device-ipad {
+  .tourDescription {
     h1 {
-      margin-bottom: 1.375rem;
-      font-size: 3em;
-      font-weight: bold;
-      text-align: left;
-      color: #ff5a39;
+      max-width: 96.5rem;
     }
 
     .location {
-      display: flex;
-      align-items: center;
-
       .locationPart {
-        display: flex;
-        align-items: center;
-        margin-right: 1rem;
-
-        &:last-of-type {
-          margin-right: 0;
-        }
-
-        >i {
-          font-size: .75em;
-          text-align: left;
-          color: #959595;
+        > i {
+          font-size: 1em;
         }
 
         span {
-          margin-left: .5rem;
-          font-size: 1em;
-          text-align: left;
+          font-size: 1.1666666em;
         }
       }
     }
 
     p {
-      margin-top: .75rem;
-      font-size: 1em;
-      text-align: left;
+      font-size: 1.1666666em;
     }
   }
 }

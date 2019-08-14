@@ -1,3 +1,5 @@
+@import "src/scss/device";
+
 .orderDetails {
   position: sticky;
   top: 7.25rem;
@@ -128,7 +130,7 @@
   }
 
   .button {
-    margin-top: 16px;
+    margin-top: 1rem;
     width: 100%;
     border-radius: 4px;
 
@@ -153,6 +155,127 @@
   }
 }
 
-.addToWishlist {
-  width: 31rem;
+@include device-ipad {
+  .orderDetails {
+    top: calc(9.25rem + 16px);
+
+    .main {
+      > p:nth-child(2), > p:nth-child(5) {
+        font-size: 1.1666666em;
+      }
+    }
+
+    .price {
+      margin: 2.5rem 0 .625rem;
+
+      span {
+        font-size: 1em;
+      }
+    }
+
+    .childAndFamily {
+      font-size: 1em;
+      border-top: none;
+      margin: 3rem 0 1rem;
+      padding: 1rem 2rem;
+      box-sizing: border-box;
+      width: 100%;
+
+      p {
+        display: flex;
+        flex-direction: column;
+      }
+
+      strong {
+        margin-bottom: 1rem;
+      }
+
+      p:first-child {
+        margin-right: 0;
+      }
+    }
+
+    .dealInfo {
+      font-size: .916em;
+      margin-top: 1rem;
+    }
+
+    .exposeTime {
+      margin-top: 3rem;
+    }
+
+    .instant {
+      margin-top: 1.5rem;
+
+      img {
+        width: 1rem;
+        height: 1.375rem;
+        margin-right: 1rem;
+      }
+    }
+
+    .bookButton, .included {
+      width: 25rem;
+      height: 5rem;
+    }
+
+    .included {
+      margin: 2rem auto 1.5rem;
+
+      p {
+        font-size: 1em;
+      }
+    }
+
+    .bookButton {
+      font-size: 1.166em !important;
+    }
+
+    .aviableDate {
+      margin: 2rem 0;
+
+      i {
+        margin-right: .75rem;
+      }
+
+      span {
+        margin-left: .75rem;
+      }
+
+      @include device((max: 860px)) {
+        i {
+          margin-right: .5rem;
+        }
+
+        span {
+          margin-left: .5rem;
+        }
+      }
+    }
+
+    .button {
+      margin-top: 1.5rem;
+      height: 5rem;
+      font-size: 1em !important;
+
+      i {
+        margin-right: .75rem;
+      }
+    }
+
+    .share {
+      text-align: center;
+      font-size: 1em;
+      margin-top: 1rem;
+
+      i {
+        margin-left: 1rem;
+      }
+
+      &:first-of-type {
+        margin-top: 2rem;
+      }
+    }
+
+  }
 }

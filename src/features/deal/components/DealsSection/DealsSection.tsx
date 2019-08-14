@@ -16,7 +16,7 @@ export const DealsSection: React.FC<IProps> = ({ title, data, className }) => {
     <div className={classNames(styles.dealsSection, className)}>
       <h3>{title}</h3>
 
-      <ul className={styles.lastMinuteDeal}>
+      <ul className={styles.dealCards}>
         {data.map((card, index) => (
           <DealCard view="vertical" {...card} key={index} />
         ))}

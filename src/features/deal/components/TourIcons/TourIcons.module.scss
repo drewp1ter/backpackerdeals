@@ -1,3 +1,5 @@
+@import "src/scss/device";
+
 .tourIcons {
   display: flex;
   padding-bottom: 4rem;
@@ -81,17 +83,47 @@
       transition: .2s ease all;
       z-index: 2;
 
-      //&:hover {
-      //  color: #fff;
-      //  background-color: #00aaf6;
-      //}
-
       &::after {
         position: absolute;
         left: 50%;
         top: 50%;
         transform: translate(-50%, -50%);
         content: '?';
+      }
+    }
+  }
+}
+
+@include device-ipad {
+  .tourIcons {
+    padding-bottom: 1.25rem;
+
+    li {
+      width: 14rem;
+    }
+
+    .helpContainer {
+      .subcard {
+        left: -16.5rem;
+        top: -2rem;
+        right: -1.5rem;
+
+        p:first-of-type {
+          font-size: 1em;
+          line-height: 1.8rem;
+        }
+
+        p:last-of-type {
+          margin-top: 1rem;
+          font-size: 1em;
+          line-height: 1.8rem;
+        }
+      }
+
+      .help {
+        width: 1.5rem;
+        height: 1.5rem;
+        font-size: .58em;
       }
     }
   }

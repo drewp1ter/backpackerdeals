@@ -1,3 +1,5 @@
+@import "src/scss/device";
+
 .tourOperator {
   padding: 2rem 1.5rem 3rem;
   box-sizing: border-box;
@@ -68,6 +70,51 @@
       width: 100%;
       position: absolute;
       border: 0;
+    }
+  }
+}
+
+@include device-ipad {
+  .tourOperator {
+    padding: 3rem 2rem 4rem;
+
+    h3 {
+      font-size: 2.1666666em;
+      margin-bottom: 2rem;
+    }
+
+    .card {
+      top: 2rem;
+      bottom: 5rem;
+      right: 2rem;
+      left: 58rem;
+      padding: 1.25rem 1.5rem 1.5rem;
+
+      h4 {
+        font-size: 1.1666666em;
+
+        &:first-of-type {
+          padding-bottom: 1.5rem;
+        }
+
+        &:last-of-type {
+          padding-top: 1.5rem;
+        }
+      }
+
+      p {
+        margin-top: .5rem;
+        font-size: 1.1666666em;
+      }
+    }
+
+    .img {
+      width: 21.5rem;
+      height: 14rem;
+    }
+
+    .container {
+      padding-bottom: 42.5rem;
     }
   }
 }

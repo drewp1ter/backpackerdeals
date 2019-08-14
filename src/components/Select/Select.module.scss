@@ -180,6 +180,25 @@
   }
 }
 
+@include device-ipad {
+  .searchSelect {
+    &[data-size="lg"] {
+      .select {
+        height: 5rem;
+        padding: 0 2rem;
+
+        i, span {
+          font-size: 1em;
+        }
+      }
+    }
+
+    .optionBlock {
+      padding: 2rem 0;
+    }
+  }
+}
+
 @include device-mb {
   .searchSelect {
     .select {

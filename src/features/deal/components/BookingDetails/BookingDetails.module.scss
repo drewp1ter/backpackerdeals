@@ -1,8 +1,11 @@
+@import "src/scss/device";
+
 .bookingDetails {
   position: relative;
   display: flex;
-  height: 25rem;
+  // height: 25rem;
   border: 1px solid #ff5a39;
+  box-sizing: border-box;
 
   &[data-variant="inMonth"] {
     border-radius: 4px;
@@ -75,7 +78,7 @@
         font-size: 1em;
       }
 
-      div:nth-child(2) {
+      div:nth-of-type(2) {
         margin-top: 1rem;
       }
 
@@ -118,18 +121,21 @@
       margin: 4.62rem 0 1rem;
     }
 
-    p {
-      font-size: .875em;
+    .levy, .total {
       margin-top: 2rem;
       text-align: center;
+    }
 
-      &.levy {
-        border-radius: 8px;
-        border: 1px solid #fafafa;
-        line-height: 1.25em;
-        padding: .5rem;
-        box-sizing: border-box;
-      }
+    .levy {
+      border-radius: 8px;
+      border: 1px solid #fafafa;
+      line-height: 1.25em;
+      padding: .5rem;
+      box-sizing: border-box;
+    }
+
+    .total {
+      font-size: .875em;
 
       b {
         font-size: 1.15em;
@@ -139,8 +145,119 @@
           color: #ff5a39;
         }
       }
+
+      @include device((max: 860px)) {
+        display: flex;
+        flex-direction: column;
+
+        b {
+          margin-top: 1rem;
+        }
+      }
     }
   }
+}
 
+@include device-ipad {
+  .bookingDetails {
+    // height: 44rem;
 
+    &[data-variant="inMonth"] {
+      padding: 2.5rem 0 3.5rem 2.5rem;
+
+      .rightSection {
+        margin-left: 2.5rem;
+        padding: 0 1.5rem;
+      }
+    }
+
+    .close {
+      right: 1rem;
+      top: 2rem;
+      font-size: .875em;
+    }
+
+    .leftSection {
+      .button {
+        position: absolute;
+        left: 25.75rem;
+        width: 17rem;
+        height: 3rem;
+      }
+
+      h5 {
+        font-size: 1.33333em;
+        margin-bottom: 1.75rem;
+        line-height: 1.5em;
+      }
+
+      .group {
+        margin-top: 2.25rem;
+        padding-bottom: 1.75rem;
+        width: 56rem;
+
+        > div {
+          margin-top: .75rem;
+          position: relative;
+        }
+
+        b {
+          width: 7rem;
+          font-size: 1.1666666em;
+        }
+
+        div:nth-of-type(2) {
+          margin-top: 1.5rem;
+        }
+      }
+
+      .category, .shedule span {
+        width: 25.75rem;
+      }
+
+      .shedule span {
+        margin-top: .5rem;
+      }
+
+      .category {
+        font-size: 1em;
+        display: flex;
+        flex-direction: column;
+
+        .adult {
+          display: none;
+        }
+
+        span {
+          margin: .75rem 0 0 0;
+        }
+      }
+
+      .price {
+        width: 21.5rem;
+      }
+    }
+
+    .rightSection {
+      h4 {
+        font-size: 1.3333em;
+        margin: 7.25rem 0 2.5rem;
+      }
+
+      .levy {
+        line-height: 1.25em;
+        padding: .5rem;
+        margin-top: 4rem;
+      }
+
+      .total {
+        font-size: .83333em;
+        margin-top: 2rem;
+
+        b {
+          font-size: 1.3em;
+        }
+      }
+    }
+  }
 }

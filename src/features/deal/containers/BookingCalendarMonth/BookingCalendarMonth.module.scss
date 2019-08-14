@@ -1,3 +1,6 @@
+@import "src/scss/device";
+@import "src/scss/_utils";
+
 .bookingCalendar {
   border-radius: 8px;
   border: 1px solid #e4e4e4;
@@ -39,14 +42,6 @@
     }
   }
 
-  h4 {
-    color: #ff5a39;
-    font-size: 1.625em;
-    font-weight: bold;
-    margin: .5rem 0 2.5rem;
-    text-align: center;
-  }
-
   .navigation {
     background-color: #fafafa;
     height: 3.5rem;
@@ -66,7 +61,7 @@
     }
 
     ul {
-      overflow: hidden;
+      @include invisibleHScroll;
       display: flex;
     }
 
@@ -231,5 +226,91 @@
 
   .button {
     margin: 0 auto;
+  }
+}
+
+@include device-ipad {
+  .bookingCalendar {
+
+    h3 {
+      font-size: 2.1666666em;
+      margin-top: 3rem;
+    }
+
+    .select {
+      width: 32rem;
+      margin: 2rem auto 3rem;
+
+      > ul {
+        max-height: 50rem;
+        width: 40rem;
+        top: 4rem !important;
+      }
+    }
+
+    .navigation {
+      height: 5rem;
+
+      i {
+        font-size: 1em;
+      }
+
+      li {
+        margin-right: 3rem;
+      }
+    }
+
+    .calendarBody {
+      margin: 3rem;
+      grid-template-columns: repeat(7, 11rem);
+      grid-column-gap: 1rem;
+      grid-row-gap: 1rem;
+
+      > li {
+        &.header {
+          margin-bottom: 3rem;
+
+          &:after {
+            top: -0.5rem;
+            right: -0.5rem;
+            height: 3.25rem;
+          }
+        }
+
+        &.day {
+          height: 12rem;
+          padding: .5rem .5rem 1rem;
+
+          .date {
+            font-size: .75em;
+
+            span {
+              margin-left: .5rem;
+              font-size: .6666em;
+            }
+          }
+
+          .priceAndSpaces {
+            p:first-child {
+              font-size: .916666em;
+            }
+
+            p:last-child {
+              font-size: .75em;
+            }
+          }
+
+          .button {
+            width: 9rem;
+            height: 2.5rem;
+            padding: 0;
+            font-size: .583em;
+          }
+
+        }
+
+
+      }
+    }
   }
 }

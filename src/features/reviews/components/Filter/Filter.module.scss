@@ -1,3 +1,5 @@
+@import "src/scss/device";
+
 .filter {
 
   .header {
@@ -23,6 +25,14 @@
 
   .select {
     width: 15rem;
+
+    i {
+      margin-left: .5rem;
+
+      &[data-filled="false"] {
+        color: #dadada;
+      }
+    }
   }
 
   .select, .checkbox {
@@ -37,5 +47,36 @@
     font-size: 2.25em;
     align-items: baseline;
     line-height: .875em;
+  }
+}
+
+@include device-ipad {
+  .filter {
+    .header{
+      margin-bottom: 2rem;
+
+      h4 {
+        font-size: 1.1666666em;
+        margin-left: 2rem;
+      }
+
+      button {
+        width: 11rem;
+      }
+    }
+
+    .select {
+      width: 18rem;
+    }
+
+    .checkbox {
+      width: 11rem;
+    }
+
+    .ellipsis {
+      width: 10rem;
+      font-size: 3em !important;
+      line-height: .5em;
+    }
   }
 }
