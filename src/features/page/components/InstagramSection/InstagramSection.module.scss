@@ -1,4 +1,5 @@
 @import "src/scss/device";
+@import "src/scss/_utils";
 
 .instagramCards {
   display: flex;
@@ -39,28 +40,9 @@
   }
 }
 
-// @include device-tb {
-//   .instagramCards {
-//     max-width: 1044px;
-
-//     li {
-//       margin-right: 8px;
-//     }
-//   }
-// }
-
-// @media screen and (max-width: 1024px) {
-//   .instagramCards {
-//     max-width: 952px;
-//   }
-// }
-
 @include device-mb {
   .instagramCards {
     max-width: unset;
-    overflow-x: scroll;
-    overflow: -moz-scrollbars-none;
-    overflow-y: hidden;
     margin: 0 -0.6rem;
 
     li {
@@ -76,8 +58,6 @@
       }
     }
 
-    &::-webkit-scrollbar {
-      width: 0 !important;
-    }
+    @include invisibleHScroll;
   }
 }

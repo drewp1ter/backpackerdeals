@@ -1,4 +1,5 @@
 @import "src/scss/device";
+@import "src/scss/_utils";
 
 .lastMinuteDeal {
   display: flex;
@@ -21,9 +22,6 @@
 @include device((max: 768px)) { //940
   .lastMinuteDeal {
     max-width: 1136px;
-    overflow-x: scroll;
-    overflow: -moz-scrollbars-none;
-    overflow-y: hidden;
     margin: 0 -0.6rem;
 
     .carousel {
@@ -38,8 +36,6 @@
       }
     }
 
-    &::-webkit-scrollbar {
-      width: 0 !important;
-    }
+    @include invisibleHScroll;
   }
 }
