@@ -1,0 +1,13 @@
+.contactSection {
+  margin-top: 3rem;
+}
+
+.field  {
+  input[data-theme="standart"] {
+    width: calc(100% - 1.5rem);
+  }
+
+  & + & {
+    margin-top: 2rem;
+  }
+}

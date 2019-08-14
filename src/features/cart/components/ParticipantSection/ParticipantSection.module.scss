@@ -1,0 +1,44 @@
+.participantSection {
+  margin-top: 3rem;
+}
+
+.participantForm {
+  padding-bottom: 3rem;
+  margin-bottom: 2.5rem;
+  border-bottom: 1px solid #e4e4e4;
+
+  & > b {
+    display: block;
+    margin-bottom: 1.5rem;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+    border-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  input[data-theme] {
+    width: calc(100% - 1.5rem);
+    margin-bottom: 2rem;
+  }
+
+  .dateFields {
+    display: flex;
+
+    & > div {
+      padding: 0 1.3rem 0 .8rem;
+      border-radius: 4px;
+      margin-right: .5rem;
+
+      span {
+        font-size: 1rem;
+        color: #959595;
+      }
+
+      [data-disabled] {
+        height: 3.5rem;
+      }
+    }
+  }
+}

@@ -1,0 +1,71 @@
+.headerSection {
+  margin: 6.5rem auto 0;
+  border-top: 1px solid #F8F9FA;
+  border-bottom: 1px solid #F8F9FA;
+}
+
+.steps {
+  width: 95rem;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+.section {
+  position: relative;
+  margin: 0 auto;
+  width: 95rem;
+}
+
+.stickyWrapper {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+}
+
+.breadcrumbs {
+  margin-top: 1.125rem;
+}
+
+.orderDetails {
+  width: 23rem;
+}
+
+.tourDescription {
+  margin: 1.875rem 0 2rem;
+}
+
+.faqSection, .relatedTravelBlogs, .tourIcons {
+  margin-top: 4rem;
+}
+
+.dealsSection {
+  margin-top: 6.25rem;
+}
+
+.reviews {
+  margin-top: 2rem;
+}
+
+.tourOperator, .whatsToExpect, .bookingCalendar {
+  margin-top: 3rem;
+}
+
+.tourOperator, .bookingCalendar, .reviews, .faqSection, .relatedTravelBlogs, .tourInfoGallery, .card, .whatsToExpect {
+  width: 71rem;
+}
+
+.card {
+  margin-top: 2.5rem;
+
+  p {
+    line-height: 1.5rem;
+  }
+
+  a {
+    display: block;
+    color: #202020;
+    margin-top: .5rem;
+  }
+}

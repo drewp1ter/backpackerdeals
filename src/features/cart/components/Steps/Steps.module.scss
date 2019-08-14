@@ -1,0 +1,56 @@
+.steps {
+  height: 9.5rem;
+  display: flex;
+}
+
+.step {
+  display: flex;
+  align-items: center;
+
+  & > span {
+    margin: 0 1.44rem 0 .875rem;
+  }
+}
+
+.activeStep {
+  .stepIndex {
+    border: none;
+    color: white;
+    background-color: #ff5a39
+  }
+
+  & > span {
+    font-weight: bold;
+  }
+}
+
+.stepIndex {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  width: 3.5rem;
+  height: 3.5rem;
+  border: solid 1px #dadada;
+  font-weight: bold;
+
+  span:last-child {
+    font-size: .625rem;
+  }
+}
+
+.activeStep {
+
+}
+
+.stepArrow {
+  display: flex;
+  align-items: center;
+  width: 14rem;
+  margin-right: 1.44rem;
+
+  img {
+    width: 100%;
+  }
+}
