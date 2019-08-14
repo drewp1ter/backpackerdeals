@@ -5,7 +5,7 @@ import classNames from 'classnames'
 import styles from './Select.module.scss'
 
 interface IProps {
-  readonly options?: string[]
+  readonly options?: React.ReactNode[]
   readonly className?: string
   readonly theme?: 'default' | 'light' | 'defaultNoBorder' | 'orange' | 'fillOrange'
   readonly value?: string
