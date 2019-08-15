@@ -163,21 +163,29 @@
 
       .rightSection {
         margin-left: 2.5rem;
-        padding: 0 1.5rem;
-      }
-    }
-
-    &[data-variant="inWeek"] {
-      padding: 2.5rem 0 3.5rem 3rem;
-
-      .rightSection {
-        margin-left: calc(1.25rem - 1px);
         padding: 0 2rem;
       }
 
       .leftSection {
         .group {
           width: 52rem;
+          padding-bottom: 1.75rem;
+        }
+      }
+    }
+
+    &[data-variant="inWeek"] {
+      padding: 2.5rem 0 3.5rem 2.5rem;
+
+      .rightSection {
+        margin-left: calc(1.5rem - 1px);
+        padding: 0 1rem;
+      }
+
+      .leftSection {
+        .group {
+          width: 56rem;
+          padding-bottom: 1.5rem;
         }
       }
     }
@@ -204,8 +212,6 @@
 
       .group {
         margin-top: 2.25rem;
-        padding-bottom: 1.75rem;
-        width: 56rem;
 
         > div {
           margin-top: .75rem;

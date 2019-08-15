@@ -111,7 +111,7 @@ export class BookingCalendarWeek extends React.Component<IProps, IState> {
             {this.days[idx % 7].getTime() <= this.now.getTime() ? (
               <li className={styles.notAviable}>Not aviable</li>
             ) : (
-              <li className={styles.event} data-type={selected || event.eventType} onClick={this.handleSelectEvent} data-idx={idx}>
+              <li className={styles.event} data-type={selected || event.eventType} data-last={idx % 7 === 6} onClick={this.handleSelectEvent} data-idx={idx}>
                 {(event.eventType === 'topDeal' || event.eventType === 'soldOut' || event.eventType === 'lastMinuteDeal') && (
                   <Sticker className={styles.sticker} variant={event.eventType} />
                 )}

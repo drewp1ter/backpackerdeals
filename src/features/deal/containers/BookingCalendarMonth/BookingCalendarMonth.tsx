@@ -182,7 +182,7 @@ export class BookingCalendarMonth extends CalendarBase<AllProps, IState> {
             </div>
             {dayType === DayTypes.soldOut ? (
               <CalendarButton className={styles.button} theme="green">
-                Add me to waitlist
+                <abbr title="Add me to waitlist">Add me to waitlist</abbr>
               </CalendarButton>
             ) : (
               <CalendarButton className={styles.button} theme={selected ? 'selected' : 'select'}>{`Select${

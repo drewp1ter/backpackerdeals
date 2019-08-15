@@ -5,19 +5,24 @@
   justify-content: center;
   align-items: center;
   height: 1.5rem;
-  border-radius: 0 0 0 8px;
+  border-radius: 0 0 0 .5rem;
   position: absolute;
   right: 0;
   top: 0;
   padding: 0 0.375rem;
+  max-width: 4.4rem;
 
   p {
-    font-size: 0.625em;
+    font-size: .625rem;
     color: #fff;
   }
 
   &[data-variant="lastMinuteDeal"] {
     background-color: #ffcb00;
+
+    p {
+      font-size: .5rem;
+    }
   }
 
   &[data-variant="topDeal"] {
@@ -35,14 +40,14 @@
 
 @include device-ipad {
   .sticker {
-    height: 2.5rem;
-    max-width: 6rem;
-    padding: 0 .5rem;
+    height: 2.625rem;
+    max-width: 5.5rem;
+    padding: 0 .4rem;
     border-radius: 0 0 0 4px;
     box-sizing: border-box;
 
     p {
-      font-size: 0.8333333;
+      font-size: .5rem;
     }
   }
 }
