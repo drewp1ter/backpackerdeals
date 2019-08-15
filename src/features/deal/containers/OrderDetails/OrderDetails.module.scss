@@ -155,6 +155,10 @@
   }
 }
 
+.addToWishlist {
+  width: 31rem;
+}
+
 @include device-ipad {
   .orderDetails {
     top: calc(9.25rem + 16px);
@@ -276,6 +280,9 @@
         margin-top: 2rem;
       }
     }
+  }
 
+  .addToWishlist {
+    width: 38rem;
   }
 }

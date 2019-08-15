@@ -231,6 +231,10 @@
 
 @include device-ipad {
   .bookingCalendar {
+    .bookingDetailsAnchor {
+      position: absolute;
+      top: -24.5rem;
+    }
 
     h3 {
       font-size: 2.1666666em;

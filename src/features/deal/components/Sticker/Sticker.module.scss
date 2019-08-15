@@ -1,3 +1,5 @@
+@import "src/scss/device";
+
 .sticker {
   display: flex;
   justify-content: center;
@@ -27,6 +29,20 @@
 
     p {
       color: #202020;
+    }
+  }
+}
+
+@include device-ipad {
+  .sticker {
+    height: 2.5rem;
+    max-width: 6rem;
+    padding: 0 .5rem;
+    border-radius: 0 0 0 4px;
+    box-sizing: border-box;
+
+    p {
+      font-size: 0.8333333;
     }
   }
 }
