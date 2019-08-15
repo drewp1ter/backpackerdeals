@@ -15,7 +15,7 @@
 
     > p:nth-child(2) {
       color: #4eb62a;
-      margin-bottom: .5rem;
+      margin-bottom: .375rem;
 
       i {
         margin-left: .2rem;
@@ -30,7 +30,7 @@
   .price {
     display: flex;
     align-items: baseline;
-    margin: 2.93rem 0 .5rem;
+    margin: 1.5rem 0 .5rem;
 
     span {
       font-size: .875em;
@@ -47,10 +47,10 @@
     display: flex;
     justify-content: space-between;
     font-size: .875em;
-    padding: 1.625rem 0;
+    padding: 1.125rem 0;
     border-top: 1px dashed #e4e4e4;
     border-bottom: 1px dashed #e4e4e4;
-    margin: 1.25rem 1rem 1.625rem;
+    margin: 1.25rem 1rem .625rem;
 
     strong {
       margin-right: .5rem;
@@ -65,7 +65,7 @@
     position: relative;
     width: 100%;
     border: 1px solid #ffcb00;
-    margin-top: 1rem;
+    margin-top: .375rem;
     padding-bottom: 1.25rem;
   }
 
@@ -80,7 +80,7 @@
   }
 
   .instant {
-    margin-top: 1.625rem;
+    margin-top: 1.125rem;
     display: flex;
     align-items: center;
 
@@ -95,7 +95,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 1.75rem auto 1rem;
+    margin: .625rem auto 1rem;
     width: 21rem;
     height: 2.5rem;
     border-radius: 8px;
@@ -112,7 +112,7 @@
   }
 
   .aviableDate {
-    margin: 1.625rem 0;
+    margin: 1rem 0 1.625rem;
 
     i {
       margin-right: .375rem;
@@ -150,7 +150,7 @@
     }
 
     &:first-of-type {
-      margin-top: 1.625rem;
+      margin-top: 1.125rem;
     }
   }
 }
