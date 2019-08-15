@@ -1,7 +1,7 @@
 import React from 'react'
-import { Autocomplete } from '../../../../components/Autocomplete'
-import { Input } from '../../../../components/Input'
-import { PhoneNumber } from '../../../../components/PhoneNumber'
+import { Autocomplete } from 'components/Autocomplete'
+import { Input } from 'components/Input'
+import { PhoneNumber } from 'components/PhoneNumber'
 import { WithCard } from '../WithCard'
 import styles from './ContactSection.module.scss'
 

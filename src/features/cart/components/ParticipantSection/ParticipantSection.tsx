@@ -1,6 +1,6 @@
 import { Input, IProps as IInputProps } from 'components/Input'
 import React from 'react'
-import { Select } from '../../../../components/Select'
+import { Select } from 'components/Select'
 import { WithCard } from '../WithCard'
 import { forms } from './data'
 import styles from './ParticipantSection.module.scss'

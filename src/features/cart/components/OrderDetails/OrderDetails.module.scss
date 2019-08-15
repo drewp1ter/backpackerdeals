@@ -1,63 +1,262 @@
-.headerSection {
-  width: 95rem;
-  margin: 6.25rem auto 0;
+.orderDetail {
+  border: 1px solid #e8e8e8;
+  border-radius: 8px;
+  overflow: hidden;
+
+  & > img {
+    width: 100%;
+    height: 15vw;
+  }
 }
 
-.section {
-  position: relative;
-  margin: 0 auto;
-  width: 95rem;
-}
+.orderDetailInner {
+  padding: 1.5rem 1.5rem 1.94rem 1.5rem;
 
-.stickyWrapper {
-  position: absolute;
-  right: 0;
-  top: 0;
-  height: 100%;
-}
-
-.breadcrumbs {
-  margin-top: 1.125rem;
-}
-
-.orderDetails {
-  width: 23rem;
-}
-
-.tourDescription {
-  margin: 1.875rem 0 2rem;
-}
-
-.faqSection, .relatedTravelBlogs, .tourIcons {
-  margin-top: 4rem;
-}
-
-.dealsSection {
-  margin-top: 6.25rem;
-}
-
-.reviews {
-  margin-top: 2rem;
-}
-
-.tourOperator, .whatsToExpect, .bookingCalendar {
-  margin-top: 3rem;
-}
-
-.tourOperator, .bookingCalendar, .reviews, .faqSection, .relatedTravelBlogs, .tourInfoGallery, .card, .whatsToExpect {
-  width: 71rem;
-}
-
-.card {
-  margin-top: 2.5rem;
-
-  p {
-    line-height: 1.5rem;
+  h5 {
+    color: #ff5a39;
+    font-size: 1.625rem;
+    padding-bottom: 2rem;
   }
 
-  a {
+  p {
+    text-indent: .5rem;
+    margin: .75rem 0;
+    line-height: 1.5rem;
+
+    span {
+      display: block;
+    }
+  }
+
+  p + p {
+    margin-top: 1.31rem;
+  }
+
+  b {
+    font-weight: 500;
+  }
+}
+
+.orderItem {
+  text-indent: .5rem;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  padding: .7rem 0;
+
+  span:last-child {
+    place-self: flex-end;
+  }
+}
+
+.orderItemInfo {
+  text-indent: .5rem;
+  display: flex;
+  justify-content: space-between;
+  padding: .3rem 0;
+  font-size: .875rem;
+
+  & + .orderItem {
+    padding-top: .85rem;
+  }
+}
+
+.orderTotalAmount {
+  grid-template-columns: 1fr 1fr;
+  padding-top: 1.75rem;
+  span:last-child {
+    font-weight: 500;
+    color: #fb5938;
+  }
+}
+
+.locationsSection {
+  padding: .75rem 0 1.5rem 0;
+  border-bottom: 1px dashed #e4e4e4;
+  border-top: 1px dashed #e4e4e4;
+
+  button {
+    background: white;
+    color: #ff5a39;
+    border-radius: 4px;
+    border: solid 1px #ff5a39;
+    font-size: .812rem;
+    padding: .43rem .875rem .56rem .69rem;
+    margin-left: .5rem;
+
+    i {
+      margin-right: .5rem;
+    }
+  }
+}
+
+.shopsSection {
+  padding: .8rem 0;
+  border-bottom: 1px dashed #e4e4e4;
+  border-top: 1px dashed #e4e4e4;
+}
+
+.additionalOptionsSection {
+  padding: .8rem 0;
+  border-bottom: 1px dashed #e4e4e4;
+  border-top: 1px dashed #e4e4e4;
+  
+  .orderItem:first-child {
+    grid-template-columns: auto
+  }
+
+  .orderItemInfo {
+    @extend .orderItem;
+  }
+
+  .select {
+    border: none;
+    &[data-size] > div {
+      padding: 0;
+      height: 100%;
+
+      i {
+        margin: 0;
+        color: inherit;
+      }
+
+      span {
+        font-size: 1rem;
+        margin: 0;
+      }
+    }
+  }
+}
+
+.orderDisabled {
+  .select[data-size] > div {
+      i, span {
+        color: #959595;
+      }
+  }
+
+  span:last-child {
+    color: #959595;
+  }
+}
+
+.couponSection {
+  text-align: center;
+
+  p {
+    margin-top: 0;
+    text-align: center;
+    padding: .625rem 0;
+    border-bottom: 1px dashed #e4e4e4;
+  }
+
+  .couponSave {
+    position: relative;
+    margin-top: 1.875rem;
+    display: inline-block;
+    text-transform: uppercase;
+    color: #4eb62a;
+
+    i {
+      position: absolute;
+      right: 0;
+      top: 0;
+      transform: translate(105%, -15%);
+    }
+  }
+
+  .couponAmount {
     display: block;
-    color: #202020;
-    margin-top: .5rem;
+    font-size: 1.625rem;
+    color: #ff5a39;
+    font-weight: bold;
+    line-height: 2rem;
+  }
+
+  .couponInfo, .couponInfoSmall {
+    display: block;
+    font-size: .875rem;
+    line-height: 1rem;
+  }
+
+  .couponInfoSmall {
+    font-size: .75rem;
+  }
+}
+
+.confidenceSection {
+  h5 {
+    font-size: 1.625rem;
+    margin: 4.44rem 0 2rem 1.56rem;
+  }
+
+  .confidenceImages {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    column-gap: 1.5rem;
+    row-gap: 1rem;
+    align-items: center;
+    margin-left: 1.56rem;
+    padding-bottom: 3.5rem;
+    border-bottom: 1px dashed #e4e4e4;
+  }
+
+  .confidenceIcon {
+    width: 4rem;
+    height: 4rem;
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    border: solid 1px #e8e8e8;
+    border-radius: 50%;
+    box-sizing: border-box;
+    padding: 1rem;
+
+    img {
+      width: 100%; 
+    }
+  }
+
+  .confidenceText {
+    line-height: 1.5rem;
+  }
+}
+
+.nextStepSection, .helpSection {
+  margin-left: 1.56rem;
+  padding-right: 1.625rem;
+
+  h6 {
+    font-size: 1rem; 
+    margin: 2rem 0 1.875rem 0;
+  }
+
+  .nextStepList {
+    line-height: 1.5rem;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    column-gap: .69rem;
+    row-gap: .75rem;
+    align-items: baseline;
+    margin-bottom: 3.25rem;
+
+    i {
+      justify-self: center;
+    }
+  }
+}
+
+.helpSection {
+  border-top: dashed 1px #e8e8e8;
+
+  .helpContactsList {
+    align-items: baseline;
+    display: grid;
+    grid-template-columns: auto 1fr 1fr;
+    column-gap: .69rem;
+    row-gap: .813rem;
+
+    .helpContact {
+      justify-self: flex-end;
+    }
   }
 }

@@ -8,7 +8,7 @@ interface IProps {
   readonly options?: React.ReactNode[]
   readonly className?: string
   readonly theme?: 'default' | 'light' | 'defaultNoBorder' | 'orange' | 'fillOrange'
-  readonly value?: string
+  readonly value?: string | number,
   readonly disabled?: boolean
   readonly name?: string
   readonly onChange?: (value: any, name: string) => void
