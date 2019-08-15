@@ -229,7 +229,7 @@ export class BookingCalendarMonth extends CalendarBase<AllProps, IState> {
           onClick={this.handleClickSelect}
           onClickOutside={this.handleCloseSelect}
           className={styles.select}
-          placeholder={`${this.monthsLong[value ? value.getMonth() : month]} ${value ? value.getFullYear() : year}`}
+          placeholder={`${this.monthsLong[month]} ${year}`}
           theme="orange"
           size="no"
           arrowPos="right"
