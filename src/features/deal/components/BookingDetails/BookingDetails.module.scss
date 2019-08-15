@@ -13,7 +13,6 @@
 
     .rightSection {
       margin-left: 6rem;
-      padding: 0 2rem;
     }
   }
 
@@ -22,7 +21,6 @@
 
     .rightSection {
       margin-left: calc(2.5rem - 1px);
-      padding: 0 3rem;
     }
   }
 
@@ -107,6 +105,7 @@
 
   .rightSection {
     display: flex;
+    padding: 0 2rem;
     flex-direction: column;
     align-content: center;
     border-left: 1px solid #e8e8e8;
@@ -136,22 +135,19 @@
 
     .total {
       font-size: .875em;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      justify-content: center;
 
       b {
         font-size: 1.15em;
         font-weight: 600;
+        margin-top: .5rem;
+        margin-left: .5rem;
 
         span {
           color: #ff5a39;
-        }
-      }
-
-      @include device((max: 860px)) {
-        display: flex;
-        flex-direction: column;
-
-        b {
-          margin-top: 1rem;
         }
       }
     }
@@ -168,6 +164,21 @@
       .rightSection {
         margin-left: 2.5rem;
         padding: 0 1.5rem;
+      }
+    }
+
+    &[data-variant="inWeek"] {
+      padding: 2.5rem 0 3.5rem 3rem;
+
+      .rightSection {
+        margin-left: calc(1.25rem - 1px);
+        padding: 0 2rem;
+      }
+
+      .leftSection {
+        .group {
+          width: 52rem;
+        }
       }
     }
 
@@ -254,8 +265,11 @@
         font-size: .83333em;
         margin-top: 2rem;
 
+
         b {
           font-size: 1.3em;
+          margin-top: 1rem;
+          margin-left: .5rem;
         }
       }
     }

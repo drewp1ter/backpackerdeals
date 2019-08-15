@@ -74,6 +74,25 @@
     }
 
     ul {
+      max-width: 31.5rem;
+      grid-template-columns: repeat(7, 4.5rem);
+
+      li {
+        height: 4.5rem;
+      }
+    }
+  }
+}
+
+@include device-mb {
+  .calendar {
+    padding: 0 2.5rem;
+
+    .navigation {
+      font-size: 1.1666666em;
+    }
+
+    ul {
       max-width: 35rem;
       display: grid;
       grid-template-columns: repeat(7, 5rem);
