@@ -182,7 +182,7 @@ export class BookingCalendarMonth extends CalendarBase<AllProps, IState> {
             </div>
             {dayType === DayTypes.soldOut ? (
               <CalendarButton className={styles.button} theme="green">
-                Add me to waitlist
+                <abbr title="Add me to waitlist">Add me to waitlist</abbr>
               </CalendarButton>
             ) : (
               <CalendarButton className={styles.button} theme={selected ? 'selected' : 'select'}>{`Select${
@@ -229,7 +229,7 @@ export class BookingCalendarMonth extends CalendarBase<AllProps, IState> {
           onClick={this.handleClickSelect}
           onClickOutside={this.handleCloseSelect}
           className={styles.select}
-          placeholder={`${this.monthsLong[value ? value.getMonth() : month]} ${value ? value.getFullYear() : year}`}
+          placeholder={`${this.monthsLong[month]} ${year}`}
           theme="orange"
           size="no"
           arrowPos="right"

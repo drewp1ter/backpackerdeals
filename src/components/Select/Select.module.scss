@@ -193,6 +193,17 @@
       }
     }
 
+    &[data-size="md"] {
+      .select {
+        height: 4rem;
+        padding: 0 1rem;
+
+        i, span {
+          font-size: 1em;
+        }
+      }
+    }
+
     .optionBlock {
       padding: 2rem 0;
     }

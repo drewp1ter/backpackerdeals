@@ -1,3 +1,5 @@
+@import "src/scss/device";
+
 .bookingCalendarWeek {
   position: relative;
   border-radius: 8px 8px 0 0;
@@ -119,6 +121,10 @@
           margin-bottom: -1px;
           z-index: 1;
           border: 1px solid;
+
+          &[data-last="true"] {
+            margin-right: 1px;
+          }
         }
 
         &[data-type="topDeal"] {
@@ -135,8 +141,10 @@
 
         &[data-type="selected"] {
           border-color: #ff5a39;
-          border-bottom: 1px solid #fff;
+          border-bottom: none;
+          height: calc(7.5rem + 1px);
           z-index: 2;
+          background: #fff;
 
           &::after {
             content: '\f00c';
@@ -180,6 +188,7 @@
       &.eventDetails {
         grid-column-start: 2;
         grid-column-end: 9;
+        margin: -1px 1px 0 0;
       }
 
       &.eventDetails, &.dummy {
@@ -242,5 +251,108 @@
 
   .selectIcon {
     margin-right: 1rem;
+  }
+}
+
+@include device-ipad {
+  .bookingCalendarWeek {
+    h3 {
+      font-size: 2.1666666em;
+      margin: 3.125rem 0 2.5rem;
+    }
+
+    .select {
+      width: 14rem;
+      top: 3rem;
+      right: 1.5rem;
+
+      > ul {
+        max-height: 36rem;
+        width: 36.75rem;
+        top: 5rem !important;
+      }
+    }
+
+    .navigation {
+      margin-bottom: 2.25rem;
+
+      span {
+        font-size: 1em;
+
+        &:first-of-type {
+          margin-left: 1.5rem;
+
+          i {
+            margin-right: .75rem
+          }
+        }
+
+        &:last-of-type {
+          margin-right: 1.5rem;
+
+          i {
+            margin-left: .75rem
+          }
+        }
+      }
+    }
+
+    .calendarBody {
+      grid-template-columns: 5rem repeat(7, 12rem);
+
+      li {
+        grid-column-start: auto;
+        grid-row-start: auto;
+        border-top: 1px solid #e8e8e8;
+        border-left: 1px solid #e8e8e8;
+
+        &.header {
+          height: 4.5rem;
+          font-size: .8333333em;
+
+          :first-child {
+            margin-bottom: .5rem;
+          }
+        }
+
+        &.eventTime, &.event {
+          height: 10.625rem;
+        }
+
+        &.eventTime {
+          font-size: .5833333em;
+        }
+
+        &.notAviable {
+          font-size: .916em;
+          padding: 0 2.5rem;
+          text-align: center;
+        }
+
+        &.event {
+          .button {
+            width: 9rem;
+            height: 2.5rem;
+          }
+
+          &[data-type="selected"] {
+            height: calc(10.625rem + 1px);
+          }
+
+          .priceAndSpaces {
+            margin-top: 3.25rem;
+
+            p:first-child {
+              font-size: .916em;
+            }
+
+            p:last-child {
+              font-size: .75em;
+            }
+          }
+        }
+      }
+
+    }
   }
 }
