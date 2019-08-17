@@ -51,10 +51,6 @@ $ig-transparent: rgba(0, 0, 0, 0) !default;
 
 .image-gallery-slide-wrapper {
   position: relative;
-
-  &.image-gallery-rtl {
-    direction: rtl;
-  }
 }
 
 .image-gallery-fullscreen-button,
@@ -215,25 +211,5 @@ $ig-transparent: rgba(0, 0, 0, 0) !default;
     @media (max-width: $ig-screen-sm-min) {
       border: 3px solid $ig-blue;
     }
-  }
-}
-
-.image-gallery-thumbnail-label {
-  box-sizing: border-box;
-  color: white;
-  font-size: 1em;
-  left: 0;
-  line-height: 1em;
-  padding: 5%;
-  position: absolute;
-  top: 50%;
-  text-shadow: 1px 1px 0 black;
-  transform: translateY(-50%);
-  white-space: normal;
-  width: 100%;
-
-  @media(max-width: $ig-screen-sm-min) {
-    font-size: .8em;
-    line-height: .8em;
   }
 }
