@@ -1,13 +1,62 @@
-export const images = {
-  control: require('./Gallery_control.svg'),
-  cup: require('./Sell_cup.svg'),
-  tours: [
-    { src: require('./Image_1.png'), alt: 'Tour 1' },
-    { src: require('./Image_2.png'), alt: 'Tour 2' },
-    { src: require('./Image_3.png'), alt: 'Tour 3' },
-    { src: require('./Image_4.png'), alt: 'Tour 4' },
-    { src: require('./Image_5.png'), alt: 'Tour 5' },
-    { src: require('./Image_6.png'), alt: 'Tour 6' },
-  ],
-  activeTour: { src: require('./Image_active.png'), alt: 'Active tour' },
-}
+export default [
+  {
+    original: require('./1.jpg'),
+    thumbnail: require('./1.jpg?resize&size=176'),
+  },
+  {
+    original: require('./2.jpg'),
+    thumbnail: require('./2.jpg?resize&size=176'),
+  },
+  {
+    original: require('./3.jpg'),
+    thumbnail: require('./3.jpg?resize&size=176'),
+  },
+  {
+    original: require('./4.jpg'),
+    thumbnail: require('./4.jpg?resize&size=176'),
+  },
+  {
+    original: require('./5.jpg'),
+    thumbnail: require('./5.jpg?resize&size=176'),
+  },
+  {
+    original: require('./1.jpg'),
+    thumbnail: require('./1.jpg?resize&size=176'),
+  },
+  {
+    original: require('./2.jpg'),
+    thumbnail: require('./2.jpg?resize&size=176'),
+  },
+  {
+    original: require('./3.jpg'),
+    thumbnail: require('./3.jpg?resize&size=176'),
+  },
+  {
+    original: require('./4.jpg'),
+    thumbnail: require('./4.jpg?resize&size=176'),
+  },
+  {
+    original: require('./5.jpg'),
+    thumbnail: require('./5.jpg?resize&size=176'),
+  },
+  {
+    original: require('./1.jpg'),
+    thumbnail: require('./1.jpg?resize&size=176'),
+  },
+  {
+    original: require('./2.jpg'),
+    thumbnail: require('./2.jpg?resize&size=176'),
+  },
+  {
+    original: require('./3.jpg'),
+    thumbnail: require('./3.jpg?resize&size=176'),
+  },
+  {
+    original: require('./4.jpg'),
+    thumbnail: require('./4.jpg?resize&size=176'),
+  },
+  {
+    original: require('./5.jpg'),
+    thumbnail: require('./5.jpg?resize&size=176'),
+  },
+]
