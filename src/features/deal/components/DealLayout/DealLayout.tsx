@@ -11,8 +11,8 @@ import {
   RelatedTravelBlogs,
   TourDescription,
   TourDetailsCard,
+  TourGallery,
   TourIcons,
-  TourInfoGallery,
   TourOperator,
   WhatsToExpect,
 } from '..'
@@ -41,7 +41,7 @@ export const DealLayout: React.FC = () => {
       </div>
 
       <div className={styles.section}>
-        <TourInfoGallery className={styles.tourInfoGallery} />
+        <TourGallery className={styles.tourGallery} />
 
         <div className={styles.stickyWrapper}>
           <OrderDetails className={styles.orderDetails} />

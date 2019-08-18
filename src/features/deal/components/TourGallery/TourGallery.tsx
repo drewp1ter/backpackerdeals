@@ -5,7 +5,9 @@ import throttle from 'lodash.throttle'
 import React, { RefObject } from 'react'
 import { EventData, Swipeable } from 'react-swipeable'
 import ResizeObserver from 'resize-observer-polyfill'
-import styles from './ImageGallery.module.scss'
+import styles from './TourGallery.module.scss'
+
+import images from '../TourGallery/assets'
 
 enum Direction {
   left = 'Left',
@@ -60,9 +62,9 @@ export interface IState {
   readonly style: CSS.Properties
 }
 
-export class ImageGallery extends React.Component<IProps, IState> {
+export class TourGallery extends React.Component<IProps, IState> {
   static defaultProps: IProps = {
-    items: [],
+    items: images,
     autoPlay: false,
     lazyLoad: false,
     infinite: true,
@@ -80,12 +82,14 @@ export class ImageGallery extends React.Component<IProps, IState> {
     swipeThreshold: 30,
   }
 
-  _createResizeObserver = debounce((entries) => {
-    if (!entries) { return }
+  _createResizeObserver = debounce(entries => {
+    if (!entries) {
+      return
+    }
     entries.forEach(() => {
-      this._handleResize();
-    });
-  }, 300);
+      this._handleResize()
+    })
+  }, 300)
 
   private _unthrottledSlideToIndex: (index: number, event?: React.MouseEvent<HTMLAnchorElement>) => void
   private _lazyLoaded: boolean[]
@@ -94,7 +98,7 @@ export class ImageGallery extends React.Component<IProps, IState> {
   private _imageGallerySlideWrapper: RefObject<HTMLDivElement>
   private _imageGallery: RefObject<HTMLDivElement>
   private _thumbnailsWrapper: RefObject<HTMLDivElement>
-  private _thumbnails: RefObject<HTMLDivElement>
+  private _thumbnails: RefObject<HTMLUListElement>
   private _resizeObserver: ResizeObserver | null
 
   constructor(props: IProps) {
@@ -122,7 +126,7 @@ export class ImageGallery extends React.Component<IProps, IState> {
     this._transitionTimer = null
     this._imageGallery = React.createRef<HTMLDivElement>()
     this._thumbnailsWrapper = React.createRef<HTMLDivElement>()
-    this._thumbnails = React.createRef<HTMLDivElement>()
+    this._thumbnails = React.createRef<HTMLUListElement>()
     this._imageGallerySlideWrapper = React.createRef<HTMLDivElement>()
     this._resizeObserver = null
   }
@@ -165,7 +169,7 @@ export class ImageGallery extends React.Component<IProps, IState> {
 
     this._transitionTimer && window.clearTimeout(this._transitionTimer)
 
-    if(this._resizeObserver && this._imageGallerySlideWrapper.current) {
+    if (this._resizeObserver && this._imageGallerySlideWrapper.current) {
       this._resizeObserver.unobserve(this._imageGallerySlideWrapper.current)
     }
     // this._createResizeObserver && this._createResizeObserver()
@@ -271,10 +275,6 @@ export class ImageGallery extends React.Component<IProps, IState> {
         this.setState({ isTransitioning: !isTransitioning })
       }
     }, slideDuration && slideDuration + 50)
-  }
-
-  getCurrentIndex() {
-    return this.state.currentIndex
   }
 
   _handleScreenChange = () => {
@@ -692,32 +692,40 @@ export class ImageGallery extends React.Component<IProps, IState> {
     )
   }
 
-  _onThumbnailClick = (event: React.MouseEvent<HTMLAnchorElement>, index: number) => {
-    this.slideToIndex(index, event)
+  _onThumbnailClick = ({ currentTarget }: React.MouseEvent<HTMLLIElement>) => {
+    this.slideToIndex(Number(currentTarget.dataset.idx))
+  }
+
+  _handleScrollThumbsLeft = () => {
+    const { current } = this._thumbnailsWrapper
+    current && current.scrollTo({ left: current.scrollLeft - current.offsetWidth - 50, behavior: 'smooth' })
+  }
+
+  _handleScrollThumbsRight = () => {
+    const { current } = this._thumbnailsWrapper
+    current && current.scrollTo({ left: current.scrollLeft + current.offsetWidth - 50, behavior: 'smooth' })
   }
 
   render() {
     const { currentIndex, isFullscreen, modalFullscreen, isPlaying, style } = this.state
-
-    const { infinite, lazyLoad } = this.props
-
+    const { infinite, lazyLoad, className } = this.props
     const thumbnailStyle = this._getThumbnailStyle()
 
+    // tslint:disable-next-line:prefer-const
     let slides: JSX.Element[] = []
+    // tslint:disable-next-line:prefer-const
     let thumbnails: JSX.Element[] = []
 
     this.props.items.forEach((item, index) => {
       const alignment = this._getAlignmentClassName(index)
-
       const renderThumbInner = this._renderThumbInner
-
       const showItem = !lazyLoad || alignment || this._lazyLoaded[index]
+
       if (showItem && lazyLoad && !this._lazyLoaded[index]) {
         this._lazyLoaded[index] = true
       }
 
-      const slideStyle = {...this._getSlideStyle(index), ...style }
-
+      const slideStyle = { ...this._getSlideStyle(index), ...style }
       const slide = (
         <div key={index} className={styles.imageGallerySlide} data-position={alignment} style={slideStyle}>
           {showItem ? this._renderItem(item) : <div style={{ height: '100%' }} />}
@@ -734,19 +742,38 @@ export class ImageGallery extends React.Component<IProps, IState> {
       }
 
       thumbnails.push(
-        <a
+        <li
           key={index}
           role="button"
           aria-pressed={currentIndex === index}
           aria-label={`Go to Slide ${index + 1}`}
           className={styles.imageGalleryThumbnail}
-          data-active={currentIndex === index}
-          onClick={event => this._onThumbnailClick(event, index)}
+          data-idx={index}
+          onClick={this._onThumbnailClick}
         >
           {renderThumbInner(item)}
-        </a>
+        </li>
       )
     })
+
+    const renderNavButtons = (onClickLeft: () => void, onClickRight: () => void, disableLeft: boolean, disableRight: boolean) => (
+      <span>
+        <button
+          type="button"
+          className={styles.imageGalleryLeftNav}
+          disabled={disableLeft}
+          onClick={onClickLeft}
+          aria-label="Previous Slide"
+        />
+        <button
+          type="button"
+          className={styles.imageGalleryRightNav}
+          disabled={disableRight}
+          onClick={onClickRight}
+          aria-label="Next Slide"
+        />
+      </span>
+    )
 
     const slideWrapper = (
       <div ref={this._imageGallerySlideWrapper} className={styles.imageGallerySlideWrapper}>
@@ -767,23 +794,9 @@ export class ImageGallery extends React.Component<IProps, IState> {
 
         {this._canNavigate() ? (
           [
-            <span key="navigation">
-              <button
-                type="button"
-                className={styles.imageGalleryLeftNav}
-                disabled={!this._canSlideLeft()}
-                onClick={this._slideLeft}
-                aria-label="Previous Slide"
-              />
-              <button
-                type="button"
-                className={styles.imageGalleryRightNav}
-                disabled={!this._canSlideRight()}
-                onClick={this._slideRight}
-                aria-label="Next Slide"
-              />
-            </span>,
-
+            <React.Fragment key="navigation">
+              {renderNavButtons(this._slideLeft, this._slideRight, !this._canSlideLeft(), !this._canSlideRight())}
+            </React.Fragment>,
             <Swipeable
               className={styles.imageGallerySwipe}
               key="swipeable"
@@ -801,19 +814,24 @@ export class ImageGallery extends React.Component<IProps, IState> {
     )
 
     return (
-      <div ref={this._imageGallery} className={classNames(styles.imageGallery, modalFullscreen && styles.fullscreenModal)} aria-live="polite">
+      <div
+        ref={this._imageGallery}
+        className={classNames(styles.imageGallery, modalFullscreen && styles.fullscreenModal, className)}
+        aria-live="polite"
+      >
         <div className={styles.imageGalleryContent} data-fullscreen={isFullscreen}>
           {slideWrapper}
           <div className={styles.imageGalleryThumbnailsWrapper}>
             <div className={styles.imageGalleryThumbnails} ref={this._thumbnailsWrapper}>
-              <div
+              {renderNavButtons(this._handleScrollThumbsLeft, this._handleScrollThumbsRight, false, false)}
+              <ul
                 ref={this._thumbnails}
                 className={styles.imageGalleryThumbnailsContainer}
                 style={thumbnailStyle}
                 aria-label="Thumbnail Navigation"
               >
                 {thumbnails}
-              </div>
+              </ul>
             </div>
           </div>
         </div>
