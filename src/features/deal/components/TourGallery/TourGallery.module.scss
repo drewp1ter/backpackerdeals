@@ -36,11 +36,19 @@ $ig-transparent: rgba(0, 0, 0, 0) !default;
   line-height: 0;
   top: 0;
 
-  [data-fullscreen="true"] {
+  &[data-fullscreen="true"] {
     background: $ig-black;
 
     .imageGallerySlide {
       background: $ig-black;
+
+      div {
+        height: calc(100vh - 10.5rem) !important;
+      }
+    }
+
+    .toSell {
+      display: none;
     }
   }
 }
@@ -191,11 +199,12 @@ $ig-transparent: rgba(0, 0, 0, 0) !default;
 }
 
 .imageGalleryThumbnails {
-  margin-top: 1.5rem;
+  padding: 1.5rem 0 2rem;
 
   @include invisibleHScroll;
 
   .imageGalleryThumbnailsContainer {
+    display: flex;
     cursor: pointer;
     text-align: center;
     transition: transform .45s ease-out;
@@ -205,9 +214,6 @@ $ig-transparent: rgba(0, 0, 0, 0) !default;
 }
 
 .imageGalleryThumbnail {
-  display: inline-block;
-
-  transition: border .3s ease-out;
 
   + .imageGalleryThumbnail {
     margin-left: 1rem;
@@ -220,6 +226,7 @@ $ig-transparent: rgba(0, 0, 0, 0) !default;
     height: 7.5rem;
     border: 1px solid transparent;
     border-radius: 4px;
+    transition: border .3s ease-out;
   }
 
   img {
@@ -232,9 +239,61 @@ $ig-transparent: rgba(0, 0, 0, 0) !default;
     height: 100%;
     object-fit: fill;
     object-position: center;
+    transition: transform 1s;
+  }
+
+  &:hover {
+    box-shadow: 0 1.5rem 2rem rgba(0, 0, 0, 0.06);
+
+    img {
+      transform: scale3d(1.1,1.1,1);
+    }
   }
 
   &[aria-pressed="true"] .imageGalleryThumbnailInner {
     border-color: $ig-orange;
+  }
+}
+
+.toSell {
+  display: flex;
+  position: absolute;
+  right: 0;
+  bottom: 4rem;
+  width: 10rem;
+  height: 4rem;
+  min-width: 120px;
+  min-height: 48px;
+  border-radius: 8px 0 0 8px;
+  background-color: #ff5a39;
+  color: white;
+  cursor: pointer;
+  z-index: 1;
+
+  & > div:last-child {
+    display: flex;
+    align-items: center;
+    padding: 0.56rem .2rem 0.56rem 0.68rem;
+    box-sizing: border-box;
+    font-size: .875rem;
+    line-height: 1.71;
+  }
+}
+
+.toSellIcon {
+  width: 40%;
+  box-sizing: border-box;
+  border-right: 1px solid #F45636;
+  position: relative;
+
+  img {
+    width: 1.625rem;
+    height: 1.625rem;
+    min-width: 20px;
+    min-height: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 }

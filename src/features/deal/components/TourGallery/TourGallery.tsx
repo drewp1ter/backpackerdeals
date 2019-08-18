@@ -7,7 +7,7 @@ import { EventData, Swipeable } from 'react-swipeable'
 import ResizeObserver from 'resize-observer-polyfill'
 import styles from './TourGallery.module.scss'
 
-import images from '../TourGallery/assets'
+import * as images from '../TourGallery/assets'
 
 enum Direction {
   left = 'Left',
@@ -64,7 +64,7 @@ export interface IState {
 
 export class TourGallery extends React.Component<IProps, IState> {
   static defaultProps: IProps = {
-    items: images,
+    items: images.gallery,
     autoPlay: false,
     lazyLoad: false,
     infinite: true,
@@ -172,19 +172,17 @@ export class TourGallery extends React.Component<IProps, IState> {
     if (this._resizeObserver && this._imageGallerySlideWrapper.current) {
       this._resizeObserver.unobserve(this._imageGallerySlideWrapper.current)
     }
-    // this._createResizeObserver && this._createResizeObserver()
   }
 
   play() {
     if (!this._intervalId) {
-      const { currentIndex } = this.state
       const { slideInterval, slideDuration, infinite } = this.props
       this.setState({ isPlaying: true })
       this._intervalId = window.setInterval(() => {
         if (!infinite && !this._canSlideRight()) {
           this.pause()
         } else {
-          this.slideToIndex(currentIndex + 1)
+          this.slideToIndex(this.state.currentIndex + 1)
         }
       }, Math.max(slideInterval || 0, slideDuration || 0))
     }
@@ -442,13 +440,14 @@ export class TourGallery extends React.Component<IProps, IState> {
     return this.state.currentIndex < this.props.items.length - 1
   }
 
-  _slideThumbnailBar(previousIndex: number) {
+  _slideThumbnailBar(previousIndex: number, force: boolean = false) {
     const { thumbsTranslate, currentIndex } = this.state
-    if (this.state.currentIndex === 0) {
+    if (currentIndex === 0 && !force) {
       this.setState({ thumbsTranslate: 0 })
     } else {
       const indexDifference = Math.abs(previousIndex - currentIndex)
       const scroll = this._getThumbsTranslate(indexDifference)
+      console.log(scroll)
       if (scroll > 0) {
         if (previousIndex < currentIndex) {
           this.setState({ thumbsTranslate: thumbsTranslate - scroll })
@@ -702,8 +701,7 @@ export class TourGallery extends React.Component<IProps, IState> {
   }
 
   _handleScrollThumbsRight = () => {
-    const { current } = this._thumbnailsWrapper
-    current && current.scrollTo({ left: current.scrollLeft + current.offsetWidth - 50, behavior: 'smooth' })
+    this._slideThumbnailBar(-5, true)
   }
 
   render() {
@@ -777,6 +775,15 @@ export class TourGallery extends React.Component<IProps, IState> {
 
     const slideWrapper = (
       <div ref={this._imageGallerySlideWrapper} className={styles.imageGallerySlideWrapper}>
+        <div className={styles.toSell}>
+          <div className={styles.toSellIcon}>
+            <img src={images.cup} alt="" />
+          </div>
+          <div>
+            Likely
+            <br /> To Sell Out
+          </div>
+        </div>
         <button
           type="button"
           className={styles.imageGalleryFullScreenButton}

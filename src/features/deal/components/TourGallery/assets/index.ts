@@ -1,4 +1,8 @@
-export default [
+import cup from './cup.svg'
+
+export { cup }
+
+export const gallery = [
   {
     original: require('./1.jpg'),
     thumbnail: require('./1.jpg?resize&size=176'),
