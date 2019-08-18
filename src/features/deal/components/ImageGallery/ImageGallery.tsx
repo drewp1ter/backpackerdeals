@@ -314,7 +314,6 @@ export class ImageGallery extends React.Component<IProps, IState> {
 
   _handleResize = () => {
     const { currentIndex } = this.state
-    console.log(111)
     this._imageGallery.current &&
       this.setState({
         galleryWidth: this._imageGallery.current.offsetWidth,
