@@ -6,17 +6,11 @@ $ig-blue: #337ab7 !default;
 $ig-background-black: rgba(0, 0, 0, .4) !default;
 $ig-transparent: rgba(0, 0, 0, 0) !default;
 
-@mixin vendor-prefix($name, $value) {
-  @each $vendor in ('-webkit-', '-moz-', '-ms-', '-o-', '') {
-    #{$vendor}#{$name}: #{$value};
-  }
-}
-
-.image-gallery {
-  @include vendor-prefix('user-select', none);
+.imageGallery {
+  user-select: none;
   -webkit-tap-highlight-color: $ig-transparent;
 
-  &.fullscreen-modal {
+  &.fullscreenModal {
     background: $ig-black;
     bottom: 0;
     height: 100%;
@@ -27,7 +21,7 @@ $ig-transparent: rgba(0, 0, 0, 0) !default;
     width: 100%;
     z-index: 5;
 
-    .image-gallery-content {
+    .imageGalleryContent {
       top: 50%;
       transform: translateY(-50%);
     }
@@ -35,28 +29,28 @@ $ig-transparent: rgba(0, 0, 0, 0) !default;
 
 }
 
-.image-gallery-content {
+.imageGalleryContent {
   position: relative;
   line-height: 0;
   top: 0;
 
-  &.fullscreen {
+  [data-fullscreen="true"] {
     background: $ig-black;
 
-    .image-gallery-slide {
+    .imageGallerySlide {
       background: $ig-black;
     }
   }
 }
 
-.image-gallery-slide-wrapper {
+.imageGallerySlideWrapper {
   position: relative;
 }
 
-.image-gallery-fullscreen-button,
-.image-gallery-play-button,
-.image-gallery-left-nav,
-.image-gallery-right-nav {
+.imageGalleryFullScreenButton,
+.imageGalleryPlayButton,
+.imageGalleryLeftNav,
+.imageGalleryRightNav {
   appearance: none;
   background-color: transparent;
   border: 0;
@@ -66,24 +60,24 @@ $ig-transparent: rgba(0, 0, 0, 0) !default;
   z-index: 4;
 }
 
-.image-gallery-fullscreen-button,
-.image-gallery-play-button {
+.imageGalleryFullScreenButton,
+.imageGalleryPlayButton {
   bottom: 0;
   width: 32px;
   height: 32px;
   background: #000;
 }
 
-.image-gallery-fullscreen-button {
+.imageGalleryFullScreenButton {
   right: 0;
 }
 
-.image-gallery-play-button {
+.imageGalleryPlayButton {
   left: 0;
 }
 
-.image-gallery-left-nav,
-.image-gallery-right-nav {
+.imageGalleryLeftNav,
+.imageGalleryRightNav {
   color: $ig-white;
   font-size: 5em;
   padding: 50px 15px;
@@ -107,29 +101,29 @@ $ig-transparent: rgba(0, 0, 0, 0) !default;
   }
 }
 
-.image-gallery-left-nav {
+.imageGalleryLeftNav {
   left: 0;
 }
 
-.image-gallery-right-nav {
+.imageGalleryRightNav {
   right: 0;
 }
 
-.image-gallery-slides {
+.imageGallerySlides {
   line-height: 0;
   overflow: hidden;
   position: relative;
   white-space: nowrap;
 }
 
-.image-gallery-slide {
+.imageGallerySlide {
   background: $ig-white;
   left: 0;
   position: absolute;
   top: 0;
   width: 100%;
 
-  &.center {
+  &[data-position="center"] {
     position: relative;
   }
 
@@ -137,7 +131,7 @@ $ig-transparent: rgba(0, 0, 0, 0) !default;
     width: 100%;
   }
 
-  .image-gallery-description {
+  .imageGalleryDescription {
     background: $ig-background-black;
     bottom: 70px;
     color: $ig-white;
@@ -156,15 +150,11 @@ $ig-transparent: rgba(0, 0, 0, 0) !default;
   }
 }
 
-.image-gallery-thumbnails-wrapper {
+.imageGalleryThumbnailsWrapper {
   position: relative;
-
-  &.thumbnails-wrapper-rtl {
-    direction: rtl;
-  }
 }
 
-.image-gallery-thumbnails {
+.imageGalleryThumbnails {
   overflow: hidden;
   padding: 5px 0;
 
@@ -172,7 +162,7 @@ $ig-transparent: rgba(0, 0, 0, 0) !default;
     padding: 3px 0;
   }
 
-  .image-gallery-thumbnails-container {
+  .imageGalleryThumbnailsContainer {
     cursor: pointer;
     text-align: center;
     transition: transform .45s ease-out;
@@ -181,7 +171,7 @@ $ig-transparent: rgba(0, 0, 0, 0) !default;
 
 }
 
-.image-gallery-thumbnail {
+.imageGalleryThumbnail {
   display: inline-block;
   border: 4px solid transparent;
   transition: border .3s ease-out;
@@ -192,11 +182,11 @@ $ig-transparent: rgba(0, 0, 0, 0) !default;
     width: 75px;
   }
 
-  + .image-gallery-thumbnail {
+  + .imageGalleryThumbnail {
     margin-left: 2px;
   }
 
-  .image-gallery-thumbnail-inner {
+  .imageGalleryThumbnailInner {
     position: relative;
   }
 
@@ -205,7 +195,7 @@ $ig-transparent: rgba(0, 0, 0, 0) !default;
     width: 100%;
   }
 
-  &.active {
+  &[data-active="true"] {
     border: 4px solid $ig-blue;
 
     @media (max-width: $ig-screen-sm-min) {

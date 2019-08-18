@@ -5,7 +5,7 @@ import throttle from 'lodash.throttle'
 import React, { RefObject } from 'react'
 import { EventData, Swipeable } from 'react-swipeable'
 import ResizeObserver from 'resize-observer-polyfill'
-import './ImageGallery.scss'
+import styles from './ImageGallery.module.scss'
 
 enum Direction {
   left = 'Left',
@@ -484,23 +484,23 @@ export class ImageGallery extends React.Component<IProps, IState> {
 
     switch (index) {
       case currentIndex - 1:
-        alignment = ` ${leftClassName}`
+        alignment = leftClassName
         break
       case currentIndex:
-        alignment = ` ${centerClassName}`
+        alignment = centerClassName
         break
       case currentIndex + 1:
-        alignment = ` ${rightClassName}`
+        alignment = rightClassName
         break
     }
 
     if (this.props.items.length >= 3 && this.props.infinite) {
       if (index === 0 && currentIndex === this.props.items.length - 1) {
         // set first slide as right slide if were sliding right from last slide
-        alignment = ` ${rightClassName}`
+        alignment = rightClassName
       } else if (index === this.props.items.length - 1 && currentIndex === 0) {
         // set last slide as left slide if were sliding left from first slide
-        alignment = ` ${leftClassName}`
+        alignment = leftClassName
       }
     }
 
@@ -669,7 +669,7 @@ export class ImageGallery extends React.Component<IProps, IState> {
 
   _renderItem = (item: IItem) => {
     return (
-      <div className="image-gallery-image">
+      <div className={styles.imageGalleryImage}>
         {item.imageSet ? (
           <picture>
             {item.imageSet.map((source, index) => (
@@ -686,7 +686,7 @@ export class ImageGallery extends React.Component<IProps, IState> {
 
   _renderThumbInner = (item: IItem) => {
     return (
-      <div className="image-gallery-thumbnail-inner">
+      <div className={styles.imageGalleryThumbnailInner}>
         <img src={item.thumbnail} alt={item.thumbnailAlt} title={item.thumbnailTitle} />
       </div>
     )
@@ -697,7 +697,7 @@ export class ImageGallery extends React.Component<IProps, IState> {
   }
 
   render() {
-    const { currentIndex, isFullscreen, modalFullscreen, isPlaying } = this.state
+    const { currentIndex, isFullscreen, modalFullscreen, isPlaying, style } = this.state
 
     const { infinite, lazyLoad } = this.props
 
@@ -716,10 +716,10 @@ export class ImageGallery extends React.Component<IProps, IState> {
         this._lazyLoaded[index] = true
       }
 
-      const slideStyle = this._getSlideStyle(index)
+      const slideStyle = {...this._getSlideStyle(index), ...style }
 
       const slide = (
-        <div key={index} className={'image-gallery-slide' + alignment} style={Object.assign(slideStyle, this.state.style)}>
+        <div key={index} className={styles.imageGallerySlide} data-position={alignment} style={slideStyle}>
           {showItem ? this._renderItem(item) : <div style={{ height: '100%' }} />}
         </div>
       )
@@ -737,9 +737,10 @@ export class ImageGallery extends React.Component<IProps, IState> {
         <a
           key={index}
           role="button"
-          aria-pressed={currentIndex === index ? 'true' : 'false'}
+          aria-pressed={currentIndex === index}
           aria-label={`Go to Slide ${index + 1}`}
-          className={'image-gallery-thumbnail' + (currentIndex === index ? ' active' : '')}
+          className={styles.imageGalleryThumbnail}
+          data-active={currentIndex === index}
           onClick={event => this._onThumbnailClick(event, index)}
         >
           {renderThumbInner(item)}
@@ -748,16 +749,18 @@ export class ImageGallery extends React.Component<IProps, IState> {
     })
 
     const slideWrapper = (
-      <div ref={this._imageGallerySlideWrapper} className={`image-gallery-slide-wrapper`}>
+      <div ref={this._imageGallerySlideWrapper} className={styles.imageGallerySlideWrapper}>
         <button
           type="button"
-          className={`image-gallery-fullscreen-button${isFullscreen ? ' active' : ''}`}
+          className={styles.imageGalleryFullScreenButton}
+          data-active={isFullscreen}
           onClick={this._toggleFullScreen}
           aria-label="Open Fullscreen"
         />
         <button
           type="button"
-          className={`image-gallery-play-button${isPlaying ? ' active' : ''}`}
+          className={styles.imageGalleryPlayButton}
+          data-active={isPlaying}
           onClick={this._togglePlay}
           aria-label="Play or Pause Slideshow"
         />
@@ -767,14 +770,14 @@ export class ImageGallery extends React.Component<IProps, IState> {
             <span key="navigation">
               <button
                 type="button"
-                className="image-gallery-left-nav"
+                className={styles.imageGalleryLeftNav}
                 disabled={!this._canSlideLeft()}
                 onClick={this._slideLeft}
                 aria-label="Previous Slide"
               />
               <button
                 type="button"
-                className="image-gallery-right-nav"
+                className={styles.imageGalleryRightNav}
                 disabled={!this._canSlideRight()}
                 onClick={this._slideRight}
                 aria-label="Next Slide"
@@ -782,32 +785,30 @@ export class ImageGallery extends React.Component<IProps, IState> {
             </span>,
 
             <Swipeable
-              className="image-gallery-swipe"
+              className={styles.imageGallerySwipe}
               key="swipeable"
               delta={0}
               onSwiping={this._handleSwiping}
               onSwiped={this._handleOnSwiped}
             >
-              <div className="image-gallery-slides">{slides}</div>
+              <div className={styles.imageGallerySlides}>{slides}</div>
             </Swipeable>,
           ]
         ) : (
-          <div className="image-gallery-slides">{slides}</div>
+          <div className={styles.imageGallerySlides}>{slides}</div>
         )}
       </div>
     )
 
-    const classNames = ['image-gallery', modalFullscreen ? 'fullscreen-modal' : ''].filter(name => typeof name === 'string').join(' ')
-
     return (
-      <div ref={this._imageGallery} className={classNames} aria-live="polite">
-        <div className={`image-gallery-content${isFullscreen ? ' fullscreen' : ''}`}>
+      <div ref={this._imageGallery} className={classNames(styles.imageGallery, modalFullscreen && styles.fullscreenModal)} aria-live="polite">
+        <div className={styles.imageGalleryContent} data-fullscreen={isFullscreen}>
           {slideWrapper}
-          <div className={`image-gallery-thumbnails-wrapper`}>
-            <div className="image-gallery-thumbnails" ref={this._thumbnailsWrapper}>
+          <div className={styles.imageGalleryThumbnailsWrapper}>
+            <div className={styles.imageGalleryThumbnails} ref={this._thumbnailsWrapper}>
               <div
                 ref={this._thumbnails}
-                className="image-gallery-thumbnails-container"
+                className={styles.imageGalleryThumbnailsContainer}
                 style={thumbnailStyle}
                 aria-label="Thumbnail Navigation"
               >
