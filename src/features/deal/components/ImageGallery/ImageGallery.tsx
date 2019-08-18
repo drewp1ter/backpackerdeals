@@ -1,10 +1,10 @@
 import classNames from 'classnames'
 import * as CSS from 'csstype'
+import debounce from 'lodash.debounce'
 import throttle from 'lodash.throttle'
 import React, { RefObject } from 'react'
 import { EventData, Swipeable } from 'react-swipeable'
-import { fromEvent, Subscription } from 'rxjs'
-import { debounceTime, tap } from 'rxjs/operators'
+import ResizeObserver from 'resize-observer-polyfill'
 import './ImageGallery.scss'
 
 enum Direction {
@@ -80,14 +80,22 @@ export class ImageGallery extends React.Component<IProps, IState> {
     swipeThreshold: 30,
   }
 
+  _createResizeObserver = debounce((entries) => {
+    if (!entries) { return }
+    entries.forEach(() => {
+      this._handleResize();
+    });
+  }, 300);
+
   private _unthrottledSlideToIndex: (index: number, event?: React.MouseEvent<HTMLAnchorElement>) => void
   private _lazyLoaded: boolean[]
   private _intervalId: number | null
   private _transitionTimer: number | null
-  private _resizeSubscription: Subscription | null
+  private _imageGallerySlideWrapper: RefObject<HTMLDivElement>
   private _imageGallery: RefObject<HTMLDivElement>
   private _thumbnailsWrapper: RefObject<HTMLDivElement>
   private _thumbnails: RefObject<HTMLDivElement>
+  private _resizeObserver: ResizeObserver | null
 
   constructor(props: IProps) {
     super(props)
@@ -112,10 +120,11 @@ export class ImageGallery extends React.Component<IProps, IState> {
     this._lazyLoaded = []
     this._intervalId = null
     this._transitionTimer = null
-    this._resizeSubscription = null
     this._imageGallery = React.createRef<HTMLDivElement>()
     this._thumbnailsWrapper = React.createRef<HTMLDivElement>()
     this._thumbnails = React.createRef<HTMLDivElement>()
+    this._imageGallerySlideWrapper = React.createRef<HTMLDivElement>()
+    this._resizeObserver = null
   }
 
   componentDidUpdate(prevProps: IProps, prevState: IState) {
@@ -141,21 +150,25 @@ export class ImageGallery extends React.Component<IProps, IState> {
     autoPlay && this.play()
     window.addEventListener('keydown', this._handleKeyDown)
     this._onScreenChangeEvent()
+    this._resizeObserver = new ResizeObserver(this._createResizeObserver)
+    this._imageGallerySlideWrapper.current && this._resizeObserver.observe(this._imageGallerySlideWrapper.current)
   }
 
   componentWillUnmount() {
     window.removeEventListener('keydown', this._handleKeyDown)
     this._offScreenChangeEvent()
-    this._resizeSubscription && this._resizeSubscription.unsubscribe()
 
     if (this._intervalId) {
       window.clearInterval(this._intervalId)
       this._intervalId = null
     }
 
-    if (this._transitionTimer) {
-      window.clearTimeout(this._transitionTimer)
+    this._transitionTimer && window.clearTimeout(this._transitionTimer)
+
+    if(this._resizeObserver && this._imageGallerySlideWrapper.current) {
+      this._resizeObserver.unobserve(this._imageGallerySlideWrapper.current)
     }
+    // this._createResizeObserver && this._createResizeObserver()
   }
 
   play() {
@@ -297,15 +310,6 @@ export class ImageGallery extends React.Component<IProps, IState> {
     } else {
       this.play()
     }
-  }
-
-  resizeObserver = (element: HTMLDivElement) => {
-    if (!element) {
-      return
-    }
-    this._resizeSubscription = fromEvent(element, 'resize')
-      .pipe(tap(() => console.log(1112)), debounceTime(300))
-      .subscribe(() => this._handleResize())
   }
 
   _handleResize = () => {
@@ -745,7 +749,7 @@ export class ImageGallery extends React.Component<IProps, IState> {
     })
 
     const slideWrapper = (
-      <div ref={this.resizeObserver} className={`image-gallery-slide-wrapper`}>
+      <div ref={this._imageGallerySlideWrapper} className={`image-gallery-slide-wrapper`}>
         <button
           type="button"
           className={`image-gallery-fullscreen-button${isFullscreen ? ' active' : ''}`}
