@@ -103,7 +103,7 @@ export class TourGallery extends React.Component<IProps, IState> {
   private _thumbnailsWrapper: RefObject<HTMLDivElement>
   private _thumbnails: RefObject<HTMLUListElement>
   private _resizeObserver: ResizeObserver | null
-  private _youtubeIFrames: any[]
+  private _youtubeIFrames: any
 
   constructor(props: IProps) {
     super(props)
@@ -238,7 +238,10 @@ export class TourGallery extends React.Component<IProps, IState> {
 
   slideToIndex = (index: number, event?: React.MouseEvent<HTMLAnchorElement>) => {
     const { currentIndex, isTransitioning } = this.state
-    this._youtubeIFrames.forEach(iframe => iframe.pauseVideo())
+    Object.values(this._youtubeIFrames).forEach((iframe: any) => {
+      // console.log(iframe)
+      iframe.playing && iframe.target.pauseVideo()
+    })
 
     if (!isTransitioning) {
       if (event && this._intervalId) {
@@ -691,7 +694,39 @@ export class TourGallery extends React.Component<IProps, IState> {
 
   _renderItem = (item: IItem) => {
     const onReady = ({ target }: any) => {
-      this._youtubeIFrames.push(target)
+      if (item.videoId) {
+        this._youtubeIFrames = {
+          ...this._youtubeIFrames,
+          [item.videoId]: {
+            playing: false,
+            target,
+          },
+        }
+      }
+    }
+
+    const onPlay = () => {
+      if (item.videoId) {
+        this._youtubeIFrames = {
+          ...this._youtubeIFrames,
+          [item.videoId]: {
+            ...this._youtubeIFrames[item.videoId],
+            playing: true,
+          },
+        }
+      }
+    }
+
+    const onPause = () => {
+      if (item.videoId) {
+        this._youtubeIFrames = {
+          ...this._youtubeIFrames,
+          [item.videoId]: {
+            ...this._youtubeIFrames[item.videoId],
+            playing: false,
+          },
+        }
+      }
     }
 
     if (item.imageSet) {
@@ -716,7 +751,7 @@ export class TourGallery extends React.Component<IProps, IState> {
     if (item.videoId) {
       return (
         <div className={styles.iframeContainer}>
-          <YouTube videoId={item.videoId} onReady={onReady} />
+          <YouTube videoId={item.videoId} onReady={onReady} onPlay={onPlay} onPause={onPause} />
         </div>
       )
     }
