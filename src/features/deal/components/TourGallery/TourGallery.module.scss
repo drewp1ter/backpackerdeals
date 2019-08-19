@@ -1,11 +1,11 @@
-@import "src/scss/utils";
+@import "src/scss/device";
 
 $ig-screen-sm-min: 768px !default;
 $ig-screen-xsm-min: 480px !default;
 $ig-white: #fff !default;
 $ig-black: #000 !default;
 $ig-orange: #ff5a39 !default;
-$ig-background-black: rgba(0, 0, 0, .4) !default;
+$ig-background-black: rgba(0, 0, 0, 0.4) !default;
 $ig-transparent: rgba(0, 0, 0, 0) !default;
 
 .imageGallery {
@@ -28,7 +28,6 @@ $ig-transparent: rgba(0, 0, 0, 0) !default;
       transform: translateY(-50%);
     }
   }
-
 }
 
 .imageGalleryContent {
@@ -77,7 +76,7 @@ $ig-transparent: rgba(0, 0, 0, 0) !default;
   z-index: 4;
 
   &:after {
-    font-family: 'Font Awesome 5 Free';
+    font-family: "Font Awesome 5 Free";
     font-weight: 900;
   }
 }
@@ -88,7 +87,7 @@ $ig-transparent: rgba(0, 0, 0, 0) !default;
   width: 2rem;
   height: 2rem;
   color: $ig-white;
-  transition: .2s ease color;
+  transition: 0.2s ease color;
 
   &:hover {
     color: $ig-orange;
@@ -129,7 +128,7 @@ $ig-transparent: rgba(0, 0, 0, 0) !default;
   font-size: 1.0625em;
   top: 50%;
   transform: translateY(-50%);
-  transition: .2s ease color, .2s ease background-color;
+  transition: 0.2s ease color, 0.2s ease background-color;
 
   &:hover {
     background: $ig-orange;
@@ -138,7 +137,7 @@ $ig-transparent: rgba(0, 0, 0, 0) !default;
 
   &[disabled] {
     cursor: disabled;
-    opacity: .6;
+    opacity: 0.6;
     pointer-events: none;
   }
 }
@@ -213,8 +212,6 @@ $ig-transparent: rgba(0, 0, 0, 0) !default;
     object-fit: fill;
     object-position: center;
   }
-
-  // height: calc(100vh - 10.5rem);
 }
 
 .imageGalleryThumbnailsWrapper {
@@ -223,21 +220,18 @@ $ig-transparent: rgba(0, 0, 0, 0) !default;
 
 .imageGalleryThumbnails {
   padding: 1.5rem 0 2rem;
-
-  @include invisibleHScroll;
+  overflow: hidden;
 
   .imageGalleryThumbnailsContainer {
     display: flex;
     cursor: pointer;
     text-align: center;
-    transition: transform .45s ease-out;
+    transition: transform 0.45s ease-out;
     white-space: nowrap;
   }
-
 }
 
 .imageGalleryThumbnail {
-
   + .imageGalleryThumbnail {
     margin-left: 1rem;
   }
@@ -249,7 +243,7 @@ $ig-transparent: rgba(0, 0, 0, 0) !default;
     height: 7.5rem;
     border: 1px solid transparent;
     border-radius: 4px;
-    transition: border .3s ease-out;
+    transition: border 0.3s ease-out;
 
     i {
       position: absolute;
@@ -278,7 +272,7 @@ $ig-transparent: rgba(0, 0, 0, 0) !default;
     box-shadow: 0 1.5rem 2rem rgba(0, 0, 0, 0.06);
 
     img {
-      transform: scale3d(1.1,1.1,1);
+      transform: scale3d(1.1, 1.1, 1);
     }
   }
 
@@ -305,9 +299,9 @@ $ig-transparent: rgba(0, 0, 0, 0) !default;
   & > div:last-child {
     display: flex;
     align-items: center;
-    padding: 0.56rem .2rem 0.56rem 0.68rem;
+    padding: 0.56rem 0.2rem 0.56rem 0.68rem;
     box-sizing: border-box;
-    font-size: .875rem;
+    font-size: 0.875rem;
     line-height: 1.71;
   }
 }
@@ -315,7 +309,7 @@ $ig-transparent: rgba(0, 0, 0, 0) !default;
 .toSellIcon {
   width: 40%;
   box-sizing: border-box;
-  border-right: 1px solid #F45636;
+  border-right: 1px solid #f45636;
   position: relative;
 
   img {
@@ -327,5 +321,81 @@ $ig-transparent: rgba(0, 0, 0, 0) !default;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+  }
+}
+
+@include device-ipad {
+  .imageGallerySlide {
+    .imageGalleryImage {
+      height: 45rem;
+    }
+
+    .iframeContainer {
+      padding-bottom: 45rem;
+    }
+  }
+
+  .imageGalleryThumbnail {
+    + .imageGalleryThumbnail {
+      margin-left: 1.25rem;
+    }
+
+    .imageGalleryThumbnailInner {
+      width: 14rem;
+      height: 9.5rem;
+
+      i {
+        font-size: 3.75rem;
+      }
+    }
+  }
+
+  .imageGalleryLeftNav,
+  .imageGalleryRightNav {
+    width: 5rem;
+    height: 5rem;
+  }
+
+  .imageGalleryFullScreenButton {
+    right: 2rem;
+    bottom: 2rem;
+  }
+
+  .imageGalleryPlayButton {
+    left: 2rem;
+    bottom: 2rem
+  }
+
+  .imageGalleryLeftNav {
+    left: 2rem;
+  }
+
+  .imageGalleryRightNav {
+    right: 2rem;
+  }
+
+  .toSell {
+    bottom: 6rem;
+    width: 15rem;
+    height: 6rem;
+    min-width: 120px;
+    min-height: 48px;
+
+    & > div:last-child {
+      padding: 0.56rem 0.2rem 0.56rem 0.68rem;
+      font-size: 0.875em;
+      line-height: 1.71;
+    }
+  }
+
+  .toSellIcon {
+    width: 40%;
+
+    img {
+      width: 1.625rem;
+      height: 1.625rem;
+      min-width: 20px;
+      min-height: 20px;
+    }
   }
 }
