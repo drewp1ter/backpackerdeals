@@ -8,7 +8,7 @@ export const gallery = [
     thumbnail: require('./1.jpg?resize&size=176'),
   },
   {
-    original: require('./2.jpg'),
+    videoId: 'vlDzYIIOYmM',
     thumbnail: require('./2.jpg?resize&size=176'),
   },
   {

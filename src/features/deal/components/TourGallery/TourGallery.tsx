@@ -17,7 +17,7 @@ enum Direction {
 const screenChangeEvents = ['fullscreenchange', 'MSFullscreenChange', 'mozfullscreenchange', 'webkitfullscreenchange']
 
 export interface IItem {
-  readonly original: string
+  readonly original?: string
   readonly thumbnail: string
   readonly srcSet?: string
   readonly sizes?: string
@@ -26,6 +26,7 @@ export interface IItem {
   readonly thumbnailAlt?: string
   readonly thumbnailTitle?: string
   readonly imageSet?: HTMLSourceElement[]
+  readonly videoId?: string
 }
 
 export interface IProps {
@@ -672,31 +673,6 @@ export class TourGallery extends React.Component<IProps, IState> {
     this.slideToIndex(this.state.currentIndex + 1)
   }
 
-  _renderItem = (item: IItem) => {
-    return (
-      <div className={styles.imageGalleryImage}>
-        {item.imageSet ? (
-          <picture>
-            {item.imageSet.map((source, index) => (
-              <source key={index} media={source.media} srcSet={source.srcset} type={source.type} />
-            ))}
-            <img alt={item.originalAlt} src={item.original} />
-          </picture>
-        ) : (
-          <img src={item.original} alt={item.originalAlt} srcSet={item.srcSet} sizes={item.sizes} title={item.originalTitle} />
-        )}
-      </div>
-    )
-  }
-
-  _renderThumbInner = (item: IItem) => {
-    return (
-      <div className={styles.imageGalleryThumbnailInner}>
-        <img src={item.thumbnail} alt={item.thumbnailAlt} title={item.thumbnailTitle} />
-      </div>
-    )
-  }
-
   _onThumbnailClick = ({ currentTarget }: React.MouseEvent<HTMLLIElement>) => {
     this.slideToIndex(Number(currentTarget.dataset.idx))
   }
@@ -707,6 +683,53 @@ export class TourGallery extends React.Component<IProps, IState> {
 
   _handleScrollThumbsRight = () => {
     this._slideThumbnailBar(5)
+    console.log(window.frames[1])
+    ;[...Array(window.frames.length).keys()].forEach((id: number) =>
+      window.frames[id].postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*')
+    )
+  }
+
+  _renderItem = (item: IItem) => {
+    if (item.imageSet) {
+      return (
+        <div className={styles.imageGalleryImage}>
+          <picture>
+            {item.imageSet.map((source, index) => (
+              <source key={index} media={source.media} srcSet={source.srcset} type={source.type} />
+            ))}
+            <img alt={item.originalAlt} src={item.original} />
+          </picture>
+        </div>
+      )
+    }
+    if (item.original) {
+      return (
+        <div className={styles.imageGalleryImage}>
+          <img src={item.original} alt={item.originalAlt} srcSet={item.srcSet} sizes={item.sizes} title={item.originalTitle} />
+        </div>
+      )
+    }
+    if (item.videoId) {
+      return (
+        <div className={styles.iframeContainer}>
+          <iframe
+            allowFullScreen={true}
+            frameBorder="0"
+            id="ytplayer"
+            src={`http://www.youtube.com/embed/${item.videoId}?autoplay=0`}
+          />
+        </div>
+      )
+    }
+  }
+
+  _renderThumbInner = (item: IItem) => {
+    return (
+      <div className={styles.imageGalleryThumbnailInner}>
+        <img src={item.thumbnail} alt={item.thumbnailAlt} title={item.thumbnailTitle} />
+        {item.videoId && <i className="fab fa-youtube" />}
+      </div>
+    )
   }
 
   render() {
@@ -778,52 +801,60 @@ export class TourGallery extends React.Component<IProps, IState> {
       </span>
     )
 
-    const slideWrapper = (
-      <div ref={this._imageGallerySlideWrapper} className={styles.imageGallerySlideWrapper}>
-        <div className={styles.toSell}>
-          <div className={styles.toSellIcon}>
-            <img src={images.cup} alt="" />
+    const slideWrapper = () => {
+      const { currentIndex } = this.state
+      const { items } = this.props
+      return (
+        <div
+          ref={this._imageGallerySlideWrapper}
+          data-hide-controls={!!items[currentIndex].videoId}
+          className={styles.imageGallerySlideWrapper}
+        >
+          <div className={styles.toSell}>
+            <div className={styles.toSellIcon}>
+              <img src={images.cup} alt="" />
+            </div>
+            <div>
+              Likely
+              <br /> To Sell Out
+            </div>
           </div>
-          <div>
-            Likely
-            <br /> To Sell Out
-          </div>
-        </div>
-        <button
-          type="button"
-          className={styles.imageGalleryFullScreenButton}
-          data-active={isFullscreen}
-          onClick={this._toggleFullScreen}
-          aria-label="Open Fullscreen"
-        />
-        <button
-          type="button"
-          className={styles.imageGalleryPlayButton}
-          data-active={isPlaying}
-          onClick={this._togglePlay}
-          aria-label="Play or Pause Slideshow"
-        />
+          <button
+            type="button"
+            className={styles.imageGalleryFullScreenButton}
+            data-active={isFullscreen}
+            onClick={this._toggleFullScreen}
+            aria-label="Open Fullscreen"
+          />
+          <button
+            type="button"
+            className={styles.imageGalleryPlayButton}
+            data-active={isPlaying}
+            onClick={this._togglePlay}
+            aria-label="Play or Pause Slideshow"
+          />
 
-        {this._canNavigate() ? (
-          [
-            <React.Fragment key="navigation">
-              {renderNavButtons(this._slideLeft, this._slideRight, !this._canSlideLeft(), !this._canSlideRight())}
-            </React.Fragment>,
-            <Swipeable
-              className={styles.imageGallerySwipe}
-              key="swipeable"
-              delta={0}
-              onSwiping={this._handleSwiping}
-              onSwiped={this._handleOnSwiped}
-            >
-              <div className={styles.imageGallerySlides}>{slides}</div>
-            </Swipeable>,
-          ]
-        ) : (
-          <div className={styles.imageGallerySlides}>{slides}</div>
-        )}
-      </div>
-    )
+          {this._canNavigate() ? (
+            [
+              <React.Fragment key="navigation">
+                {renderNavButtons(this._slideLeft, this._slideRight, !this._canSlideLeft(), !this._canSlideRight())}
+              </React.Fragment>,
+              <Swipeable
+                className={styles.imageGallerySwipe}
+                key="swipeable"
+                delta={0}
+                onSwiping={this._handleSwiping}
+                onSwiped={this._handleOnSwiped}
+              >
+                <div className={styles.imageGallerySlides}>{slides}</div>
+              </Swipeable>,
+            ]
+          ) : (
+            <div className={styles.imageGallerySlides}>{slides}</div>
+          )}
+        </div>
+      )
+    }
 
     return (
       <div
@@ -832,7 +863,7 @@ export class TourGallery extends React.Component<IProps, IState> {
         aria-live="polite"
       >
         <div className={styles.imageGalleryContent} data-fullscreen={isFullscreen}>
-          {slideWrapper}
+          {slideWrapper()}
           <div className={styles.imageGalleryThumbnailsWrapper}>
             <div className={styles.imageGalleryThumbnails} ref={this._thumbnailsWrapper}>
               {renderNavButtons(this._handleScrollThumbsLeft, this._handleScrollThumbsRight, false, false)}
