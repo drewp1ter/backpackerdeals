@@ -4,6 +4,7 @@ import debounce from 'lodash.debounce'
 import throttle from 'lodash.throttle'
 import React, { RefObject } from 'react'
 import { EventData, Swipeable } from 'react-swipeable'
+import YouTube from 'react-youtube'
 import ResizeObserver from 'resize-observer-polyfill'
 import styles from './TourGallery.module.scss'
 
@@ -102,6 +103,7 @@ export class TourGallery extends React.Component<IProps, IState> {
   private _thumbnailsWrapper: RefObject<HTMLDivElement>
   private _thumbnails: RefObject<HTMLUListElement>
   private _resizeObserver: ResizeObserver | null
+  private _youtubeIFrames: any[]
 
   constructor(props: IProps) {
     super(props)
@@ -132,6 +134,7 @@ export class TourGallery extends React.Component<IProps, IState> {
     this._thumbnails = React.createRef<HTMLUListElement>()
     this._imageGallerySlideWrapper = React.createRef<HTMLDivElement>()
     this._resizeObserver = null
+    this._youtubeIFrames = []
   }
 
   componentDidUpdate(prevProps: IProps) {
@@ -235,6 +238,7 @@ export class TourGallery extends React.Component<IProps, IState> {
 
   slideToIndex = (index: number, event?: React.MouseEvent<HTMLAnchorElement>) => {
     const { currentIndex, isTransitioning } = this.state
+    this._youtubeIFrames.forEach(iframe => iframe.pauseVideo())
 
     if (!isTransitioning) {
       if (event && this._intervalId) {
@@ -683,13 +687,13 @@ export class TourGallery extends React.Component<IProps, IState> {
 
   _handleScrollThumbsRight = () => {
     this._slideThumbnailBar(5)
-    console.log(window.frames[1])
-    ;[...Array(window.frames.length).keys()].forEach((id: number) =>
-      window.frames[id].postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*')
-    )
   }
 
   _renderItem = (item: IItem) => {
+    const onReady = ({ target }: any) => {
+      this._youtubeIFrames.push(target)
+    }
+
     if (item.imageSet) {
       return (
         <div className={styles.imageGalleryImage}>
@@ -712,12 +716,7 @@ export class TourGallery extends React.Component<IProps, IState> {
     if (item.videoId) {
       return (
         <div className={styles.iframeContainer}>
-          <iframe
-            allowFullScreen={true}
-            frameBorder="0"
-            id="ytplayer"
-            src={`http://www.youtube.com/embed/${item.videoId}?autoplay=0`}
-          />
+          <YouTube videoId={item.videoId} onReady={onReady} />
         </div>
       )
     }
