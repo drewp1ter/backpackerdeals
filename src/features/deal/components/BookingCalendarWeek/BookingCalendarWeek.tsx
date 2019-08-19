@@ -49,11 +49,11 @@ export class BookingCalendarWeek extends React.Component<IProps, IState> {
 
   get days() {
     const { offsetWeek } = this.state
-    const weekTime = 604800000 * offsetWeek
-    const dayTime = 86400000
+    const millisecondsInAWeeks = 604800000 * offsetWeek
+    const millisecondsInADay = 86400000
     const startWeekTime =
-      new Date(this.now.getFullYear(), this.now.getMonth(), this.now.getDate() - this.now.getDay() + 1).getTime() + weekTime // monday
-    return [...Array(7).keys()].map(day => new Date(startWeekTime + dayTime * day))
+      new Date(this.now.getFullYear(), this.now.getMonth(), this.now.getDate() - this.now.getDay() + 1).getTime() + millisecondsInAWeeks // monday
+    return [...Array(7).keys()].map(day => new Date(startWeekTime + millisecondsInADay * day))
   }
 
   handlePrevWeek = () => {
