@@ -60,6 +60,7 @@ export interface IState {
   readonly modalFullscreen: boolean
   readonly previousIndex: number
   readonly style: CSS.Properties
+  readonly thumbsScrollOffset: number
 }
 
 export class TourGallery extends React.Component<IProps, IState> {
@@ -115,6 +116,7 @@ export class TourGallery extends React.Component<IProps, IState> {
       isTransitioning: false,
       modalFullscreen: false,
       previousIndex: 0,
+      thumbsScrollOffset: 0,
       style: {},
     }
 
@@ -131,12 +133,11 @@ export class TourGallery extends React.Component<IProps, IState> {
     this._resizeObserver = null
   }
 
-  componentDidUpdate(prevProps: IProps, prevState: IState) {
+  componentDidUpdate(prevProps: IProps) {
     const itemsSizeChanged = prevProps.items.length !== this.props.items.length
     const itemsChanged = prevProps.items !== this.props.items
     const startIndexUpdated = prevProps.startIndex !== this.props.startIndex
     itemsSizeChanged && this._handleResize()
-    prevState.currentIndex !== this.state.currentIndex && this._slideThumbnailBar(prevState.currentIndex)
 
     // if slideDuration changes, update slideToIndex throttle
     if (prevProps.slideDuration !== this.props.slideDuration) {
@@ -250,12 +251,16 @@ export class TourGallery extends React.Component<IProps, IState> {
         nextIndex = 0
       }
 
+      const thumbsTranslate = nextIndex === 0 ? 0 : this._getThumbsTranslate(nextIndex) * -1
+
       this.setState(
         {
+          thumbsTranslate,
           previousIndex: currentIndex,
           currentIndex: nextIndex,
           isTransitioning: nextIndex !== currentIndex,
           offsetPercentage: 0,
+          thumbsScrollOffset: 0,
           style: {
             transition: `all ${this.props.slideDuration}ms ease-out`,
           },
@@ -440,32 +445,33 @@ export class TourGallery extends React.Component<IProps, IState> {
     return this.state.currentIndex < this.props.items.length - 1
   }
 
-  _slideThumbnailBar(previousIndex: number, force: boolean = false) {
-    const { thumbsTranslate, currentIndex } = this.state
-    if (currentIndex === 0 && !force) {
-      this.setState({ thumbsTranslate: 0 })
+  _slideThumbnailBar(step: number) {
+    const { thumbsScrollOffset, currentIndex } = this.state
+    const nextThumbsScrollOffset = thumbsScrollOffset + step
+    const nextIndex = currentIndex + nextThumbsScrollOffset
+    const { items } = this.props
+    let scroll = 0
+    if (items.length > nextIndex && nextIndex > 0) {
+      scroll = this._getThumbsTranslate(nextIndex)
+      this.setState({ thumbsScrollOffset: nextThumbsScrollOffset, thumbsTranslate: scroll * -1 })
+    } else if (nextIndex > 0) {
+      scroll = this._getThumbsTranslate(items.length - 1)
+      this.setState({ thumbsTranslate: scroll * -1 })
     } else {
-      const indexDifference = Math.abs(previousIndex - currentIndex)
-      const scroll = this._getThumbsTranslate(indexDifference)
-      console.log(scroll)
-      if (scroll > 0) {
-        if (previousIndex < currentIndex) {
-          this.setState({ thumbsTranslate: thumbsTranslate - scroll })
-        } else if (previousIndex > currentIndex) {
-          this.setState({ thumbsTranslate: thumbsTranslate + scroll })
-        }
-      }
+      this.setState({ thumbsTranslate: 0 })
     }
   }
 
   _getThumbsTranslate(indexDifference: number) {
     const { thumbnailsWrapperWidth } = this.state
+    const { items } = this.props
+    const { current: thumbnails } = this._thumbnails
     // total scroll required to see the last thumbnail
-    if ((this._thumbnails.current && this._thumbnails.current.scrollWidth <= thumbnailsWrapperWidth) || thumbnailsWrapperWidth <= 0) {
+    if ((thumbnails && thumbnails.scrollWidth <= thumbnailsWrapperWidth) || thumbnailsWrapperWidth <= 0) {
       return 0
     }
-    const totalScroll = this._thumbnails.current && this._thumbnails.current.scrollWidth - thumbnailsWrapperWidth
-    const totalThumbnails = this._thumbnails.current && this._thumbnails.current.children.length
+    const totalScroll = thumbnails && thumbnails.scrollWidth - thumbnailsWrapperWidth
+    const totalThumbnails = thumbnails && items.length
     // scroll-x required per index change
     const perIndexScroll = totalThumbnails && totalScroll ? totalScroll / (totalThumbnails - 1) : 0
     return indexDifference * perIndexScroll
@@ -696,12 +702,11 @@ export class TourGallery extends React.Component<IProps, IState> {
   }
 
   _handleScrollThumbsLeft = () => {
-    const { current } = this._thumbnailsWrapper
-    current && current.scrollTo({ left: current.scrollLeft - current.offsetWidth - 50, behavior: 'smooth' })
+    this._slideThumbnailBar(-5)
   }
 
   _handleScrollThumbsRight = () => {
-    this._slideThumbnailBar(-5, true)
+    this._slideThumbnailBar(5)
   }
 
   render() {
