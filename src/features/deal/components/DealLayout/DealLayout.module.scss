@@ -5,6 +5,10 @@
   margin: 6.25rem auto 0;
 }
 
+.iconsOrderDetails {
+  display: flex;
+}
+
 .section {
   position: relative;
   margin: 0 auto;
@@ -87,5 +91,41 @@
     a {
       margin-top: 2rem;
     }
+  }
+}
+
+@include device-mb {
+  .section, .orderDetails, .card, .whatsToExpect {
+    width: 38rem;
+    margin: 0 auto;
+  }
+
+  .card {
+    margin-top: 2rem;
+  }
+
+  .mobileBookNow {
+    margin: 1.5rem -1rem 0;
+  }
+
+  .headerSection {
+    width: 38rem;
+    margin: 8rem auto 5rem;
+  }
+
+  .stickyWrapper {
+    position: relative;
+    right: unset;
+    top: unset;
+    height: unset;
+  }
+
+  .iconsOrderDetails {
+    flex-direction: column-reverse;
+  }
+
+  .tourIcons {
+    margin-top: 1rem;
+    width: 100%;
   }
 }

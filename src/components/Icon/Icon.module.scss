@@ -25,3 +25,12 @@
     }
   }
 }
+
+@include device-mb {
+  .icon {
+    &[data-size="md"] {
+      height: 3.5rem;
+      width: 3.5rem;
+    }
+  }
+}

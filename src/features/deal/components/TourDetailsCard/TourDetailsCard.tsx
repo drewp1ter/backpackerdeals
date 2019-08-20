@@ -1,5 +1,5 @@
 import classNames from 'classnames'
-import React, { RefObject } from 'react'
+import React, { RefObject, useState } from 'react'
 
 import styles from './TourDetailsCard.module.scss'
 
@@ -12,10 +12,15 @@ export interface IProps {
 }
 
 export const TourDetailsCard: React.FC<IProps> = ({ className, title, items, children, navAnchor }) => {
+  const [isOpen, setIsOpen] = useState<boolean>(true)
+  const handleToggle = () => setIsOpen(!isOpen)
   return (
-    <div className={classNames(styles.tourDetails, className)}>
+    <div className={classNames(styles.tourDetails, className)} data-open={isOpen}>
       <div ref={navAnchor} className={styles.anchor} />
-      <h3>{title}</h3>
+      <div onClick={handleToggle} className={styles.header}>
+        <h3>{title}</h3>
+        <i className="fas fa-chevron-up" />
+      </div>
       {items && (
         <ul>
           {items.map((item: string, idx: number) => (

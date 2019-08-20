@@ -787,9 +787,9 @@ export class TourGallery extends React.Component<IProps, IState> {
 
       const slideStyle = { ...this._getSlideStyle(index), ...style }
       const slide = (
-        <div key={index} className={styles.imageGallerySlide} data-position={alignment} style={slideStyle}>
+        <li key={index} className={styles.imageGallerySlide} data-position={alignment} style={slideStyle}>
           {showItem ? this._renderItem(item) : <div style={{ height: '100%' }} />}
-        </div>
+        </li>
       )
 
       if (infinite) {
@@ -880,11 +880,11 @@ export class TourGallery extends React.Component<IProps, IState> {
                 onSwiping={this._handleSwiping}
                 onSwiped={this._handleOnSwiped}
               >
-                <div className={styles.imageGallerySlides}>{slides}</div>
+                <ul className={styles.imageGallerySlides}>{slides}</ul>
               </Swipeable>,
             ]
           ) : (
-            <div className={styles.imageGallerySlides}>{slides}</div>
+            <ul className={styles.imageGallerySlides}>{slides}</ul>
           )}
         </div>
       )

@@ -190,7 +190,7 @@ html {
   }
 
   @include device-mb {
-    @include font-mb((min: 13, max: 15))
+    font-size: 2.5vw; // 1rem = 8px / 320
   }
 }
 
@@ -210,12 +210,17 @@ body {
 
   // from 12px to 12px
   @include device((min: 1024px, max: 1279px)) {
-    @include font(1279, 1024, 12, 12)
+    // @include font(1279, 1024, 12, 12)
+    font-size: 12px;
   }
 
   // from 11px to 12px
   @include device((min: 768px, max: 1023px)) {
     @include font(1023, 768, 12, 10)
+  }
+
+  @include device((min: 320px, max: 767px)) {
+    @include font(767, 320, 14, 12)
   }
 }
 

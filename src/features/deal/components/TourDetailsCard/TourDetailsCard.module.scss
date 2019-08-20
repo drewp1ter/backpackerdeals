@@ -12,14 +12,43 @@
     top: -7.25rem;
   }
 
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+
+    i {
+      display: none;
+      font-size: 1.1666666em;
+      cursor: pointer;
+      color: #ff5a39;
+      transition: .8s ease transform;
+    }
+  }
+
+  &[data-open="false"] {
+    .header {
+      i {
+        transform: rotate(180deg);
+      }
+    }
+
+    ul {
+      max-height: 0;
+    }
+  }
+
   h3 {
     font-size: 2em;
     font-weight: bold;
-    margin-bottom: 2rem;
   }
 
   ul {
     list-style-type: disc;
+    overflow: hidden;
+    transition: .8s ease max-height;
+    max-height: 100rem;
   }
 
   li {
@@ -38,9 +67,44 @@
   .tourDetails {
     padding: 3rem 2rem;
 
+    .header {
+      margin-bottom: 2.5rem;
+    }
+
     h3 {
       font-size: 2.1666666em;
-      margin-bottom: 2.5rem;
+    }
+
+    li {
+      font-size: 1.1666666em;
+      margin: 2rem 0 0 2rem;
+    }
+
+    span {
+      color: #202020;
+      line-height: 2.5rem;
+    }
+  }
+}
+
+@include device-mb {
+  .tourDetails {
+    padding: 2.5rem 1.5rem 1rem;
+    border-radius: 0;
+    border-left: none;
+    border-bottom: none;
+    border-right: none;
+
+    .header {
+      margin-bottom: 2rem;
+
+      i {
+        display: block;
+      }
+    }
+
+    h3 {
+      font-size: 1.666666em;
     }
 
     li {

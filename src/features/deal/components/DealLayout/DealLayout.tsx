@@ -7,6 +7,7 @@ import {
   BookingCalendarWeek,
   DealsSection,
   FaqSection,
+  MobileBookNow,
   Navigation,
   RelatedTravelBlogs,
   TourDescription,
@@ -14,7 +15,7 @@ import {
   TourGallery,
   TourIcons,
   TourOperator,
-  WhatsToExpect,
+  WhatsToExpect
 } from '..'
 import { BookingCalendarMonth, OrderDetails } from '../../containers'
 import { recommendedDeals } from './data'
@@ -43,11 +44,15 @@ export const DealLayout: React.FC = () => {
       <div className={styles.section}>
         <TourGallery className={styles.tourGallery} />
 
-        <div className={styles.stickyWrapper}>
-          <OrderDetails className={styles.orderDetails} />
+        <div className={styles.iconsOrderDetails}>
+          <div className={styles.stickyWrapper}>
+            <OrderDetails className={styles.orderDetails} />
+          </div>
+          <div>
+            <MobileBookNow className={styles.mobileBookNow}/>
+            <TourIcons className={styles.tourIcons} />
+          </div>
         </div>
-
-        <TourIcons className={styles.tourIcons} />
 
         <TourDetailsCard
           className={styles.card}

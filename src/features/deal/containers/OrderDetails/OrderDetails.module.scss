@@ -13,7 +13,7 @@
     box-sizing: border-box;
     border-radius: 8px;
 
-    > p:nth-child(2) {
+    > p:nth-of-type(1) {
       color: #4eb62a;
       margin-bottom: .375rem;
 
@@ -164,7 +164,7 @@
     top: calc(9.25rem + 16px);
 
     .main {
-      > p:nth-child(2), > p:nth-child(5) {
+      > p:nth-of-type(1), > p:nth-of-type(3) {
         font-size: 1.1666666em;
       }
     }
@@ -284,5 +284,74 @@
 
   .addToWishlist {
     width: 38rem;
+  }
+}
+
+@include device-mb {
+  .orderDetails {
+    position: relative;
+    top: unset;
+
+    .main {
+      > p:nth-of-type(2) {
+        font-size: 1.1666666em;
+      }
+
+      > p:nth-of-type(3) {
+        font-size: 1em;
+      }
+    }
+
+    .price {
+      margin: 2.25rem 0 .5rem;
+
+      span {
+        font-size: 1em;
+      }
+
+      h5 {
+        font-size: 1.66666em;
+      }
+    }
+
+    .childAndFamily {
+      margin: 2rem 0 1rem;
+      padding: 0 2rem 2rem;
+
+      p {
+        flex-direction: row;
+      }
+
+      strong {
+        margin-bottom: 0;
+      }
+    }
+
+    .deal {
+      margin-top: 1rem;
+      padding-bottom: 2rem;
+    }
+
+    .included {
+      margin: 2.25rem auto 2rem;
+      width: 35rem;
+      height: 5rem;
+    }
+
+    .bookButton {
+      width: 35rem;
+    }
+
+    .aviableDate {
+      margin: 1.5rem 0 2rem;
+    }
+
+    .button {
+      margin-top: 1rem;
+    }
+
+    .share {
+      margin-top: 2.5rem;
+    }
   }
 }
