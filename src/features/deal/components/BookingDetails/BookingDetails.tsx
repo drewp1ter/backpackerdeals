@@ -48,6 +48,9 @@ export const BookingDetails: React.FC<IProps> = ({ onClose, className, variant =
           <div>
             <span className={styles.category}>1 Adult x AUD $1 400;</span>
           </div>
+          <CalendarButton className={styles.buttonMobile} theme="green">
+              Group discount applied
+          </CalendarButton>
         </div>
 
         <div className={styles.group}>

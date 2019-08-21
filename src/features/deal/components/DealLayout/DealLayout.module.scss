@@ -77,7 +77,7 @@
     width: 29rem;
   }
 
-  .tourOperator, .tourIcons, .bookingCalendarMonth, .bookingCalendar, .reviews, .faqSection, .relatedTravelBlogs, .tourGallery, .card, .whatsToExpect {
+  .tourOperator, .tourIcons, .bookingCalendar, .reviews, .faqSection, .relatedTravelBlogs, .tourGallery, .card, .whatsToExpect {
     width: 89rem;
   }
 
@@ -95,7 +95,7 @@
 }
 
 @include device-mb {
-  .section, .orderDetails, .card, .whatsToExpect {
+  .section, .orderDetails, .card, .whatsToExpect, .bookingCalendar {
     width: 38rem;
     margin: 0 auto;
   }
