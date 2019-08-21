@@ -1,8 +1,9 @@
 @import "src/scss/device";
 
 .calendar {
-  padding: 0 1.5rem;
+  // padding: 0 1.5rem;
   box-sizing: border-box;
+  width: 17.5rem;
 
   .navigation {
     display: flex;
@@ -22,12 +23,13 @@
   }
 
   ul {
-    max-width: 17.5rem;
+    box-sizing: border-box;
     display: grid;
     grid-template-columns: repeat(7, 2.5rem);
 
     &.days {
       border-left: 1px solid #e8e8e8;
+      box-sizing: border-box;
 
       li {
         border-right: 1px solid #e8e8e8;
@@ -67,14 +69,13 @@
 
 @include device-ipad {
   .calendar {
-    padding: 0 2.5rem;
+    width: 31.5rem;
 
     .navigation {
       font-size: 1.1666666em;
     }
 
     ul {
-      max-width: 31.5rem;
       grid-template-columns: repeat(7, 4.5rem);
 
       li {
@@ -86,14 +87,13 @@
 
 @include device-mb {
   .calendar {
-    padding: 0 2.5rem;
+    width: 35rem;
 
     .navigation {
       font-size: 1.1666666em;
     }
 
     ul {
-      max-width: 35rem;
       display: grid;
       grid-template-columns: repeat(7, 5rem);
 

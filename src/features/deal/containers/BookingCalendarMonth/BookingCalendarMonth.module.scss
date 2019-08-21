@@ -42,6 +42,14 @@
     }
   }
 
+  .calendarMiniMobile {
+    display: none;
+  }
+
+  .calendarMini {
+    margin: auto;
+  }
+
   .navigation {
     background-color: #fafafa;
     height: 3.5rem;
@@ -93,10 +101,12 @@
     grid-template-columns: repeat(7, 9rem);
     grid-column-gap: 0.5rem;
     grid-row-gap: 1rem;
+    box-sizing: border-box;
 
     > li {
       grid-column-start: auto;
       grid-row-start: auto;
+      box-sizing: border-box;
 
       &.header {
         position: relative;
@@ -180,19 +190,19 @@
         }
 
         &[data-day-type="true"] {
-          border-color: #ff5a39;
+          border-color: #ff5a39 !important;
         }
 
         &[data-day-type="topDeal"] {
-          border-color: #00aaf6;
+          border-color: #00aaf6 !important;
         }
 
         &[data-day-type="lastMinuteDeal"] {
-          border-color: #ffcb00;
+          border-color: #ffcb00 !important;
         }
 
         &[data-day-type="soldOut"] {
-          border-color: #959595;
+          border-color: #959595 !important;
 
           .sticker {
             border-radius: 0 3px 0 4px;
@@ -311,10 +321,153 @@
             padding: 0;
             font-size: .583em;
           }
+        }
+      }
+    }
+  }
+}
 
+@include device-mb {
+  .bookingCalendar {
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+    padding: 0 1.5rem;
+
+    h3 {
+      font-size: 1.66666em;
+      margin-top: 2.5rem;
+      color: inherit;
+    }
+
+    .navigation {
+      display: none;
+    }
+
+    .select {
+      display: none;
+    }
+
+    .calendarMiniMobile {
+      display: block;
+      margin: 1.5rem 0 2.5rem;
+    }
+
+    .calendarBody {
+      margin: 0;
+      grid-template-columns: repeat(3, 11.666667rem);
+      grid-column-gap: 0;
+      grid-row-gap: 0;
+      border-left: 1px solid #e8e8e8;
+      border-top: 1px solid #e8e8e8;
+
+      > li {
+        &.header {
+          display: none
         }
 
+        &.day {
+          border-left: none;
+          border-top: none;
+          border-radius: 0;
+          height: 10.625rem;
+          padding: .5rem;
+          box-sizing:	content-box;
 
+          &[data-day-type="dummy"] {
+            display: none;
+          }
+
+          &:not([data-day-type="false"]) {
+            margin: -1px 0 0 -1px;
+            z-index: 1;
+            border: 1px solid;
+
+            &[data-last="true"] {
+              margin-right: 1px;
+            }
+          }
+
+          .sticker {
+            max-width: 5.5rem;
+          }
+
+          .button {
+            font-size: .8333333em;
+            max-width: 9.5rem;
+          }
+        }
+
+        &.dayDetails {
+          position: relative;
+          grid-column-start: 1;
+          grid-column-end: 4;
+          z-index: 1;
+          margin: -1px 0 0 -1px;
+          margin-to
+
+          &[data-week="1"],
+          &[data-week="2"],
+          &[data-week="3"],
+          &[data-week="4"],
+          &[data-week="5"],
+          &[data-week="6"],
+          &[data-week="7"]  {
+            grid-row-start: unset;
+            grid-row-end: unset;
+          }
+
+          &[data-triple="1"] {
+            grid-row-start: 2;
+            grid-row-end: 3;
+          }
+
+          &[data-triple="2"] {
+            grid-row-start: 3;
+            grid-row-end: 4;
+          }
+
+          &[data-triple="3"] {
+            grid-row-start: 4;
+            grid-row-end: 5;
+          }
+
+          &[data-triple="4"] {
+            grid-row-start: 5;
+            grid-row-end: 6;
+          }
+
+          &[data-triple="5"] {
+            grid-row-start: 6;
+            grid-row-end: 7;
+          }
+
+          &[data-triple="6"] {
+            grid-row-start: 7;
+            grid-row-end: 8;
+          }
+
+          &[data-triple="7"] {
+            grid-row-start: 8;
+            grid-row-end: 9;
+          }
+
+          &[data-triple="8"] {
+            grid-row-start: 9;
+            grid-row-end: 10;
+          }
+
+          &[data-triple="9"] {
+            grid-row-start: 10;
+            grid-row-end: 11;
+          }
+
+          &[data-triple="10"] {
+            grid-row-start: 11;
+            grid-row-end: 12;
+          }
+        }
       }
     }
   }

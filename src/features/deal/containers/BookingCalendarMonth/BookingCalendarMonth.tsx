@@ -170,7 +170,7 @@ export class BookingCalendarMonth extends CalendarBase<AllProps, IState> {
         {day && (
           <>
             {(dayType === DayTypes.topDeal || dayType === DayTypes.soldOut || dayType === DayTypes.lastMinuteDeal) && (
-              <Sticker className={styles.sticker} variant={dayType} />
+              <Sticker className={styles.sticker} variant={dayType} size="sm"/>
             )}
             <p className={styles.date}>
               {day.getDate()}
@@ -234,8 +234,9 @@ export class BookingCalendarMonth extends CalendarBase<AllProps, IState> {
           size="no"
           arrowPos="right"
         >
-          <Calendar minDate={this.now} value={value} onChange={this.handleChangeSmallCalendar} />
+          <Calendar className={styles.calendarMini} minDate={this.now} value={value} onChange={this.handleChangeSmallCalendar} />
         </Select>
+        <Calendar className={styles.calendarMiniMobile} minDate={this.now} value={value} onChange={this.handleChangeSmallCalendar} />
         <div className={styles.navigation}>
           <i className="fas fa-chevron-left" onClick={this.scrollLeft} />
           <ul ref={this.navigation} onScroll={this.handleNavScroll} className={styles.navigation}>
@@ -246,7 +247,7 @@ export class BookingCalendarMonth extends CalendarBase<AllProps, IState> {
         <ul className={styles.calendarBody}>
           {this.renderHeader()}
           {this.days.map(this.renderDay)}
-          <li className={styles.dayDetails} data-week={Math.ceil((selectedDay + 1) / 7)}>
+          <li className={styles.dayDetails} data-week={Math.ceil((selectedDay + 1) / 7)} data-triple={selectedDay >= 0 &&  Math.ceil((this.days[selectedDay]!.getDate()) / 3)}>
             <div ref={this.bookingDetailsAnchor} className={styles.bookingDetailsAnchor} />
             <BookingDetails onClose={this.handleCloseBookingDetails} />
           </li>

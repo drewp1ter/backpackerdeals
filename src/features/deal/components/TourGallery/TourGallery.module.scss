@@ -363,7 +363,7 @@ $ig-transparent: rgba(0, 0, 0, 0) !default;
 
   .imageGalleryPlayButton {
     left: 2rem;
-    bottom: 2rem
+    bottom: 2rem;
   }
 
   .imageGalleryLeftNav {
@@ -378,8 +378,6 @@ $ig-transparent: rgba(0, 0, 0, 0) !default;
     bottom: 6rem;
     width: 15rem;
     height: 6rem;
-    min-width: 120px;
-    min-height: 48px;
 
     & > div:last-child {
       padding: 0.56rem 0.2rem 0.56rem 0.68rem;
@@ -394,6 +392,61 @@ $ig-transparent: rgba(0, 0, 0, 0) !default;
     img {
       width: 1.625rem;
       height: 1.625rem;
+      min-width: 20px;
+      min-height: 20px;
+    }
+  }
+}
+
+@include device-mb {
+  .imageGallery {
+    margin-left: -1rem;
+  }
+
+  .imageGalleryThumbnailsWrapper {
+    display: none;
+  }
+
+  .imageGalleryFullScreenButton,
+  .imageGalleryPlayButton,
+  .imageGalleryLeftNav,
+  .imageGalleryRightNav {
+    display: none;
+  }
+
+  .imageGallerySlide {
+    width: 34rem;
+    padding-left: 1rem;
+
+
+    .imageGalleryImage {
+      height: 26.5rem;
+    }
+
+    .iframeContainer {
+      padding-bottom: 26.5rem;
+    }
+  }
+
+  .toSell {
+    right: unset;
+    left: 25rem;
+    bottom: 2rem;
+    width: 15rem;
+    height: 6rem;
+
+    & > div:last-child {
+      padding: 0.56rem 0.2rem 0.56rem 0.68rem;
+      font-size: 1.45rem;
+    }
+  }
+
+  .toSellIcon {
+    width: 40%;
+
+    img {
+      width: 2.5rem;
+      height: 2.75rem;
       min-width: 20px;
       min-height: 20px;
     }

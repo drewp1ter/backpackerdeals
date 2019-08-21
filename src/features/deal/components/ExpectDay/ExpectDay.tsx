@@ -22,11 +22,14 @@ export const ExpectDay: React.FC<IProps> = ({ day, isExpanded, isAnimated, class
 
   return (
     <div className={classNames(styles.expectDay, className)}>
-      <div className={styles.dayHeader}>
+      <div className={styles.left}>
         <div className={styles.day}>
           <b>{day}</b>
           <b>DAY</b>
         </div>
+        <div className={styles.line} />
+      </div>
+      <div className={styles.right}>
         <div className={styles.info}>
           <h5>Darvin-kakadu</h5>
           <div>
@@ -50,16 +53,16 @@ export const ExpectDay: React.FC<IProps> = ({ day, isExpanded, isAnimated, class
             </span>
           </div>
         </div>
+        <p data-expanded={!!(isExpanded & value)}>
+          {text}
+          {isOverflow && (
+            <span className={styles.expand} onClick={handleClick}>
+              {!!(isExpanded & value) ? 'Collapse' : 'Expand'}
+              <i className="fas fa-angle-double-down" />
+            </span>
+          )}
+        </p>
       </div>
-      <p data-expanded={!!(isExpanded & value)}>
-        {text}
-        {isOverflow && (
-          <span className={styles.expand} onClick={handleClick}>
-            {!!(isExpanded & value) ? 'Collapse' : 'Expand'}
-            <i className="fas fa-angle-double-down" />
-          </span>
-        )}
-      </p>
     </div>
   )
 }

@@ -1,15 +1,36 @@
 @import "src/scss/device";
 
 .expectDay {
+  display: flex;
+
+  .right, .left {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .left {
+    align-items: center;
+  }
+
+  .right {
+    margin-left: 1.5rem;
+  }
+
+  .line {
+    border-left: 1px dashed #00aaf6;
+    height: 100%;
+    margin-top: 1.75rem;
+  }
 
   &:last-of-type {
-    p {
-      border: none;
+    .line {
+      display: none;
     }
   }
 
   .day {
     display: flex;
+    flex-shrink: 0;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -27,12 +48,10 @@
   }
 
   .info {
-    margin-left: 1.5rem;
-
     h5 {
       font-size: 1em;
       font-weight: bold;
-      margin-bottom: .5rem;
+      margin-bottom: .25rem;
     }
 
     i {
@@ -46,22 +65,17 @@
     }
   }
 
-  .dayHeader {
-    display: flex;
-  }
-
   p {
     line-height: 1.5em;
-    margin: 1.5rem 0 0 1.5rem;
-    border-left: 1px dashed #00aaf6;
-    padding: 0 0 2.5rem 3rem;
+    margin-top: 1.5rem;
+    padding-bottom: 2.5rem;
     box-sizing: border-box;
     max-height: 6.5rem;
     transition: .8s ease max-height;
     overflow: hidden;
 
     &[data-expanded="true"] {
-      max-height: 15rem;
+      max-height: 1000px;
 
       .expand i {
         transform: rotate(180deg);
@@ -97,9 +111,15 @@
       }
     }
 
-    .info {
-      margin-left: 2rem;
+    .line {
+      margin-top: 2.25rem;
+    }
 
+    .right {
+      margin-left: 2rem;
+    }
+
+    .info {
       h5 {
         font-size: 1.1666666em;
       }
@@ -115,13 +135,54 @@
     }
 
     p {
-      margin: 2.5rem 0 0 2.5rem;
-      padding: 0 0 2.5rem 4.5rem;
+      margin-top: 2.5rem;
+      padding-bottom: 2.5rem;
       max-height: 10rem;
+    }
+  }
+}
 
-      &[data-expanded="true"] {
-        max-height: 30rem;
+@include device-mb {
+  .expectDay {
+    .day {
+      width: 3.5rem;
+      height: 3.5rem;
+      font-size: 1em;
+
+      b:last-of-type {
+        font-size: .5em;
       }
+    }
+
+    .right {
+      margin-left: 1.5rem;
+    }
+
+    .info {
+      h5 {
+        font-size: 1.1666666em;
+      }
+
+      i {
+        font-size: .833em;
+        margin-right: .5rem;
+      }
+
+      span {
+        margin-bottom: 1rem;
+      }
+
+      div {
+        display: flex;
+        flex-direction: column;
+        margin-top: 2.5rem;
+      }
+    }
+
+    p {
+      margin-top: 0;
+      padding-bottom: 2rem;
+      max-height: 25.75rem;
     }
   }
 }

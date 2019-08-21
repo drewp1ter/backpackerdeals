@@ -12,9 +12,10 @@ enum Variants {
 export interface IProps {
   readonly variant: keyof typeof Variants
   readonly className?: string
+  readonly size?: 'sm' | 'md'
 }
 
-export const Sticker: React.FC<IProps> = ({ className, variant }) => {
+export const Sticker: React.FC<IProps> = ({ className, variant, size = 'md' }) => {
   const getText = () => {
     switch (variant) {
       case Variants.lastMinuteDeal:
@@ -29,7 +30,7 @@ export const Sticker: React.FC<IProps> = ({ className, variant }) => {
   }
 
   return (
-    <div className={classNames(styles.sticker, className)} data-variant={variant}>
+    <div data-size={size} className={classNames(styles.sticker, className)} data-variant={variant}>
       <p>{getText()}</p>
     </div>
   )

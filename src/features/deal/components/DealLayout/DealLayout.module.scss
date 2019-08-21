@@ -5,6 +5,10 @@
   margin: 6.25rem auto 0;
 }
 
+.iconsOrderDetails {
+  display: flex;
+}
+
 .section {
   position: relative;
   margin: 0 auto;
@@ -73,7 +77,7 @@
     width: 29rem;
   }
 
-  .tourOperator, .tourIcons, .bookingCalendarMonth, .bookingCalendar, .reviews, .faqSection, .relatedTravelBlogs, .tourGallery, .card, .whatsToExpect {
+  .tourOperator, .tourIcons, .bookingCalendar, .reviews, .faqSection, .relatedTravelBlogs, .tourGallery, .card, .whatsToExpect {
     width: 89rem;
   }
 
@@ -87,5 +91,45 @@
     a {
       margin-top: 2rem;
     }
+  }
+}
+
+@include device-mb {
+  .section, .orderDetails, .card, .whatsToExpect, .bookingCalendar, .faqSection, .reviews {
+    width: 38rem;
+    margin: 0 auto;
+  }
+
+  .faqSection, .reviews {
+    margin-top: 2.5rem;
+  }
+
+  .orderDetails {
+    margin-bottom: 2.5rem;
+  }
+
+  .mobileBookNow {
+    margin: 1.5rem -1rem 0;
+  }
+
+  .headerSection {
+    width: 38rem;
+    margin: 8rem auto 5rem;
+  }
+
+  .stickyWrapper {
+    position: relative;
+    right: unset;
+    top: unset;
+    height: unset;
+  }
+
+  .iconsOrderDetails {
+    flex-direction: column-reverse;
+  }
+
+  .tourIcons {
+    margin-top: 1rem;
+    width: 100%;
   }
 }

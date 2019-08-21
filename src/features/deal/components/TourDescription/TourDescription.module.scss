@@ -66,3 +66,23 @@
     }
   }
 }
+
+@include device-mb {
+  .tourDescription{
+    h1 {
+      max-width: 28.5rem;
+      font-size: 1.66666em;
+    }
+
+    .location {
+      .locationPart:not(:last-of-type) {
+        display: none;
+      }
+    }
+
+    p {
+      width: 100%;
+      line-height: 1.6666em;
+    }
+  }
+}

@@ -3,7 +3,6 @@
 .bookingDetails {
   position: relative;
   display: flex;
-  // height: 25rem;
   border: 1px solid #ff5a39;
   box-sizing: border-box;
 
@@ -42,6 +41,10 @@
       position: relative;
       width: 10rem;
       left: -.6rem;
+    }
+
+    .buttonMobile {
+      display: none;
     }
 
     .select {
@@ -156,7 +159,6 @@
 
 @include device-ipad {
   .bookingDetails {
-    // height: 44rem;
 
     &[data-variant="inMonth"] {
       padding: 2.5rem 0 3.5rem 2.5rem;
@@ -278,6 +280,95 @@
           margin-left: .5rem;
         }
       }
+    }
+  }
+}
+
+@include device-mb {
+  .bookingDetails {
+    border-radius: 0 !important;
+    padding: 2.25rem 1.5rem !important;
+    flex-direction: column;
+
+    .leftSection {
+      display: flex;
+      flex-direction: column;
+
+      .button {
+        display: none;
+      }
+
+      .buttonMobile {
+        display: block;
+        width: 17rem;
+        height: 3rem;
+        font-size: .83333333em;
+        margin-top: 2rem;
+      }
+
+      h5 {
+        font-size: 1.3333333em;
+        margin-bottom: 1rem;
+      }
+
+      .group {
+        width: 100% !important;
+        margin-top: 1.25rem;
+
+        b {
+          display: inline-block;
+          width: 7.5rem;
+        }
+
+        &:last-of-type {
+          border-bottom: 1px solid #e8e8e8;
+        }
+      }
+
+      .category, .shedule span {
+        width: 100%;
+      }
+
+      .category span {
+        margin-left: 0;
+      }
+
+      .shedule:last-of-type {
+        margin-bottom: 2.75rem;
+      }
+
+      .price {
+        margin-left: -14rem;
+        font-size: 1.1666666em;
+      }
+    }
+
+    .rightSection {
+      padding: 0 !important;
+      border: 0;
+      margin-left: 0 !important;
+
+      h4 {
+        font-size: 1.333333em;
+        margin: 2.75rem 0;
+      }
+
+      .levy {
+        margin-top: 2rem;
+        height: 5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .total {
+        margin-top: 1.25rem;
+
+        b {
+          margin: 0 0 0 .5rem
+        }
+      }
+
     }
   }
 }
