@@ -12,7 +12,7 @@ export interface IProps {
 }
 
 export const TourDetailsCard: React.FC<IProps> = ({ className, title, items, children, navAnchor }) => {
-  const [isOpen, setIsOpen] = useState<boolean>(true)
+  const [isOpen, setIsOpen] = useState<boolean>(false)
   const handleToggle = () => setIsOpen(!isOpen)
   return (
     <div className={classNames(styles.tourDetails, className)} data-open={isOpen}>
