@@ -157,8 +157,9 @@ export class BookingCalendarWeek extends React.Component<IProps, IState> {
           theme="fillOrange"
           size="md"
         >
-          <Calendar minDate={this.now} value={value} onChange={this.handleChangeSmallCalendar} />
+          <Calendar className={styles.calendarMini} minDate={this.now} value={value} onChange={this.handleChangeSmallCalendar} />
         </Select>
+        <Calendar className={styles.calendarMobile} minDate={this.now} value={value} onChange={this.handleChangeSmallCalendar} />
         <div className={styles.navigation}>
           <span onClick={this.handlePrevWeek}>
             <i className="fas fa-chevron-left" />

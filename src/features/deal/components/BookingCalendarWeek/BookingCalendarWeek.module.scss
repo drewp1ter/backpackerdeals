@@ -13,6 +13,14 @@
     text-align: center;
   }
 
+  .calendarMini {
+    margin: auto;
+  }
+
+  .calendarMobile {
+    display: none;
+  }
+
   .navigation {
     display: flex;
     justify-content: space-between;
@@ -352,7 +360,39 @@
           }
         }
       }
+    }
+  }
+}
 
+@include device-mb {
+  .bookingCalendarWeek {
+    padding: 0 1.5rem;
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+
+    h3 {
+      font-size: 1.6666666em;
+      margin: 2.5rem 0 1rem;
+    }
+
+    .select {
+      display: none;
+    }
+
+    .navigation {
+      display: none;
+    }
+
+    .calendarMobile {
+      display: block;
+    }
+
+    .calendarBody {
+      margin-top: 2.5rem;
+      grid-template-columns: repeat(3, 11.666667rem);
+      border-left: 1px solid #e4e4e4;
     }
   }
 }
