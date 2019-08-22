@@ -18,14 +18,19 @@
       transition: .2s ease color;
       cursor: pointer;
 
+      &[data-expanded="true"] i {
+        transform: rotate(180deg);
+      }
+
       &:hover {
         color: #ff5a39;
       }
-    }
 
-    i {
-      font-size: 1em;
-      margin-left: .5rem;
+      i {
+        font-size: 1em;
+        margin-left: .5rem;
+        transition: .2s ease transform;
+      }
     }
   }
 

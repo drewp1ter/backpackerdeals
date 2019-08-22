@@ -9,23 +9,36 @@ export interface IProps {
   readonly title: string
   readonly preview: string
   readonly className?: string
+  readonly id: number
+  readonly isExpanded?: number
+  readonly onClickExpand?: (value: number) => void
 }
 
-export const FaqCard: React.FC<IProps> = ({ preview, title, text, className }) => {
-  const [isOpen, setIsOpen] = useState<boolean>(false)
+export interface IState {
+  readonly isOpenModal: boolean
+  readonly isExpanded: boolean
+}
 
-  const toggleIsOpen = () => setIsOpen(!isOpen)
+export const FaqCard: React.FC<IProps> = ({ id, preview, title, text, className, isExpanded = 0, onClickExpand }) => {
+  const value = Math.pow(2, id)
+  const [isOpenModal, setIsOpenModal] = useState<boolean>(false)
+
+  const handleOpenModal = () => setIsOpenModal(true)
+  const handleCloseModal = () => setIsOpenModal(false)
+  const handleClickExpand = () => onClickExpand && onClickExpand(value)
 
   return (
-    <div className={classNames(styles.faqCard, className)}>
-      <Modal isOpen={isOpen} onClose={toggleIsOpen} position="relative" className={styles.modal}>
+    <div className={classNames(styles.faqCard, className)} data-expanded={!!(isExpanded & value)}>
+      <Modal isOpen={isOpenModal} onClose={handleCloseModal} position="relative" className={styles.modal}>
         <>
           <h6>{title}</h6>
           <p>{text}</p>
         </>
       </Modal>
       <p>{preview}</p>
-      <div className={styles.add} onClick={toggleIsOpen} />
+      <p className={styles.text}>{text}</p>
+      <div className={styles.buttonModal} onClick={handleOpenModal} />
+      <div className={styles.buttonExpand} onClick={handleClickExpand} />
     </div>
   )
 }
