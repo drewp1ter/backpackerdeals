@@ -29,11 +29,11 @@ export const Review: React.FC<IProps> = ({ title, author, rating, date, body, li
         <p>
           <span className={styles.shareAndComments}>
             <i className="fas fa-share-square" />
-            Share
+            <span>Share</span>
           </span>
           <span className={styles.shareAndComments}>
             <i className="fas fa-comment-alt" />
-            Comments ({commentsCount})
+            <span>Comments ({commentsCount})</span>
           </span>
         </p>
         <p>

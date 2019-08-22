@@ -2,7 +2,7 @@
 @import "src/scss/fonts";
 
 .dealCard {
-  transition: .2s ease box-shadow;
+  transition: 0.2s ease box-shadow;
   border-radius: 8px;
   border: 1px solid #efefef;
 
@@ -28,7 +28,7 @@
     display: flex;
 
     .imageBlock {
-      border-radius: .5rem 0 0 .5rem;
+      border-radius: 0.5rem 0 0 0.5rem;
       width: 73%;
 
       .sale {
@@ -39,9 +39,9 @@
 
   .imageBlock {
     position: relative;
-    transition: transform .2s ease-out;
+    transition: transform 0.2s ease-out;
     overflow: hidden;
-    border-radius: .5rem .5rem 0 0;
+    border-radius: 0.5rem 0.5rem 0 0;
     margin: -1px;
 
     img:not(.background) {
@@ -84,13 +84,13 @@
       top: 31%;
       right: 0;
       transform: rotate(270deg) translate(-50%, 50%);
-      padding: 1rem .75rem;
+      padding: 1rem 0.75rem;
       display: flex;
       justify-content: center;
       align-items: center;
-      border-radius: .4rem .4rem 0 0;
+      border-radius: 0.4rem 0.4rem 0 0;
       background-color: #fafafa;
-      font-size: .81em;
+      font-size: 0.81em;
       text-align: center;
       color: #202020;
       z-index: 1;
@@ -101,7 +101,7 @@
       position: absolute;
       color: #ffffff;
       z-index: 1;
-      transition: .2s ease color;
+      transition: 0.2s ease color;
       font-size: 1.5em;
 
       &[data-type="wide"] {
@@ -111,7 +111,7 @@
 
       &[data-type="short"] {
         bottom: 1.5rem;
-        right: .625rem;
+        right: 0.625rem;
       }
 
       &:hover {
@@ -133,7 +133,7 @@
       position: absolute;
       right: 0;
       top: 0;
-      padding: .75rem .5rem;
+      padding: 0.75rem 0.5rem;
       background-color: #ff5a39;
       display: flex;
       justify-content: center;
@@ -143,7 +143,7 @@
 
       p {
         margin: 0;
-        font-size: .81em;
+        font-size: 0.81em;
         font-weight: 600;
         color: #ffffff;
       }
@@ -157,7 +157,7 @@
     &[data-view="horizontal"] {
       display: flex;
       flex-direction: column;
-      padding: .5rem 1.5rem 1.81rem 2rem;
+      padding: 0.5rem 1.5rem 1.81rem 2rem;
     }
 
     div[data-view="horizontal"] {
@@ -165,7 +165,7 @@
 
       .description {
         margin-top: 1.56rem;
-        font-size: .875em;
+        font-size: 0.875em;
         line-height: 1.5rem;
         color: #959595;
       }
@@ -186,7 +186,7 @@
         }
 
         span {
-          font-size: .9em;
+          font-size: 0.9em;
           text-align: left;
           color: #959595;
         }
@@ -195,24 +195,22 @@
   }
 
   .tour {
-    margin: 0;
     font-size: 1.125em;
     font-weight: bold;
-    line-height: 1.23;
     text-align: left;
+    transition: 0.2s ease color;
     color: #202020;
-    transition: .2s ease color;
   }
 
   .duration {
     margin: 0;
-    font-size: .9em;
+    font-size: 0.9em;
     text-align: left;
     color: #959595;
 
     i {
       margin-right: 5px;
-      font-size: .75em;
+      font-size: 0.75em;
       color: #959595;
     }
   }
@@ -225,7 +223,7 @@
 
     .totalPrice {
       .from {
-        font-size: .9em;
+        font-size: 0.9em;
         line-height: 1.35rem;
         text-align: left;
         color: #dadada;
@@ -241,8 +239,8 @@
 
       .value {
         display: block;
-        margin-top: .2rem;
-        font-size: .9em;
+        margin-top: 0.2rem;
+        font-size: 0.9em;
         text-align: left;
         color: #dadada;
       }
@@ -251,15 +249,15 @@
     button {
       cursor: pointer;
       border: none;
-      padding: .9rem 2.55rem;
+      padding: 0.9rem 2.55rem;
       border-radius: 1.875rem;
       background-color: #fafafa;
-      transition: .2s ease background-color;
+      transition: 0.2s ease background-color;
 
       i {
         font-size: 1.06em;
         color: #ff5a39;
-        transition: .2s ease color;
+        transition: 0.2s ease color;
 
         @include device-mb {
           font-size: 1.3em;
@@ -275,7 +273,6 @@
       }
     }
   }
-
 }
 
 @include device-tb {
@@ -292,32 +289,32 @@
     }
 
     .imageBlock {
-      border-radius: .57rem .57rem 0 0;
+      border-radius: 0.57rem 0.57rem 0 0;
 
       .like[data-type="wide"] {
-        right: .72rem
+        right: 0.72rem;
       }
 
       .sellOut {
         transform: rotate(270deg) translate(-50%, 117%);
-        border-radius: .57rem .57rem 0 0;
-        padding: .57rem 1.43rem;
-        font-size: .79em;
+        border-radius: 0.57rem 0.57rem 0 0;
+        padding: 0.57rem 1.43rem;
+        font-size: 0.79em;
       }
 
       .sale {
-        border-radius: 0 .57rem;
+        border-radius: 0 0.57rem;
         min-width: 8.6vw;
         padding: 0.72rem;
 
         p {
-          font-size: .84em;
+          font-size: 0.84em;
         }
       }
     }
 
     .cardDescription {
-      padding: .65rem .86rem 1.43rem .86rem;
+      padding: 0.65rem 0.86rem 1.43rem 0.86rem;
 
       .aboutPlace {
         margin-bottom: 1rem;
@@ -330,7 +327,7 @@
 
       .totalPrice {
         .from {
-          font-size: .875em;
+          font-size: 0.875em;
         }
 
         .price {
@@ -349,7 +346,8 @@
   }
 }
 
-@media screen and (max-width: 768px) { // 940
+@media screen and (max-width: 768px) {
+  // 940
   .dealCard {
     min-width: 272px;
   }
@@ -357,67 +355,88 @@
 
 @include device-mb {
   .dealCard {
+    min-width: 272px;
     .imageBlock {
-      height: 90vw;
-      max-height: 288px;
+      height: 34rem;
 
       .sale {
-        padding: 9px 26px;
+        padding: 1rem 3.25rem;
         min-width: 36%;
         box-sizing: border-box;
 
         p {
-          @include font-mb((min: 11, max: 15))
+          @include font-mb(
+            (
+              min: 11,
+              max: 15
+            )
+          );
         }
       }
 
       .sellOut {
         transform: rotate(270deg) translate(-50%, 117%);
-        border-radius: .57rem .57rem 0 0;
-        padding: .57rem 1.43rem;
-        font-size: .79em;
+        border-radius: 0.57rem 0.57rem 0 0;
+        padding: 0.57rem 1.43rem;
+        font-size: 0.79em;
       }
     }
 
     .cardDescription {
-      padding: 8px 12px 14px 12px;
+      padding: 1.75rem 1.5rem 2rem;
 
       .aboutPlace {
-        margin-bottom: .5rem;
+        margin-bottom: 0.5rem;
         align-items: center;
 
         .rating {
           i {
-            font-size: 10px;
+            font-size: .875em;
           }
 
           span {
-            font-size: 10px;
+            font-size: .875em;
           }
         }
 
         .location {
-          i, span {font-size: .77em;}
+          i,
+          span {
+            font-size: 1em;
+          }
         }
       }
 
-      .duration {font-size: .77em;}
+      .duration {
+        font-size: 1em;
+      }
+    }
+
+    .tour {
+      font-size: 1.666666em;
+      margin-bottom: 0.5rem;
     }
 
     .valueAndLink {
-      margin-top: 14px;
+      margin-top: 1.75rem;
 
       .totalPrice {
-        .price {font-size: 1.07em;}
-        .from, .value {font-size: .92em;}
-        .value {line-height:1.5rem}
+        .price {
+          font-size: 1.1666666em;
+        }
+        .from,
+        .value {
+          font-size: 1em;
+        }
+        .value {
+          line-height: 1.5rem;
+        }
       }
 
       button {
-        width: 76px;
-        height: 44px;
-        border-radius: 30px;
-        padding: 0;
+        width: 9.5rem;
+        height: 5.5rem;
+        border-radius: 3.75rem;
       }
     }
   }

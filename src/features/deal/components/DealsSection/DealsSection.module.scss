@@ -52,3 +52,16 @@
     }
   }
 }
+
+@include device-mb {
+  .dealsSection {
+    h3 {
+      font-size: 2.1666666em;
+      margin-bottom: 3rem;
+    }
+
+    .nav {
+      display: none;
+    }
+  }
+}
