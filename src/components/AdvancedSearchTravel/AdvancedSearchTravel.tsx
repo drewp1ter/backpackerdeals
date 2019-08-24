@@ -71,7 +71,7 @@ export const AdvancedSearchTravel: React.FC<IProps> = ({ forHeader, className })
           value={state.date && state.date.toLocaleDateString()}
           theme={selectTheme}
         >
-          <Calendar value={state.date || new Date()} onChange={handleChangeDate} />
+          <Calendar className={styles.calendar} value={state.date || new Date()} onChange={handleChangeDate} />
         </Select>
         <Select
           placeholder="Number of days"
