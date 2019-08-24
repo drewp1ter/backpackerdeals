@@ -6,10 +6,6 @@
   border-radius: 8px;
   border: 1px solid #efefef;
 
-  &[data-hidden="true"] {
-    display: none;
-  }
-
   &:hover {
     box-shadow: 0 24px 32px rgba(0, 0, 0, 0.06);
 
@@ -346,17 +342,20 @@
   }
 }
 
-@media screen and (max-width: 768px) {
-  // 940
-  .dealCard {
-    min-width: 272px;
-  }
-}
+// @media screen and (max-width: 768px) {
+//   // 940
+//   .dealCard {
+//     min-width: 272px;
+//   }
+// }
 
 @include device-mb {
   .dealCard {
-    min-width: 272px;
+    //min-width: 272px;
+    min-width: 34rem;
+
     .imageBlock {
+      //height: 272px;
       height: 34rem;
 
       .sale {

@@ -95,12 +95,12 @@
 }
 
 @include device-mb {
-  .section, .orderDetails, .card, .whatsToExpect, .bookingCalendar, .faqSection, .reviews {
+  .section, .orderDetails, .card, .tourOperator, .whatsToExpect, .bookingCalendar, .faqSection, .reviews {
     width: 38rem;
     margin: 0 auto;
   }
 
-  .faqSection, .reviews {
+  .faqSection {
     margin-top: 2.5rem;
   }
 

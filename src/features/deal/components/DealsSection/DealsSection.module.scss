@@ -1,4 +1,5 @@
 @import "src/scss/device";
+@import "src/scss/_utils";
 
 .dealsSection {
   h3 {
@@ -62,6 +63,10 @@
 
     .nav {
       display: none;
+    }
+
+    .dealCards {
+      @include invisibleHScroll;
     }
   }
 }

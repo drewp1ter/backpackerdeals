@@ -288,6 +288,10 @@
 }
 
 @include device-mb {
+  .addToWishlist {
+    width: 38rem;
+  }
+
   .orderDetails {
     position: relative;
     top: unset;

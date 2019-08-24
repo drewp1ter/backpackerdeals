@@ -42,7 +42,7 @@ export class Calendar extends CalendarBase<IProps, {}> {
         data-dayid={idx}
         onClick={this.handleClickDay}
       >
-        {day && day.getDate()}
+        <div>{day && day.getDate()}</div>
       </li>
     )
   }

@@ -1,5 +1,8 @@
+@import "src/scss/device";
+
 .input {
   display: block;
+  box-sizing: border-box;
 
   &[type="file"] {
     display: none;
@@ -51,20 +54,20 @@
   }
 }
 
-@media screen and (max-width: 1024px) {
+@include device-ipad {
   .input {
     &[data-size="md"] {
-      height: 40px;
-      font-size: 12px;
+      height: 5rem;
+      font-size: 1em;
 
       &::placeholder {
-        font-size: 12px;
+        font-size: 1em;
       }
     }
+  }
 
-    .label[data-size="md"] {
-      font-size: 14px;
-      margin-bottom: 10px;
-    }
+  .label[data-size="md"] {
+    font-size: 1.1666666em;
+    margin-bottom: 1.25rem;
   }
 }
