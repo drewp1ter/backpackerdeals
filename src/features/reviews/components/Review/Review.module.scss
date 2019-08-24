@@ -5,7 +5,7 @@
   border: 1px solid #e8e8e8;
   padding: 2.5rem 1.5rem 1rem;
   box-sizing: border-box;
-  width: 71rem;
+  width: 100%;
   margin-top: 1rem;
 
   h6 {
@@ -23,6 +23,7 @@
     margin-top: 2.5rem;
     display: flex;
     justify-content: space-between;
+    align-items: baseline;
 
     p {
       font-size: .875em;
@@ -54,7 +55,6 @@
 @include device-ipad {
   .review {
     padding: 3rem 2rem 2rem;
-    width: 89rem;
 
     h6 {
       font-size: 1.1666666em;
@@ -78,6 +78,34 @@
 
       i, span {
         margin-right: 1rem;
+      }
+    }
+  }
+}
+
+@include device-mb {
+  .review {
+    padding: 3.25rem 2rem 2rem;
+
+    p:nth-of-type(2) {
+      font-size: 1.1666666em;
+    }
+
+    .bottom {
+      margin-top: 2rem;
+
+      p {
+        font-size: .875em;
+      }
+
+      i, span {
+        margin-right: .875rem;
+      }
+
+      .shareAndComments {
+        span {
+          display: none;
+        }
       }
     }
   }

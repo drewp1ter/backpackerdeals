@@ -24,7 +24,7 @@ export const ReviewsSection: React.FC<IProps> = ({ title, rating, className, nav
     <div className={classNames(styles.reviewsSection, className)}>
       <div className={styles.anchor} ref={navAnchor} />
       <h3>{title}</h3>
-      <Rating value={rating} detail={true} />
+      <Rating className={styles.rating} value={rating} detail={true} />
       <Filter className={styles.filter} />
       {renderReviews()}
       <Pagenation className={styles.pagenation} value={page} onChange={setPage} maxPages={10} />

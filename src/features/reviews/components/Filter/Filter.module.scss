@@ -1,7 +1,6 @@
 @import "src/scss/device";
 
 .filter {
-
   .header {
     display: flex;
     justify-content: space-between;
@@ -20,11 +19,18 @@
   }
 
   .controls {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(9, 7rem);
+    grid-gap: 1rem;
+
+    &[data-show-all="false"] .checkbox:nth-of-type(n+8):nth-of-type(-n+32) {
+      display: none;
+    }
   }
 
   .select {
-    width: 15rem;
+    grid-column-start: 1;
+    grid-column-end: 3;
 
     i {
       margin-left: .5rem;
@@ -33,14 +39,6 @@
         color: #dadada;
       }
     }
-  }
-
-  .select, .checkbox {
-    margin-right: 1rem;
-  }
-
-  .ellipsis, .checkbox {
-    width: 7rem;
   }
 
   .ellipsis {
@@ -65,18 +63,39 @@
       }
     }
 
-    .select {
-      width: 18rem;
-    }
+    .controls {
+      grid-template-columns: repeat(9, 10.25rem);
 
-    .checkbox {
-      width: 11rem;
+      &[data-show-all="false"] .checkbox:nth-of-type(n+7):nth-of-type(-n+32) {
+        display: none;
+      }
     }
 
     .ellipsis {
-      width: 10rem;
       font-size: 3em !important;
       line-height: .5em;
+    }
+  }
+}
+
+@include device-mb {
+  .filter {
+    .header {
+      margin-bottom: 1rem;
+    }
+
+    .controls {
+      grid-template-columns: repeat(2, 18.5rem);
+
+      &[data-show-all="false"] {
+        .select {
+          display: none;
+        }
+
+        .checkbox:nth-of-type(n+4):nth-of-type(-n+32) {
+          display: none;
+        }
+      }
     }
   }
 }

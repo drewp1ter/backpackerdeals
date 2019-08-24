@@ -3,6 +3,8 @@
 .addToWishlist {
   display: flex;
   flex-direction: column;
+  box-sizing: border-box;
+  padding: 3rem 1.5rem 1.75rem;
 
   h5 {
     font-size: 1.125em;
@@ -44,8 +46,7 @@
   }
 
   .calendar {
-    max-width: 20.625rem;
-    margin: 0 auto;
+    padding: 1.5rem;
   }
 
   .selectIcon {
@@ -109,6 +110,59 @@
 
     > p {
       font-size: .916em;
+      line-height: 1.5em;
+    }
+  }
+}
+
+@include device-mb {
+  .addToWishlist {
+    padding: 2.25rem 1.5rem;
+
+    h5 {
+      font-size: 1.1666666em;
+      padding-bottom: 2rem;
+    }
+
+    .tour {
+      margin: 1.5rem 0 2.25rem;
+
+      p {
+        position: static;
+        color: inherit;
+        font-size: 1.1666666em;
+
+        &:first-of-type {
+          margin-top: 1.25rem;
+        }
+
+        &:last-of-type {
+          margin-top: 1rem;
+        }
+
+      }
+    }
+
+    > label {
+      font-size: 1.1666666em;
+    }
+
+    .select {
+      margin-top: 1.5rem;
+
+      ul {
+        top: 6rem;
+        max-height: 50rem;
+      }
+    }
+
+    > button {
+      width: 100%;
+      margin: 3rem 0;
+    }
+
+    > p {
+      font-size: 1.1666666em;
       line-height: 1.5em;
     }
   }

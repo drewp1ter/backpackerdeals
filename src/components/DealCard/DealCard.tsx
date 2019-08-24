@@ -87,7 +87,7 @@ export const DealCard: React.FC<IProps> = ({
               </div>
             </div>
 
-            <h3 data-view={view} className={styles.tour}>
+            <h3 className={styles.tour}>
               {tourName}
             </h3>
             <p className={styles.duration}>{duration}</p>

@@ -3,7 +3,6 @@
 .faqCard {
   position: relative;
   width: 23rem;
-  height: 8.5rem;
   border-radius: 8px;
   border: 1px solid #e8e8e8;
   padding: 1.625rem 1.5rem 4rem 1.5rem;
@@ -14,7 +13,25 @@
     line-height: 1.5em;
   }
 
-  .add {
+  .text {
+    overflow: hidden;
+    max-height: 0;
+    transition: .8s ease all;
+  }
+
+  &[data-expanded="true"] {
+
+    .text {
+      max-height: 1000px;
+      margin-top: 1rem;
+    }
+
+    .buttonModal {
+      display: none;
+    }
+  }
+
+  .buttonModal, .buttonExpand {
     position: absolute;
     width: 1.5rem;
     height: 1.5rem;
@@ -35,6 +52,10 @@
     }
   }
 
+  .buttonExpand {
+    display: none;
+  }
+
   .modal {
     top: -.5rem;
     left: -.5rem;
@@ -53,14 +74,13 @@
 @include device-ipad {
   .faqCard {
     width: 29rem;
-    height: 12.5rem;
     padding: 2.25rem 2rem 4.5rem;
 
     p {
       font-size: 1.1666666em;
     }
 
-    .add {
+    .buttonModal, .buttonExpand {
       width: 2.5rem;
       height: 2.5rem;
       right: 1.5rem;
@@ -80,11 +100,15 @@
 @include device-mb {
   .faqCard {
     width: 100%;
-    height: 9.5rem;
-    padding: 1.25rem 2rem 3.5rem;
+    padding: 1.25rem 2rem 3.5;
 
-    .add {
+    .buttonExpand {
       bottom: 1rem;
+      display: block;
+    }
+
+    .buttonModal {
+      display: none;
     }
   }
 }

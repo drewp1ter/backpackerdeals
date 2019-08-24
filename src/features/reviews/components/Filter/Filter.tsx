@@ -4,6 +4,7 @@ import React, { useState } from 'react'
 import { Button, Rating, Select } from 'components'
 import { Checkbox } from '..'
 import styles from './Filter.module.scss'
+import labels from './labels'
 
 export interface IProps {
   readonly className?: string
@@ -12,27 +13,35 @@ export interface IProps {
 export interface IState {
   readonly rating: string
   readonly checkBoxes: number
-}
-
-enum CheckBoxes {
-  tour = 1,
-  trip = 2,
-  guide = 4,
-  hiking = 8,
-  people = 16,
-  food = 32,
+  readonly showAllFilters: boolean
 }
 
 export const Filter: React.FC<IProps> = ({ className }) => {
-  const initialState: IState = {
+  const [state, setState] = useState<IState>({
     rating: '',
     checkBoxes: 0,
-  }
+    showAllFilters: false,
+  })
 
-  const [state, setState] = useState<IState>(initialState)
-  const { rating, checkBoxes } = state
+  const { rating, checkBoxes, showAllFilters } = state
   const handleClick = (value: number = 0) => setState({ ...state, checkBoxes: checkBoxes ^ value })
   const handleChange = (value: string) => setState({ ...state, rating: value })
+  const handleClickAllFilters = () => setState({ ...state, showAllFilters: true })
+
+  const renderCheckBoxes = () =>
+    labels.map((label, idx) => {
+      const value = Math.pow(2, idx)
+      return (
+        <Checkbox
+          key={idx}
+          className={styles.checkbox}
+          onClick={handleClick}
+          checked={checkBoxes & value}
+          value={value}
+          placeholder={label}
+        />
+      )
+    })
 
   return (
     <div className={classNames(styles.filter, className)}>
@@ -43,7 +52,7 @@ export const Filter: React.FC<IProps> = ({ className }) => {
         </Button>
       </div>
 
-      <div className={styles.controls}>
+      <div data-show-all={showAllFilters} className={styles.controls}>
         <Select
           className={styles.select}
           value={rating}
@@ -59,49 +68,8 @@ export const Filter: React.FC<IProps> = ({ className }) => {
           ]}
           size="lg"
         />
-        <Checkbox
-          className={styles.checkbox}
-          onClick={handleClick}
-          checked={checkBoxes & CheckBoxes.tour}
-          value={CheckBoxes.tour}
-          placeholder="Tour"
-        />
-        <Checkbox
-          className={styles.checkbox}
-          onClick={handleClick}
-          checked={checkBoxes & CheckBoxes.trip}
-          value={CheckBoxes.trip}
-          placeholder="Trip"
-        />
-        <Checkbox
-          className={styles.checkbox}
-          onClick={handleClick}
-          checked={checkBoxes & CheckBoxes.guide}
-          value={CheckBoxes.guide}
-          placeholder="Guide"
-        />
-        <Checkbox
-          className={styles.checkbox}
-          onClick={handleClick}
-          checked={checkBoxes & CheckBoxes.hiking}
-          value={CheckBoxes.hiking}
-          placeholder="Hiking"
-        />
-        <Checkbox
-          className={styles.checkbox}
-          onClick={handleClick}
-          checked={checkBoxes & CheckBoxes.people}
-          value={CheckBoxes.people}
-          placeholder="People"
-        />
-        <Checkbox
-          className={styles.checkbox}
-          onClick={handleClick}
-          checked={checkBoxes & CheckBoxes.food}
-          value={CheckBoxes.food}
-          placeholder="Food"
-        />
-        <Checkbox className={styles.ellipsis} placeholder="..." />
+        {renderCheckBoxes()}
+        <Checkbox onClick={handleClickAllFilters} className={styles.ellipsis} placeholder="..." />
       </div>
     </div>
   )

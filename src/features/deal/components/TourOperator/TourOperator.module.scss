@@ -12,6 +12,10 @@
     margin-bottom: 1.5rem;
   }
 
+  .content {
+    position: relative;
+  }
+
   .card {
     position: absolute;
     top: 1.5rem;
@@ -57,7 +61,7 @@
     }
   }
 
-  .container {
+  .iframeWrapper {
     overflow: hidden;
     padding-bottom: 28.625rem;
     position: relative;
@@ -114,6 +118,63 @@
     }
 
     .container {
+      padding-bottom: 42.5rem;
+    }
+  }
+}
+
+@include device-mb {
+  .tourOperator {
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+    border-radius: 0;
+    padding: 2.5rem 0;
+
+    h3 {
+      font-size: 1.666666em;
+      margin: 0 0 2.5rem 2rem;
+    }
+
+    .card {
+      position: static;
+      top: unset;
+      bottom: unset;
+      right: unset;
+      left: unset;
+      padding: 1.5rem 1rem 0;
+      border-radius: 0;
+      z-index: 0;
+
+      h4 {
+        font-size: 1.1666666em;
+
+        &:first-of-type {
+          display: none;
+        }
+
+        &:last-of-type {
+          padding-top: 0;
+          border-top: none;
+        }
+      }
+
+      p {
+        font-size: 1.1666666em;
+        line-height: 1.5em;
+      }
+    }
+
+    .img {
+      float: left;
+      padding-bottom: 4.25rem;
+      width: 15rem;
+      height: 9.75rem;
+      margin-right: 2rem;
+    }
+
+    .container {
+      overflow: hidden;
       padding-bottom: 42.5rem;
     }
   }

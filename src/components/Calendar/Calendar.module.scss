@@ -1,15 +1,13 @@
 @import "src/scss/device";
 
 .calendar {
-  // padding: 0 1.5rem;
   box-sizing: border-box;
-  width: 17.5rem;
 
   .navigation {
     display: flex;
     justify-content: space-between;
     align-content: center;
-    font-size: .875em;
+    font-size: 0.875em;
     margin-bottom: 2rem;
 
     i {
@@ -25,7 +23,7 @@
   ul {
     box-sizing: border-box;
     display: grid;
-    grid-template-columns: repeat(7, 2.5rem);
+    grid-template-columns: repeat(7, 1fr);
 
     &.days {
       border-left: 1px solid #e8e8e8;
@@ -46,6 +44,18 @@
       }
     }
 
+    &.header li abbr,
+    &.days li div {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+    }
+
     &.header {
       border-bottom: 1px solid #e8e8e8;
 
@@ -58,48 +68,31 @@
       grid-column-start: auto;
       grid-row-start: auto;
       position: relative;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 2.5rem;
       box-sizing: border-box;
+
+      &:before {
+        content: "";
+        display: block;
+        padding-top: 100%;
+      }
     }
   }
 }
 
 @include device-ipad {
   .calendar {
-    width: 31.5rem;
-
     .navigation {
       font-size: 1.1666666em;
-    }
-
-    ul {
-      grid-template-columns: repeat(7, 4.5rem);
-
-      li {
-        height: 4.5rem;
-      }
     }
   }
 }
 
 @include device-mb {
   .calendar {
-    width: 35rem;
+    width: 100%;
 
     .navigation {
       font-size: 1.1666666em;
-    }
-
-    ul {
-      display: grid;
-      grid-template-columns: repeat(7, 5rem);
-
-      li {
-        height: 5rem;
-      }
     }
   }
 }
