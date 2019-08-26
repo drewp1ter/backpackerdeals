@@ -25,7 +25,10 @@ export class FaqSection extends React.Component<IProps, IState> {
     return data.map((card, idx) => <FaqCard isExpanded={isExpanded} onClickExpand={this.handleClickExpand} id={idx} key={idx} {...card} />)
   }
 
-  handleResize = () => screen.width < 768 ? this.setState({ isExpanded: -1 }) : this.setState({ isExpanded: 0 })
+  handleResize = () => {
+    const { isExpanded } = this.state
+    screen.width < 768 ? !isExpanded && this.setState({ isExpanded: -1 }) : isExpanded && this.setState({ isExpanded: 0 })
+  }
 
   componentDidMount = () => {
     addEventListener('resize', this.handleResize)
