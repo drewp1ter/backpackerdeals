@@ -111,22 +111,33 @@ export class BookingCalendarWeek extends React.Component<IProps, IState> {
             {this.days[idx % 7].getTime() <= this.now.getTime() ? (
               <li className={styles.notAviable}>Not aviable</li>
             ) : (
-              <li className={styles.event} data-type={selected || event.eventType} data-last={idx % 7 === 6} onClick={this.handleSelectEvent} data-idx={idx}>
+              <li
+                className={styles.event}
+                data-type={selected || event.eventType}
+                data-last={idx % 7 === 6}
+                onClick={this.handleSelectEvent}
+                data-idx={idx}
+              >
                 {(event.eventType === 'topDeal' || event.eventType === 'soldOut' || event.eventType === 'lastMinuteDeal') && (
                   <Sticker className={styles.sticker} variant={event.eventType} />
                 )}
-                <div className={styles.priceAndSpaces}>
-                  <p>AUD $1 300</p>
-                  <p>17 spaces left</p>
-                </div>
-                {event.eventType === 'soldout' ? (
-                  <CalendarButton className={styles.button} theme="green">
-                    Add me to waitlist
-                  </CalendarButton>
+                {event.eventType === 'soldOut' ? (
+                  <>
+                    <div className={styles.priceAndSpaces} />
+                    <CalendarButton className={styles.button} theme="green">
+                      Add me to waitlist
+                    </CalendarButton>
+                  </>
                 ) : (
-                  <CalendarButton className={styles.button} theme={selected ? 'selected' : 'select'}>{`Select${
-                    selected ? 'ed' : ''
-                  }`}</CalendarButton>
+                  <>
+                    <div className={styles.priceAndSpaces}>
+                      <p>AUD $1 300</p>
+                      <p>17 spaces left</p>
+                    </div>
+                    <CalendarButton className={styles.button} theme={selected ? 'selected' : 'select'}>{`Select${
+                      selected ? 'ed' : ''
+                    }`}</CalendarButton>
+                  </>
                 )}
               </li>
             )}

@@ -1,7 +1,7 @@
 import classNames from 'classnames'
 import React from 'react'
 
-import { Button, Select } from 'components'
+import { Button, InputNumber, Select } from 'components'
 import { CalendarButton } from '..'
 import styles from './BookingDetails.module.scss'
 
@@ -35,6 +35,7 @@ export const BookingDetails: React.FC<IProps> = ({ onClose, className, variant =
             </span>
             <span className={styles.price}>AUD $1 200</span>
             <Select className={styles.select} theme="defaultNoBorder" size="no" value="0" options={['0', '1', '2', '3']} />
+            <InputNumber className={styles.numberInput} />
           </div>
           <div>
             <span className={styles.category}>4 Adults x AUD $1 000;</span>
@@ -61,6 +62,7 @@ export const BookingDetails: React.FC<IProps> = ({ onClose, className, variant =
             </span>
             <span className={styles.price}>AUD $1 200</span>
             <Select className={styles.select} theme="defaultNoBorder" size="no" value="0" options={['0', '1', '2', '3']} />
+            <InputNumber className={styles.numberInput} />
           </div>
         </div>
 
@@ -72,6 +74,7 @@ export const BookingDetails: React.FC<IProps> = ({ onClose, className, variant =
             </span>
             <span className={styles.price}>AUD $1 200</span>
             <Select className={styles.select} theme="defaultNoBorder" size="no" value="0" options={['0', '1', '2', '3']} />
+            <InputNumber className={styles.numberInput} />
           </div>
         </div>
       </div>

@@ -18,9 +18,9 @@ export interface IState {
 }
 
 export const WhatsToExpect: React.FC<IProps> = ({ className, navAnchor }) => {
-  const [isExpanded, setExpanded] = useState<number>(0)
+  const [isExpanded, setExpanded] = useState<number>(3)
   const [isAnimated, setAnimation] = useState<number>(0)
-  const [isOpen, setIsOpen] = useState<boolean>(false)
+  const [isOpen, setIsOpen] = useState<boolean>(true)
   const handleToggle = () => setIsOpen(!isOpen)
 
   const handleClick = (value: number) => {

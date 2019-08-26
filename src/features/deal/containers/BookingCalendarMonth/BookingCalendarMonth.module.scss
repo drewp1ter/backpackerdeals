@@ -356,7 +356,7 @@
 
     .calendarBody {
       margin: 0;
-      grid-template-columns: repeat(3, 11.666667rem);
+      grid-template-columns: repeat(3, 1fr);
       grid-column-gap: 0;
       grid-row-gap: 0;
       border-left: 1px solid #e8e8e8;

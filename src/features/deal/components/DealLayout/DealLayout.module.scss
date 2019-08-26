@@ -95,9 +95,14 @@
 }
 
 @include device-mb {
-  .section, .orderDetails, .card, .tourOperator, .whatsToExpect, .bookingCalendar, .faqSection, .reviews {
-    width: 38rem;
-    margin: 0 auto;
+  .section {
+    padding: 0 1rem;
+    width: 100vw;
+    box-sizing: border-box;
+  }
+
+  .orderDetails, .card, .tourOperator, .whatsToExpect, .bookingCalendar, .faqSection, .reviews {
+    width: 100%;
   }
 
   .faqSection {
@@ -113,7 +118,9 @@
   }
 
   .headerSection {
-    width: 38rem;
+    width: 100vw;
+    padding: 0 1rem;
+    box-sizing: border-box;
     margin: 8rem auto 5rem;
   }
 
