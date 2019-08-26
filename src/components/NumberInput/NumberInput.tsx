@@ -1,7 +1,7 @@
 import classNames from 'classnames'
 import React, { useRef } from 'react'
 
-import styles from './InputNumber.module.scss'
+import styles from './NumberInput.module.scss'
 
 export interface IProps {
   readonly value?: number
@@ -9,7 +9,7 @@ export interface IProps {
   readonly className?: string
 }
 
-export const InputNumber: React.FC<IProps> = ({ value, onChange, className }) => {
+export const NumberInput: React.FC<IProps> = ({ value, onChange, className }) => {
   const inputRef = useRef<HTMLInputElement>(null)
   const handleIncrement = () => inputRef.current!.stepUp()
   const handleDecrement = () => inputRef.current!.stepDown()
