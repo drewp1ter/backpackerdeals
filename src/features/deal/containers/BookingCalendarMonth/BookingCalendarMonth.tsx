@@ -170,24 +170,30 @@ export class BookingCalendarMonth extends CalendarBase<AllProps, IState> {
         {day && (
           <>
             {(dayType === DayTypes.topDeal || dayType === DayTypes.soldOut || dayType === DayTypes.lastMinuteDeal) && (
-              <Sticker className={styles.sticker} variant={dayType} size="sm"/>
+              <Sticker className={styles.sticker} variant={dayType} size="sm" />
             )}
             <p className={styles.date}>
               {day.getDate()}
               <span>{this.monthsShort[month]}</span>
             </p>
-            <div className={styles.priceAndSpaces}>
-              <p>AUD $1 300</p>
-              <p>17 spaces left</p>
-            </div>
+
             {dayType === DayTypes.soldOut ? (
-              <CalendarButton className={styles.button} theme="green">
-                <abbr title="Add me to waitlist">Add me to waitlist</abbr>
-              </CalendarButton>
+              <>
+                <div className={styles.priceAndSpaces} />
+                <CalendarButton className={styles.button} theme="green">
+                  <abbr title="Add me to waitlist">Add me to waitlist</abbr>
+                </CalendarButton>
+              </>
             ) : (
-              <CalendarButton className={styles.button} theme={selected ? 'selected' : 'select'}>{`Select${
-                selected ? 'ed' : ''
-              }`}</CalendarButton>
+              <>
+                <div className={styles.priceAndSpaces}>
+                  <p>AUD $1 300</p>
+                  <p>17 spaces left</p>
+                </div>
+                <CalendarButton className={styles.button} theme={selected ? 'selected' : 'select'}>{`Select${
+                  selected ? 'ed' : ''
+                }`}</CalendarButton>
+              </>
             )}
           </>
         )}
@@ -234,9 +240,21 @@ export class BookingCalendarMonth extends CalendarBase<AllProps, IState> {
           size="no"
           arrowPos="right"
         >
-          <Calendar className={styles.calendarMini} minDate={this.now} value={value} onChange={this.handleChangeSmallCalendar} />
+          <Calendar
+            className={styles.calendarMini}
+            minDate={this.now}
+            value={value}
+            onChange={this.handleChangeSmallCalendar}
+            disablePast={true}
+          />
         </Select>
-        <Calendar className={styles.calendarMiniMobile} minDate={this.now} value={value} onChange={this.handleChangeSmallCalendar} />
+        <Calendar
+          className={styles.calendarMiniMobile}
+          minDate={this.now}
+          value={value}
+          onChange={this.handleChangeSmallCalendar}
+          disablePast={true}
+        />
         <div className={styles.navigation}>
           <i className="fas fa-chevron-left" onClick={this.scrollLeft} />
           <ul ref={this.navigation} onScroll={this.handleNavScroll} className={styles.navigation}>
@@ -247,7 +265,11 @@ export class BookingCalendarMonth extends CalendarBase<AllProps, IState> {
         <ul className={styles.calendarBody}>
           {this.renderHeader()}
           {this.days.map(this.renderDay)}
-          <li className={styles.dayDetails} data-week={Math.ceil((selectedDay + 1) / 7)} data-triple={selectedDay >= 0 &&  Math.ceil((this.days[selectedDay]!.getDate()) / 3)}>
+          <li
+            className={styles.dayDetails}
+            data-week={Math.ceil((selectedDay + 1) / 7)}
+            data-triple={selectedDay >= 0 && Math.ceil(this.days[selectedDay]!.getDate() / 3)}
+          >
             <div ref={this.bookingDetailsAnchor} className={styles.bookingDetailsAnchor} />
             <BookingDetails onClose={this.handleCloseBookingDetails} />
           </li>
