@@ -4,7 +4,7 @@ import React from 'react'
 import { Calendar, Select } from 'components'
 import { BookingDetails, CalendarButton, Sticker } from '..'
 import styles from './BookingCalendarWeek.module.scss'
-import { events } from './data'
+import events from './data'
 
 const DAYS_LONG = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
 const MONTHS_LONG = [
@@ -31,6 +31,7 @@ export interface IState {
   readonly selectedEvent: number
   readonly isOpenSmallCalendar: boolean
   readonly value: Date | undefined
+  readonly isMobileView: boolean
 }
 
 export class BookingCalendarWeek extends React.Component<IProps, IState> {
@@ -44,16 +45,36 @@ export class BookingCalendarWeek extends React.Component<IProps, IState> {
       selectedEvent: -1,
       isOpenSmallCalendar: false,
       value: undefined,
+      isMobileView: false,
     }
   }
 
   get days() {
-    const { offsetWeek } = this.state
-    const millisecondsInAWeeks = 604800000 * offsetWeek
-    const millisecondsInADay = 86400000
+    const { offsetWeek, isMobileView, value } = this.state
+    const mSecsInWeek = 604800000
+    const mSecsInAWeeks = mSecsInWeek * offsetWeek
+    const mSecsInADay = 86400000
     const startWeekTime =
-      new Date(this.now.getFullYear(), this.now.getMonth(), this.now.getDate() - this.now.getDay() + 1).getTime() + millisecondsInAWeeks // monday
-    return [...Array(7).keys()].map(day => new Date(startWeekTime + millisecondsInADay * day))
+      isMobileView && value
+        ? value.getTime() - mSecsInADay
+        : new Date(this.now.getFullYear(), this.now.getMonth(), this.now.getDate() - this.now.getDay() + 1).getTime() + mSecsInAWeeks // monday
+    return [...Array(isMobileView ? 3 : 7).keys()].map(day => new Date(startWeekTime + mSecsInADay * day))
+  }
+
+  handleResize = () => {
+    const { isMobileView } = this.state
+    screen.width < 768
+      ? !isMobileView && this.setState({ isMobileView: true, selectedEvent: -1 })
+      : isMobileView && this.setState({ isMobileView: false })
+  }
+
+  componentDidMount = () => {
+    addEventListener('resize', this.handleResize)
+    this.handleResize()
+  }
+
+  componentWillUnmount = () => {
+    removeEventListener('resize', this.handleResize)
   }
 
   handlePrevWeek = () => {
@@ -62,6 +83,34 @@ export class BookingCalendarWeek extends React.Component<IProps, IState> {
   }
 
   handleNextWeek = () => this.setState(prev => ({ ...prev, offsetWeek: prev.offsetWeek + 1, selectedEvent: -1 }))
+
+  handleSelectEvent = ({ currentTarget }: React.MouseEvent<HTMLLIElement>) => {
+    const selectedEvent = Number(currentTarget.dataset.idx)
+    this.setState({ selectedEvent })
+  }
+
+  handleCloseBookingDetails = () => this.setState({ selectedEvent: -1 })
+
+  handleChangeSmallCalendar = (value: Date) => {
+    const mSecsInWeek = 604800000
+    this.setState({
+      value,
+      selectedEvent: -1,
+      isOpenSmallCalendar: false,
+      offsetWeek: ((value.getTime() - this.now.getTime()) / mSecsInWeek) | 0,
+    })
+  }
+
+  handleClickSelect = () => {
+    this.setState(prev => ({
+      ...prev,
+      isOpenSmallCalendar: !prev.isOpenSmallCalendar,
+    }))
+  }
+
+  handleCloseSelect = () => this.setState({ isOpenSmallCalendar: false })
+
+  selectIcon = () => <i className={classNames(styles.selectIcon, 'fas fa-calendar')} />
 
   renderDay = (day: Date, idx: number) => {
     return (
@@ -74,52 +123,53 @@ export class BookingCalendarWeek extends React.Component<IProps, IState> {
     )
   }
 
-  handleSelectEvent = ({ currentTarget }: React.MouseEvent<HTMLLIElement>) => {
-    const selectedEvent = Number(currentTarget.dataset.idx)
-    this.setState({ selectedEvent })
-  }
-
-  handleCloseBookingDetails = () => this.setState({ selectedEvent: -1 })
-
-  handleChangeSmallCalendar = (value: Date) =>
-    this.setState({ value, isOpenSmallCalendar: false, offsetWeek: ((value.getTime() - this.now.getTime()) / 604800000) | 0 })
-
-  handleClickSelect = () => {
-    this.setState(prev => ({
-      ...prev,
-      isOpenSmallCalendar: !prev.isOpenSmallCalendar,
-    }))
-  }
-
-  handleCloseSelect = () => this.setState({ isOpenSmallCalendar: false })
-
   renderEvents = () => {
-    const { selectedEvent } = this.state
-    return (
-      events &&
-      events.map((event: any, idx: number) => {
-        const selected = selectedEvent === idx && 'selected'
-        return (
-          <React.Fragment key={idx}>
-            {idx % 7 === 0 && (
-              <li className={styles.eventTime}>
-                <p>10:00 AM</p>
-                <div />
-                <p>11:00 PM</p>
+    const { selectedEvent, isMobileView } = this.state
+    const result: any = []
+    const _events = isMobileView ? events.slice(0, 3) : events
+    _events.forEach((event: any, idx: number) => {
+      event.slots.forEach((slot: any) => {
+        const group = result.find((item: any) => item.start_time === slot.slot.start_time && item.end_time === slot.slot.end_time)
+        if (!group) {
+          const newGroup = {
+            start_time: slot.slot.start_time,
+            end_time: slot.slot.end_time,
+            events: new Array(isMobileView ? 3 : 7).fill(null),
+          }
+          newGroup.events[idx] = slot
+          result.push(newGroup)
+        } else {
+          group.events[idx] = slot
+        }
+      })
+    })
+    return result.map((group: any, idx: number) => {
+      return (
+        <React.Fragment key={idx}>
+          <li className={styles.eventTime}>
+            <p>{group.start_time}</p>
+            <div />
+            <p>{group.end_time}</p>
+          </li>
+
+          {group.events.map((event: any, eventIdx: number) => {
+            const mixIdx = eventIdx + ((isMobileView ? idx * 3 : idx * 7) + 1)
+            const selected = selectedEvent === mixIdx && 'selected'
+            return !event ? (
+              <li key={mixIdx} className={styles.notAviable}>
+                Not aviable
               </li>
-            )}
-            {this.days[idx % 7].getTime() <= this.now.getTime() ? (
-              <li className={styles.notAviable}>Not aviable</li>
             ) : (
               <li
+                key={mixIdx}
                 className={styles.event}
-                data-type={selected || event.eventType}
-                data-last={idx % 7 === 6}
+                data-type={selected || event.eventType || ''}
+                data-last={eventIdx % 7 === 6}
                 onClick={this.handleSelectEvent}
-                data-idx={idx}
+                data-idx={mixIdx}
               >
                 {(event.eventType === 'topDeal' || event.eventType === 'soldOut' || event.eventType === 'lastMinuteDeal') && (
-                  <Sticker className={styles.sticker} variant={event.eventType} />
+                  <Sticker className={styles.sticker} variant={event.eventType} size="sm" />
                 )}
                 {event.eventType === 'soldOut' ? (
                   <>
@@ -140,20 +190,18 @@ export class BookingCalendarWeek extends React.Component<IProps, IState> {
                   </>
                 )}
               </li>
-            )}
-          </React.Fragment>
-        )
-      })
-    )
+            )
+          })}
+        </React.Fragment>
+      )
+    })
   }
-
-  selectIcon = () => <i className={classNames(styles.selectIcon, 'fas fa-calendar')} />
 
   render = () => {
     const { className } = this.props
-    const { isOpenSmallCalendar, value } = this.state
+    const { isOpenSmallCalendar, value, isMobileView, selectedEvent } = this.state
     const current = this.days[2]
-    const bookingDetailsRow = Math.ceil((this.state.selectedEvent + 1) / 7)
+    const bookingDetailsRow = isMobileView ? Math.ceil(selectedEvent / 3) : Math.ceil(selectedEvent / 7)
 
     return (
       <div className={classNames(styles.bookingCalendarWeek, className)}>
@@ -168,9 +216,15 @@ export class BookingCalendarWeek extends React.Component<IProps, IState> {
           theme="fillOrange"
           size="md"
         >
-          <Calendar className={styles.calendarMini} minDate={this.now} value={value} onChange={this.handleChangeSmallCalendar} />
+          <Calendar
+            className={styles.calendarMini}
+            minDate={this.now}
+            value={value}
+            onChange={this.handleChangeSmallCalendar}
+            disablePast={true}
+          />
         </Select>
-        <Calendar className={styles.calendarMobile} minDate={this.now} value={value} onChange={this.handleChangeSmallCalendar} />
+        <Calendar className={styles.calendarMobile} minDate={this.now} value={value} onChange={this.handleChangeSmallCalendar} disablePast={true} />
         <div className={styles.navigation}>
           <span onClick={this.handlePrevWeek}>
             <i className="fas fa-chevron-left" />

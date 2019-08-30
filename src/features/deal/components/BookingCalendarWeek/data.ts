@@ -1,230 +1,218 @@
-export const events = [
+export default [
   {
-    eventType: '',
+    date: '2019-08-26',
+    slots: [
+      {
+        id: '1200',
+        orderedId: '1200',
+        doubleAdultPrice: 439,
+        doubleChildPrice: 439,
+        doubleFamilyPrice: 0,
+        adultPrice: 'AUD $439',
+        childPrice: 'AUD $439',
+        slot_count: 0,
+        date: '2019-08-26 12:00:00',
+        eventType: 'topDeal',
+        slot: {
+          start_time: '12:00 PM',
+          end_time: '12:00 PM',
+          slot: 1,
+          dtsid: 1200,
+        },
+        slot_all: 1,
+        slot_booked: 0,
+      },
+    ],
+    not_operated: false,
   },
   {
-    eventType: 'soldOut',
+    date: '2019-08-27',
+    slots: [
+      {
+        id: '1200',
+        orderedId: '1200',
+        doubleAdultPrice: 439,
+        doubleChildPrice: 439,
+        doubleFamilyPrice: 0,
+        adultPrice: 'AUD $439',
+        childPrice: 'AUD $439',
+        slot_count: 0,
+        date: '2019-08-27 12:00:00',
+        slot: {
+          start_time: '12:00 PM',
+          end_time: '12:00 PM',
+          slot: 1,
+          dtsid: 1200,
+        },
+        slot_all: 1,
+        slot_booked: 0,
+      },
+      {
+        id: '1200',
+        orderedId: '1200',
+        doubleAdultPrice: 439,
+        doubleChildPrice: 439,
+        doubleFamilyPrice: 0,
+        adultPrice: 'AUD $439',
+        childPrice: 'AUD $439',
+        slot_count: 0,
+        date: '2019-08-27 12:00:00',
+        eventType: 'lastMinuteDeal',
+        slot: {
+          start_time: '10:00 PM',
+          end_time: '14:00 PM',
+          slot: 1,
+          dtsid: 1200,
+        },
+        slot_all: 1,
+        slot_booked: 0,
+      },
+    ],
+    not_operated: false,
   },
   {
-    eventType: '',
+    date: '2019-08-28',
+    slots: [
+      {
+        id: '1200',
+        orderedId: '1200',
+        doubleAdultPrice: 439,
+        doubleChildPrice: 439,
+        doubleFamilyPrice: 0,
+        adultPrice: 'AUD $439',
+        childPrice: 'AUD $439',
+        slot_count: 1,
+        date: '2019-08-28 12:00:00',
+        slot: {
+          start_time: '12:00 PM',
+          end_time: '12:00 PM',
+          slot: 1,
+          dtsid: 1200,
+        },
+        slot_all: 1,
+        slot_booked: 0,
+      },
+    ],
+    not_operated: false,
   },
   {
-    eventType: 'lastMinuteDeal',
+    date: '2019-08-29',
+    slots: [
+      {
+        id: '1200',
+        orderedId: '1200',
+        doubleAdultPrice: 439,
+        doubleChildPrice: 439,
+        doubleFamilyPrice: 0,
+        adultPrice: 'AUD $439',
+        childPrice: 'AUD $439',
+        slot_count: 0,
+        date: '2019-08-29 12:00:00',
+        eventType: 'soldOut',
+        slot: {
+          start_time: '12:00 PM',
+          end_time: '12:00 PM',
+          slot: 1,
+          dtsid: 1200,
+        },
+        slot_all: 1,
+        slot_booked: 0,
+      },
+    ],
+    not_operated: false,
   },
   {
-    eventType: '',
+    date: '2019-08-30',
+    slots: [
+      {
+        id: '1200',
+        orderedId: '1200',
+        doubleAdultPrice: 439,
+        doubleChildPrice: 439,
+        doubleFamilyPrice: 0,
+        adultPrice: 'AUD $439',
+        childPrice: 'AUD $439',
+        slot_count: 9,
+        date: '2019-08-30 12:00:00',
+        slot: {
+          start_time: '12:00 PM',
+          end_time: '12:00 PM',
+          slot: 1,
+          dtsid: 1200,
+        },
+        slot_all: 1,
+        slot_booked: 0,
+      },
+    ],
+    not_operated: false,
   },
   {
-    eventType: '',
+    date: '2019-08-31',
+    slots: [
+      {
+        id: '1200',
+        orderedId: '1200',
+        doubleAdultPrice: 439,
+        doubleChildPrice: 439,
+        doubleFamilyPrice: 0,
+        adultPrice: 'AUD $439',
+        childPrice: 'AUD $439',
+        slot_count: 9,
+        date: '2019-08-31 12:00:00',
+        slot: {
+          start_time: '12:00 PM',
+          end_time: '12:00 PM',
+          slot: 1,
+          dtsid: 1200,
+        },
+        slot_all: 1,
+        slot_booked: 0,
+      },
+      {
+        id: '1200',
+        orderedId: '1200',
+        doubleAdultPrice: 439,
+        doubleChildPrice: 439,
+        doubleFamilyPrice: 0,
+        adultPrice: 'AUD $439',
+        childPrice: 'AUD $439',
+        slot_count: 9,
+        date: '2019-08-31 12:00:00',
+        slot: {
+          start_time: '10:00 PM',
+          end_time: '11:00 PM',
+          slot: 1,
+          dtsid: 1200,
+        },
+        slot_all: 1,
+        slot_booked: 0,
+      },
+    ],
+    not_operated: false,
   },
   {
-    eventType: '',
-  },
-  {
-    eventType: '',
-  },
-  {
-    eventType: '',
-  },
-  {
-    eventType: '',
-  },
-  {
-    eventType: '',
-  },
-  {
-    eventType: '',
-  },
-  {
-    eventType: 'topDeal',
-  },
-  {
-    eventType: '',
-  },
-  {
-    eventType: '',
-  },
-  {
-    eventType: '',
-  },
-  {
-    eventType: '',
-  },
-  {
-    eventType: '',
-  },
-  {
-    eventType: '',
-  },
-  {
-    eventType: '',
-  },
-  {
-    eventType: 'lastMinuteDeal',
-  },
-  {
-    eventType: '',
-  },
-  {
-    eventType: '',
-  },
-  {
-    eventType: '',
-  },
-  {
-    eventType: '',
-  },
-  {
-    eventType: '',
-  },
-  {
-    eventType: '',
-  },
-  {
-    eventType: '',
-  },
-  {
-    eventType: 'soldOut',
-  },
-  {
-    eventType: '',
-  },
-  {
-    eventType: '',
-  },
-  {
-    eventType: '',
-  },
-  {
-    eventType: '',
-  },
-  {
-    eventType: '',
-  },
-  {
-    eventType: '',
+    date: '2019-09-01',
+    slots: [
+      {
+        id: '1200',
+        orderedId: '1200',
+        doubleAdultPrice: 439,
+        doubleChildPrice: 439,
+        doubleFamilyPrice: 0,
+        adultPrice: 'AUD $439',
+        childPrice: 'AUD $439',
+        slot_count: 10,
+        date: '2019-09-01 12:00:00',
+        slot: {
+          start_time: '12:00 PM',
+          end_time: '12:00 PM',
+          slot: 1,
+          dtsid: 1200,
+        },
+        slot_all: 1,
+        slot_booked: 0,
+      },
+    ],
+    not_operated: false,
   },
 ]
-
-
-// export const events = [
-//   [
-//     {
-//       eventType: '',
-//     },
-//     {
-//       eventType: 'soldOut',
-//     },
-//     {
-//       eventType: '',
-//     },
-//     {
-//       eventType: 'lastMinuteDeal',
-//     },
-//     {
-//       eventType: '',
-//     },
-//   ],
-//   [
-//     {
-//       eventType: '',
-//     },
-//     {
-//       eventType: '',
-//     },
-//     {
-//       eventType: '',
-//     },
-//     {
-//       eventType: '',
-//     },
-//     {
-//       eventType: '',
-//     },
-//   ],
-//   [
-//     {
-//       eventType: '',
-//     },
-//     {
-//       eventType: '',
-//     },
-//     {
-//       eventType: 'topDeal',
-//     },
-//     {
-//       eventType: '',
-//     },
-//     {
-//       eventType: '',
-//     },
-//   ],
-//   [
-//     {
-//       eventType: '',
-//     },
-//     {
-//       eventType: '',
-//     },
-//     {
-//       eventType: '',
-//     },
-//     {
-//       eventType: '',
-//     },
-//     {
-//       eventType: '',
-//     },
-//   ],
-//   [
-//     {
-//       eventType: 'lastMinuteDeal',
-//     },
-//     {
-//       eventType: '',
-//     },
-//     {
-//       eventType: '',
-//     },
-//     {
-//       eventType: '',
-//     },
-//     {
-//       eventType: '',
-//     },
-//   ],
-//   [
-//     {
-//       eventType: '',
-//     },
-//     {
-//       eventType: '',
-//     },
-//     {
-//       eventType: '',
-//     },
-//     {
-//       eventType: 'soldOut',
-//     },
-//     {
-//       eventType: '',
-//     },
-//   ],
-//   [
-//     {
-//       eventType: '',
-//     },
-//     {
-//       eventType: '',
-//     },
-//     {
-//       eventType: '',
-//     },
-//     {
-//       eventType: '',
-//     },
-//     {
-//       eventType: '',
-//     },
-//   ],
-// ]
