@@ -35,7 +35,7 @@ export const BookingDetails: React.FC<IProps> = ({ onClose, className, variant =
             </span>
             <span className={styles.price}>AUD $1 200</span>
             <Select className={styles.select} theme="defaultNoBorder" size="no" value="0" options={['0', '1', '2', '3']} />
-            <NumberInput className={styles.numberInput} />
+            <NumberInput className={styles.numberInput} value={0} />
           </div>
           <div className={styles.sub}>
             <span className={styles.category}>4 Adults x AUD $1 000;</span>
@@ -62,7 +62,7 @@ export const BookingDetails: React.FC<IProps> = ({ onClose, className, variant =
             </span>
             <span className={styles.price}>AUD $1 200</span>
             <Select className={styles.select} theme="defaultNoBorder" size="no" value="0" options={['0', '1', '2', '3']} />
-            <NumberInput className={styles.numberInput} />
+            <NumberInput className={styles.numberInput} value={0} />
           </div>
         </div>
 
@@ -74,7 +74,7 @@ export const BookingDetails: React.FC<IProps> = ({ onClose, className, variant =
             </span>
             <span className={styles.price}>AUD $1 200</span>
             <Select className={styles.select} theme="defaultNoBorder" size="no" value="0" options={['0', '1', '2', '3']} />
-            <NumberInput className={styles.numberInput} />
+            <NumberInput className={styles.numberInput} value={0} />
           </div>
         </div>
       </div>
