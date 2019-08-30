@@ -33,11 +33,15 @@
         border-right: 1px solid #e8e8e8;
         border-bottom: 1px solid #e8e8e8;
 
-        &[data-active="true"] {
+        &[data-style="active"] {
           background-color: #ff5a39 !important;
         }
 
-        &[data-empty="false"]:hover {
+        &[data-style="disabled"] {
+          color: #9f9f9f;
+        }
+
+        &:hover:not([data-style="empty"]):not([data-style="disabled"]) {
           background: #e8e8e8;
           cursor: pointer;
         }

@@ -9,6 +9,7 @@ export interface IProps {
   readonly onChange?: (value: Date, dayid?: number) => void
   readonly value?: Date
   readonly minDate?: Date
+  readonly disablePast?: boolean
 }
 
 export class Calendar extends CalendarBase<IProps, {}> {
@@ -33,11 +34,11 @@ export class Calendar extends CalendarBase<IProps, {}> {
 
   renderDay = (day: Date | null, idx: number) => {
     const { month, year } = this.state
-    const { value } = this.props
+    const { value, disablePast } = this.props
+    const disabled = disablePast && day && day.getTime() < this.now.getTime() - 86400000
     return (
       <li
-        data-empty={!day}
-        data-active={this.isSameDay(value, day)}
+        data-style={(!day && 'empty') || (this.isSameDay(value, day) && 'active') || (disabled && 'disabled')}
         key={`${year}-${month}-day-${idx}`}
         data-dayid={idx}
         onClick={this.handleClickDay}
@@ -50,7 +51,10 @@ export class Calendar extends CalendarBase<IProps, {}> {
   handleClickDay = ({ currentTarget }: React.MouseEvent<HTMLLIElement>) => {
     const dayid = Number(currentTarget.dataset.dayid)
     const day = this.days[dayid]
-    const { onChange } = this.props
+    const { onChange, disablePast } = this.props
+    if (disablePast && day && day.getTime() < this.now.getTime()) {
+      return
+    }
     if (day) {
       this.setState({ year: day.getFullYear(), month: day.getMonth() })
       onChange && onChange(day, dayid)
