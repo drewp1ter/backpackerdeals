@@ -1,3 +1,5 @@
+@import "src/scss/device";
+
 .inputNumber {
   display: inline-flex;
 
@@ -47,5 +49,32 @@
 
   button.plus:after {
     transform: translate(-50%, -50%) rotate(90deg);
+  }
+}
+
+@include device-ipad {
+  .inputNumber {
+    input {
+      height: 2.5rem;
+    }
+
+    button {
+      width: 2.5rem;
+      height: 2.5rem;
+    }
+  }
+}
+
+@include device-mb {
+  .inputNumber {
+    input {
+      font-size: 1.5em;
+      height: 3.5rem;
+    }
+
+    button {
+      width: 3.5rem;
+      height: 3.5rem;
+    }
   }
 }
