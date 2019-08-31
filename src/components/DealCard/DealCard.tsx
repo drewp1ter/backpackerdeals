@@ -1,9 +1,10 @@
-import * as React from 'react'
-
 import classNames from 'classnames'
+import Link from 'next/link'
+import React from 'react'
 
 import { ExposeTime, Icon, Rating } from 'components'
 import LazyLoad from 'react-lazyload'
+import routes from 'routes'
 import styles from './DealCard.module.scss'
 
 interface IExposeTime {
@@ -20,7 +21,7 @@ enum View {
 
 enum SaleType {
   topDeal = 'topDeal',
-  mostPopular = 'mostPopular'
+  mostPopular = 'mostPopular',
 }
 
 export interface IProps {
@@ -40,6 +41,7 @@ export interface IProps {
   readonly description?: string
   readonly className?: string
   readonly sizes: string
+  readonly link?: string
 }
 
 export const DealCard: React.FC<IProps> = ({
@@ -59,22 +61,31 @@ export const DealCard: React.FC<IProps> = ({
   description,
   className,
   sizes,
+  link = '/deal',
 }) => {
+  const handleClick = () => {
+    routes.Router.pushRoute(link)
+  }
+
   return (
     <li data-view={view} className={classNames(styles.dealCard, className)}>
-      <div className={styles.imageBlock}>
-        {saleType === SaleType.topDeal && <Icon className={styles.badge} name={SaleType.topDeal} alt="Top Deal" />}
-        {saleType === SaleType.mostPopular && <Icon className={styles.badge} name={SaleType.mostPopular} alt="Most Popular" />}
-        {sellOut && <div className={styles.sellOut}>SELL OUT</div>}
-        {likeable && <i className={classNames('fas fa-heart', styles.like)} data-type={likeable} />}
-        <div className={styles.sale}>
-          <p>{sale}</p>
-        </div>
-        {exposeTime && <ExposeTime {...exposeTime} className={styles.exposeTime} size="lg" />}
-        <LazyLoad offset={400}>
-          <img className={styles.background} srcSet={img.srcSet} sizes={sizes} src={img.src} alt="Last Minute Deal Tour" />
-        </LazyLoad>
-      </div>
+      <Link href={link}>
+        <a>
+          <div className={styles.imageBlock}>
+            {saleType === SaleType.topDeal && <Icon className={styles.badge} name={SaleType.topDeal} alt="Top Deal" />}
+            {saleType === SaleType.mostPopular && <Icon className={styles.badge} name={SaleType.mostPopular} alt="Most Popular" />}
+            {sellOut && <div className={styles.sellOut}>SELL OUT</div>}
+            {likeable && <i className={classNames('fas fa-heart', styles.like)} data-type={likeable} />}
+            <div className={styles.sale}>
+              <p>{sale}</p>
+            </div>
+            {exposeTime && <ExposeTime {...exposeTime} className={styles.exposeTime} size="lg" />}
+            <LazyLoad offset={400}>
+              <img className={styles.background} srcSet={img.srcSet} sizes={sizes} src={img.src} alt="Last Minute Deal Tour" />
+            </LazyLoad>
+          </div>
+        </a>
+      </Link>
 
       <div data-view={view} className={styles.cardDescription}>
         {view === View.vertical && (
@@ -87,9 +98,7 @@ export const DealCard: React.FC<IProps> = ({
               </div>
             </div>
 
-            <h3 className={styles.tour}>
-              {tourName}
-            </h3>
+            <h3 className={styles.tour}>{tourName}</h3>
             <p className={styles.duration}>{duration}</p>
           </>
         )}
@@ -120,7 +129,7 @@ export const DealCard: React.FC<IProps> = ({
             <span className={styles.value}>Value AUD{value}</span>
           </div>
 
-          <button aria-label="->">
+          <button onClick={handleClick} aria-label="->">
             <i className="fas fa-arrow-right" />
           </button>
         </div>
