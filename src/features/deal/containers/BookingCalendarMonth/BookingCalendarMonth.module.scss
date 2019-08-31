@@ -34,7 +34,7 @@
     }
 
     > ul {
-      max-height: 24rem;
+      max-height: 1000px !important;
       width: 20.625rem;
       left: 50%;
       top: 3rem !important;
@@ -47,7 +47,7 @@
   }
 
   .calendarMini {
-    margin: auto;
+    margin: auto 1.5rem;
   }
 
   .navigation {
