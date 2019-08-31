@@ -16,12 +16,14 @@ export class Calendar extends CalendarBase<IProps, {}> {
   previousMonth = () => {
     const { month, year } = this.state
     const { minDate } = this.props
-    year >= ((minDate && minDate.getFullYear()) || 0) &&
-      month > ((minDate && minDate.getMonth()) || 0) &&
-      this.setState({
-        month: month !== 0 ? month - 1 : 11,
-        year: month !== 0 ? year : year - 1,
-      })
+    const current = new Date(year, month, 1).getTime()
+    if (minDate && current <= minDate.getTime()) {
+      return
+    }
+    this.setState({
+      month: month !== 0 ? month - 1 : 11,
+      year: month !== 0 ? year : year - 1,
+    })
   }
 
   nextMonth = () => {
