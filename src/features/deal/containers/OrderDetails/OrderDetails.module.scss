@@ -22,8 +22,14 @@
       }
     }
 
-    > p:nth-child(5) {
+    > p:nth-of-type(3) {
       font-size: .875em;
+      transition: .2s ease color;
+      cursor: pointer;
+
+      &:hover {
+        color: #ff5a39;
+      }
     }
   }
 
@@ -156,6 +162,10 @@
   width: 31rem;
 }
 
+.discountInfo {
+  width: 34rem;
+}
+
 @include device-ipad {
   .orderDetails {
     top: calc(9.25rem + 16px);
@@ -282,10 +292,14 @@
   .addToWishlist {
     width: 38rem;
   }
+
+  .discountInfo {
+    width: 41rem;
+  }
 }
 
 @include device-mb {
-  .addToWishlist {
+  .addToWishlist, .discountInfo {
     width: 38rem;
   }
 

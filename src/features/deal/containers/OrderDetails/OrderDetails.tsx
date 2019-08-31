@@ -4,7 +4,7 @@ import classNames from 'classnames'
 
 import { Button, ExposeTime, Modal } from 'components'
 import { IDealActions } from 'features/deal'
-import { AddToWishlist, Sticker } from '../../components'
+import { AddToWishlist, DiscountInfo, Sticker } from '../../components'
 import flash from './assets/flash.svg'
 import styles from './OrderDetails.module.scss'
 
@@ -14,9 +14,16 @@ export interface IProps {
 
 type AllProps = IProps & Partial<IDealActions>
 
+export interface IState {
+  readonly isOpenAddToWishList: boolean
+  readonly isOpenDisconuntInfo: boolean
+}
+
 export const OrderDetails: React.FC<AllProps> = ({ className, onClickNextAviable }) => {
-  const [modalVisible, setModalVisible] = useState<boolean>(false)
-  const toggleModal = () => setModalVisible(!modalVisible)
+  const [state, setState] = useState<IState>({ isOpenAddToWishList: false, isOpenDisconuntInfo: false })
+  const { isOpenAddToWishList, isOpenDisconuntInfo } = state
+  const toggleAddToWishList = () => setState({ ...state, isOpenAddToWishList: !isOpenAddToWishList })
+  const toggleDiscountInfo = () => setState({ ...state, isOpenDisconuntInfo: !isOpenDisconuntInfo })
   const nextAviable = new Date(2019, 8, 24)
 
   const handleClickNextAviable = () => {
@@ -25,8 +32,11 @@ export const OrderDetails: React.FC<AllProps> = ({ className, onClickNextAviable
 
   return (
     <div className={classNames(styles.orderDetails, className)}>
-      <Modal isOpen={modalVisible} onClose={toggleModal}>
+      <Modal isOpen={isOpenAddToWishList} onClose={toggleAddToWishList}>
         <AddToWishlist className={styles.addToWishlist} />
+      </Modal>
+      <Modal isOpen={isOpenDisconuntInfo} onClose={toggleDiscountInfo}>
+        <DiscountInfo className={styles.discountInfo} />
       </Modal>
       <div className={styles.main}>
         <div className={styles.price}>
@@ -46,7 +56,7 @@ export const OrderDetails: React.FC<AllProps> = ({ className, onClickNextAviable
             <strong>Family</strong>AUD $1 900
           </p>
         </div>
-        <p>Group discount info</p>
+        <p onClick={toggleDiscountInfo}>Group discount info</p>
         <div className={styles.deal}>
           <Sticker variant="lastMinuteDeal" />
           <ExposeTime days="02" hours="10" minutes="51" size="md" className={styles.exposeTime} />
@@ -72,7 +82,7 @@ export const OrderDetails: React.FC<AllProps> = ({ className, onClickNextAviable
         <i className="fas fa-gift" />
         Buy as a gift or open dated
       </Button>
-      <Button className={styles.button} onClick={toggleModal} form="rectangled" size="xl" theme="standart">
+      <Button className={styles.button} onClick={toggleAddToWishList} form="rectangled" size="xl" theme="standart">
         <i className="fas fa-heart" />
         Add to Wishlist
       </Button>
