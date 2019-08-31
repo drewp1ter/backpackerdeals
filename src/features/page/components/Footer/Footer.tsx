@@ -11,10 +11,11 @@ export interface IProps {
   readonly handleChange?: () => void
   readonly handleSubmit?: () => void
   readonly email?: string
+  readonly extendPaddingTop?: boolean
 }
 
-export const Footer: React.FC<IProps> = ({ handleChange, email }) => (
-  <footer>
+export const Footer: React.FC<IProps> = ({ handleChange, email, extendPaddingTop = false }) => (
+  <footer data-extend={extendPaddingTop}>
     <h4>Travel discounts up to 40% off</h4>
 
     <h4>Sent straight to your inbox</h4>
