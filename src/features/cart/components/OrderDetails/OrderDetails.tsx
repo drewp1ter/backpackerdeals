@@ -1,9 +1,9 @@
 import classNames from 'classnames'
 import { Select } from 'components/Select'
 import React from 'react'
+import { confidenceImages, contactsList } from './assets'
 import image from './assets/image.jpg'
 import styles from './OrderDetails.module.scss'
-import { confidenceImages, contactsList } from './assets'
 
 export interface IProps {
   readonly className?: string
@@ -14,13 +14,13 @@ export const OrderDetails: React.FC<IProps> = ({ className }) => {
   const renderConfidenceImages = (item: any) => (
     <>
       <div className={styles.confidenceIcon}><img src={item.img} alt=""/></div>
-      <div className={styles.confidenceText} dangerouslySetInnerHTML={{__html: item.html}}></div>
+      <div className={styles.confidenceText} dangerouslySetInnerHTML={{__html: item.html}} />
     </>
   )
 
   const renderHelpContact = (item: any) => (
     <>
-      <i className={item.icon}></i>
+      <i className={item.icon} />
       <span>{item.title}</span>
       <span className={styles.helpContact}>{item.contact}</span>
     </>
@@ -97,13 +97,13 @@ export const OrderDetails: React.FC<IProps> = ({ className }) => {
 
             <div className={classNames(styles.orderItemInfo, styles.orderDisabled)}>
               <span>Sleeping bag hire </span>
-              <Select className={styles.select} options={[0, 1, 2, 4, 5, 6, 7].map(toString)} value={'0'}/>
+              <Select size="md" className={styles.select} options={[0, 1, 2, 4, 5, 6, 7].map(toString)} value={'0'}/>
               <span>AUD $ 20</span>
             </div>
 
             <div className={styles.orderItemInfo}>
               <span>Camel farm ride</span>
-              <Select className={styles.select} options={[0, 1, 2, 4, 5, 6, 7]} value={1}/>
+              <Select size="md" className={styles.select} options={[0, 1, 2, 4, 5, 6, 7]} value={1}/>
               <span>AUD $ 5</span>
             </div>
 
@@ -118,9 +118,9 @@ export const OrderDetails: React.FC<IProps> = ({ className }) => {
               Do you have a coupon code?
             </p>
 
-            <span className={styles.couponSave}>Save aud $26<i className="fas fa-tag"></i></span>
+            <span className={styles.couponSave}>Save aud $26<i className="fas fa-tag" /></span>
             <span className={styles.couponAmount}>$1 369 AUD</span>
-            <span className={styles.couponInfo}>Total Amount Due</span> 
+            <span className={styles.couponInfo}>Total Amount Due</span>
             <span className={styles.couponInfoSmall}>(including additional options)</span>
           </div>
         </div>
@@ -136,14 +136,14 @@ export const OrderDetails: React.FC<IProps> = ({ className }) => {
       <div className={styles.nextStepSection}>
         <h6>What happens next?</h6>
         <div className={styles.nextStepList}>
-          <i className='fas fa-envelope'></i>
+          <i className='fas fa-envelope' />
           <span>Receive email of your confirmation and voucher</span>
-          <i className='fas fa-file-alt'></i>
+          <i className='fas fa-file-alt' />
           <span>Present it to the merchant</span>
         </div>
       </div>
 
-      
+
       <div className={styles.helpSection}>
         <h6>Need help to complete this booking? Call us on</h6>
         <div className={styles.helpContactsList}>

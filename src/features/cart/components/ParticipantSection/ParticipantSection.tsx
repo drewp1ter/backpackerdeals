@@ -19,9 +19,9 @@ export const ParticipantSection: React.FC = () => {
       form.fields.map(field => <Input key={field.labelID} label={field.label} placeholder={field.placeholder}/>)}
       <Input label="Date of birth">
         <div className={styles.dateFields}>
-          <Select placeholder="Date" options={[]} />
-          <Select placeholder="Month" options={[]} />
-          <Select placeholder="Year" options={[]} />
+          <Select size="md" placeholder="Date" options={[]} />
+          <Select size="md" placeholder="Month" options={[]} />
+          <Select size="md" placeholder="Year" options={[]} />
         </div>
       </Input>
     </div>

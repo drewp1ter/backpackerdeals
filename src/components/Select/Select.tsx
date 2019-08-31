@@ -31,7 +31,7 @@ export const Select: React.FC<IProps> = ({
   value,
   disabled = false,
   onChange,
-  size = 'md',
+  size,
   name = '',
   placeholder,
   renderIcon,

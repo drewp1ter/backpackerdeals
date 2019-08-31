@@ -213,30 +213,30 @@
 @include device-mb {
   .searchSelect {
     .select {
-      padding: 3px 6px 3px 3px;
+      padding: .375rem .375rem .375rem .375rem;
 
       i {
-        margin-right: 4px;
+        margin-right: .5rem;
       }
 
       i, span {
-        font-size: 12px !important;
+        font-size: 1em !important;
       }
     }
 
     .optionBlock {
-      top: 65px;
-      padding: 20px 0;
+      top: 6rem;
+      padding: 2.5rem 0;
 
       .option {
-        padding: 10px 0 10px 32px;
-        font-size: 13px;
+        padding: 1.25rem 0 1.25rem 4rem;
+        font-size: 1.0833333em;
       }
     }
 
     &[data-theme="light"] {
       .select {
-        margin-right: 8px;
+        margin-right: 1rem;
       }
     }
   }
