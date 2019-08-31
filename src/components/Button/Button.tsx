@@ -21,7 +21,7 @@ export const Button: React.FC<IProps> = ({
   disabled = false,
   form = 'rounded',
   theme = 'orange',
-  size = 'lg'
+  size
 }) => {
   return (
     <button

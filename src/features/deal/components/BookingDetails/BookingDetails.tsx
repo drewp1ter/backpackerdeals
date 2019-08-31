@@ -81,7 +81,7 @@ export const BookingDetails: React.FC<IProps> = ({ onClose, className, variant =
 
       <div className={styles.rightSection}>
         <h4>AUD $13 690</h4>
-        <Button>BOOK NOW</Button>
+        <Button size="lg">BOOK NOW</Button>
         <p className={styles.levy}>Levy of AUD $35 payable on the day</p>
         <p className={styles.total}>
           <span>Total saving:</span>

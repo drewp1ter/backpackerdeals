@@ -248,7 +248,7 @@ export const MobileMenu: React.FC<Partial<Types.RootState> & Partial<PageActions
                   size="lg"
                 />
                 <div className={styles.advancedSearchButtons}>
-                  <Button className={styles.orangeButton} theme="orange" form="rectangled">
+                  <Button className={styles.orangeButton} theme="orange" form="rectangled" size="lg">
                     SEARCH
                   </Button>
                   <Button className={styles.resetButton} theme="transparent" form="standart" size="sm" onClick={handleClickReset}>

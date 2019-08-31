@@ -111,7 +111,7 @@ export const Filters: React.FC<IProps> = ({ filters, className, applyFilter, vie
       <PriceRange range={state.priceRange} onChange={handleChange} name="priceRange" />
       <div className={styles.filtersButtons}>
         {viewType === ViewType.mobile && (
-          <Button onClick={applyFilter} theme="orange" form="rectangled" className={styles.apply}>
+          <Button onClick={applyFilter} theme="orange" form="rectangled" className={styles.apply} size="lg">
             Apply filter
           </Button>
         )}

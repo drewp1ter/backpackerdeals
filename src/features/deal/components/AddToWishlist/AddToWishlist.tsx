@@ -44,7 +44,7 @@ export const AddToWishlist: React.FC<IProps> = ({ className }) => {
         <Calendar className={styles.calendar} onChange={handleChange} value={date || new Date()} />
       </Select>
       <Input className={styles.email} type="email" label="Email" placeholder="Email Address" labelID="wishlist-email" />
-      <Button>Remind me</Button>
+      <Button size="lg">Remind me</Button>
       <p>
         By clicking REMIND ME you agree that you are the owner of above email address. Your IP address will be logged. Please read our
         Privacy Policy. We hate spam and will send you only one reminder email on the above date

@@ -28,7 +28,7 @@ export const MyProfile: React.FC = () => {
         />
         <Input theme="standart" type="email" label="Email" placeholder="Email Address" />
         <PhoneNumber className={styles.field} size="lg" />
-        <Button>Update changes</Button>
+        <Button size="lg">Update changes</Button>
       </div>
     </div>
   )

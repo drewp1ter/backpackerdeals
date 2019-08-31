@@ -25,7 +25,7 @@ export const Footer: React.FC<IProps> = ({ handleChange, email, extendPaddingTop
       <Button className={styles.textButton} size="xl">
         SEARCH
       </Button>
-      <Button className={styles.iconButton} form="circle">
+      <Button className={styles.iconButton} form="circle" size="lg">
         <i className="fas fa-arrow-right" />
       </Button>
     </div>

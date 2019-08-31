@@ -40,8 +40,8 @@ export const Login: React.FC = () => {
         />
       </div>
       <div className={styles.buttons}>
-        <Button theme="orange">Log in</Button>
-        <Button theme="transparentBorderOrange">Sign up</Button>
+        <Button size="lg" theme="orange">Log in</Button>
+        <Button size="lg" theme="transparentBorderOrange">Sign up</Button>
       </div>
     </div>
   )
