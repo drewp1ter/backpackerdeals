@@ -32,7 +32,7 @@ $size-pc-min: $size-tb-max;
 }
 
 @mixin device-tb() {
-  $map: (min: $size-tb-min, max: $size-tb-max - 1);
+  $map: (min: $size-tb-min, max: $size-tb-max);
   @include device($map) {
     @content
   }
