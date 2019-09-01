@@ -23,7 +23,7 @@ export const SearchTravelSection: React.FC<Partial<ISearchActions> & Partial<ISe
           Great experience at <br /> backpacker prices
         </h2>
         {advancedSearch ? (
-          <AdvancedSearchTravel className={styles.advancedSearchTravel} />
+          <AdvancedSearchTravel theme="home" className={styles.advancedSearchTravel} />
         ) : (
           <BasicSearchTravel />
         )}

@@ -12,8 +12,8 @@ interface IProps {
   readonly reversableIcon?: string
   readonly reverseType?: string
   readonly openerClass?: string
-  readonly childrenClassName?: string,
-  readonly selected?: any,
+  readonly childrenClassName?: string
+  readonly selected?: any
   readonly onChange?: (value: any) => void
   readonly format?: (value: any) => string
 }
@@ -28,15 +28,15 @@ export const MobileSelectMenu: React.FC<IProps> = ({
   openerClass,
   childrenClassName,
   selected,
-  format
+  format,
 }) => {
   const [isOpen, setIsOpen] = useState<boolean>(false)
   const toggle = () => setIsOpen(!isOpen)
 
   const renderTitle = () => {
-    let value = selected ? selected : title;
-    value = format ? format(value) : value;
-    return (<span>{value}</span>)
+    let value = selected ? selected : title
+    value = format ? format(value) : value
+    return <span>{value}</span>
   }
 
   return (
@@ -49,7 +49,14 @@ export const MobileSelectMenu: React.FC<IProps> = ({
         {rightIcon && <i className={rightIcon} data-reversable={reversableIcon === 'right'} data-reversetype={reverseType} />}
       </div>
 
-      {isOpen && (childrenClassName ? <div className={childrenClassName} onClick={toggle}>{children}</div> : children)}
+      {isOpen &&
+        (childrenClassName ? (
+          <div className={childrenClassName} onClick={toggle}>
+            {children}
+          </div>
+        ) : (
+          children
+        ))}
     </li>
   )
 }

@@ -169,15 +169,6 @@
     overflow-y: scroll;
     overflow: -moz-scrollbars-none; //скроллбар ломает заголовок на 320
 
-    .calendar {
-      width: 20.7rem;
-      margin: 0 auto;
-    }
-
-    .select {
-      margin-bottom: 16px;
-    }
-
     &::-webkit-scrollbar {
       width: 0 !important;
     }
@@ -277,23 +268,6 @@
           border-bottom: 0;
           margin-bottom: 0;
         }
-      }
-    }
-
-    .advancedSearchButtons {
-      margin-top: 15px;
-
-      .orangeButton {
-        // margin-left: 2px;
-        width: 47.8%;
-        height: 15vw;
-        max-height: 48px;
-        font-size: 1em;
-      }
-
-      .resetButton {
-        font-size: .9em;
-        margin-left: 8px;
       }
     }
   }

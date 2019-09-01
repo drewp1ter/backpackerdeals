@@ -5,8 +5,14 @@ import { Button, Calendar, Select } from 'components'
 import styles from './AdvancedSearchTravel.module.scss'
 import { numberOfDays, startLocation } from './data'
 
+enum Theme {
+  home = 'home',
+  header = 'header',
+  menu = 'menu',
+}
+
 export interface IProps {
-  readonly forHeader?: boolean
+  readonly theme: keyof typeof Theme
   readonly className?: string
 }
 
@@ -18,21 +24,22 @@ export interface IState {
   readonly numberOfDays: string
 }
 
-export const AdvancedSearchTravel: React.FC<IProps> = ({ forHeader, className }) => {
-  const [state, setState] = useState<IState>({
+export const AdvancedSearchTravel: React.FC<IProps> = ({ theme, className }) => {
+  const initialState: IState = {
     startLocation: '',
     typeOfTour: '',
     endLocation: '',
     date: undefined,
     numberOfDays: '',
-  })
-
+  }
+  const [state, setState] = useState<IState>(initialState)
   const handleChange = (value: any, key: string) => setState({ ...state, [key]: value })
   const handleChangeDate = (value: Date) => handleChange(value, 'date')
-  const selectTheme = forHeader ? 'default' : 'light'
+  const handleClickReset = () => setState(initialState)
+  const selectTheme = theme === Theme.header || theme === Theme.menu ? 'default' : 'light'
 
   return (
-    <div className={classNames(styles.advancedSearchTravel, className)}>
+    <div data-theme={theme} className={classNames(styles.advancedSearchTravel, className)}>
       <div className={styles.searchBlock}>
         <Select
           placeholder="Start location"
@@ -40,34 +47,36 @@ export const AdvancedSearchTravel: React.FC<IProps> = ({ forHeader, className })
           value={state.startLocation}
           options={startLocation}
           name="startLocation"
-          size="md-font"
+          size={theme === Theme.menu ? 'lg' : 'md-font'}
           onChange={handleChange}
           theme={selectTheme}
         />
-        <Select
-          placeholder="Type of tour"
-          className={styles.lastSelect}
-          value={state.typeOfTour}
-          options={startLocation}
-          name="typeOfTour"
-          size="md-font"
-          onChange={handleChange}
-          theme={selectTheme}
-        />
+        {theme !== Theme.menu && (
+          <Select
+            placeholder="Type of tour"
+            className={styles.lastSelect}
+            value={state.typeOfTour}
+            options={startLocation}
+            name="typeOfTour"
+            size="md-font"
+            onChange={handleChange}
+            theme={selectTheme}
+          />
+        )}
         <Select
           placeholder="End location"
           className={styles.lastSelect}
           value={state.endLocation}
           options={startLocation}
           name="endLocation"
-          size="md-font"
+          size={theme === Theme.menu ? 'lg' : 'md-font'}
           onChange={handleChange}
           theme={selectTheme}
         />
         <Select
           className={styles.lastSelect}
           placeholder="Select date"
-          size="md-font"
+          size={theme === Theme.menu ? 'lg' : 'md-font'}
           value={state.date && state.date.toLocaleDateString()}
           theme={selectTheme}
         >
@@ -79,12 +88,26 @@ export const AdvancedSearchTravel: React.FC<IProps> = ({ forHeader, className })
           value={state.numberOfDays}
           options={numberOfDays}
           name="numberOfDays"
-          size="md-font"
+          size={theme === Theme.menu ? 'lg' : 'md-font'}
           onChange={handleChange}
           theme={selectTheme}
         />
       </div>
-      <Button theme="orange" form={forHeader ? 'rectangled' : 'rounded'} className={styles.searchBtn} size="xl">SEARCH</Button>
+      <div className={styles.buttons}>
+        <Button
+          theme="orange"
+          form={theme === Theme.header || theme === Theme.menu ? 'rectangled' : 'rounded'}
+          className={styles.searchBtn}
+          size="xl"
+        >
+          SEARCH
+        </Button>
+        {theme === Theme.menu && (
+          <Button className={styles.resetButton} theme="transparent" form="standart" size="sm" onClick={handleClickReset}>
+            Reset search
+          </Button>
+        )}
+      </div>
     </div>
   )
 }

@@ -29,4 +29,9 @@ declare module '*.jpg' {
   export default content
 }
 
+declare interface IIconInfo {
+  icon: string
+  name: string
+}
+
 declare module 'Types'

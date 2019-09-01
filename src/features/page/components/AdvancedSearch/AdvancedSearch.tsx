@@ -27,7 +27,7 @@ export const AdvancedSearch: React.FC<IProps> = ({ theme }) => {
       </div>
       <div className={styles.searchMenu} data-opened={isOpen && 'opened'}>
         <img src={Logo} alt="Logo" className="logo"/>
-        <AdvancedSearchTravel forHeader={true} />
+        <AdvancedSearchTravel className={styles.advancedSearchTravel} theme="header" />
         <button aria-label="search" onClick={handleClickSearch}>
           <i className="fas fa-times"/>
         </button>

@@ -13,10 +13,17 @@ interface IProps {
   readonly theme?: string
 }
 
-export class Header extends Component<IProps> {
+export interface IState {
+  readonly currentLanguage: number
+  readonly currentCurrency: number
+  readonly scrolled: boolean
+  readonly hasCookies: boolean
+}
+
+export class Header extends Component<IProps, IState> {
   state = {
-    currentLanguage: 'english',
-    currentCurrency: 'aud',
+    currentLanguage: 0,
+    currentCurrency: 0,
     scrolled: false,
     hasCookies: true,
   }
@@ -67,14 +74,14 @@ export class Header extends Component<IProps> {
     }
   }
 
-  handleChangeLanguage = (event: React.MouseEvent<HTMLElement>) => {
-    const language = event.currentTarget.dataset.language || ''
+  handleChangeLanguage = ({ currentTarget }: React.MouseEvent<HTMLElement>) => {
+    const language = Number(currentTarget.dataset.idx)
     this.blurActiveElement()
     this.setState({ currentLanguage: language })
   }
 
-  handleChangeCurrency = (event: React.MouseEvent<HTMLElement>) => {
-    const currency = event.currentTarget.dataset.currency || ''
+  handleChangeCurrency = ({ currentTarget }: React.MouseEvent<HTMLElement>) => {
+    const currency = Number(currentTarget.dataset.idx)
     this.blurActiveElement()
     this.setState({ currentCurrency: currency })
   }
@@ -129,15 +136,15 @@ export class Header extends Component<IProps> {
               <SelectMenu openerClass={styles.currencyAndLanguageOpener} opener={currencyOpener} title="Select currency">
                 <>
                   <div className={styles.currencies}>
-                    {Object.entries(currencies).map((currency, index) => (
+                    {currencies.map((currency, idx) => (
                       <p
                         onClick={this.handleChangeCurrency}
                         className={styles.currency}
-                        key={index}
-                        data-active={currency[0] === currentCurrency}
-                        data-currency={currency[0]}
+                        key={idx}
+                        data-active={idx === currentCurrency}
+                        data-idx={idx}
                       >
-                        {currency[1].name} {currency[1].icon}
+                        {currency.name} {currency.icon}
                       </p>
                     ))}
                   </div>
@@ -149,16 +156,16 @@ export class Header extends Component<IProps> {
               </SelectMenu>
               <SelectMenu openerClass={styles.currencyAndLanguageOpener} opener={languageOpener} title="Select your language">
                 <div className={styles.languages}>
-                  {Object.entries(languages).map((language, index) => (
+                  {languages.map((language, idx) => (
                     <div
                       onClick={this.handleChangeLanguage}
-                      key={index}
+                      key={idx}
                       className={styles.language}
-                      data-active={language[0] === currentLanguage}
-                      data-language={language[0]}
+                      data-active={idx === currentLanguage}
+                      data-idx={idx}
                     >
-                      <img src={language[1].icon} alt={language[1].name} />
-                      <span>{language[1].name}</span>
+                      <img src={language.icon} alt={language.name} />
+                      <span>{language.name}</span>
                     </div>
                   ))}
                 </div>

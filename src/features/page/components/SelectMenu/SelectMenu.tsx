@@ -18,7 +18,7 @@ export const SelectMenu: React.FC<IProps> = ({ title, opener, children, size = '
   const toggle = () => setIsOpen(!isOpen)
   const collapse = () => setIsOpen(false)
 
-  const childrenWithHanleClose = children.props ? React.Children.map(children, (child: JSX.Element) =>
+  const childrenWithHanleClose = children.type !== 'div' ? React.Children.map(children, (child: JSX.Element) =>
     React.cloneElement(child, { handleClose: collapse})
   ) : children
 

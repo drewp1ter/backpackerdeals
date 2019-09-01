@@ -1,14 +1,13 @@
 import React, { useState } from 'react'
 
-import { Button, Calendar, MobileMenuWrapper, Select } from 'components'
+import { AdvancedSearchTravel, MobileMenuWrapper } from 'components'
 import { ISearchActions } from 'features/search'
 import { PageActions } from '../..'
 import { MobileSelectMenu, SelectContinent } from '../../components'
 
-import { numberOfDays, startLocation } from 'features/page/components/AdvancedSearch/data'
 import Types from 'Types'
-import { currencies, IIconInfo, languages } from '../../components/Header/constants'
-import { cities, countries, options } from './data'
+import { currencies, languages } from '../../components/Header/constants'
+import { cities, countries } from './data'
 
 import styles from './MobileMenu.module.scss'
 
@@ -17,10 +16,6 @@ interface IProps {
 }
 
 export interface IState {
-  readonly startLocation: string
-  readonly endLocation: string
-  readonly date: Date | undefined
-  readonly numberOfDays: string
   readonly currency: IIconInfo
   readonly language: IIconInfo
   readonly searchQuery: string
@@ -37,28 +32,28 @@ export const MobileMenu: React.FC<Partial<Types.RootState> & Partial<PageActions
   changeSearchType,
 }) => {
   const initialState: IState = {
-    startLocation: '',
-    endLocation: '',
-    date: undefined,
-    numberOfDays: '',
-    currency: currencies.aud,
-    language: languages.english,
+    currency: currencies[0],
+    language: languages[0],
     searchQuery: '',
   }
 
-  const [state, setState] = useState({ ...initialState })
-  const handleChange = (value: any, key: string) => setState({ ...state, [key]: value })
-  const handleChangeDate = (value: Date) => handleChange(value, 'date')
+  const [state, setState] = useState(initialState)
   const handleChangeSearch = ({ target: { name, value } }: React.ChangeEvent<HTMLInputElement>) => setState({ ...state, [name]: value })
   const handleChangeSearchType = ({ currentTarget }: React.MouseEvent<HTMLSpanElement>) => {
     const searchType: any = currentTarget.dataset.type
     changeSearchType && changeSearchType(searchType)
   }
 
-  const handleClickReset = () => setState({ ...initialState })
-  const handleClickOption = (value: any, key: string) => {
+  const handleClickCurrency = ({ currentTarget }: React.MouseEvent<HTMLParagraphElement>) => {
     blurActiveElement()
-    handleChange(value, key)
+    const idx = Number(currentTarget.dataset.idx)
+    setState({ ...state, currency: currencies[idx] })
+  }
+
+  const handleClickLanguage = ({ currentTarget }: React.MouseEvent<HTMLDivElement>) => {
+    blurActiveElement()
+    const idx = Number(currentTarget.dataset.idx)
+    setState({ ...state, language: languages[idx] })
   }
 
   const blurActiveElement = () => {
@@ -140,9 +135,9 @@ export const MobileMenu: React.FC<Partial<Types.RootState> & Partial<PageActions
               format={currencyFormatFn}
               reverseType="180"
             >
-              {Object.entries(currencies).map((currency, index) => (
-                <p key={index} data-currency={currency[1]} data-field="currency" onClick={() => handleClickOption(currency[1], 'currency')}>
-                  {currency[1].name} {currency[1].icon}
+              {currencies.map((currency, idx) => (
+                <p key={idx} data-idx={idx} onClick={handleClickCurrency}>
+                  {currency.name} {currency.icon}
                 </p>
               ))}
             </MobileSelectMenu>
@@ -154,10 +149,10 @@ export const MobileMenu: React.FC<Partial<Types.RootState> & Partial<PageActions
               format={languageFormatFn}
               reverseType="180"
             >
-              {Object.entries(languages).map((language, index) => (
-                <div className={styles.languages} onMouseDown={() => handleClickOption(language[1], 'language')} key={index}>
-                  <img src={language[1].icon} alt={language[1].name} />
-                  <span>{language[1].name}</span>
+              {languages.map((language, idx) => (
+                <div  key={idx} className={styles.languages} data-idx={idx} onClick={handleClickLanguage}>
+                  <img src={language.icon} alt={language.name} />
+                  <span>{language.name}</span>
                 </div>
               ))}
             </MobileSelectMenu>
@@ -216,46 +211,7 @@ export const MobileMenu: React.FC<Partial<Types.RootState> & Partial<PageActions
                 )}
               </>
             ) : (
-              <>
-                <Select
-                  className={styles.select}
-                  placeholder="Start location"
-                  value={state.startLocation}
-                  options={startLocation}
-                  name="startLocation"
-                  onChange={handleChange}
-                  size="lg"
-                />
-                <Select
-                  className={styles.select}
-                  placeholder="End location"
-                  value={state.endLocation}
-                  options={options}
-                  name="endLocation"
-                  onChange={handleChange}
-                  size="lg"
-                />
-                <Select className={styles.select} placeholder="Select date" value={state.date && state.date.toLocaleDateString()} size="lg">
-                  <Calendar className={styles.calendar} value={state.date || new Date()} onChange={handleChangeDate} />
-                </Select>
-                <Select
-                  placeholder="Number of days"
-                  className={styles.select}
-                  value={state.numberOfDays}
-                  options={numberOfDays}
-                  name="numberOfDays"
-                  onChange={handleChange}
-                  size="lg"
-                />
-                <div className={styles.advancedSearchButtons}>
-                  <Button className={styles.orangeButton} theme="orange" form="rectangled" size="lg">
-                    SEARCH
-                  </Button>
-                  <Button className={styles.resetButton} theme="transparent" form="standart" size="sm" onClick={handleClickReset}>
-                    Reset search
-                  </Button>
-                </div>
-              </>
+              <AdvancedSearchTravel theme="menu" />
             )}
           </>
         </>
