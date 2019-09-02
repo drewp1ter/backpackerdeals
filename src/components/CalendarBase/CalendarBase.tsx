@@ -10,15 +10,20 @@ export interface IProps {
 }
 
 export class CalendarBase<IPropsP, IStateP> extends React.Component<IProps & IPropsP, IState & IStateP> {
+
   get days(): Array<Date | null> {
-    const getNullDays = (count: number) => [...Array(count).keys()].map(_day => null)
     const { month, year } = this.state
     const daysInMonth = new Date(year, month + 1, 0).getDate()
     const prevOffset = new Date(year, month, this.isUSStandart ? 1 : 0).getDay()
+    const prevDummyDays = prevOffset < 7 ? this.getNullDays(prevOffset) : []
+    return [...prevDummyDays, ...[...Array(daysInMonth).keys()].map(day => new Date(year, month, day + 1))]
+  }
+
+  get daysFillEndNulls(): Array<Date | null> {
+    const { month, year } = this.state
     const postOffset = new Date(year, month + 1, this.isUSStandart ? 1 : 0).getDay()
-    const prevDummyDays = prevOffset < 7 ? getNullDays(prevOffset) : []
-    const postDummyDays = postOffset > 0 ? getNullDays(7 - postOffset) : []
-    return [...prevDummyDays, ...[...Array(daysInMonth).keys()].map(day => new Date(year, month, day + 1)), ...postDummyDays]
+    const postDummyDays = postOffset > 0 ? this.getNullDays(7 - postOffset) : []
+    return [...this.days, ...postDummyDays]
   }
 
   public nowYear: number
@@ -29,6 +34,8 @@ export class CalendarBase<IPropsP, IStateP> extends React.Component<IProps & IPr
   public daysLong: string[]
   public daysShort: string[]
   public now: Date
+
+
 
   constructor(props: IProps & IPropsP) {
     super(props)
@@ -66,4 +73,6 @@ export class CalendarBase<IPropsP, IStateP> extends React.Component<IProps & IPr
 
   isSameDay = (a: Date | null | undefined, b: Date | null | undefined) =>
     !!a && !!b && a.getFullYear() === b.getFullYear() && a.getMonth() === b.getMonth() && a.getDate() === b.getDate()
+
+  private getNullDays = (count: number) => [...Array(count).keys()].map(_day => null)
 }

@@ -52,7 +52,7 @@ export class Calendar extends CalendarBase<IProps, {}> {
 
   handleClickDay = ({ currentTarget }: React.MouseEvent<HTMLLIElement>) => {
     const dayid = Number(currentTarget.dataset.dayid)
-    const day = this.days[dayid]
+    const day = this.daysFillEndNulls[dayid]
     const { onChange, disablePast } = this.props
     if (disablePast && day && day.getTime() < this.now.getTime()) {
       return
@@ -85,7 +85,7 @@ export class Calendar extends CalendarBase<IProps, {}> {
           <i className="fas fa-chevron-right" onClick={this.nextMonth} />
         </div>
         <ul className={styles.header}>{this.renderHeader()}</ul>
-        <ul className={styles.days}>{this.days.map(this.renderDay)}</ul>
+        <ul className={styles.days}>{this.daysFillEndNulls.map(this.renderDay)}</ul>
       </div>
     )
   }
