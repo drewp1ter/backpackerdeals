@@ -1,1 +1,0 @@
-export { BookingCalendarWeek } from './BookingCalendarWeek'

@@ -4,7 +4,7 @@ import React, { useRef } from 'react'
 import { Breadcrumbs } from 'components'
 import { ReviewsSection } from 'features/reviews/components'
 import {
-  BookingCalendarWeek,
+  BookingWeek,
   DealsSection,
   FaqSection,
   MobileBookNow,
@@ -17,7 +17,7 @@ import {
   TourOperator,
   WhatsToExpect
 } from '..'
-import { BookingCalendarMonth, OrderDetails } from '../../containers'
+import { BookingMonth, OrderDetails } from '../../containers'
 import { recommendedDeals } from './data'
 import styles from './DealLayout.module.scss'
 
@@ -107,8 +107,8 @@ export const DealLayout: React.FC = () => {
         {/*</TourDetailsCard>*/}
 
         <WhatsToExpect navAnchor={refs.whatsToExpect} className={styles.whatsToExpect} />
-        <BookingCalendarMonth navAnchor={refs.bookingCalendar} className={styles.bookingCalendar} />
-        <BookingCalendarWeek className={styles.bookingCalendar} />
+        <BookingMonth navAnchor={refs.bookingCalendar} className={styles.bookingCalendar} />
+        <BookingWeek className={styles.bookingCalendar} />
         <FaqSection className={styles.faqSection} />
 
         <TourDetailsCard

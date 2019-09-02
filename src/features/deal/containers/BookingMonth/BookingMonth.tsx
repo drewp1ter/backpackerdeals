@@ -4,7 +4,7 @@ import React, { RefObject } from 'react'
 import { Calendar, CalendarBase, Select } from 'components'
 import { BookingDetails, CalendarButton, Sticker } from '../../components'
 import { IDealState } from '../../reducer'
-import styles from './BookingCalendarMonth.module.scss'
+import styles from './BookingMonth.module.scss'
 import { lastMinuteDeals, soldOuts, topDeals } from './data'
 
 export interface IProps {
@@ -28,7 +28,7 @@ enum DayTypes {
 
 type AllProps = IProps & Partial<IDealState>
 
-export class BookingCalendarMonth extends CalendarBase<AllProps, IState> {
+export class BookingMonth extends CalendarBase<AllProps, IState> {
   private navigation = React.createRef<HTMLUListElement>()
   private bookingDetailsAnchor = React.createRef<HTMLDivElement>()
 
@@ -227,7 +227,7 @@ export class BookingCalendarMonth extends CalendarBase<AllProps, IState> {
     const { navAnchor, className } = this.props
 
     return (
-      <div className={classNames(styles.bookingCalendar, className)}>
+      <div className={classNames(styles.booking, className)}>
         <div className={styles.anchor} ref={navAnchor} />
         <h3>Booking calendar</h3>
         <Select

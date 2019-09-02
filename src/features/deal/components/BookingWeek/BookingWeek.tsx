@@ -3,7 +3,7 @@ import React from 'react'
 
 import { Calendar, Select } from 'components'
 import { BookingDetails, CalendarButton, Sticker } from '..'
-import styles from './BookingCalendarWeek.module.scss'
+import styles from './BookingWeek.module.scss'
 import events from './data'
 
 const DAYS_LONG = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
@@ -34,7 +34,7 @@ export interface IState {
   readonly isMobileView: boolean
 }
 
-export class BookingCalendarWeek extends React.Component<IProps, IState> {
+export class BookingWeek extends React.Component<IProps, IState> {
   private now: Date
 
   constructor(props: IProps) {
@@ -204,7 +204,7 @@ export class BookingCalendarWeek extends React.Component<IProps, IState> {
     const bookingDetailsRow = isMobileView ? Math.ceil(selectedEvent / 3) : Math.ceil(selectedEvent / 7)
 
     return (
-      <div className={classNames(styles.bookingCalendarWeek, className)}>
+      <div className={classNames(styles.booking, className)}>
         <h3>Booking calendar</h3>
         <Select
           open={isOpenSmallCalendar}
