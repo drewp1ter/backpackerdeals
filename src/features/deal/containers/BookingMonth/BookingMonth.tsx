@@ -17,6 +17,7 @@ export interface IState {
   readonly selectedDay: number
   readonly isOpenSmallCalendar: boolean
   readonly value: Date | undefined
+  readonly isCloseAnimation: boolean
 }
 
 enum DayTypes {
@@ -41,6 +42,7 @@ export class BookingMonth extends CalendarBase<AllProps, IState> {
       selectedDay: -1,
       isOpenSmallCalendar: false,
       value: undefined,
+      isCloseAnimation: false
     }
   }
 
@@ -111,7 +113,10 @@ export class BookingMonth extends CalendarBase<AllProps, IState> {
     this.setState({ selectedDay, value: this.days[selectedDay] as Date })
   }
 
-  handleCloseBookingDetails = () => this.setState({ selectedDay: -1 })
+  handleCloseBookingDetails = () => {
+    this.setState({ isCloseAnimation: true })
+    setTimeout(() => this.setState({ isCloseAnimation: false, selectedDay: -1 }), 1000)
+  }
 
   handleClickMonth = ({ currentTarget }: React.MouseEvent<HTMLLIElement>) => {
     this.setState({ ...this.shiftByMonths(Number(currentTarget.dataset.offset)), selectedDay: -1 })
@@ -223,7 +228,7 @@ export class BookingMonth extends CalendarBase<AllProps, IState> {
   }
 
   render() {
-    const { month, year, selectedDay, isOpenSmallCalendar, value } = this.state
+    const { month, year, selectedDay, isOpenSmallCalendar, value, isCloseAnimation } = this.state
     const { navAnchor, className } = this.props
 
     return (
@@ -267,6 +272,7 @@ export class BookingMonth extends CalendarBase<AllProps, IState> {
           {this.days.map(this.renderDay)}
           <li
             className={styles.dayDetails}
+            data-animation={isCloseAnimation}
             data-week={Math.ceil((selectedDay + 1) / 7)}
             data-triple={selectedDay >= 0 && Math.ceil(this.days[selectedDay]!.getDate() / 3)}
           >
