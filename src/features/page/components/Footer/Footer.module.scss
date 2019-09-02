@@ -269,7 +269,7 @@ footer {
     grid-gap: .625rem;
     align-items: flex-start;
     justify-content: space-between;
-    margin-top: 2.5rem;
+    margin-top: 3.25rem;
     padding-bottom: 4rem;
 
     @include device-mb {
@@ -312,9 +312,12 @@ footer {
 
     .secondImagesBlock {
       display: flex;
+      margin-top: -.75rem;
 
       img {
-        margin-right: 1.25rem;
+        margin-right: 1.5rem;
+        width: 100%;
+        height: 100%;
 
         &:last-of-type {
           margin-right: 0;
@@ -476,6 +479,7 @@ footer {
 
     .copyrightAndPartners {
       .firstImagesBlock {
+
         img {
           margin-right: .5rem;
 

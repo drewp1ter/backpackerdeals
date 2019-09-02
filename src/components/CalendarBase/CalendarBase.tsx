@@ -35,8 +35,6 @@ export class CalendarBase<IPropsP, IStateP> extends React.Component<IProps & IPr
   public daysShort: string[]
   public now: Date
 
-
-
   constructor(props: IProps & IPropsP) {
     super(props)
     this.now = new Date()
