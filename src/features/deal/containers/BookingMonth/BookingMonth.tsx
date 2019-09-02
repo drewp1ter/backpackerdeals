@@ -60,7 +60,7 @@ export class BookingMonth extends CalendarBase<AllProps, IState> {
         {
           year,
           month,
-          selectedDay: nextAviableDate.getDate() + new Date(year, month, this.isUSStandart ? 1 : 0).getDay() - 1,
+          selectedDay: nextAviableDate.getDate() + new Date(year, month, 0).getDay() - 1,
           monthsToRender,
         },
         () => this.bookingDetailsAnchor.current!.scrollIntoView({ behavior: 'smooth', block: 'start' })

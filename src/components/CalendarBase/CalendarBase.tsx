@@ -10,25 +10,23 @@ export interface IProps {
 }
 
 export class CalendarBase<IPropsP, IStateP> extends React.Component<IProps & IPropsP, IState & IStateP> {
-
   get days(): Array<Date | null> {
     const { month, year } = this.state
     const daysInMonth = new Date(year, month + 1, 0).getDate()
-    const prevOffset = new Date(year, month, this.isUSStandart ? 1 : 0).getDay()
+    const prevOffset = new Date(year, month, 0).getDay()
     const prevDummyDays = prevOffset < 7 ? this.getNullDays(prevOffset) : []
     return [...prevDummyDays, ...[...Array(daysInMonth).keys()].map(day => new Date(year, month, day + 1))]
   }
 
   get daysFillEndNulls(): Array<Date | null> {
     const { month, year } = this.state
-    const postOffset = new Date(year, month + 1, this.isUSStandart ? 1 : 0).getDay()
+    const postOffset = new Date(year, month + 1, 0).getDay()
     const postDummyDays = postOffset > 0 ? this.getNullDays(7 - postOffset) : []
     return [...this.days, ...postDummyDays]
   }
 
   public nowYear: number
   public nowMonth: number
-  public isUSStandart: boolean
   public monthsLong: string[]
   public monthsShort: string[]
   public daysLong: string[]
@@ -38,9 +36,15 @@ export class CalendarBase<IPropsP, IStateP> extends React.Component<IProps & IPr
   constructor(props: IProps & IPropsP) {
     super(props)
     this.now = new Date()
-    this.nowMonth = props.value && props.value.getMonth() || this.now.getMonth()
-    this.nowYear = props.value && props.value.getFullYear() || this.now.getFullYear()
-    this.isUSStandart = this.now.toLocaleTimeString().search(/(AM|PM)/) !== -1
+    this.nowMonth = (props.value && props.value.getMonth()) || this.now.getMonth()
+    this.nowYear = (props.value && props.value.getFullYear()) || this.now.getFullYear()
+
+    this.state = {
+      ...this.state,
+      month: this.nowMonth,
+      year: this.nowYear,
+      isUSStandart: false,
+    }
 
     this.monthsLong = [
       'January',
@@ -57,16 +61,8 @@ export class CalendarBase<IPropsP, IStateP> extends React.Component<IProps & IPr
       'December',
     ]
     this.monthsShort = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
-    this.daysLong = this.isUSStandart
-      ? ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
-      : ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
-    this.daysShort = this.isUSStandart ? ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'] : ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa']
-
-    this.state = {
-      ...this.state,
-      month: this.nowMonth,
-      year: this.nowYear,
-    }
+    this.daysLong = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
+    this.daysShort = ['Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa', 'Su']
   }
 
   isSameDay = (a: Date | null | undefined, b: Date | null | undefined) =>
