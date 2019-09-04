@@ -9,6 +9,7 @@
   transition: box-shadow .2s ease-out;
   cursor: pointer;
   width: 100%;
+  height: 36rem;
 
   a {
     display: block;
@@ -69,11 +70,18 @@
 
 @include device-tb{
   .activityCard {
+    height: 40rem;
 
     h4 {
       font-weight: 700;
       top: 1.5rem;
     }
+  }
+}
+
+@include device-ipad {
+  .activityCard {
+    height: 45rem;
   }
 }
 
@@ -99,7 +107,7 @@
 @include device((max: 320px)) {
   .activityCard {
     width: 128px;
-    max-height: 208px;
+    height: 208px;
 
     h4 {
       left: 10px;
