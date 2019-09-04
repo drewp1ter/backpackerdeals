@@ -156,7 +156,10 @@
     overflow-y: auto;
     overflow-x: hidden;
     border: 1px solid #efefef;
-    max-height: 23.12rem;
+
+    &[data-limit-height="true"] {
+      max-height: 23.12rem;
+    }
 
     @include scrollbar;
 

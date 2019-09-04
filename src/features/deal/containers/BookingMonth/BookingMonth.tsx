@@ -244,6 +244,7 @@ export class BookingMonth extends CalendarBase<AllProps, IState> {
           theme="orange"
           size="no"
           arrowPos="right"
+          limitHeight={false}
         >
           <Calendar
             className={styles.calendarMini}

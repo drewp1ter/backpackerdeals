@@ -16,6 +16,7 @@ interface IProps {
   readonly placeholder?: string
   readonly renderIcon?: () => JSX.Element
   readonly arrowPos?: 'left' | 'right' // стрелка вниз
+  readonly limitHeight?: boolean
   // custom behavior
   readonly children?: React.ReactNode
   readonly onClick?: () => void
@@ -38,6 +39,7 @@ export const Select: React.FC<IProps> = ({
   arrowPos = 'left',
   onClick,
   onClickOutside,
+  limitHeight = true,
   open
 }) => {
   const [isOpen, setOpen] = useState<boolean>(false)
@@ -77,7 +79,7 @@ export const Select: React.FC<IProps> = ({
       </div>
 
       {showOptions && (
-        <ul className={styles.optionBlock}>
+        <ul data-limit-height={limitHeight} className={styles.optionBlock}>
           {options &&
             options.map((option, idx) => (
               <li key={idx} className={styles.option} onClick={handleClick} data-index={idx}>

@@ -22,6 +22,7 @@ export interface IState {
   readonly endLocation: string
   readonly date: Date | undefined
   readonly numberOfDays: string
+  readonly isOpenCalendar: boolean
 }
 
 export const AdvancedSearchTravel: React.FC<IProps> = ({ theme, className }) => {
@@ -31,11 +32,20 @@ export const AdvancedSearchTravel: React.FC<IProps> = ({ theme, className }) => 
     endLocation: '',
     date: undefined,
     numberOfDays: '',
+    isOpenCalendar: false,
   }
+
   const [state, setState] = useState<IState>(initialState)
   const handleChange = (value: any, key: string) => setState({ ...state, [key]: value })
-  const handleChangeDate = (value: Date) => handleChange(value, 'date')
+  const handleChangeDate = (date: Date) => setState({ ...state, isOpenCalendar: false, date })
   const handleClickReset = () => setState(initialState)
+  const handleClickSelect = () =>
+    setState({
+      ...state,
+      isOpenCalendar: !state.isOpenCalendar,
+    })
+  const handleCloseCalendar = () => setState({ ...state, isOpenCalendar: false })
+
   const selectTheme = theme === Theme.header || theme === Theme.menu ? 'default' : 'light'
 
   return (
@@ -74,11 +84,15 @@ export const AdvancedSearchTravel: React.FC<IProps> = ({ theme, className }) => 
           theme={selectTheme}
         />
         <Select
+          open={state.isOpenCalendar}
+          onClick={handleClickSelect}
+          onClickOutside={handleCloseCalendar}
           className={styles.lastSelect}
           placeholder="Select date"
           size={theme === Theme.menu ? 'lg' : 'md-font'}
           value={state.date && state.date.toLocaleDateString()}
           theme={selectTheme}
+          limitHeight={false}
         >
           <Calendar className={styles.calendar} value={state.date || new Date()} onChange={handleChangeDate} />
         </Select>
