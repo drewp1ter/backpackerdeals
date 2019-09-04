@@ -249,7 +249,7 @@
 }
 
 @include device-ipad {
-  .bookingCalendar {
+  .booking {
     .bookingDetailsAnchor {
       position: absolute;
       top: -24.5rem;
@@ -336,7 +336,7 @@
 }
 
 @include device-mb {
-  .bookingCalendar {
+  .booking {
     border-radius: 0;
     border-left: none;
     border-right: none;

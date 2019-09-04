@@ -43,7 +43,6 @@ export class CalendarBase<IPropsP, IStateP> extends React.Component<IProps & IPr
       ...this.state,
       month: this.nowMonth,
       year: this.nowYear,
-      isUSStandart: false,
     }
 
     this.monthsLong = [
