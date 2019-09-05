@@ -11,7 +11,7 @@
     margin: 2rem .63rem 5.5rem .63rem;
   }
 
-  h3 {
+  > h3 {
     text-align: center;
     font-size: 3.5em;
     color: #ff5a39;
@@ -99,7 +99,7 @@
 
 @include device-tb {
   .moreActivities {
-    h3 {
+    > h3 {
       font-size: 2.714em;
     }
 
@@ -135,7 +135,7 @@
   .moreActivities {
     margin-top: 30px;
 
-    h3 {
+    > h3 {
       font-size: 28px;
       margin-left: 0;
     }
