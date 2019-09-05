@@ -18,6 +18,14 @@
       color: #ff5a39;
       cursor: pointer;
     }
+
+    .valueAndLink button {
+      background-color: #ff5a39;
+
+      i {
+        color: #fff;
+      }
+    }
   }
 
   &[data-view="horizontal"] {
@@ -265,14 +273,6 @@
 
         @include device-mb {
           font-size: 1.3em;
-        }
-      }
-
-      &:hover {
-        background-color: #ff5a39;
-
-        i {
-          color: #fff;
         }
       }
     }
