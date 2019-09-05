@@ -220,6 +220,7 @@ export class BookingWeek extends React.Component<IProps, IState> {
           placeholder="Select date"
           theme="fillOrange"
           size="md"
+          limitHeight={false}
         >
           <Calendar
             className={styles.calendarMini}
