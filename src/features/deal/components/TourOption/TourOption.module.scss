@@ -131,3 +131,27 @@
     }
   }
 }
+
+@include device-mb {
+  .tourOption {
+    flex-direction: column;
+
+    .text {
+      flex-grow: unset;
+      width: 100%;
+
+      p:first-of-type {
+        max-height: 20rem;
+      }
+    }
+
+    .price, .aviability {
+      min-width: unset;
+      width: 100%;
+    }
+
+    .aviability {
+      padding: 1rem 0;
+    }
+  }
+}
