@@ -15,6 +15,7 @@ import {
   TourGallery,
   TourIcons,
   TourOperator,
+  TourOptions,
   WhatsToExpect
 } from '..'
 import { BookingMonth, OrderDetails } from '../../containers'
@@ -107,6 +108,7 @@ export const DealLayout: React.FC = () => {
         {/*</TourDetailsCard>*/}
 
         <WhatsToExpect navAnchor={refs.whatsToExpect} className={styles.whatsToExpect} />
+        <TourOptions className={styles.tourOptions} />
         <BookingMonth navAnchor={refs.bookingCalendar} className={styles.bookingCalendar} />
         <BookingWeek className={styles.bookingCalendar} />
         <FaqSection className={styles.faqSection} />

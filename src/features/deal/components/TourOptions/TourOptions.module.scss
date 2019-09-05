@@ -1,0 +1,29 @@
+@import "src/scss/device";
+
+.tourOptions {
+  border: 1px solid #e4e4e4;
+  border-radius: 8px;
+  padding: 2rem 1.5rem 2.5rem;
+  box-sizing: border-box;
+
+  > h3 {
+    font-size: 2em;
+    margin-bottom: 2rem;
+  }
+}
+
+.tourOption {
+  width: 100%;
+  margin-top: 2rem;
+}
+
+@include device-ipad {
+  .tourOptions {
+    padding: 3rem 2rem 4rem;
+
+    > h3 {
+      font-size: 2.1666667em;
+      margin-bottom: 1.5rem;
+    }
+  }
+}

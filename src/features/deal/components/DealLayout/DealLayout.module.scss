@@ -34,7 +34,9 @@
   margin: 1.875rem 0 2rem;
 }
 
-.faqSection, .relatedTravelBlogs, .tourIcons {
+.faqSection,
+.relatedTravelBlogs,
+.tourIcons {
   margin-top: 4rem;
 }
 
@@ -46,11 +48,25 @@
   margin-top: 2rem;
 }
 
-.tourOperator, .whatsToExpect, .bookingCalendar, .bookingCalendar {
+.tourOperator,
+.whatsToExpect,
+.bookingCalendar,
+.bookingCalendar,
+.tourOptions {
   margin-top: 3rem;
 }
 
-.tourOperator, .tourIcons, .bookingCalendarMonth, .bookingCalendar, .reviews, .faqSection, .relatedTravelBlogs, .tourGallery, .card, .whatsToExpect {
+.tourOperator,
+.tourIcons,
+.bookingCalendarMonth,
+.bookingCalendar,
+.reviews,
+.faqSection,
+.relatedTravelBlogs,
+.tourGallery,
+.card,
+.whatsToExpect,
+.tourOptions {
   width: 71rem;
 }
 
@@ -64,12 +80,13 @@
   a {
     display: block;
     color: #202020;
-    margin-top: .5rem;
+    margin-top: 0.5rem;
   }
 }
 
 @include device-ipad {
-  .headerSection, .section  {
+  .headerSection,
+  .section {
     width: 119rem;
   }
 
@@ -77,7 +94,16 @@
     width: 29rem;
   }
 
-  .tourOperator, .tourIcons, .bookingCalendar, .reviews, .faqSection, .relatedTravelBlogs, .tourGallery, .card, .whatsToExpect {
+  .tourOperator,
+  .tourIcons,
+  .bookingCalendar,
+  .reviews,
+  .faqSection,
+  .relatedTravelBlogs,
+  .tourGallery,
+  .card,
+  .whatsToExpect,
+  .tourOptions {
     width: 89rem;
   }
 
@@ -101,7 +127,13 @@
     box-sizing: border-box;
   }
 
-  .orderDetails, .card, .tourOperator, .whatsToExpect, .bookingCalendar, .faqSection, .reviews {
+  .orderDetails,
+  .card,
+  .tourOperator,
+  .whatsToExpect,
+  .bookingCalendar,
+  .faqSection,
+  .reviews {
     width: 100%;
   }
 
