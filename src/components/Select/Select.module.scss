@@ -4,6 +4,7 @@
 .searchSelect {
   position: relative;
   outline: none;
+  overflow: hidden;
 
   &[data-theme="default"] {
     border: solid 1px #e8e8e8;
