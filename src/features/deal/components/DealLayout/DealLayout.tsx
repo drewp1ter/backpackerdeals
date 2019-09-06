@@ -5,10 +5,9 @@ import { Breadcrumbs } from 'components'
 import { ReviewsSection } from 'features/reviews/components'
 import {
   BookingWeek,
-  CheckAviability,
+  BookNow,
   DealsSection,
   FaqSection,
-  MobileBookNow,
   Navigation,
   RelatedTravelBlogs,
   TourDescription,
@@ -51,7 +50,6 @@ export const DealLayout: React.FC = () => {
             <OrderDetails className={styles.orderDetails} />
           </div>
           <div>
-            <MobileBookNow className={styles.mobileBookNow}/>
             <TourIcons className={styles.tourIcons} />
           </div>
         </div>
@@ -148,7 +146,7 @@ export const DealLayout: React.FC = () => {
         <DealsSection className={styles.dealsSection} title="Recommended Deals" data={recommendedDeals} />
         <DealsSection className={styles.dealsSection} title="Recently viewed deals" data={recommendedDeals} />
       </div>
-      <CheckAviability />
+      <BookNow />
     </>
   )
 }

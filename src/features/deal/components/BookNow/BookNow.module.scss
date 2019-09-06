@@ -1,9 +1,18 @@
 @import "src/scss/device";
 
-.mobileBookNow {
+.bookNow {
   display: none;
-  padding: 1rem 0;
-  border-top: 1px solid #e8e8e8;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: #fff;
+  border-top: 1px #e8e8e8;
+  box-sizing: border-box;
+  height: 8rem;
+  justify-content: center;
+  align-items: center;
 
   .bookButton {
     width: 25rem;
@@ -29,10 +38,8 @@
       color: #ff5a39;
     }
   }
-}
 
-@include device-mb {
-  .mobileBookNow {
+  @include device-mb {
     display: flex;
   }
 }
