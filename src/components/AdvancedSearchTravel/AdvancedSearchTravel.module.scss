@@ -15,8 +15,12 @@
     padding: 0;
 
     .searchBlock {
+      display: flex;
       flex-direction: column;
       width: 100%;
+      margin-right: 0;
+      grid-template-columns: unset;
+      grid-column-gap: unset;
     }
 
     .lastSelect, .numberOfDays {
@@ -30,15 +34,26 @@
       }
     }
 
-    .searchBtn {
-      height: 6rem;
-      font-size: 1.1666667em !important;
+    .buttons {
+      display: flex;
+      width: 100%;
+      align-items: center;
+
+      .searchBtn {
+        height: 6rem;
+        font-size: 1.1666667em !important;
+      }
+
+      .resetButton {
+        display: block;
+      }
     }
   }
 
   .resetButton {
     font-size: .9em;
     margin-left: 1rem;
+    display: none;
   }
 
   .calendar {
@@ -48,16 +63,15 @@
   .searchBlock {
     display: flex;
     height: 100%;
-    width: 47.5rem;
+    margin-right: .5rem;
+    display: grid;
+    grid-template-columns: repeat(5, 9rem);
+    grid-column-gap: .5rem;
 
     .lastSelect {
       > ul {
         min-width: 20.625rem;
       }
-    }
-
-    .numberOfDays, .lastSelect {
-      margin-right: .5rem;
     }
 
     & > div {

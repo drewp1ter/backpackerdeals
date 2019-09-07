@@ -116,11 +116,9 @@ export const AdvancedSearchTravel: React.FC<IProps> = ({ theme, className }) => 
         >
           SEARCH
         </Button>
-        {theme === Theme.menu && (
-          <Button className={styles.resetButton} theme="transparent" form="standart" size="sm" onClick={handleClickReset}>
-            Reset search
-          </Button>
-        )}
+        <Button className={styles.resetButton} theme="transparent" form="standart" size="sm" onClick={handleClickReset}>
+          Reset search
+        </Button>
       </div>
     </div>
   )
