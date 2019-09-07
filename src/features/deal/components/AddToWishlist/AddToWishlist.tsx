@@ -11,9 +11,9 @@ export interface IProps {
 
 export const AddToWishlist: React.FC<IProps> = ({ className }) => {
   const [date, setDate] = useState<Date>()
-  const [openCalendar, setOpenCalendar] = useState<boolean>(false)
+  const [isOpenCalendar, setOpenCalendar] = useState<boolean>(false)
 
-  const toggleSelect = () => setOpenCalendar(!openCalendar)
+  const toggleSelect = () => setOpenCalendar(!isOpenCalendar)
   const closeSelect = () => setOpenCalendar(false)
   const handleChange = (date: Date) => {
     setOpenCalendar(false)
@@ -23,7 +23,7 @@ export const AddToWishlist: React.FC<IProps> = ({ className }) => {
   const selectIcon = () => <i className={classNames(styles.selectIcon, 'fas fa-calendar')} />
 
   return (
-    <div className={classNames(styles.addToWishlist, className)}>
+    <div data-is-open-calendar={isOpenCalendar} className={classNames(styles.addToWishlist, className)}>
       <h5>ADD TO WISHLIST</h5>
       <div className={styles.tour}>
         <img src={tour} alt="tour" />
@@ -33,13 +33,14 @@ export const AddToWishlist: React.FC<IProps> = ({ className }) => {
       <label>Remind me on date</label>
       <Select
         className={styles.select}
-        open={openCalendar}
+        open={isOpenCalendar}
         onClick={toggleSelect}
         onClickOutside={closeSelect}
         value={date && date.toLocaleDateString()}
         placeholder="Select date"
         size="lg"
         renderIcon={selectIcon}
+        limitHeight={false}
       >
         <Calendar className={styles.calendar} onChange={handleChange} value={date || new Date()} />
       </Select>

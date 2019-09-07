@@ -13,8 +13,6 @@
       left: 50%;
       position: fixed;
       animation: slidein-fixed .5s ease forwards;
-      max-height: calc(100vh - 6.5rem);
-      overflow-y: auto;
     }
 
     .close {
