@@ -16,17 +16,17 @@ export const ExposeTime: React.FC<IProps> = ({ days, hours, minutes, size = 'md'
     <div className={classNames(styles.exposeTime, className)} data-size={size}>
       <div className={styles.days}>
         <p>{days}</p>
-        <label>Days</label>
+        <p className={styles.label}>Days</p>
       </div>
       <p className={styles.colon}>:</p>
       <div className={styles.hours}>
         <p>{hours}</p>
-        <label>Hours</label>
+        <p className={styles.label}>Hours</p>
       </div>
       <p className={styles.colon}>:</p>
       <div className={styles.minutes}>
         <p>{minutes}</p>
-        <label>Minutes</label>
+        <p className={styles.label}>Minutes</p>
       </div>
     </div>
   )

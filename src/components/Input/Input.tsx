@@ -12,11 +12,22 @@ export interface IProps {
   readonly className?: string
   readonly theme?: 'transparent' | 'standart'
   readonly size?: 'md'
-  readonly labelID?: string,
+  readonly labelID?: string
   readonly children?: JSX.Element | JSX.Element[]
 }
 
-export const Input: React.FC<IProps> = ({ type = 'text', onChange, label, value, placeholder, className, theme = 'standart', size = 'md', labelID = '', children }) => {
+export const Input: React.FC<IProps> = ({
+  type = 'text',
+  onChange,
+  label,
+  value,
+  placeholder,
+  className,
+  theme = 'standart',
+  size = 'md',
+  labelID,
+  children,
+}) => {
   if (label && !labelID) {
     labelID = Math.random().toString()
   }
@@ -27,7 +38,9 @@ export const Input: React.FC<IProps> = ({ type = 'text', onChange, label, value,
           {label}
         </label>
       )}
-      {children ? children :
+      {children ? (
+        children
+      ) : (
         <input
           id={labelID}
           type={type}
@@ -38,7 +51,7 @@ export const Input: React.FC<IProps> = ({ type = 'text', onChange, label, value,
           data-theme={theme}
           data-size={size}
         />
-      }
+      )}
     </>
   )
 }

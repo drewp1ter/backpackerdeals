@@ -88,8 +88,8 @@ export const MobileMenu: React.FC<Partial<Types.RootState> & Partial<PageActions
             </button>
           </div>
 
-          <ul className={styles.navigation}>
-            <li onClick={openSearch} className={styles.menuItem}>
+          <div className={styles.navigation}>
+            <div onClick={openSearch} className={styles.menuItem}>
               <div className={styles.title}>
                 <i className="fas fa-search" />
                 <span>Search</span>
@@ -98,7 +98,7 @@ export const MobileMenu: React.FC<Partial<Types.RootState> & Partial<PageActions
                 <span>{search!.searchType === 'advanced' ? 'Advanced search' : 'Basic search'}</span>
                 <i className="fas fa-filter" />
               </div>
-            </li>
+            </div>
             <MobileSelectMenu
               title="Explore by country"
               leftIcon="fas fa-map-marker-alt"
@@ -108,24 +108,24 @@ export const MobileMenu: React.FC<Partial<Types.RootState> & Partial<PageActions
             >
               <SelectContinent theme="mobile" handleClose={closeMenu} />
             </MobileSelectMenu>
-            <li className={styles.menuItem}>
+            <div className={styles.menuItem}>
               <div className={styles.title}>
                 <i className="fas fa-thumbs-up" />
                 <span>Top Deals</span>
               </div>
-            </li>
-            <li className={styles.menuItem}>
+            </div>
+            <div className={styles.menuItem}>
               <div className={styles.title}>
                 <i className="fas fa-clock" />
                 <span>Last Minute Deals</span>
               </div>
-            </li>
-            <li className={styles.menuItem}>
+            </div>
+            <div className={styles.menuItem}>
               <div className={styles.title}>
                 <i className="fas fa-user-alt" />
                 <span>Sign up</span>
               </div>
-            </li>
+            </div>
             <h5>Settings</h5>
             <MobileSelectMenu
               childrenClassName={styles.currencies}
@@ -156,7 +156,7 @@ export const MobileMenu: React.FC<Partial<Types.RootState> & Partial<PageActions
                 </div>
               ))}
             </MobileSelectMenu>
-          </ul>
+          </div>
         </>
       </MobileMenuWrapper>
       <MobileMenuWrapper className={styles.search} open={search!.searchIsOpen}>

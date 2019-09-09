@@ -1,7 +1,7 @@
 import React from 'react'
 import {
-  ConfirmSection,
   CheckoutSection,
+  ConfirmSection,
   ContactSection,
   InstructionsSection,
   OrderDetails,

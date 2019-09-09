@@ -118,33 +118,33 @@
   }
 }
 
-@media screen and (min-width: 1920px) {
+@media screen and (min-width: 1921px) {
   .searchTravelSection {
     background-image: url('./assets/backgroundHigh.jpg');
-    background-size: fit;
+    background-size: cover;
   }
 }
 
-@media screen and (min-width: 1280px) and (max-width: 1415px) {
-  .searchTravelSection {
-    h1 {
-      margin: 0;
-      font-size: 52px;
-    }
+// @media screen and (min-width: 1280px) and (max-width: 1415px) {
+//   .searchTravelSection {
+//     h1 {
+//       margin: 0;
+//       font-size: 52px;
+//     }
 
-    h2 {
-      font-size: 26px;
-    }
-  }
-}
+//     h2 {
+//       font-size: 26px;
+//     }
+//   }
+// }
 
 @include device-tb {
   .searchTravelSection {
-    padding: 150px 0 230px 0;
+    padding: 15rem 0 23rem 0;
     background-image: url('./assets/background1920.jpg?resize&size=1280');
 
     .mask {
-      mask-position: 50% calc(50% + 290px);
+      mask-position: 50% calc(50% + 29rem);
     }
 
     h1 {
@@ -159,16 +159,15 @@
 
 @include device-mb {
   .searchTravelSection {
-    padding: 100px 0;
+    padding: 12.5rem 0;
     background-image: url('./assets/background1920.jpg?resize&size=768');
 
     .mask {
-      mask-position: 50% calc(50% + 180px);
+      mask-position: 50% calc(50% + 17.5rem);
     }
 
     h1 {
-      font-size: 32px;
-      line-height: 40px;
+      font-size: 2.6666667em;
       margin-bottom: 0;
 
       br {
@@ -177,9 +176,8 @@
     }
 
     h2 {
-      font-size: 14px;
-      line-height: 24px;
-      margin-bottom: 16px;
+      font-size: 1.1666667em;
+      margin-bottom: 2rem;
 
       br {
         display: block;

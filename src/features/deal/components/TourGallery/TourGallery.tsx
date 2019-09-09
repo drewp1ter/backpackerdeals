@@ -804,9 +804,7 @@ export class TourGallery extends React.Component<IProps, IState> {
       thumbnails.push(
         <li
           key={index}
-          role="button"
-          aria-pressed={currentIndex === index}
-          aria-label={`Go to Slide ${index + 1}`}
+          data-pressed={currentIndex === index}
           className={styles.imageGalleryThumbnail}
           data-idx={index}
           onClick={this._onThumbnailClick}
@@ -819,18 +817,14 @@ export class TourGallery extends React.Component<IProps, IState> {
     const renderNavButtons = (onClickLeft: () => void, onClickRight: () => void, disableLeft: boolean, disableRight: boolean) => (
       <span>
         <button
-          type="button"
           className={styles.imageGalleryLeftNav}
           disabled={disableLeft}
           onClick={onClickLeft}
-          aria-label="Previous Slide"
         />
         <button
-          type="button"
           className={styles.imageGalleryRightNav}
           disabled={disableRight}
           onClick={onClickRight}
-          aria-label="Next Slide"
         />
       </span>
     )
@@ -846,7 +840,7 @@ export class TourGallery extends React.Component<IProps, IState> {
         >
           <div className={styles.toSell}>
             <div className={styles.toSellIcon}>
-              <img src={images.cup} alt="" />
+              <img src={images.cup} alt="sell" />
             </div>
             <div>
               Likely
@@ -854,18 +848,14 @@ export class TourGallery extends React.Component<IProps, IState> {
             </div>
           </div>
           <button
-            type="button"
             className={styles.imageGalleryFullScreenButton}
             data-active={isFullscreen}
             onClick={this._toggleFullScreen}
-            aria-label="Open Fullscreen"
           />
           <button
-            type="button"
             className={styles.imageGalleryPlayButton}
             data-active={isPlaying}
             onClick={this._togglePlay}
-            aria-label="Play or Pause Slideshow"
           />
 
           {this._canNavigate() ? (
@@ -894,7 +884,6 @@ export class TourGallery extends React.Component<IProps, IState> {
       <div
         ref={this._imageGallery}
         className={classNames(styles.imageGallery, modalFullscreen && styles.fullscreenModal, className)}
-        aria-live="polite"
       >
         <div className={styles.imageGalleryContent} data-fullscreen={isFullscreen}>
           {slideWrapper()}
@@ -905,7 +894,6 @@ export class TourGallery extends React.Component<IProps, IState> {
                 ref={this._thumbnails}
                 className={styles.imageGalleryThumbnailsContainer}
                 style={thumbnailStyle}
-                aria-label="Thumbnail Navigation"
               >
                 {thumbnails}
               </ul>

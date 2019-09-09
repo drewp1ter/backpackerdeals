@@ -136,7 +136,7 @@ $ig-transparent: rgba(0, 0, 0, 0) !default;
   }
 
   &[disabled] {
-    cursor: disabled;
+    cursor: auto;
     opacity: 0.6;
     pointer-events: none;
   }
@@ -276,7 +276,7 @@ $ig-transparent: rgba(0, 0, 0, 0) !default;
     }
   }
 
-  &[aria-pressed="true"] .imageGalleryThumbnailInner {
+  &[data-pressed="true"] .imageGalleryThumbnailInner {
     border-color: $ig-orange;
   }
 }

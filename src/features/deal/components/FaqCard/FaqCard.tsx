@@ -28,7 +28,7 @@ export const FaqCard: React.FC<IProps> = ({ id, preview, title, text, className,
   const handleClickExpand = () => onClickExpand && onClickExpand(value)
 
   return (
-    <div className={classNames(styles.faqCard, className)} data-expanded={!!(isExpanded & value)}>
+    <li className={classNames(styles.faqCard, className)} data-expanded={!!(isExpanded & value)}>
       <Modal isOpen={isOpenModal} onClose={handleCloseModal} position="relative" className={styles.modal}>
         <>
           <h6>{title}</h6>
@@ -39,6 +39,6 @@ export const FaqCard: React.FC<IProps> = ({ id, preview, title, text, className,
       <p className={styles.text}>{text}</p>
       <div className={styles.buttonModal} onClick={handleOpenModal} />
       <div className={styles.buttonExpand} onClick={handleClickExpand} />
-    </div>
+    </li>
   )
 }

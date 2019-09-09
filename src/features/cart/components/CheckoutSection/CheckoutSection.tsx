@@ -1,5 +1,5 @@
-import React from 'react'
 import googleIcon from 'features/account/containers/Login/assets/google.png'
+import React from 'react'
 import { WithCard } from '../WithCard'
 import styles from './CheckoutSection.module.scss'
 

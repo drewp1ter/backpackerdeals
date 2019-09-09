@@ -1,1 +1,1 @@
-export { TourGallery } from './TourGallery'
+export * from './TourGallery'
