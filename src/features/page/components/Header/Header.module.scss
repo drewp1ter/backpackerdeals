@@ -11,7 +11,6 @@ header {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  margin-top: -5.4vw;
 
   .cookiesContainer {
     width: 100%;
@@ -32,23 +31,16 @@ header {
   }
 
   .profileIcon {
-    min-width: 50px;
-    min-height: 50px;
+    width: 3.125rem;
+    height: 3.125rem;
     box-sizing: border-box;
     display: grid;
     place-items: center;
     border-radius: 50%;
     border: 1px solid #fff;
     background-color: transparent;
-    width: 2.6vw;
-    height: 2.6vw;
     cursor: pointer;
     transition: .2s ease background-color, .2s ease border-color;
-
-    @include device((min: 1280px, max: 1919px)) {
-      min-width: 40px;
-      min-height: 40px;
-    }
 
     &:hover {
       background-color: #ff5a39;
@@ -65,12 +57,11 @@ header {
     width: 100%;
 
     & > div {
-      height: 5.4vw;
+      height: 6.5rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
       margin: 0 2rem;
-
     }
 
     .logoAndSearch {
@@ -78,21 +69,7 @@ header {
       align-items: center;
 
       .logo, .blackLogo {
-        width: 7.4vw;
-
-        @include device-tb {
-          width: 40%;
-          min-width: 98px;
-        }
-
-        @include device((max: 1024px)) {
-          width: 40%;
-          min-width: 98px;
-        }
-
-        @include device-mb {
-          width: 85%;
-        }
+        width: 8.875rem;
       }
 
       .blackLogo {
@@ -189,7 +166,7 @@ header {
       cursor: pointer;
       display: inline-block;
       margin: 0 0 1.25rem 0;
-      width: 7.42vw;
+      width: 8.875rem;
       font-size: .875em;
       color: #959595;
       transition: .2s ease color;
@@ -338,12 +315,17 @@ header {
 
 @include device-tb {
   header {
-    margin-top: -72px;
     .tools {
       & > div {
-        height: 72px;
+        height: 7.2rem;
         display: grid;
         grid-template-columns: 1fr 2fr 1fr;
+      }
+
+      .logoAndSearch {
+        .logo, .blackLogo {
+          width: 9.8rem;
+        }
       }
 
       .tours {
@@ -368,9 +350,15 @@ header {
 }
 
 
-@media screen and (min-width: 768px) and (max-width: 810px) {
+@include device-ipad {
   header {
     .tools {
+      .logoAndSearch {
+        .logo, .blackLogo {
+          width: 11.5rem;
+        }
+      }
+
       .tours {
         justify-content: space-between;
 
@@ -385,11 +373,10 @@ header {
 @include device-mb {
   header {
     background-color: #ffffff;
-    margin-top: -56px;
 
     .tools {
       & > div {
-        height: 56px;
+        height: 7rem;
         padding: 0;
         margin: 0.62rem;
       }
@@ -400,6 +387,7 @@ header {
         }
 
         .blackLogo {
+          width: 14rem;
           display: block;
         }
       }

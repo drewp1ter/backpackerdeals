@@ -1,19 +1,23 @@
-import * as React from 'react'
+import classNames from 'classnames'
+import React from 'react'
 
 import { HeaderWave } from 'components'
 import { AdvancedSearchTravel } from 'components'
 import { ISearchActions, ISearchState } from 'features/search'
 import { BasicSearchTravel } from '..'
-
 import styles from './SearchTravelSection.module.scss'
 
-export const SearchTravelSection: React.FC<Partial<ISearchActions> & Partial<ISearchState>> = ({ openSearch, searchType }) => {
+export interface IProps {
+  readonly className?: string
+}
+
+export const SearchTravelSection: React.FC<Partial<ISearchActions> & Partial<ISearchState> & IProps> = ({ openSearch, searchType, className }) => {
   const [advancedSearch, toggleSearch] = React.useState<boolean>(false)
 
   const handleToggleSeach = () => toggleSearch(!advancedSearch)
 
   return (
-    <HeaderWave className={styles.searchTravelSection} maskClassName={styles.mask}>
+    <HeaderWave className={classNames(styles.searchTravelSection, className)} maskClassName={styles.mask}>
       <>
         <h1>
           Search Less,

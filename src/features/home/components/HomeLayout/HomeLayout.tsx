@@ -16,7 +16,7 @@ import styles from './HomeLayout.module.scss'
 export const HomeLayout: React.FC = () => {
   return (
     <>
-      <SearchTravelSection />
+      <SearchTravelSection className={styles.searchTravelSection} />
       <BookWithUsSection className={styles.section} />
       <TopDestinationsSection className={styles.section} />
       <ActivitiesSection className={styles.section} />

@@ -1,21 +1,39 @@
 @import "src/scss/device";
 
+.searchTravelSection {
+  margin-top: -6.5rem;
+}
+
 .bookWithUsSection {
   margin: 0 auto;
 }
 
 .section {
   margin: 0 12.5rem 6.12rem 12.5rem;
+}
 
-  @include device-tb {
+@include device-tb {
+  .section {
     margin: 0 11.6rem 6.3rem 11.6rem;
   }
 
-  @include device-ipad {
+  .searchTravelSection {
+    margin-top: -7.2rem;
+  }
+}
+
+@include device-ipad {
+  .section {
     margin: 0 4.5rem 8rem 4.5rem;
   }
+}
 
-  @include device-mb {
+@include device-mb {
+  .section {
     margin: 0 .6rem 6.12rem .6rem;
+  }
+
+  .searchTravelSection {
+    margin-top: -7rem;
   }
 }
