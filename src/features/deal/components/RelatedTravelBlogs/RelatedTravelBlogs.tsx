@@ -14,9 +14,9 @@ export const RelatedTravelBlogs: React.FC<IProps> = ({ className }) => {
   const renderCards = () => cards.map((card, idx) => <TravelCard key={idx} {...card} />)
 
   return (
-    <div className={classNames(styles.relatedTravelBlogs, className)}>
+    <section className={classNames(styles.relatedTravelBlogs, className)}>
       <h3>Related Travel Blogs</h3>
       <ul>{renderCards()}</ul>
-    </div>
+    </section>
   )
 }

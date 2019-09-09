@@ -4,7 +4,6 @@
   ul {
     display: flex;
     justify-content: space-between;
-    margin: 0 auto;
     padding: 0 2rem;
 
     @include device((min: 1280px, max: 1919px)) {
@@ -26,34 +25,20 @@
 
 @include device-mb {
   .bookWithUsSection {
-    margin: 15px 0 55px 0;
-
-    ul {
-      padding: 0;
-      max-width: 936px;
-
-      p {
-        font-size: 14px;
-      }
-    }
-  }
-}
-
-@include device((max: 650px)) {
-  .bookWithUsSection {
     ul {
       display: grid;
-      grid-template-columns: 90px 90px 90px;
-      grid-template-rows: 130px 90px;
-      grid-column-gap: 15px;
-      grid-row-gap: 15px;
+      grid-template-columns: repeat(3, 11rem);
+      grid-template-rows: 12rem;
+      grid-column-gap: 2rem;
+      grid-row-gap: 2rem;
+      padding: 0 1rem;
 
       li {
-        width: 90px;
+        width: 11rem;
       }
 
       p {
-        font-size: 12px;
+        font-size: 1em;
       }
     }
   }

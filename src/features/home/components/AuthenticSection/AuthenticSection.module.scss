@@ -17,18 +17,6 @@
   display: flex;
 }
 
-// @include device-tb {
-//   .authenticSection {
-//     max-width: 1044px;
-//   }
-// }
-
-// @media screen and (max-width: 1024px) {
-//   .authenticSection {
-//     max-width: 952px;
-//   }
-// }
-
 @include device-mb {
   .authenticSection {
     max-width: unset;

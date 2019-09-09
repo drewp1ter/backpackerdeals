@@ -1,11 +1,15 @@
-import * as React from 'react'
+import React from 'react'
 
 import { CardsWrapper } from 'components'
 import { circleScroll } from 'utils'
 import { ActivityCard } from '..'
 import styles from './ActivitiesSection.module.scss'
 
-export const ActivitiesSection: React.FC = () => {
+export interface IProps {
+  readonly className?: string
+}
+
+export const ActivitiesSection: React.FC<IProps> = ({ className }) => {
   let w320 = false
 
   const setStartPos = (target: any) => {
@@ -44,7 +48,7 @@ export const ActivitiesSection: React.FC = () => {
   )
 
   return (
-    <CardsWrapper title="Activities, Tours & Things To Do" linkTitle="Show more" linkURL="/search">
+    <CardsWrapper className={className} title="Activities, Tours & Things To Do" linkTitle="Show more" linkURL="/search">
       <div ref={setStartPos} className={styles.activitiesContainer} onScroll={handleScroll}>
         {renderPart2(true)}
         {renderPart1()}

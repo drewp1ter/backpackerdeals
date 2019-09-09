@@ -9,7 +9,7 @@ export interface IProps {
 }
 
 export const TourDescription: React.FC<IProps> = ({ className }) => (
-  <div className={classNames(styles.tourDescription, className)}>
+  <section className={classNames(styles.tourDescription, className)}>
     <h1>Alice Springs to Alice Springs Uluru Tour - 3 Days 2 Nights</h1>
 
     <div className={styles.location}>
@@ -32,5 +32,5 @@ export const TourDescription: React.FC<IProps> = ({ className }) => (
     </div>
 
     <p>Explore the Red Centre of Australia, a region famous for its cultural connection, unique wildlife and stunning landscapes!</p>
-  </div>
+  </section>
 )

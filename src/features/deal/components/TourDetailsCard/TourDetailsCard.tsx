@@ -15,7 +15,7 @@ export const TourDetailsCard: React.FC<IProps> = ({ className, title, items, chi
   const [isOpen, setIsOpen] = useState<boolean>(true)
   const handleToggle = () => setIsOpen(!isOpen)
   return (
-    <div className={classNames(styles.tourDetails, className)} data-open={isOpen}>
+    <section className={classNames(styles.tourDetails, className)} data-open={isOpen}>
       <div ref={navAnchor} className={styles.anchor} />
       <div onClick={handleToggle} className={styles.header}>
         <h3>{title}</h3>
@@ -31,6 +31,6 @@ export const TourDetailsCard: React.FC<IProps> = ({ className, title, items, chi
         </ul>
       )}
       {children}
-    </div>
+    </section>
   )
 }

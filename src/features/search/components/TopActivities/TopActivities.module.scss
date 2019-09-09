@@ -3,16 +3,6 @@
 
 .topActivities {
   position: relative;
-  z-index: 5;
-  margin: 0 12.5rem;
-
-  @include device-tb {
-    margin: 0 2.57rem;
-  }
-
-  @include device-mb {
-    margin: 0;
-  }
 
   .cards {
     display: flex;

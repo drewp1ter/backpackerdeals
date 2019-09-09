@@ -1,11 +1,15 @@
-import * as React from 'react'
+import React from 'react'
 
 import { CardsWrapper } from 'components'
 import { TravelStoryCard } from '..'
 import styles from './TravelStoriesSection.module.scss'
 
-export const TravelStoriesSection: React.FC = () => (
-  <CardsWrapper title="Travel stories" linkTitle="Read more">
+export interface IProps {
+  readonly className?: string
+}
+
+export const TravelStoriesSection: React.FC<IProps> = ({ className }) => (
+  <CardsWrapper className={className} title="Travel stories" linkTitle="Read more">
     <ul className={styles.travelStories}>
       <TravelStoryCard
         title="HOW TO TRAVEL BY RV ON A BACKPACKER BUDGET"

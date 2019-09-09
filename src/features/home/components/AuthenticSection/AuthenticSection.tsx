@@ -1,12 +1,16 @@
-import * as React from 'react'
+import React from 'react'
 
 import classNames from 'classnames'
 import { CardsWrapper } from 'components'
 import { AuthenticCard } from '..'
 import styles from './AuthenticSection.module.scss'
 
-export const AuthenticSection: React.FC = () => (
-  <CardsWrapper title="Authentic reviews from our travellers" linkTitle="Read all reviews">
+export interface IProps {
+  readonly className?: string
+}
+
+export const AuthenticSection: React.FC<IProps> = ({ className }) => (
+  <CardsWrapper className={className} title="Authentic reviews from our travellers" linkTitle="Read all reviews">
     <ul className={classNames(styles.authenticSection, styles.blah)}>
       <AuthenticCard
         title="Easy and convenient booking"

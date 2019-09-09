@@ -13,7 +13,7 @@ export interface IProps {
 
 export const DealsSection: React.FC<IProps> = ({ title, data, className }) => {
   return (
-    <div className={classNames(styles.dealsSection, className)}>
+    <section className={classNames(styles.dealsSection, className)}>
       <h3>{title}</h3>
 
       <ul className={styles.dealCards}>
@@ -25,6 +25,6 @@ export const DealsSection: React.FC<IProps> = ({ title, data, className }) => {
         <i className="fas fa-chevron-left" />
         <i className="fas fa-chevron-right" />
       </div>
-    </div>
+    </section>
   )
 }

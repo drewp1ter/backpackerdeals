@@ -1,5 +1,6 @@
-import * as React from 'react'
+import React from 'react'
 
+import { CardsWrapper } from 'components'
 import {
   ActivitiesSection,
   AuthenticSection,
@@ -9,24 +10,22 @@ import {
   TopDestinationsSection,
   TravelStoriesSection,
 } from '..'
-
-import { CardsWrapper } from 'components'
-
 import { SearchTravelSection } from '../../containers'
+import styles from './HomeLayout.module.scss'
 
 export const HomeLayout: React.FC = () => {
   return (
     <>
       <SearchTravelSection />
-      <BookWithUsSection />
-      <TopDestinationsSection />
-      <ActivitiesSection />
-      <CardsWrapper title="Last Minute Deals" linkTitle="View all minute deals">
+      <BookWithUsSection className={styles.section} />
+      <TopDestinationsSection className={styles.section} />
+      <ActivitiesSection className={styles.section} />
+      <CardsWrapper className={styles.section} title="Last Minute Deals" linkTitle="View all minute deals">
         <LastMinuteDeal />
       </CardsWrapper>
-      <TravelStoriesSection />
-      <AuthenticSection />
-      <PromoutingSection />
+      <TravelStoriesSection className={styles.section} />
+      <AuthenticSection className={styles.section} />
+      <PromoutingSection className={styles.section} />
     </>
   )
 }

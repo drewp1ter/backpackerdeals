@@ -42,7 +42,7 @@ export const WhatsToExpect: React.FC<IProps> = ({ className, navAnchor }) => {
   }
 
   return (
-    <div className={classNames(styles.whatsToExpect, className)} data-open={isOpen}>
+    <section className={classNames(styles.whatsToExpect, className)} data-open={isOpen}>
       <div className={styles.anchor} ref={navAnchor} />
       <div onClick={handleToggle} className={styles.header}>
         <h3>What to expect</h3>
@@ -107,6 +107,6 @@ export const WhatsToExpect: React.FC<IProps> = ({ className, navAnchor }) => {
           className={styles.expectDay}
         />
       </div>
-    </div>
+    </section>
   )
 }

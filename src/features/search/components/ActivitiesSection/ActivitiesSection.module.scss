@@ -1,7 +1,6 @@
 @import 'src/scss/device';
 
 .activitiesSection {
-  margin-top: 5.4vw;
   position: relative;
   background-image: url('./assets/background1920.jpg');
   background-repeat: no-repeat;
@@ -9,53 +8,20 @@
   background-position: center 0;
   background-attachment: scroll;
   box-sizing: border-box;
-  height: 37.5vw;
-  min-height: 214px;
-
-  @include device-tb {
-    margin-top: 72px;
-  }
-
-  @include device-mb {
-    margin-top: 56px;
-    background-size: cover;
-  }
 
   .breadcrumbs {
     position: absolute;
     bottom: 3%;
     margin: 0 12.5rem;
-
-    @include device-tb {
-      margin: 0 2.57rem;
-    }
-
-    @include device((max: 1024px)) {
-      bottom: 0;
-    }
-
-    @include device-mb {
-      margin: 0 1.5rem;
-      bottom: -5%;
-    }
   }
 
   .card {
-    max-width: 26vw;
-    margin-top: 4.68rem;
-
-    @include device-tb {
-      max-width: 24.41vw;
-      margin-top: 1.71rem;
-    }
-
-    @include device-ipad {
-      display: none;
-    }
+    width: 32rem;
+    margin-top: 4.5rem;
   }
 
   .mask {
-    bottom: -13vw;
+    bottom: -15.625rem;
   }
 
   &:after {
@@ -74,9 +40,47 @@
     margin: 0 12.5rem;
     display: flex;
     justify-content: flex-end;
+  }
+}
 
-    @include device-tb {
+@include device-tb {
+  .activitiesSection {
+    .breadcrumbs {
       margin: 0 2.57rem;
+    }
+
+    .card {
+      max-width: 35rem;
+      margin-top: 1.71rem;
+    }
+
+    .headerCardWrapper {
+      margin: 0 2.57rem;
+    }
+  }
+}
+
+@include device-ipad {
+  .activitiesSection {
+    .breadcrumbs {
+      bottom: 0;
+    }
+
+    .card {
+      display: none;
+    }
+  }
+}
+
+@include device-mb {
+  .activitiesSection {
+    .breadcrumbs {
+      margin: 0 1.5rem;
+      bottom: 1rem;
+    }
+
+    .mask {
+      bottom: -3rem;
     }
   }
 }

@@ -1,12 +1,16 @@
+import classNames from 'classnames'
 import React from 'react'
 
 import { Breadcrumbs, HeaderWave } from 'components'
 import { HeaderCard } from '..'
-
 import styles from './ActivitiesSection.module.scss'
 
-export const ActivitiesSection: React.FC = () => (
-  <HeaderWave className={styles.activitiesSection} maskClassName={styles.mask}>
+export interface IProps {
+  readonly className?: string
+}
+
+export const ActivitiesSection: React.FC<IProps> = ({ className }) => (
+  <HeaderWave className={classNames(styles.activitiesSection, className)} maskClassName={styles.mask}>
     <div className={styles.headerCardWrapper}>
       <HeaderCard
         title="Australia"

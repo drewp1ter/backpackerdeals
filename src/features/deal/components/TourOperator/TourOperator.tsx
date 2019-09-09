@@ -10,7 +10,7 @@ export interface IProps {
 
 export const TourOperator: React.FC<IProps> = ({ className }) => {
   return (
-    <div className={classNames(styles.tourOperator, className)}>
+    <section className={classNames(styles.tourOperator, className)}>
       <h3>Tour Operator</h3>
       <div className={styles.content}>
         <div className={styles.iframeWrapper}>
@@ -25,6 +25,6 @@ export const TourOperator: React.FC<IProps> = ({ className }) => {
           <p>704 Tomoana RD, Mahora, Hastings 41 120, Australia</p>
         </div>
       </div>
-    </div>
+    </section>
   )
 }

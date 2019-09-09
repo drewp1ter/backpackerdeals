@@ -1,57 +1,16 @@
-import * as React from 'react'
-
-import styles from './TopActivities.module.scss'
+import classNames from 'classnames'
+import React from 'react'
 
 import { DealCard } from 'components'
 import { circleScroll } from 'utils'
+import data from './data'
+import styles from './TopActivities.module.scss'
 
-const data = [
-  {
-    img: require('./assets/picture1.png?resize&sizes[]=272&sizes[]=312&sizes[]=356&sizes[]=496'),
-    tourName: 'Kakadu 4WD Adventure',
-    price: 900,
-    location: 'Australia, Sydney',
-    sale: '30% OFF',
-    saleType: 'topDeal' as any,
-    value: 1200,
-    duration: '2 days, 1 night',
-    rating: 4.5,
-    sizes: "(max-width: 900px) 272px, (max-width: 1024px) 312px, (max-width: 1280px) 356px, 496px"
-  },
-  {
-    img: require('./assets/picture2.png?resize&sizes[]=272&sizes[]=312&sizes[]=356&sizes[]=496'),
-    tourName: 'Kakadu 4WD Adventure',
-    price: 900,
-    location: 'Australia, Sydney',
-    sale: 'AUD$300',
-    saleType: undefined,
-    value: 1200,
-    duration: '2 days, 1 night',
-    rating: 4.5,
-    exposeTime: {
-      days: '02',
-      hours: '10',
-      minutes: '51',
-    },
-    sizes: "(max-width: 900px) 272px, (max-width: 1024px) 312px, (max-width: 1280px) 356px, 496px"
-  },
-  {
-    img: require('./assets/picture3.png?resize&sizes[]=272&sizes[]=312&sizes[]=356&sizes[]=496'),
-    tourName: 'Kakadu 4WD Adventure',
-    price: 900,
-    location: 'Australia, Sydney',
-    sale: '30% OFF',
-    saleType: 'topDeal' as any,
-    sellOut: true,
-    value: 1200,
-    duration: '2 days, 1 night',
-    rating: 4.5,
-    sizes: "(max-width: 900px) 272px, (max-width: 1024px) 312px, (max-width: 1280px) 356px, 496px"
-  },
-]
+export interface IProps {
+  readonly className?: string
+}
 
-export const TopActivities: React.FC = () => {
-
+export const TopActivities: React.FC<IProps> = ({ className }) => {
   const setStartPos = (target: any) => {
     if (!target) {
       return
@@ -63,7 +22,7 @@ export const TopActivities: React.FC = () => {
     circleScroll({ target, maxScrollLeft: 95, maxScrollRight: 1795, offsetLeft: 935, offsetRight: 847 })
 
   return (
-    <div className={styles.topActivities}>
+    <section className={classNames(styles.topActivities, className)}>
       <h3>Top 3 Activities in Australia</h3>
 
       <ul ref={setStartPos} className={styles.cards} onScroll={handleScroll}>
@@ -75,6 +34,6 @@ export const TopActivities: React.FC = () => {
         ))}
         <DealCard view="reversed" {...data[0]} className={styles.carousel} likeable="wide" />
       </ul>
-    </div>
+    </section>
   )
 }

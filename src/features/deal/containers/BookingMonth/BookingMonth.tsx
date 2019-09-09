@@ -232,7 +232,7 @@ export class BookingMonth extends CalendarBase<AllProps, IState> {
     const { navAnchor, className } = this.props
 
     return (
-      <div className={classNames(styles.booking, className)}>
+      <section className={classNames(styles.booking, className)}>
         <div className={styles.anchor} ref={navAnchor} />
         <h3>Booking calendar</h3>
         <Select
@@ -281,7 +281,7 @@ export class BookingMonth extends CalendarBase<AllProps, IState> {
             <BookingDetails onClose={this.handleCloseBookingDetails} />
           </li>
         </ul>
-      </div>
+      </section>
     )
   }
 }

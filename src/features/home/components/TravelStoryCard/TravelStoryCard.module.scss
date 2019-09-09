@@ -74,19 +74,19 @@
 @include device-mb {
   .travelStoryCard {
     .text {
-      left: 16px;
-      bottom: 16px;
+      left: 2rem;
+      bottom: 2rem;
 
       h4 {
-        font-size: 20px;
+        font-size: 1.6666667em;
       }
 
       span {
-        font-size: 14px;
+        font-size: 1.1666667em;
       }
 
       h4, span {
-        max-width: 250px;
+        max-width: 31.25rem;
       }
     }
   }

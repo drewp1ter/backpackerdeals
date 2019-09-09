@@ -1,0 +1,21 @@
+@import "src/scss/device";
+
+.bookWithUsSection {
+  margin: 0 auto;
+}
+
+.section {
+  margin: 0 12.5rem 6.12rem 12.5rem;
+
+  @include device-tb {
+    margin: 0 11.6rem 6.3rem 11.6rem;
+  }
+
+  @include device-ipad {
+    margin: 0 4.5rem 8rem 4.5rem;
+  }
+
+  @include device-mb {
+    margin: 0 .6rem 6.12rem .6rem;
+  }
+}

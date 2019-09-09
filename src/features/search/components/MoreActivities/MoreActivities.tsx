@@ -1,3 +1,4 @@
+import classNames from 'classnames'
 import React, { useState } from 'react'
 
 import { DealCard, Pagenation } from 'components'
@@ -12,13 +13,17 @@ enum ViewType {
   list = 'horizontal',
 }
 
+export interface IProps {
+  readonly className?: string
+}
+
 export interface IState {
   readonly page: number
   readonly view: ViewType
   readonly sortDec: boolean
 }
 
-export const MoreActivities: React.FC = () => {
+export const MoreActivities: React.FC<IProps> = ({ className }) => {
   const initialState: IState = {
     page: 1,
     sortDec: true,
@@ -41,7 +46,7 @@ export const MoreActivities: React.FC = () => {
     ))
 
   return (
-    <div className={styles.moreActivities}>
+    <section className={classNames(styles.moreActivities, className)}>
       <h3>More Activities</h3>
       <FiltersMenu />
       <div className={styles.content}>
@@ -65,6 +70,6 @@ export const MoreActivities: React.FC = () => {
           <Pagenation className={styles.pagenation} value={page} maxPages={10} onChange={handleChangePage} />
         </div>
       </div>
-    </div>
+    </section>
   )
 }

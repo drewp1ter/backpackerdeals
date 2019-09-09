@@ -1,3 +1,5 @@
+@import "src/scss/device";
+
 .headerSelectMenu {
   position: relative;
   margin-right: 1.56rem;
@@ -10,7 +12,7 @@
     align-items: center;
     // width: 100px;
 
-    span {
+    .content {
       white-space: nowrap;
       margin: 0;
       font-size: 1.125em;
@@ -88,19 +90,19 @@
   }
 }
 
-@media screen and (max-width: 1280px) and (min-width: 768px) {
+@include device-tb {
   .headerSelectMenu {
     .menu {
-      padding: 20px;
+      padding: 2rem;
 
       &[data-pos="left"] {
-        left: -132px;
+        left: -13.2rem;
       }
     }
   }
 }
 
-@media screen and (min-width: 768px) and (max-width: 810px) {
+@include device((min: 768px, max: 810px)) {
   .headerSelectMenu {
     margin-right: 0;
   }

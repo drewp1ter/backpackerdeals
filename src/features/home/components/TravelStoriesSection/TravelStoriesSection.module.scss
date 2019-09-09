@@ -23,7 +23,7 @@
   }
 }
 
-@include device((max: 768px)) {
+@include device-mb {
   .travelStories {
     grid-template-columns: 1fr 1fr;
     margin: 0 auto;
@@ -48,7 +48,7 @@
   }
 }
 
-@media screen and (max-width: 500px) {
+@include device((max: 500px)) {
   .travelStories {
     grid-template-columns: 1fr;
     margin: 0 auto;

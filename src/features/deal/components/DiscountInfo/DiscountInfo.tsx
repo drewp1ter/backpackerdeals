@@ -11,7 +11,7 @@ export interface IProps {
 
 export const DiscountInfo: React.FC<IProps> = ({ className }) => {
   return (
-    <div className={classNames(styles.discountInfo, className)}>
+    <section className={classNames(styles.discountInfo, className)}>
       <h4>Alice Springs to Alice Springs Uluru Tour - 3 Days 2 Nights</h4>
       <h4>Group Pricing</h4>
       <ul>
@@ -41,6 +41,6 @@ export const DiscountInfo: React.FC<IProps> = ({ className }) => {
         </li>
       </ul>
       <Button className={styles.button} size="md">Check Availability</Button>
-    </div>
+    </section>
   )
 }

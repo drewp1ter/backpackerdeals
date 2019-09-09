@@ -43,7 +43,7 @@ export class FaqSection extends React.Component<IProps, IState> {
     const { className } = this.props
     const { isExpanded } = this.state
     return (
-      <div className={classNames(styles.faqSection, className)}>
+      <section className={classNames(styles.faqSection, className)}>
         <div className={styles.head}>
           <h3>FAQ</h3>
           <p data-expanded={!!isExpanded} onClick={this.handleToggleExpandAll}>
@@ -52,7 +52,7 @@ export class FaqSection extends React.Component<IProps, IState> {
           </p>
         </div>
         <ul>{this.renderCards()}</ul>
-      </div>
+      </section>
     )
   }
 }

@@ -209,7 +209,7 @@ export class BookingWeek extends React.Component<IProps, IState> {
     const bookingDetailsRow = isMobileView ? Math.ceil(selectedEvent / 3) : Math.ceil(selectedEvent / 7)
 
     return (
-      <div className={classNames(styles.booking, className)}>
+      <section className={classNames(styles.booking, className)}>
         <h3>Booking calendar</h3>
         <Select
           open={isOpenSmallCalendar}
@@ -255,7 +255,7 @@ export class BookingWeek extends React.Component<IProps, IState> {
           </li>
           {bookingDetailsRow !== 0 && <li className={styles.dummy} data-row={bookingDetailsRow} />}
         </ul>
-      </div>
+      </section>
     )
   }
 }

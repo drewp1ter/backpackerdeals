@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React from 'react'
 
 import { CardsWrapper } from 'components'
 import LazyLoad from 'react-lazyload'
@@ -6,7 +6,11 @@ import { circleScroll } from 'utils'
 import * as images from './assets'
 import styles from './PromoutingSection.module.scss'
 
-export const PromoutingSection: React.FC = () => {
+export interface IProps {
+  readonly className?: string
+}
+
+export const PromoutingSection: React.FC<IProps> = ({ className }) => {
   const setStartPos = (target: any) => {
     if (!target) {
       return
@@ -33,7 +37,7 @@ export const PromoutingSection: React.FC = () => {
     Object.keys(images.w320).map((img: string) => renderImg(img as keyof typeof images.w320, forCarousel, img))
 
   return (
-    <CardsWrapper title="Promoting the best of" linkTitle="Learn more">
+    <CardsWrapper className={className} title="Promoting the best of" linkTitle="Learn more">
       <div ref={setStartPos} className={styles.promoutingSection} onScroll={handleScroll}>
         {renederImages()}
         {renederImages(true)}

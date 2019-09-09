@@ -12,11 +12,21 @@
   }
 }
 
+@include device-tb {
+  .icon {
+    &[data-size="xl"] {
+      height: 5.6rem;
+      width: 5.6rem;
+    }
+  }
+}
+
+
 @include device-ipad {
   .icon {
     &[data-size="xl"] {
-      height: 6.5rem;
-      width: 6.5rem;
+      height: 7rem;
+      width: 7rem;
     }
 
     &[data-size="md"] {
@@ -28,6 +38,11 @@
 
 @include device-mb {
   .icon {
+    &[data-size="xl"] {
+      height: 7rem;
+      width: 7rem;
+    }
+
     &[data-size="md"] {
       height: 3.5rem;
       width: 3.5rem;

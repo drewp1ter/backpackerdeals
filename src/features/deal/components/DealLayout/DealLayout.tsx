@@ -36,13 +36,13 @@ export const DealLayout: React.FC = () => {
 
   return (
     <>
-      <div className={styles.headerSection}>
+      <section className={styles.headerSection}>
         <Navigation refs={refs} />
         <Breadcrumbs className={styles.breadcrumbs} titles={['Deals']} />
         <TourDescription className={styles.tourDescription} />
-      </div>
+      </section>
 
-      <div className={styles.section}>
+      <section className={styles.section}>
         <TourGallery className={styles.tourGallery} />
 
         <div className={styles.iconsOrderDetails}>
@@ -141,11 +141,11 @@ export const DealLayout: React.FC = () => {
         <TourOperator className={styles.tourOperator} />
         <ReviewsSection navAnchor={refs.reviews} className={styles.reviews} title="Reviews" rating={4} />
         <RelatedTravelBlogs className={styles.relatedTravelBlogs} />
-      </div>
-      <div className={styles.section}>
+      </section>
+      <section className={styles.section}>
         <DealsSection className={styles.dealsSection} title="Recommended Deals" data={recommendedDeals} />
         <DealsSection className={styles.dealsSection} title="Recently viewed deals" data={recommendedDeals} />
-      </div>
+      </section>
       <BookNow />
     </>
   )

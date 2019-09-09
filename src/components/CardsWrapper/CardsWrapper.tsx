@@ -13,9 +13,8 @@ export interface IProps {
 }
 
 export const CardsWrapper: React.FC<IProps> = ({ title, linkTitle, children, className, linkURL }) => {
-  const mainClass = classNames(styles.cardsWrapper, className)
   return (
-    <section className={mainClass}>
+    <section className={classNames(styles.cardsWrapper, className)}>
       <h3>{title}</h3>
       <p>
         <Link href={linkURL || '#'}>

@@ -2,12 +2,19 @@
 
 .instagramCards {
   position: relative;
-  margin-bottom: -9.3rem !important;
+  margin-bottom:  !important;
   z-index: 1;
-}
+  margin: 0 12.5rem -9.3rem 12.5rem;
 
-@include device-mb {
-  .instagramCards {
-    margin-bottom: -7rem !important;
+  @include device((max: 1024px)) {
+    margin: 0 3rem -9.3rem 3rem;
+  }
+
+  @include device((min: 1280px, max: 1919px)) {
+    margin: 0 9.65rem -9.3rem 9.65rem;
+  }
+
+  @include device-mb {
+    margin: 0 .6rem -7rem .6rem;
   }
 }

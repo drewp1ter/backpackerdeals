@@ -1,6 +1,5 @@
 export { ActivitiesSection } from './ActivitiesSection'
 export { SearchLayout } from './SearchLayout'
-export { DescriptionSection } from './DescriptionSection'
 export { FiltersDropdown } from './FiltersDropdown'
 export { HeaderCard } from './HeaderCard'
 export { MoreActivities } from './MoreActivities'
