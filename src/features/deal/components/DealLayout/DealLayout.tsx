@@ -38,13 +38,13 @@ export const DealLayout: React.FC = () => {
 
   return (
     <>
-      <section className={styles.headerSection}>
+      <div className={styles.headerSection}>
         <Navigation refs={refs} className={styles.navigation} />
         <Breadcrumbs className={styles.breadcrumbs} titles={['Deals']} />
         <TourDescription className={styles.tourDescription} />
-      </section>
+      </div>
 
-      <section className={styles.section}>
+      <div className={styles.section}>
         <TourGallery className={styles.tourGallery} />
 
         <div className={styles.iconsOrderDetails}>
@@ -143,11 +143,11 @@ export const DealLayout: React.FC = () => {
         <TourOperator className={styles.tourOperator} />
         <ReviewsSection navAnchor={refs.reviews} className={styles.reviews} title="Reviews" rating={4} />
         <RelatedTravelBlogs className={styles.relatedTravelBlogs} />
-      </section>
-      <section className={styles.section}>
+      </div>
+      <div className={styles.section}>
         <DealsSection className={styles.dealsSection} title="Recommended Deals" data={recommendedDeals} />
         <DealsSection className={styles.dealsSection} title="Recently viewed deals" data={recommendedDeals} />
-      </section>
+      </div>
       <BookNow onClickMenu={handleToggleMobileNav} className={isOpenNavMenu && styles.hideBookNow} />
       <MobileMenuWrapper open={isOpenNavMenu} className={styles.moduleNavMenu}>
         <Navigation refs={refs} onClose={handleToggleMobileNav} />
