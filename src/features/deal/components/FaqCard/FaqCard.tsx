@@ -9,7 +9,7 @@ export interface IProps {
   readonly title: string
   readonly preview: string
   readonly className?: string
-  readonly id: number
+  readonly ordinalNumber: number
   readonly isExpanded?: number
   readonly onClickExpand?: (value: number) => void
 }
@@ -19,8 +19,8 @@ export interface IState {
   readonly isExpanded: boolean
 }
 
-export const FaqCard: React.FC<IProps> = ({ id, preview, title, text, className, isExpanded = 0, onClickExpand }) => {
-  const value = Math.pow(2, id)
+export const FaqCard: React.FC<IProps> = ({ ordinalNumber, preview, title, text, className, isExpanded = 0, onClickExpand }) => {
+  const value = Math.pow(2, ordinalNumber)
   const [isOpenModal, setIsOpenModal] = useState<boolean>(false)
 
   const handleOpenModal = () => setIsOpenModal(true)

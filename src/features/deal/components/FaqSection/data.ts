@@ -1,6 +1,6 @@
-import { IProps as IFaqCardProps } from '../FaqCard'
+// import { IProps as IFaqCardProps } from '../FaqCard'
 
-const cards: IFaqCardProps[] = [
+const cards: any = [
   {
     preview: 'What clothes do I need and what else should I bring?',
     text:

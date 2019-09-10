@@ -22,7 +22,7 @@ export class FaqSection extends React.Component<IProps, IState> {
   handleToggleExpandAll = () => this.setState(prev => ({ isExpanded: prev.isExpanded ? 0 : -1 }))
   renderCards = () => {
     const { isExpanded } = this.state
-    return data.map((card, idx) => <FaqCard isExpanded={isExpanded} onClickExpand={this.handleClickExpand} id={idx} key={idx} {...card} />)
+    return data.map((card, idx) => <FaqCard isExpanded={isExpanded} onClickExpand={this.handleClickExpand} ordinalNumber={idx} key={idx} {...card} />)
   }
 
   handleResize = () => {
