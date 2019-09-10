@@ -1,7 +1,7 @@
 import Link from 'next/link'
-import React, { useRef } from 'react'
+import React, { useRef, useState } from 'react'
 
-import { Breadcrumbs } from 'components'
+import { Breadcrumbs, MobileMenuWrapper } from 'components'
 import { ReviewsSection } from 'features/reviews/components'
 import {
   BookingWeek,
@@ -16,13 +16,15 @@ import {
   TourIcons,
   TourOperator,
   TourOptions,
-  WhatsToExpect
+  WhatsToExpect,
 } from '..'
 import { BookingMonth, OrderDetails } from '../../containers'
 import { recommendedDeals } from './data'
 import styles from './DealLayout.module.scss'
 
 export const DealLayout: React.FC = () => {
+  const [isOpenNavMenu, setIsOpenNavMenu] = useState<boolean>(false)
+  const handleToggleMobileNav = () => setIsOpenNavMenu(!isOpenNavMenu)
   const refs = {
     included: useRef<HTMLDivElement>(null),
     excluded: useRef<HTMLDivElement>(null),
@@ -37,7 +39,7 @@ export const DealLayout: React.FC = () => {
   return (
     <>
       <section className={styles.headerSection}>
-        <Navigation refs={refs} />
+        <Navigation refs={refs} className={styles.navigation} />
         <Breadcrumbs className={styles.breadcrumbs} titles={['Deals']} />
         <TourDescription className={styles.tourDescription} />
       </section>
@@ -146,7 +148,10 @@ export const DealLayout: React.FC = () => {
         <DealsSection className={styles.dealsSection} title="Recommended Deals" data={recommendedDeals} />
         <DealsSection className={styles.dealsSection} title="Recently viewed deals" data={recommendedDeals} />
       </section>
-      <BookNow />
+      <BookNow onClickMenu={handleToggleMobileNav} className={isOpenNavMenu && styles.hideBookNow} />
+      <MobileMenuWrapper open={isOpenNavMenu} className={styles.moduleNavMenu}>
+        <Navigation refs={refs} onClose={handleToggleMobileNav} />
+      </MobileMenuWrapper>
     </>
   )
 }

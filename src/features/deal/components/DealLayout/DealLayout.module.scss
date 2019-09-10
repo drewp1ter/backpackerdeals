@@ -84,7 +84,20 @@
   }
 }
 
+.moduleNavMenu {
+  transition: .2s ease right;
+  display: none;
+}
+
+.hideBookNow {
+  display: none !important;
+}
+
 @include device-ipad {
+  .navigation {
+    display: none;
+  }
+
   .headerSection,
   .section {
     width: 119rem;
@@ -171,5 +184,9 @@
 
   .relatedTravelBlogs {
     display: none;
+  }
+
+  .moduleNavMenu {
+    display: block;
   }
 }

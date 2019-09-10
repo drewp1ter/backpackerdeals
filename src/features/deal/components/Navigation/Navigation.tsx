@@ -1,14 +1,16 @@
+import classNames from 'classnames'
 import React, { RefObject } from 'react'
 
 import icons from './assets'
-
 import styles from './Navigation.module.scss'
 
 export interface IProps {
   readonly refs: { [key: string]: RefObject<HTMLDivElement | HTMLLIElement> }
+  readonly className?: string
+  readonly onClose?: () => void
 }
 
-export const Navigation: React.FC<IProps> = ({ refs }) => {
+export const Navigation: React.FC<IProps> = ({ className, refs, onClose }) => {
   const tabs = [
     { icon: icons.included, label: 'What is Included', refname: 'included' },
     { icon: icons.excluded, label: 'What is Excluded', refname: 'excluded' },
@@ -26,10 +28,15 @@ export const Navigation: React.FC<IProps> = ({ refs }) => {
   const handleClick = ({ currentTarget }: React.MouseEvent<HTMLLIElement>) => {
     const refname = currentTarget.dataset.refname || ''
     refs[refname] && refs[refname].current!.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    onClose && onClose()
   }
 
+  console.log(className)
+
   return (
-    <ul className={styles.dealNavigation}>
+    <>
+    <i onClick={onClose} className={classNames(styles.close, 'fas fa-times')} />
+    <ul className={classNames(styles.navigation, className)}>
       {tabs.map((tab, index) => (
         <li key={index} data-refname={tab.refname} onClick={handleClick}>
           <div dangerouslySetInnerHTML={tab.icon} />
@@ -37,5 +44,6 @@ export const Navigation: React.FC<IProps> = ({ refs }) => {
         </li>
       ))}
     </ul>
+    </>
   )
 }
