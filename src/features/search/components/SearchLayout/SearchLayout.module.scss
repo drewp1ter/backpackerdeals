@@ -1,7 +1,6 @@
 @import "src/scss/device";
 
 .activitiesSection {
-  margin-top: 6.5rem;
   height: 41rem;
   overflow: hidden;
 }
@@ -20,10 +19,6 @@
 }
 
 @include device-tb {
-  .activitiesSection {
-    margin-top: 7.2rem;
-  }
-
   .topActivities {
     margin: 0 2.57rem;
   }
@@ -51,7 +46,6 @@
 @include device-mb {
   .activitiesSection {
     height: 23.25rem;
-    margin-top: 7rem;
     background-size: cover;
   }
 
