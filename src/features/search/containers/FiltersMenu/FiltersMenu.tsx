@@ -24,7 +24,7 @@ export const FiltersMenu: React.FC<Partial<ISearchActions> & IProps> = ({ filter
         <span>Show filters</span>
       </button>
 
-      <MobileMenuWrapper open={filtersAreOpened} className={styles.filtersMenuWrapper}>
+      <MobileMenuWrapper open={filtersAreOpened} bodyClassName={styles.filtersMenuWrapper}>
         <>
           <div className={styles.filtersHeader}>
             <div>
@@ -37,9 +37,7 @@ export const FiltersMenu: React.FC<Partial<ISearchActions> & IProps> = ({ filter
               <i className="fas fa-filter" />
             </div>
           </div>
-
           <hr />
-
           <Filters filters={filters} viewType="mobile" />
         </>
       </MobileMenuWrapper>

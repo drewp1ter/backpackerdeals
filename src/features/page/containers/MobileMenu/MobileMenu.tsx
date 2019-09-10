@@ -75,7 +75,7 @@ export const MobileMenu: React.FC<Partial<Types.RootState> & Partial<PageActions
         <i className="fas fa-bars" />
       </button>
 
-      <MobileMenuWrapper className={styles.menu} open={page!.menuIsOpen}>
+      <MobileMenuWrapper bodyClassName={styles.menu} open={page!.menuIsOpen}>
         <>
           <div className={styles.mobileHeader}>
             <p>
@@ -159,7 +159,7 @@ export const MobileMenu: React.FC<Partial<Types.RootState> & Partial<PageActions
           </div>
         </>
       </MobileMenuWrapper>
-      <MobileMenuWrapper className={styles.search} open={search!.searchIsOpen}>
+      <MobileMenuWrapper bodyClassName={styles.search} open={search!.searchIsOpen}>
         <>
           <div className={styles.searchHeader}>
             <i onClick={closeSearch} className="fas fa-arrow-left" />
