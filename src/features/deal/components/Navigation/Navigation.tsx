@@ -31,8 +31,6 @@ export const Navigation: React.FC<IProps> = ({ className, refs, onClose }) => {
     onClose && onClose()
   }
 
-  console.log(className)
-
   return (
     <>
     <i onClick={onClose} className={classNames(styles.close, 'fas fa-times')} />

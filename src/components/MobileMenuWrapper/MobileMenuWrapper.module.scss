@@ -1,3 +1,5 @@
+@import "src/scss/device";
+
 .mobileMenuWrapper {
   .background {
     position: fixed;
@@ -24,88 +26,39 @@
     position: fixed;
     top: 0;
     bottom: 0;
-    right: -100%;
-    width: 89%;
+    right: 0;
+    width: 42.4rem;
     z-index: 15;
     background-color: #fff;
-    padding: 8px 8px 24px 16px;
+    box-sizing: border-box;
+    padding: .5rem .5rem 1.5rem 1rem;
     transition: .2s ease transform;
+    transform: translateX(42.4rem);
 
     &[data-open="true"] {
-      transform: translateX(-103%);
+      transform: translateX(0);
     }
   }
 }
 
-@media screen and (min-width: 768px) and (max-width: 1280px) {
+@include device-tb {
   .mobileMenuWrapper {
     .menu {
-      width: 400px;
-      right: -435px;
-
-      &[data-open="true"] {
-        transform: translateX(-435px);
-      }
+      width: 40rem;
+      transform: translateX(40rem);
     }
   }
 }
 
-@media screen and (min-width: 700px) and (max-width: 768px) {
-  .mobileMenuWrapper {
-    .menu {
-      &[data-open="true"] {
-        transform: translateX(-107.5%);;
-      }
-    }
+@include device-ipad {
+  .mobileMenuWrapper .menu {
+    padding: 1rem 1rem 3rem 2rem;
   }
 }
 
-@media screen and (max-width: 700px) {
-  .mobileMenuWrapper {
-    .menu {
-      &[data-open="true"] {
-        transform: translateX(-106.9%)
-      }
-    }
-  }
-}
-
-@media screen and (max-width: 565px) {
-  .mobileMenuWrapper {
-    .menu {
-      &[data-open="true"] {
-        transform: translateX(-105.8%)
-      }
-    }
-  }
-}
-
-
-@media screen and (min-width: 375px) and (max-width: 456px) {
-  .mobileMenuWrapper {
-    .menu {
-      &[data-open="true"] {
-        transform: translateX(-104.3%);
-      }
-    }
-  }
-}
-
-@media screen and (min-width: 340px) and (max-width: 375px) {
-  .mobileMenuWrapper {
-    .menu {
-      &[data-open="true"] {
-        transform: translateX(-103.4%);
-      }
-    }
-  }
-}
-@media screen and (min-width: 320px) and (max-width: 340px) {
-  .mobileMenuWrapper {
-    .menu {
-      &[data-open="true"] {
-        transform: translateX(-102.5%);
-      }
-    }
+@include device-mb {
+  .mobileMenuWrapper .menu {
+    width: 33rem;
+    transform: translateX(33rem);
   }
 }

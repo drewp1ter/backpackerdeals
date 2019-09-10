@@ -48,7 +48,7 @@
 }
 
 .close {
-  display: none;
+  display: none !important;
   position: absolute;
   top: 1rem;
   right: 1rem;
@@ -71,7 +71,7 @@
     left: unset;
     width: 100%;
     border: none;
-    padding: 0 0 0 2rem;
+    padding: 0;
 
     li {
       flex-direction: row;
