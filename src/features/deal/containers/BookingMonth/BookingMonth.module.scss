@@ -135,7 +135,7 @@
         grid-column-end: 8;
         overflow: hidden;
         transition: 1s ease max-height;
-        max-height: 1000px;
+        max-height: 10000px;
 
         &[data-week="0"], &[data-animation="true"] {
           max-height: 0;
