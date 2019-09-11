@@ -17,8 +17,15 @@ enum Direction {
 
 const screenChangeEvents = ['fullscreenchange', 'MSFullscreenChange', 'mozfullscreenchange', 'webkitfullscreenchange']
 
+export interface IImageSet {
+  readonly media: string
+  readonly srcSet: string
+  readonly type?: string
+}
+
 export interface IItem {
   readonly original?: string
+  readonly preview?: string
   readonly thumbnail: string
   readonly srcSet?: string
   readonly sizes?: string
@@ -26,7 +33,7 @@ export interface IItem {
   readonly originalTitle?: string
   readonly thumbnailAlt?: string
   readonly thumbnailTitle?: string
-  readonly imageSet?: HTMLSourceElement[]
+  readonly imageSet?: IImageSet[]
   readonly videoId?: string
 }
 
@@ -693,6 +700,7 @@ export class TourGallery extends React.Component<IProps, IState> {
   }
 
   _renderItem = (item: IItem) => {
+    const { isFullscreen } = this.state
     const onReady = ({ target }: any) => {
       if (item.videoId) {
         this._youtubeIFrames = {
@@ -732,12 +740,16 @@ export class TourGallery extends React.Component<IProps, IState> {
     if (item.imageSet) {
       return (
         <div className={styles.imageGalleryImage}>
-          <picture>
-            {item.imageSet.map((source, index) => (
-              <source key={index} media={source.media} srcSet={source.srcset} type={source.type} />
-            ))}
+          {isFullscreen ? (
             <img alt={item.originalAlt} src={item.original} />
-          </picture>
+          ) : (
+            <picture>
+              {item.imageSet.map((source, index) => (
+                <source key={index} media={source.media} srcSet={source.srcSet} type={source.type} />
+              ))}
+              <img alt={item.originalAlt} src={item.original} />
+            </picture>
+          )}
         </div>
       )
     }
@@ -816,16 +828,8 @@ export class TourGallery extends React.Component<IProps, IState> {
 
     const renderNavButtons = (onClickLeft: () => void, onClickRight: () => void, disableLeft: boolean, disableRight: boolean) => (
       <span>
-        <button
-          className={styles.imageGalleryLeftNav}
-          disabled={disableLeft}
-          onClick={onClickLeft}
-        />
-        <button
-          className={styles.imageGalleryRightNav}
-          disabled={disableRight}
-          onClick={onClickRight}
-        />
+        <button className={styles.imageGalleryLeftNav} disabled={disableLeft} onClick={onClickLeft} />
+        <button className={styles.imageGalleryRightNav} disabled={disableRight} onClick={onClickRight} />
       </span>
     )
 
@@ -847,16 +851,8 @@ export class TourGallery extends React.Component<IProps, IState> {
               <br /> To Sell Out
             </div>
           </div>
-          <button
-            className={styles.imageGalleryFullScreenButton}
-            data-active={isFullscreen}
-            onClick={this._toggleFullScreen}
-          />
-          <button
-            className={styles.imageGalleryPlayButton}
-            data-active={isPlaying}
-            onClick={this._togglePlay}
-          />
+          <button className={styles.imageGalleryFullScreenButton} data-active={isFullscreen} onClick={this._toggleFullScreen} />
+          <button className={styles.imageGalleryPlayButton} data-active={isPlaying} onClick={this._togglePlay} />
 
           {this._canNavigate() ? (
             [
@@ -881,20 +877,13 @@ export class TourGallery extends React.Component<IProps, IState> {
     }
 
     return (
-      <div
-        ref={this._imageGallery}
-        className={classNames(styles.imageGallery, modalFullscreen && styles.fullscreenModal, className)}
-      >
+      <div ref={this._imageGallery} className={classNames(styles.imageGallery, modalFullscreen && styles.fullscreenModal, className)}>
         <div className={styles.imageGalleryContent} data-fullscreen={isFullscreen}>
           {slideWrapper()}
           <div className={styles.imageGalleryThumbnailsWrapper}>
             <div className={styles.imageGalleryThumbnails} ref={this._thumbnailsWrapper}>
               {renderNavButtons(this._handleScrollThumbsLeft, this._handleScrollThumbsRight, false, false)}
-              <ul
-                ref={this._thumbnails}
-                className={styles.imageGalleryThumbnailsContainer}
-                style={thumbnailStyle}
-              >
+              <ul ref={this._thumbnails} className={styles.imageGalleryThumbnailsContainer} style={thumbnailStyle}>
                 {thumbnails}
               </ul>
             </div>

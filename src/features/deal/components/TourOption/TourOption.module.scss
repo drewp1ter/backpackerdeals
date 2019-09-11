@@ -20,7 +20,7 @@
       transition: 0.8s ease max-height;
 
       &[data-expanded="true"] {
-        max-height: 1000px;
+        max-height: 10000px;
 
         .expand i {
           transform: rotate(180deg);
