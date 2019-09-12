@@ -19,8 +19,6 @@
   h5 {
     position: sticky;
     top: 0;
-    // left: 0;
-    // right: 0;
     font-size: 1.125em;
     font-weight: 600;
     text-transform: uppercase;
@@ -139,11 +137,11 @@
 
 @include device-mb {
   .addToWishlist {
-    padding: 2.25rem 1.5rem;
+    padding: 0 1.5rem 2.25rem;
 
     h5 {
       font-size: 1.1666666em;
-      padding-bottom: 2rem;
+      padding: 2.25rem 0 2rem;
     }
 
     .tour {
