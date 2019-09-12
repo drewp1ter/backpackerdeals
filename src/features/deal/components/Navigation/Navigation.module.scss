@@ -48,8 +48,11 @@
 }
 
 .close {
-  display: none !important;
+  display: none;
   position: absolute;
+  border-radius: 50%;
+  background: transparent;
+  border: none;
   top: 1rem;
   right: 1rem;
   width: 4rem;
@@ -61,7 +64,7 @@
 
 @include device-mb {
   .close {
-    display: flex !important;
+    display: flex;
   }
 
   .navigation {

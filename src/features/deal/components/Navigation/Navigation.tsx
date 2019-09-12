@@ -33,15 +33,19 @@ export const Navigation: React.FC<IProps> = ({ className, refs, onClose }) => {
 
   return (
     <>
-    <i onClick={onClose} className={classNames(styles.close, 'fas fa-times')} />
-    <ul className={classNames(styles.navigation, className)}>
-      {tabs.map((tab, index) => (
-        <li key={index} data-refname={tab.refname} onClick={handleClick}>
-          <div dangerouslySetInnerHTML={tab.icon} />
-          <span>{tab.label}</span>
-        </li>
-      ))}
-    </ul>
+      {onClose && (
+        <button className={styles.close}>
+          <i onClick={onClose} className="fas fa-times" />
+        </button>
+      )}
+      <ul className={classNames(styles.navigation, className)}>
+        {tabs.map((tab, index) => (
+          <li key={index} data-refname={tab.refname} onClick={handleClick}>
+            <div dangerouslySetInnerHTML={tab.icon} />
+            <span>{tab.label}</span>
+          </li>
+        ))}
+      </ul>
     </>
   )
 }
