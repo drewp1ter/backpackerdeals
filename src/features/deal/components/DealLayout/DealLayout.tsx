@@ -45,7 +45,7 @@ export const DealLayout: React.FC = () => {
       </div>
 
       <div className={styles.section}>
-        <TourGallery className={styles.tourGallery} />
+        <TourGallery className={styles.tourGallery} lazyLoad={true} />
 
         <div className={styles.iconsOrderDetails}>
           <div className={styles.stickyWrapper}>
