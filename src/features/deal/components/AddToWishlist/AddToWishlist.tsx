@@ -23,14 +23,14 @@ export const AddToWishlist: React.FC<IProps> = ({ className }) => {
   const selectIcon = () => <i className={classNames(styles.selectIcon, 'fas fa-calendar')} />
 
   return (
-    <div data-is-open-calendar={isOpenCalendar} className={classNames(styles.addToWishlist, className)}>
+    <div className={classNames(styles.addToWishlist, className)}>
       <h5>ADD TO WISHLIST</h5>
       <div className={styles.tour}>
         <img src={tour} alt="tour" />
         <p>Alice Springs to Alice Springs</p>
         <p>Uluru Tour - 3 Days 2 Nights</p>
       </div>
-      <label>Remind me on date</label>
+      <label onClick={toggleSelect}>Remind me on date</label>
       <Select
         className={styles.select}
         open={isOpenCalendar}

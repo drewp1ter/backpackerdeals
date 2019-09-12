@@ -86,7 +86,7 @@ export class TourGallery extends React.Component<IProps, IState> {
     flickThreshold: 0.4,
     stopPropagation: false,
     startIndex: 0,
-    slideDuration: 450,
+    slideDuration: 1000,
     swipingTransitionDuration: 0,
     slideInterval: 3000,
     swipeThreshold: 30,
@@ -277,7 +277,7 @@ export class TourGallery extends React.Component<IProps, IState> {
           offsetPercentage: 0,
           thumbsScrollOffset: 0,
           style: {
-            transition: `all ${this.props.slideDuration}ms ease-out`,
+            transition: `transform ${this.props.slideDuration}ms ease-out`,
           },
         },
         this._onSliding

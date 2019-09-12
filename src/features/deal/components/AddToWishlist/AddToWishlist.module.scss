@@ -2,28 +2,32 @@
 @import "src/scss/_utils";
 
 .addToWishlist {
+  position: relative;
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
-  padding: 3rem 1.5rem 1.75rem;
+  padding: 0 1.5rem 1.75rem;
+  max-height: calc(100vh - 6.5rem);
+  overflow-y: auto;
 
   @include scrollbar;
-
-  &[data-is-open-calendar="false"] {
-    max-height: calc(100vh - 6.5rem);
-    overflow-y: auto;
-  }
 
   * {
     flex-shrink: 0;
   }
 
   h5 {
+    position: sticky;
+    top: 0;
+    // left: 0;
+    // right: 0;
     font-size: 1.125em;
     font-weight: 600;
     text-transform: uppercase;
-    padding-bottom: 1.5rem;
+    padding: 3rem 0 1.5rem;
     border-bottom: 2px solid #fafafa;
+    background: #fff;
+    z-index: 1;
     box-sizing: border-box;
   }
 
@@ -56,6 +60,10 @@
 
   .select {
     margin-top: 1rem;
+
+    > ul {
+      top: -17rem !important;
+    }
   }
 
   .calendar {
