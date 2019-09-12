@@ -24,13 +24,12 @@ export interface IState {
 }
 
 export class Modal extends React.Component<IProps, IState> {
-
   public static defaultProps: Partial<IProps> = {
-    position: Position.fixed
+    position: Position.fixed,
   }
 
   public state = {
-    animated: false
+    animated: false,
   }
 
   private node: any
@@ -49,14 +48,18 @@ export class Modal extends React.Component<IProps, IState> {
     return <div data-animated={animated} className={styles.mask} onClick={this.handleClose} />
   }
 
-  renderIcon = () => <i onClick={this.handleClose} className={classNames(styles.close, 'fas fa-times')} />
+  renderIcon = () => (
+    <button className={styles.close}>
+      <i onClick={this.handleClose} className="fas fa-times" />
+    </button>
+  )
 
   componentDidMount = () => {
     this.node = document.getElementById('modal-root')
   }
 
   renderModal = () => {
-    const { isOpen, className, children, position} = this.props
+    const { isOpen, className, children, position } = this.props
     const { animated } = this.state
     return (
       <div data-animated={animated} data-position={position} className={styles.modal}>
@@ -77,7 +80,9 @@ export class Modal extends React.Component<IProps, IState> {
 
   render = () => {
     const { isOpen, position } = this.props
-    if (!isOpen) { return null }
-    return position === Position.fixed ? ReactDOM.createPortal(this.renderModal() , this.node) : this.renderModal()
+    if (!isOpen) {
+      return null
+    }
+    return position === Position.fixed ? ReactDOM.createPortal(this.renderModal(), this.node) : this.renderModal()
   }
 }
