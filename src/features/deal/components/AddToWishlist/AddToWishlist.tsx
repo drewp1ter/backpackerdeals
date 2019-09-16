@@ -1,5 +1,5 @@
 import classNames from 'classnames'
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
 
 import { Button, Calendar, Input, Select } from 'components'
 import styles from './AddToWishlist.module.scss'
@@ -12,14 +12,14 @@ export interface IProps {
 export const AddToWishlist: React.FC<IProps> = ({ className }) => {
   const [date, setDate] = useState<Date>()
   const [isOpenCalendar, setOpenCalendar] = useState<boolean>(false)
-
+  const emailRef = useRef<HTMLInputElement>(null)
   const toggleSelect = () => setOpenCalendar(!isOpenCalendar)
   const closeSelect = () => setOpenCalendar(false)
   const handleChange = (date: Date) => {
     setOpenCalendar(false)
     setDate(date)
+    emailRef.current && emailRef.current.focus()
   }
-
   const selectIcon = () => <i className={classNames(styles.selectIcon, 'fas fa-calendar')} />
 
   return (
@@ -44,7 +44,7 @@ export const AddToWishlist: React.FC<IProps> = ({ className }) => {
       >
         <Calendar className={styles.calendar} onChange={handleChange} value={date || new Date()} />
       </Select>
-      <Input className={styles.email} type="email" label="Email" placeholder="Email Address" labelID="wishlist-email" />
+      <Input _ref={emailRef} className={styles.email} type="email" label="Email" placeholder="Email Address" labelID="wishlist-email" />
       <Button size="lg">Remind me</Button>
       <p>
         By clicking REMIND ME you agree that you are the owner of above email address. Your IP address will be logged. Please read our
