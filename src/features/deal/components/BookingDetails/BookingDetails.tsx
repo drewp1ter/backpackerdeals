@@ -1,5 +1,5 @@
 import classNames from 'classnames'
-import React from 'react'
+import React, { useState } from 'react'
 
 import { Button, NumberInput, Select } from 'components'
 import { CalendarButton } from '..'
@@ -11,7 +11,17 @@ export interface IProps {
   readonly variant?: 'inMonth' | 'inWeek'
 }
 
+export interface IState {
+  readonly adult: number
+  readonly child: number
+  readonly family: number
+}
+
 export const BookingDetails: React.FC<IProps> = ({ onClose, className, variant = 'inMonth' }) => {
+  const [state, setState] = useState<IState>({ adult: 0, child: 0, family: 0 })
+
+  const handleChange = (value: number, name: string = '') => setState({ ...state, [name]: value })
+
   return (
     <div className={classNames(styles.bookingDetails, className)} data-variant={variant}>
       <i onClick={onClose} className={classNames(styles.close, 'fas fa-times')} />
@@ -34,8 +44,16 @@ export const BookingDetails: React.FC<IProps> = ({ onClose, className, variant =
               <span className={styles.adult}>From 10 to 15 years</span>
             </span>
             <span className={styles.price}>AUD $1 200</span>
-            <Select className={styles.select} theme="defaultNoBorder" size="no" value="0" options={['0', '1', '2', '3']} />
-            <NumberInput className={styles.numberInput} value={0} />
+            <Select
+              name="adult"
+              onChange={handleChange}
+              className={styles.select}
+              theme="defaultNoBorder"
+              size="no"
+              value={state.adult}
+              options={[0, 1, 2, 3]}
+            />
+            <NumberInput name="adult" min={0} max={3} onChange={handleChange} className={styles.numberInput} value={state.adult} />
           </div>
           <div className={styles.sub}>
             <span className={styles.category}>4 Adults x AUD $1 000;</span>
@@ -50,7 +68,7 @@ export const BookingDetails: React.FC<IProps> = ({ onClose, className, variant =
             <span className={styles.category}>1 Adult x AUD $1 400;</span>
           </div>
           <CalendarButton className={styles.buttonMobile} theme="green">
-              Group discount applied
+            Group discount applied
           </CalendarButton>
         </div>
 
@@ -61,8 +79,8 @@ export const BookingDetails: React.FC<IProps> = ({ onClose, className, variant =
               <span>From 10 to 15 years</span>
             </span>
             <span className={styles.price}>AUD $1 200</span>
-            <Select className={styles.select} theme="defaultNoBorder" size="no" value="0" options={['0', '1', '2', '3']} />
-            <NumberInput className={styles.numberInput} value={0} />
+            <Select className={styles.select} name="child" onChange={handleChange} theme="defaultNoBorder" size="no" value={state.child} options={[0, 1, 2, 3]} />
+            <NumberInput name="child" min={0} max={3} onChange={handleChange} className={styles.numberInput} value={state.child} />
           </div>
         </div>
 
@@ -73,8 +91,8 @@ export const BookingDetails: React.FC<IProps> = ({ onClose, className, variant =
               <span>From 10 to 15 years</span>
             </span>
             <span className={styles.price}>AUD $1 200</span>
-            <Select className={styles.select} theme="defaultNoBorder" size="no" value="0" options={['0', '1', '2', '3']} />
-            <NumberInput className={styles.numberInput} value={0} />
+            <Select className={styles.select} theme="defaultNoBorder" name="family" onChange={handleChange} size="no" value={state.family} options={[0, 1, 2, 3]} />
+            <NumberInput name="family" min={0} max={3} onChange={handleChange} className={styles.numberInput} value={state.family} />
           </div>
         </div>
       </div>
