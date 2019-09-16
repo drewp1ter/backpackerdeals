@@ -32,7 +32,6 @@ export interface IState {
   readonly isOpenSmallCalendar: boolean
   readonly value: Date | undefined
   readonly isMobileView: boolean
-  readonly isCloseAnimation: boolean
 }
 
 export class BookingWeek extends React.Component<IProps, IState> {
@@ -47,7 +46,6 @@ export class BookingWeek extends React.Component<IProps, IState> {
       isOpenSmallCalendar: false,
       value: undefined,
       isMobileView: false,
-      isCloseAnimation: false
     }
   }
 
@@ -92,8 +90,7 @@ export class BookingWeek extends React.Component<IProps, IState> {
   }
 
   handleCloseBookingDetails = () => {
-    this.setState({ isCloseAnimation: true })
-    setTimeout(() => this.setState({ isCloseAnimation: false, selectedEvent: -1 }), 1000)
+    this.setState({ selectedEvent: -1 })
   }
 
   handleChangeSmallCalendar = (value: Date) => {
@@ -204,7 +201,7 @@ export class BookingWeek extends React.Component<IProps, IState> {
 
   render = () => {
     const { className } = this.props
-    const { isOpenSmallCalendar, value, isMobileView, selectedEvent, isCloseAnimation } = this.state
+    const { isOpenSmallCalendar, value, isMobileView, selectedEvent } = this.state
     const current = this.days[2]
     const bookingDetailsRow = isMobileView ? Math.ceil(selectedEvent / 3) : Math.ceil(selectedEvent / 7)
 
@@ -250,7 +247,7 @@ export class BookingWeek extends React.Component<IProps, IState> {
           </li>
           {this.days.map(this.renderDay)}
           {this.renderEvents()}
-          <li className={styles.eventDetails} data-row={bookingDetailsRow} data-animation={isCloseAnimation}>
+          <li className={styles.eventDetails} data-row={bookingDetailsRow}>
             <BookingDetails onClose={this.handleCloseBookingDetails} className={styles.bookingDetails} variant="inWeek" />
           </li>
           {bookingDetailsRow !== 0 && <li className={styles.dummy} data-row={bookingDetailsRow} />}

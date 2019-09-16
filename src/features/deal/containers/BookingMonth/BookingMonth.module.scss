@@ -133,12 +133,9 @@
         position: relative;
         grid-column-start: 1;
         grid-column-end: 8;
-        overflow: hidden;
-        transition: 1s ease max-height;
-        max-height: 10000px;
 
-        &[data-week="0"], &[data-animation="true"] {
-          max-height: 0;
+        &[data-week="0"] {
+          display: none;
         }
 
         &[data-week="1"] {

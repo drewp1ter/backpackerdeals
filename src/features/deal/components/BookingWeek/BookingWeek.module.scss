@@ -198,15 +198,12 @@
         grid-column-end: 9;
         height: calc(100% + 1px);
         margin: -1px 1px 0 -1px;
-        overflow: hidden;
-        transition: 1s ease max-height;
-        max-height: 10000px;
       }
 
       &.eventDetails, &.dummy {
 
-        &[data-row="0"], &[data-animation="true"] {
-          max-height: 0;
+        &[data-row="0"] {
+          display: none;
         }
 
         &[data-row="1"] {
