@@ -27,7 +27,7 @@ export const Navigation: React.FC<IProps> = ({ className, refs, onClose }) => {
 
   const handleClick = ({ currentTarget }: React.MouseEvent<HTMLLIElement>) => {
     const refname = currentTarget.dataset.refname || ''
-    refs[refname] && refs[refname].current!.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    refs[refname] && refs[refname].current!.scrollIntoView({ block: 'start' })
     onClose && onClose()
   }
 
