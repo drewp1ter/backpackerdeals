@@ -1,5 +1,5 @@
 import classNames from 'classnames'
-import React, { useState, useRef } from 'react'
+import React, { useRef, useState } from 'react'
 
 import { Button, Calendar, Input, Select } from 'components'
 import styles from './AddToWishlist.module.scss'
