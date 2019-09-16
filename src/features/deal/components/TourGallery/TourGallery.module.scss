@@ -11,60 +11,18 @@ $ig-transparent: rgba(0, 0, 0, 0) !default;
 .imageGallery {
   user-select: none;
   -webkit-tap-highlight-color: $ig-transparent;
-
-  &.fullscreenModal {
-    background: $ig-black;
-    bottom: 0;
-    height: 100%;
-    left: 0;
-    position: fixed;
-    right: 0;
-    top: 0;
-    width: 100%;
-    z-index: 5;
-
-    .imageGalleryContent {
-      top: 50%;
-      transform: translateY(-50%);
-    }
-  }
 }
 
 .imageGalleryContent {
   position: relative;
   line-height: 0;
   top: 0;
-
-  &[data-fullscreen="true"] {
-    background: $ig-black;
-
-    .imageGallerySlide {
-      background: $ig-black;
-
-      .imageGalleryImage {
-        height: calc(100vh - 10.5rem) !important;
-      }
-    }
-
-    .toSell {
-      display: none;
-    }
-  }
 }
 
 .imageGallerySlideWrapper {
   position: relative;
-
-  &[data-hide-controls="true"] {
-    .imageGalleryFullScreenButton,
-    .imageGalleryPlayButton {
-      display: none;
-    }
-  }
 }
 
-.imageGalleryFullScreenButton,
-.imageGalleryPlayButton,
 .imageGalleryLeftNav,
 .imageGalleryRightNav {
   appearance: none;
@@ -78,43 +36,6 @@ $ig-transparent: rgba(0, 0, 0, 0) !default;
   &:after {
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
-  }
-}
-
-.imageGalleryFullScreenButton,
-.imageGalleryPlayButton {
-  bottom: 1rem;
-  width: 2rem;
-  height: 2rem;
-  color: $ig-white;
-  transition: 0.2s ease color;
-
-  &:hover {
-    color: $ig-orange;
-  }
-}
-
-.imageGalleryFullScreenButton {
-  right: 1rem;
-
-  &[data-active="false"]:after {
-    content: "\f065";
-  }
-
-  &[data-active="true"]:after {
-    content: "\f066";
-  }
-}
-
-.imageGalleryPlayButton {
-  left: 1rem;
-
-  &[data-active="false"]:after {
-    content: "\f04b";
-  }
-
-  &[data-active="true"]:after {
-    content: "\f04c";
   }
 }
 
@@ -226,7 +147,7 @@ $ig-transparent: rgba(0, 0, 0, 0) !default;
     display: flex;
     cursor: pointer;
     text-align: center;
-    transition: transform 1s ease-out;
+    transition: transform .45s ease-out;
     white-space: nowrap;
   }
 }
@@ -265,7 +186,7 @@ $ig-transparent: rgba(0, 0, 0, 0) !default;
     height: 100%;
     object-fit: cover;
     object-position: center;
-    transition: transform 1s;
+    transition: transform .45s ease-out;
   }
 
   &:hover {
@@ -356,16 +277,6 @@ $ig-transparent: rgba(0, 0, 0, 0) !default;
     height: 5rem;
   }
 
-  .imageGalleryFullScreenButton {
-    right: 2rem;
-    bottom: 2rem;
-  }
-
-  .imageGalleryPlayButton {
-    left: 2rem;
-    bottom: 2rem;
-  }
-
   .imageGalleryLeftNav {
     left: 2rem;
   }
@@ -407,8 +318,6 @@ $ig-transparent: rgba(0, 0, 0, 0) !default;
     display: none;
   }
 
-  .imageGalleryFullScreenButton,
-  .imageGalleryPlayButton,
   .imageGalleryLeftNav,
   .imageGalleryRightNav {
     display: none;

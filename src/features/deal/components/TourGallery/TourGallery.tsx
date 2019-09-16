@@ -1,7 +1,6 @@
 import classNames from 'classnames'
-import * as CSS from 'csstype'
 import debounce from 'lodash.debounce'
-import throttle from 'lodash.throttle'
+
 import React, { RefObject } from 'react'
 import { EventData, Swipeable } from 'react-swipeable'
 import YouTube from 'react-youtube'
@@ -14,8 +13,6 @@ enum Direction {
   left = 'Left',
   right = 'Right',
 }
-
-const screenChangeEvents = ['fullscreenchange', 'MSFullscreenChange', 'mozfullscreenchange', 'webkitfullscreenchange']
 
 export interface IImageSet {
   readonly media: string
@@ -40,17 +37,11 @@ export interface IItem {
 export interface IProps {
   readonly flickThreshold?: number
   readonly items: IItem[]
-  readonly autoPlay?: boolean
   readonly lazyLoad?: boolean
   readonly infinite?: boolean
-  readonly showPlayButton?: boolean
-  readonly showFullscreenButton?: boolean
   readonly disableSwipe?: boolean
-  readonly useBrowserFullscreen?: boolean
   readonly preventDefaultTouchmoveEvent?: boolean
   readonly startIndex: number
-  readonly slideDuration?: number
-  readonly slideInterval?: number
   readonly swipeThreshold?: number
   readonly swipingTransitionDuration?: number
   readonly stopPropagation?: boolean
@@ -63,32 +54,21 @@ export interface IState {
   readonly offsetPercentage: number
   readonly galleryWidth: number
   readonly thumbnailsWrapperWidth: number
-  readonly isFullscreen: boolean
-  readonly isPlaying: boolean
-  readonly isTransitioning: boolean
-  readonly modalFullscreen: boolean
   readonly previousIndex: number
-  readonly style: CSS.Properties
   readonly thumbsScrollOffset: number
 }
 
 export class TourGallery extends React.Component<IProps, IState> {
   static defaultProps: IProps = {
     items: images.gallery,
-    autoPlay: false,
     lazyLoad: false,
     infinite: true,
-    showPlayButton: true,
-    showFullscreenButton: true,
     disableSwipe: false,
-    useBrowserFullscreen: true,
     preventDefaultTouchmoveEvent: false,
     flickThreshold: 0.4,
     stopPropagation: false,
     startIndex: 0,
-    slideDuration: 1000,
     swipingTransitionDuration: 0,
-    slideInterval: 3000,
     swipeThreshold: 30,
   }
 
@@ -101,7 +81,6 @@ export class TourGallery extends React.Component<IProps, IState> {
     })
   }, 300)
 
-  private _unthrottledSlideToIndex: (index: number, event?: React.MouseEvent<HTMLAnchorElement>) => void
   private _lazyLoaded: boolean[]
   private _intervalId: number | null
   private _transitionTimer: number | null
@@ -121,18 +100,10 @@ export class TourGallery extends React.Component<IProps, IState> {
       offsetPercentage: 0,
       galleryWidth: 0,
       thumbnailsWrapperWidth: 0,
-      isFullscreen: false,
-      isPlaying: false,
-      isTransitioning: false,
-      modalFullscreen: false,
       previousIndex: 0,
       thumbsScrollOffset: 0,
-      style: {},
     }
 
-    // Used to update the throttle if slideDuration changes
-    this._unthrottledSlideToIndex = this.slideToIndex
-    this.slideToIndex = throttle(this._unthrottledSlideToIndex, props.slideDuration, { trailing: false })
     this._lazyLoaded = []
     this._intervalId = null
     this._transitionTimer = null
@@ -150,10 +121,6 @@ export class TourGallery extends React.Component<IProps, IState> {
     const startIndexUpdated = prevProps.startIndex !== this.props.startIndex
     itemsSizeChanged && this._handleResize()
 
-    // if slideDuration changes, update slideToIndex throttle
-    if (prevProps.slideDuration !== this.props.slideDuration) {
-      this.slideToIndex = throttle(this._unthrottledSlideToIndex, this.props.slideDuration, { trailing: false })
-    }
     if (this.props.lazyLoad && (!prevProps.lazyLoad || itemsChanged)) {
       this._lazyLoaded = []
     }
@@ -162,17 +129,13 @@ export class TourGallery extends React.Component<IProps, IState> {
   }
 
   componentDidMount() {
-    const { autoPlay } = this.props
-    autoPlay && this.play()
     window.addEventListener('keydown', this._handleKeyDown)
-    this._onScreenChangeEvent()
     this._resizeObserver = new ResizeObserver(this._createResizeObserver)
     this._imageGallerySlideWrapper.current && this._resizeObserver.observe(this._imageGallerySlideWrapper.current)
   }
 
   componentWillUnmount() {
     window.removeEventListener('keydown', this._handleKeyDown)
-    this._offScreenChangeEvent()
 
     if (this._intervalId) {
       window.clearInterval(this._intervalId)
@@ -186,148 +149,30 @@ export class TourGallery extends React.Component<IProps, IState> {
     }
   }
 
-  play() {
-    if (!this._intervalId) {
-      const { slideInterval, slideDuration, infinite } = this.props
-      this.setState({ isPlaying: true })
-      this._intervalId = window.setInterval(() => {
-        if (!infinite && !this._canSlideRight()) {
-          this.pause()
-        } else {
-          this.slideToIndex(this.state.currentIndex + 1)
-        }
-      }, Math.max(slideInterval || 0, slideDuration || 0))
-    }
-  }
-
-  pause() {
-    if (this._intervalId) {
-      window.clearInterval(this._intervalId)
-      this._intervalId = null
-      this.setState({ isPlaying: false })
-    }
-  }
-
-  fullScreen() {
-    const gallery = this._imageGallery.current
-
-    if (this.props.useBrowserFullscreen) {
-      if (gallery!.requestFullscreen) {
-        gallery!.requestFullscreen()
-      } else {
-        // fallback to fullscreen modal for unsupported browsers
-        this.setState({ modalFullscreen: true })
-      }
-    } else {
-      this.setState({ modalFullscreen: true })
-    }
-    this.setState({ isFullscreen: true })
-  }
-
-  exitFullScreen() {
-    const { isFullscreen } = this.state
-    const { useBrowserFullscreen } = this.props
-    if (isFullscreen) {
-      if (useBrowserFullscreen) {
-        if (document.exitFullscreen) {
-          document.exitFullscreen()
-        } else {
-          // fallback to fullscreen modal for unsupported browsers
-          this.setState({ modalFullscreen: false })
-        }
-      } else {
-        this.setState({ modalFullscreen: false })
-      }
-
-      this.setState({ isFullscreen: false })
-    }
-  }
-
-  slideToIndex = (index: number, event?: React.MouseEvent<HTMLAnchorElement>) => {
-    const { currentIndex, isTransitioning } = this.state
+  slideToIndex = (index: number) => {
+    const { currentIndex } = this.state
     Object.values(this._youtubeIFrames).forEach((iframe: any) => {
-      // console.log(iframe)
       iframe.playing && iframe.target.pauseVideo()
     })
 
-    if (!isTransitioning) {
-      if (event && this._intervalId) {
-        // user triggered event while ImageGallery is playing, reset interval
-        this.pause()
-        this.play()
-      }
+    const slideCount = this.props.items.length - 1
+    let nextIndex = index
 
-      const slideCount = this.props.items.length - 1
-      let nextIndex = index
-
-      if (index < 0) {
-        nextIndex = slideCount
-      } else if (index > slideCount) {
-        nextIndex = 0
-      }
-
-      const thumbsTranslate = nextIndex === 0 ? 0 : this._getThumbsTranslate(nextIndex) * -1
-
-      this.setState(
-        {
-          thumbsTranslate,
-          previousIndex: currentIndex,
-          currentIndex: nextIndex,
-          isTransitioning: nextIndex !== currentIndex,
-          offsetPercentage: 0,
-          thumbsScrollOffset: 0,
-          style: {
-            transition: `transform ${this.props.slideDuration}ms ease-out`,
-          },
-        },
-        this._onSliding
-      )
+    if (index < 0) {
+      nextIndex = slideCount
+    } else if (index > slideCount) {
+      nextIndex = 0
     }
-  }
 
-  _onSliding = () => {
-    const { isTransitioning } = this.state
-    const { slideDuration } = this.props
-    this._transitionTimer = window.setTimeout(() => {
-      if (isTransitioning) {
-        this.setState({ isTransitioning: !isTransitioning })
-      }
-    }, slideDuration && slideDuration + 50)
-  }
+    const thumbsTranslate = nextIndex === 0 ? 0 : this._getThumbsTranslate(nextIndex) * -1
 
-  _handleScreenChange = () => {
-    /*
-      handles screen change events that the browser triggers e.g. esc key
-    */
-    this.setState({ isFullscreen: !!document.fullscreenElement })
-  }
-
-  _onScreenChangeEvent() {
-    screenChangeEvents.map(eventName => {
-      document.addEventListener(eventName, this._handleScreenChange)
+    this.setState({
+      thumbsTranslate,
+      previousIndex: currentIndex,
+      currentIndex: nextIndex,
+      offsetPercentage: 0,
+      thumbsScrollOffset: 0,
     })
-  }
-
-  _offScreenChangeEvent() {
-    screenChangeEvents.map(eventName => {
-      document.removeEventListener(eventName, this._handleScreenChange)
-    })
-  }
-
-  _toggleFullScreen = () => {
-    if (this.state.isFullscreen) {
-      this.exitFullScreen()
-    } else {
-      this.fullScreen()
-    }
-  }
-
-  _togglePlay = () => {
-    if (this._intervalId) {
-      this.pause()
-    } else {
-      this.play()
-    }
   }
 
   _handleResize = () => {
@@ -344,7 +189,6 @@ export class TourGallery extends React.Component<IProps, IState> {
   _handleKeyDown = (event: KeyboardEvent) => {
     const LEFT_ARROW = 37
     const RIGHT_ARROW = 39
-    const ESC_KEY = 27
     const key = event.keyCode || event.which
 
     switch (key) {
@@ -358,10 +202,6 @@ export class TourGallery extends React.Component<IProps, IState> {
           this._slideRight()
         }
         break
-      case ESC_KEY:
-        if (this.state.isFullscreen && !this.props.useBrowserFullscreen) {
-          this.exitFullScreen()
-        }
     }
   }
 
@@ -380,10 +220,10 @@ export class TourGallery extends React.Component<IProps, IState> {
   }
 
   _handleOnSwipedTo(side: number, isFlick: boolean) {
-    const { currentIndex, isTransitioning } = this.state
+    const { currentIndex } = this.state
     let slideTo = currentIndex
 
-    if ((this._sufficientSwipeOffset() || isFlick) && !isTransitioning) {
+    if (this._sufficientSwipeOffset() || isFlick) {
       slideTo += side
     }
 
@@ -397,7 +237,7 @@ export class TourGallery extends React.Component<IProps, IState> {
       }
     }
 
-    this._unthrottledSlideToIndex(slideTo)
+    this.slideToIndex(slideTo)
   }
 
   _sufficientSwipeOffset() {
@@ -409,8 +249,7 @@ export class TourGallery extends React.Component<IProps, IState> {
     if (disableSwipe) {
       return
     }
-    const { galleryWidth, isTransitioning } = this.state
-    const { swipingTransitionDuration } = this.props
+    const { galleryWidth } = this.state
 
     if (stopPropagation) {
       event.stopPropagation()
@@ -418,26 +257,16 @@ export class TourGallery extends React.Component<IProps, IState> {
     if (preventDefaultTouchmoveEvent && event.cancelable) {
       event.preventDefault()
     }
-    if (!isTransitioning) {
-      const side = dir === Direction.right ? 1 : -1
+    const side = dir === Direction.right ? 1 : -1
 
-      let offsetPercentage = (absX / galleryWidth) * 100
-      if (Math.abs(offsetPercentage) >= 100) {
-        offsetPercentage = 100
-      }
-
-      const swipingTransition = {
-        transition: `transform ${swipingTransitionDuration}ms ease-out`,
-      }
-
-      this.setState({
-        offsetPercentage: side * offsetPercentage,
-        style: swipingTransition,
-      })
-    } else {
-      // don't move the slide
-      this.setState({ offsetPercentage: 0 })
+    let offsetPercentage = (absX / galleryWidth) * 100
+    if (Math.abs(offsetPercentage) >= 100) {
+      offsetPercentage = 100
     }
+
+    this.setState({
+      offsetPercentage: side * offsetPercentage,
+    })
   }
 
   _canNavigate() {
@@ -579,31 +408,6 @@ export class TourGallery extends React.Component<IProps, IState> {
     return translateX
   }
 
-  _shouldPushSlideOnInfiniteMode(index: number) {
-    /*
-      Push(show) slide if slide is the current slide, and the next slide
-      OR
-      The slide is going more than 1 slide left, or right, but not going from
-      first to last and not going from last to first
-
-      There is an edge case where if you go to the first or last slide, when they're
-      not left, or right of each other they will try to catch up in the background
-      so unless were going from first to last or vice versa we don't want the first
-      or last slide to show up during our transition
-    */
-    return !this._slideIsTransitioning(index) || (this._ignoreIsTransitioning() && !this._isFirstOrLastSlide(index))
-  }
-
-  _slideIsTransitioning(index: number) {
-    /*
-    returns true if the gallery is transitioning and the index is not the
-    previous or currentIndex
-    */
-    const { isTransitioning, previousIndex, currentIndex } = this.state
-    const indexIsNotPreviousOrNextSlide = !(index === previousIndex || index === currentIndex)
-    return isTransitioning && indexIsNotPreviousOrNextSlide
-  }
-
   _isFirstOrLastSlide(index: number) {
     const totalSlides = this.props.items.length - 1
     const isLastSlide = index === totalSlides
@@ -700,7 +504,6 @@ export class TourGallery extends React.Component<IProps, IState> {
   }
 
   _renderItem = (item: IItem) => {
-    const { isFullscreen } = this.state
     const onReady = ({ target }: any) => {
       if (item.videoId) {
         this._youtubeIFrames = {
@@ -740,16 +543,12 @@ export class TourGallery extends React.Component<IProps, IState> {
     if (item.imageSet) {
       return (
         <div className={styles.imageGalleryImage}>
-          {isFullscreen ? (
+          <picture>
+            {item.imageSet.map((source, index) => (
+              <source key={index} media={source.media} srcSet={source.srcSet} type={source.type} />
+            ))}
             <img alt={item.originalAlt} src={item.original} />
-          ) : (
-            <picture>
-              {item.imageSet.map((source, index) => (
-                <source key={index} media={source.media} srcSet={source.srcSet} type={source.type} />
-              ))}
-              <img alt={item.originalAlt} src={item.original} />
-            </picture>
-          )}
+          </picture>
         </div>
       )
     }
@@ -779,8 +578,8 @@ export class TourGallery extends React.Component<IProps, IState> {
   }
 
   render() {
-    const { currentIndex, isFullscreen, modalFullscreen, isPlaying, style } = this.state
-    const { infinite, lazyLoad, className } = this.props
+    const { currentIndex } = this.state
+    const { lazyLoad, className } = this.props
     const thumbnailStyle = this._getThumbnailStyle()
 
     // tslint:disable-next-line:prefer-const
@@ -797,21 +596,14 @@ export class TourGallery extends React.Component<IProps, IState> {
         this._lazyLoaded[index] = true
       }
 
-      const slideStyle = { ...this._getSlideStyle(index), ...style }
+      const slideStyle = this._getSlideStyle(index)
       const slide = (
         <li key={index} className={styles.imageGallerySlide} data-position={alignment} style={slideStyle}>
           {showItem ? this._renderItem(item) : <div style={{ height: '100%' }} />}
         </li>
       )
 
-      if (infinite) {
-        // don't add some slides while transitioning to avoid background transitions
-        if (this._shouldPushSlideOnInfiniteMode(index)) {
-          slides.push(slide)
-        }
-      } else {
-        slides.push(slide)
-      }
+      slides.push(slide)
 
       thumbnails.push(
         <li
@@ -851,8 +643,6 @@ export class TourGallery extends React.Component<IProps, IState> {
               <br /> To Sell Out
             </div>
           </div>
-          <button className={styles.imageGalleryFullScreenButton} data-active={isFullscreen} onClick={this._toggleFullScreen} />
-          <button className={styles.imageGalleryPlayButton} data-active={isPlaying} onClick={this._togglePlay} />
 
           {this._canNavigate() ? (
             [
@@ -877,8 +667,8 @@ export class TourGallery extends React.Component<IProps, IState> {
     }
 
     return (
-      <div ref={this._imageGallery} className={classNames(styles.imageGallery, modalFullscreen && styles.fullscreenModal, className)}>
-        <div className={styles.imageGalleryContent} data-fullscreen={isFullscreen}>
+      <div ref={this._imageGallery} className={classNames(styles.imageGallery, className)}>
+        <div className={styles.imageGalleryContent}>
           {slideWrapper()}
           <div className={styles.imageGalleryThumbnailsWrapper}>
             <div className={styles.imageGalleryThumbnails} ref={this._thumbnailsWrapper}>
