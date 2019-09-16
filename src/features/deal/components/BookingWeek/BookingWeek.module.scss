@@ -61,7 +61,7 @@
     display: grid;
     grid-template-columns: 8rem repeat(7, 9rem);
 
-    li {
+    > li {
       grid-column-start: auto;
       grid-row-start: auto;
       border-top: 1px solid #e8e8e8;
