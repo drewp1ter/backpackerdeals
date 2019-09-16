@@ -1,5 +1,5 @@
 import classNames from 'classnames'
-import * as React from 'react'
+import React, { RefObject } from 'react'
 
 import styles from './Input.module.scss'
 
@@ -14,6 +14,7 @@ export interface IProps {
   readonly size?: 'md'
   readonly labelID?: string
   readonly children?: JSX.Element | JSX.Element[]
+  readonly _ref?: RefObject<HTMLInputElement>
 }
 
 export const Input: React.FC<IProps> = ({
@@ -27,6 +28,7 @@ export const Input: React.FC<IProps> = ({
   size = 'md',
   labelID,
   children,
+  _ref,
 }) => {
   if (label && !labelID) {
     labelID = Math.random().toString()
@@ -42,6 +44,7 @@ export const Input: React.FC<IProps> = ({
         children
       ) : (
         <input
+          ref={_ref}
           id={labelID}
           type={type}
           className={classNames(styles.input, className)}
