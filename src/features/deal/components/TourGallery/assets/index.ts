@@ -28,12 +28,12 @@ export const gallery: IItem[] = [
     thumbnailAlt: 'thumb',
     originalAlt: 'image',
   },
-  // {
-  //   videoId: 'vlDzYIIOYmM',
-  //   thumbnail: require('./2.jpg?resize&size=176'),
-  //   thumbnailAlt: 'thumb',
-  //   originalAlt: 'image'
-  // },
+  {
+    videoId: 'vlDzYIIOYmM',
+    thumbnail: require('./2.jpg?resize&size=176'),
+    thumbnailAlt: 'thumb',
+    originalAlt: 'image'
+  },
   {
     imageSet: [
       {
