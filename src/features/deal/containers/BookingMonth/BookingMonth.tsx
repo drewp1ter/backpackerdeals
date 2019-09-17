@@ -139,6 +139,7 @@ export class BookingMonth extends CalendarBase<AllProps, IState> {
           const activeMonth = Array.from(navigation.children as HTMLCollectionOf<HTMLElement>).find(elem => elem.dataset.active === 'true')
           activeMonth && navigation.scrollTo({ left: activeMonth.offsetLeft - navigation.offsetWidth / 2, behavior: 'smooth' })
         }
+        window.innerWidth < 768 && this.bookingDetailsAnchor.current!.scrollIntoView({ behavior: 'smooth', block: 'start' })
       }
     )
   }
