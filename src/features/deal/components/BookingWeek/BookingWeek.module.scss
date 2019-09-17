@@ -6,6 +6,10 @@
   border: 1px solid #e4e4e4;
   box-sizing: border-box;
 
+  .bookingDetailsAnchor {
+    position: absolute;
+  }
+
   h3 {
     font-size: 2em;
     font-weight: bold;
@@ -194,6 +198,7 @@
       }
 
       &.eventDetails {
+        position: relative;
         grid-column-start: 2;
         grid-column-end: 9;
         height: calc(100% + 1px);
@@ -371,6 +376,10 @@
     border-left: none;
     border-right: none;
     border-bottom: none;
+
+    .bookingDetailsAnchor {
+      top: -8.5rem;
+    }
 
     h3 {
       font-size: 1.6666666em;

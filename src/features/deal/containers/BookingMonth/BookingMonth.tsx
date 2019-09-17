@@ -1,5 +1,5 @@
 import classNames from 'classnames'
-import React, { RefObject } from 'react'
+import React, { createRef, RefObject } from 'react'
 
 import { Calendar, CalendarBase, Select } from 'components'
 import { BookingDetails, CalendarButton, Sticker } from '../../components'
@@ -29,8 +29,8 @@ enum DayTypes {
 type AllProps = IProps & Partial<IDealState>
 
 export class BookingMonth extends CalendarBase<AllProps, IState> {
-  private navigation = React.createRef<HTMLUListElement>()
-  private bookingDetailsAnchor = React.createRef<HTMLDivElement>()
+  private navigation = createRef<HTMLUListElement>()
+  private bookingDetailsAnchor = createRef<HTMLDivElement>()
 
   constructor(props: IProps) {
     super(props)
@@ -40,7 +40,7 @@ export class BookingMonth extends CalendarBase<AllProps, IState> {
       monthsToRender: 12,
       selectedDay: -1,
       isOpenSmallCalendar: false,
-      value: undefined
+      value: undefined,
     }
   }
 
@@ -61,7 +61,7 @@ export class BookingMonth extends CalendarBase<AllProps, IState> {
           selectedDay: nextAviableDate.getDate() + new Date(year, month, 0).getDay() - 1,
           monthsToRender,
         },
-        () => this.bookingDetailsAnchor.current!.scrollIntoView({ behavior: 'smooth', block: 'start' })
+        () => this.bookingDetailsAnchor.current!.scrollIntoView({ block: 'start' })
       )
   }
 
@@ -108,7 +108,9 @@ export class BookingMonth extends CalendarBase<AllProps, IState> {
       return
     }
     const selectedDay = Number(currentTarget.dataset.idx)
-    this.setState({ selectedDay, value: this.days[selectedDay] as Date })
+    this.setState({ selectedDay, value: this.days[selectedDay] as Date }, () =>
+      window.innerWidth < 768 && this.bookingDetailsAnchor.current!.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    )
   }
 
   handleCloseBookingDetails = () => {

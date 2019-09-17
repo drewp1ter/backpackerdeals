@@ -1,5 +1,5 @@
 import classNames from 'classnames'
-import React from 'react'
+import React, { createRef } from 'react'
 
 import { Calendar, Select } from 'components'
 import { BookingDetails, CalendarButton, Sticker } from '..'
@@ -36,6 +36,7 @@ export interface IState {
 
 export class BookingWeek extends React.Component<IProps, IState> {
   private now: Date
+  private bookingDetailsAnchor = createRef<HTMLDivElement>()
 
   constructor(props: IProps) {
     super(props)
@@ -86,7 +87,10 @@ export class BookingWeek extends React.Component<IProps, IState> {
 
   handleSelectEvent = ({ currentTarget }: React.MouseEvent<HTMLLIElement>) => {
     const selectedEvent = Number(currentTarget.dataset.idx)
-    this.setState({ selectedEvent })
+    this.setState(
+      { selectedEvent },
+      () => window.innerWidth < 768 && this.bookingDetailsAnchor.current!.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    )
   }
 
   handleCloseBookingDetails = () => {
@@ -227,7 +231,13 @@ export class BookingWeek extends React.Component<IProps, IState> {
             disablePast={true}
           />
         </Select>
-        <Calendar className={styles.calendarMobile} minDate={this.now} value={value} onChange={this.handleChangeSmallCalendar} disablePast={true} />
+        <Calendar
+          className={styles.calendarMobile}
+          minDate={this.now}
+          value={value}
+          onChange={this.handleChangeSmallCalendar}
+          disablePast={true}
+        />
         <div className={styles.navigation}>
           <span onClick={this.handlePrevWeek}>
             <i className="fas fa-chevron-left" />
@@ -248,6 +258,7 @@ export class BookingWeek extends React.Component<IProps, IState> {
           {this.days.map(this.renderDay)}
           {this.renderEvents()}
           <li className={styles.eventDetails} data-row={bookingDetailsRow}>
+            <div ref={this.bookingDetailsAnchor} className={styles.bookingDetailsAnchor} />
             <BookingDetails onClose={this.handleCloseBookingDetails} className={styles.bookingDetails} variant="inWeek" />
           </li>
           {bookingDetailsRow !== 0 && <li className={styles.dummy} data-row={bookingDetailsRow} />}
