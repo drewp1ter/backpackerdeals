@@ -74,7 +74,7 @@ const nextConfig = {
       new webpack.optimize.LimitChunkCountPlugin({
         maxChunks: 1,
       }),
-      new BundleAnalyzerPlugin()
+      new BundleAnalyzerPlugin({ analyzerMode: 'static' })
     )
 
     if (dev) {
