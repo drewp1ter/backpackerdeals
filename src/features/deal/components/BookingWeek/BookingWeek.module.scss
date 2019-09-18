@@ -208,7 +208,7 @@
       &.eventDetails, &.dummy {
 
         &[data-row="0"] {
-          visibility: hidden;
+          opacity: 0;
           height: 0;
         }
 
