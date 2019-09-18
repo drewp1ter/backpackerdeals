@@ -89,7 +89,7 @@ export class BookingWeek extends React.Component<IProps, IState> {
     const selectedEvent = Number(currentTarget.dataset.idx)
     this.setState(
       { selectedEvent },
-      () => window.innerWidth < 768 && this.bookingDetailsAnchor.current!.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      () => this.bookingDetailsAnchor.current!.scrollIntoView({ behavior: 'smooth', block: 'start' })
     )
   }
 

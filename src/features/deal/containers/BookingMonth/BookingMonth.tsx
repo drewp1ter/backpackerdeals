@@ -109,7 +109,7 @@ export class BookingMonth extends CalendarBase<AllProps, IState> {
     }
     const selectedDay = Number(currentTarget.dataset.idx)
     this.setState({ selectedDay, value: this.days[selectedDay] as Date }, () =>
-      window.innerWidth < 768 && this.bookingDetailsAnchor.current!.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      this.bookingDetailsAnchor.current!.scrollIntoView({ behavior: 'smooth', block: 'start' })
     )
   }
 
