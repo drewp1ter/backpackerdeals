@@ -135,7 +135,8 @@
         grid-column-end: 8;
 
         &[data-week="0"] {
-          display: none;
+          visibility: hidden;
+          height: 0;
         }
 
         &[data-week="1"] {

@@ -208,7 +208,8 @@
       &.eventDetails, &.dummy {
 
         &[data-row="0"] {
-          display: none;
+          visibility: hidden;
+          height: 0;
         }
 
         &[data-row="1"] {
