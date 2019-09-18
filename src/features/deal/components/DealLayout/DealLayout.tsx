@@ -110,7 +110,7 @@ export const DealLayout: React.FC = () => {
 
         <WhatsToExpect navAnchor={refs.whatsToExpect} className={styles.whatsToExpect} />
         <TourOptions className={styles.tourOptions} />
-        <BookingMonth navAnchor={refs.bookingCalendar} className={styles.bookingCalendar} />
+        {/* <BookingMonth navAnchor={refs.bookingCalendar} className={styles.bookingCalendar} /> */}
         <BookingWeek className={styles.bookingCalendar} />
         <FaqSection className={styles.faqSection} />
 

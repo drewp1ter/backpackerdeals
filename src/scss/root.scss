@@ -258,9 +258,9 @@ body {
   color: #202020;
   background-color: #fff;
 
-  @include device((min: 1921px)) {
-    font-weight: 300;
-  }
+  // @include device((min: 1921px)) {
+  //   font-weight: 300;
+  // }
 
   // from 12px to 16px
   @include device((min: 1281px, max: 1920px)) {
