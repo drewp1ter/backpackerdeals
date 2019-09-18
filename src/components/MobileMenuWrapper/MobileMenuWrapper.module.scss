@@ -32,11 +32,13 @@
     background-color: #fff;
     box-sizing: border-box;
     padding: .5rem .5rem 1.5rem 1rem;
-    transition: .2s ease transform;
+    transition: .2s ease transform, .2s ease opacity;
     transform: translateX(42.4rem);
+    opacity: 0;
 
     &[data-open="true"] {
       transform: translateX(0);
+      opacity: 1;
     }
   }
 }
