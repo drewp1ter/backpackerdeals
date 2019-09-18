@@ -73,8 +73,7 @@ const nextConfig = {
     config.plugins.push(
       new webpack.optimize.LimitChunkCountPlugin({
         maxChunks: 1,
-      }),
-      new BundleAnalyzerPlugin({ analyzerMode: 'static' })
+      })
     )
 
     if (dev) {
@@ -90,6 +89,10 @@ const nextConfig = {
         new IgnoreNotFoundExportPlugin({
           include: [/\.tsx?$/],
         })
+      )
+    } else {
+      config.plugins.push(
+        new BundleAnalyzerPlugin({ analyzerMode: 'static' })
       )
     }
     return config

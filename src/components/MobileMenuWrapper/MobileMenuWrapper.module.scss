@@ -26,19 +26,18 @@
     position: fixed;
     top: 0;
     bottom: 0;
-    right: 0;
+    right: -9999px;
     width: 42.4rem;
     z-index: 15;
     background-color: #fff;
     box-sizing: border-box;
     padding: .5rem .5rem 1.5rem 1rem;
-    transition: .2s ease transform, .2s ease opacity;
+    transition: .2s ease transform;
     transform: translateX(42.4rem);
-    opacity: 0;
 
     &[data-open="true"] {
       transform: translateX(0);
-      opacity: 1;
+      right: 0;
     }
   }
 }
