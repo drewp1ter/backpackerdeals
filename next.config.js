@@ -8,7 +8,7 @@ const optimizedImages = require('next-optimized-images')
 const webpack = require('webpack')
 const withSize = require('next-size')
 const FilterWarningsPlugin = require('webpack-filter-warnings-plugin')
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
+// const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 
 dotenvLoad()
 
@@ -73,7 +73,8 @@ const nextConfig = {
     config.plugins.push(
       new webpack.optimize.LimitChunkCountPlugin({
         maxChunks: 1,
-      })
+      }),
+      // new BundleAnalyzerPlugin({ analyzerMode: 'static' })
     )
 
     if (dev) {
@@ -89,10 +90,6 @@ const nextConfig = {
         new IgnoreNotFoundExportPlugin({
           include: [/\.tsx?$/],
         })
-      )
-    } else {
-      config.plugins.push(
-        new BundleAnalyzerPlugin({ analyzerMode: 'static' })
       )
     }
     return config
