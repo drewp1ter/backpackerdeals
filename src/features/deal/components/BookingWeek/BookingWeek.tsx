@@ -250,6 +250,7 @@ export class BookingWeek extends React.Component<IProps, IState> {
             Next Week <i className="fas fa-chevron-right" />
           </span>
         </div>
+        <div ref={this.bookingDetailsAnchor} className={styles.bookingDetailsAnchor} />
         <ul className={styles.calendarBody}>
           <li className={styles.header}>
             <p>Day</p>
@@ -258,7 +259,6 @@ export class BookingWeek extends React.Component<IProps, IState> {
           {this.days.map(this.renderDay)}
           {this.renderEvents()}
           <li className={styles.eventDetails} data-row={bookingDetailsRow}>
-            <div ref={this.bookingDetailsAnchor} className={styles.bookingDetailsAnchor} />
             <BookingDetails onClose={this.handleCloseBookingDetails} className={styles.bookingDetails} variant="inWeek" />
           </li>
           {bookingDetailsRow !== 0 && <li className={styles.dummy} data-row={bookingDetailsRow} />}
