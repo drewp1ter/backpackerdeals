@@ -8,7 +8,6 @@ const optimizedImages = require('next-optimized-images')
 const webpack = require('webpack')
 const withSize = require('next-size')
 const FilterWarningsPlugin = require('webpack-filter-warnings-plugin')
-// const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 
 dotenvLoad()
 
@@ -74,7 +73,6 @@ const nextConfig = {
       new webpack.optimize.LimitChunkCountPlugin({
         maxChunks: 1,
       }),
-      // new BundleAnalyzerPlugin({ analyzerMode: 'static' })
     )
 
     if (dev) {
