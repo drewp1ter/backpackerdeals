@@ -5,7 +5,7 @@
   background-image: url('./assets/background1920.jpg');
   background-repeat: no-repeat;
   background-size: 100%;
-  background-position: center 0;
+  background-position: top center;
   background-attachment: scroll;
   box-sizing: border-box;
 
@@ -40,6 +40,12 @@
     margin: 0 12.5rem;
     display: flex;
     justify-content: flex-end;
+  }
+}
+
+@include device((min: 1921px)) {
+  .activitiesSection {
+    background-position: center 30%;
   }
 }
 
