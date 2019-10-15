@@ -43,8 +43,6 @@
   }
 
   &[data-view="reversed"], &[data-view="vertical"] {
-    width: 23rem;
-
     .imageBlock {
       width: 100%;
       height: 22rem;
@@ -293,8 +291,6 @@
     }
 
     &[data-view="reversed"], &[data-view="vertical"] {
-      width: 25.6rem;
-
       .imageBlock {
         height: 24.4rem;
       }
@@ -361,7 +357,6 @@
 @include device-ipad {
   .dealCard {
     &[data-view="reversed"], &[data-view="vertical"] {
-      width: 29rem;
 
       .imageBlock {
         height: 27.5rem;
@@ -376,7 +371,6 @@
     min-width: 34rem;
 
     &[data-view="reversed"], &[data-view="vertical"] {
-      width: 29rem;
 
       .imageBlock {
         height: 36rem;

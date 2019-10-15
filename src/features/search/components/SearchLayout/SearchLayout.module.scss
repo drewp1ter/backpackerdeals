@@ -11,35 +11,41 @@
 
 .topActivities {
   z-index: 5;
-  margin: 0 12.5rem;
+  margin: 0 auto;
+  max-width: 95rem;
 }
 
 .moreActivities {
-  margin: 0 12.5rem 6.12rem 12.5rem;
+  margin: 0 auto 6.12rem;
+  max-width: 95rem;
 }
 
 @include device-tb {
   .topActivities {
-    margin: 0 2.57rem;
+    max-width: 101.4rem;
   }
 
   .moreActivities {
-    margin: 0 11.6rem 6.3rem 11.6rem;
+    margin: 0 auto 6.3rem;
+    max-width: 101.4rem;
   }
 }
 
 @include device-ipad {
   .moreActivities {
-    margin: 0 4.5rem 8rem 4.5rem;
+    margin: 0 auto 8rem;
+    max-width: 119rem;
   }
 
   .topActivities {
-    margin: 0;
+    max-width: 119rem;
+    margin: 8rem auto;
   }
 
   .countryDescription {
     display: block;
-    margin: 0 2.25rem 3.625rem 2.25rem;
+    max-width: 119rem;
+    margin: 0 auto 3.625rem;
   }
 }
 
@@ -49,11 +55,17 @@
     background-size: cover;
   }
 
+  .topActivities {
+    margin-left: 1rem;
+  }
+
   .moreActivities {
-    margin: 0 .6rem 6.12rem .6rem;
+    margin: 0 auto 6.12rem;
+    max-width: 38rem;
   }
 
   .countryDescription {
-    margin: 2.5rem 1.5rem 3.625rem 1.5rem;
+    margin: 2.5rem auto 3.625rem;
+    max-width: 35rem;
   }
 }

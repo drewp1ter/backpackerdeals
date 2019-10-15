@@ -21,7 +21,7 @@
   }
 
   .mask {
-    bottom: -15.625rem;
+    mask-position: 50% calc(50% + 23rem);
   }
 
   &:after {
@@ -80,7 +80,7 @@
     }
 
     .mask {
-      bottom: -3rem;
+      mask-position: 50% calc(50% + 10rem);
     }
   }
 }

@@ -9,7 +9,8 @@
 }
 
 .section {
-  margin: 0 12.5rem 6.12rem 12.5rem;
+  margin: 0 auto 6.12rem;
+  max-width: 95rem;
 }
 
 @include device-tb {

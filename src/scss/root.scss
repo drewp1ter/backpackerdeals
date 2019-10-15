@@ -235,6 +235,10 @@
 html {
   font-size: .833333vw; // 1rem = 16px / 1920
 
+  @include device((min: 1921px)) {
+    font-size: 16px;
+  }
+
   @include device-tb {
     font-size: .78125vw; // 1rem = 10px / 1280
   }
@@ -258,9 +262,9 @@ body {
   color: #202020;
   background-color: #fff;
 
-  // @include device((min: 1921px)) {
-  //   font-weight: 300;
-  // }
+  @include device((min: 1921px)) {
+    font-size: 16px;
+  }
 
   // from 12px to 16px
   @include device((min: 1281px, max: 1920px)) {
