@@ -235,12 +235,8 @@
 html {
   font-size: 16px;
 
-  @include device-pc {
+  @include device ((min: 1025px, max: 1920px)) {
     font-size: .83333333vw; // 1rem = 16px / 1920
-  }
-
-  @include device-tb {
-    font-size: .78125vw; // 1rem = 10px / 1280
   }
 
   @include device-ipad {

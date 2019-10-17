@@ -20,17 +20,6 @@
   max-width: 95rem;
 }
 
-@include device-tb {
-  .topActivities {
-    max-width: 101.4rem;
-  }
-
-  .moreActivities {
-    margin: 0 auto 6.3rem;
-    max-width: 101.4rem;
-  }
-}
-
 @include device-ipad {
   .moreActivities {
     margin: 0 auto 8rem;

@@ -71,49 +71,6 @@
   }
 }
 
-@include device-tb {
-  .moreActivities {
-    > h3 {
-      font-size: 2.714em;
-    }
-
-    .filters {
-      margin-right: 3.7rem;
-      width: 21.9rem;
-    }
-
-    .cardsContainer {
-      .header span {
-        font-size: .86em;
-        font-weight: 400;
-      }
-    }
-
-    .content .filters {
-      & > h4 {
-        font-size: 1em;
-        font-weight: 600;
-        margin: 2.43rem 0 1.4rem .857rem;
-      }
-    }
-
-    .content {
-      .cards {
-        width: 75.8rem;
-
-        &[data-view="reversed"] {
-          grid-column-gap: .8rem;
-          grid-row-gap: .8rem;
-        }
-
-        .card {
-          width: 24.5rem;
-        }
-      }
-    }
-  }
-}
-
 @include device((min: 1025px, max: 1256px)) {
   .moreActivities .content .cards {
     &[data-view="reversed"] {

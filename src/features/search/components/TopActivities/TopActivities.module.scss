@@ -27,22 +27,6 @@
   }
 }
 
-@include device-tb {
-  .topActivities {
-    .cards {
-      margin-right: 0;
-
-      .card {
-        margin-right: .5rem;
-      }
-    }
-
-    > h3 {
-      font-size: 2.714em;
-    }
-  }
-}
-
 @include device((max: 900px, min: 768px)) {
   .topActivities {
     .cards .card {

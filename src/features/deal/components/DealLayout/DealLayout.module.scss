@@ -93,30 +93,6 @@
   display: none !important;
 }
 
-@include device-tb {
-  .headerSection,
-  .section {
-    width: 101.3rem;
-  }
-
-  .orderDetails {
-    width: 24.5rem;
-  }
-
-  .tourOperator,
-  .tourIcons,
-  .bookingCalendar,
-  .reviews,
-  .faqSection,
-  .relatedTravelBlogs,
-  .tourGallery,
-  .card,
-  .whatsToExpect,
-  .tourOptions {
-    width: 75.7rem;
-  }
-}
-
 @include device-ipad {
   .navigation {
     display: none;
