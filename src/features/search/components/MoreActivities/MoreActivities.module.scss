@@ -10,7 +10,7 @@
 
   .filters {
     margin-right: 3.5rem;
-    width: 20.5rem;
+    width: 23rem;
   }
 
   .header {
@@ -51,12 +51,11 @@
     display: flex;
     margin-top: 2.8rem;
 
-    .cardsContainer {
-      width: 100%;
-    }
-
     .cards {
+      width: 71rem;
       display: grid;
+      // display: flex;
+      // flex-wrap: wrap;
       grid-template-columns: 1fr;
       grid-row-gap: 1rem;
 
@@ -65,18 +64,16 @@
         grid-column-gap: 1rem;
         grid-row-gap: 1rem;
 
-        .card > div:first-child {
-          height: 18.6vw;
-        }
+        // .card > div:first-child {
+        //   height: 18.6vw;
+        // }
       }
-
-      width: 100%;
     }
   }
 
   .card {
-    margin-right: 0;
-    min-width: 0;
+    width: 23rem;
+    // min-width: 232px;
   }
 }
 
@@ -87,7 +84,8 @@
     }
 
     .filters {
-      width: 18.7rem;
+      margin-right: 3.7rem;
+      width: 21.9rem;
     }
 
     .cardsContainer {
@@ -98,7 +96,7 @@
     }
 
     .content .filters {
-      margin-right: 1.43rem;
+      // margin-right: 1.43rem;
 
       & > h4 {
         font-size: 1em;
@@ -109,10 +107,71 @@
 
     .content {
       .cards {
+        width: 75.8rem;
+
         &[data-view="reversed"] {
           grid-column-gap: .8rem;
           grid-row-gap: .8rem;
-          // height: 21.3vw;
+        }
+
+        .card {
+          width: 24.5rem;
+        }
+      }
+    }
+  }
+}
+
+@include device((min: 1025px, max: 1256px)) {
+  .moreActivities {
+    .content {
+      .cards {
+        &[data-view="reversed"] {
+          grid-template-columns: 1fr 1fr;
+        }
+
+        .card {
+          width: 37.5rem;
+        }
+      }
+    }
+  }
+}
+
+@include device-ipad {
+  .moreActivities {
+    .filters {
+      margin-right: 2.5rem;
+      width: 27.5rem;
+    }
+
+    .content {
+      .cards {
+        width: 89rem;
+
+        &[data-view="reversed"] {
+          grid-column-gap: 1rem;
+          grid-row-gap: 1rem;
+        }
+
+        .card {
+          width: 29rem;
+        }
+      }
+    }
+  }
+}
+
+@include device((min: 768px, max: 936px)) {
+  .moreActivities {
+    .content {
+      .cards {
+        &[data-view="reversed"] {
+          grid-template-columns: 1fr 1fr;
+        }
+
+        .card {
+          width: 44rem;
         }
       }
     }
@@ -168,11 +227,10 @@
         &[data-view="reversed"] {
           grid-template-columns: 1fr;
           grid-row-gap: 1rem;
-          // height: 90vw;
         }
 
         .card {
-          width: 100%;
+          width: 38rem;
         }
       }
     }

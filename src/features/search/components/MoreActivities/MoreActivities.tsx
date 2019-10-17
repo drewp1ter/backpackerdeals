@@ -51,7 +51,7 @@ export const MoreActivities: React.FC<IProps> = ({ className }) => {
       <FiltersMenu />
       <div className={styles.content}>
         <Filters className={styles.filters} filters={filters} />
-        <div className={styles.cardsContainer}>
+        <div>
           <div className={styles.header}>
             <span>{cards.length} Activities</span>
             <span className={styles.viewStyle}>
