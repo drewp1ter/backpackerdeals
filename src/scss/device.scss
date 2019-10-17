@@ -1,7 +1,8 @@
 $size-mb-min: 320px;
 $size-tb-min: 768px;
 $size-tb-max: 1280px;
-$size-pc-min: $size-tb-max;
+$size-pc-min: $size-tb-max + 1;
+$size-pc-max: 1920px;
 
 // Custom device resolution
 @mixin device($min-max-map){
@@ -38,8 +39,8 @@ $size-pc-min: $size-tb-max;
   }
 }
 
-@mixin device-pc(){
-  $map: (min: $size-tb-max);
+@mixin device-pc() {
+  $map: (min: $size-pc-min, max: $size-pc-max);
   @include device($map) {
     @content
   }
