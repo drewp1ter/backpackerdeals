@@ -368,13 +368,14 @@
 
 @include device-mb {
   .dealCard {
-    //min-width: 272px;
-    min-width: 34rem;
+    font-size: 1rem;
+    // min-width: 272px;
+    // min-width: 34rem;
 
     &[data-view="reversed"], &[data-view="vertical"] {
 
       .imageBlock {
-        height: 36rem;
+        height: 36em;
       }
     }
 
@@ -383,7 +384,7 @@
       // height: 34rem;
 
       .sale {
-        padding: 1rem 3.25rem;
+        padding: 1em 3.25em;
         min-width: 36%;
         box-sizing: border-box;
 
@@ -399,17 +400,17 @@
 
       .sellOut {
         transform: rotate(270deg) translate(-50%, 117%);
-        border-radius: 0.57rem 0.57rem 0 0;
-        padding: 0.57rem 1.43rem;
+        border-radius: 0.57em 0.57em 0 0;
+        padding: 0.57em 1.43em;
         font-size: 0.79em;
       }
     }
 
     .cardDescription {
-      padding: 1.75rem 1.5rem 2rem;
+      padding: 1.75em 1.5em 2em;
 
       .aboutPlace {
-        margin-bottom: 0.5rem;
+        margin-bottom: 0.5em;
         align-items: center;
 
         .rating {
@@ -437,11 +438,11 @@
 
     .tour {
       font-size: 1.666666em;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.5em;
     }
 
     .valueAndLink {
-      margin-top: 1.75rem;
+      margin-top: 1.75em;
 
       .totalPrice {
         .price {
@@ -452,14 +453,14 @@
           font-size: 1em;
         }
         .value {
-          line-height: 1.5rem;
+          line-height: 1.5em;
         }
       }
 
       button {
-        width: 9.5rem;
-        height: 5.5rem;
-        border-radius: 3.75rem;
+        width: 9.5em;
+        height: 5.5em;
+        border-radius: 3.75em;
       }
     }
   }

@@ -17,7 +17,7 @@ export const TopActivities: React.FC<IProps> = ({ className }) => {
 
       <ul className={styles.cards}>
         {data.map((card, index) => (
-          <DealCard view="reversed" {...card} key={index} likeable="wide" />
+          <DealCard className={styles.card} view="reversed" {...card} key={index} likeable="wide" />
         ))}
       </ul>
     </section>
