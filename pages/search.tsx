@@ -8,7 +8,7 @@ class Catalog extends React.Component {
   render = () => (
     <Page headerTheme="dark">
       <Head>
-        <title>Search</title>
+        <title>Backpacker Deals | Search</title>
       </Head>
       <SearchLayout />
     </Page>

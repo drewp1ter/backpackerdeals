@@ -8,7 +8,7 @@ class Index extends React.Component {
   render = () => (
     <Page withInstagramCards={true}>
       <Head>
-        <title>Backpackerdeals</title>
+        <title>Backpacker Deals</title>
       </Head>
       <HomeLayout />
     </Page>

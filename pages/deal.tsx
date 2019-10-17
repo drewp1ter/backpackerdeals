@@ -7,7 +7,7 @@ import { Page } from 'features/page/components'
 const Deal = () => (
   <Page headerTheme="dark">
     <Head>
-      <title>Deal</title>
+      <title>Backpacker Deals | Deal</title>
     </Head>
     <DealLayout />
   </Page>
