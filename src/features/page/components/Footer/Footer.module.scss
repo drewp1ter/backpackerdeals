@@ -8,10 +8,16 @@ footer {
   mask-size: cover;
   background: url('./assets/backgroundFooter.jpg') center center no-repeat;
   background-size: cover;
-  padding: 8.125rem 12.5rem 0;
+  padding-top: 8.125rem;
+  width: 100%;
+
+  .content {
+    width: 95rem;
+    margin: 0 auto;
+  }
 
   &[data-extend="true"] {
-    padding: 17.25rem 12.5rem 0;
+    padding-top: 17.25rem;
   }
 
   h4 {
@@ -331,11 +337,15 @@ footer {
 
 @include device-tb {
   footer {
-    padding: 8.125rem 11.6rem 0;
+    padding-top: 8.125rem;
     background-image: url('./assets/backgroundFooter.jpg?reszie&size=1280');
 
+    .content {
+      width: 98.250614rem;
+    }
+
     &[data-extend="true"] {
-      padding: 17.5rem 11.6rem 0;
+      padding-top: 17.5rem;
     }
 
     h4 {
@@ -440,7 +450,11 @@ footer {
 
 @include device-ipad {
   footer {
-    padding: 11.25rem 4.5rem 0 !important;
+    padding-top: 11.25rem !important;
+
+    .content {
+      width: 119rem;
+    }
 
     h4 {
       &:nth-child(2n) {
@@ -528,8 +542,12 @@ footer {
 
 @include device-mb {
   footer {
-    padding: 9.75rem 1.5rem 0 !important;
+    padding-top: 9.75rem;
     background-image: url('./assets/backgroundFooter.jpg?resize&size=768');
+
+    .content {
+      width: 38rem;
+    }
 
     h4 {
       &:nth-child(2n) {
