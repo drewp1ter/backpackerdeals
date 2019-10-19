@@ -152,6 +152,25 @@
   }
 }
 
+@include device((min: 570px, max: 653px))  {
+  .moreActivities .content .cards .card {
+    margin: 0 auto;
+    // font-size: 10px;
+    width: 100% !important;
+    display: flex;
+
+    > a > div {
+      border-radius: 8px 0 0 8px;
+      height: 22em;
+      width: 31em;
+
+      > div {
+        border-top-right-radius: 0;
+      }
+    }
+  }
+}
+
 @include device-mb {
   .moreActivities {
     margin-top: 3.75rem;
@@ -202,14 +221,12 @@
         }
 
         .card {
+          margin: 0 auto;
+          font-size: 10px;
 
           &[data-view="reversed"] {
             width: 304px;
-            // display: flex;
           }
-
-          margin: 0 auto;
-          font-size: 10px;
         }
       }
     }

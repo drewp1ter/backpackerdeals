@@ -87,40 +87,36 @@ export const DealCard: React.FC<IProps> = ({
         </a>
       </Link>
 
-      <div data-view={view} className={styles.cardDescription}>
-        {view === View.vertical && (
-          <>
-            <div className={styles.aboutPlace}>
-              <Rating className={styles.rating} value={rating} detail={true} />
-              <div className={styles.location}>
-                <i className="fas fa-map-marker-alt" />
-                <span>{location}</span>
-              </div>
-            </div>
-
-            <h3 className={styles.tour}>{tourName}</h3>
-            <p className={styles.duration}>{duration}</p>
-          </>
-        )}
-
-        {(view === View.reversed || view === View.horizontal) && (
-          <div data-view={view}>
-            <div className={styles.aboutPlace}>
-              <div className={styles.location}>
-                <i className="fas fa-map-marker-alt" />
-                <span>{location}</span>
-              </div>
-              <div className={styles.duration}>
-                <i className="far fa-clock" />
-                {duration}
-              </div>
-            </div>
-
-            <h3 className={styles.tour}>{tourName}</h3>
+      <div className={styles.cardDescription}>
+        <div className={styles.vertical}>
+          <div className={styles.aboutPlace}>
             <Rating className={styles.rating} value={rating} detail={true} />
-            {view === View.horizontal && <p className={styles.description}>{description}</p>}
+            <div className={styles.location}>
+              <i className="fas fa-map-marker-alt" />
+              <span>{location}</span>
+            </div>
           </div>
-        )}
+
+          <h3 className={styles.tour}>{tourName}</h3>
+          <p className={styles.duration}>{duration}</p>
+        </div>
+
+        <div className={styles.reversedHorizontal}>
+          <div className={styles.aboutPlace}>
+            <div className={styles.location}>
+              <i className="fas fa-map-marker-alt" />
+              <span>{location}</span>
+            </div>
+            <div className={styles.duration}>
+              <i className="far fa-clock" />
+              {duration}
+            </div>
+          </div>
+
+          <h3 className={styles.tour}>{tourName}</h3>
+          <Rating className={styles.rating} value={rating} detail={true} />
+          <span className={styles.description}>{description}</span>
+        </div>
 
         <div className={styles.valueAndLink}>
           <div className={styles.totalPrice}>

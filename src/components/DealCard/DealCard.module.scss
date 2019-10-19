@@ -42,11 +42,38 @@
         border-top-right-radius: 0;
       }
     }
+
+    .cardDescription {
+      .description {
+        display: block;
+        margin-top: 1.56em;
+        font-size: 0.875em;
+        line-height: 1.5em;
+        color: #959595;
+      }
+    }
   }
+
+  &[data-view="reversed"], &[data-view="horizontal"] {
+    .cardDescription {
+      display: flex;
+      flex-direction: column;
+      padding: 0.5em 1.5em 1.81em 2em;
+
+      .reversedHorizontal {
+        display: block;
+        flex: 1;
+      }
+    }
+ }
 
   &[data-view="reversed"], &[data-view="vertical"] {
     .imageBlock {
       height: 22em;
+    }
+
+    .cardDescription .vertical {
+      display: block;
     }
   }
 
@@ -56,6 +83,7 @@
     overflow: hidden;
     border-radius: 8px 8px 0 0;
     margin: -1px;
+    flex-shrink: 0;
 
     img:not(.background) {
       z-index: 2;
@@ -77,19 +105,6 @@
       width: 4.5em;
       min-width: 35px;
       box-sizing: border-box;
-
-      // @include device-tb {
-      //   left: 1.43em;
-      //   width: 4.75em;
-      //   border-radius: 0 0 8px 8px;
-      // }
-
-      // @include device-mb {
-      //   left: 1.23em;
-      //   width: 4.75em;
-      //   border-radius: 0 0 8px 8px;
-      //   min-width: 48px;
-      // }
     }
 
     .sellOut {
@@ -166,21 +181,8 @@
     padding: 1.25em 1.5em 1.5em;
     border-top: 0;
 
-    &[data-view="horizontal"] {
-      display: flex;
-      flex-direction: column;
-      padding: 0.5em 1.5em 1.81em 2em;
-    }
-
-    div[data-view="horizontal"] {
-      flex: 1;
-
-      .description {
-        margin-top: 1.56em;
-        font-size: 0.875em;
-        line-height: 1.5em;
-        color: #959595;
-      }
+    .description, .vertical, .reversedHorizontal {
+      display: none;
     }
 
     .aboutPlace {

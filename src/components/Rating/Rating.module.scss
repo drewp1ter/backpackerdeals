@@ -2,7 +2,7 @@
 
 .rating {
   i {
-    font-size: .875em;
+    font-size: 10px;
 
     &[data-filled="true"] {
       color: #ffcb00;
@@ -13,13 +13,13 @@
   }
 
   span {
-    margin-left: .625em;
-    font-size: .9em;
+    margin-left: 5px;
+    font-size: 9px;
     text-align: left;
     color: #959595;
 
-    @include device-mb {
-      font-size: .77em;
-    }
+    // @include device-mb {
+    //   font-size: .77em;
+    // }
   }
 }
