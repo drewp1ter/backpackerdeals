@@ -71,7 +71,9 @@
     .imageBlock {
       height: 22em;
     }
+  }
 
+  &[data-view="vertical"] {
     .cardDescription .vertical {
       display: block;
     }
