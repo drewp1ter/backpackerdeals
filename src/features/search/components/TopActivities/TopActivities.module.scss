@@ -46,13 +46,13 @@
   }
 }
 
-@include device((min: 570px, max: 767px)) {
-  .topActivities .cards .card {
-    width: 23rem !important;
-    flex-shrink: 0;
-    font-size: .6rem;
-  }
-}
+// @include device((min: 570px, max: 767px)) {
+//   .topActivities .cards .card {
+//     width: rem !important;
+//     flex-shrink: 0;
+//     font-size: 8px;
+//   }
+// }
 
 @include device-mb {
   .topActivities {
@@ -64,7 +64,8 @@
     }
 
     .cards .card {
-      width: 34rem;
+      font-size: 10px;
+      width: 272px;
       flex-shrink: 0;
     }
   }

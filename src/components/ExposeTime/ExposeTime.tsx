@@ -11,7 +11,7 @@ export interface IProps {
   readonly className?: string
 }
 
-export const ExposeTime: React.FC<IProps> = ({ days, hours, minutes, size = 'md', className }) => {
+export const ExposeTime: React.FC<IProps> = ({ days, hours, minutes, size, className }) => {
   return (
     <div className={classNames(styles.exposeTime, className)} data-size={size}>
       <div className={styles.days}>

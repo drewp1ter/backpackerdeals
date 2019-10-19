@@ -66,19 +66,27 @@
   }
 
   .card {
-    width: 23rem;
-    // min-width: 232px;
+    &[data-view="horizontal"] {
+      width: 71rem;
+    }
+
+    &[data-view="reversed"] {
+      width: 23rem;
+    }
   }
 }
 
-@include device((min: 1025px, max: 1256px)) {
+@include device((min: 1025px, max: 1270px)) {
   .moreActivities .content .cards {
     &[data-view="reversed"] {
       grid-template-columns: 1fr 1fr;
     }
 
     .card {
-      width: 37.5rem;
+      &[data-view="reversed"] {
+        width: 35rem;
+        font-size: 1.5118111rem;
+      }
     }
   }
 }
@@ -100,34 +108,46 @@
         }
 
         .card {
-          width: 29rem;
+          font-size: 1rem;
+
+          &[data-view="reversed"] {
+            width: 29rem;
+          }
+
+          &[data-view="horizontal"] {
+            width: 89rem;
+          }
         }
       }
     }
   }
 }
 
-@include device((min: 768px, max: 936px)) {
-  .moreActivities .content .cards {
-    &[data-view="reversed"] {
-      grid-template-columns: 1fr 1fr;
+// @include device((min: 768px, max: 936px)) {
+//   .moreActivities .content .cards {
+//     &[data-view="reversed"] {
+//       grid-template-columns: 1fr 1fr;
+//     }
+
+//     .card {
+//       width: 44rem;
+//     }
+//   }
+// }
+
+@include device((min: 654px, max: 767px)) {
+  .moreActivities .content {
+
+    .container {
+      margin: 0 auto;
     }
 
-    .card {
-      width: 44rem;
-    }
-  }
-}
-
-@include device((min: 570px, max: 767px)) {
-  .moreActivities .content .cards {
-    &[data-view="reversed"] {
-      grid-template-columns: 1fr 1fr !important;
-    }
-
-    .card {
-      width: 18.5rem !important;
-      font-size: .5rem;
+    .cards {
+      &[data-view="reversed"] {
+        grid-template-columns: 1fr 1fr !important;
+        grid-gap: 8px;
+        width: 616px;
+      }
     }
   }
 }
@@ -148,8 +168,7 @@
         display: none;
       }
 
-      .cardsContainer {
-        width: 100%;
+      .container {
 
         .header {
           margin-bottom: 1.25rem;
@@ -183,7 +202,14 @@
         }
 
         .card {
-          width: 100%;
+
+          &[data-view="reversed"] {
+            width: 304px;
+            // display: flex;
+          }
+
+          margin: 0 auto;
+          font-size: 10px;
         }
       }
     }

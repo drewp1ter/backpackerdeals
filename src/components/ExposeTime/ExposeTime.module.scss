@@ -1,4 +1,4 @@
-@import "src/scss/device";
+// @import "src/scss/device";
 
 .exposeTime {
   display: flex;
@@ -9,11 +9,11 @@
       font-size: 3em;
 
       &.colon {
-        margin: 0 1rem;
+        margin: 0 .3333333em;
       }
 
       &.label {
-        font-size: 0.81em;
+        font-size: 0.8125em;
       }
     }
   }
@@ -23,12 +23,12 @@
       font-size: 1.875em;
 
       &.colon {
-        margin: 0 0.5rem;
+        margin: 0 0.5em;
         display: block;
       }
 
       &.label {
-        margin-top: -.375rem;
+        margin-top: -.375em;
         font-size: 0.5em;
       }
     }
@@ -57,64 +57,64 @@
   }
 }
 
-@include device-tb {
-  .exposeTime[data-size="lg"] {
-    label {
-      font-size: 8px;
-    }
+// @include device-tb {
+//   .exposeTime[data-size="lg"] {
+//     label {
+//       font-size: 8px;
+//     }
 
-    p {
-      font-size: 2em;
+//     p {
+//       font-size: 2em;
 
-      &.colon {
-        margin: 0 8px;
-      }
-    }
-  }
-}
+//       &.colon {
+//         margin: 0 8px;
+//       }
+//     }
+//   }
+// }
 
-@include device-ipad {
-  .exposeTime[data-size="lg"] {
-    label {
-      font-size: 0.46em;
-    }
+// @include device-ipad {
+//   .exposeTime[data-size="lg"] {
+//     label {
+//       font-size: 0.46em;
+//     }
 
-    p {
-      font-size: 2em;
+//     p {
+//       font-size: 2em;
 
-      &.colon {
-        margin: 0 .75rem;
-      }
-    }
-  }
+//       &.colon {
+//         margin: 0 .75rem;
+//       }
+//     }
+//   }
 
-  .exposeTime[data-size="md"] {
-    label {
-      font-size: 0.58em;
-    }
+//   .exposeTime[data-size="md"] {
+//     label {
+//       font-size: 0.58em;
+//     }
 
-    p {
-      font-size: 2.5em;
+//     p {
+//       font-size: 2.5em;
 
-      &.colon {
-        margin: 0 .75rem;
-      }
-    }
-  }
-}
+//       &.colon {
+//         margin: 0 .75rem;
+//       }
+//     }
+//   }
+// }
 
-@include device-mb {
-  .exposeTime[data-size="lg"] {
-    label {
-      font-size: 0.666666em;
-    }
+// @include device-mb {
+//   .exposeTime[data-size="lg"] {
+//     label {
+//       font-size: 0.666666em;
+//     }
 
-    p {
-      font-size: 2.66666em;
+//     p {
+//       font-size: 2.66666em;
 
-      &.colon {
-        margin: 0 .75rem;
-      }
-    }
-  }
-}
+//       &.colon {
+//         margin: 0 .75rem;
+//       }
+//     }
+//   }
+// }

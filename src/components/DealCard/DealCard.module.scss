@@ -6,9 +6,10 @@
   border-radius: 8px;
   border: 1px solid #efefef;
   box-sizing: border-box;
+  font-size: 1rem;
 
   &:hover {
-    box-shadow: 0 24px 32px rgba(0, 0, 0, 0.06);
+    box-shadow: 0 1.5em 2em rgba(0, 0, 0, 0.06);
 
     .imageBlock .background {
       transform: scale3d(1.1, 1.1, 1.1);
@@ -33,9 +34,9 @@
     display: flex;
 
     .imageBlock {
-      border-radius: 0.5rem 0 0 0.5rem;
-      width: 31rem;
-      height: 22rem;
+      border-radius: 8px 0 0 8px;
+      height: 22em;
+      width: 31em;
 
       .sale {
         border-top-right-radius: 0;
@@ -45,8 +46,7 @@
 
   &[data-view="reversed"], &[data-view="vertical"] {
     .imageBlock {
-      width: 100%;
-      height: 22rem;
+      height: 22em;
     }
   }
 
@@ -54,7 +54,7 @@
     position: relative;
     transition: transform 0.2s ease-out;
     overflow: hidden;
-    border-radius: 0.5rem 0.5rem 0 0;
+    border-radius: 8px 8px 0 0;
     margin: -1px;
 
     img:not(.background) {
@@ -73,23 +73,23 @@
     .badge {
       position: absolute;
       top: 0;
-      left: 2rem;
-      width: 3.75vw;
+      left: 2em;
+      width: 4.5em;
       min-width: 35px;
       box-sizing: border-box;
 
-      @include device-tb {
-        left: 1.43rem;
-        width: 4.75vw;
-        border-radius: 0 0 8px 8px;
-      }
+      // @include device-tb {
+      //   left: 1.43em;
+      //   width: 4.75em;
+      //   border-radius: 0 0 8px 8px;
+      // }
 
-      @include device-mb {
-        left: 1.23rem;
-        width: 4.75vw;
-        border-radius: 0 0 8px 8px;
-        min-width: 48px;
-      }
+      // @include device-mb {
+      //   left: 1.23em;
+      //   width: 4.75em;
+      //   border-radius: 0 0 8px 8px;
+      //   min-width: 48px;
+      // }
     }
 
     .sellOut {
@@ -97,15 +97,14 @@
       top: 31%;
       right: 0;
       transform: rotate(270deg) translate(-50%, 50%);
-      padding: 1rem 0.75rem;
+      padding: 1em 0.75em;
       display: flex;
       justify-content: center;
       align-items: center;
-      border-radius: 0.4rem 0.4rem 0 0;
+      border-radius: 8px 8px 0 0;
       background-color: #fafafa;
-      font-size: 0.81em;
+      font-size: 0.8125em;
       text-align: center;
-      color: #202020;
       z-index: 1;
     }
 
@@ -113,18 +112,18 @@
       cursor: pointer;
       position: absolute;
       color: #ffffff;
-      z-index: 1;
+      z-index: 3;
       transition: 0.2s ease color;
       font-size: 1.5em;
 
       &[data-type="wide"] {
-        bottom: 1.875rem;
-        right: 1.6rem;
+        bottom: 1.875em;
+        right: 1.6em;
       }
 
       &[data-type="short"] {
-        bottom: 1.5rem;
-        right: 0.625rem;
+        bottom: 1.5em;
+        right: 0.625em;
       }
 
       &:hover {
@@ -135,18 +134,18 @@
     .exposeTime {
       color: #fafafa;
       position: absolute;
-      bottom: 1rem;
+      bottom: 1em;
       left: 0;
       right: 0;
       z-index: 2;
     }
 
     .sale {
-      border-radius: 0 6px 0 10px;
+      border-radius: 0 8px 0 8px;
       position: absolute;
       right: 0;
       top: 0;
-      padding: 0.75rem 0.5rem;
+      height: 2.5em;
       background-color: #ff5a39;
       display: flex;
       justify-content: center;
@@ -164,42 +163,42 @@
   }
 
   .cardDescription {
-    padding: 1.18rem 1.43rem 1.56rem 1.43rem;
+    padding: 1.25em 1.5em 1.5em;
     border-top: 0;
 
     &[data-view="horizontal"] {
       display: flex;
       flex-direction: column;
-      padding: 0.5rem 1.5rem 1.81rem 2rem;
+      padding: 0.5em 1.5em 1.81em 2em;
     }
 
     div[data-view="horizontal"] {
       flex: 1;
 
       .description {
-        margin-top: 1.56rem;
+        margin-top: 1.56em;
         font-size: 0.875em;
-        line-height: 1.5rem;
+        line-height: 1.5em;
         color: #959595;
       }
     }
 
     .aboutPlace {
-      margin-bottom: 1.25rem;
+      margin-bottom: 1.25em;
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
 
       .location {
         i {
-          margin-right: 5px;
+          margin-right: 0.375em;
           font-size: 1em;
           text-align: left;
           color: #959595;
         }
 
         span {
-          font-size: 0.9em;
+          font-size: 0.8125em;
           text-align: left;
           color: #959595;
         }
@@ -208,20 +207,18 @@
   }
 
   .tour {
-    font-size: 1.125em;
+    font-size: 1.625em;
     transition: 0.2s ease color;
-    color: #202020;
   }
 
   .duration {
-    margin: 0;
-    font-size: 0.9em;
+    font-size: 0.8125em;
     text-align: left;
     color: #959595;
 
     i {
       margin-right: 5px;
-      font-size: 0.75em;
+      font-size: .9em;
       color: #959595;
     }
   }
@@ -230,12 +227,12 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 20px;
+    margin-top: 1.25em;
 
     .totalPrice {
       .from {
-        font-size: 0.9em;
-        line-height: 1.35rem;
+        font-size: 0.75em;
+        line-height: 1.35em;
         text-align: left;
         color: #dadada;
       }
@@ -244,14 +241,12 @@
         font-size: 1.125em;
         font-weight: bold;
         text-align: left;
-        color: #202020;
-        margin: 0;
       }
 
       .value {
         display: block;
-        margin-top: 0.2rem;
-        font-size: 0.9em;
+        margin-top: 0.2em;
+        font-size: 0.75em;
         text-align: left;
         color: #dadada;
       }
@@ -260,8 +255,9 @@
     button {
       cursor: pointer;
       border: none;
-      padding: 0.9rem 2.55rem;
-      border-radius: 1.875rem;
+      width: 6em;
+      height: 3.25em;
+      border-radius: 1.875em;
       background-color: #fafafa;
       transition: 0.2s ease background-color;
 
@@ -269,98 +265,184 @@
         font-size: 1.06em;
         color: #ff5a39;
         transition: 0.2s ease color;
-
-        @include device-mb {
-          font-size: 1.3em;
-        }
       }
     }
   }
 }
 
-@include device-tb {
-  .dealCard {
-    &[data-view="horizontal"] {
-      .cardDescription {
-        width: 65%;
-      }
+// @include device-tb {
+//   .dealCard {
+//     &[data-view="horizontal"] {
+//       .cardDescription {
+//         width: 65%;
+//       }
 
-      .imageBlock {
-        height: unset;
-        width: unset;
-      }
-    }
+//       .imageBlock {
+//         height: unset;
+//         width: unset;
+//       }
+//     }
 
-    &[data-view="reversed"], &[data-view="vertical"] {
-      .imageBlock {
-        height: 24.4rem;
-      }
-    }
+//     &[data-view="reversed"], &[data-view="vertical"] {
+//       .imageBlock {
+//         height: 24.4em;
+//       }
+//     }
 
-    .imageBlock {
-      border-radius: 0.57rem 0.57rem 0 0;
+//     .imageBlock {
+//       border-radius: 0.57em 0.57em 0 0;
 
-      .like[data-type="wide"] {
-        right: 0.72rem;
-      }
+//       .like[data-type="wide"] {
+//         right: 0.72em;
+//       }
 
-      .sellOut {
-        transform: rotate(270deg) translate(-50%, 117%);
-        border-radius: 0.57rem 0.57rem 0 0;
-        padding: 0.57rem 1.43rem;
-        font-size: 0.79em;
-      }
+//       .sellOut {
+//         transform: rotate(270deg) translate(-50%, 117%);
+//         border-radius: 0.57em 0.57em 0 0;
+//         padding: 0.57em 1.43em;
+//         font-size: 0.79em;
+//       }
 
-      .sale {
-        border-radius: 0 0.57rem;
-        min-width: 8.6vw;
-        padding: 0.72rem;
+//       .sale {
+//         border-radius: 0 0.57em;
+//         min-width: 8.6vw;
+//         padding: 0.72em;
 
-        p {
-          font-size: 0.84em;
-        }
-      }
-    }
+//         p {
+//           font-size: 0.84em;
+//         }
+//       }
+//     }
 
-    .cardDescription {
-      padding: 0.65rem 0.86rem 1.43rem 0.86rem;
+//     .cardDescription {
+//       padding: 0.65em 0.86em 1.43em 0.86em;
 
-      .aboutPlace {
-        margin-bottom: 1rem;
-        align-items: center;
-      }
-    }
+//       .aboutPlace {
+//         margin-bottom: 1em;
+//         align-items: center;
+//       }
+//     }
 
-    .valueAndLink {
-      margin-top: 1rem;
+//     .valueAndLink {
+//       margin-top: 1em;
 
-      .totalPrice {
-        .from {
-          font-size: 0.875em;
-        }
+//       .totalPrice {
+//         .from {
+//           font-size: 0.875em;
+//         }
 
-        .price {
-          font-size: 1em;
-        }
-      }
+//         .price {
+//           font-size: 1em;
+//         }
+//       }
 
-      button {
-        padding: 0.9rem 2.43rem;
+//       button {
+//         padding: 0.9em 2.43em;
 
-        i {
-          font-size: 1.21em;
-        }
-      }
-    }
-  }
-}
+//         i {
+//           font-size: 1.21em;
+//         }
+//       }
+//     }
+//   }
+// }
 
 @include device-ipad {
   .dealCard {
     &[data-view="reversed"], &[data-view="vertical"] {
 
       .imageBlock {
-        height: 27.5rem;
+        height: 27.5em;
+      }
+    }
+
+    .imageBlock {
+      .badge {
+        width: 6em;
+        height: 8em;
+      }
+
+      .like {
+        font-size: 2em;
+
+        &[data-type="wide"] {
+          bottom: 1.5em;
+          right: 1.25em;
+        }
+
+        &[data-type="short"] {
+          bottom: 1.5em;
+          right: 1.25em;
+        }
+      }
+
+      .sale {
+        height: 4em;
+
+        p {
+          font-size: 1.375em;
+        }
+      }
+    }
+
+    .cardDescription {
+      padding: 1.75em 1.5em 1.5em;
+      border-top: 0;
+
+      .rating {
+        font-size: 1.25rem;
+      }
+
+      .aboutPlace {
+        margin-bottom: 1.5em;
+
+        .location {
+          i {
+            margin-right: 0.5em;
+            font-size: 1.25em;
+          }
+
+          span {
+            font-size: 1.25em;
+          }
+        }
+      }
+    }
+
+    .tour {
+      font-size: 2.5em;
+    }
+
+    .duration {
+      font-size: 1.25em;
+    }
+
+    .valueAndLink {
+      margin-top: 2em;
+
+      .totalPrice {
+        .from {
+          font-size: 1.5em;
+        }
+
+        .price {
+          font-size: 1.75em;
+        }
+
+        .value {
+          margin-top: 0.5em;
+          font-size: 1.5em;
+        }
+      }
+
+      button {
+        width: 9.5em;
+        height: 5.5em;
+        border-radius: 3.25em;
+
+        i {
+          font-size: 2.125em;
+        }
       }
     }
   }
@@ -368,100 +450,157 @@
 
 @include device-mb {
   .dealCard {
-    font-size: 1rem;
-    // min-width: 272px;
-    // min-width: 34rem;
-
     &[data-view="reversed"], &[data-view="vertical"] {
 
       .imageBlock {
-        height: 36em;
+        height: 288px;
       }
     }
 
     .imageBlock {
-      //height: 272px;
-      // height: 34rem;
-
-      .sale {
-        padding: 1em 3.25em;
-        min-width: 36%;
-        box-sizing: border-box;
-
-        p {
-          @include font-mb(
-            (
-              min: 11,
-              max: 15
-            )
-          );
-        }
+      .badge {
+        width: 48px;
+        height: 64px;
       }
 
-      .sellOut {
-        transform: rotate(270deg) translate(-50%, 117%);
-        border-radius: 0.57em 0.57em 0 0;
-        padding: 0.57em 1.43em;
-        font-size: 0.79em;
+      .sale {
+        height: 32px;
+
+        p {
+          font-size: 11px;
+        }
       }
     }
 
     .cardDescription {
-      padding: 1.75em 1.5em 2em;
+      padding: 14px 16px 20px;
+
+      .rating {
+        font-size: 10px;
+      }
 
       .aboutPlace {
-        margin-bottom: 0.5em;
-        align-items: center;
-
-        .rating {
-          i {
-            font-size: .875em;
-          }
-
-          span {
-            font-size: .875em;
-          }
-        }
+        margin-bottom: 16px;
 
         .location {
           i,
           span {
-            font-size: 1em;
+            font-size: 10px;
           }
         }
       }
 
       .duration {
-        font-size: 1em;
+        font-size: 10px;
       }
     }
 
     .tour {
-      font-size: 1.666666em;
-      margin-bottom: 0.5em;
+      font-size: 20px;
+      margin-bottom: 4px;
     }
 
     .valueAndLink {
-      margin-top: 1.75em;
+      margin-top: 16px;
 
       .totalPrice {
         .price {
-          font-size: 1.1666666em;
+          font-size: 14px;
         }
+
         .from,
         .value {
-          font-size: 1em;
+          font-size: 12px;
         }
+
         .value {
-          line-height: 1.5em;
+          line-height: 12px;
         }
       }
 
       button {
-        width: 9.5em;
-        height: 5.5em;
-        border-radius: 3.75em;
+        width: 76px;
+        height: 44px;
+        border-radius: 26px;
       }
     }
   }
 }
+
+// @include device-mb {
+//   .dealCard {
+//     font-size: 1rem;
+
+//     &[data-view="reversed"], &[data-view="vertical"] {
+
+//       .imageBlock {
+//         height: 36em;
+//       }
+//     }
+
+//     .imageBlock {
+
+//       .sale {
+//         height: 4em;
+//         min-width: 36%;
+
+//         p {
+//           font-size: 1.375em;
+//         }
+//       }
+//     }
+
+//     .cardDescription {
+//       padding: 1.75em 1.5em 2.5em;
+
+//       .rating {
+//         font-size: 1.25em;
+//       }
+
+//       .aboutPlace {
+//         margin-bottom: 2em;
+
+//         .location {
+//           i,
+//           span {
+//             font-size: 1.25em;
+//           }
+//         }
+//       }
+
+//       .duration {
+//         font-size: 1.25em;
+//       }
+//     }
+
+//     .tour {
+//       font-size: 2.5em;
+//       margin-bottom: 0.5em;
+//     }
+
+//     .valueAndLink {
+//       margin-top: 2em;
+
+//       .totalPrice {
+//         .price {
+//           font-size: 1.75em;
+//         }
+
+//         .from,
+//         .value {
+//           font-size: 1.5em;
+//         }
+
+//         .value {
+//           line-height: 1.5em;
+//         }
+//       }
+
+//       button {
+//         width: 9.5em;
+//         height: 5.5em;
+//         border-radius: 3.75em;
+//       }
+//     }
+//   }
+// }
