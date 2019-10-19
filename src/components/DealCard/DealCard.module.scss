@@ -352,7 +352,7 @@
 // }
 
 @include device-ipad {
-  .dealCard {
+  .dealCard:not([class*="no-ipad-bp"]) {
     &[data-view="reversed"], &[data-view="vertical"] {
 
       .imageBlock {

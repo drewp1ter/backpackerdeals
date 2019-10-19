@@ -42,7 +42,7 @@ export const MoreActivities: React.FC<IProps> = ({ className }) => {
   const renderCards = () =>
     cards &&
     cards.map((card, idx) => (
-      <DealCard className={styles.card} view={view} {...card} key={idx} likeable={view === ViewType.list ? 'wide' : 'short'} />
+      <DealCard className={classNames(styles.card, 'no-ipad-bp')} view={view} {...card} key={idx} likeable={view === ViewType.list ? 'wide' : 'short'} />
     ))
 
   return (
