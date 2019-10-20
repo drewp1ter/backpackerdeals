@@ -80,12 +80,13 @@
   .moreActivities .content .cards {
     &[data-view="reversed"] {
       grid-template-columns: 1fr 1fr;
+      justify-items: center;
     }
 
     .card {
       &[data-view="reversed"] {
-        width: 35rem;
-        font-size: 1.5118111rem;
+        width: 30rem;
+        font-size: 1.3rem;
       }
     }
   }
@@ -104,16 +105,18 @@
 
         &[data-view="reversed"] {
           grid-template-columns: 1fr 1fr;
+          justify-items: center;
           grid-column-gap: 1rem;
           grid-row-gap: 1rem;
         }
 
         .card {
+          font-size: 1.5rem;
           // font-size: 1.5318182rem;
-          font-size: 1.9130435rem;
+          // font-size: 1.9130435rem;
 
           &[data-view="reversed"] {
-            width: 44rem;
+            width: 38rem;
           }
 
           &[data-view="horizontal"] {
