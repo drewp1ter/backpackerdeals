@@ -1,8 +1,7 @@
 ARG APP_ROOT=/app
 
-FROM node:12
+FROM node:latest AS builder
 ARG APP_ROOT
-ENV NODE_ENV=production
 
 WORKDIR /usr/local/webp
 RUN wget https://storage.googleapis.com/downloads.webmproject.org/releases/webp/libwebp-0.6.1-linux-x86-64.tar.gz \
@@ -19,5 +18,10 @@ RUN yarn build
 RUN yarn webpconv
 RUN yarn purgecss
 
+FROM mhart/alpine-node:base
+ARG APP_ROOT
+WORKDIR ${APP_ROOT}
+COPY --from=builder ${APP_ROOT} .
 EXPOSE 3000
-CMD ["yarn", "start"]
+ENV NODE_ENV=production
+CMD ["node", "server.js"]
