@@ -5,10 +5,10 @@
 
   .filtersMenuWrapper {
     transition: .2s ease right;
-    padding-top: 19px;
-    padding-right: 12px;
+    padding-top: 1.25rem;
+    padding-right: .75rem;
     z-index: 12 !important;
-    width: 79%;
+    width: 31rem;
 
     &[data-open="true"] {
       transform: unset;
@@ -78,9 +78,35 @@
   }
 }
 
-@include device-mb {
+@include device((max: 1280px)) {
   .filtersMenu {
     display: block;
+  }
+}
+
+@include device-ipad {
+  .filtersMenu {
+    .filtersMenuWrapper {
+      padding-top: 2.5rem;
+      padding-right: 1.5rem;
+      width: 52rem;
+    }
+
+    > button {
+      height: 5rem;
+      font-size: 1.25em;
+    }
+  }
+}
+
+@include device-mb {
+  .filtersMenu {
+
+    .filtersMenuWrapper {
+      padding-top: 2.5rem;
+      padding-right: 1.5rem;
+      width: 30rem;
+    }
 
     > button {
       margin-top: 16px;

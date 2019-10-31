@@ -76,21 +76,52 @@
   }
 }
 
-@include device((min: 1025px, max: 1270px)) {
-  .moreActivities .content .cards {
-    &[data-view="reversed"] {
-      grid-template-columns: 1fr 1fr;
-      justify-items: center;
+@include device-tb {
+  .moreActivities {
+    .filters {
+      display: none;
     }
 
-    .card {
+    > h3 {
+      margin: 0;
+    }
+
+    .content .cards {
+      width: 95rem;
+
       &[data-view="reversed"] {
-        width: 30rem;
-        font-size: 1.3rem;
+        justify-items: center;
+      }
+
+      .card {
+        &[data-view="reversed"] {
+          width: 31rem;
+          font-size: 1.3rem;
+        }
+
+        &[data-view="horizontal"] {
+          width: 95rem;
+        }
       }
     }
   }
 }
+
+// @include device((min: 1025px, max: 1270px)) {
+//   .moreActivities .content .cards {
+//     &[data-view="reversed"] {
+//       grid-template-columns: 1fr 1fr;
+//       justify-items: center;
+//     }
+
+//     .card {
+//       &[data-view="reversed"] {
+//         width: 30rem;
+//         font-size: 1.3rem;
+//       }
+//     }
+//   }
+// }
 
 @include device-ipad {
   .moreActivities {
@@ -101,10 +132,10 @@
 
     .content {
       .cards {
-        width: 89rem;
+        width: 119rem;
 
         &[data-view="reversed"] {
-          grid-template-columns: 1fr 1fr;
+          // grid-template-columns: 1fr 1fr;
           justify-items: center;
           grid-column-gap: 1rem;
           grid-row-gap: 1rem;
@@ -116,29 +147,17 @@
           // font-size: 1.9130435rem;
 
           &[data-view="reversed"] {
-            width: 38rem;
+            width: 39rem;
           }
 
           &[data-view="horizontal"] {
-            width: 89rem;
+            width: 119rem;
           }
         }
       }
     }
   }
 }
-
-// @include device((min: 768px, max: 936px)) {
-//   .moreActivities .content .cards {
-//     &[data-view="reversed"] {
-//       grid-template-columns: 1fr 1fr;
-//     }
-
-//     .card {
-//       width: 44rem;
-//     }
-//   }
-// }
 
 @include device((min: 654px, max: 767px)) {
   .moreActivities .content {
@@ -160,7 +179,6 @@
 @include device((min: 570px, max: 653px))  {
   .moreActivities .content .cards .card {
     margin: 0 auto;
-    // font-size: 10px;
     width: 100% !important;
     display: flex;
 

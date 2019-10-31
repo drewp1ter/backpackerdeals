@@ -1,3 +1,5 @@
+@import "src/scss/device";
+
 .filtersDropdown {
 
   .dropdown {
@@ -11,7 +13,7 @@
     transition: .2s ease border-color;
 
     span {
-      font-size: 12px;
+      font-size: 1em;
     }
 
     i {
@@ -27,6 +29,16 @@
         color: #ff5a39;
         transform: rotate(90deg);
       }
+    }
+  }
+}
+
+@include device-ipad {
+  .filtersDropdown {
+
+    .dropdown {
+      height: 5rem;
+      padding: 0 2rem;
     }
   }
 }
