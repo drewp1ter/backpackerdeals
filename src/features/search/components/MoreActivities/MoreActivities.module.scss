@@ -94,9 +94,10 @@
       }
 
       .card {
+        font-size: 1.3rem;
+
         &[data-view="reversed"] {
           width: 31rem;
-          font-size: 1.3rem;
         }
 
         &[data-view="horizontal"] {
@@ -143,7 +144,7 @@
 
         .card {
           // font-size: 1.5rem;
-          font-size: 1.5318182rem !important;
+          font-size: 1.5318182rem;
           // font-size: 1.9130435rem;
 
           &[data-view="reversed"] {
