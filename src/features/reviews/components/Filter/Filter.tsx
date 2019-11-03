@@ -30,7 +30,7 @@ export const Filter: React.FC<IProps> = ({ className }) => {
 
   const renderCheckBoxes = () =>
     labels.map((label, idx) => {
-      const value = Math.pow(2, idx)
+      const value = 1 << idx
       return (
         <Checkbox
           key={idx}

@@ -14,7 +14,7 @@ export interface IProps {
 
 export const ExpectDay: React.FC<IProps> = ({ day, isExpanded, isAnimated, className, onClick, body }) => {
   const maxLength = 288
-  const value = Math.pow(2, day - 1)
+  const value = 1 << day - 1
   const isOverflow = body!.length > maxLength
   const text = isOverflow && !(isAnimated & value) && !(isExpanded & value) ? body.slice(0, body!.indexOf(' ', maxLength)) + '…' : body
 

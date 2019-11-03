@@ -20,7 +20,7 @@ export interface IState {
 }
 
 export const FaqCard: React.FC<IProps> = ({ ordinalNumber, preview, title, text, className, isExpanded = 0, onClickExpand }) => {
-  const value = Math.pow(2, ordinalNumber)
+  const value = 1 << ordinalNumber
   const [isOpenModal, setIsOpenModal] = useState<boolean>(false)
 
   const handleOpenModal = () => setIsOpenModal(true)
